@@ -1,47 +1,47 @@
 ---
 id: courses
-title: Courses
+title: Хичээлүүд
 layout: community
 sectionid: community
 permalink: community/courses.html
 ---
 
-## Free Courses {#free-courses}
+## Үнэгүй хичээлүүд {#free-courses}
 
-- [Codecademy: React 101](https://www.codecademy.com/learn/react-101) - Codecademy's introductory course for React.
+- [Codecademy: React 101](https://www.codecademy.com/learn/react-101) - Codecademy-ийн React-д зориулсан анхан шатны хичээл.
 
-- [Egghead.io: Start Learning React](https://egghead.io/courses/start-learning-react) - This series will explore the basic fundamentals of React to get you started.
+- [Egghead.io: Start Learning React](https://egghead.io/courses/start-learning-react) - Энэхүү цуврал хичээлүүд нь React-ийг эхлэхэд тань үндсэн мэдлэгийг өгнө. 
 
-- [React Crash Course 2018](https://www.youtube.com/watch?v=Ke90Tje7VS0) - A beginner-friendly crash course through the most important React topics.
+- [React Crash Course 2018](https://www.youtube.com/watch?v=Ke90Tje7VS0) - Анхлан суралцагчдад хандсан React-ийн гол сэдвүүд бүхий богино хэмжээний хичээл.
 
-- [React Armory: Learn React by Itself](https://reactarmory.com/guides/learn-react-by-itself) - With React Armory, you can learn React without the buzzwords.
+- [React Armory: Learn React by Itself](https://reactarmory.com/guides/learn-react-by-itself) - React Armory-ийн энэ хичээлээр тa React-ийг энгийн хэллэгээр сурах боломжтой.
 
-- [The Road to Learn React](https://www.robinwieruch.de/the-road-to-learn-react/) - Build a real world application in plain React without complicated tooling.
+- [The Road to Learn React](https://www.robinwieruch.de/the-road-to-learn-react/) - Ямар нэгэн хэцүү нэмэлт багажгүйгээр цэвэр React ашиглан бодит амьдрал дээрх аппликейшнийг хийж үзэх.
 
-- [Egghead.io: The Beginner's Guide to ReactJS](https://egghead.io/courses/the-beginner-s-guide-to-reactjs) - Free course for React newbies and those looking to get a better understanding of React fundamentals.
+- [Egghead.io: The Beginner's Guide to ReactJS](https://egghead.io/courses/the-beginner-s-guide-to-reactjs) - Анхлан суралцагчид болон React-ийн үндсэн ойлголтыг сурахыг хүсч буй хүмүүст зориулсан үнэгүй хичээл. 
 
-- [Free React Bootcamp](https://tylermcginnis.com/free-react-bootcamp/) - Recordings from three days of a free online React bootcamp.
+- [Free React Bootcamp](https://tylermcginnis.com/free-react-bootcamp/) - React-д бэлтгэх 3 хоногийн сургалтын бичлэгүүд.
 
-## Paid Courses {#paid-courses}
+## Төлбөртэй хичээлүүд {#paid-courses}
 
-- [Egghead.io](https://egghead.io/browse/frameworks/react) - Short instructional videos on React and many other topics.
+- [Egghead.io](https://egghead.io/browse/frameworks/react) - React болон бусад сэдвүүд бүхий богино хэмжээний сургалтын видеонууд.
 
-- [Frontend Masters](https://frontendmasters.com/courses/) - Video courses on React and other frontend frameworks.
+- [Frontend Masters](https://frontendmasters.com/courses/) - React болон бусад frontend framework-үүдийн талаарх видео хичээлүүд
 
-- [Fullstack React](https://www.fullstackreact.com/) - The up-to-date, in-depth, complete guide to React and friends.
+- [Fullstack React](https://www.fullstackreact.com/) - React, түүнтэй хамт ашиглаж болох шинэлэг бөгөөд гүнзгийрүүлсэн бүрэн хичээлүүд.
 
-- [Pure React](https://daveceddia.com/pure-react/) - A step-by-step guide to mastering React.
+- [Pure React](https://daveceddia.com/pure-react/) - React-ийн мастер болоход чинь хөтлөх шаталсан сургалт
 
-- [React for Beginners](https://reactforbeginners.com/) - Learn React in just a couple of afternoons.
+- [React for Beginners](https://reactforbeginners.com/) - Хэдхэн өдөр суугаад л React-ийг сур.
 
-- [React for Designers](https://designcode.io/react) - A 6-hour React course for designers, by designers.
+- [React for Designers](https://designcode.io/react) - Дизайнаруудаас дизайнаруудад зориулсан React-ийн 6 цагийн хичээл.
 
-- [React Essentials for Designers](https://learnreact.design) - React courses tailored for designers: the fundamentals, capabilities, limitations and how they relate to design.
+- [React Essentials for Designers](https://learnreact.design) - Үндсэн ойлголт, боломжит болон хязгаарлагдмал зүйлсийг хэрхэн ашиглах энэ нь хэрхэн дизайнтай холбогдох талаар дизайнаруудад зориулсан React-ийн хичээл.
 
-- [Essential React](https://learnreact.com/lessons/2018-essential-react-1-overview) - A crash course for doers, moving fast from "Hello World" to advanced component composition.
+- [Essential React](https://learnreact.com/lessons/2018-essential-react-1-overview) - Сонирхогчдод зориулсан, хялбараас хүнд түвшний component бүтээх богино хичээл.
 
-- [React Training: Advanced React.js](https://courses.reacttraining.com/p/advanced-react) - Take your React skills to the next level.
+- [React Training: Advanced React.js](https://courses.reacttraining.com/p/advanced-react) - Өөрийн React чадварыг дараагийн шатанд гарга.
 
-- [Tyler McGinnis](https://tylermcginnis.com/courses) - Tyler McGinnis provides access to his courses for a monthly fee. Courses include "React Fundamentals" and "Universal React".
+- [Tyler McGinnis](https://tylermcginnis.com/courses) - Tyler McGinnis-ийн хичээлүүдэд сарын хураамжтайгаар хандах боломжтой. Энэхүү хичээл нь "React-ийн үндэс" болон "Юнивэрсал React"-ийг агуулсан болно.
 
-- [Mastering React](https://codewithmosh.com/p/mastering-react/) - Build professional interactive apps with React.
+- [Mastering React](https://codewithmosh.com/p/mastering-react/) - React-аар мэргэжлийн түвшний интерактив апплекейшнууд бүтээ.
