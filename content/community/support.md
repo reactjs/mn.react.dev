@@ -1,6 +1,6 @@
 ---
 id: support
-title: Where To Get Support
+title: Хаанаас дэмжлэг авах вэ
 layout: community
 sectionid: community
 permalink: community/support.html
@@ -8,26 +8,26 @@ redirect_from:
   - "support.html"
 ---
 
-React has a community of millions of developers.
+React нь олон сая хөгжүүлэгчдийн хамтралтай.
 
-On this page we've listed some React-related communities that you can be a part of; see the other pages in this section for additional online and in-person learning materials.
+Бид энэ хуудсанд React-тай холбоотой таны оролцож болох зарим хамтралуудыг үзүүллээ. Мөн та энэ хэсгээс нэмэлт интернэт орчинд болон хувьчилсан сургалтын материалуудыг олж авах боломжтой.
 
 ## Stack Overflow {#stack-overflow}
 
-Stack Overflow is a popular forum to ask code-level questions or if you're stuck with a specific error. Read through the [existing questions](https://stackoverflow.com/questions/tagged/reactjs) tagged with **reactjs** or [ask your own](https://stackoverflow.com/questions/ask?tags=reactjs)!
+Stack Overflow нь код бичих үед болон тулгараад буй асуудлууддаа хариулт авч болох хамгийн нийтлэг форум юм. **reactjs** гэсэн tag-аар [нэгэнт асуугдсан](https://stackoverflow.com/questions/tagged/reactjs) эсвэл [өөрийн асуултаа асууна уу](https://stackoverflow.com/questions/ask?tags=reactjs)!
 
-## Popular Discussion Forums {#popular-discussion-forums}
+## Хамгийн нийтлэг хөөрөлддөг форумууд {#popular-discussion-forums}
 
-There are many online forums which are a great place for discussion about best practices and application architecture as well as the future of React. If you have an answerable code-level question, Stack Overflow is usually a better fit.
+Доорх форумууд нь интернэт орчин дахь таны мэдлэгээ давтах, мөн React аппликейшны архитектурын талаар ярилцахад хамгийн тохиромжтой орчин юм.  Хэрвээ танд код бичих үед ямар нэг асуулт гарсан бол Stack Overflow-аас хариултаа авч болно. 
 
-Each community consists of many thousands of React users.
+Энэхүү форумууд нь олон сая React хөгжүүлэгчдээс бүтдэг.
 
-* [DEV's React community](https://dev.to/t/react)
-* [Hashnode's React community](https://hashnode.com/n/reactjs)
-* [Reactiflux online chat](https://discord.gg/0ZcbPKXt5bZjGY5n)
-* [Reddit's React community](https://www.reddit.com/r/reactjs/)
-* [Spectrum's React community](https://spectrum.chat/react)
+* [DEV дээрх хамтрал](https://dev.to/t/react)
+* [Hashnode-ийн React хөгжүүлэгчид](https://hashnode.com/n/reactjs)
+* [Reactiflux интернэт чат](https://discord.gg/0ZcbPKXt5bZjGY5n)
+* [Reddit дээрх React хөгжүүлэгчид](https://www.reddit.com/r/reactjs/)
+* [Spectrum дээрх React хөгжүүлэгчид](https://spectrum.chat/react)
 
-## News {#news}
+## Мэдээ {#news}
 
-For the latest news about React, [follow **@reactjs** on Twitter](https://twitter.com/reactjs) and the [official React blog](/blog/) on this website.
+React-ийн талаар шинэ мэдээнүүдийг [Twitter дээр **@reactjs**-ийг дагах](https://twitter.com/reactjs) мөн [React-ийн албан ёсны блог](/blog/)оор авч болно.
