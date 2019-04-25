@@ -8,11 +8,11 @@ redirect_from:
   - "tips/false-in-jsx.html"
 ---
 
-In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.
+React дээр та өөрийн тусгай үйлдэл агуулсан онцгой компонентийг үүсгэж болно. Үүний дараа програмынхаа төлөвөөс хамааруулан дүрсэлж болно.
 
-Conditional rendering in React works the same way conditions work in JavaScript. Use JavaScript operators like [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) or the [conditional operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) to create elements representing the current state, and let React update the UI to match them.
+Нөхцөлд тулгуурласан дүрслэл React дээр Жаваскрипт дээр нөхцөл хэрхэн ажилладаг зарчмаар л ажиллана. Жаваскриптийн [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) [conditional operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) ашиглан элэмент үүсгэхдээ одоогийн төлвийг нь тодорхойлж, төлөвт нь тохирсон дэлгэцийн загварыг React-р зуруулж болно.
 
-Consider these two components:
+Дараах хоёр компонент байя:
 
 ```js
 function UserGreeting(props) {
@@ -24,7 +24,7 @@ function GuestGreeting(props) {
 }
 ```
 
-We'll create a `Greeting` component that displays either of these components depending on whether a user is logged in:
+Бид `Greeting` компонент үүсгэн хэрэглэгч нэвтэрсэн эсэхээс нь хамааран дээрх компонентуудыг дүрслэе:
 
 ```javascript{3-7,11,12}
 function Greeting(props) {
@@ -42,15 +42,15 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
+[**CodePen дээр туршина уу**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
 
-This example renders a different greeting depending on the value of `isLoggedIn` prop.
+Энэ жишээ нь ялгаатай мэндчилгээ `isLoggedIn` шинж чанарын утгаас хамааран дүрсэлнэ.
 
-### Element Variables {#element-variables}
+### Элемент хувьсагчууд {#element-variables}
 
-You can use variables to store elements. This can help you conditionally render a part of the component while the rest of the output doesn't change.
+Та элементийг хадгалахдаа хувьсагч ашиглаж болно. ЭнЭ нь таньд нөхцөлд тулгуурлан компонентийн тодорхой хэсгийг өөрчлөн үлдсэн хэсэг нь өөрчлөгдөхгүй үлдэх боломжийг олгоно.
 
-Consider these two new components representing Logout and Login buttons:
+Нэвтрэх болох Гарах гэсэн товчтой дараах хоёр шинэ компонент байя:
 
 ```js
 function LoginButton(props) {
@@ -70,9 +70,9 @@ function LogoutButton(props) {
 }
 ```
 
-In the example below, we will create a [stateful component](/docs/state-and-lifecycle.html#adding-local-state-to-a-class) called `LoginControl`.
+Доорх жишээнд бид `LoginControl` нэртэй [нөхцөл компонент](/docs/state-and-lifecycle.html#adding-local-state-to-a-class) үүсгэе.
 
-It will render either `<LoginButton />` or `<LogoutButton />` depending on its current state. It will also render a `<Greeting />` from the previous example:
+Энэ нь `<LoginButton />` эсвэл `<LogoutButton />` хоёрын нэгийг одоогийн төлвөөсөө хамааран дүрсэлнэ. Мөн өмнөх жишээний `<Greeting />`-г бас дүрсэлнэ:
 
 ```javascript{20-25,29,30}
 class LoginControl extends React.Component {
@@ -116,13 +116,13 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
+[**CodePen ашиглан туршина уу**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
 
-While declaring a variable and using an `if` statement is a fine way to conditionally render a component, sometimes you might want to use a shorter syntax. There are a few ways to inline conditions in JSX, explained below.
+Хувьсагч зарлан `if` илэрхийлэл ашиглан нөхцөлд тулгуурлан компонентоо дүрслэх нь сайн арга ч гэсэн заримдаа та илүү бага синтаксаар бичмээр санагдаж магадгүй. Энэ тохиолдолд JSX дотроо нөхцөл бичих цөөн хэдэн аргууд байдгийг дор тайлбарлав.
 
-### Inline If with Logical && Operator {#inline-if-with-logical--operator}
+### Мөр доторхи If нөхцөл болон логик && оператор {#inline-if-with-logical--operator}
 
-You may [embed any expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
+Та угалзан хаалт ашиглан [ямар ч илэрхийллүүдийг JSX шигтгэж](/docs/introducing-jsx.html#embedding-expressions-in-jsx) болно. Энэ нь мөн Жаваскриптийн `&&` операторыг агуулна. Энэ нь нөхцөлд тулгуурлан элементийг нэмэхэд хэрэг болно.
 
 ```js{6-10}
 function Mailbox(props) {
@@ -146,17 +146,17 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
+[**CodePen дээр туршина уу**](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
 
-It works because in JavaScript, `true && expression` always evaluates to `expression`, and `false && expression` always evaluates to `false`.
+Жаваскрипт дээр `үнэн && илэрхийлэл` нь үргэлж `илэрхийлэл` байдаг ба `худал && илэрхийлэл` нь үргэлж `худал` байдаг учир ажиллана.
 
-Therefore, if the condition is `true`, the element right after `&&` will appear in the output. If it is `false`, React will ignore and skip it.
+Тодруулбал, хэрэв нөхцөл нь `үнэн` байвал `&&` операторын арийн элемент гаралт болон харагдана. Хэрэв нөхцөл `худал` бол React тоолгүй алгасан өнгөрдөг.
 
-### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
+### Мөр доторх If-Else нөхцөлт оператортой хамт {#inline-if-else-with-conditional-operator}
 
-Another method for conditionally rendering elements inline is to use the JavaScript conditional operator [`condition ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
+Өөр нэг нөхцөлд тулгуурлан элемент дүрслэх арга нь Жаваскриптийн нөхцөл оператор [`нөхцөл ? үнэн: худал`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) ашиглах юм.
 
-In the example below, we use it to conditionally render a small block of text.
+Доорх жишээнд бид жижиг хэмжээний текстийг нөхцөл дээр тулгуурлан дүрсэлнэ.
 
 ```javascript{5}
 render() {
@@ -169,7 +169,7 @@ render() {
 }
 ```
 
-It can also be used for larger expressions although it is less obvious what's going on:
+Мөн түүнчлэн илүү том илэрхийлэл дээр ашиглагдаж болох ч ойлгоход төвөгтэй болгодог:
 
 ```js{5,7,9}
 render() {
@@ -186,13 +186,14 @@ render() {
 }
 ```
 
-Just like in JavaScript, it is up to you to choose an appropriate style based on what you and your team consider more readable. Also remember that whenever conditions become too complex, it might be a good time to [extract a component](/docs/components-and-props.html#extracting-components).
+Яг л Жаваскрипт шиг та болон танай багийхан аль нь илүү уншихад эвтэйхэн байна түүнийгээ сонгох нь таний шийдвэр юм. Мөн нөхцөл нь хэтэрхий төвөгтэй цогц болвол [компонент болгон салгах](/docs/components-and-props.html#extracting-components) нь илүү сайн сонголт гэдийг санах хэрэгтэй.
 
-### Preventing Component from Rendering {#preventing-component-from-rendering}
+### Компонентийг дүрслэхээс сэргийлэх {#preventing-component-from-rendering}
 
-In rare cases you might want a component to hide itself even though it was rendered by another component. To do this return `null` instead of its render output.
+In rare cases you might want a componoүooto hide itself even though it was rendered by another component. To do this return `null` instead of its render output.
+Маш цөөн тохиолдолд та өөрийн компонентоо өөр компонентоор дамжин дүрслэгдсэн байсан нуухийг хүсэх байж болох юм. Ингэхийн тулд `null` утга дүрслэх гаралтынхаа оронд буцаана.
 
-In the example below, the `<WarningBanner />` is rendered depending on the value of the prop called `warn`. If the value of the prop is `false`, then the component does not render:
+Доорх жишээнд `<WarningBanner />` `warn` нэртэй шинж чанараасаа хамааран дүрслэгдэх юм. Хэрэв шинж чанарын утга `худал` бол компонент дүрслэгдэхгүй:
 
 ```javascript{2-4,29}
 function WarningBanner(props) {
@@ -238,6 +239,6 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
+[**CodePen дээр туршина уу**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
 
-Returning `null` from a component's `render` method does not affect the firing of the component's lifecycle methods. For instance `componentDidUpdate` will still be called.
+`null` утга `render` функцээс буцаах нь компонентийг амьдралын циклийн функцээс чөлөөлөн ажиллагаагүй болгоно гэсэн үг биш юм. Үнэндээ `componentDidUpdate` функц дуудагдсаар л байх болно.
