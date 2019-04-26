@@ -1,8 +1,8 @@
 ---
-title: Learn Once, Write Anywhere
+title: Ганц удаа сур, Хаа сайгүй ашигла
 order: 2
 ---
 
-We don't make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code.
+Таны ямар технологиуд ашиглаж байгааг үл харгалзан ѳмнѳх кодыг дахин бичихгүйгээр, React дээр шинэ боломжуудыг хийх боломжтой.
 
-React can also render on the server using Node and power mobile apps using [React Native](https://facebook.github.io/react-native/).
+Node ашиглан сервер талдаа React-ыг рендер хийж ашиглаж болдог мѳн гар утасны апп хийх бол [React Native](https://facebook.github.io/react-native/) ашиглана.

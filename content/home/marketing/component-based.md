@@ -1,8 +1,8 @@
 ---
-title: Component-Based
+title: Компонент-д тулгуурласан
 order: 1
 ---
 
-Build encapsulated components that manage their own state, then compose them to make complex UIs.
+Бие даан state-ээ удирддаг маш энгийн компонент бичиж, эдгээрийг хольж найруулан нарийн бүтэцтэй хэрэглэгчийн интерфэйс бүтээ.
 
-Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
+Компонентийн логик нь тэмплэйт-ээр бус JavaScript-ээр бичигддэг учраас ѳгѳгдлийг апп хооронд хялбар дамжуулж, DOM-оос state-ээ тусд нь байлгаж чадна.
