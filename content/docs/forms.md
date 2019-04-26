@@ -9,7 +9,7 @@ redirect_from:
   - "docs/forms-zh-CN.html"
 ---
 
-HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+HTML форм элементүүд React дээр байдаг бусад DOM элементүүдээс бага зэрэг өөр ажилладаг учир нь форм элементүүд зарим дотоод төлөв хадгалах хэрэгтэй байдаг. Жишээлбэл, энэ энгийн HTML форм нэг нэр хүлээж авдаг:
 
 ```html
 <form>
@@ -21,15 +21,15 @@ HTML form elements work a little bit differently from other DOM elements in Reac
 </form>
 ```
 
-This form has the default HTML form behavior of browsing to a new page when the user submits the form. If you want this behavior in React, it just works. But in most cases, it's convenient to have a JavaScript function that handles the submission of the form and has access to the data that the user entered into the form. The standard way to achieve this is with a technique called "controlled components".
+Энэ форм үндсэн HTML формын үйлдлийг агуулсан хэрэглэгч нэрээ оруулаад товч дарахад шинэ хуудас дуудагдана. Энэ үйлдэл React дээр ч адилхан ажиллана. Гэхдээ ихэнх тохиолдлуудад формыг мэдээлэл дамжуулах үйлдэл нь Жаварскрипт функцээр дамжих нь илүү нийтлэг арга юм. Энэ үйлдлийг стандартаар хийх аргыг "удирдагдсан компонентууд(controlled components)" гэж нэрлэдэг.
 
-## Controlled Components {#controlled-components}
+## Удирдагдсан Компонентууд {#controlled-components}
 
-In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with [`setState()`](/docs/react-component.html#setstate).
+HTML дээр формууд элементүүд болох `<input>`, `<textarea>` болон `<select>` нь өөрдсийн төлөвтэй бөгөөд хэрэглэгчийн оролт дээр тулгуурлан төлвүүдээ шинэчилдэг. React дээр хувирамтгай төлөв нь элементийн төлөв шинж чанарт хадгалагддаг бөгөөд зөвхөн [`setState()`](/docs/react-component.html#setstate) үйлдлээр шинэчлэгдэнэ.
 
-We can combine the two by making the React state be the "single source of truth". Then the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a "controlled component".
+Бид эдгээр хоёрыг нэгтгэн React-н төлвийг "нэг эх сурвалжтай үнэн" байлгадаг. Тэгээд React компонент нь формоо дүрслэх ба мөн форм дахь хэрэглэгчийн оролтоо удирддаг. Input формын элемент нь React-р удирдагдаж байгаа бол энэ нь "удирдагдсан компонент" юм.
 
-For example, if we want to make the previous example log the name when it is submitted, we can write the form as a controlled component:
+Жишээлбэл өмнөх жишээний хүний нэрийг бичээд илгээхэд лог хийх бол бид удирдагдсан компонент бичиж болно:
 
 ```javascript{4,10-12,24}
 class NameForm extends React.Component {
@@ -64,11 +64,11 @@ class NameForm extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
+[**CodePen дээр туршина уу**](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
 
-Since the `value` attribute is set on our form element, the displayed value will always be `this.state.value`, making the React state the source of truth. Since `handleChange` runs on every keystroke to update the React state, the displayed value will update as the user types.
+Бидний форм элемент дээр `value` аттрибут нь оноогдож байгаа учир дүрслэгдсэн утга нь `this.state.value` байх ба React-н төлвийг нэг эх сурвалжтай үнэн болгоно. `handleChange`товчний даралт бүрд ажиллан React-н төлвийг шинэчлэх учир дэлгэцэнд дүрслэгдэх утга нь хэрэглэгчийн бичснээр байх болно.
 
-With a controlled component, every state mutation will have an associated handler function. This makes it straightforward to modify or validate user input. For example, if we wanted to enforce that names are written with all uppercase letters, we could write `handleChange` as:
+Удирдагдсан компонентийн бүх төлвийн хувирал нь харгалзах зохицуулагч функцтэй байх болно.Энэ нь хэрэглэгчийн оролтын зөв бурууг шалгах болон засварлахад амар болно. Хэрэв нэрийг дан том үсгээр оруулахийг шаардах бол `handleChange` функцийг дараах байдлаар бичиж болно:
 
 ```javascript{2}
 handleChange(event) {
@@ -76,9 +76,9 @@ handleChange(event) {
 }
 ```
 
-## The textarea Tag {#the-textarea-tag}
+## textarea таг {#the-textarea-tag}
 
-In HTML, a `<textarea>` element defines its text by its children:
+HTML дээр `<textarea>` элемент нь өөрийн текстийг дэд утгаар тодохойлдог:
 
 ```html
 <textarea>
@@ -86,7 +86,7 @@ In HTML, a `<textarea>` element defines its text by its children:
 </textarea>
 ```
 
-In React, a `<textarea>` uses a `value` attribute instead. This way, a form using a `<textarea>` can be written very similarly to a form that uses a single-line input:
+React дээр `<textarea>` `value` аттрибут хэрэглэдэг. Энэ арга замаар форм `<textarea>` ашиглаж байгаа форм маш энгийн мөн нэг мөрт оролттой адилаар бичигдэж болно:
 
 ```javascript{4-6,12-14,26}
 class EssayForm extends React.Component {
@@ -123,11 +123,11 @@ class EssayForm extends React.Component {
 }
 ```
 
-Notice that `this.state.value` is initialized in the constructor, so that the text area starts off with some text in it.
+`this.state.value` нь байгуулагч дээр утгаа авсан байгааг анзаарсан бол үүгээр текстийн оролт дээрээ утга агуулж болно.
 
-## The select Tag {#the-select-tag}
+## select таг {#the-select-tag}
 
-In HTML, `<select>` creates a drop-down list. For example, this HTML creates a drop-down list of flavors:
+HTML дээр `<select>` нь доошоо урсдаг жагсаалт үүсгэдэг. Жишээ энэ HTML амтнуудын(flavors) доошоо урсдаг жагсаалт үүсгэсэн байна:
 
 ```html
 <select>
@@ -138,7 +138,7 @@ In HTML, `<select>` creates a drop-down list. For example, this HTML creates a d
 </select>
 ```
 
-Note that the Coconut option is initially selected, because of the `selected` attribute. React, instead of using this `selected` attribute, uses a `value` attribute on the root `select` tag. This is more convenient in a controlled component because you only need to update it in one place. For example:
+Энд Наргалын амт нь `selected` аттрибут зааж өгсөн учир анхнааса сонгогдсон байгааг анзаарах хэрэгтэй. React дээр `selected` аттрибут ашиглахийн олон `value` аттрибутыг үндсэн `select` таг дээр хэрэглэдэг. Энэ илүү амар арга бөгөөд удирдагдсан компонент дээр ганцхан газар өөрчлөлт хийнэ. Жишээлбэл:
 
 ```javascript{4,10-12,24}
 class FlavorForm extends React.Component {
@@ -178,33 +178,33 @@ class FlavorForm extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
+[**CodePen дээр туршина уу**](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
 
-Overall, this makes it so that `<input type="text">`, `<textarea>`, and `<select>` all work very similarly - they all accept a `value` attribute that you can use to implement a controlled component.
+Ерөнхийдөө энэ нь `<input type="text">`, `<textarea>`, and `<select>` элементүүдийг ижилхэн байдлаар ажилладаг болгож байна - тэдгээр нь бүр `value` аттрибут хүлээн авдаг удирдагдсан компонентод ашиглагдаж байна.
 
-> Note
+> Анхаар
 >
-> You can pass an array into the `value` attribute, allowing you to select multiple options in a `select` tag:
+> `value` аттрибутад жагсаалт утга илгээн `select` тагд олон утга сонгох боломжтой:
 >
 >```js
 ><select multiple={true} value={['B', 'C']}>
 >```
 
-## The file input Tag {#the-file-input-tag}
+## Файлын оролтын таг {#the-file-input-tag}
 
-In HTML, an `<input type="file">` lets the user choose one or more files from their device storage to be uploaded to a server or manipulated by JavaScript via the [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications).
+HTML дээр `<input type="file">` нь хэрэглэгчийг нэг эсвэл олон файл өөрийн төхөөрөмжөөс сонгон сервер лүү илгээх эсвэл Жаваскрипт [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications)-аар удирдах боломж олгодог.
 
 ```html
 <input type="file" />
 ```
 
-Because its value is read-only, it is an **uncontrolled** component in React. It is discussed together with other uncontrolled components [later in the documentation](/docs/uncontrolled-components.html#the-file-input-tag).
+Утга нь зөвхөн унших горимд байдаг учир энэ нь React дээр **удирдагдаагүй** компонент болно. ҮҮнийг бусад удирдагдаагүй компонентуудын хамт [дараа нь өөр баримтжуулалт](/docs/uncontrolled-components.html#the-file-input-tag) ярина.
 
-## Handling Multiple Inputs {#handling-multiple-inputs}
+## Олон оролтыг удирдах {#handling-multiple-inputs}
 
-When you need to handle multiple controlled `input` elements, you can add a `name` attribute to each element and let the handler function choose what to do based on the value of `event.target.name`.
+Нэг зэрэг олон `оролтын` элементүүд удирдах хэрэгтэй үед `name` аттрибутыг элемент бүр дээр нэмэн удирдагч(handler) функцийг `event.target.name`-н утгаар дамжуулан үйлдлээ сонгож болно.
 
-For example:
+Жишээлбэл:
 
 ```javascript{15,18,28,37}
 class Reservation extends React.Component {
@@ -254,9 +254,10 @@ class Reservation extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/wgedvV?editors=0010)
+[**CodePen дээр туршина уу**](https://codepen.io/gaearon/pen/wgedvV?editors=0010)
 
-Note how we used the ES6 [computed property name](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names) syntax to update the state key corresponding to the given input name:
+ES6 [тооцологдсон шинж чанарын нэр](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names) синтакс ашиглан өгөгдсөн оролтын нэрийн харгалзах төлвийн түлхүүрийг хэрхэн шинэчилж байгааг анзаарч болно:
+
 
 ```js{2}
 this.setState({
@@ -264,7 +265,7 @@ this.setState({
 });
 ```
 
-It is equivalent to this ES5 code:
+Энэ нь дараах ES5 кодтой ижилхэн:
 
 ```js{2}
 var partialState = {};
@@ -272,13 +273,13 @@ partialState[name] = value;
 this.setState(partialState);
 ```
 
-Also, since `setState()` automatically [merges a partial state into the current state](/docs/state-and-lifecycle.html#state-updates-are-merged), we only needed to call it with the changed parts.
+Мөн түүнчлэн `setState()` автоматаар [хэсэгчилсэн төлвийг одоогийн төлөв рүү нэгтгэснээр](/docs/state-and-lifecycle.html#state-updates-are-merged) бид зөвхөн өөрчлөгдсөн хэсгүүдийг дуудах хэрэгтэй.
 
-## Controlled Input Null Value {#controlled-input-null-value}
+## Удирдагдсан оролтын хоосон утга {#controlled-input-null-value}
 
-Specifying the value prop on a [controlled component](/docs/forms.html#controlled-components) prevents the user from changing the input unless you desire so. If you've specified a `value` but the input is still editable, you may have accidentally set `value` to `undefined` or `null`.
+[Удирдагдсан компонент](/docs/forms.html#controlled-components) дээр утга шинж чанарт нь тусгайлан утга оноох нь хэрэглэгч хүсээгүй л бол оролтын утгийг өөрчлөгдөхөөс сэргийлдэг. Хэрэв та тусгайлан `value` зааж өгсөн оролт нь засварлах боломжтой байвал та магадгүй санамсаргүйгээр `тодорхойлогдоогүй` эсвэл `хоосон` утга өгсөн байж болно.
 
-The following code demonstrates this. (The input is locked at first but becomes editable after a short delay.)
+Дараах код үүнийг заасан байна. (Оролт нь эхэндээ засварлах боломжгүйгээр цоожлогдсон ба богино хугацааны дараа засварлагдаж боломжтой болж байна.)
 
 ```javascript
 ReactDOM.render(<input value="hi" />, mountNode);
@@ -289,10 +290,10 @@ setTimeout(function() {
 
 ```
 
-## Alternatives to Controlled Components {#alternatives-to-controlled-components}
+## Удирдагдсан компонентуудаас өөр сонголт {#alternatives-to-controlled-components}
 
-It can sometimes be tedious to use controlled components, because you need to write an event handler for every way your data can change and pipe all of the input state through a React component. This can become particularly annoying when you are converting a preexisting codebase to React, or integrating a React application with a non-React library. In these situations, you might want to check out [uncontrolled components](/docs/uncontrolled-components.html), an alternative technique for implementing input forms.
+Заримдаа удирдагдсан компонентууд ашиглах төвөгтэй санагдаж болно учир нь React компонент дээр та удирдах(handler) функц өгөгдлийн өөрчлөлт болгонд зохицуулан бичих хэрэгтэй болж байна. Энэ ялангуяа бичигдсэн кодыг React руу шилжүүлэх эсвэл React програмыг React-н бус сан дээр залгахад(integrate) бүр төвөгтэй. Эдгээр тохиолдлуудад та магадгүй оролтын формуудыг хэрэгжүүлэх өөр нэг сонголт болох [удирдагдаагүй компонентууд](/docs/uncontrolled-components.html)-ын талаар унших хэрэгтэй болж магадгүй.
 
-## Fully-Fledged Solutions {#fully-fledged-solutions}
+## Бүрэн шийдэгдсэн шийдлүүд {#fully-fledged-solutions}
 
-If you're looking for a complete solution including validation, keeping track of the visited fields, and handling form submission, [Formik](https://jaredpalmer.com/formik) is one of the popular choices. However, it is built on the same principles of controlled components and managing state — so don't neglect to learn them.
+Хэрэв таньд оролтын өгөгдлийг шалгах, зочилсон талбаруудын мөрийг хөтлөх, формын өгөгдөл илгээлт зэрэг дээр бүтэн шийдэл хэрэгтэй бол [Formik](https://jaredpalmer.com/formik) нь нийтлэг сонголтуудын нэг юм. Энэ нь удирдагдсан компонентууд болон төлөв удирдах зарчимтай ижил зарчмаар бүтээгдсэн ч сурахгүй өнгөрч болохгүй юм.
