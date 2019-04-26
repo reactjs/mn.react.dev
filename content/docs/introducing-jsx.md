@@ -6,31 +6,31 @@ prev: hello-world.html
 next: rendering-elements.html
 ---
 
-Consider this variable declaration:
+Дараах хувьсагчийн зарлагаа байя:
 
 ```js
 const element = <h1>Hello, world!</h1>;
 ```
 
-This funny tag syntax is neither a string nor HTML.
+Хөгжилтэй нь энэ таг синтакс нь тэмдэгч болон HTML биш юм.
 
-It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.
+Үүнийг JSX гэж нэрлэдэг бөгөөд Жаваскриптийн синтакс өргөтгөл юм. Бид үүнийг React дээр дэлгэцийн загвар тодорхойлохдоо ашиглахийг зөвлөж байна. JSX нь танд загвар(template) хэлийг санагдуулж магадгүй ч энэ Жаваскриптэд байдаг зүйл юм.
 
-JSX produces React "elements". We will explore rendering them to the DOM in the [next section](/docs/rendering-elements.html). Below, you can find the basics of JSX necessary to get you started.
+JSX нь React "элементүүд" бүтээдэг. Би [дараагийн хэсэгт](/docs/rendering-elements.html) тэдгээрийг хэрхэн DOM руу дүрслэх талаар судална. Доошоо JSX-н үндсэн суурь ухагдахуунуудыг авах болно.
 
-### Why JSX? {#why-jsx}
+### Яагаад JSX? {#why-jsx}
 
-React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
+React нь дүрслэх логикоо хэрхэн эвентүүд удирдагдах, хэрхэн төлвүүд өөрчлөгдөж байгаа, өгөгдөл хэрхэн дүрслэгдэхэд бэлтгэгдэж байгаа гэх мэт бусад дэлгэцийн логиктойгоо цуг байдаг.
 
-Instead of artificially separating *technologies* by putting markup and logic in separate files, React [separates *concerns*](https://en.wikipedia.org/wiki/Separation_of_concerns) with loosely coupled units called "components" that contain both. We will come back to components in a [further section](/docs/components-and-props.html), but if you're not yet comfortable putting markup in JS, [this talk](https://www.youtube.com/watch?v=x7cQ3mrcKaY) might convince you otherwise.
+*Технологиуд* загвар болон логикоо тусдаа файлд салгадаг React "компонентууд" гэж нэрлэгдэх хоёуланг нь агуулсан нэгж ашиглаж [*хамаарлаа(concern)* салгадаг](https://en.wikipedia.org/wiki/Separation_of_concerns). Бид эргэн компонентуудын талаар [хойшоо бүлэгт](/docs/components-and-props.html) судлана, гэхдээ та загвараа JS дотор бичихтэй санал нийлэхгүй бол [энэ яриа](https://www.youtube.com/watch?v=x7cQ3mrcKaY) таний бодлийг өөрчилж магадгүй юм.
 
-React [doesn't require](/docs/react-without-jsx.html) using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and warning messages.
+React JSX заавал [ашиглахийг шаарддаггүй](/docs/react-without-jsx.html) ч ихэнх хүмүүс Жаваскрипт код дотор дэлгэцийн загвар байх нь төсөөлөхөд амар болгодог гэж үздэг. Мөн түүнчлэн React хэрэгтэй анхааруулгийн болон алдааны мэдээллүүдийг харуулдаг нь хэрэгтэй.
 
-With that out of the way, let's get started!
+Сэдвээсээ хазайхаас өмнө эхэлцгээе!
 
-### Embedding Expressions in JSX {#embedding-expressions-in-jsx}
+### Илэрхийллийг JSX дотор шигтгэх(embed) {#embedding-expressions-in-jsx}
 
-In the example below, we declare a variable called `name` and then use it inside JSX by wrapping it in curly braces:
+Доорх жишээнд бид `name` нэртэй хувьсагч зарлан түүнийгээ JSX дотор угалзан хаалтууд хүрээлүүлэн ашигласан байна:
 
 ```js{1,2}
 const name = 'Josh Perez';
@@ -42,9 +42,10 @@ ReactDOM.render(
 );
 ```
 
-You can put any valid [JavaScript expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) inside the curly braces in JSX. For example, `2 + 2`, `user.firstName`, or `formatName(user)` are all valid JavaScript expressions.
+Та ямар ч зөв [Жаваскрипт илэрхийлэл](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) угалзан хаалтаар хүрээлүүлэн JSX дотор ашиглаж болно. Жишээлбэл `2 + 2`, `user.firstName`, эсвэл `formatName(user)` нь бүр зөв Жаваскрипт илэрхийллүүд юм.
 
-In the example below, we embed the result of calling a JavaScript function, `formatName(user)`, into an `<h1>` element.
+Доорх жишээнд бид `formatName(user)` Жаваскрипт функцийн утгийг `<h1>` элемент рүү шигтгэж өгсөн байна.
+
 
 ```js{12}
 function formatName(user) {
@@ -70,13 +71,13 @@ ReactDOM.render(
 
 [](codepen://introducing-jsx)
 
-We split JSX over multiple lines for readability. While it isn't required, when doing this, we also recommend wrapping it in parentheses to avoid the pitfalls of [automatic semicolon insertion](https://stackoverflow.com/q/2846283).
+Бид кодыг илүү унших байдлыг нь бодон JSX-ээ олон мөр болгон хуваасан. Энэ зайлшгүй хийх ёстой зүйл биш ч хийж байгаа тохиолдолд [автомат цэг таслал нэмэгдэх](https://stackoverflow.com/q/2846283)-ээс сэргийлж дугуй хаалтаар хүрээлүүлэхийг зөвлөж байна.
 
-### JSX is an Expression Too {#jsx-is-an-expression-too}
+### JSX бол бас илэрхийлэл юм {#jsx-is-an-expression-too}
 
-After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects.
+Хөрвүүлэлт хийгдсний дараа JSX илэрхийллүүд нь энгийн Жаваскрипт функцийн дуудалтууд болон объектууд болно хөрвөдөг.
 
-This means that you can use JSX inside of `if` statements and `for` loops, assign it to variables, accept it as arguments, and return it from functions:
+Энэ нь `if` нөхцөл болон `for` давталт, хувьсагчуудийн утга олголтууд, функцийн аргументууд хүлээн авах, функцээс утга буцаах үйлдлийг JSX дотор хийж болно гэсэн үг:
 
 ```js{3,5}
 function getGreeting(user) {
@@ -87,37 +88,37 @@ function getGreeting(user) {
 }
 ```
 
-### Specifying Attributes with JSX {#specifying-attributes-with-jsx}
+### JSX-р аттрибут тодорхойлох нь {#specifying-attributes-with-jsx}
 
-You may use quotes to specify string literals as attributes:
+Та аттрибут дээр квот ашиглан тэмдэгт төрлөөр өгөх байх:
 
 ```js
 const element = <div tabIndex="0"></div>;
 ```
 
-You may also use curly braces to embed a JavaScript expression in an attribute:
+Мөн та угалзан хаалтаар Жаваскрипт илэрхийлэл аттрибутад шигтгэж болно:
 
 ```js
 const element = <img src={user.avatarUrl}></img>;
 ```
 
-Don't put quotes around curly braces when embedding a JavaScript expression in an attribute. You should either use quotes (for string values) or curly braces (for expressions), but not both in the same attribute.
+Жаваскрипт илэрхийлэл угалзан хаалт ашиглан аттрибутад шигтгэж өгж байгаа бол квот ашиглахгүй. Та квот (тэмдэгт утгийн хувьд) эсвэл угалзан хаалтын (илэрхийлэлд) аль нэгийг ашиглаж болох ч зэрэг нэг аттрибутад хэрэглэж болохгүй.
 
->**Warning:**
+>**Анхааруулга:**
 >
->Since JSX is closer to JavaScript than to HTML, React DOM uses `camelCase` property naming convention instead of HTML attribute names.
+>JSX нь HTML илүүтэй Жаваскрипттэй төстэй учир React DOM `camelCase` шинж чанарын нэрлэх стандарт HTML аттрибут нэрүүдийн оронд хэрэглэдэг.
 >
->For example, `class` becomes [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) in JSX, and `tabindex` becomes [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex).
+>Жишээлбэл `class` нь JSX дээр [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className), `tabindex` нь [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex) болдог.
 
-### Specifying Children with JSX {#specifying-children-with-jsx}
+### JSX-д дэд(children) элемент тодорхойлох нь {#specifying-children-with-jsx}
 
-If a tag is empty, you may close it immediately with `/>`, like XML:
+Хэрэв таг хоосон бол яг XML шиг `/>` хаах болно:
 
 ```js
 const element = <img src={user.avatarUrl} />;
 ```
 
-JSX tags may contain children:
+JSX тагууд нь дэд элемент агуулж болдог:
 
 ```js
 const element = (
@@ -128,9 +129,9 @@ const element = (
 );
 ```
 
-### JSX Prevents Injection Attacks {#jsx-prevents-injection-attacks}
+### JSX Injection халдлагаас сэргийлдэг {#jsx-prevents-injection-attacks}
 
-It is safe to embed user input in JSX:
+JSX дотор хэрэглэгчийн оролтыг шигтгэхэд аюулгүй байдаг:
 
 ```js
 const title = response.potentiallyMaliciousInput;
@@ -138,13 +139,13 @@ const title = response.potentiallyMaliciousInput;
 const element = <h1>{title}</h1>;
 ```
 
-By default, React DOM [escapes](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that's not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks.
+Анхнаасаа React DOM JSX дотор шигтгэгдсэн утгийг дүрслэхийн өмнө [escape хийдэг](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html). Ингэснээр та таны програмд тусгагдаагүй зүйлийг тарилга байдлаар халдах боломжийг хаадаг. Бүх зүйл дэлгэцэнд дүрслэгдэхээсээ өмнө тэмдэгт болон хувирдаг. Энэ нь [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting) халдлагуудаас сэргийлдэг.
 
-### JSX Represents Objects {#jsx-represents-objects}
+### JSX Объектуудыг төлөөлөх нь {#jsx-represents-objects}
 
-Babel compiles JSX down to `React.createElement()` calls.
+Babel JSX-ыг `React.createElement()` дуудалтууд болгон хөрвүүлдэг.
 
-These two examples are identical:
+Доорх хоёр жишээнүүд ижилхэн:
 
 ```js
 const element = (
@@ -162,7 +163,7 @@ const element = React.createElement(
 );
 ```
 
-`React.createElement()` performs a few checks to help you write bug-free code but essentially it creates an object like this:
+`React.createElement()` хэдэн шалгалтууд гүйцэтгэн таньд алдаагүй код бичихэд тусалдаг ч дараах шиг объект үүсгэдэг:
 
 ```js
 // Note: this structure is simplified
@@ -175,10 +176,10 @@ const element = {
 };
 ```
 
-These objects are called "React elements". You can think of them as descriptions of what you want to see on the screen. React reads these objects and uses them to construct the DOM and keep it up to date.
+Эдгээр объектууд нь "React элементүүд" гэж дуудагддаг. Та үүнийг дэлгэц дээр харахийн хүссэн зүйлийн чинь тайлбар гэж бодож болно. React эдгээр объектуудыг уншаанд DOM шинэчилж байдаг.
 
-We will explore rendering React elements to the DOM in the next section.
+Бид дараагийн бүлэгт React элементүүдийг дүрслэх талаар судлаж болно.
 
->**Tip:**
+>**Зөвлөмж:**
 >
->We recommend using the ["Babel" language definition](https://babeljs.io/docs/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted. This website uses the [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/) color scheme which is compatible with it.
+>Бид ["Babel" хэлний тодорхойлолт](https://babeljs.io/docs/editors)-ийг код засварлагчийн сонголт дээрээ ашиглахийг зөвлөдөг ES6 болон JSX код нь хоёулаа зөв тодордог(highlight). Энэ вебсайт [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/) өнгөний схем хэрэглэдэг зохицолдолгоо сайтай.
