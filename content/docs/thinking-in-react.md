@@ -8,17 +8,17 @@ redirect_from:
 prev: composition-vs-inheritance.html
 ---
 
-React is, in our opinion, the premier way to build big, fast Web apps with JavaScript. It has scaled very well for us at Facebook and Instagram.
+Бидний бодлоор React бол том хэмжээний хурдан Веб програмууд Жаваскрипт дээр бичих тэргүүн сонголтын нэг юм. Facebook болон Instagram дээр scale сайн хийж байна.
 
-One of the many great parts of React is how it makes you think about apps as you build them. In this document, we'll walk you through the thought process of building a searchable product data table using React.
+React-н олон гайхалтай хэсгүүдийн нэг нь веб програмаа бичихдээ хэрхэн бодох нь чухал. Энэ баримтжуулалтад React ашиглан бараа хайх боломжтой апп бичих процесийг тайлбарласан бодлоо хүргэе.
 
-## Start With A Mock {#start-with-a-mock}
+## Mock-с эхэл {#start-with-a-mock}
 
-Imagine that we already have a JSON API and a mock from our designer. The mock looks like this:
+Та аль хэдийн JSON API ба mock загвар дизайнераасаа авцан гэж төсөөлье. Mock дараах байдлаар харагдъя:
 
 ![Mockup](../images/blog/thinking-in-react-mock.png)
 
-Our JSON API returns some data that looks like this:
+Бидний JSON API дараах байдалтай өгөгдөл буцаадаг:
 
 ```
 [
@@ -31,27 +31,27 @@ Our JSON API returns some data that looks like this:
 ];
 ```
 
-## Step 1: Break The UI Into A Component Hierarchy {#step-1-break-the-ui-into-a-component-hierarchy}
+## Алхам 1: Дэлгэцийн загвараа Компонент шатлал болгон салга {#step-1-break-the-ui-into-a-component-hierarchy}
 
-The first thing you'll want to do is to draw boxes around every component (and subcomponent) in the mock and give them all names. If you're working with a designer, they may have already done this, so go talk to them! Their Photoshop layer names may end up being the names of your React components!
+Эхний хийх зүйл бол загвар дээр байгаа компонент болгонд(мөн түүний дэд компонентод) хайрцаг зурах бөгөөд бүгдэнд нь нэр өгөх юм. Хэрэв та дизайнертайгаа цуг ажиллаж байгаа бол магадгүй тэд аль хэдийн хийчихсэн байж мэднэ. Тиймээс очоод ярилцаад үз! Тэдний Photoshop давхаргын нэрнүүд нь таны React компонентүүдийн нэр байж болох юм!
 
-But how do you know what should be its own component? Just use the same techniques for deciding if you should create a new function or object. One such technique is the [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle), that is, a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents.
+Гэхдээ та хэрхэн энэ өөрөө компонент болох вэ гэдгээ мэдэх вэ? Та код бичихдээ шинэ функц болон объект үүсгэхдээ ашигладаг аргаа л ашиглана. Эдгээр аргуудын нэг нь [ганц хариуцлагатай ухагдахуун](https://en.wikipedia.org/wiki/Single_responsibility_principle) бөгөөд нэг компонент нэг л зүйл хийдэг. Хэрэв үйлдэл нь өсөөд эхэлбэл тэдгээрийг жижиг дэд компонентууд болгон салгах нь зүйтэй.
 
-Since you're often displaying a JSON data model to a user, you'll find that if your model was built correctly, your UI (and therefore your component structure) will map nicely. That's because UI and data models tend to adhere to the same *information architecture*, which means the work of separating your UI into components is often trivial. Just break it up into components that represent exactly one piece of your data model.
+ Та ихэвчлэн JSON өгөгдлийн загвар хэрэглэгч рүү дүрсэлж байгаагаас хойш хэрэв таны загвар(model) зөв бичигдсэн бол таны дэлгэцийн загвар(мөн түүнчлэн таны компонент бүтэц) яг сайхан нийцэх ёстой. Учир нь дэлгэцийн загвар болон өгөгдлйин загварууд нь ижилхэн *мэдээллийн архитектур*-тай байхийг шаарддаг. Өөрөөр хэлбэл дэлгэцийн загварын ажлаа тусад нь салгах нь ач холбогдолгүй юм. Зүгээр л өгөгдлийн загварынхаа нэг хэсгийг компонент болгон салга.
 
 ![Component diagram](../images/blog/thinking-in-react-components.png)
 
-You'll see here that we have five components in our simple app. We've italicized the data each component represents.
+Бидний энгийн програмд таван компонентууд байгааг харж болно. Бид компонент бүрийг төлөөлсөн өгөгдлийг налуу болгосон.
 
-  1. **`FilterableProductTable` (orange):** contains the entirety of the example
-  2. **`SearchBar` (blue):** receives all *user input*
-  3. **`ProductTable` (green):** displays and filters the *data collection* based on *user input*
-  4. **`ProductCategoryRow` (turquoise):** displays a heading for each *category*
-  5. **`ProductRow` (red):** displays a row for each *product*
+  1. **`FilterableProductTable` (улбар шар):** жишээг бүгдийг багтаасан
+  2. **`SearchBar` (цэнхэр):**  бүх *хэрэглэгчийн оролm*-ыг хүлээн авна
+  3. **`ProductTable` (green):** *хэрэглэгчийн оролт* дээр тулгуурлан *өгөгдлийн цуглуулга*-г шүүх болон дэлгэцэн дүрсэлнэ
+  4. **`ProductCategoryRow` (Бүдэг цэнхэр):** *категори* болгоны гарчигийг дүрсэлнэ
+  5. **`ProductRow` (улаан):** *бараа* болгоныг мөрөөр дүрсэлнэ
 
-If you look at `ProductTable`, you'll see that the table header (containing the "Name" and "Price" labels) isn't its own component. This is a matter of preference, and there's an argument to be made either way. For this example, we left it as part of `ProductTable` because it is part of rendering the *data collection* which is `ProductTable`'s responsibility. However, if this header grows to be complex (i.e. if we were to add affordances for sorting), it would certainly make sense to make this its own `ProductTableHeader` component.
+Хэрэв та `ProductTable`-г харвал та хүснэгтийн толгой("Нэр" болон "Үнэ" агуулсан) өөрийн гэсэн компонентгүй байгааг харна. Тусад компонент хийх эсэх нь таны сонголтын л асуудал юм. Жишээлбэл `ProductTable` энэ байгаа чигээр нь үлдээгээд хүснэгтийн толгой хэвлэх нь өгөгдөл дүрслэхийн нэг хэсэг гэж үзэж болох юм. Гэхдээ хүснэгтийн толгой илүү цогц болвол(жишээ нь бид эрэмблэх сонголт нэмэх бол) тусад нь `ProductTableHeader` компонент үүсгэх нь илүү дээр байж болно.
 
-Now that we've identified the components in our mock, let's arrange them into a hierarchy. This is easy. Components that appear within another component in the mock should appear as a child in the hierarchy:
+За одоо бид анхны загварын компонентуудаа мэдэж авсан бол шатлал бүтцэд оруулан эрэмблэе. Энэ нь амархан. Загвар дээр өөр нэг компонент дотор харагдаж байгаа компонент шатлалт бүтцээрээ дэд компонент болно:
 
   * `FilterableProductTable`
     * `SearchBar`
@@ -59,90 +59,94 @@ Now that we've identified the components in our mock, let's arrange them into a 
       * `ProductCategoryRow`
       * `ProductRow`
 
-## Step 2: Build A Static Version in React {#step-2-build-a-static-version-in-react}
+## Алхам 2: React дээр статик хувибарыг нь бичих {#step-2-build-a-static-version-in-react}
 
-<p data-height="600" data-theme-id="0" data-slug-hash="BwWzwm" data-default-tab="js" data-user="lacker" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/gaearon/pen/BwWzwm">Thinking In React: Step 2</a> on <a href="https://codepen.io">CodePen</a>.</p>
+<a href="https://codepen.io/gaearon/pen/BwWzwm">React дээр бодох: Алхам 2</a> on 
+<a href="https://codepen.io">CodePen</a><p data-height="600" data-theme-id="0" data-slug-hash="BwWzwm" data-default-tab="js" data-user="lacker" data-embed-version="2" class="codepen">байгаа кодыг харна уу.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-Now that you have your component hierarchy, it's time to implement your app. The easiest way is to build a version that takes your data model and renders the UI but has no interactivity. It's best to decouple these processes because building a static version requires a lot of typing and no thinking, and adding interactivity requires a lot of thinking and not a lot of typing. We'll see why.
+За одоо би компонентын шатлалтй болсон болохоор програмаа бичих боллоо. Таны өгөгдлийн загварын аваад ямар ч харилцан үйлдэлгүйгээр зөвхөн дэлгэц рүү дүрслэх нь хамгийн амархан хувилбар юм. Статик хувилбар нь бодохгүйгээр бичих зүйл ихтэй байхад нь харилцах хэсгийг бичихэд нэлээн бодох шаардлага гарах нэг их бичиглэл орохгүй учир ингэж салгаж хийх нь илүү дээр юм. Бид яагаад гэдгийг ойлгоно.
 
-To build a static version of your app that renders your data model, you'll want to build components that reuse other components and pass data using *props*. *props* are a way of passing data from parent to child. If you're familiar with the concept of *state*, **don't use state at all** to build this static version. State is reserved only for interactivity, that is, data that changes over time. Since this is a static version of the app, you don't need it.
+Програмийнхаа өгөгдлийн загвараа дэлгэц рүү дүрслэх статик хувилбараа хийхийн тулд *props* ашиглан өгөгдлөө дамжуулж дахин ашиглахаар компонент бичих нь тохиромжтой. *props* бол эцэг элементээс дэд элемент рүү өгөгдлийг дамжуулах арга юм. Та *төлөв* гэдэг ойлголтыг мэддэг бол, энэ статик хувилбарт **ямар ч төлөв битгий ашигла**. Төлөв бол хугацааний туршид өгөгдөл өөрчлөгдөх харилцаанд ашигладаг. Бид статик хувилбар хийж байгаа учраас төлөв хэрэггүй юм.
 
-You can build top-down or bottom-up. That is, you can either start with building the components higher up in the hierarchy (i.e. starting with `FilterableProductTable`) or with the ones lower in it (`ProductRow`). In simpler examples, it's usually easier to go top-down, and on larger projects, it's easier to go bottom-up and write tests as you build.
+Та доороос дээш эсвэл дээрээс доош арга ашиглан бичиж болно. ЭНэ нь компонентийн шатлалын бүтцийн дээд талын(`FilterProductTable`-с эхлэх) эсвэл доод талаас(`ProductRow`) эхэлж болно гэсэн үг. Ихэвчлэн дээрээс доош арга нь илүү амархан байдаг ба том төсөлд доороос дээш аргийг ашиглахад тест бичихэд амархан болдог.
 
-At the end of this step, you'll have a library of reusable components that render your data model. The components will only have `render()` methods since this is a static version of your app. The component at the top of the hierarchy (`FilterableProductTable`) will take your data model as a prop. If you make a change to your underlying data model and call `ReactDOM.render()` again, the UI will be updated. It's easy to see how your UI is updated and where to make changes since there's nothing complicated going on. React's **one-way data flow** (also called *one-way binding*) keeps everything modular and fast.
+Энэ алхмын төгсгөлд та өгөгдлийн загвараа дүрслэх дахин ашиглагдахуйц компонентийн сантай болно. Статик хувилбард Компонентууд нь зөвхөн `render()` аргийг(method) хэрэгжүүлсэн байна. Шатлалын дээд талын компонент(`FilterableProductTable`) өгөгдлийн загварын шинж чанараар авна. Хэрэв та өгөгдөлдөө өөрчлөлт хийсэн бол `ReactDOM.render()` дахин дуудагдаж дэлгэцийн загвар шинэчлэгдэх болно. Энэ нь өөрчлөлт хийхэд таны дэлгэцийн загвар хэрхэн шинэчлэгдэж байгааг харахад амар болгоно. React-н **нэг чиглэлт өгөгдлийн урсгал** (мөн *нэг чиглэлт холболт(one-way binding)* гэж нэрлэдэг) нь бүхнийг модулар байдлаар үлдээн хурдан болгодог.
 
-Simply refer to the [React docs](/docs/) if you need help executing this step.
+Энэ алхмийг ажиллуулахад тусламж хэрэгтэй бол [React баримтжуулалт](/docs/) руу орно уу.
 
-### A Brief Interlude: Props vs State {#a-brief-interlude-props-vs-state}
 
-There are two types of "model" data in React: props and state. It's important to understand the distinction between the two; skim [the official React docs](/docs/interactivity-and-dynamic-uis.html) if you aren't sure what the difference is.
+### Бяцхан завсарлага: Шинж чанар эсвэл Төлөв {#a-brief-interlude-props-vs-state}
 
-## Step 3: Identify The Minimal (but complete) Representation Of UI State {#step-3-identify-the-minimal-but-complete-representation-of-ui-state}
+React-д хоёр төрлийн өгөгдлийн загвар байдаг: props болон state. Энэ хоёрын ялгааг ойлгох нь чухал; Хэрэв та ялгааг нь сайн мэддэгтээ итгэлгүй бол [React албан ёсны баримтжуулалт](/docs/interactivity-and-dynamic-uis.html)-ыг гүйлгэн харна уу.
 
-To make your UI interactive, you need to be able to trigger changes to your underlying data model. React makes this easy with **state**.
+## Алхам 3: Дэлгэцийн загварын төлвийг минимал(гэхдээ бүрэн) мэдэх нь {#step-3-identify-the-minimal-but-complete-representation-of-ui-state}
 
-To build your app correctly, you first need to think of the minimal set of mutable state that your app needs. The key here is [DRY: *Don't Repeat Yourself*](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). Figure out the absolute minimal representation of the state your application needs and compute everything else you need on-demand. For example, if you're building a TODO list, just keep an array of the TODO items around; don't keep a separate state variable for the count. Instead, when you want to render the TODO count, simply take the length of the TODO items array.
+Та дэлгэцийн загвараа идэвхитэй(interactive) болгохийн өгөгдлийн загварын өөрчлөлтийг мэдэрж чаддаг байх хэрэгтэй. React үүнийг **төлөв**-р амархан хийдэг.
+
+Програмаа зөв бичихийн тулд таны програмийн өөрчлөгдөж болох төлвүүдийг минимал байдлаар бодох хэрэгтэй. Арга нь [DRY: *Don't Repeat Yourself*](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). Програмийн төлвийн минимал төлөөллийг бодож олохийн тулд танд хэрэгтэй бүхнийг тооцоол. Жишээлбэл, хийх зүйлийн жагсаалт хийх гэж байгаа бол хийх зүйл нь массивт хадгалж болох ч хийх зүйлийн жагсаалтаа тоолохдоо нэмж хувьсагч битгий ашиглаарай. Үүнийн оронд хийх зүйлээ хадгалж байгаа жагсаалтийн уртаа тоолоход л хангалттай.
 
 Think of all of the pieces of data in our example application. We have:
+Жишээ програмын өгөгдлийн хэсэг болгонийг бодоорой. Бидэнд:
 
-  * The original list of products
-  * The search text the user has entered
-  * The value of the checkbox
-  * The filtered list of products
+  * Барааны жагсаалт
+  * Хэрэглэгчийн оруулсан хайлтын текст
+  * Чеклэсэн утга
+  * Шүүгдсэн барааны жагсаалт
 
-Let's go through each one and figure out which one is state. Simply ask three questions about each piece of data:
+Эдгээр бүгдийг аль нь төлөв болохийг тогтооцгооё. Дараах 3 асуултыг өгөгдлийн хэсэг болгон дээр тавиарай:
 
-  1. Is it passed in from a parent via props? If so, it probably isn't state.
-  2. Does it remain unchanged over time? If so, it probably isn't state.
-  3. Can you compute it based on any other state or props in your component? If so, it isn't state.
+  1. Эцэг компонентоос шинж чанараар дамжин ирсэн үү? Тийм бол энэ нь магадгүй төлөв биш юм.
+  2. Энэ нь өөрчлөгдөхгүй үлдэх үү? Тийм бол энэ нь магадгүй төлөв биш юм.
+  3. Та үүнийг бусад төлөв болон шинж чанараас тооцоолж чадах уу? Тийм бол магадгүй төлөв биш юм.
 
 The original list of products is passed in as props, so that's not state. The search text and the checkbox seem to be state since they change over time and can't be computed from anything. And finally, the filtered list of products isn't state because it can be computed by combining the original list of products with the search text and value of the checkbox.
+Барааны жагсаалт шинж чанарт дамжигдан ирж байгаа учир төлөв биш юм. Хайх текст болон чагт нь хугацааны туршид өөрчлөгдөн бусад төрлөөс тооцоолж болохгүй тул төлөв гэж харагдаж байна.
 
-So finally, our state is:
+Эцэтс нь бидний төлөв нь:
 
-  * The search text the user has entered
-  * The value of the checkbox
+  * Хэрэглэгчийн оруулсан хайлтын текст
+  * Чагтны утга
 
-## Step 4: Identify Where Your State Should Live {#step-4-identify-where-your-state-should-live}
+## Алхам 4: Таны төлөв хаана байхийг тогтооох нь {#step-4-identify-where-your-state-should-live}
 
-<p data-height="600" data-theme-id="0" data-slug-hash="qPrNQZ" data-default-tab="js" data-user="lacker" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/gaearon/pen/qPrNQZ">Thinking In React: Step 4</a> on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="600" data-theme-id="0" data-slug-hash="qPrNQZ" data-default-tab="js" data-user="lacker" data-embed-version="2" class="codepen"><a href="https://codepen.io/gaearon/pen/qPrNQZ">React дээр бодох: Алхам 4</a>-н кодыг <a href="https://codepen.io">CodePen</a> дээр харах.</p>
 
-OK, so we've identified what the minimal set of app state is. Next, we need to identify which component mutates, or *owns*, this state.
+Бид минимал байдлаар бидний програмын төлвүүдийг тодорхойллоо. Дараа нь бид ямар компонент нь өөрчлөгдөх эсвэл төлөв эзэмшихийг тогтоох хэрэгтэй.
 
-Remember: React is all about one-way data flow down the component hierarchy. It may not be immediately clear which component should own what state. **This is often the most challenging part for newcomers to understand,** so follow these steps to figure it out:
+React нь компонентийн шатлалын доошоо нэг урсгалтай гэдгийг санах хэрэгтэй. Энэ нь ямар компонент төлөв эзэмших нь ойлгомжтой болж байна. ** Энэ нь ихэнхидээ шинээр сурж байгаа хүмүүст ойлгоход төвөгтэй** хэсэг нь байж болох учраас дараах алхмуудыг даган ойлгож болно:
 
-For each piece of state in your application:
+Таны програмын төлөв болгон дээр:
 
-  * Identify every component that renders something based on that state.
-  * Find a common owner component (a single component above all the components that need the state in the hierarchy).
-  * Either the common owner or another component higher up in the hierarchy should own the state.
-  * If you can't find a component where it makes sense to own the state, create a new component simply for holding the state and add it somewhere in the hierarchy above the common owner component.
+  * Энэ төлөв дээр тулгуурлан ямар нэг зүйл дүрсэлж байгаа компонентийг тодорхойлно.
+  * Нийтлэг эзэмшигч компонентийг хайж олох (төлөв хэрэгтэй байгаа бүх компонентүүдийн шатлалын дээд талын компонент).
+  * Нийтлэг эзэмшигч эсвэл шатлалын дээд талд байнаа өөр нэг компонент төлвийг эзэмших хэрэгтэй.
+  * Та ямар нэг төлөв эзэмших ёстой гэж бодож байгаа компонент олж чадахгүй бол шинээр компонент үүсгэн шатлалын дээд талд нь нэмнэ.
 
-Let's run through this strategy for our application:
+Энэ аргачлалийг өөрдийн програмдаа хэрэгжүүлье:
 
-  * `ProductTable` needs to filter the product list based on state and `SearchBar` needs to display the search text and checked state.
-  * The common owner component is `FilterableProductTable`.
-  * It conceptually makes sense for the filter text and checked value to live in `FilterableProductTable`
+  * `ProductTable` нь бараа жагсаалтийг төлөв дээр тулгуурлан шүүх хэрэгтэй ба `SearchBar` нь хайлтын текст болон чагтласан төлвийг дүрслэх хэрэгтэй.
+  * `FilterableProductTable` бол нийтлэг эзэмшигч юм.
+  * Агуулгынхаа хувьд текст шүүх болон чагтласан утга `FilterableProductTable` байх нь зүйтэй.
 
-Cool, so we've decided that our state lives in `FilterableProductTable`. First, add an instance property `this.state = {filterText: '', inStockOnly: false}` to `FilterableProductTable`'s `constructor` to reflect the initial state of your application. Then, pass `filterText` and `inStockOnly` to `ProductTable` and `SearchBar` as a prop. Finally, use these props to filter the rows in `ProductTable` and set the values of the form fields in `SearchBar`.
+За бид тэгэхээр төлвүүд `FilterableProductTable`-д байхийг шийдлээ. Эхлээд `FilterableProductTable` `байгуулагч` функц руу instance-н шинж чанар `this.state = {filterText: '', inStockOnly: false}` нэмэн анхний утгуудыг нь зааж өгөе. Дараа нь `filterText` болон `inStockOnly`-г `ProductTable` болон `SearchBar` руу шинж чанар болгон дамжуулая. Эдгээр шинж чанаруудыг `ProductTable`-д мөрүүдийг шүүхэд, `SearchBar`-д формын талбаруудын утгийг бөглөхөд ашиглана.
 
-You can start seeing how your application will behave: set `filterText` to `"ball"` and refresh your app. You'll see that the data table is updated correctly.
+Та өөрийн програмаа дараах байдалтай ажиллаж байгааг харна. `filterText` руу `"ball"` утга онооход өгөгдлийн хүснэгтэд шинэчлэгдэнэ.
 
-## Step 5: Add Inverse Data Flow {#step-5-add-inverse-data-flow}
+## Алхам 5: Урваа өгөгдлийн урсгал нэмэх {#step-5-add-inverse-data-flow}
 
-<p data-height="600" data-theme-id="0" data-slug-hash="LzWZvb" data-default-tab="js,result" data-user="rohan10" data-embed-version="2" data-pen-title="Thinking In React: Step 5" class="codepen">See the Pen <a href="https://codepen.io/gaearon/pen/LzWZvb">Thinking In React: Step 5</a> on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="600" data-theme-id="0" data-slug-hash="LzWZvb" data-default-tab="js,result" data-user="rohan10" data-embed-version="2" data-pen-title="Thinking In React: Step 5" class="codepen"><a href="https://codepen.io/gaearon/pen/LzWZvb">Thinking In React: Алхам 5 </a><a href="https://codepen.io">CodePen</a> дээр код харах</p>
 
-So far, we've built an app that renders correctly as a function of props and state flowing down the hierarchy. Now it's time to support data flowing the other way: the form components deep in the hierarchy need to update the state in `FilterableProductTable`.
+За бид програмаа өгөгдлөө зөв дүрслэн шатлалаас доошоо төлөв болон шинж чанараа зөв дамжуулан хийлээ. Одоо бид өгөгдлийг эсрэг чиглэлд дамжуулах цаг боллоо: шатлалын гүнд байнаа форм компонентууд `FilterableProductTable`-н төлвийг шинэчлэх хэрэгтэй байна.
 
-React makes this data flow explicit to make it easy to understand how your program works, but it does require a little more typing than traditional two-way data binding.
+React энэ өгөгдлийн урсгалын тусгайлан хийдэг бөгөөд энэ нь таны програм хэрхэн ажилдгийг ойлгоход амар болгодог уламжлалт хоёр чиглэлтэй өгөгдлийн холболтоос бага зэрэг их бичиглэл шаардана.
 
 If you try to type or check the box in the current version of the example, you'll see that React ignores your input. This is intentional, as we've set the `value` prop of the `input` to always be equal to the `state` passed in from `FilterableProductTable`.
 
-Let's think about what we want to happen. We want to make sure that whenever the user changes the form, we update the state to reflect the user input. Since components should only update their own state, `FilterableProductTable` will pass callbacks to `SearchBar` that will fire whenever the state should be updated. We can use the `onChange` event on the inputs to be notified of it. The callbacks passed by `FilterableProductTable` will call `setState()`, and the app will be updated.
+Бид юу хүсэж байгаагаа жаахан бодоё. Хэрэглэгчийг форм өөрчлөх бүрд хэрэглэгчийн оролтод тулгуурлан төлвөө яг зэрэг солих хэрэгтэй байна. Компонент нь зөвхөн өөрийнхөө төлвийг л шинэчилж чадах учир `FilterableProductTable` нь `SearchBar` руу эргэн дуудагддаг(callback) функц дамжуулан төлвөө сольж болно. Бид `onChange` эвентийг ашиглан өөрчлөлтийг мэдэрж болно. `FilterableProductTable`-с дамжуулагдсан эргэн дуудагдах функц нь `setState()`-г дуудан програм шинэчлэгдэх юм.
 
-Though this sounds complex, it's really just a few lines of code. And it's really explicit how your data is flowing throughout the app.
+Бага зэрэг ярвигтай санагдаж болох ч энэ хэдхэн мөр код юм. Мөн энэ нь таны програмын дотор өгөгдөл хэрхэн урсахийг тодорхой заасан болно.
 
-## And That's It {#and-thats-it}
+## За боллоо {#and-thats-it}
 
-Hopefully, this gives you an idea of how to think about building components and applications with React. While it may be a little more typing than you're used to, remember that code is read far more than it's written, and it's extremely easy to read this modular, explicit code. As you start to build large libraries of components, you'll appreciate this explicitness and modularity, and with code reuse, your lines of code will start to shrink. :)
+Энэхүү бичвэр танд компонент болон програм React дээр бичихдээ хэрхэн сэтгэх талаар ойлголт өгсөн гэж найдая. Энэ нь бага зэрэг илүү бичиглэл шаардаж байгаа энэхүү модулар бүтэтэй тодорхой код нь уншиж ойлгоход дэндүү амархан болгож байна. Компонентийн том сан бичих үед энэхүү ойлгомжтой байдал, модулар бүтэц, кодын дахин ашиглагдах байдалд танд тус болохоос гадна бичиглэлийн тоо ч багасч эхэлнэ.
