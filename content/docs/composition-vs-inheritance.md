@@ -8,15 +8,15 @@ prev: lifting-state-up.html
 next: thinking-in-react.html
 ---
 
-React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components.
+React нь хүчирхэг бүрдлийн загвартай бөгөөд компонентуудын хооронд кодыг дахин ашиглахдаа удамшил ашиглахийн оронд зөвлөдөг.
 
-In this section, we will consider a few problems where developers new to React often reach for inheritance, and show how we can solve them with composition.
+Энэ хэсэг React сурж байгаа шинэ хөгжүүлэгчдийн удамшлаар шийддэг асуудлуудийг бүрдлээр хэрхэн шийдэхийг үзэх болно.
 
-## Containment {#containment}
+## Агуулалт {#containment}
 
-Some components don't know their children ahead of time. This is especially common for components like `Sidebar` or `Dialog` that represent generic "boxes".
+Зарим компонентууд өөртөө ямар дэд компонент агуулахаа мэдэхгүй. Энэ нь ихэвчлэн `Sidebar` эсвэл `Dialog` гэх мэт ерөнхий "хайрцаг" дүрсэлдэг компонентуудад элбэг тохиолдоно.
 
-We recommend that such components use the special `children` prop to pass children elements directly into their output:
+Эдгээр компонентуудад бид тусгай `children` шинж чанараар дэд элементээ хүлээн авж гаралтдаа дүрсэлж болно:
 
 ```js{4}
 function FancyBorder(props) {
@@ -28,7 +28,7 @@ function FancyBorder(props) {
 }
 ```
 
-This lets other components pass arbitrary children to them by nesting the JSX:
+Энэ нь бусад компонентийг дэд элемент болгон авж JSX дотор агуулах боломж олгож байна:
 
 ```js{4-9}
 function WelcomeDialog() {
@@ -45,11 +45,12 @@ function WelcomeDialog() {
 }
 ```
 
-**[Try it on CodePen](https://codepen.io/gaearon/pen/ozqNOV?editors=0010)**
+**[CodePen дээр турших](https://codepen.io/gaearon/pen/ozqNOV?editors=0010)**
 
-Anything inside the `<FancyBorder>` JSX tag gets passed into the `FancyBorder` component as a `children` prop. Since `FancyBorder` renders `{props.children}` inside a `<div>`, the passed elements appear in the final output.
+`<FancyBorder>` JSX дотор байгаа ямар ч зүйл `FancyBorder` компонент руу `children` шинж чанар болон дамжуулагдана. `FancyBorder` нь `{props.children}`-г `<div>` дотор дүрсэлж байгаа учир дамжуулагдсан элемент эцсийн үр дүнд харагдах болно.
 
-While this is less common, sometimes you might need multiple "holes" in a component. In such cases you may come up with your own convention instead of using `children`:
+
+Энэ нь нэг их түгээмэл биш та компонентдоо олон "нүх" ашиглаж болно. Энэ тохиолдолд `children` шинж чанарын оронд та өөрийн нэрээ ашиглаж болно:
 
 ```js{5,8,18,21}
 function SplitPane(props) {
@@ -78,15 +79,15 @@ function App() {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/gwZOJp?editors=0010)
+[**CodePen дээр турших**](https://codepen.io/gaearon/pen/gwZOJp?editors=0010)
 
-React elements like `<Contacts />` and `<Chat />` are just objects, so you can pass them as props like any other data. This approach may remind you of "slots" in other libraries but there are no limitations on what you can pass as props in React.
+React элементүүд болох `<Contacts />` болон `<Chat />` нь зүгээр л объектууд учир та үүнийг бусад өгөгдөлтэй адил шинж чанар болгон дамжуулж болно. Энэ арга нь танд өөр сангуудын "slots"-г санагдуулах ч React дээр ямар зүйл шинж чанар болгон дамжуулахад ямар ч хязгаарлалт байхгүй.
 
 ## Specialization {#specialization}
 
-Sometimes we think about components as being "special cases" of other components. For example, we might say that a `WelcomeDialog` is a special case of `Dialog`.
+Заримдаа компонент нь бусад компонентуудын "тусгай тохиолдол" байж болно. Жишээлбэл, `WelcomeDialog`-г `Dialog`-н тусгай тохиолдол гэж хэлж болно.
 
-In React, this is also achieved by composition, where a more "specific" component renders a more "generic" one and configures it with props:
+React дээр үүнийг мөн л бүрдэл ашиглан "тусгай" компонент "ерөнхий" байдлаар дүрслэн шинж чанараар зохицуулагдаж болно:
 
 ```js{5,8,16-18}
 function Dialog(props) {
@@ -111,9 +112,9 @@ function WelcomeDialog() {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/kkEaOZ?editors=0010)
+[**CodePen дээр турших**](https://codepen.io/gaearon/pen/kkEaOZ?editors=0010)
 
-Composition works equally well for components defined as classes:
+Бүрдэл нь класс байдлаар тодорхойлогдсон компонентууд дээр ч адилхан сайн ажиллдага:
 
 ```js{10,27-31}
 function Dialog(props) {
@@ -161,12 +162,12 @@ class SignUpDialog extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/gwZbYa?editors=0010)
+[**CodePen дээр турших**](https://codepen.io/gaearon/pen/gwZbYa?editors=0010)
 
-## So What About Inheritance? {#so-what-about-inheritance}
+## За тэгвэл удамшил яах вэ? {#so-what-about-inheritance}
 
-At Facebook, we use React in thousands of components, and we haven't found any use cases where we would recommend creating component inheritance hierarchies.
+Facebook-д бид React дээр олон мянган компонентууд ашигладаг ч удамшлын шатлалаар хэрэгжүүлэх ямар нэг хэрэглээний тохиолдол одоогоор гарч ирээгүй байна.
 
-Props and composition give you all the flexibility you need to customize a component's look and behavior in an explicit and safe way. Remember that components may accept arbitrary props, including primitive values, React elements, or functions.
+Шинж чанарууд болон бүрдэл нь компонентийн харагдах байдал болон ажиллагааны хувьд өөрчилж болох бүх уян хатан байдлуудыг илүү тодорхой, аюулгүй байдлаар олгодог. Компонент нь шинж чанарыг энгийн төрлийн утгууд, React элементүүд эсвэл функцууд авж болохийг санах хэрэгтэй.
 
-If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. The components may import it and use that function, object, or a class, without extending it.
+Хэрэв та дэлгэцийн загвартай хамааргүй ажиллагаа компонентуудын хооронд ашиглахийг хүсвэл эдгээрийг тусад нь Жаваскрипт модуль болгон салгахийг зөвлөж байна. Компонентууд нь эдгээр функц, класс, объектыг өргөтгөлгүйгээр импортлон ашиглаж болох юм.
