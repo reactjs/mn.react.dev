@@ -16,13 +16,13 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
-Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a [detailed component API reference here](/docs/react-component.html).
+Компонент нь таньд дэлгэцийн загварыг бие даасан дахин ашиглаж боломжтой хэсгүүд болгодог болгож тусад нь бодож хийхэд амар болгодог. Энэ хуудас нь таньд компонентийн агуулгийг товч танилцуулна. Та [API reference-г компонентийн дэлгэрэнгүйг](/docs/react-components.html) харж болно.
 
-Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called "props") and return React elements describing what should appear on the screen.
+Үндсэндээ компонентууд бол Жаваскриптийн функцууд юм. Тэд оролт("props" гэж дууддаг) хүлээж аван дэлгэц дээр харагдах React элементүүд буцаадаг.
 
-## Function and Class Components {#function-and-class-components}
+## Функц болон Класс компонентууд {#function-and-class-components}
 
-The simplest way to define a component is to write a JavaScript function:
+Компонент тодорхойлох энгийг арга бол Жаваскрипт функц бичих юм:
 
 ```js
 function Welcome(props) {
@@ -30,9 +30,10 @@ function Welcome(props) {
 }
 ```
 
-This function is a valid React component because it accepts a single "props" (which stands for properties) object argument with data and returns a React element. We call such components "function components" because they are literally JavaScript functions.
+Энэ функц нь нэг "props" объект аргумент өгөгдөл хүлээн авч React элемент буцааж байгаа учир зөв React компонент юм. Бид үүнийг "функц компонентууд" гэж дууддаг учир нь эдгээр нь зүгээр л Жаваскрипт функцууд юм.
 
-You can also use an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) to define a component:
+Мөн түүнчлэн та [ES6 класс](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) ашиглан компонент тодорхойлж болно:
+
 
 ```js
 class Welcome extends React.Component {
@@ -42,27 +43,27 @@ class Welcome extends React.Component {
 }
 ```
 
-The above two components are equivalent from React's point of view.
+Дээрх хоёр компонент React-н хувьд яг ижил юм.
 
-Classes have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html). Until then, we will use function components for their conciseness.
+Классууд нь зарим нэмэлт боломжууд агуулж болох ба бид үүнийг [дараагийн бүлгүүдэд](/docs/state-and-lifecycle.html) судлана. Тэр болтол ойлголттой болохийн тулд функц компонентууд ашиглах болно.
 
-## Rendering a Component {#rendering-a-component}
+## Компонентийг дүрслэх нь {#rendering-a-component}
 
-Previously, we only encountered React elements that represent DOM tags:
+Өмнө бид зөвхөн DOM тагийг төлөөлөх React элементийг харсан:
 
 ```js
 const element = <div />;
 ```
 
-However, elements can also represent user-defined components:
+Мөн түүнчлэн элемтентүүд хэрэглэгчийн тодорхойлсон компонентийг төлөөлж болно:
 
 ```js
 const element = <Welcome name="Sara" />;
 ```
 
-When React sees an element representing a user-defined component, it passes JSX attributes to this component as a single object. We call this object "props".
+React хэрэглэгчийн тодорхойлсон компонентийг төлөөлсөн элементийг хармагцаа үүнлүү JSX аттрибут нэг объект болгон дамжуулдаг. Бид энэ объектийг "props" гэдэг.
 
-For example, this code renders "Hello, Sara" on the page:
+Жишээлбэл, энэ код нь "Hello, Sara"-г хуудас дээр дүрсэлнэ:
 
 ```js{1,5}
 function Welcome(props) {
@@ -78,24 +79,24 @@ ReactDOM.render(
 
 [](codepen://components-and-props/rendering-a-component)
 
-Let's recap what happens in this example:
+Энэ жишээнд юу болж байгаа тоймлоё:
 
-1. We call `ReactDOM.render()` with the `<Welcome name="Sara" />` element.
-2. React calls the `Welcome` component with `{name: 'Sara'}` as the props.
-3. Our `Welcome` component returns a `<h1>Hello, Sara</h1>` element as the result.
-4. React DOM efficiently updates the DOM to match `<h1>Hello, Sara</h1>`.
+1. Бид `ReactDOM.render()` функцийг `<Welcome name="Sara" />` элементээр дуудсан.
+2. React `Welcome` компонентийг `{name: 'Sara'}` шинж чанартайгаар(props) дуудсан.
+3. Бид `Welcome` компонент `<h1>Hello, Sara</h1>` элементийг үр дүн болгон буцаасан.
+4. React DOM маш үр дүнтэйгээр `<h1>Hello, Sara</h1>`-д харгалзах DOM-г шинэчилсэн.
 
->**Note:** Always start component names with a capital letter.
+>**Анхаар:** Компонентийн нэрийг үргэлж том үсгээр эхэлж бай.
 >
->React treats components starting with lowercase letters as DOM tags. For example, `<div />` represents an HTML div tag, but `<Welcome />` represents a component and requires `Welcome` to be in scope.
+>React жижиг үсгээр эхэлсэн компонентийг DOM таг гэж ойлгодог. Жишээлбэл, `<div />` нь HTML div тагийг төлөөлөх, `<Welcome />` нь компонентийг төлөөлөх ба `Welcome` компонентийг үйлчлэлийн хүрээнд байхийг шаарддаг.
 >
->To learn more about the reasoning behind this convention, please read [JSX In Depth](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized).
+>Энэ нийтлэг дүрмийн цаана байгаа шалтгааныг дэлгэрэнгүй судлах бол [JSX In Depth](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized) хуудсыг уншина уу.
 
-## Composing Components {#composing-components}
+## Компонентийг нэгтгэх(compose) нь {#composing-components}
 
-Components can refer to other components in their output. This lets us use the same component abstraction for any level of detail. A button, a form, a dialog, a screen: in React apps, all those are commonly expressed as components.
+Компонентууд нь өөр компонентийн гаралтыг заасан байж болно. Энэ нь бидэнд компонент хийсвэрлэл ашиглах боломжыг ямар ч дэлгэрэнгүй түвшинд олгож байна. Товч, форм, диалог, screen: эдгээр бүгд нь React дээр компонент болдог.
 
-For example, we can create an `App` component that renders `Welcome` many times:
+Жишээлбэл, та `App` компонент дотор `Welcome`-г олон удаа дүрсэлж болно:
 
 ```js{8-10}
 function Welcome(props) {
@@ -120,13 +121,13 @@ ReactDOM.render(
 
 [](codepen://components-and-props/composing-components)
 
-Typically, new React apps have a single `App` component at the very top. However, if you integrate React into an existing app, you might start bottom-up with a small component like `Button` and gradually work your way to the top of the view hierarchy.
+Ерөнхийдөө шинэ React програмууд `App` компонент хамгийн дээд талдаа байлгадаг. Гэхдээ та байгаа програм дээр React залгах(integrate) гэж байгаа бол `Button` гэх мэтчлэн доод талын жижиг хэсгээс дээшээ гэхчлэн явах нь зүйтэй байж болно.
 
-## Extracting Components {#extracting-components}
+## Компонент гаргаж авах {#extracting-components}
 
-Don't be afraid to split components into smaller components.
+Компонентийг илүү жижиг компонентууд болгон салгахаас битгий ай.
 
-For example, consider this `Comment` component:
+Жишээлбэл дараах `Comment` компонент байя:
 
 ```js
 function Comment(props) {
@@ -154,11 +155,11 @@ function Comment(props) {
 
 [](codepen://components-and-props/extracting-components)
 
-It accepts `author` (an object), `text` (a string), and `date` (a date) as props, and describes a comment on a social media website.
+Энэ `author` (объект), `text` (тэмдэгт), `date` (огноо)-уудыг шинж чанар болгон хүлээн авч сошиал вебсайт дээр сэтгэгдлийг тодорхойлсон байна.
 
-This component can be tricky to change because of all the nesting, and it is also hard to reuse individual parts of it. Let's extract a few components from it.
+Энэ компонент нь хэт олон доошоо задарсан(nested) учраас өөрчлөхөд хэцүү мөн түүнчлэн доторх хэсгүүдийг нь дахин ашиглахад хэцүү юм. Эндээс хэдэн компонент гаргаж авъя.
 
-First, we will extract `Avatar`:
+Эхлээд бид `Avatar`-г гаргаж авая:
 
 ```js{3-6}
 function Avatar(props) {
@@ -171,11 +172,11 @@ function Avatar(props) {
 }
 ```
 
-The `Avatar` doesn't need to know that it is being rendered inside a `Comment`. This is why we have given its prop a more generic name: `user` rather than `author`.
+`Avatar` нь `Comment` дотор дүрслэгдэж байгаа зүйлийг мэдэх шаардлагагүй юм. Учир нь бид шинж чанараар ерөнхий нэр өгсөн: `user` нь `author` гэснээс илүү.
 
-We recommend naming props from the component's own point of view rather than the context in which it is being used.
+Бид шинж чанарыг нэрлэхдээ компонентийн өөрийн харах өнцгөөр нэрлэх нь хаана хэрэглэгдэж байгаагаас хамааран нэрлэхээс илүүд үздэг.
 
-We can now simplify `Comment` a tiny bit:
+Бид одоо `Comment`-г бага зэрэг хялбарчилж чадна:
 
 ```js{5}
 function Comment(props) {
@@ -198,7 +199,7 @@ function Comment(props) {
 }
 ```
 
-Next, we will extract a `UserInfo` component that renders an `Avatar` next to the user's name:
+Дараа нь бид хэрэглэгчийн нэрийн дараа `Avatar`-г дүрслэх `UserInfo` компонентийг салгаж авая:
 
 ```js{3-8}
 function UserInfo(props) {
@@ -213,7 +214,7 @@ function UserInfo(props) {
 }
 ```
 
-This lets us simplify `Comment` even further:
+Энэ бидний `Comment`-г улам л энгийн болгоно:
 
 ```js{4}
 function Comment(props) {
@@ -233,11 +234,11 @@ function Comment(props) {
 
 [](codepen://components-and-props/extracting-components-continued)
 
-Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be a reusable component.
+Компонентийг энэ мэтчлэн салгах нь эхэндээ их ажил шаардах томоохон програмуудын хувьд эдгээр дахин ашиглагдах компонентууд нь үр дүнгээ сайн өгдөг. Таны дэлгэцийн загварын хэсэг олон удаа ашиглагдах(`Button`, `Panel`, `Avatar`) эсвэл өөрөө хангалттай цогц болсон(`App`, `FeedStory`, `Comment`) бол дахин ашиглагдах боломжтой компонентууд болгон салгах нь хамгийн түрүүнд зөвлөх зөвлөмж юм.
 
-## Props are Read-Only {#props-are-read-only}
+## Шинж чанарууд(Props) бол зөвхөн унших горимтой {#props-are-read-only}
 
-Whether you declare a component [as a function or a class](#function-and-class-components), it must never modify its own props. Consider this `sum` function:
+[Класс эсвэл функц](#function-and-class-components) бүтцийн алинаар ч компонент тодорхойлсон бай та хэзээ шинж чанарыг нь өөрчилж болохгүй. Дараах `sum` функц байя:
 
 ```js
 function sum(a, b) {
@@ -245,9 +246,9 @@ function sum(a, b) {
 }
 ```
 
-Such functions are called ["pure"](https://en.wikipedia.org/wiki/Pure_function) because they do not attempt to change their inputs, and always return the same result for the same inputs.
+Иймэрхүү функцуудыг ["цэвэр"](https://en.wikipedia.org/wiki/Pure_function) гэж нэрлэдэг нь тэдгээр нь оролтоор орж ирсэн утгуудыг өөрчлөхийг оролдоггүй ба ижилхэн оролтод дандаа ижилхэн үр дүн буцаадаг.
 
-In contrast, this function is impure because it changes its own input:
+Үүнтэй харьцуулахад энэ функц нь цэвэр бус(impure) гэж бөгөөд өөрийн оролтын утгаа өөрчилж байна:
 
 ```js
 function withdraw(account, amount) {
@@ -255,8 +256,8 @@ function withdraw(account, amount) {
 }
 ```
 
-React is pretty flexible but it has a single strict rule:
+React харьцангуй уян хатан нэг хатуу дүрэмтэй:
 
-**All React components must act like pure functions with respect to their props.**
+**Бүх React компонентууд өөрийн шинж чанарууддаа цэвэр функц байдлаар ажиллах ёстой**
 
-Of course, application UIs are dynamic and change over time. In the [next section](/docs/state-and-lifecycle.html), we will introduce a new concept of "state". State allows React components to change their output over time in response to user actions, network responses, and anything else, without violating this rule.
+Мэдээж програмын дэлгэцийн загвар хувирамтгай өөрчлөгдөхүйц юм.[Дараагийн бүлэгт](/docs/state-and-lifecycle.html) "төлөв" хэмээх шинэ ойлголт танилцуулах болно. Төлөв React компонентуудыг хэрэглэгчийн үйлдэл, сүлжээнээс ирсэн өгөгдөл, өөр бусад утгуудаас хамааран энэ дүрмийг зөрчихгүйгээр гаралтаа өөрчлөх боломжийг олгодог.
