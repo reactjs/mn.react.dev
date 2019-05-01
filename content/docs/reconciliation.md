@@ -4,32 +4,33 @@ title: Reconciliation
 permalink: docs/reconciliation.html
 ---
 
-React provides a declarative API so that you don't have to worry about exactly what changes on every update. This makes writing applications a lot easier, but it might not be obvious how this is implemented within React. This article explains the choices we made in React's "diffing" algorithm so that component updates are predictable while being fast enough for high-performance apps.
+React зарлагдах API олгодог бөгөөд та шинэчлэлт болгон юу орсон талаар санаа зовох хэрэггүй. Энэ програм бичих илүү амар болгодог ч React дээр хэрхэн хэрэгжүүлэгдсэн нь тодорхой биш байж болно. Энэ нийтлэл нь өндөр хурд шаардах програмууд дээр компонент шинэчлэл хийхэд React "ялгааг" нь мэдрэх алгоримтын сонголтуудыг тайлбарласан юм.
 
-## Motivation {#motivation}
+## Учир шалтгаан(motivation) {#motivation}
 
-When you use React, at a single point in time you can think of the `render()` function as creating a tree of React elements. On the next state or props update, that `render()` function will return a different tree of React elements. React then needs to figure out how to efficiently update the UI to match the most recent tree.
+React-ын render() функц ажиллах мѳчид React элементүүдээс бүрдсэн мод үүсгэгддэг. Дараагийн төлөвт эсвэл шинж чанар шинэчлэгдэхэд `render()` функц нь өөр нэг React элементүүдийн мод үүсгэдэг. Тэгэхээр React нь хэрхэн хурдан дэлгэцийн загварыг хамгийн сүүлийн модоор шинэчлэхээ бодож олох хэрэгтэй болдог.
 
-There are some generic solutions to this algorithmic problem of generating the minimum number of operations to transform one tree into another. However, the [state of the art algorithms](https://grfia.dlsi.ua.es/ml/algorithms/references/editsurvey_bille.pdf) have a complexity in the order of O(n<sup>3</sup>) where n is the number of elements in the tree.
+Эдгээрт хамгийн бага үйлдлээр нэг модыг өөр нэг мод болгон хувиргахад зориулсан алгоримтын ерөнхий шийдлүүд байдаг. Гэсэн хэдий ч [state of the art algorithms](https://grfia.dlsi.ua.es/ml/algorithms/references/editsurvey_bille.pdf) ажилллах хугацаа(complexity) O(n<sup>3</sup>) бөгөөд n нь модонд байгаа элементүүдийн тоо юм.
 
-If we used this in React, displaying 1000 elements would require in the order of one billion comparisons. This is far too expensive. Instead, React implements a heuristic O(n) algorithm based on two assumptions:
 
-1. Two elements of different types will produce different trees.
-2. The developer can hint at which child elements may be stable across different renders with a `key` prop.
+Хэрэв бид үүнийг React дээр ашигласан бол 1000 элементийг дүрслэхэд нэг тэрбум харьцуулалт хийгдэх нь байна. Энэ нь хэтэрхий удаан болно. Үүний оронд React 2 тѳрлийн таамаглал дээр үндэслэн heuristic 0(n) алгоритм ашигладаг:
 
-In practice, these assumptions are valid for almost all practical use cases.
+1. Хоёр өөр төрлийн элементүүд нь өөр өөр мод үүсгэдэг.
+2. Хөгжүүлэгч нь ямар элементүүд тогтвортой байх талаар зааврыг `key` шинж чанар ашиглан өгсөн.
 
-## The Diffing Algorithm {#the-diffing-algorithm}
+Бараг л ихэнх практикал хэрэглээнд эдгээр таамаглалууд нь зөв байдаг.
 
-When diffing two trees, React first compares the two root elements. The behavior is different depending on the types of the root elements.
+## Ялгааг олох алгоритм {#the-diffing-algorithm}
 
-### Elements Of Different Types {#elements-of-different-types}
+Хоёр модны ялгааг олоход React эхлээд хоёр үндсийг нь харьцуулдаг. Ажиллагаа нь үндэс дэх элементүүдийн төрлөөс хамааран өөр байдаг.
 
-Whenever the root elements have different types, React will tear down the old tree and build the new tree from scratch. Going from `<a>` to `<img>`, or from `<Article>` to `<Comment>`, or from `<Button>` to `<div>` - any of those will lead to a full rebuild.
+### Өөр төрлийн элементүүд {#elements-of-different-types}
 
-When tearing down a tree, old DOM nodes are destroyed. Component instances receive `componentWillUnmount()`. When building up a new tree, new DOM nodes are inserted into the DOM. Component instances receive `componentWillMount()` and then `componentDidMount()`. Any state associated with the old tree is lost.
+Үндэс дэх элементүүд нь өөр төрлийнх бол React хуучин модыг буулган шинэ модыг эхнээс нь байгуулдаг. `<a>`-с `<img>`-руу, эсвэл `<Article>`-с `<Comment>`-руу, эсвэл `<Button>`-с `<div>`-р гуу гэхчлэн эдгээр нь бүгд шинэ дахин байгуулалт руу хөтөлдөг.
 
-Any components below the root will also get unmounted and have their state destroyed. For example, when diffing:
+Модыг буулгаж байхад хуучин DOM зангилаанууд устгагддаг. Компонентийн тохиолдол `componentWillUnmount()`-г хүлээн авна. Шинэ мод байгуулж байхад шинэ DOM зангилаанууд DOM руу нэмэгддэг. Компонентийн тохиолдлууд нь `componentWillMount()` хүлээж авах ба дараа нь `componentDidMount()`-г хүлээн авна. Хуучин модод байсан ямар төлөв энд алдагдана.
+
+Үндсээс дооших ямар компонентууд салгагдах бөгөөд тэдгээрийн төлөв нь устгагдана. Жишээлбэл, дараахийг ялгааг олоход:
 
 ```xml
 <div>
@@ -41,11 +42,11 @@ Any components below the root will also get unmounted and have their state destr
 </span>
 ```
 
-This will destroy the old `Counter` and remount a new one.
+Энэ нь хуучин `Counter`-г устган шинийг залгах болно.
 
-### DOM Elements Of The Same Type {#dom-elements-of-the-same-type}
+### Ижил төрлийн DOM элементүүд {#dom-elements-of-the-same-type}
 
-When comparing two React DOM elements of the same type, React looks at the attributes of both, keeps the same underlying DOM node, and only updates the changed attributes. For example:
+Ижил төрлийн хоёр React DOM элементүүдийг харьцуулахад react тэдгээрийн аттрибутуудыг харан ижил DOM зангилаанд хадгалдаг ба зөвхөн өөрчлөгдсөн аттрибутуудыг шинэчилдэг. Жишээлбэл:
 
 ```xml
 <div className="before" title="stuff" />
@@ -53,9 +54,9 @@ When comparing two React DOM elements of the same type, React looks at the attri
 <div className="after" title="stuff" />
 ```
 
-By comparing these two elements, React knows to only modify the `className` on the underlying DOM node.
+Эдгээр хоёр элементүүдийг харьцуулахад React зөвхөн `className`-г нь өөрчлөгдснийг мэддэг.
 
-When updating `style`, React also knows to update only the properties that changed. For example:
+`style`-г шинэчлэх үед React мөн л зөвхөн өөрчлөгдсөн шинж чанарыг нь шинэчилдэг.Жишээлбэл:
 
 ```xml
 <div style={{color: 'red', fontWeight: 'bold'}} />
@@ -63,21 +64,21 @@ When updating `style`, React also knows to update only the properties that chang
 <div style={{color: 'green', fontWeight: 'bold'}} />
 ```
 
-When converting between these two elements, React knows to only modify the `color` style, not the `fontWeight`.
+Эдгээр хоёр элементүүдийг хөрвүүлэхэд React зөвхөн `color` загвар нь өөрчлөгдөөд `fontWeight` нь өөрчлөгдөөгүйг мэддэг.
 
-After handling the DOM node, React then recurses on the children.
+DOM зангилааг харьцуулсний дараа дэд элементүүдийн рекурс байдлаар харьцуулдаг.
 
-### Component Elements Of The Same Type {#component-elements-of-the-same-type}
+### Ижил төрлийн компонент элементүүд {#component-elements-of-the-same-type}
 
-When a component updates, the instance stays the same, so that state is maintained across renders. React updates the props of the underlying component instance to match the new element, and calls `componentWillReceiveProps()` and `componentWillUpdate()` on the underlying instance.
+Компонент шинэчлэгдэхэд тохиолдол(instance) нь хэвээр үлддэг учир төлөв нь дүрслэлүүдийн хооронд хадгалагдан үлддэг. React компонентийн тохиолдлын шинэ элементэд тохирох шинж чанарыг нь шинэчилдэг бөгөөд `componentWillReceiveProps()` болон`componentWillUpdate()`-г өөрчлөгдөж байгаа тохиодол дээр дууддаг.
 
-Next, the `render()` method is called and the diff algorithm recurses on the previous result and the new result.
+Дараа нь `render()` функц дуудагддаг бөгөөд ялгаа олох алгоритм өмнөх үр дүн болох шинэ үр дүн дээр рекурс хийдэг.
 
-### Recursing On Children {#recursing-on-children}
+### Дэд элемент дээр рекурсив ажиллах {#recursing-on-children}
 
-By default, when recursing on the children of a DOM node, React just iterates over both lists of children at the same time and generates a mutation whenever there's a difference.
+Анхнаасаа DOM зангилааны дэд элемент дээр рекурс хийхэд React дэд элементүүдийн жагсаалтаар дамжин явж ялгаа байвал хувирлийг бий болгодог.
 
-For example, when adding an element at the end of the children, converting between these two trees works well:
+Жишээлбэл дэд элементүүдийн төгсгөлд элемент нэмэхэд эдгээр хоёр модыг хувиргахад сайн ажилладаг:
 
 ```xml
 <ul>
@@ -92,9 +93,9 @@ For example, when adding an element at the end of the children, converting betwe
 </ul>
 ```
 
-React will match the two `<li>first</li>` trees, match the two `<li>second</li>` trees, and then insert the `<li>third</li>` tree.
+React эхний хоёр мод болох `<li>first</li>`, `<li>second</li>`-г тааруулдаг бөгөөд шинэ `<li>third</li>` мод нэмнэ.
 
-If you implement it naively, inserting an element at the beginning has worse performance. For example, converting between these two trees works poorly:
+Хэрэв та үүнийг натив аргаар хэрэгжүүлсэн бол шинэ элемент эхэнд нэмэхэд хурданд муугаар нөлөөлөх байсан. Жишээлбэл, дараах хоёр модыг хувиргахад ажиллагаа нь удаан:
 
 ```xml
 <ul>
@@ -109,11 +110,11 @@ If you implement it naively, inserting an element at the beginning has worse per
 </ul>
 ```
 
-React will mutate every child instead of realizing it can keep the `<li>Duke</li>` and `<li>Villanova</li>` subtrees intact. This inefficiency can be a problem.
+React нь `<li>Duke</li>` болон `<li>Villanova</li>` дэд модыг үлдээхийн оронд хувиргадаг. Энэхүү үр дүнгүй арга нь асуудал болж болно.
 
-### Keys {#keys}
+### Түлхүүрүүд {#keys}
 
-In order to solve this issue, React supports a `key` attribute. When children have keys, React uses the key to match children in the original tree with children in the subsequent tree. For example, adding a `key` to our inefficient example above can make the tree conversion efficient:
+Энэ асуудлыг шийдэхийн тулд React нь `key` аттрибут дэмждэг. Дэд элемент түлхүүртэй байхад React түлхүүрийг ашиглан дэд элементийг тааруулах бөгөөд үндсэн модтой тааруулдаг. Жишээлбэл, `key` бидний үр дүнгүй жишээ рүү нэмэх нь мод хувиргалтыг үр дүнтэй болгоно:
 
 ```xml
 <ul>
@@ -128,30 +129,30 @@ In order to solve this issue, React supports a `key` attribute. When children ha
 </ul>
 ```
 
-Now React knows that the element with key `'2014'` is the new one, and the elements with the keys `'2015'` and `'2016'` have just moved.
+Одоо React нь `'2014'` элемент нь шинэ, `'2015'` болон `'2016'` түлхүүрүүд зөөгдсөн гэдгийг мэднэ.
 
-In practice, finding a key is usually not hard. The element you are going to display may already have a unique ID, so the key can just come from your data:
+Амьдрал дээр түлхүүр хайж олох нь тийм хэцүү биш юм. Таны дүрслэх гэж буй элемент аль хэдийн өөрийгөө тодорхойлох ID-тай тэр нь таний өгөгдлөөс ирж болох юм:
 
 ```js
 <li key={item.id}>{item.name}</li>
 ```
 
-When that's not the case, you can add a new ID property to your model or hash some parts of the content to generate a key. The key only has to be unique among its siblings, not globally unique.
+Хэрэв тийм биш бол та модель руугаа шинэ ID шинж чанар нэмэх эсвэл түлхүүр үгийг зарим хэсгүүдийг хэшлэн үүсгэж болно. Түлхүүр бол өөрийгөө бусад элементээс ялгахад л хангалттай бөгөөд глобалаар дахин давтагдашгүй байх хэрэггүй юм.
 
-As a last resort, you can pass an item's index in the array as a key. This can work well if the items are never reordered, but reorders will be slow.
+Бидний сүүлийн боломж нь жагсаалтын индексийн түлхүүр болгон ашиглах юм. Энэ нь жагсаалтын элементүүд эрэмбэлэгдэхгүй үед сайн ажиллаж болох ч эрэмблэгдвэл удаан ажиллана.
 
-Reorders can also cause issues with component state when indexes are used as keys. Component instances are updated and reused based on their key. If the key is an index, moving an item changes it. As a result, component state for things like uncontrolled inputs can get mixed up and updated in unexpected ways.
+Индексийн түлхүүр үг болгон ашиглаж байгаа үед эрэмбэлэх нь компонентийн төлөв дээр асуудал үүсгэж болно. Компонентийн тохиолдлууд нь түлхүүр үг дээр тулгуурлан шинэчлэгдэх болон дахин ашигладдаг. Хэрэв индекс түлхүүр бол элементийг зөөхөд өөрчлөгдөнө. Үр дүнд нь удирдагдаагүй оролтод зориулсан компонентийн төлөв холилдон бидний хүсээгүй замаар шинэчлэгдэж болно.
 
-[Here](codepen://reconciliation/index-used-as-key) is an example of the issues that can be caused by using indexes as keys on CodePen, and [here](codepen://reconciliation/no-index-used-as-key) is an updated version of the same example showing how not using indexes as keys will fix these reordering, sorting, and prepending issues.
+[Энд](codepen://reconciliation/index-used-as-key) CodePen дээр индексийг түлхүүр болгон ашиглахад гарж болох асуудлыг харуулсан жишээ, харин [энд](codepen://reconciliation/no-index-used-as-key) адилхан жишээний шинэчлэгдсэн хувилбар болох индексийг түлхүүр болгон ашиглахгүйгээр хэрхэн эрэмблэх, дахин эрэмбэ оноох гэх мэт асуудлийг шийдсэн байна.
 
 ## Tradeoffs {#tradeoffs}
 
-It is important to remember that the reconciliation algorithm is an implementation detail. React could rerender the whole app on every action; the end result would be the same. Just to be clear, rerender in this context means calling `render` for all components, it doesn't mean React will unmount and remount them. It will only apply the differences following the rules stated in the previous sections.
+Дахин бүтээх алгоритм нь хэрэгжүүлэлтийн дэлгэрэнгүй гэдгийг санах нь чухал. React нь програмыг үйлдэл бүрд бүхэлд нь шинэчилж чадах бөгөөд эцсийн үр дүн ижил байна. Ойлгомжтой байх үүднээс энэ агуулгад дахин дүрслэх нь бүх компонентийн `render`-г дуудахийг хэлж байгаа бөгөөд энэ нь React тэдгээрийг салгаж, залгах гэсэн үг биш юм. Энэ нь зөвхөн өмнөх хэсэгт дурьдагдсан ялгаануудыг шинэчлэхэд мөрдөгдөнө.
 
-We are regularly refining the heuristics in order to make common use cases faster. In the current implementation, you can express the fact that a subtree has been moved amongst its siblings, but you cannot tell that it has moved somewhere else. The algorithm will rerender that full subtree.
+Бид эдгээр тохиолдлуудыг хурдан болгох үүднээс байнга heuristic аргаа сайжруулдаг. Одоогийн хэрэгжүүлэлт дээр дэд мод нь дотроо зөөгдсөн боловч өөр газар зөөгдөөгүй юм. Алгоритм бүтэн дэд модыг дахин дүрслэх болно.
 
-Because React relies on heuristics, if the assumptions behind them are not met, performance will suffer.
+Учир нь React heuristic аргад тулгуурлаж байгаа учир аль нэг таамаглал нь биелэхгүй үед хурдны хувьд удааширна.
 
-1. The algorithm will not try to match subtrees of different component types. If you see yourself alternating between two component types with very similar output, you may want to make it the same type. In practice, we haven't found this to be an issue.
+1. Алгоритм өөр төрлийн компонентуудыг хооронд нь тааруулах гэж оролдохгүй. Тун ижилхэн гаралттай хоёр өөр компонентийн төрлийг өөрчлөх гэж байгаа бол та тэдгээрийг ижил төрөлтэй болгох хэрэгтэй. Амьдрал дээр бид энэ төрлийн асуудал олоогүй байна.
 
-2. Keys should be stable, predictable, and unique. Unstable keys (like those produced by `Math.random()`) will cause many component instances and DOM nodes to be unnecessarily recreated, which can cause performance degradation and lost state in child components.
+2. Түлхүүрүүд нь тогтвортой, дахин давтагдашгүй, таамаглахуйц байх нь зүйтэй. Тогтворгүй түлхүүрүүд(`Math.random()`-н үр дүнгээс гарсан шиг) нь олон компонентийн тохиолдлууд болон DOM зангилаануудыг шаардлагагүйгээр дахин үүсгэх бөгөөд энэ хурдийг буруулахаас гадна дэд компонентүүд төлвөө алдахад хүргэнэ.
