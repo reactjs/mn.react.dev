@@ -4,7 +4,7 @@ title: React Without ES6
 permalink: docs/react-without-es6.html
 ---
 
-Normally you would define a React component as a plain JavaScript class:
+Энгийнээр та Жаваскрипт класс ашиглан React компонент тодорхойлж болно:
 
 ```javascript
 class Greeting extends React.Component {
@@ -14,7 +14,7 @@ class Greeting extends React.Component {
 }
 ```
 
-If you don't use ES6 yet, you may use the `create-react-class` module instead:
+Хэрэв та ES6 ашиглаагүй бол `create-react-class` модулийг оронд нь ашиглаж болох юм:
 
 
 ```javascript
@@ -26,11 +26,11 @@ var Greeting = createReactClass({
 });
 ```
 
-The API of ES6 classes is similar to `createReactClass()` with a few exceptions.
+ES6-н API нь `createReactClass()` тун төстэй хэдэн зүйл нь өөр.
 
-## Declaring Default Props {#declaring-default-props}
+## Шинж чанарын анхны утга зарлах нь {#declaring-default-props}
 
-With functions and ES6 classes `defaultProps` is defined as a property on the component itself:
+Функцууд болон ES6 классуудад `defaultProps` нь компонент дотор шинж чанар болон тодорхойлогддог:
 
 ```javascript
 class Greeting extends React.Component {
@@ -42,7 +42,7 @@ Greeting.defaultProps = {
 };
 ```
 
-With `createReactClass()`, you need to define `getDefaultProps()` as a function on the passed object:
+`createReactClass()`-р та `getDefaultProps()`-г дамжуулагдсан объектийг функц байдлаар тодорхойлно:
 
 ```javascript
 var Greeting = createReactClass({
@@ -57,9 +57,9 @@ var Greeting = createReactClass({
 });
 ```
 
-## Setting the Initial State {#setting-the-initial-state}
+## Анхны төлөв тохируулах нь {#setting-the-initial-state}
 
-In ES6 classes, you can define the initial state by assigning `this.state` in the constructor:
+ES6 классуудад анхны төлвийг `this.state`-г байгуулагч дотор утга оноосноор тодорхойлдог:
 
 ```javascript
 class Counter extends React.Component {
@@ -71,7 +71,7 @@ class Counter extends React.Component {
 }
 ```
 
-With `createReactClass()`, you have to provide a separate `getInitialState` method that returns the initial state:
+`createReactClass()`-р та тусдаа `getInitialState` анхны төлөв буцаах функц бичих хэрэгтэй:
 
 ```javascript
 var Counter = createReactClass({
@@ -82,9 +82,9 @@ var Counter = createReactClass({
 });
 ```
 
-## Autobinding {#autobinding}
+## Автомат холболт(autobinding) {#autobinding}
 
-In React components declared as ES6 classes, methods follow the same semantics as regular ES6 classes. This means that they don't automatically bind `this` to the instance. You'll have to explicitly use `.bind(this)` in the constructor:
+ES6 классаар зарлагдсан React компонентуудад функцууд нь энгийн ES6 классуудтай ижил дүрэм баримталдаг. Өөрөөр хэлбэл тэдгээр нь `this`-г классын тохиолдол(instance) руу автоматаар холбодоггүй. Та тусгайлан `.bind(this)`-г байгуулагч дотор хэрэглэх шаардлагатай:
 
 ```javascript
 class SayHello extends React.Component {
@@ -110,7 +110,7 @@ class SayHello extends React.Component {
 }
 ```
 
-With `createReactClass()`, this is not necessary because it binds all methods:
+`createReactClass()`-д бүх функцууд автоматаар холбогддог учир ингэх хэрэггүй:
 
 ```javascript
 var SayHello = createReactClass({
@@ -132,9 +132,9 @@ var SayHello = createReactClass({
 });
 ```
 
-This means writing ES6 classes comes with a little more boilerplate code for event handlers, but the upside is slightly better performance in large applications.
+Энэ нь ES6 классууд нь бага зэрэг илүү урьдчилан бэлдсэн(boilerplate) код эвент удирдлагууд дээр ирдэг нь том програмуудын хурданд бага зэрэг сайн нөлөөтэй.
 
-If the boilerplate code is too unattractive to you, you may enable the **experimental** [Class Properties](https://babeljs.io/docs/plugins/transform-class-properties/) syntax proposal with Babel:
+ Хэрэв таньд урьдчилан бэлдсэн код нь таалагдахгүй бол та Babel дээр санал болгосон **туршилтын** [классын шинж чанарууд](https://babeljs.io/docs/plugins/transform-class-properties/)-н бичиглэлийг идэвхжүүлж болох юм:
 
 
 ```javascript
@@ -159,27 +159,27 @@ class SayHello extends React.Component {
 }
 ```
 
-Please note that the syntax above is **experimental** and the syntax may change, or the proposal might not make it into the language.
+Гэхдээ дээрх бичиглэл нь **туршилтынх** учир бичиглэл нь өөрчлөгдөж магадгүй бүр эсвэл санал болгосон бичиглэл нь хэлэнд орохгүй байж магадгүй.
 
-If you'd rather play it safe, you have a few options:
+Найдвартай бичихийн тулд тань хэдэн сонголтууд байна:
 
-* Bind methods in the constructor.
-* Use arrow functions, e.g. `onClick={(e) => this.handleClick(e)}`.
-* Keep using `createReactClass`.
+* Функцуудийг байгуулагч дотор холбох.
+* Суман функцууд ашиглах, жишээ. `onClick={(e) => this.handleClick(e)}`.
+* `createReactClass`-г ашигласаар байх.
 
-## Mixins {#mixins}
+## Холимог(mixins) {#mixins}
 
->**Note:**
+>**Анхаар:**
 >
->ES6 launched without any mixin support. Therefore, there is no support for mixins when you use React with ES6 classes.
+>ES6 ямар нэг холимог дэмжихээргүй нэвтрүүлэгдсэн. Тийм учраас ES6 классуудыг React-д ашиглаж байгаа үед ямар нэг холимог дэмжихгүй.
 >
->**We also found numerous issues in codebases using mixins, [and don't recommend using them in the new code](/blog/2016/07/13/mixins-considered-harmful.html).**
+>**Мөн түүнчлэн холимог ашиглахад нэлээн хэдэн асуудал байгааг олсон бөгөөд [бид үүнийг шинэ код дээр ашиглахийг зөвлөхгүй](/blog/2016/07/13/mixins-considered-harmful.html).**
 >
->This section exists only for the reference.
+>Энэ хэсэг нь зүгээр заалт байдлаар үлдэж байна.
 
-Sometimes very different components may share some common functionality. These are sometimes called [cross-cutting concerns](https://en.wikipedia.org/wiki/Cross-cutting_concern). `createReactClass` lets you use a legacy `mixins` system for that.
+Заримдаа огт ялгаатай компонентууд ажил ажиллагаа дундаа хуваалцаж болно. Эдгээрийг [cross-cutting concerns](https://en.wikipedia.org/wiki/Cross-cutting_concern) гэж нэрлэдэг. `createReactClass` нь энэ зорилго `холимог` систем ашиглах боломжийг бүрдүүлдэг.
 
-One common use case is a component wanting to update itself on a time interval. It's easy to use `setInterval()`, but it's important to cancel your interval when you don't need it anymore to save memory. React provides [lifecycle methods](/docs/react-component.html#the-component-lifecycle) that let you know when a component is about to be created or destroyed. Let's create a simple mixin that uses these methods to provide an easy `setInterval()` function that will automatically get cleaned up when your component is destroyed.
+Ганц нийтлэг тохиолдол бол компонент хугацааны туршид өөрийгөө шинэчлэх юм. Энэ нь `setInterval()`-г хэрэглэн амархан шийдэгдэх ч хугацааны интервалаа санах ой хэмнэх үүднээс хэрэггүй үед цуцлах нь чухал байдаг. React [амьдралын мөчлөгийн функцууд](/docs/react-component.html#the-component-lifecycle) бэлдэж өгсөн бөгөөд хэзээ үүсгэгдэх эсвэл устгагдахийг шийддэг. Энгийн холимог ашиглан `setInterval()` функц нь автоматаар таны компонент устах үед цэвэрлэгдэх код бичье.
 
 ```javascript
 var SetIntervalMixin = {
@@ -222,4 +222,4 @@ ReactDOM.render(
 );
 ```
 
-If a component is using multiple mixins and several mixins define the same lifecycle method (i.e. several mixins want to do some cleanup when the component is destroyed), all of the lifecycle methods are guaranteed to be called. Methods defined on mixins run in the order mixins were listed, followed by a method call on the component.
+Хэрэв компонент олон холимогууд ашиглах болон олон холимогоор ижилхэн амьдралын мөчлөгийн функц тодорхойлж байгаа бол(жишээ нь нэлээн хэдэн холимогууд компонент устахад цэвэрлэгээ хийхийг хүсвэл), бүх амьдралын мөчлөгийн функцууд дуудагдах нь баталгаатай. Холимог дээр тодорхойлогдсон функцууд холимогууд жагсаагдны дагуу эрэмблэгддэг тэр эрэмбийн дагуу дагана.
