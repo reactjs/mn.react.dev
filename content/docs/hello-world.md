@@ -1,50 +1,51 @@
 ---
 id: hello-world
-title: Hello World
+title: Сайн уу Дэлхий
 permalink: docs/hello-world.html
 prev: cdn-links.html
 next: introducing-jsx.html
 ---
 
-The smallest React example looks like this:
+Хамгийн энгийн React жишээ иймэрхүү харагдана:
 
 ```js
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <h1>Сайн уу, дэлхий!</h1>,
   document.getElementById('root')
 );
 ```
 
-It displays a heading saying "Hello, world!" on the page.
+Ингэж "Сайн уу, дэлхий!" гэх толгой таг хуудсанд харагдана.
 
 [](codepen://hello-world)
 
-Click the link above to open an online editor. Feel free to make some changes, and see how they affect the output. Most pages in this guide will have editable examples like this one.
+Дээрхи холбоос дээр дарж онлайн засварлагчыг нээе. Хүссэнээрээ ѳѳрчлѳѳд үр дүн хэрхэн ѳѳрчлѳгдѳхийг хараарай. Ихэнх жишээнүүд үүнтэй адил заавартай байгаа.
 
 
-## How to Read This Guide {#how-to-read-this-guide}
+## Энэ зааврыг хэрхэн ойлгох вэ {#how-to-read-this-guide}
 
-In this guide, we will examine the building blocks of React apps: elements and components. Once you master them, you can create complex apps from small reusable pieces.
+Энэхүү зааварт бид React аппын бүрдэл хэсгүүдийг үзнэ: элементүүд болон компонентүүд. Эдгээрийг гартаа оруулсан цагт, нарийн бүтэцтэй аппыг жижиг хэсгүүдээр бүтээх боломжтой.
 
->Tip
+>Зѳвлѳгѳѳ
 >
->This guide is designed for people who prefer **learning concepts step by step**. If you prefer to learn by doing, check out our [practical tutorial](/tutorial/tutorial.html). You might find this guide and the tutorial complementary to each other.
+>Энэхүү заавар нь юмны **гол агуулгыг алхам алхам**-аар суралцдаг хүмүүст зориулсан тул биеэр туршиж юм сурдаг тѳрлийн хүмүүст [практик заавар](/tutorial/tutorial.html) санал болгоё. Магадгүй та энэхүү зааварт дурьдаагүй зүйлсийг практик заавраас олно байх.
 
-This is the first chapter in a step-by-step guide about main React concepts. You can find a list of all its chapters in the navigation sidebar. If you're reading this from a mobile device, you can access the navigation by pressing the button in the bottom right corner of your screen.
+Энэ бол React-ын гол агуулгыг алхам алхамаар заасан хамгийн эхний бүлэг. Бусад бүх бүлэг баруун талын мэнюд бий. Хэрвээ утаснаас үзэж байгаа бол баруун доод буланд байх товч дээр дарж мэню харах боломжтой.
 
-Every chapter in this guide builds on the knowledge introduced in earlier chapters. **You can learn most of React by reading the “Main Concepts” guide chapters in the order they appear in the sidebar.** For example, [“Introducing JSX”](/docs/introducing-jsx.html) is the next chapter after this one.
+Бүлэг бүр ѳмнѳ нь заагдсан бүлгийн мэдлэг дээр үндэслэсэн. **Ta React-ын талаар "Ерѳнхий агуулга" хэсгээс дарааллын дагуу үзэж сурах боломжтой.** Жишээ нь энэ бүлгийн дараах бүлэг нь ["JSX гэж юу вэ"](/docs/introducing-jsx.html)
 
-## Knowledge Level Assumptions {#knowledge-level-assumptions}
+## Урьдчилан мэдсэн байх {#knowledge-level-assumptions}
 
-React is a JavaScript library, and so we'll assume you have a basic understanding of the JavaScript language. **If you don't feel very confident, we recommend [going through a JavaScript tutorial](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) to check your knowledge level** and enable you to follow along this guide without getting lost. It might take you between 30 minutes and an hour, but as a result you won't have to feel like you're learning both React and JavaScript at the same time.
+React бол JavaScript сан, тиймээс энэ зааврыг дагаж хийхэд тѳѳрѳхгүйн тулд таньд JavaScript хэлний анхан шатны мэдлэг байх шаардлагатай. **Хэрвээ та гадарладаг эсэхдээ эргэлзэж байвал, [JavaScript-ын хичээлийг](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) үзэж мэдлэгээ бататгахыг** зѳвлѳж байна. Ердѳѳ 30минутаас 1 цаг хүртлэх хугацаа зарцуулаад React болон JavaScript гэсэн 2 тусдаа зүйл сурч байгаа мэт санагдахгүй нь ээ.
 
->Note
+>Тэмдэглэл
 >
->This guide occasionally uses some of the newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>Энд зарим заавар JavaScript-ын шинэ синтаксыг ашиглаж жишээ бичсэн байгаа. Хэрвээ JavaScript ашиглаагүй удсан бол [энэ гурван түгээмэл](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) зүйлсийг мэдэхэд илүүдэхгүй.
 
 
-## Let's Get Started! {#lets-get-started}
 
-Keep scrolling down, and you'll find the link to the [next chapter of this guide](/docs/introducing-jsx.html) right before the website footer.
+## Ингээд эхэлцгээе! {#lets-get-started}
+
+Доош нь гүйлгээд вэб сайтын хѳл хэсгийн дээд талд [энэ зааврын дараагийн бүлгийн](/docs/introducing-jsx.html) холбоосыг олно.
 
 
