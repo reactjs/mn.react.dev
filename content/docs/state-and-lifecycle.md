@@ -8,9 +8,11 @@ prev: components-and-props.html
 next: handling-events.html
 ---
 
-This page introduces the concept of state and lifecycle in a React component. You can find a [detailed component API reference here](/docs/react-component.html).
+Энэхүү хуудас нь React компонентийн state болон амьдралын мѳчлѳгийн ойлголтыг ѳгѳх зорилготой. [Илүү дэлгэрэнгүй мэдээллийг эндээс олох боломжтой](/docs/react-component.html)
 
 Consider the ticking clock example from [one of the previous sections](/docs/rendering-elements.html#updating-the-rendered-element). In [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom), we have only learned one way to update the UI. We call `ReactDOM.render()` to change the rendered output:
+
+[Ѳмнѳ нь хийсэн цаг тоолуурыг] жишээ болгоё. [Элемент рендэрлэх](/docs/rendering-elements.html#rendering-an-element-into-the-dom) заавар дээр хэрэглэгчийн интерфэйсыг шинэчлэх нэг арга болох `ReactDOM.render()` ашиглахыг үзсэн билээ.
 
 ```js{8-11}
 function tick() {
@@ -31,9 +33,9 @@ setInterval(tick, 1000);
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/gwoJZk?editors=0010)
 
-In this section, we will learn how to make the `Clock` component truly reusable and encapsulated. It will set up its own timer and update itself every second.
+Харин энэ удаа бид `Clock` компонентийг жинхэнэ утгаар нь дахин ашиглах боломжтой цогц болгоно. Ѳѳрѳѳ цагаа тохируулж ѳѳрѳѳ секунд бүрт шинэчлэгдэнэ гэсэн үг.
 
-We can start by encapsulating how the clock looks:
+Цаг маань хэрхэн харагдахаас эхэлье
 
 ```js{3-6,12}
 function Clock(props) {
