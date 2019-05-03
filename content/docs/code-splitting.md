@@ -6,15 +6,15 @@ permalink: docs/code-splitting.html
 
 ## Bundling {#bundling}
 
-Most React apps will have their files "bundled" using tools like
-[Webpack](https://webpack.js.org/) or [Browserify](http://browserify.org/).
-Bundling is the process of following imported files and merging them into a
-single file: a "bundle". This bundle can then be included on a webpage to load
-an entire app at once.
+Ихэнх React програмуудын файлууд нь [Webpack](https://webpack.js.org/) эсвэл
+[Browserify](http://browserify.org/) гэх мэт хэрэгслүүд ашиглан "багцалсан"
+байдаг. Багцлах гэдэг нь импортлогдсон файлууд болон файлуудыг нэг файл болгон
+нэгтгэх үйл явц юм: Энэ багц нь веб хуудас дээр нэмэгдэн бүхэл програмын нэг л
+удаа ачаалдаг.
 
 #### Example {#example}
 
-**App:**
+**Програм:**
 
 ```js
 // app.js
@@ -30,7 +30,7 @@ export function add(a, b) {
 }
 ```
 
-**Bundle:**
+**Багц:**
 
 ```js
 function add(a, b) {
@@ -40,44 +40,38 @@ function add(a, b) {
 console.log(add(16, 26)); // 42
 ```
 
-> Note:
+> Анхаар:
 >
-> Your bundles will end up looking a lot different than this.
+> Таны багцууд энэнээс өөр харагдаж болно.
 
-If you're using [Create React App](https://github.com/facebookincubator/create-react-app), [Next.js](https://github.com/zeit/next.js/), [Gatsby](https://www.gatsbyjs.org/), or a similar tool, you will have a Webpack setup out of the box to bundle your
-app.
+Хэрэв [Create React App](https://github.com/facebookincubator/create-react-app), [Next.js](https://github.com/zeit/next.js/), [Gatsby](https://www.gatsbyjs.org/) эсвэл төстэй хэрэгсэл ашигласан бол таны програмыг хайрцагнаас гадна багцлах Webpack тохиргоотой болно.
 
-If you aren't, you'll need to setup bundling yourself. For example, see the
-[Installation](https://webpack.js.org/guides/installation/) and
-[Getting Started](https://webpack.js.org/guides/getting-started/) guides on the
-Webpack docs.
+Хэрэв ийм хэрэгслүүд ашиглаагүй бол та өөрөө багцлах тохиргоог хийх болно. Жишээ болгон
+Webpack-н [суулгах](https://webpack.js.org/guides/installation/)  болон
+[Эхлэн суралцах](https://webpack.js.org/guides/getting-started/) заавруудын баримтжуулалтыг харна уу.
 
-## Code Splitting {#code-splitting}
+## Код салгах {#code-splitting}
 
-Bundling is great, but as your app grows, your bundle will grow too. Especially
-if you are including large third-party libraries. You need to keep an eye on
-the code you are including in your bundle so that you don't accidentally make
-it so large that your app takes a long time to load.
+Багцлах нь сайн ч таны програм томрохын хэрээр даган томроно. Ялангуяа гуравдагч
+том сангууд ашиглаж байгаа бол бүр их томроно.  Та програмдаа юуг багтааж байгааг
+анзаарч байхгүй бол ачаалахад хэтэрхий удаан том багцтай болж болзошгүй.
 
-To avoid winding up with a large bundle, it's good to get ahead of the problem
-and start "splitting" your bundle.
- [Code-Splitting](https://webpack.js.org/guides/code-splitting/) is a feature
-supported by bundlers like Webpack and Browserify (via
-[factor-bundle](https://github.com/browserify/factor-bundle)) which can create
-multiple bundles that can be dynamically loaded at runtime.
+Эцэст нь том багцтай болохоос сэргийлэхийн тулд багцуудаа "салгаж" эхлэх хэрэгтэй.
+ [Код-салгах](https://webpack.js.org/guides/code-splitting/) боломж нь
+Webpack болон Browserify шиг хэрэгслүүдэд (via
+[factor-bundle](https://github.com/browserify/factor-bundle)) дэмжигддэг бөгөөд
+олон салгасан багцууд үүсгэн ажиллагааны үед динамикаар ачаалагддаг.
 
-Code-splitting your app can help you "lazy-load" just the things that are
-currently needed by the user, which can dramatically improve the performance of
-your app. While you haven't reduced the overall amount of code in your app,
-you've avoided loading code that the user may never need, and reduced the amount
-of code needed during the initial load.
+Код-салгах нь хэрэглэгчид одоо хэрэгтэй байгаа ч энэ ачаалагдсан зүйл нь хэрэглэгчид
+дахин хэзээ хэрэг болохгүй бол эхлэлийн ачаалалт дээр дуудагдах кодын хэмжээг
+бууруулахад туслад үүднээс "залхуу-ачаалалт" дуудах боломжийг олгодог. Ингэснээр
+таны програмын хурдыг гайхалтай нэмэгдүүлж болно. 
 
 ## `import()` {#import}
 
-The best way to introduce code-splitting into your app is through the dynamic
-`import()` syntax.
+Код салгахийг өөрийн програмдаа хэрэгжүүлэх сайн арга бол динамик `import()` бичиглэл юм.
 
-**Before:**
+**Өмнө:**
 
 ```js
 import { add } from './math';
@@ -85,7 +79,7 @@ import { add } from './math';
 console.log(add(16, 26));
 ```
 
-**After:**
+**Дараа:**
 
 ```js
 import("./math").then(math => {
@@ -93,33 +87,33 @@ import("./math").then(math => {
 });
 ```
 
-> Note:
+> Анхаар:
 >
-> The dynamic `import()` syntax is a ECMAScript (JavaScript)
-> [proposal](https://github.com/tc39/proposal-dynamic-import) not currently
-> part of the language standard. It is expected to be accepted in the
-> near future.
+> Динамик `import()` бичиглэл бол ECMAScript (JavaScript)
+> [санал болголт](https://github.com/tc39/proposal-dynamic-import) бөгөөд одоогоор
+> хэлний стандартын нэг хэсэг болоогүй байна. Энэ нь тун удахгүй хүлээн зөвшөөрөгдөхөөр
+> байгаа болно.
 
-When Webpack comes across this syntax, it automatically starts code-splitting
-your app. If you're using Create React App, this is already configured for you
-and you can [start using it](https://facebook.github.io/create-react-app/docs/code-splitting) immediately. It's also supported
-out of the box in [Next.js](https://github.com/zeit/next.js/#dynamic-import).
+Webpack энэ бичиглэлтэй болох үед энэ нь таны прогамыг кодыг автоматаар салгаж
+эхэлэнэ. Хэрэв та Create React App ашиглаж байгаа бол энэ нь таньд аль хэдийн
+тохируулагдаж өгсөн байгаа бөгөөд та үүнийг даруйхан [ашиглаж эхлэх](https://facebook.github.io/create-react-app/docs/code-splitting)
+хэрэгтэй. Энэ нь мөн хүрээнээс гаднах [Next.js](https://github.com/zeit/next.js/#dynamic-import) дээр ч дэмжигддэг.
 
-If you're setting up Webpack yourself, you'll probably want to read Webpack's
-[guide on code splitting](https://webpack.js.org/guides/code-splitting/). Your Webpack config should look vaguely [like this](https://gist.github.com/gaearon/ca6e803f5c604d37468b0091d9959269).
+Хэрэв та Webpack өөртөө тохируулж байгаа бол та түүний
+[код салгах зааврыг](https://webpack.js.org/guides/code-splitting/) унших нь зүйтэй. Таны Webpack тохиргоо [иймэрхүү](https://gist.github.com/gaearon/ca6e803f5c604d37468b0091d9959269) харагдах хэрэгтэй.
 
-When using [Babel](https://babeljs.io/), you'll need to make sure that Babel can
-parse the dynamic import syntax but is not transforming it. For that you will need [babel-plugin-syntax-dynamic-import](https://yarnpkg.com/en/package/babel-plugin-syntax-dynamic-import).
+[Babel](https://babeljs.io/) ашиглаж байгаа үед та Babel динамик импорт бичиглэлийг
+хувиргаж биш хөрвүүлж байгаа эсэхийг нягтлах хэрэгтэй. Ингэхийн тулд танд [babel-plugin-syntax-dynamic-import](https://yarnpkg.com/en/package/babel-plugin-syntax-dynamic-import) хэрэг болно.
 
 ## `React.lazy` {#reactlazy}
 
-> Note:
+> Анхаар:
 >
-> `React.lazy` and Suspense is not yet available for server-side rendering. If you want to do code-splitting in a server rendered app, we recommend [Loadable Components](https://github.com/smooth-code/loadable-components). It has a nice [guide for bundle splitting with server-side rendering](https://github.com/smooth-code/loadable-components/blob/master/packages/server/README.md).
+> `React.lazy` болон Suspence нь сервер талын дүрслэлт дээр хараахан байхгүй юм. Хэрэв та сервер дээр дүрслэлт хийгддэг програмд код салгалт хийхийг хүсвэл [Ачаалагдахуйц компонентууд(Loadable Components)](https://github.com/smooth-code/loadable-components) ашиглахийг зөвлөж байна. Энэ нь [сервер талын дүрслэл дээр багц салгалтыг хийх заавар](https://github.com/smooth-code/loadable-components/blob/master/packages/server/README.md) сайтай.
 
-The `React.lazy` function lets you render a dynamic import as a regular component.
+`React.lazy` функц нь танд энгийн компонентийн динамикаар импортлон дүрслэж боломжийг олгодог.
 
-**Before:**
+**Өмнө:**
 
 ```js
 import OtherComponent from './OtherComponent';
@@ -133,7 +127,7 @@ function MyComponent() {
 }
 ```
 
-**After:**
+**Дараа:**
 
 ```js
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
@@ -147,13 +141,13 @@ function MyComponent() {
 }
 ```
 
-This will automatically load the bundle containing the `OtherComponent` when this component gets rendered.
+Энэ нь `OtherComponent` агуулсан багцийг компонент дүрслэгдэх үед динамикаар импортлодог.
 
-`React.lazy` takes a function that must call a dynamic `import()`. This must return a `Promise` which resolves to a module with a `default` export containing a React component.
+`React.lazy` нь функц авдаг ба тэр нь динамик `import()`-г дуудах ёстой. Энэ нь `Promise` буцаах ёстой ба React компонент агуулсан модулийг хайж олдог.
 
 ### Suspense {#suspense}
 
-If the module containing the `OtherComponent` is not yet loaded by the time `MyComponent` renders, we must show some fallback content while we're waiting for it to load - such as a loading indicator. This is done using the `Suspense` component.
+`MyComponent` дүрслэгдэх мөчид `OtherComponent`-г агуулсан модуль ачаалагдаагүй бол бид ямар нэг уншиж байгаа мэдээлэл гэх мэт ачаалагдаж байгааг нь илэрхийлэх агуулга харуулах хэрэгтэй. Үүнийг `Suspense` компонентоор хийдэг.
 
 ```js
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
@@ -169,7 +163,7 @@ function MyComponent() {
 }
 ```
 
-The `fallback` prop accepts any React elements that you want to render while waiting for the component to load. You can place the `Suspense` component anywhere above the lazy component. You can even wrap multiple lazy components with a single `Suspense` component.
+`fallback` шинж чанар нь ямар ч React элементүүд хүлээж авах ба та компонент ачаалагдах хүртэл юуг ч дүрсэлж болно. Та `Suspense` компонентийг ямар ч залхуу компонентийн дараа байрлуулж болно. Бүр та олон залхуу компонентуудыг хүртэл нэг `Suspense` компонентоор хүрээлүүлэн ашиглаж болно.
 
 ```js
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
@@ -189,9 +183,9 @@ function MyComponent() {
 }
 ```
 
-### Error boundaries {#error-boundaries}
+### Алдааны зааг(boundaries) {#error-boundaries}
 
-If the other module fails to load (for example, due to network failure), it will trigger an error. You can handle these errors to show a nice user experience and manage recovery with [Error Boundaries](/docs/error-boundaries.html). Once you've created your Error Boundary, you can use it anywhere above your lazy components to display an error state when there's a network error.
+Хэрэв бусад модуль ачаалагдаж чадахгүй бол(жишээ нь сүлжээны доголдлоос) алдаа гарна. Та эдгээр алдаануудыг удирдан хэрэглэгчид мэдэгдэх болон дахин сэргээх үйлдлийг [алдааны зааг](/docs/error-boundaries.html)-р хийж болно. Алдааны заагаа үүсгэсний дараа та үүнийг залхуу компонентуудынхаа доор хаана ч ашиглан сүлжээний алдаа гарсан үед алдааны төлвөө дүрсэлж болно.
 
 ```js
 import MyErrorBoundary from './MyErrorBoundary';
@@ -212,19 +206,18 @@ const MyComponent = () => (
 );
 ```
 
-## Route-based code splitting {#route-based-code-splitting}
+## Чиглэлд тулгуурласан код салгалт(Route-based code splitting) {#route-based-code-splitting}
 
-Deciding where in your app to introduce code splitting can be a bit tricky. You
-want to make sure you choose places that will split bundles evenly, but won't
-disrupt the user experience.
+Таны програмын хаана код салгахийг шийдэх нь хэцүү байдаг. Та магадгүй багцуудыг
+тэнцүү байдлаар салгахийг хүсэх ч дэлгэцийн үйл ажиллагаанд саад учруулахгүй байхийг
+хүсэж болно.
 
-A good place to start is with routes. Most people on the web are used to
-page transitions taking some amount of time to load. You also tend to be
-re-rendering the entire page at once so your users are unlikely to be
-interacting with other elements on the page at the same time.
+Хамгийн сайн эхлэх газар бол чиглэлүүд(routes) юм. Веб үзэж байгаа хүмүүс
+хуудас солигдох үед ачаалагдахдаа бага зэрэг цаг авахад дассан байдаг. Мөн та
+бүхэл хуудсийг дахин нэг удаа дүрслэхийг илүүд үздэг бол таны хэрэглэгчид
+хуудас дээр байгаа бусад элементүүдтэй харьцах нь цөөн байдаг.
 
-Here's an example of how to setup route-based code splitting into your app using
-libraries like [React Router](https://reacttraining.com/react-router/) with `React.lazy`.
+Энэ нь хэрхэн чиглэл дээр тулгуурласан код салгалт хийх жишээг [React Router](https://reacttraining.com/react-router/) шиг санг `React.lazy`-тэй хамт ашиглан харуулжээ.
 
 ```js
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -245,9 +238,9 @@ const App = () => (
 );
 ```
 
-## Named Exports {#named-exports}
+## Нэрлэсэн экспортууд {#named-exports}
 
-`React.lazy` currently only supports default exports. If the module you want to import uses named exports, you can create an intermediate module that reexports it as the default. This ensures that treeshaking keeps working and that you don't pull in unused components.
+`React.lazy` нь одоогоор зөвхөн default экспортууд дээр дэмжигддэг. Хэрэв таний импортлохийг хүсэж буй модуль нэрлэсэн экспортууд ашигладаг бол та дундын модуль үүсгэн дахин default-руу экспортлож болно. Энэ нь танд ашиглагдаагүй компонентийг ачаалаагдахгүй байх баталгааг олгодог.
 
 ```js
 // ManyComponents.js
