@@ -13,35 +13,35 @@ redirect_from:
   - "docs/top-level-api-zh-CN.html"
 ---
 
-`React` is the entry point to the React library. If you load React from a `<script>` tag, these top-level APIs are available on the `React` global. If you use ES6 with npm, you can write `import React from 'react'`. If you use ES5 with npm, you can write `var React = require('react')`.
+`React` бол React сангийн эхлэлийн цэг юм. Хэрэв та `<script` тагаас React-г ачаалвал дээд түвшний API-ууд глобал байдлаар бэлэн болно. Хэрэв та ES6-г npm-ээр ашиглаж байгаа бол дараах байдлаар `import React from 'react'` бичнэ. Хэрэв та ES5-г npm-ээр ашиглаж байгаал бол дараах байдалтай `var React = require('react')` бичнэ.
 
-## Overview {#overview}
+## Тойм {#overview}
 
-### Components {#components}
+### Компонентууд {#components}
 
-React components let you split the UI into independent, reusable pieces, and think about each piece in isolation. React components can be defined by subclassing `React.Component` or `React.PureComponent`.
+ React компонентууд нь дэлгэцийн загварын хэсэг болгоныг бие даасан, дахин ашиглагдах боломжтой, тусгаарласан хэсгүүд болгох бололцоог олгодог. React компонентууд нь `React.Component` эсвэл `React.PureComponent` дэд класс болон тодорхойлогддог.
 
  - [`React.Component`](#reactcomponent)
  - [`React.PureComponent`](#reactpurecomponent)
 
-If you don't use ES6 classes, you may use the `create-react-class` module instead. See [Using React without ES6](/docs/react-without-es6.html) for more information.
+Хэрэв та ES6 классууд ашиглахгүй бол та `create-react-class` модулийг оронд нь ашиглаж болно. Илүү дэлгэрэнгүй мэдээллийг [ES6-гүйгээр React хэрэглэг](/docs/react-without-es6.html) хуудсыг харна уу.
 
-React components can also be defined as functions which can be wrapped:
+React компонентууд нь мөн хүрээлэгдэж болох функц байдлаар тодорхойлогдож болно:
 
 - [`React.memo`](#reactmemo)
 
-### Creating React Elements {#creating-react-elements}
+### React элементүүд үүсгэх нь {#creating-react-elements}
 
-We recommend [using JSX](/docs/introducing-jsx.html) to describe what your UI should look like. Each JSX element is just syntactic sugar for calling [`React.createElement()`](#createelement). You will not typically invoke the following methods directly if you are using JSX.
+Бид таны дэлгэцийн загвар ямар харагдахийг тодорхойлохдоо[JSX хэрэглэхийг](/docs/introducing-jsx.html) хэрэглэхийг зөвлөдөг. JSX элемент бүр [`React.createElement()`](#createelement) дуудаг бичиглэл юм. Та энгийнээр дараах функцуудыг JSX ашиглаж байгаа үед шууд дууддаггүй.
 
 - [`createElement()`](#createelement)
 - [`createFactory()`](#createfactory)
 
-See [Using React without JSX](/docs/react-without-jsx.html) for more information.
+Илүү дэлгэрэнгүй мэдээллийг [JSX-гүйгээр React хэрэглэх](/docs/react-without-jsx.html) хуудсыг харна уу.
 
-### Transforming Elements {#transforming-elements}
+### Элементийг хувиргах нь {#transforming-elements}
 
-`React` provides several APIs for manipulating elements:
+`React` нь элементийг хувиргах хэдэн API-ууд байдаг:
 
 - [`cloneElement()`](#cloneelement)
 - [`isValidElement()`](#isvalidelement)
@@ -49,7 +49,7 @@ See [Using React without JSX](/docs/react-without-jsx.html) for more information
 
 ### Fragments {#fragments}
 
-`React` also provides a component for rendering multiple elements without a wrapper.
+`React` мөн олон элементийг хүрээлэхгүйгээр компонетод дүрслэх боломж олгодог.
 
 - [`React.Fragment`](#reactfragment)
 
@@ -60,14 +60,14 @@ See [Using React without JSX](/docs/react-without-jsx.html) for more information
 
 ### Suspense {#suspense}
 
-Suspense lets components "wait" for something before rendering. Today, Suspense only supports one use case: [loading components dynamically with `React.lazy`](/docs/code-splitting.html#reactlazy). In the future, it will support other use cases like data fetching.
+Suspense нь компонентийг "хүлээнгээ" ямар нэг зүйлийг дүрслэх боломжийг олгодог. Одоогоор Suspense нь ганцхан тохиолдол дэмждэг: [`React.lazy`-р компонентийг динамикаар ачаалах](/docs/code-splitting.html#reactlazy). Ирээдүйд энэ нь өгөгдөл татах гэх мэт бусад хэрэглээг дэмжих болно.
 
 - [`React.lazy`](#reactlazy)
 - [`React.Suspense`](#reactsuspense)
 
 ### Hooks {#hooks}
 
-*Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class. Hooks have a [dedicated docs section](/docs/hooks-intro.html) and a separate API reference:
+*Hooks* React 16.8-д нэмэгдсэн шинэ нэмэлт юм. Тэд төлөв болон React-н бусад боломжуудыг класс бичихгүйгээр ашиглах боломжийг олгож байна. Hooks нь [өөрийн гэсэн баримтжуулалтын хэсэгтэй](/docs/hooks-intro.html) бөгөөд тусдаа API-н заалттай:
 
 - [Basic Hooks](/docs/hooks-reference.html#basic-hooks)
   - [`useState`](/docs/hooks-reference.html#usestate)
@@ -88,7 +88,7 @@ Suspense lets components "wait" for something before rendering. Today, Suspense 
 
 ### `React.Component` {#reactcomponent}
 
-`React.Component` is the base class for React components when they are defined using [ES6 classes](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes):
+`React.Component` бол React компонентуудын [ES6 классууд](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) ашиглаж тодорхойлж байгаа үеийн үндсэн класс юм:
 
 ```javascript
 class Greeting extends React.Component {
@@ -98,21 +98,21 @@ class Greeting extends React.Component {
 }
 ```
 
-See the [React.Component API Reference](/docs/react-component.html) for a list of methods and properties related to the base `React.Component` class.
+`React.Component` классын шинж чанар болон функцуудыг жагсаалтыг [React.Component API Reference](/docs/react-component.html)-с харна уу.
 
 * * *
 
 ### `React.PureComponent` {#reactpurecomponent}
 
-`React.PureComponent` is similar to [`React.Component`](#reactcomponent). The difference between them is that [`React.Component`](#reactcomponent) doesn't implement [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate), but `React.PureComponent` implements it with a shallow prop and state comparison. 
+`React.PureComponent` нь [`React.Component`](#reactcomponent)-тэй төстэй. Тэдгээрийн ялгаа нь [`React.Component`](#reactcomponent) [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) аргийг хэрэгжүүлдэггүй бөгөөд харин `React.PureComponent` нь үүнийг өнгөц шинж чанар болон төлвийн харьцуулалтаар хэрэгжүүлдэг.
 
-If your React component's `render()` function renders the same result given the same props and state, you can use `React.PureComponent` for a performance boost in some cases.
+Хэрэв таны React компонентийн `render()` функц нь ижил шинж чанар болон төлөвт ижил үр дүн дүрсэлдэг бол хурдыг нэмэх үүднээс зарим тохиолдолд `React.PureComponent` ашиглаж болно.
 
-> Note
+> Анхаар
 >
-> `React.PureComponent`'s `shouldComponentUpdate()` only shallowly compares the objects. If these contain complex data structures, it may produce false-negatives for deeper differences. Only extend `PureComponent` when you expect to have simple props and state, or use [`forceUpdate()`](/docs/react-component.html#forceupdate) when you know deep data structures have changed. Or, consider using [immutable objects](https://facebook.github.io/immutable-js/) to facilitate fast comparisons of nested data.
+> `React.PureComponent`-н `shouldComponentUpdate()` арга нь объектуудыг өнгөцхөн харьцуулдаг. Хэрэв тэдгээр нь цогц өгөгдлийн бүтэц ашигладаг бол илүү гүн түвшний ялгаа дээр дээр худлаа үр дүн үзүүлж болзошгүй. `PureComponent`-г зөвхөн энгийн шинж чанартай эсвэл [`forceUpdate()`](/docs/react-component.html#forceupdate)-г таны өгөгдлийн бүтэц гүн түвшинд өөрчлөгдснийг мэдвэл дуудан ашиглана. Эсвэл [immutable objects](https://facebook.github.io/immutable-js/) ашиглан хурдан харьцуулалтыг гүн түвшинд хийж болно.
 >
-> Furthermore, `React.PureComponent`'s `shouldComponentUpdate()` skips prop updates for the whole component subtree. Make sure all the children components are also "pure".
+> Тодруулбал `React.PureComponent`-н`shouldComponentUpdate()` нь шинж чанарын шинэчлэлүүдийг компонентийн дэд мод дээр алгасдаг. Мөн бүх дэд компонентууд нь "pure" байгааг нягтлах хэрэгтэй.
 
 * * *
 
@@ -124,11 +124,11 @@ const MyComponent = React.memo(function MyComponent(props) {
 });
 ```
 
-`React.memo` is a [higher order component](/docs/higher-order-components.html). It's similar to [`React.PureComponent`](#reactpurecomponent) but for function components instead of classes.
+`React.memo` бол [дээд түвшний компонент(higher order component)](/docs/higher-order-components.html). Энэ нь [`React.PureComponent`](#reactpurecomponent)-тэй төстэй ч класс компонентод биш функц компонентод зориулсан.
 
-If your function component renders the same result given the same props, you can wrap it in a call to `React.memo` for a performance boost in some cases by memoizing the result. This means that React will skip rendering the component, and reuse the last rendered result.
+Хэрэв таны функц компонент нь ижил шинж чанаруудад ижил үр дүн дүрсэлдэг бол `React.memo` дуудалтаар хүрээлүүлэн зарим тохиолдолд хурдны сайжруулалт болж болох юм. Өөрөр хэлбэл React компонентийг дүрслэхгүйгээр сүүлд дүрслэгдсэн үр дүнг дахин ашигладаг.
 
-By default it will only shallowly compare complex objects in the props object. If you want control over the comparison, you can also provide a custom comparison function as the second argument.
+Анхны байдлаар энэ нь шинж чанарын цогц объектууд дээр өнгөцхөн харьцуулалт хийдэг. Хэрэв та харьцуулалтыг удирдахийг хүсвэл хоёрдах аргументаар харьцуулагч функц дамжуулан ашиглаж болно.
 
 ```javascript
 function MyComponent(props) {
@@ -144,11 +144,11 @@ function areEqual(prevProps, nextProps) {
 export default React.memo(MyComponent, areEqual);
 ```
 
-This method only exists as a **[performance optimization](/docs/optimizing-performance.html).** Do not rely on it to "prevent" a render, as this can lead to bugs.
+Энэ арга нь зөвхөн **[хурдны сайжруулалтад](/docs/optimizing-performance.html) зориулсан.** Дүрслэгдэхээс "сэргийлэхэд" ганцхан найдаж болохгүй энэ нь гажуудал үүсгэж болно.
 
-> Note
+> Анхаар
 >
-> Unlike the [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) method on class components, the `areEqual` function returns `true` if the props are equal and `false` if the props are not equal. This is the inverse from `shouldComponentUpdate`.
+> Класс компонентийн [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) аргаас өөр нь `areEqual` функц нь хэрэв шинж чанарууд адилхан бол `true` өөр бол `false` утга буцаана. Энэ нь `shouldComponentUpdate`-н урвуу юм.
 
 * * *
 
@@ -162,9 +162,9 @@ React.createElement(
 )
 ```
 
-Create and return a new [React element](/docs/rendering-elements.html) of the given type. The type argument can be either a tag name string (such as `'div'` or `'span'`), a [React component](/docs/components-and-props.html) type (a class or a function), or a [React fragment](#reactfragment) type.
+Өгөгдсөн төрлөөр шинэ [React element](/docs/rendering-elements.html) үүсгэн буцаана. Төрлийн аргумент нь тагийн нэр(`'div'` эсвэл `'span'`), [React component](/docs/components-and-props.html) төрөл(класс эсвэл функц), эсвэл [React fragment](#reactfragment) төрөл байдаг.
 
-Code written with [JSX](/docs/introducing-jsx.html) will be converted to use `React.createElement()`. You will not typically invoke `React.createElement()` directly if you are using JSX. See [React Without JSX](/docs/react-without-jsx.html) to learn more.
+[JSX](/docs/introducing-jsx.html) ашиглан бичигдсэн код нь `React.createElement()` ашиглан хөрвүүлэгддэг. Та `React.createElement()`-г JSX ашиглаж байгаа үед дуудах хэрэггүй. Илүү [JSX-гүй React](/docs/react-without-jsx.html)-с харна уу.
 
 * * *
 
@@ -178,17 +178,17 @@ React.cloneElement(
 )
 ```
 
-Clone and return a new React element using `element` as the starting point. The resulting element will have the original element's props with the new props merged in shallowly. New children will replace existing children. `key` and `ref` from the original element will be preserved.
+React элементийг `element`-г эхлэлийн цэг болгон ашиглаж хувилаад шинээр үүсгэн буцаана. Үр дүнд үүсэх элемент нь эх элементийнхаа шинж чанарыг өнгөцхөн хуулбарлана. Шинэ хүү нь байгаа хүүг сольдог. `key` болон `ref` эх элементээсээ нөөцлөгддөг.
 
-`React.cloneElement()` is almost equivalent to:
+`React.cloneElement()` дараахтай бараг ижил:
 
 ```js
 <element.type {...element.props} {...props}>{children}</element.type>
 ```
 
-However, it also preserves `ref`s. This means that if you get a child with a `ref` on it, you won't accidentally steal it from your ancestor. You will get the same `ref` attached to your new element.
+Энэ нь мөн `ref`-г нөөцөлдөг. Өөрөөр хэлбэл хүү элемент `ref` дээр байвал, та түүнийг эцгээс нь булаана. Таны шинэ элементэд ижил `ref` байна.
 
-This API was introduced as a replacement of the deprecated `React.addons.cloneWithProps()`.
+Энэ API нь хуучирсан `React.addons.cloneWithProps()`-н солигдох хувилбар болон танилцуулагдсан.
 
 * * *
 
@@ -198,11 +198,12 @@ This API was introduced as a replacement of the deprecated `React.addons.cloneWi
 React.createFactory(type)
 ```
 
-Return a function that produces React elements of a given type. Like [`React.createElement()`](#createelement), the type argument can be either a tag name string (such as `'div'` or `'span'`), a [React component](/docs/components-and-props.html) type (a class or a function), or a [React fragment](#reactfragment) type.
+Өгөгдсөн төрлөөр React элемент бүтээх функц буцаадаг. [`React.createElement()`](#createelement) шиг төрөл аргумент нь тагийн нэр(`'div'` эсвэл `'span'`), [React component](/docs/components-and-props.html) төрөл(класс эсвэл функц), эсвэл [React fragment](#reactfragment) төрөл байж болно.
 
-This helper is considered legacy, and we encourage you to either use JSX or use `React.createElement()` directly instead.
+Энэ туслагч нь ирээдүйн хэрэглээ гэж үзэж байгаа учир JSX эсвэл `React.createElement()` шууд ашиглаж байгаа аль тохиолдолд хэрэглэхийг уриалж байна.
 
 You will not typically invoke `React.createFactory()` directly if you are using JSX. See [React Without JSX](/docs/react-without-jsx.html) to learn more.
+Та `React.createFactory()`-г JSX ашиглаж байгаа үед дуудах хэрэггүй. Илүү [JSX-гүй React](/docs/react-without-jsx.html)-с харна уу.
 
 * * *
 
@@ -212,13 +213,13 @@ You will not typically invoke `React.createFactory()` directly if you are using 
 React.isValidElement(object)
 ```
 
-Verifies the object is a React element. Returns `true` or `false`.
+Объект нь React элемент эсэхийг баталгаажуулдаг.`true` эсвэл `false` буцаана.
 
 * * *
 
 ### `React.Children` {#reactchildren}
 
-`React.Children` provides utilities for dealing with the `this.props.children` opaque data structure.
+`React.Children` нь `this.props.children` өгөгдлийн бүтэцтэй ажиллах боломжийг олгодог.
 
 #### `React.Children.map` {#reactchildrenmap}
 
@@ -226,11 +227,11 @@ Verifies the object is a React element. Returns `true` or `false`.
 React.Children.map(children, function[(thisArg)])
 ```
 
-Invokes a function on every immediate child contained within `children` with `this` set to `thisArg`. If `children` is an array it will be traversed and the function will be called for each child in the array. If children is `null` or `undefined`, this method will return `null` or `undefined` rather than an array.
+`children`-д байгаа хүү болгон дээр `thisArg`-г заасан функцийг ажиллуулдаг. Хэрэв `children` жагсаалт бол түүгээр аялан жагсаалтад байгаа хүү болгон дээр функц дуудагдана. Хэрэв хүү `null` эсвэл `undefined` бол энэ арга нь `null` эсвэл `undefined`-г жагсаалтын оронд буцаадаг.
 
-> Note
+> Анхаар
 >
-> If `children` is a `Fragment` it will be treated as a single child and not traversed.
+> Хэрэв `children` нь `Fragment` бол нэг хүүтэй гэж үзэн аяладаггүй.
 
 #### `React.Children.forEach` {#reactchildrenforeach}
 
@@ -238,7 +239,7 @@ Invokes a function on every immediate child contained within `children` with `th
 React.Children.forEach(children, function[(thisArg)])
 ```
 
-Like [`React.Children.map()`](#reactchildrenmap) but does not return an array.
+[`React.Children.map()`](#reactchildrenmap) шиг боловч жагсаалт буцаадаггүй.
 
 #### `React.Children.count` {#reactchildrencount}
 
@@ -246,7 +247,7 @@ Like [`React.Children.map()`](#reactchildrenmap) but does not return an array.
 React.Children.count(children)
 ```
 
-Returns the total number of components in `children`, equal to the number of times that a callback passed to `map` or `forEach` would be invoked.
+Компонентийн нийт `children`-үүдийн тоог буцаадаг ба `map` эсвэл `forEach` дуудагдах тоотой адил юм.
 
 #### `React.Children.only` {#reactchildrenonly}
 
@@ -254,11 +255,11 @@ Returns the total number of components in `children`, equal to the number of tim
 React.Children.only(children)
 ```
 
-Verifies that `children` has only one child (a React element) and returns it. Otherwise this method throws an error.
+Ганцхан хүүтэйг баталгаажуулан түүнийг буцаана. Олон хүүтэй бол алдаа шиддэг.
 
-> Note:
+> Анхаар:
 >
->`React.Children.only()` does not accept the return value of [`React.Children.map()`](#reactchildrenmap) because it is an array rather than a React element.
+>`React.Children.only()` [`React.Children.map()`](#reactchildrenmap)-н буцаах утгийг хүлээж авдаггүй бөгөөд энэ нь жагсаалт болохоос React элемент биш юм.
 
 #### `React.Children.toArray` {#reactchildrentoarray}
 
@@ -266,17 +267,17 @@ Verifies that `children` has only one child (a React element) and returns it. Ot
 React.Children.toArray(children)
 ```
 
-Returns the `children` opaque data structure as a flat array with keys assigned to each child. Useful if you want to manipulate collections of children in your render methods, especially if you want to reorder or slice `this.props.children` before passing it down.
+`children` өгөгдлийн бүтцийг хүү болгон түлхүүр оноосон жагсаалт болгон буцаана. Хүүхдүүдийн цуглуулгийг дүрслэхдээ өөрчлөхөд хэрэг болдог ба тусгайлан дахин эрэмблэх болон тодорхой хэсгийг салган хэрэглэхэд маш үр дүнтэй байдаг.
 
 > Note:
 >
-> `React.Children.toArray()` changes keys to preserve the semantics of nested arrays when flattening lists of children. That is, `toArray` prefixes each key in the returned array so that each element's key is scoped to the input array containing it.
+> `React.Children.toArray()` хүүнүүдийн жагсаалт нь дотогшоо дахин дамжсан бол(nested arrays) энгийн жагсаалт болгохдоо түлхүүрний утга өөрчлөгдөж болно. `toArray` элемент бүрийн түлхүүрийн урд түүнийг агуулсан хүрээнийг түлхүүрийг угтвар болгон ашигладаг.
 
 * * *
 
 ### `React.Fragment` {#reactfragment}
 
-The `React.Fragment` component lets you return multiple elements in a `render()` method without creating an additional DOM element:
+`React.Fragment` компонент тань олон элементийг `render()` функц дотор нэмэлт DOM элемент үүсгэхгүйгээр ашиглаж боломж олгодог:
 
 ```javascript
 render() {
@@ -289,54 +290,54 @@ render() {
 }
 ```
 
-You can also use it with the shorthand `<></>` syntax. For more information, see [React v16.2.0: Improved Support for Fragments](/blog/2017/11/28/react-v16.2.0-fragment-support.html).
+Та мөн богино `<></>` бичиглэл ашиглаж болно Илүү дэлгэрэнгүйг [React v16.2.0:  Fragments-н сайжруулан дэмжлэг](/blog/2017/11/28/react-v16.2.0-fragment-support.html)-с харна уу.
 
 
 ### `React.createRef` {#reactcreateref}
 
-`React.createRef` creates a [ref](/docs/refs-and-the-dom.html) that can be attached to React elements via the ref attribute.
+`React.createRef` нь React элементийн ref аттрибутад хавсаргагддаг [ref](/docs/refs-and-the-dom.html) үүсгэдэг.
 `embed:16-3-release-blog-post/create-ref-example.js`
 
 ### `React.forwardRef` {#reactforwardref}
 
-`React.forwardRef` creates a React component that forwards the [ref](/docs/refs-and-the-dom.html) attribute it receives to another component below in the tree. This technique is not very common but is particularly useful in two scenarios:
+`React.forwardRef` нь [ref](/docs/refs-and-the-dom.html)-г React компонентод аттрибут болгон хүлээн авч өөр нэг модны доор байгаа компонент руу дамжуулдаг. Энэ аргачлал нь тийм ч нийтлэг биш бөгөөд ихэвчлэн дараах хоёр хэрэглээнд ашиглагддаг:
 
 * [Forwarding refs to DOM components](/docs/forwarding-refs.html#forwarding-refs-to-dom-components)
 * [Forwarding refs in higher-order-components](/docs/forwarding-refs.html#forwarding-refs-in-higher-order-components)
 
-`React.forwardRef` accepts a rendering function as an argument. React will call this function with `props` and `ref` as two arguments. This function should return a React node.
+`React.forwardRef` дүрслэх функцийг аргумент болгон хүлээн авдаг. React  энэ функцийг нь `props` болон `ref` хоёр аргументуудаар дууддаг. Энэ функц нь React зангилаа буцаадаг.
 
 `embed:reference-react-forward-ref.js`
 
-In the above example, React passes a `ref` given to `<FancyButton ref={ref}>` element as a second argument to the rendering function inside the `React.forwardRef` call. This rendering function passes the `ref` to the `<button ref={ref}>` element.
+Дээрх жишээнд React `ref`-г `<FancyButton ref={ref}>` элемент руу хоёрдах аргумент болгон дамжуулж дүрслэх функцийн дотор талд `React.forwardRef` дуудалтаар ашиглаж байна. Энэ дүрслэх функц нь `ref`-г `<button ref={ref}>` элемент руу дамжуулж байна.
 
-As a result, after React attaches the ref, `ref.current` will point directly to the `<button>` DOM element instance.
+Үр дүнд React ref-г хавсаргасны дараа, `ref.current` нь DOM элементийн `<button>` тохиолдол руу заах болно.
 
-For more information, see [forwarding refs](/docs/forwarding-refs.html).
+Илүү дэлгэрэнгүй [forwarding refs](/docs/forwarding-refs.html) хэсгээг харна уу.
 
 ### `React.lazy` {#reactlazy}
 
-`React.lazy()` lets you define a component that is loaded dynamically. This helps reduce the bundle size to delay loading components that aren't used during the initial render.
+`React.lazy()` компонентийг динамикаар ачаалдаг.  Энэ нь эхний дүрслэл дээр хэрэглэгдэхгүй компонентуудын дараа нь ачаалан багцын хэмжээг багасгадаг.
 
-You can learn how to use it from our [code splitting documentation](/docs/code-splitting.html#reactlazy). You might also want to check out [this article](https://medium.com/@pomber/lazy-loading-and-preloading-components-in-react-16-6-804de091c82d) explaining how to use it in more detail.
+Та үүнийг хэрхэн ашиглахийг бидний [код салгах баримтжуулалт](/docs/code-splitting.html#reactlazy)-аас харна уу. Мөн та энэ [нийтлэлийг](https://medium.com/@pomber/lazy-loading-and-preloading-components-in-react-16-6-804de091c82d) уншин хэрхэн ашиглахийг илүү дэлгэрэнгүй тайлбарласныг уншиж болно.
 
 ```js
 // This component is loaded dynamically
 const SomeComponent = React.lazy(() => import('./SomeComponent'));
 ```
 
-Note that rendering `lazy` components requires that there's a `<React.Suspense>` component higher in the rendering tree. This is how you specify a loading indicator.
+Дүрслэлтийн модондоо `lazy` компонентийг дүрслэхэд  `<React.Suspense>` дээд талд байх ёстойг анхаарах хэрэгтэй. Энэ нь танд ачаалж буй мэдээлэл дүрсэлдэг.
 
-> **Note**
+> **Анхаар**
 >
-> Using `React.lazy`with dynamic import requires Promises to be available in the JS environment. This requires a polyfill on IE11 and below.
+> `React.lazy`-г динамик импорт дээр хэрэглэгч Жаваскрипт орчинд Promise хүчин төгөлдөр байх шаардлагатай. IE11 болон түүнээс доош хувилбарт polyfill шаарддаг.
 
 ### `React.Suspense` {#reactsuspense}
 
-`React.Suspense` let you specify the loading indicator in case some components in the tree below it are not yet ready to render. Today, lazy loading components is the **only** use case supported by `<React.Suspense>`:
+`React.Suspense` таньд уншиж байгаа мэдээдэл модонд байгаа компонент хараахан бэлэн болоогүй үед дүрслэх боломжийг олгоно. Одоогоор `<React.Suspense>` **зөвхөн** залхуу тохиолдолд дэмжигдэнэ:
 
 ```js
-// This component is loaded dynamically
+// Энэ компонент динамикаар ачаалагдсан
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
 
 function MyComponent() {
@@ -351,10 +352,10 @@ function MyComponent() {
 }
 ```
 
-It is documented in our [code splitting guide](/docs/code-splitting.html#reactlazy). Note that `lazy` components can be deep inside the `Suspense` tree -- it doesn't have to wrap every one of them. The best practice is to place `<Suspense>` where you want to see a loading indicator, but to use `lazy()` wherever you want to do code splitting.
+Энэ бидний [код салгах заавар](/docs/code-splitting.html#reactlazy) баримтжуулагдсан. `lazy` компононеь нь `Suspense` модны гүнд байж болох ба тэдгээрийг нэг бүрчлэн хүрээлүүлэх шаардлагагүй. Хамгийн сайн `<Suspense>`-г байршуулах байршил бол таний ачаалаж байгаа мэдээлэл харах газар ч `lazy()`-г код салгахдаа хүссэн газраа ашигла.
 
-While this is not supported today, in the future we plan to let `Suspense` handle more scenarios such as data fetching. You can read about this in [our roadmap](/blog/2018/11/27/react-16-roadmap.html).
+ Одоогоор дэмжигдээгүй байгаа ч ирээдүйд бид өгөгдөл дуудах гэх мэт өөр тохиолдлууд `Suspense`-р удирдахийг дэмжих болно. Та энэ талаар [бидний төлөвлөгөөнөөс](/blog/2018/11/27/react-16-roadmap.html) харж болно.
 
->Note:
+>Анхаар:
 >
->`React.lazy()` and `<React.Suspense>` are not yet supported by `ReactDOMServer`. This is a known limitation that will be resolved in the future.
+>`React.lazy()` болон `<React.Suspense>` нь `ReactDOMServer`-р хараахан дэмжигдээгүй байна. Энэ бидний мэдэж байгаа хязгаарлалт бөгөөд ирээдүйд шийдэгдэх болно.
