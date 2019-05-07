@@ -1,85 +1,85 @@
-- title: Installation
+- title: Суулгац
   items:
     - id: getting-started
-      title: Getting Started
+      title: Эхнээс нь эхлэх
     - id: add-react-to-a-website
-      title: Add React to a Website
+      title: React-г вебсайтад оруулах
     - id: create-a-new-react-app
-      title: Create a New React App
+      title: Шинэ React апп үүсгэх
     - id: cdn-links
-      title: CDN Links
-- title: Main Concepts
+      title: CDN холбоосууд
+- title: Үндсэн ойлголтууд
   isOrdered: true
   items:
     - id: hello-world
       title: Hello World
     - id: introducing-jsx
-      title: Introducing JSX
+      title: JSX танилцуулга
     - id: rendering-elements
-      title: Rendering Elements
+      title: Элементүүдийг дүрслэх
     - id: components-and-props
-      title: Components and Props
+      title: Компонентууд, шинж чанарууд
     - id: state-and-lifecycle
       title: State and Lifecycle
     - id: handling-events
-      title: Handling Events
+      title: Эвентүүдийг удирдах
     - id: conditional-rendering
-      title: Conditional Rendering
+      title: Нөхцөлд тулгуурласан дүрслэл
     - id: lists-and-keys
-      title: Lists and Keys
+      title: Жагсаалтууд, түлхүүрүүд
     - id: forms
-      title: Forms
+      title: Формууд
     - id: lifting-state-up
-      title: Lifting State Up
+      title: Төлөвийн түвшнийг өсгөх
     - id: composition-vs-inheritance
-      title: Composition vs Inheritance
+      title: Агуулалт vs Удамшил
     - id: thinking-in-react
-      title: Thinking In React
-- title: Advanced Guides
+      title: React-р сэтгэх
+- title: Ахисан шатны заавар
   items:
     - id: accessibility
-      title: Accessibility
+      title: Хүртээмж
     - id: code-splitting
-      title: Code-Splitting
+      title: Код салгах
     - id: context
       title: Context
     - id: error-boundaries
-      title: Error Boundaries
+      title: Алдааны хязгаарлалт
     - id: forwarding-refs
-      title: Forwarding Refs
+      title: Refs-г дамжуулах
     - id: fragments
-      title: Fragments
+      title: Хэлтэрхий
     - id: higher-order-components
-      title: Higher-Order Components
+      title: Дээд түвшний компонентууд
     - id: integrating-with-other-libraries
-      title: Integrating with Other Libraries
+      title: Бусад сангуудтай ашиглах
     - id: jsx-in-depth
-      title: JSX In Depth
+      title: JSX-н талаар дэлгэрэнгүй
     - id: optimizing-performance
-      title: Optimizing Performance
+      title: Гүйцэтгэлийг сайжруулах
     - id: portals
-      title: Portals
+      title: Портал
     - id: react-without-es6
-      title: React Without ES6
+      title: ES6-гүй React
     - id: react-without-jsx
-      title: React Without JSX
+      title: JSX-гүй React
     - id: reconciliation
-      title: Reconciliation
+      title: Дахин нэгтгэх (Reconciliation)
     - id: refs-and-the-dom
       title: Refs and the DOM
     - id: render-props
       title: Render Props
     - id: static-type-checking
-      title: Static Type Checking
+      title: Статик төрөл шалгалт
     - id: strict-mode
       title: Strict Mode
     - id: typechecking-with-proptypes
-      title: Typechecking With PropTypes
+      title: PropTypes-р төрөл шалгах
     - id: uncontrolled-components
-      title: Uncontrolled Components
+      title: Удирдлагагүй компонентууд
     - id: web-components
-      title: Web Components
-- title: API Reference
+      title: Веб компонентууд
+- title: API лавлах
   items:
     - id: react-api
       title: React
@@ -104,50 +104,50 @@
       title: JS Environment Requirements
     - id: glossary
       title: Glossary
-- title: Hooks (New)
+- title: Дэгээ (Hooks)
   isOrdered: true
   items:
       - id: hooks-intro
-        title: Introducing Hooks
+        title: Дэгээний танилцуулга
       - id: hooks-overview
-        title: Hooks at a Glance
+        title: Дэгээний талаар товч
       - id: hooks-state
-        title: Using the State Hook
+        title: Төлөвт дэгээ ашиглах
       - id: hooks-effect
-        title: Using the Effect Hook
+        title: Эффектэд дэгээ ашиглах
       - id: hooks-rules
-        title: Rules of Hooks
+        title: Дэгээний дүрмүүд
       - id: hooks-custom
-        title: Building Your Own Hooks
+        title: Өөрийн дэгээг бүтээх
       - id: hooks-reference
-        title: Hooks API Reference
+        title: Дэгээ API лавлах
       - id: hooks-faq
-        title: Hooks FAQ
-- title: Contributing
+        title: Дэгээний түгээмэл асуултууд
+- title: Оролцох
   items:
   - id: how-to-contribute
-    title: How to Contribute
+    title: Яаж оролцох вэ
   - id: codebase-overview
-    title: Codebase Overview
+    title: Үндсэн кодын тойм
   - id: implementation-notes
-    title: Implementation Notes
+    title: Хэрэгжүүлэлтийн ханамж
   - id: design-principles
-    title: Design Principles
-- title: FAQ
+    title: Дизайны үндсэн зарчмууд
+- title: Түгээмэл асуултууд
   items:
     - id: faq-ajax
       title: AJAX and APIs
     - id: faq-build
-      title: Babel, JSX, and Build Steps
+      title: Babel, JSX болон угсрах алхмууд
     - id: faq-functions
-      title: Passing Functions to Components
+      title: Функцуудыг компонентруу дамжуулах
     - id: faq-state
-      title: Component State
+      title: Компонентын төлөв
     - id: faq-styling
-      title: Styling and CSS
+      title: Загварчлах болон CSS
     - id: faq-structure
-      title: File Structure
+      title: Файлын бүтэц
     - id: faq-versioning
-      title: Versioning Policy
+      title: Хувилбарын удирдамж
     - id: faq-internals
-      title: Virtual DOM and Internals
+      title: Virtual DOM болон дотоод хэсэг
