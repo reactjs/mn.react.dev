@@ -59,9 +59,9 @@ setInterval(tick, 1000);
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/dpdoYR?editors=0010)
 
-However, it misses a crucial requirement: the fact that the `Clock` sets up a timer and updates the UI every second should be an implementation detail of the `Clock`.
+Дээрхи ѳѳрчлѳлтѳд зайлшгүй шаардлагатай зүйл болох: `Clock` ѳѳрѳѳ цагаа тааруулж хэрэглэгчийн интерфэйсыг секунд тутам шинэчлэх ёстой байдал дутмаг байна.
 
-Ideally we want to write this once and have the `Clock` update itself:
+Ерѳнхийдѳѳ бид үүнийг ганцхан удаа бичээд `Clock` ѳѳрѳѳ шинэчлэгдэх хэрэгтэй байгаа.
 
 ```js{2}
 ReactDOM.render(
@@ -70,23 +70,23 @@ ReactDOM.render(
 );
 ```
 
-To implement this, we need to add "state" to the `Clock` component.
+Дээрх шиг болгохын тулд бид "state" -ыг `Clock` компонентод нэмж ѳгѳх хэрэгтэй
 
-State is similar to props, but it is private and fully controlled by the component.
+State нь пропстой адил боловч зѳвхѳн компонент нь хэмжээнд л харъяалагдаж, зѳвхѳн компонент нь л удирдах эрхтэй
 
-## Converting a Function to a Class {#converting-a-function-to-a-class}
+## Функцыг Class-руу хѳрвүүлж буй нь {#converting-a-function-to-a-class}
 
-You can convert a function component like `Clock` to a class in five steps:
+Та `Clock` шиг бүтэцтэй компонентийг дараах 5 алхамаар хѳрвүүлнэ:
 
-1. Create an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes), with the same name, that extends `React.Component`.
+1. Адил нэртэй `React.Component` -ыг удамшуулсан [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) үүсгэнэ.
 
-2. Add a single empty method to it called `render()`.
+2. `render()` гэх нэртэй method зарлана.
 
-3. Move the body of the function into the `render()` method.
+3. Функцийн эх бие хэсгийг `render()` method дотор оруулна.
 
-4. Replace `props` with `this.props` in the `render()` body.
+4. `render()` доторх `props` -ыг `this.props` болгож бичнэ.
 
-5. Delete the remaining empty function declaration.
+5. Функцээс үлдсэн хэсгийг устгана.
 
 ```js
 class Clock extends React.Component {
@@ -103,15 +103,18 @@ class Clock extends React.Component {
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/zKRGpo?editors=0010)
 
-`Clock` is now defined as a class rather than a function.
+`Clock` одоо функц биш класс боллоо.
 
 The `render` method will be called each time an update happens, but as long as we render `<Clock />` into the same DOM node, only a single instance of the `Clock` class will be used. This lets us use additional features such as local state and lifecycle methods.
 
-## Adding Local State to a Class {#adding-local-state-to-a-class}
+`render` method нь шинэчлэгдэх бүрт дуудагдах ба DOM -дотор нэг л `<Clock />` компонент рендэрлэж байгаа тул нэг л instance үүснэ. Ингэснээр нэмэлт боломжууд, state, болон мѳчлѳгийн method-уудыг ашиглах боломжтой болно.
+
+## Класст state оруулах нь {#adding-local-state-to-a-class}
 
 We will move the `date` from props to state in three steps:
+Пропст байгаа `date` -ыг дараах 3 алхамаар state-руу оруулна.
 
-1) Replace `this.props.date` with `this.state.date` in the `render()` method:
+1) `render()` доторх `this.props.date` -ыг `this.state.date` ээр сольж бичнэ:
 
 ```js{6}
 class Clock extends React.Component {
@@ -126,7 +129,7 @@ class Clock extends React.Component {
 }
 ```
 
-2) Add a [class constructor](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes#Constructor) that assigns the initial `this.state`:
+2) Анхны утга оноох `this.state` -ыг [class constructor](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes#Constructor)-ыг ашиглан нэмж ѳгнѳ:
 
 ```js{4}
 class Clock extends React.Component {
@@ -146,7 +149,7 @@ class Clock extends React.Component {
 }
 ```
 
-Note how we pass `props` to the base constructor:
+Конструкторт хэрхэн `props` дамжуулж байгааг анхаарна уу:
 
 ```js{2}
   constructor(props) {
@@ -155,9 +158,9 @@ Note how we pass `props` to the base constructor:
   }
 ```
 
-Class components should always call the base constructor with `props`.
+Класс компонент үргэлж конструктор-ыг `props` той дуудах ёстой.
 
-3) Remove the `date` prop from the `<Clock />` element:
+3) `<Clock />`-ын элементээс `date` prop-ыг устгана:
 
 ```js{2}
 ReactDOM.render(
@@ -166,9 +169,9 @@ ReactDOM.render(
 );
 ```
 
-We will later add the timer code back to the component itself.
+Бид дараа нь timer -ын кодыг оруулж ирнэ.
 
-The result looks like this:
+Үр дүн харагдах байдал:
 
 ```js{2-5,11,18}
 class Clock extends React.Component {
@@ -195,17 +198,17 @@ ReactDOM.render(
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/KgQpJd?editors=0010)
 
-Next, we'll make the `Clock` set up its own timer and update itself every second.
+Дараа нь, `Clock` -ыг ѳѳрѳѳ timer-аа тохируулж ѳѳрѳѳ ѳѳрийгѳѳ секунд тутам шинэчилдэг болгоно.
 
-## Adding Lifecycle Methods to a Class {#adding-lifecycle-methods-to-a-class}
+## Класст амьдралын мѳчлѳгийн method нэмнэ {#adding-lifecycle-methods-to-a-class}
 
-In applications with many components, it's very important to free up resources taken by the components when they are destroyed.
+Олон компонент бүхий аппликейшнд, компонент устгагдах үед ашиглагдаж байсан нѳѳцѳѳ суллах нь маш чухал.
 
-We want to [set up a timer](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) whenever the `Clock` is rendered to the DOM for the first time. This is called "mounting" in React.
+Бид `Clock` DOM-д анх рендэрлэх үед нь [цагыг тохируулах](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) шаардлагатай. Үүнийг React-д "mounting" гэж нэрлэдэг.
 
-We also want to [clear that timer](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval) whenever the DOM produced by the `Clock` is removed. This is called "unmounting" in React.
+Мѳн бид DOM дээрээс `Clock` устгагдах үед [цагыг цэвэрлэх](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval) хэрэгтэй. Үүнийг React-д "unmounting" гэдэг.
 
-We can declare special methods on the component class to run some code when a component mounts and unmounts:
+Бид компонент дотор компонентийг mount, unmount хийгдэх үед зориулсан тусгай method ашиглаж ямар нэг код ажиллуулж болдог:
 
 ```js{7-9,11-13}
 class Clock extends React.Component {
@@ -233,9 +236,9 @@ class Clock extends React.Component {
 }
 ```
 
-These methods are called "lifecycle methods".
+Эдгээр method-уудыг "амьдралын мѳчлѳгийн" method-ууд гэнэ.
 
-The `componentDidMount()` method runs after the component output has been rendered to the DOM. This is a good place to set up a timer:
+`componentDidMount()` нь компонент DOM дээр рендэр хийгдсэний дараа ажиллана. Энд цагыг тохируулах нь хамгийн тохиромжтой байх нь:
 
 ```js{2-5}
   componentDidMount() {
