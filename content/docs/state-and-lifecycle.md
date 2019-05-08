@@ -105,13 +105,10 @@ class Clock extends React.Component {
 
 `Clock` одоо функц биш класс боллоо.
 
-The `render` method will be called each time an update happens, but as long as we render `<Clock />` into the same DOM node, only a single instance of the `Clock` class will be used. This lets us use additional features such as local state and lifecycle methods.
-
 `render` method нь шинэчлэгдэх бүрт дуудагдах ба DOM -дотор нэг л `<Clock />` компонент рендэрлэж байгаа тул нэг л instance үүснэ. Ингэснээр нэмэлт боломжууд, state, болон мѳчлѳгийн method-уудыг ашиглах боломжтой болно.
 
 ## Класст state оруулах нь {#adding-local-state-to-a-class}
 
-We will move the `date` from props to state in three steps:
 Пропст байгаа `date` -ыг дараах 3 алхамаар state-руу оруулна.
 
 1) `render()` доторх `this.props.date` -ыг `this.state.date` ээр сольж бичнэ:
@@ -249,11 +246,11 @@ class Clock extends React.Component {
   }
 ```
 
-Note how we save the timer ID right on `this`.
+`this` -д цагын ID хадгалж байгааг сайн анзаарна уу.
 
-While `this.props` is set up by React itself and `this.state` has a special meaning, you are free to add additional fields to the class manually if you need to store something that doesn’t participate in the data flow (like a timer ID).
+`this.props` -ыг React ѳѳрѳѳ хийж байгаа бол `this.state` нь арай илүү давуу талтай буюу та хүссэнээрээ ѳгѳгдѳл хадгалж болдог. Мэдээж энэ нь зѳвхѳн дотроо л зохицуулагдаж болдог бол шүү дээ, яг timerID шиг
 
-We will tear down the timer in the `componentWillUnmount()` lifecycle method:
+Бид `componentWillUnmount()` дээр цагыг устгана:
 
 ```js{2}
   componentWillUnmount() {
@@ -261,9 +258,9 @@ We will tear down the timer in the `componentWillUnmount()` lifecycle method:
   }
 ```
 
-Finally, we will implement a method called `tick()` that the `Clock` component will run every second.
+Эцэст нь `Clock` компонент секунд тутам `tick()` функцээ дууддаг болгоно.
 
-It will use `this.setState()` to schedule updates to the component local state:
+`this.setState()` ашиглан дотоод state дээ шинэчлэлтийг хийж байна:
 
 ```js{18-22}
 class Clock extends React.Component {
@@ -307,49 +304,50 @@ ReactDOM.render(
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/amqdNA?editors=0010)
 
-Now the clock ticks every second.
+Ингээд цаг маань секунд тутам ажиллаж байна.
 
-Let's quickly recap what's going on and the order in which the methods are called:
+Дээр үзсэн зүйлээ дахин нэг базаад хаана нь аль method ашигласан эсэхээ үзье:
 
-1) When `<Clock />` is passed to `ReactDOM.render()`, React calls the constructor of the `Clock` component. Since `Clock` needs to display the current time, it initializes `this.state` with an object including the current time. We will later update this state.
+1) `<Clock />`-ыг `ReactDOM.render()`-руу дамжуулах үед, React `Clock` компонентийн конструктор функцийг дуудана. `Clock` маань тухайн үеийн цагыг харуулах хэрэгтэй учир, `this.state` тухайн цагыг авч ажиллана. Дараа нь энэ state -ыг шинэчилнэ.
 
-2) React then calls the `Clock` component's `render()` method. This is how React learns what should be displayed on the screen. React then updates the DOM to match the `Clock`'s render output.
+2) React дараа нь `Clock` компонентийн `render()` дуудана. Ингэж React нь дэлгэц дээр юу харуулахаа мэддэг. Дараа нь render -ын гаралтаас хамаарч DOM -ыг шинэчилнэ.
 
-3) When the `Clock` output is inserted in the DOM, React calls the `componentDidMount()` lifecycle method. Inside it, the `Clock` component asks the browser to set up a timer to call the component's `tick()` method once a second.
+3) `Clock` -ын гаралт DOM -д орох үед, React нь хѳтѳч дээр цаг тааруулах, `tick()` функцыг секунд тутам ажиллуулахаар  `componentDidMount()` амьдралын мѳчлѳг дууддаг.
 
-4) Every second the browser calls the `tick()` method. Inside it, the `Clock` component schedules a UI update by calling `setState()` with an object containing the current time. Thanks to the `setState()` call, React knows the state has changed, and calls the `render()` method again to learn what should be on the screen. This time, `this.state.date` in the `render()` method will be different, and so the render output will include the updated time. React updates the DOM accordingly.
+4) Секунд тутам хѳтѳч `tick()` функцыг дуудна. Дотор нь `Clock` компонент `setState()` ашиглан тухайн үеийн цагийг хадгалж буй state-ыг хэрэглэгчийн интерфэйсыг шинэчлэхээр бэлддэг. `setState()` -ын ачаар React, state ѳѳрчлѳгдснийг мэдэж `render()` method -ыг дуудаж дэлгэц дээр юу харуулахаа мэддэг. Энэ удаа `render()` method доторх `this.state.date` ѳѳрчлѳгдсѳн, тиймээс рендэр хийгдсэн үр дүн шинэчлэгдсэн цагыг харуулж, React үүнээс үүдэн DOM -ыг ѳѳрчлѳнѳ.
 
-5) If the `Clock` component is ever removed from the DOM, React calls the `componentWillUnmount()` lifecycle method so the timer is stopped.
+5) Хэрвээ `Clock` компонент DOM дээрээс уствал, React `componentWillUnmount()` ийг дуудаж цаг зогсоно.
 
-## Using State Correctly {#using-state-correctly}
+## State-ыг зѳвѳѳр ашиглах нь {#using-state-correctly}
 
-There are three things you should know about `setState()`.
+`setState()`-ын талаар мэдэх шаардлагатай 3 зүйлс бий.
 
-### Do Not Modify State Directly {#do-not-modify-state-directly}
+### State-ыг шууд ѳѳрчилж болохгүй {#do-not-modify-state-directly}
 
 For example, this will not re-render a component:
+Жишээ нь доорхи нь компонентийг дахин рендэр хийхгүй
 
 ```js
 // Wrong
 this.state.comment = 'Hello';
 ```
 
-Instead, use `setState()`:
+Оронд нь `setState()` ашигла:
 
 ```js
 // Correct
 this.setState({comment: 'Hello'});
 ```
 
-The only place where you can assign `this.state` is the constructor.
+`this.state`-ыг зааж ѳгѳх цор ганц газар нь конструктор юм.
 
-### State Updates May Be Asynchronous {#state-updates-may-be-asynchronous}
+### State шинэчлэх нь Asynchronous байж болно {#state-updates-may-be-asynchronous}
 
-React may batch multiple `setState()` calls into a single update for performance.
+React хүчин чадал хэмнэх үүднээс олон `setState()`-ыг нэг үйлдэл дотор дуудах шаардлага гардаг
 
-Because `this.props` and `this.state` may be updated asynchronously, you should not rely on their values for calculating the next state.
+Учир нь `this.props` болон `this.state` зэрэг шинэчлэгдэх боломжтой, тэгэхээр эдгээрийн утга дээр үндэслэн дараагийн state-ыг тооцоолох нь утгагүй болж байна.
 
-For example, this code may fail to update the counter:
+Жишээ нь доорхи код тоологчийг шинэчлэхдээ алдаа гарна:
 
 ```js
 // Wrong
@@ -358,7 +356,7 @@ this.setState({
 });
 ```
 
-To fix it, use a second form of `setState()` that accepts a function rather than an object. That function will receive the previous state as the first argument, and the props at the time the update is applied as the second argument:
+Үүнийг засахын тулд `setState()`-ын нэг боломж болох функцыг аргумент болгон авах боломжыг ашиглая. Функц ѳмнѳх state-ыг эхний аргумент болгож, тухайн шинэчлэгдсэн цагыг 2 дахь аргумент props болгож авна:
 
 ```js
 // Correct
@@ -367,7 +365,7 @@ this.setState((state, props) => ({
 }));
 ```
 
-We used an [arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) above, but it also works with regular functions:
+Бид [arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) ашигласан боловч энгийн функц дээр мѳн адил ажиллана:
 
 ```js
 // Correct
@@ -378,11 +376,11 @@ this.setState(function(state, props) {
 });
 ```
 
-### State Updates are Merged {#state-updates-are-merged}
+### State-ын шинэчлэлтүүд нэгдмэл {#state-updates-are-merged}
 
-When you call `setState()`, React merges the object you provide into the current state.
+`setState()` дуудах үед, React ѳгѳгдсѳн object-ыг одоогийн state-д байгаатай нэгтгэнэ.
 
-For example, your state may contain several independent variables:
+Жишээ нь, таны state олон тусдаа хувьсагч агуулсан байна:
 
 ```js{4,5}
   constructor(props) {
@@ -394,7 +392,7 @@ For example, your state may contain several independent variables:
   }
 ```
 
-Then you can update them independently with separate `setState()` calls:
+Тэгээд та тус тусд нь `setState()` дуудаж шинэчилж болно.
 
 ```js{4,10}
   componentDidMount() {
