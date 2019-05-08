@@ -240,7 +240,11 @@ const App = () => (
 
 ## Нэрлэсэн экспортууд {#named-exports}
 
+<<<<<<< HEAD
 `React.lazy` нь одоогоор зөвхөн default экспортууд дээр дэмжигддэг. Хэрэв таний импортлохийг хүсэж буй модуль нэрлэсэн экспортууд ашигладаг бол та дундын модуль үүсгэн дахин default-руу экспортлож болно. Энэ нь танд ашиглагдаагүй компонентийг ачаалаагдахгүй байх баталгааг олгодог.
+=======
+`React.lazy` currently only supports default exports. If the module you want to import uses named exports, you can create an intermediate module that reexports it as the default. This ensures that tree shaking keeps working and that you don't pull in unused components.
+>>>>>>> a211417f6680cce5b4e4f036dc1492c03bc588c7
 
 ```js
 // ManyComponents.js
