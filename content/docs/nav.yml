@@ -30,7 +30,7 @@
     - id: forms
       title: Формууд
     - id: lifting-state-up
-      title: Төлөвийн түвшнийг өсгөх
+      title: State-ийг дээш дамжуулах
     - id: composition-vs-inheritance
       title: Агуулалт vs Удамшил
     - id: thinking-in-react
