@@ -10,8 +10,6 @@ next: handling-events.html
 
 Энэхүү хуудас нь React компонентийн state болон амьдралын мѳчлѳгийн ойлголтыг ѳгѳх зорилготой. [Илүү дэлгэрэнгүй мэдээллийг эндээс олох боломжтой](/docs/react-component.html)
 
-Consider the ticking clock example from [one of the previous sections](/docs/rendering-elements.html#updating-the-rendered-element). In [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom), we have only learned one way to update the UI. We call `ReactDOM.render()` to change the rendered output:
-
 [Ѳмнѳ нь хийсэн цаг тоолуурыг] жишээ болгоё. [Элемент рендэрлэх](/docs/rendering-elements.html#rendering-an-element-into-the-dom) заавар дээр хэрэглэгчийн интерфэйсыг шинэчлэх нэг арга болох `ReactDOM.render()` ашиглахыг үзсэн билээ.
 
 ```js{8-11}
@@ -410,27 +408,27 @@ this.setState(function(state, props) {
   }
 ```
 
-The merging is shallow, so `this.setState({comments})` leaves `this.state.posts` intact, but completely replaces `this.state.comments`.
+Ингэж нэгтгэх нь маш хязгаарлагдмал, тиймээс `this.setState({comments})` нь `this.state.posts` -ыг хѳндѳѳгүй ч `this.state.comments` -ыг бүр цоо шинээр сольж байгаа юм.
 
-## The Data Flows Down {#the-data-flows-down}
+## Ѳгѳгдлийн урсгал доош чиглэлтэй {#the-data-flows-down}
 
-Neither parent nor child components can know if a certain component is stateful or stateless, and they shouldn't care whether it is defined as a function or a class.
+Эцэг компонент, хүү компонент ялгаагүй аль нэг компонентийг state-тэй эсвэл state-гүйг мэдэж чадахгүй, тэгэхээр class эсвэл функц байдлаар зарлагдсан эсэх нь тѳдийлэн хамаагүй байдаг.
 
-This is why state is often called local or encapsulated. It is not accessible to any component other than the one that owns and sets it.
+Иймээс л state-ыг дотор нь зарладаг. Ѳѳрѳѳс нь ѳѳр хэн ч хандаж, ѳѳрчлѳх боломжгүй.
 
-A component may choose to pass its state down as props to its child components:
+Компонент мѳн ѳѳрийн state-ээ доторх компонентруугаа props-оор дамжуулж болно:
 
 ```js
 <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
 ```
 
-This also works for user-defined components:
+Хэрэглэгчийн тодорхойлсон компонентод хүртэл ажиллана:
 
 ```js
 <FormattedDate date={this.state.date} />
 ```
 
-The `FormattedDate` component would receive the `date` in its props and wouldn't know whether it came from the `Clock`'s state, from the `Clock`'s props, or was typed by hand:
+`FormattedDate` компонент `date`-ыг props болгон авлаа гэхэд, `Clock`-ын state-ээс, эсвэл `Clock`-ын props-оос, эсвэл бүр гараар бичснийг нь мэдэхгүй:
 
 ```js
 function FormattedDate(props) {
@@ -440,11 +438,11 @@ function FormattedDate(props) {
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/zKRqNB?editors=0010)
 
-This is commonly called a "top-down" or "unidirectional" data flow. Any state is always owned by some specific component, and any data or UI derived from that state can only affect components "below" them in the tree.
+Үүнийг "дээрээс-доош" буюу нэг чиглэлийн урсгал гэдэг. Ямар ч state үргэлж ямар нэг компонентод харъяалагдана. Мѳн тэр state-ээс хамаарах ѳгѳгдѳл нь DOM дээр ѳѳрѳѳс нь зѳвхѳн доош орших компонентод нѳлѳѳлж чадна.
 
-If you imagine a component tree as a waterfall of props, each component's state is like an additional water source that joins it at an arbitrary point but also flows down.
+Та компонентийн модыг props-оос бүрдсэн хүрхрээ гэж ойлгож болно. Компонент бүрийн state нь ерѳнхий урсгалд нэгдэж буй бүрдэл хэсэг. Тэгээд бүгд л доошоо урсана.
 
-To show that all components are truly isolated, we can create an `App` component that renders three `<Clock>`s:
+Бүх компонент биеээ даасан тусдаа байдгийг харуулахын тулд, бид `<Clock>` -ыг рендэрлэдэг `App` компонент үүсгэж болно:
 
 ```js{4-6}
 function App() {
@@ -465,6 +463,6 @@ ReactDOM.render(
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/vXdGmd?editors=0010)
 
-Each `Clock` sets up its own timer and updates independently.
+`Clock` бүр ѳѳрѳѳ ѳѳрийнхѳѳ цагыг тохируулж тус тусдаа шинэчлэгддэг.
 
-In React apps, whether a component is stateful or stateless is considered an implementation detail of the component that may change over time. You can use stateless components inside stateful components, and vice versa.
+React аппликейшнд компонент state-тэй болон state-гүй байх нь цаг хугацааны явцад ѳѳрчлѳгдѳж магадгүй. Гэсэн хэдийгээр та state-гүй компонентийг state-тэй компонентод эсвэл эсрэгээр нь ашиглаж болно.
