@@ -50,13 +50,9 @@ class Home extends Component {
     return (
       <Layout location={location}>
         <TitleAndMetaTags
-<<<<<<< HEAD
           title="React &ndash; Хэрэглэгчийн интерфэйс бүтээх Javascript сан"
-          ogUrl={createOgUrl('index.html')}
-=======
-          title="React &ndash; A JavaScript library for building user interfaces"
           canonicalUrl={createCanonicalUrl('/')}
->>>>>>> 06deefa56756f8dac13af59ee657186a81d28151
+          title="React &ndash; A JavaScript library for building user interfaces"
         />
         <div css={{width: '100%'}}>
           <header
