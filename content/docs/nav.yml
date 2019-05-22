@@ -42,7 +42,7 @@
     - id: code-splitting
       title: Код салгах
     - id: context
-      title: Context
+      title: Контекст
     - id: error-boundaries
       title: Алдааны хязгаарлалт
     - id: forwarding-refs

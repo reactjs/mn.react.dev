@@ -4,41 +4,41 @@ title: Context
 permalink: docs/context.html
 ---
 
-Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+Контекст нь өгөгдлүүдийг пропс ашиглан компонентын бүх түвшингүүдээр доош дамжуулахгүйгээр шууд компонентын мод ашиглан дамжуулах боломжийг олгодог.
 
-In a typical React application, data is passed top-down (parent to child) via props, but this can be cumbersome for certain types of props (e.g. locale preference, UI theme) that are required by many components within an application. Context provides a way to share values like these between components without having to explicitly pass a prop through every level of the tree.
+Энгийн React програмд өгөгдлийг дээрээс доош буюу (эцэг компонентоос хүү компонент руу) гэсэн чиглэлтэйгээр пропсуудыг дамжуулдаг. Гэхдээ зарим (locale preference, UI theme) програмд олон компонентуудад дуудагдан ашиглагддаг пропсуудын хувьд энэ арга нь тохиромжгүй юм. Тиймээс контекст ашиглан ийм төрлийн өгөгдлүүдийг шууд компонент модоор компонентууд хооронд дамжуулж болно.
 
-- [When to Use Context](#when-to-use-context)
-- [Before You Use Context](#before-you-use-context)
+- [Хэзээ контекстыг ашиглах](#when-to-use-context)
+- [Контекстыг ашиглахаас өмнө](#before-you-use-context)
 - [API](#api)
   - [React.createContext](#reactcreatecontext)
   - [Context.Provider](#contextprovider)
   - [Class.contextType](#classcontexttype)
   - [Context.Consumer](#contextconsumer)
-- [Examples](#examples)
-  - [Dynamic Context](#dynamic-context)
-  - [Updating Context from a Nested Component](#updating-context-from-a-nested-component)
-  - [Consuming Multiple Contexts](#consuming-multiple-contexts)
-- [Caveats](#caveats)
-- [Legacy API](#legacy-api)
+- [Жишээ](#examples)
+  - [Динамик контекст](#dynamic-context)
+  - [Nested компонентоос контекстыг өөрчлөх](#updating-context-from-a-nested-component)
+  - [Олон контекст ашиглах](#consuming-multiple-contexts)
+- [Сануулга](#caveats)
+- [Хуучин API](#legacy-api)
 
-## When to Use Context {#when-to-use-context}
+## Хэзээ контекстыг ашиглах {#when-to-use-context}
 
-Context is designed to share data that can be considered "global" for a tree of React components, such as the current authenticated user, theme, or preferred language. For example, in the code below we manually thread through a "theme" prop in order to style the Button component:
+Контекст нь "global" түвшинд хамаарагдах өгөгдлүүдийг React компонентын модноос шууд авч ашиглах боломжтой болгодог. Тухайлбал current authenticated user, theme болон preferred language гэсэн өгөгдлүүд үүнд хамаарагдана. Жишээ нь доорх код Button компонентыг хэлбэржүүлэхийн тулд "theme" пропсыг дамжуулж өгсөн байна. 
 
 `embed:context/motivation-problem.js`
 
-Using context, we can avoid passing props through intermediate elements:
+Контекстыг хэрэглэснээр бид дундын элементүүдээр пропсуудыг дамжуулах шаардлагагүй болно. 
 
 `embed:context/motivation-solution.js`
 
-## Before You Use Context {#before-you-use-context}
+## Контекстыг ашиглахаас өмнө {#before-you-use-context}
 
-Context is primarily used when some data needs to be accessible by *many* components at different nesting levels. Apply it sparingly because it makes component reuse more difficult.
+Контекст нь компонентын модны өөр өөр түвшинд байгаа компонентууд тухайн өгөгдлийг ашиглах шаардлагатай болох үед ихэвчлэн хэрэглэгддэг. Гэхдээ үүнийг аль болох бага ашиглах хэрэгтэй, учир нь энэ компонентыг дахин ашиглахад илүү түвэгтэй болгодог.
 
-**If you only want to avoid passing some props through many levels, [component composition](/docs/composition-vs-inheritance.html) is often a simpler solution than context.**
+**Хэрвээ та пропсуудыг зөвхөн олон түвшингүүдээр дамжуулахаас зайлс хийх байгаа бол,  [component composition](/docs/composition-vs-inheritance.html) нь контекстоос илүү хялбар шийдэл юм.**
 
-For example, consider a `Page` component that passes a `user` and `avatarSize` prop several levels down so that deeply nested `Link` and `Avatar` components can read it:
+Жишээ нь `Page` компонент нь `user` болон `avatarSize` гэсэн пропсуудыг доод түвшин рүү дамжуулсанаар `Link` болон `Avatar` гэсэн бүр доод түвшний компонентууд эдгээр пропсуудыг авч ашиглах боломжтой болж байна.
 
 ```js
 <Page user={user} avatarSize={avatarSize} />
@@ -52,9 +52,9 @@ For example, consider a `Page` component that passes a `user` and `avatarSize` p
 </Link>
 ```
 
-It might feel redundant to pass down the `user` and `avatarSize` props through many levels if in the end only the `Avatar` component really needs it. It's also annoying that whenever the `Avatar` component needs more props from the top, you have to add them at all the intermediate levels too.
+Хэрвээ зөвхөн хамгийн сүүлийн `Avatar` компонент л эдгээр `user` болон `avatarSize` пропсуудыг ашиглах шаардлагатай байсан бол дунд талын түвшингүүдээр дамжуулах нь илүү үйлдэл биш гэж үү. Хэрвээ `Avatar` компонент нь дахин өөр пропсуудыг хамгийн дээд түвшний компонентоос авч ашиглах шаардлагатай болвол тэдгээр дунд нь байгаа бүх компонентуудад дахин нэмэх шаардлагатай болно.
 
-One way to solve this issue **without context** is to [pass down the `Avatar` component itself](/docs/composition-vs-inheritance.html#containment) so that the intermediate components don't need to know about the `user` or `avatarSize` props:
+**Контекст ашиглахгүй** энэ асуудлыг шийдэх нэг арга нь [`Avatar` компонентыг өөрийг нь шууд дамжуулах юм](/docs/composition-vs-inheritance.html#containment). Ингэснээр дундын компонентууд `user` болон `avatarSize` пропсуудын талаар мэдэх шаардлагагүй болно.  
 
 ```js
 function Page(props) {
@@ -77,11 +77,11 @@ function Page(props) {
 {props.userLink}
 ```
 
-With this change, only the top-most Page component needs to know about the `Link` and `Avatar` components' use of `user` and `avatarSize`.
+Ингэж өөрчилсөнөөр зөвхөн хамгийн дээд түвшний Page компонент л зөвхөн `Link` болон `Avatar` компонентууд `user` болон `avatarSize` пропсуудыг хэрхэн ашиглаж байгааг мэдэх юм. 
 
-This *inversion of control* can make your code cleaner in many cases by reducing the amount of props you need to pass through your application and giving more control to the root components. However, this isn't the right choice in every case: moving more complexity higher in the tree makes those higher-level components more complicated and forces the lower-level components to be more flexible than you may want.
+Энэ *inversion of control* загварыг ашигласнаар таны програмд дамжуулагдах пропсуудын хэмжээ багасч үр дүнд нь код тань илүү цэгцтэй болох болно. Мөн үндсэн (root) компонентуудад илүү эрх мэдлийг өгөх болно. Гэхдээ энэ арга нь эцсийн зөв шийдэл биш бөгөөд бүх тохиолдлуудад зөв ажиллахгүй, дээд түвшин рүү хэт их зүйлсийг төвлөрүүлсэнээр дээд түвшний компонентуудыг илүү түвэгтэй, ойлгоход хэцүү болгоно, улмаар доод түвшний компонентуудыг үүндээ нийцүүлэн илүү уян хатан байхыг шаардана. 
 
-You're not limited to a single child for a component. You may pass multiple children, or even have multiple separate "slots" for children, [as documented here](/docs/composition-vs-inheritance.html#containment):
+Компонент нь зөвхөн нэг хүү компонентоор хязгаарлагдахгүй. Та олон хүү компонентуудыг дамжуулах боломжтой, мөн цаашлаад олон хүү компонентуудыг дамжуулах боломжтой "slots" уудыг дамжуулж болно. [Эндээс харах](/docs/composition-vs-inheritance.html#containment)
 
 ```js
 function Page(props) {
@@ -103,9 +103,9 @@ function Page(props) {
 }
 ```
 
-This pattern is sufficient for many cases when you need to decouple a child from its immediate parents. You can take it even further with [render props](/docs/render-props.html) if the child needs to communicate with the parent before rendering.
+Энэ загвар (pattern) нь хүү компонентуудыг тэдгээрийг шууд агуулсан эцэг компонентуудаас (immediate parents) салган ашиглах шаардлагатай байгаа бүх тохиолдлуудад ашиглаж болно. Бүр цаашлаад хэрвээ хүү компонент нь рендер хийгдэхээсээ өмнө эцэг компоненттой харилцах шаардлагатай болвол [render props](/docs/render-props.html) той хамт ашиглагдаж болно.  
 
-However, sometimes the same data needs to be accessible by many components in the tree, and at different nesting levels. Context lets you "broadcast" such data, and changes to it, to all components below. Common examples where using context might be simpler than the alternatives include managing the current locale, theme, or a data cache. 
+Заримдаа нэг ижил өгөгдлүүд рүү компонентын модны өөр өөр түвшинд байгаа компонентуудаас хандах шаардлагатай болдог. Контекст нь эдгээр өгөгдлүүдийг доод түвшний компонентуудад түгээх ("broadcast") эсвэл өөрчлөх боломжийг олгодог. Зарим түгээмэл жишээнүүдэд контекст ашигласан нь "managing the current locale, them, эсвэл a data cache" гэсэн бусад аргуудыг ашигласнаас илүү хялбар болдог. 
 
 ## API {#api}
 
@@ -115,9 +115,11 @@ However, sometimes the same data needs to be accessible by many components in th
 const MyContext = React.createContext(defaultValue);
 ```
 
-Creates a Context object. When React renders a component that subscribes to this Context object it will read the current context value from the closest matching `Provider` above it in the tree.
+Контекстын обьектыг үүсгэх. React нь тухайн контекстын обьектыг ашиглахдаа компонентын модны өөрөөс нь дээш хамгийн ойр орших `Provider` оос өгөгдлүүдээ авдаг.
 
-The `defaultValue` argument is **only** used when a component does not have a matching Provider above it in the tree. This can be helpful for testing components in isolation without wrapping them. Note: passing `undefined` as a Provider value does not cause consuming components to use `defaultValue`.
+
+`defaultValue` аргумент нь **зөвхөн** компонентын модонд тухайн компонентод өөрөөс нь дээш байрлах `Provider` олдохгүй байх тохиолдолд ашиглагддаг. Мөн энэ аргумент нь тухайн компонентыг өөр компонентод агуулагдалгүй (without wrapping) хязгаарлагдмал байдлаар тест хийхэд илүү тохиромжтой.  
+
 
 ### `Context.Provider` {#contextprovider}
 
@@ -125,17 +127,17 @@ The `defaultValue` argument is **only** used when a component does not have a ma
 <MyContext.Provider value={/* some value */}>
 ```
 
-Every Context object comes with a Provider React component that allows consuming components to subscribe to context changes.
+Бүх контекстын обьект нь React Provider компоненттой холбогдсон байдаг, ба энэ нь тухайн контекстыг ашиглаж байгаа компонентуудад тухайн контекстэд өөрчлөлт хийх боломжийг олгодог. 
 
-Accepts a `value` prop to be passed to consuming components that are descendants of this Provider. One Provider can be connected to many consumers. Providers can be nested to override values deeper within the tree.
+`value` пропс нь Provider ийн хүү компонентууд (хэрэглэгч компонентууд) руу дамжуулагддаг. Нэг Provider нь олон хэрэглэгч компоненттэй холбогдож болно. Provider ууд нь нэг нэгэндээ агуулагдаж компонентын модонд дамжуулагдаж буй утгуудыг (values) даран тодорхойлж (override) болно. 
 
-All consumers that are descendants of a Provider will re-render whenever the Provider's `value` prop changes. The propagation from Provider to its descendant consumers is not subject to the `shouldComponentUpdate` method, so the consumer is updated even when an ancestor component bails out of the update.
+Тухайн Provider ийн бүх хэрэглэгч компонентууд нь тухайн Provider ийн `value` пропс д өөрчлөлт орох бүрд дахин рендэр хийгддэг. Provider аас хэрэглэгч компонентуудыг рендэр хийж байгаа нь `shouldComponentUpdate` функцтай холбоогүй, улмаар эцэг компонент нь өөрчлөлт хийхээ зогсоосон ч хэрэглэгч компонентууд нь өөрчлөгдөх болно. 
 
-Changes are determined by comparing the new and old values using the same algorithm as [`Object.is`](//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description). 
+Өөрчлөлт нь шинэ болон хуучин утгуудыг ижил алгоримтаар [`Object.is`](//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description) харцуулсанаар тодорхойлогддог.
 
-> Note
+> Тэмдэглэл
 > 
-> The way changes are determined can cause some issues when passing objects as `value`: see [Caveats](#caveats).
+> Энэ арга нь `value` пропсыг обьект хэлбэрээр дамжуулах үед зарим нэг асуудал үүсч байгаа. [Анхааруулга](#caveats).
 
 ### `Class.contextType` {#classcontexttype}
 
@@ -161,13 +163,13 @@ class MyClass extends React.Component {
 MyClass.contextType = MyContext;
 ```
 
-The `contextType` property on a class can be assigned a Context object created by [`React.createContext()`](#reactcreatecontext). This lets you consume the nearest current value of that Context type using `this.context`. You can reference this in any of the lifecycle methods including the render function.
+Класс дахь `contextType` проперти нь [`React.createContext()`](#reactcreatecontext) аас үүссэн контекстын обьектоор утга олгогдож байна. Энэ нь хамгийн ойр орших тухайн контекстын утгыг `this.context` ийг ашиглаж авч байна. Энэ `this.context` ийг lifecycle функцууд болон рендер функцад мөн ашиглаж болно.
 
-> Note:
+> Тэмдэглэл:
 >
-> You can only subscribe to a single context using this API. If you need to read more than one see [Consuming Multiple Contexts](#consuming-multiple-contexts).
+> Та энэ API ийг ашигласнаар зөвхөн single контекстыг зөвшөөрөх боломжтой. Дэлгэрэнгүй мэдээлэл эндээс харна уу [Consuming Multiple Contexts](#consuming-multiple-contexts).
 >
-> If you are using the experimental [public class fields syntax](https://babeljs.io/docs/plugins/transform-class-properties/), you can use a **static** class field to initialize your `contextType`.
+> Хэрвээ та туршилтын [public class fields syntax](https://babeljs.io/docs/plugins/transform-class-properties/) ийг ашиглаж байгаа бол, мөн **static** class field ийг ашиглан өөрийн `contextType` ийг зарлах боломжтой.
 
 
 ```js
@@ -188,19 +190,19 @@ class MyClass extends React.Component {
 </MyContext.Consumer>
 ```
 
-A React component that subscribes to context changes. This lets you subscribe to a context within a [function component](/docs/components-and-props.html#function-and-class-components).
+React компонент нь контекстын өөрлчлөлтийг дэмждэг. Энэ нь контекстыг [функцианаль компонент (functional component)](/docs/components-and-props.html#function-and-class-components) дотор ашиглах боломжтой болгосон.
 
-Requires a [function as a child](/docs/render-props.html#using-props-other-than-render). The function receives the current context value and returns a React node. The `value` argument passed to the function will be equal to the `value` prop of the closest Provider for this context above in the tree. If there is no Provider for this context above, the `value` argument will be equal to the `defaultValue` that was passed to `createContext()`.
+Функцыг хүү компонентоор ашиглах нь [function as a child](/docs/render-props.html#using-props-other-than-render). Функц нь тухайн контекстын утгыг хүлээн аваад React node буцаадаг. Функцэд дамжуулагдаж байгаа `value` аргумент нь компонентын модонд байх тухайн контекстээс дээш хамгийн ойр байрлах Provider ийн `value` пропстой тэнцүү байна. Хэрвээ тухайн контекстээс дээш орших ямар ч Provider олдохгүй бол `value` аргумент нь `createContext()` функцээр дамжуулагдсан `defaultValue` тай тэнцүү байна.   
 
-> Note
+> Тэмдэглэл
 > 
-> For more information about the 'function as a child' pattern, see [render props](/docs/render-props.html).
+> Функцыг хүү компонентоор ашиглах загварыг (pattern) эндээс харах [render props](/docs/render-props.html).
 
-## Examples {#examples}
+## Жишээнүүд {#examples}
 
-### Dynamic Context {#dynamic-context}
+### Динамик контекст {#dynamic-context}
 
-A more complex example with dynamic values for the theme:
+Динамик утгуудыг theme д ашигласан илүү түвэгтэй жишээ:
 
 **theme-context.js**
 `embed:context/theme-detailed-theme-context.js`
@@ -211,9 +213,9 @@ A more complex example with dynamic values for the theme:
 **app.js**
 `embed:context/theme-detailed-app.js`
 
-### Updating Context from a Nested Component {#updating-context-from-a-nested-component}
+### Агуулагдсан (nested) компонентоос контекстыг өөрчлөх {#updating-context-from-a-nested-component}
 
-It is often necessary to update the context from a component that is nested somewhere deeply in the component tree. In this case you can pass a function down through the context to allow consumers to update the context:
+Компонентын модны аль нэг түвшинд байрлах дурын компонентоос контекстэд өөрчлөлт хийх шаардлага их гардаг. Энэ нөхцөлд функцыг контекстээр доош дамжуулан хэрэглэгч компонентуудаас контекстыг өөрчилдөг:
 
 **theme-context.js**
 `embed:context/updating-nested-context-context.js`
@@ -224,28 +226,28 @@ It is often necessary to update the context from a component that is nested some
 **app.js**
 `embed:context/updating-nested-context-app.js`
 
-### Consuming Multiple Contexts {#consuming-multiple-contexts}
+### Олон контекст хэрэглэх {#consuming-multiple-contexts}
 
-To keep context re-rendering fast, React needs to make each context consumer a separate node in the tree. 
+Контекстыг хурдан дахин рендэр хийдэг байлгахын тулд React нь бүх контекстын хэрэглэгчдийг компонентын модны салангид node нүүд дээр байрлуулсан байх хэрэгтэй.
 
 `embed:context/multiple-contexts.js`
 
-If two or more context values are often used together, you might want to consider creating your own render prop component that provides both.
+Хэрвээ хоёр болон түүнээс дээш контекстууд ихэвчлэн хамтдаа хэрэглэгдэж байвал тухайн контекстуудыг хангах өөр өөрийн рендэр пропс компонентыг үүсгэх нь зөв юм. 
 
-## Caveats {#caveats}
+## Сануулга {#caveats}
 
-Because context uses reference identity to determine when to re-render, there are some gotchas that could trigger unintentional renders in consumers when a provider's parent re-renders. For example, the code below will re-render all consumers every time the Provider re-renders because a new object is always created for `value`:
+Контекст нь reference identity ийг ашиглан компонентыг дахин рендэр хийхээ шийдэж байгаа учраас эцэг компонент дахин рендэр хийгдэх үед хэрэглэгч компонентуудад шаардлагагүй рендэр хийгдэх тохиолдлууд гарч болно. Жишээ нь доорх код нь Provider ийг дахин рендэр хийх бүрд бүх хэрэглэгч компонентууд дахин рендэр хийгдэх болно, учир нь `value` дотор үргэлж шинэ обьектууд үүсэж байдаг.  
 
 `embed:context/reference-caveats-problem.js`
 
 
-To get around this, lift the value into the parent's state:
+Үүнийг шийдэхийн тулд утгуудыг (`value`) эцэг компонентын state руу зөөх хэрэгтэй.
 
 `embed:context/reference-caveats-solution.js`
 
-## Legacy API {#legacy-api}
+## Хуучин API {#legacy-api}
 
-> Note
+> Тэмдэглэл
 > 
-> React previously shipped with an experimental context API. The old API will be supported in all 16.x releases, but applications using it should migrate to the new version. The legacy API will be removed in a future major React version. Read the [legacy context docs here](/docs/legacy-context.html).
+> React шинэ контекст API руу шилжсэн. Хуучин API нь React 16.x хувилбаруудад дэмжигдэж байгаа. Гэхдээ энэ хуучин API ийг ашиглаж байгаа програмууд шинэ хувилбар руу шилжих хэрэгтэй. Хуучин API нь ирээдүйд React ийн хувилбаруудаас хасагдах болно. [Хуучин API ийн талаар унших](/docs/legacy-context.html)
  
