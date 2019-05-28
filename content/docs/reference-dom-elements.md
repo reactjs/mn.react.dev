@@ -14,27 +14,27 @@ redirect_from:
   - "tips/dangerously-set-inner-html.html"
 ---
 
-React implements a browser-independent DOM system for performance and cross-browser compatibility. We took the opportunity to clean up a few rough edges in browser DOM implementations.
+React хөтөч бүр дээр нийцтэй болон хурдан ажиллах үүднээс хөтчөөс хамааралгүй DOM систем хэрэгжүүлсэн. Бид хөтөч дээрх DOM хэрэгжүүлэлтийн талаар ярих боломж олдлоо.
 
-In React, all DOM properties and attributes (including event handlers) should be camelCased. For example, the HTML attribute `tabindex` corresponds to the attribute `tabIndex` in React. The exception is `aria-*` and `data-*` attributes, which should be lowercased. For example, you can keep `aria-label` as `aria-label`.
+React дээр бүх DOM шинж чанарууд болон аттрибутууд нь(эвэнтийн удирдлагыг багтаагаад) camelCased байх ёстой. Жишээбэл, HTML аттрибут `tabindex` нь React дээр `tabIndex` аттрибуттай харгалзана. Онцгой тохиолдлууд болох `aria-*` болон `data-*` аттрибутууд нь lowercased байх хэрэгтэй. Жишээбэл, `aria-label`-г хэвээр нь үлдээнэ.
 
-## Differences In Attributes {#differences-in-attributes}
+## Аттрибутуудын ялгаанууд {#differences-in-attributes}
 
-There are a number of attributes that work differently between React and HTML:
+React болон HTML-н хооронд өөрөөр ажилладаг зөндөө аттрибутууд бий:
 
 ### checked {#checked}
 
-The `checked` attribute is supported by `<input>` components of type `checkbox` or `radio`. You can use it to set whether the component is checked. This is useful for building controlled components. `defaultChecked` is the uncontrolled equivalent, which sets whether the component is checked when it is first mounted.
+`checked` аттрибут бол `checkbox` эсвэл `radio` төрлийн <input> дээр дэмжигддэг. Та үүнийг компонент чагтлагдасан эсэхийг тохируулахад ашиглаж болно. Энэ нь удирдагдсан компонентууд бичихэд хэрэгтэй байдаг. `defaultChecked` бол удирдагдаагүй бөгөөд компонент анх үүсэхэд чагтлах эсэх талаар тохируулдаг.
 
 ### className {#classname}
 
-To specify a CSS class, use the `className` attribute. This applies to all regular DOM and SVG elements like `<div>`, `<a>`, and others.
+CSS класс зааж өгөхдөө `className` аттрибутыг ашиглана. Энэ нь бүх энгийн DOM болон SVG элементүүд болох `<div>`, `<a>` болон бусдад адилхан мөрдөгдөнө.
 
-If you use React with Web Components (which is uncommon), use the `class` attribute instead.
+Хэрэв та React-г Web компонентуудтай хэрэглэвэл(тийм ч түгээмэл биш) `class` аттрибутыг оронд нь ашиглана.
 
 ### dangerouslySetInnerHTML {#dangerouslysetinnerhtml}
 
-`dangerouslySetInnerHTML` is React's replacement for using `innerHTML` in the browser DOM. In general, setting HTML from code is risky because it's easy to inadvertently expose your users to a [cross-site scripting (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting) attack. So, you can set HTML directly from React, but you have to type out `dangerouslySetInnerHTML` and pass an object with a `__html` key, to remind yourself that it's dangerous. For example:
+`dangerouslySetInnerHTML` бол React-н `innerHTML`-г хөтчийн DOM дээр орлох зүйл юм. Ерөнхийдөө HTML code тохируулах нь хэрэглэгчийг [cross-site scripting (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting) халдлагад өртөх эсрдэл дагуулдаг. Тэгэхээр React-с HTML тохируулахдаа `dangerouslySetInnerHTML` ашиглан `__html` түлхүүр дамжуулан өөртөө энэ нь аюултайг сануулж болно. Жишээлбэл:
 
 ```js
 function createMarkup() {
@@ -48,23 +48,23 @@ function MyComponent() {
 
 ### htmlFor {#htmlfor}
 
-Since `for` is a reserved word in JavaScript, React elements use `htmlFor` instead.
+`for` нь Жаваскрипт дээр нөөцлөгдсөн түлхүүр үг учир React элементүүд `htmlFor`-г оронд нь ашигладаг.
 
 ### onChange {#onchange}
 
-The `onChange` event behaves as you would expect it to: whenever a form field is changed, this event is fired. We intentionally do not use the existing browser behavior because `onChange` is a misnomer for its behavior and React relies on this event to handle user input in real time.
+`onChange` эвент нь форм дээр талбар өөрчлөгдөхөд дуудагдах юм. Бид `onChange`-н ажиллагаа нь нэрнээсээ гажсан гэж үздэг учраас албаар хөтчүүд дээр байдаг ажиллагааг нь ашигладагггүй бөгөөд React энэ эвентэд хэрэглэгчийн оролтыг цаг тухайд нь удирдахийг даалгадаг.
 
 ### selected {#selected}
 
-The `selected` attribute is supported by `<option>` components. You can use it to set whether the component is selected. This is useful for building controlled components.
+`selected` аттрибут бол `<option>` компонентууд дээр дэмжигддэг. Та үүнийг компонент сонгогдсон байдлаар тохируулахад ашиглаж болно. Энэ нь удирдагдсан компонентууд бичихэд хэрэгтэй.
 
 ### style {#style}
 
->Note
+>Анхаар
 >
->Some examples in the documentation use `style` for convenience, but **using the `style` attribute as the primary means of styling elements is generally not recommended.** In most cases, [`className`](#classname) should be used to reference classes defined in an external CSS stylesheet. `style` is most often used in React applications to add dynamically-computed styles at render time. See also [FAQ: Styling and CSS](/docs/faq-styling.html).
+>Зарим баримтжуулалт дээр байгаа жишээнүүд `style`-г амархан байх үүднээс ашигласан ч **`style` аттрибутыг элементийн загварын утгаар хэрэглэх тохиромжгүй.** Ихэнх тохиолдлуудад, [`className`](#classname) нь CSS дээр ашиглагдах заалт класс болон ашиглах нь дээр байдаг. `style` нь ихэвчлэн React програмууд дээр динамикаар тооцоологдсон загваруудыг дүрслэхэд ашиглагддаг. Илүүг [FAQ: Styling and CSS](/docs/faq-styling.html).
 
-The `style` attribute accepts a JavaScript object with camelCased properties rather than a CSS string. This is consistent with the DOM `style` JavaScript property, is more efficient, and prevents XSS security holes. For example:
+`style` аттрибут нь camelCased шинж чанаруудтай Жаваскрипт объектыг CSS string-н оронд хүлээж авахыг илүүд үздэг.Энэ нь илүү үр дүнтэй бөгөөд DOM `style`-н Жаваскрипт шинж чанартай нийцтэй. Мөн XSS аюулгүй байдлын цоорхой үүсэхээс сэргийлдэг. Жишээлбэл:
 
 ```js
 const divStyle = {
@@ -77,7 +77,7 @@ function HelloWorldComponent() {
 }
 ```
 
-Note that styles are not autoprefixed. To support older browsers, you need to supply corresponding style properties:
+Загварууд нь угтвар ашиглаагүйг анзаарж болно. Хуучин хөтчүүд дэмжихийн тулд харгалзах стайл шинж чанаруудыг нь нэмж өгөх хэрэгтэй:
 
 ```js
 const divStyle = {
@@ -90,9 +90,9 @@ function ComponentWithTransition() {
 }
 ```
 
-Style keys are camelCased in order to be consistent with accessing the properties on DOM nodes from JS (e.g. `node.style.backgroundImage`). Vendor prefixes [other than `ms`](https://www.andismith.com/blogs/2012/02/modernizr-prefixed/) should begin with a capital letter. This is why `WebkitTransition` has an uppercase "W".
+Жаваскриптээс DOM зангилаануудыг шинж чанар руу хандахад нийцтэй байх үүднээс стайл түлхүүрүүд нь camelCased байдаг(e.g. `node.style.backgroundImage`). [`ms`-с бусад](https://www.andismith.com/blogs/2012/02/modernizr-prefixed/) vendor угтварууд том үсгээр эхлэх нь зүйтэй. Энэ нь `WebkitTransition` нь том "W" үсгээр эхэлсэн шалтгаан.
 
-React will automatically append a "px" suffix to certain numeric inline style properties. If you want to use units other than "px", specify the value as a string with the desired unit. For example:
+React автоматаар "px" дагаварыг тоон загварын шинж чанар дээр залгадаг. Хэрэв та "px"-ээс өөр хэмжээсийн нэгж ашиглаж бол, хүссэн утгаа тэмдэгт байдлаар тодорхойлж өгнө. Жишээлбэл:
 
 ```js
 // Result style: '10px'
@@ -106,27 +106,27 @@ React will automatically append a "px" suffix to certain numeric inline style pr
 </div>
 ```
 
-Not all style properties are converted to pixel strings though. Certain ones remain unitless (eg `zoom`, `order`, `flex`). A complete list of unitless properties can be seen [here](https://github.com/facebook/react/blob/4131af3e4bf52f3a003537ec95a1655147c81270/src/renderers/dom/shared/CSSProperty.js#L15-L59).
+Бүх стайл шинж чанарууд пиксел тэмдэгт руу хөрвүүлэгддэггүй. Зарим нэг нь нэгжгүй чигээр үлддэг(eg `zoom`, `order`, `flex`). Нэгжгүй хэвээр үлддэг шинж чанаруудын бүрэн жагсаалтыг [эндээс](https://github.com/facebook/react/blob/4131af3e4bf52f3a003537ec95a1655147c81270/src/renderers/dom/shared/CSSProperty.js#L15-L59) харж болно.
 
 ### suppressContentEditableWarning {#suppresscontenteditablewarning}
 
-Normally, there is a warning when an element with children is also marked as `contentEditable`, because it won't work. This attribute suppresses that warning. Don't use this unless you are building a library like [Draft.js](https://facebook.github.io/draft-js/) that manages `contentEditable` manually.
+Энгийнээр хүүтэй элемент нь `contentEditable`-р тэмдэглэхэд анхааруулга өгдөг учир нь ажилладаггүй юм. Энэ аттрибут нь энэ анхааруулгыг дардаг. Та [Draft.js](https://facebook.github.io/draft-js/) шиг `contentEditable`-г гараар удирддаг жаваскрипт сан бичээгүй л бол үүнийг ашиглаад хэрэггүй.
 
 ### suppressHydrationWarning {#suppresshydrationwarning}
 
-If you use server-side React rendering, normally there is a warning when the server and the client render different content. However, in some rare cases, it is very hard or impossible to guarantee an exact match. For example, timestamps are expected to differ on the server and on the client.
+Хэрэв та сервер талын React дүрслэл ашиглаж байгаа бол энгийнээр сервер болон хэрэглэгч нь ялгаатай зүйл дүрслэхэд анхааруулга өгдөг. Гэсэн хэдий ч маш ховор тохиолдлуудад яг цав таарсан эсэхийг нягтлах нь хэцүү эсвэл боломжгүй байдаг. Жишээлбэл цагын стамп нь сервер болон хэрэглэгч дээр зөрөх ёстой байдаг.
 
-If you set `suppressHydrationWarning` to `true`, React will not warn you about mismatches in the attributes and the content of that element. It only works one level deep, and is intended to be used as an escape hatch. Don't overuse it. You can read more about hydration in the [`ReactDOM.hydrate()` documentation](/docs/react-dom.html#hydrate).
+Хэрэв та `suppressHydrationWarning`-г `true` болгон тохируулбал, React нь таны элементийн аттрибут болон агуулгын ялгаатай байдалд анхааруулахгүй. Энэ нь зөвхөн гүн түвшинд ажилладаг бөгөөд зугтах гарц болон зориулагдсан. Үүнийн хэтрүүлэн хэрэглэх хэрэггүй. Та үүний талаар дэлгэрэнгүйг [`ReactDOM.hydrate()` documentation](/docs/react-dom.html#hydrate)-с уншиж болно.
 
 ### value {#value}
 
-The `value` attribute is supported by `<input>` and `<textarea>` components. You can use it to set the value of the component. This is useful for building controlled components. `defaultValue` is the uncontrolled equivalent, which sets the value of the component when it is first mounted.
+`value` аттрибут нь `<input>` болон `<textarea>` компонентууд дээр дэмжигддэг.  Та үүнийг компонентийн утгыг тохируулахдаа ашиглана. Энэ удирдагдсан компонент бичихэд хэрэг болно. `defaultValue` бол компонент анх үүсэхэд тохируулагдах удирдагдахгүй утга юм.
 
-## All Supported HTML Attributes {#all-supported-html-attributes}
+## Бүх дэмжигдсэн HTML аттрибутууд {#all-supported-html-attributes}
 
-As of React 16, any standard [or custom](/blog/2017/09/08/dom-attributes-in-react-16.html) DOM attributes are fully supported.
+React 16-д ямар ч стандарт [эсвэл сustom](/blog/2017/09/08/dom-attributes-in-react-16.html) DOM аттрибутууд бүрэн дэмжигдсэн байдаг.
 
-React has always provided a JavaScript-centric API to the DOM. Since React components often take both custom and DOM-related props, React uses the `camelCase` convention just like the DOM APIs:
+React нь JavaScript-төвтэй API DOM руу олгодог. React компонентууд нь custom болон DOM-д хамааралтай шинж чанарууд хэрэглэгдэг учир `camelCase` convention DOM API-ууд шиг хэрэглэдэг:
 
 ```js
 <div tabIndex="-1" />      // Just like node.tabIndex DOM API
@@ -134,9 +134,9 @@ React has always provided a JavaScript-centric API to the DOM. Since React compo
 <input readOnly={true} />  // Just like node.readOnly DOM API
 ```
 
-These props work similarly to the corresponding HTML attributes, with the exception of the special cases documented above.
+Эдгээр шинж чанарууд харгалзах HTML аттрибутууд шигээ ажилладаг ч зарим тусгай тохиолдлуудыг доор баримтжуулав.
 
-Some of the DOM attributes supported by React include:
+Дараах DOM аттрибутууд React дээр дэмжигддэг:
 
 ```
 accept acceptCharset accessKey action allowFullScreen alt async autoComplete
@@ -154,7 +154,7 @@ sizes span spellCheck src srcDoc srcLang srcSet start step style summary
 tabIndex target title type useMap value width wmode wrap
 ```
 
-Similarly, all SVG attributes are fully supported:
+Мөн адилаар бүх SVG аттрибутууд нь бүрэн дэмжигддэг:
 
 ```
 accentHeight accumulate additive alignmentBaseline allowReorder alphabetic
@@ -193,4 +193,4 @@ xlinkHref xlinkRole xlinkShow xlinkTitle xlinkType xmlns xmlnsXlink xmlBase
 xmlLang xmlSpace y y1 y2 yChannelSelector z zoomAndPan
 ```
 
-You may also use custom attributes as long as they're fully lowercase.
+Мөн түүнчлэн та өөрийн аттрибутыг бүрэн жижиг үсэг ашиглан зохиож болно.
