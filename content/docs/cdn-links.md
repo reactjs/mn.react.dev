@@ -6,32 +6,31 @@ prev: create-a-new-react-app.html
 next: hello-world.html
 ---
 
-Both React and ReactDOM are available over a CDN.
+React болон ReactDOM -ыг CDN ээс ашиглах боломжтой.
 
 ```html
 <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 ```
 
-The versions above are only meant for development, and are not suitable for production. Minified and optimized production versions of React are available at:
+Дээрх хувилбарууд зѳвхѳн хѳгжүүлэлтэд зориулагдсан, жинхэнэ бүтээгдэхүүнд тохиромжгүй. Багасгасан бэлэн болсон хувилбарууд нь:
 
 ```html
 <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 ```
 
-To load a specific version of `react` and `react-dom`, replace `16` with the version number.
+Тодорхой хувилбар ашиглах бол `react` болон `react-dom` дээрх `16` гэснийг ѳѳрийн ашиглах хувилбараар солино.
 
 ### Why the `crossorigin` Attribute? {#why-the-crossorigin-attribute}
 
-If you serve React from a CDN, we recommend to keep the [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) attribute set:
-
+Хэрвээ React -ыг CDN -ээс ашиглаж байгаа бол, [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) тохируулах хэрэгтэй:
 ```html
 <script crossorigin src="..."></script>
 ```
 
-We also recommend to verify that the CDN you are using sets the `Access-Control-Allow-Origin: *` HTTP header:
+Мѳн таны ашиглаж буй CDN нь `Access-Control-Allow-Origin: *` HTTP толгой ашиглаж байх шаардлагатай:
 
 ![Access-Control-Allow-Origin: *](../images/docs/cdn-cors-header.png)
 
-This enables a better [error handling experience](/blog/2017/07/26/error-handling-in-react-16.html) in React 16 and later.
+Ингэснээр React 16 болон түүнээс хойшхи хувилбарууд [алдаа илрүүлэхэд](/blog/2017/07/26/error-handling-in-react-16.html) илүү ойлгомжтой болно.
