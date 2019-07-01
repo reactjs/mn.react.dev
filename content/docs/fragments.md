@@ -18,7 +18,11 @@ render() {
 }
 ```
 
+<<<<<<< HEAD
 Мѳн шинэ [богиносгосон хувилбар](#short-syntax) ашиглаж болох боловч одоогоор бүх хэрэгсэл үүнийг дэмжээгүй байгаа.
+=======
+There is also a new [short syntax](#short-syntax) for declaring them.
+>>>>>>> c024001caf50180a896c09467d06b2ad7b2fb8f4
 
 ## Сэдэл {#motivation}
 
@@ -113,9 +117,13 @@ class Columns extends React.Component {
 
 `<></>` -ыг яг л бусад элементүүд ашигладаг шиг ашиглана. Гэхдээ энэ нь keys эсвэл бусад аттрибутуудыг дэмжихгүй.
 
+<<<<<<< HEAD
 Анхаарах зүйл нь **[маш олон хэрэгслүүд үүнийг дэмжиж эхлээгүй](/blog/2017/11/28/react-v16.2.0-fragment-support.html#support-for-fragment-syntax)** тиймээс бусад хэрэгслүүд бүрэн дэмжих хүртэл заавал тусд нь `<React.Fragment>` ашиглах шаардлага гарна.
 
 ### Key-тэй фрагмент {#keyed-fragments}
+=======
+### Keyed Fragments {#keyed-fragments}
+>>>>>>> c024001caf50180a896c09467d06b2ad7b2fb8f4
 
 Фрагмент нь `<React.Fragment>` хэлбэрээр зарлагдсан бол key агуулж болдог. Array -ыг олон фрагмент болгон харуулах гэх мэт нѳхцѳлд ашиглана -- жишээ нь:
 

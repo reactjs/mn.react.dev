@@ -22,7 +22,13 @@ permalink: community/courses.html
 
 - [Free React Bootcamp](https://tylermcginnis.com/free-react-bootcamp/) - React-д бэлтгэх 3 хоногийн сургалтын бичлэгүүд.
 
+<<<<<<< HEAD
 ## Төлбөртэй хичээлүүд {#paid-courses}
+=======
+- [Scrimba: Learn React for free](https://scrimba.com/g/glearnreact) - 48 hands-on video tutorials building react apps.
+
+## Paid Courses {#paid-courses}
+>>>>>>> c024001caf50180a896c09467d06b2ad7b2fb8f4
 
 - [Egghead.io](https://egghead.io/browse/frameworks/react) - React болон бусад сэдвүүд бүхий богино хэмжээний сургалтын видеонууд.
 
