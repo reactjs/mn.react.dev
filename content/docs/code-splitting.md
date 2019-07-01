@@ -109,11 +109,7 @@ Webpack энэ бичиглэлтэй болох үед энэ нь таны п�
 
 > Анхаар:
 >
-<<<<<<< HEAD
 > `React.lazy` болон Suspence нь сервер талын дүрслэлт дээр хараахан байхгүй юм. Хэрэв та сервер дээр дүрслэлт хийгддэг програмд код салгалт хийхийг хүсвэл [Ачаалагдахуйц компонентууд(Loadable Components)](https://github.com/smooth-code/loadable-components) ашиглахийг зөвлөж байна. Энэ нь [сервер талын дүрслэл дээр багц салгалтыг хийх заавар](https://github.com/smooth-code/loadable-components/blob/master/packages/server/README.md) сайтай.
-=======
-> `React.lazy` and Suspense are not yet available for server-side rendering. If you want to do code-splitting in a server rendered app, we recommend [Loadable Components](https://github.com/smooth-code/loadable-components). It has a nice [guide for bundle splitting with server-side rendering](https://github.com/smooth-code/loadable-components/blob/master/packages/server/README.md).
->>>>>>> c024001caf50180a896c09467d06b2ad7b2fb8f4
 
 `React.lazy` функц нь танд энгийн компонентийн динамикаар импортлон дүрслэж боломжийг олгодог.
 
