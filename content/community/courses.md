@@ -18,9 +18,11 @@ permalink: community/courses.html
 
 - [The Road to Learn React](https://www.robinwieruch.de/the-road-to-learn-react/) - Ямар нэгэн хэцүү нэмэлт багажгүйгээр цэвэр React ашиглан бодит амьдрал дээрх аппликейшнийг хийж үзэх.
 
-- [Egghead.io: The Beginner's Guide to ReactJS](https://egghead.io/courses/the-beginner-s-guide-to-reactjs) - Анхлан суралцагчид болон React-ийн үндсэн ойлголтыг сурахыг хүсч буй хүмүүст зориулсан үнэгүй хичээл. 
+- [Egghead.io: The Beginner's Guide to ReactJS](https://egghead.io/courses/the-beginner-s-guide-to-reactjs) - Анхлан суралцагчид болон React-ийн үндсэн ойлголтыг сурахыг хүсч буй хүмүүст зориулсан үнэгүй хичээл.
 
 - [Free React Bootcamp](https://tylermcginnis.com/free-react-bootcamp/) - React-д бэлтгэх 3 хоногийн сургалтын бичлэгүүд.
+
+- [Scrimba: Learn React for free](https://scrimba.com/g/glearnreact) - 48 react апп бүтээх туршлагад үндэслэн видео хичээлүүд.
 
 ## Төлбөртэй хичээлүүд {#paid-courses}
 
