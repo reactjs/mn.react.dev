@@ -16,7 +16,11 @@ redirect_from:
 
 ## Зааварчилгааг эхлүүлэхийн өмнө {#before-we-start-the-tutorial}
 
+<<<<<<< HEAD
 Энэхүү зааварчилгаагаар бид нэг жижигхэн тоглоом хийх болно. **Та тоглоом хийхгээгүй учраас алгасах гэж байж магадгүй юм -- гэхдээ үүнээс өмнө түр азнаарай.** Энэхүү зааварчилгаанаас сурах арга ажиллагаа нь ямар ч React апп хийхэд суурь болохоос гадна сайн сурвал React-ийн талаар гүнзгий ойлголттой болно.
+=======
+We will build a small game during this tutorial. **You might be tempted to skip it because you're not building games -- but give it a chance.** The techniques you'll learn in the tutorial are fundamental to building any React app, and mastering it will give you a deep understanding of React.
+>>>>>>> ed9d73105a93239f94d84c619e84ae8adec43483
 
 >Зөвлөмж
 >
