@@ -1,6 +1,6 @@
 ---
 id: getting-started
-title: Getting Started
+title: Эхнээс нь эхлэх
 permalink: docs/getting-started.html
 next: add-react-to-a-website.html
 redirect_from:
@@ -18,109 +18,112 @@ redirect_from:
   - "docs/environments.html"
 ---
 
-This page is an overview of the React documentation and related resources.
+Энэ хуудас React-н докюмент болон бусад холбоотой материалуудын хураангуй юм.
 
-**React** is a JavaScript library for building user interfaces. Learn what React is all about on [our homepage](/) or [in the tutorial](/tutorial/tutorial.html).
+**React** нь хэрэглэгчийн интерфэйс бүтээх JavaScript сан. React гэж яг юу болох талаар [нүүр хуудас](/) эсвэл [хичээл](/tutorial/tutorial.html) хэсгээс мэдэж болно.
 
 ---
 
-- [Try React](#try-react)
-- [Learn React](#learn-react)
-- [Staying Informed](#staying-informed)
-- [Versioned Documentation](#versioned-documentation)
-- [Something Missing?](#something-missing)
+- [React-г турших](#try-react)
+- [React сурах](#learn-react)
+- [Мэдээлэлтэй байх](#staying-informed)
+- [Хувилбарт докюментжуулалт](#versioned-documentation)
+- [Дутуу зүйл байна уу?](#something-missing)
 
-## Try React {#try-react}
+## React-г турших {#try-react}
 
-React has been designed from the start for gradual adoption, and **you can use as little or as much React as you need.** Whether you want to get a taste of React, add some interactivity to a simple HTML page, or start a complex React-powered app, the links in this section will help you get started.
+React нь анхнаасаа алгуур нутагшуулалтад загварчлагдсан ба **өөрийн хэрэгцээнд тааруулан бага, их гэлтгүй ашиглах боломжтой.** Энгийн HTML хуудсанд хариу үйлдэл бүхий боломж оруулах, эсвэл цогц React дээр суурилсан апп эхлүүлэх, аль ч байдлаар React-г ашиглаж эхлэхэд энэ хэсгийн холбоосууд танд тусална.
 
-### Online Playgrounds {#online-playgrounds}
+### Онлайн турших талбар {#online-playgrounds}
 
-If you're interested in playing around with React, you can use an online code playground. Try a Hello World template on [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), or [Glitch](https://glitch.com/edit/#!/remix/starter-react-template).
+Хэрвээ React дээр туршилт хийх сонирхолтой байвал, онлайн туршилтын талбар ашиглах боломжтой. Hello World загварыг [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new) эсвэл [Glitch](https://glitch.com/edit/#!/remix/starter-react-template) дээр туршаарай.
 
-If you prefer to use your own text editor, you can also [download this HTML file](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html), edit it, and open it from the local filesystem in your browser. It does a slow runtime code transformation, so we'd only recommend using this for simple demos.
+Хэрвээ өөрийн editor дээр ажилламаар байвал, [Энэ HTML файлыг татаж](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) аваад, засаад, өөрийн файл системээс веб хөтөч дээрээ нээж үзэх мөн боломжтой. Энэ нь код хөрвүүлэлтийн хурдны хувьд удаан тул үүнийг зөвхөн энгийн жишээн дээр хэрэглэхийг зөвлөж байна.
 
-### Add React to a Website {#add-react-to-a-website}
+### React-г веб сайтад оруулах {#add-react-to-a-website}
 
-You can [add React to an HTML page in one minute](/docs/add-react-to-a-website.html). You can then either gradually expand its presence, or keep it contained to a few dynamic widgets.
+[React-г минутын дотор HTML хуудсанд оруулах](/docs/add-react-to-a-website.html) боломжтой. Та аажмаар үүний оролцоог нэмэгдүүлэх эсвэл цөөн хэдэн динамик хэсэг дээр байрлуулах гээд аль ч боломжтой.
 
-### Create a New React App {#create-a-new-react-app}
+### Шинээр React апп үүсгэх {#create-a-new-react-app}
 
-When starting a React project, [a simple HTML page with script tags](/docs/add-react-to-a-website.html) might still be the best option. It only takes a minute to set up!
+React прожект эхлүүлэх үед, [скрипттэй энгийн HTML хуудас](/docs/add-react-to-a-website.html) нь магадгүй хамгийн зөв сонголт байх. Эхлүүлэхэд ердөө минут л зарцуулагдана.
 
-As your application grows, you might want to consider a more integrated setup. There are [several JavaScript toolchains](/docs/create-a-new-react-app.html) we recommend for larger applications. Each of them can work with little to no configuration and lets you take full advantage of the rich React ecosystem.
+Аппликешн тань томрохын хэрээр, та илүү төвлөрсөн суулгац сонирхож болох юм. [JavaScript багажны хэлхээс бүхий цуглуулга](/docs/create-a-new-react-app.html) байдаг ба бид үүнийг том хэмжээний аппликешнэнд санал болгож байна. Тэдгээр багажуудын тус бүр нь маш бага эсвэл ямар ч тохиргоо шаардалгүй React-н баялаг эко системээс танд давуу тал олгоно.
 
-## Learn React {#learn-react}
+## React сурах {#learn-react}
 
-People come to React from different backgrounds and with different learning styles. Whether you prefer a more theoretical or a practical approach, we hope you'll find this section helpful.
+Янз бүрийн орчноос янз бүрийн сурах арга барилтай хүмүүс React дээр ирдэг. Онолын эсвэл практикын аль ч танд таатай байсан ялгаагүй, энэ хэсгийг танд туслаж чадна гэдэгт найдаж байна.
 
-* If you prefer to **learn by doing**, start with our [practical tutorial](/tutorial/tutorial.html).
-* If you prefer to **learn concepts step by step**, start with our [guide to main concepts](/docs/hello-world.html).
+* Хэрвээ **оролдож сурах** сонирхолтой бол, манай [практик хичээлээс](/tutorial/tutorial.html) эхлээрэй.
+* Хэрвээ **алхам алхмаар ойлголтуудыг сурах** сонирхолтой бол, манай [үндсэн ойлголтуудын заавараас](/docs/hello-world.html) эхлээрэй.
 
-Like any unfamiliar technology, React does have a learning curve. With practice and some patience, you *will* get the hang of it.
+Бусад хараахан мэдээгүй байгаа технологийн адилаар, React нь сурах зүйлстэй. Дадлага болон тэвчээрийн тусламжтой та үүнийг *өөрийн болгох* болно.
 
-### First Examples {#first-examples}
+### Эхний жишээнүүд {#first-examples}
 
-The [React homepage](/) contains a few small React examples with a live editor. Even if you don't know anything about React yet, try changing their code and see how it affects the result.
+[React-н нүүр хуудас](/) онлайн editor дээр цөөн жижиг жишээнүүд агуулж байгаа. Та React-н талаар юу ч мэдэхгүй байсан ч тэдгээрийн кодыг засаж үр дүн нь хэрхэн өөрчлөгдөж байгааг хараарай.
 
-### React for Beginners {#react-for-beginners}
+### React анханлан суралцагчидад {#react-for-beginners}
 
-If you feel that the React documentation goes at a faster pace than you're comfortable with, check out [this overview of React by Tania Rascia](https://www.taniarascia.com/getting-started-with-react/). It introduces the most important React concepts in a detailed, beginner-friendly way. Once you're done, give the documentation another try!
+Хэрвээ танд React докюментжуулалт хүссээс чинь хурдан явагдаад байвал [Tania Rascia-н React-н тоймыг](https://www.taniarascia.com/getting-started-with-react/) сонирхоод үзээрэй. Энд React-н хамгийн чухал үндсэн ойлголтуудыг дэлгэрэнгүй байдлаар анхан суралцагч нарт зориулан танилцуулсан байгаа. Үүнийг дуусгаад докюментжуулалтыг дахин оролдоод үзээрэй.
 
-### React for Designers {#react-for-designers}
+### React дизайнеруудад {#react-for-designers}
 
-If you're coming from a design background, [these resources](https://reactfordesigners.com/) are a great place to get started.
+Хэрвээ та дизайны суурьтай бол, [эдгээр материалууд](https://reactfordesigners.com/) эхлэхэд тохиримжтой газарууд юм.
 
-### JavaScript Resources {#javascript-resources}
+### JavaScript материалууд {#javascript-resources}
 
-The React documentation assumes some familiarity with programming in the JavaScript language. You don't have to be an expert, but it's harder to learn both React and JavaScript at the same time.
+React докюментжуулалт Javascript-н тодорхой мэдлэг шаарддаг. Та мэргэжилтэн байх албагүй, гэхдээ React, Javascript-г нэг дор сурхад илүү хүнд байх болно.
 
-We recommend going through [this JavaScript overview](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) to check your knowledge level. It will take you between 30 minutes and an hour but you will feel more confident learning React.
+Өөрийн Javascript-н мэдлэгээ шалгахад бид [энэ Javascript тоймыг](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) санал болгож байна. Энэ нь 30 минутаас 1 цагийн хооронд дуусах боловч дараа нь React сурхад илүү таатай байгааг та мэдрэх болно.
 
->Tip
+>Зөвөлгөө
 >
->Whenever you get confused by something in JavaScript, [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [javascript.info](https://javascript.info/) are great websites to check. There are also [community support forums](/community/support.html) where you can ask for help.
+>Javascript дээр ямар нэг ойлгомжгүй зүйл тулгарвал, [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript) болон [javascript.info](https://javascript.info/) нар нь шалгах үзхэд хэрэгтэй веб сайтууд юм. Мөн [тусламжын бүлгийн форум нь](/community/support.html) таны туслалцаа хүсэж болох газар юм.
 
-### Practical Tutorial {#practical-tutorial}
+### Практикал хичээл {#practical-tutorial}
 
-If you prefer to **learn by doing,** check out our [practical tutorial](/tutorial/tutorial.html). In this tutorial, we build a tic-tac-toe game in React. You might be tempted to skip it because you're not building games -- but give it a chance. The techniques you'll learn in the tutorial are fundamental to building *any* React apps, and mastering it will give you a much deeper understanding.
+Хэрвээ та **оролдож сурах** сонирхолтой бол, манай [практик хичээлийг](/tutorial/tutorial.html) сонирхоод үзээрэй. Энэ хүү хичээлд, бид tic-tac-toe-г React дээр бүтээсэн байгаа.
 
-### Step-by-Step Guide {#step-by-step-guide}
+Та магадгүй тоглоом хийхгүй гээд үүнийг алгасах гэж яарч байж болох юм гэсэн хэдийч үүнийг оролдоод үзээрэй. Үүнээс та *ямар ч* React апп хийхэд хэрэгтэй үндсэн арга барилуудаас суралцах ба тэдгээрийг бүрэн эзэмшиснээр илүү гүн ойлголтуудыг авах болно.
 
-If you prefer to **learn concepts step by step,** our [guide to main concepts](/docs/hello-world.html) is the best place to start. Every next chapter in it builds on the knowledge introduced in the previous chapters so you won't miss anything as you go along.
+### Алхмаар сураг заавар {#step-by-step-guide}
 
-### Thinking in React {#thinking-in-react}
+Хэрвээ **алхам алхмаар ойлголтуудыг сурах** сонирхолтой бол, манай [үндсэн ойлголтуудын заавараас](/docs/hello-world.html) эхэлхэд хамгийн зөв газар юм.
+Дараачын шат болгон өмнөх шатнуудад танилцуулагдсан зүйлс дээр хийгдсэн байдаг тул явцын дунд та ямар ч юм орхигдуулахгүй.
 
-Many React users credit reading [Thinking in React](/docs/thinking-in-react.html) as the moment React finally "clicked" for them. It's probably the oldest React walkthrough but it's still just as relevant.
+### React-аар сэтгэх {#thinking-in-react}
 
-### Recommended Courses {#recommended-courses}
+Маш олон React хэрэглэгчид, React-г сая нэг гартаа оруулахдаа [Thinking in React](/docs/thinking-in-react.html)-г уншихыг санал болгодог. Энэ бараг хамгийн хуучин React зааварчилгаа байх гэхдээ одоо ч гэсэн зохимжтой хэвээрээ байгаа.
 
-Sometimes people find third-party books and video courses more helpful than the official documentation. We maintain [a list of commonly recommended resources](/community/courses.html), some of which are free.
+### Санал болгох дамжаа {#recommended-courses}
 
-### Advanced Concepts {#advanced-concepts}
+Заримдаа хүмүүс албан ёсны докюментжуулалтаас бусад ном, бичлэг, дамжааг илүү тохиромжтой гэж үздэг. Бид [нийтлэг санал болгох материалуудын жагсаалтыг](/community/courses.html) хөтөлдөг ба зарим нь үнэгүй.
 
-Once you're comfortable with the [main concepts](/docs/hello-world.html) and played with React a little bit, you might be interested in more advanced topics. This section will introduce you to the powerful, but less commonly used React features like [context](/docs/context.html) and [refs](/docs/refs-and-the-dom.html).
+### Ахисан түвшний ойлголтууд {#advanced-concepts}
+
+Танд [үндсэн ойлголтууд](/docs/hello-world.html) эвтэйхэн болоод React дээр жаахан практик хийснээр та илүү ахисан түвшний сэдвүүдийг сорихож болох юм. Энэ хэсэг танд хүчирхэг хийгээд өргөн хэрэглэгдэггүй [context](/docs/context.html) болон [refs](/docs/refs-and-the-dom.html) боломжуудын талаар танилцуулах болно.
 
 ### API Reference {#api-reference}
 
-This documentation section is useful when you want to learn more details about a particular React API. For example, [`React.Component` API reference](/docs/react-component.html) can provide you with details on how `setState()` works, and what different lifecycle methods are useful for.
+Энэ докюментжуулалтын хэсэг, та тодорхой React API-н талаар дэлгэрэнгүй мэдэхэд хэрэгцээтэй юм. Жишээ, [`React.Component` API reference](/docs/react-component.html) нь `setState()` хэрхэн ажилдаг талаар нарийн мэдээлэл, мөн ямар lifecycle method-ууд нь хэрэгцээтэй талаар мэдээлэл өгнө.
 
-### Glossary and FAQ {#glossary-and-faq}
+### Нэршил ба түгээмэл асуултууд {#glossary-and-faq}
 
-The [glossary](/docs/glossary.html) contains an overview of the most common terms you'll see in the React documentation. There is also a FAQ section dedicated to short questions and answers about common topics, including [making AJAX requests](/docs/faq-ajax.html), [component state](/docs/faq-state.html), and [file structure](/docs/faq-structure.html).
+[Нэршил](/docs/glossary.html) нь react докюментжуулалтад үзэгдэх түгээмэл нэр, томьёог агуулсан байгаа. Мөн түгээмэл асуултуудад зориулсан түгээмэл сэдвүүдийн талаар богино асуулт, хариулт бүхий хэсэг бий. [AJAX хүсэлтүүд явуулах](/docs/faq-ajax.html), [компонентын төлөв](/docs/faq-state.html), болон [файл бүтэц](/docs/faq-structure.html).
 
-## Staying Informed {#staying-informed}
+## Мэдээлэлтэй байх {#staying-informed}
 
-The [React blog](/blog/) is the official source for the updates from the React team. Anything important, including release notes or deprecation notices, will be posted there first.
+[React блог](/blog/) бол React багын албан ёсны мэдээний их үүсвэр юм. Ямар ч чухал зүйл байсан, release тэмдэглэл эсвэл deprecation мэдэгдэл, тэнд эхэлж тавигдах болно.
 
-You can also follow the [@reactjs account](https://twitter.com/reactjs) on Twitter, but you won't miss anything essential if you only read the blog.
+Мөн та [@reactjs аккоунт](https://twitter.com/reactjs)-г Twitter дээр дагах боломжтой, гэсэн хэдий ч зөвхөн блогийг уншсанаар ямар ч чухал зүйлийг алдахгүй.
 
-Not every React release deserves its own blog post, but you can find a detailed changelog for every release [in the `CHANGELOG.md` file in the React repository](https://github.com/facebook/react/blob/master/CHANGELOG.md), as well as on the [Releases](https://github.com/facebook/react/releases) page.
+React-н бүх хувилбар блог пост болон орох шаардлагагүй байдаг, гэхдээ бүх хувилбарын дэлгэрэнгүй өөрчлөлтийн бүртгэлийг [React рэпо доторх `CHANGELOG.md` файлаас](https://github.com/facebook/react/blob/master/CHANGELOG.md) мөн [Releases](https://github.com/facebook/react/releases) хуудаснаас олох боломжтой.
 
-## Versioned Documentation {#versioned-documentation}
+## Хувилбарт докюментжуулалт {#versioned-documentation}
 
-This documentation always reflects the latest stable version of React. Since React 16, you can find older versions of the documentation [on a separate page](/versions). Note that documentation for past versions is snapshotted at the time of the release, and isn't being continuously updated.
+Энэ докюментжуулалт нь ямагт React-н хамгийн сүүлийн тогтвортой хувилбарт тусгагдсан байна. React 16-с эхлэн, та хуучин докюментжуулалтын хувилбаруудыг [тусдаа хуудаснаас](/versions) олох боломжтой. Өмнөх хувилбарын докюментжуулалтууд нь release гарахад snapshot хийгдсэн байдаг ба дахин шинэчлэгддэггүй болохыг анхаарна уу.
 
-## Something Missing? {#something-missing}
+## Дутуу зүйл байна уу? {#something-missing}
 
-If something is missing in the documentation or if you found some part confusing, please [file an issue for the documentation repository](https://github.com/reactjs/reactjs.org/issues/new) with your suggestions for improvement, or tweet at the [@reactjs account](https://twitter.com/reactjs). We love hearing from you!
+Хэрвээ докюментжуулалтаас ямар нэг юм дутуу эсвэл зарим хэсэг нь ойлгомжгүй байвал, хэрхэн сайжруулах талаар өөрийн санаа бодлоо [докюментжуулалтын репо-д issue үүсгэнэ үү](https://github.com/reactjs/reactjs.org/issues/new) эсвэл [@reactjs аккоунт](https://twitter.com/reactjs) дотор жиргэнэ үү. Бидэнд таныг сонсоход таатай байх болно.
