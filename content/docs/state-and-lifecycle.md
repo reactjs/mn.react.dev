@@ -244,11 +244,8 @@ class Clock extends React.Component {
   }
 ```
 
-<<<<<<< HEAD
-`this` -д цагын ID хадгалж байгааг сайн анзаарна уу.
-=======
-Note how we save the timer ID right on `this` (`this.timerID`).
->>>>>>> 4af9f2dcd1014c18ea6ce98794ba0d63874ac9d2
+
+`this` (`this.timerID`) -д цагын ID хадгалж байгааг сайн анзаарна уу.
 
 `this.props` -ыг React ѳѳрѳѳ хийж байгаа бол `this.state` нь арай илүү давуу талтай буюу та хүссэнээрээ ѳгѳгдѳл хадгалж болдог. Мэдээж энэ нь зѳвхѳн дотроо л зохицуулагдаж болдог бол шүү дээ, яг timerID шиг
 
