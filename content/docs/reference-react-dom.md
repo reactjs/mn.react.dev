@@ -6,7 +6,7 @@ category: Reference
 permalink: docs/react-dom.html
 ---
 
-Хэрвээ та React-ыг <script> таг ашиглан дуудвал эдгээр ахисан түвшний ReactDOM API -ууд глобал буюу хаанаас ч дуудах боломжтой болдог. Харин ES6 хэлбэрээр npm-ээс ашиглавал import ReactDOM from 'react-dom' гэж бичнэ. ES5 хэлбэрээр npm-ээс ашигласан бол var ReactDOM = require('react-dom') гэж ашиглана.
+Хэрвээ та React-ыг `<script>` таг ашиглан дуудвал эдгээр ахисан түвшний ReactDOM API -ууд глобал буюу хаанаас ч дуудах боломжтой болдог. Харин ES6 хэлбэрээр npm-ээс ашиглавал import ReactDOM from 'react-dom' гэж бичнэ. ES5 хэлбэрээр npm-ээс ашигласан бол var ReactDOM = require('react-dom') гэж ашиглана.
 
 
 ## Тойм {#overview}
