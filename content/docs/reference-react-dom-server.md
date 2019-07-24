@@ -6,7 +6,8 @@ category: Reference
 permalink: docs/react-dom-server.html
 ---
 
-The `ReactDOMServer` object enables you to render components to static markup. Typically, it's used on a Node server:
+
+`ReactDOMServer` объектын тусламжтай та компонентуудыг статик тэмдэглэгээ рүү рендэр хийх боломжтой. Node сервер дээр ерөнхийдөө ашигладаг:
 
 ```js
 // ES modules
@@ -15,14 +16,14 @@ import ReactDOMServer from 'react-dom/server';
 var ReactDOMServer = require('react-dom/server');
 ```
 
-## Overview {#overview}
+## Тойм {#overview}
 
-The following methods can be used in both the server and browser environments:
+Доор методуудыг сервер болон хөтчийн орчинд ашиглаж болно:
 
 - [`renderToString()`](#rendertostring)
 - [`renderToStaticMarkup()`](#rendertostaticmarkup)
 
-These additional methods depend on a package (`stream`) that is **only available on the server**, and won't work in the browser.
+Эдгээр нэмэлт методууд нь пакэжээс (`stream`) хамаардаг ба **зөвхөн сервер дээр байна**. Хөтөч дээр ажиллахгүй.
 
 - [`renderToNodeStream()`](#rendertonodestream)
 - [`renderToStaticNodeStream()`](#rendertostaticnodestream)
@@ -36,10 +37,9 @@ These additional methods depend on a package (`stream`) that is **only available
 ```javascript
 ReactDOMServer.renderToString(element)
 ```
+React элементийг эхний HTML рүү рендэр хийнэ. React HTML стринг буцаана. Та энэ методыг сервер дээр HTML үүсгэх, хуудсыг хурдан ачаалах эхний хүсэлтийн тэмдэглэгээг илгээх, SEO-ын зорилгоор хайлтын систем таны хуудсыг гүйлгэх зэрэгт ашиглаж болно. 
 
-Render a React element to its initial HTML. React will return an HTML string. You can use this method to generate HTML on the server and send the markup down on the initial request for faster page loads and to allow search engines to crawl your pages for SEO purposes.
-
-If you call [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) on a node that already has this server-rendered markup, React will preserve it and only attach event handlers, allowing you to have a very performant first-load experience.
+Серверээс рендэр хийсэн тэмдэглэгээ бүхий node дээр [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate)-ыг дуудах юм бол React үүнийг хадгалан, зөвхөн эвент зохицуулагчийг хамруулна. Ингэснээр та анхны ачаалах үйлдлийг хийх боломжтой болох юм. 
 
 * * *
 
@@ -49,9 +49,9 @@ If you call [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) on a node that 
 ReactDOMServer.renderToStaticMarkup(element)
 ```
 
-Similar to [`renderToString`](#rendertostring), except this doesn't create extra DOM attributes that React uses internally, such as `data-reactroot`. This is useful if you want to use React as a simple static page generator, as stripping away the extra attributes can save some bytes.
+ [`renderToString`](#rendertostring)-тай адилхан. Гэхдээ `data-reactroot` гэх мэт React дотооддоо ашигладаг нэмэлт DOM атрибут үүсгэдэггүй. Илүү атрибут байхгүй болохоор хэдэн бит ч гэсэн хэмнэгдэх тул энгийн статик хуудас үүсгэгч ашиглахыг хүсэж байгаа бол энэ танд хэрэг болно. 
 
-If you plan to use React on the client to make the markup interactive, do not use this method. Instead, use [`renderToString`](#rendertostring) on the server and [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) on the client.
+Хэрэв та тэмдэглэгээг илүү интерактив болгох зорилгоор үйлчлүүлэгч тал дээр React ашиглахыг хүсвэл энэ аргыг бүү ашиглаарай. Оронд нь сервер дээрээ [`renderToString`] ашиглаад, үйлчлүүлэгч тал дээрээ  [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate)  ашиглаарай.
 
 * * *
 
@@ -61,32 +61,37 @@ If you plan to use React on the client to make the markup interactive, do not us
 ReactDOMServer.renderToNodeStream(element)
 ```
 
-Render a React element to its initial HTML. Returns a [Readable stream](https://nodejs.org/api/stream.html#stream_readable_streams) that outputs an HTML string. The HTML output by this stream is exactly equal to what [`ReactDOMServer.renderToString`](#rendertostring) would return. You can use this method to generate HTML on the server and send the markup down on the initial request for faster page loads and to allow search engines to crawl your pages for SEO purposes.
+React элементийг эхний HTML руу рендэр хийнэ. HTML стринг үүсгэх [Readable stream](https://nodejs.org/api/stream.html#stream_readable_streams) буцаана. Уг HTML үр дүн нь [`ReactDOMServer.renderToString`](#rendertostring)-ын буцаах үр дүнтэй яг адилхан байна. Та энэ аргыг ашиглан сервер дээр HTML үүсгэн, хуудсыг хурдан ачлаалах эхний хүсэлтийн тэмдэглэгээг илгээх, SEO-ын зорилгоор хайлтын систем таны хуудсыг гүйлгэх зэрэгт ашиглаж болно. 
 
-If you call [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) on a node that already has this server-rendered markup, React will preserve it and only attach event handlers, allowing you to have a very performant first-load experience.
 
-> Note:
+Серверээс рендэр хийсэн тэмдэглэгээ бүхий node дээр [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate)-ыг дуудах юм бол React үүнийг хадгалан, зөвхөн эвент зохицуулагчийг хамруулна. Ингэснээр та анхны ачаалах үйлдлийг хийх боломжтой болох юм. 
+
+
+> Тэмдэглэл:
 >
-> Server-only. This API is not available in the browser.
+> Зөвхөн сервер дээр. Уг API нь хөтөч дээр ажиллахгүй. Уг методоос буцсан stream  нь  utf-8-аар шифрлэгдсэн byte stream буцаана. Хэрэв та stream-ыг өөрөөр шифрлэснийг харахыг хүсвэл текстийг хөрвүүлэн шилжүүлэх [iconv-lite](https://www.npmjs.com/package/iconv-lite) төслийг хараарай.
 >
-> The stream returned from this method will return a byte stream encoded in utf-8. If you need a stream in another encoding, take a look at a project like [iconv-lite](https://www.npmjs.com/package/iconv-lite), which provides transform streams for transcoding text.
+> 
 
 * * *
 
-### `renderToStaticNodeStream()` {#rendertostaticnodestream}
+### `renderToStaticNo
+deStream()` {#rendertostaticnodestream}
 
 ```javascript
 ReactDOMServer.renderToStaticNodeStream(element)
 ```
 
-Similar to [`renderToNodeStream`](#rendertonodestream), except this doesn't create extra DOM attributes that React uses internally, such as `data-reactroot`. This is useful if you want to use React as a simple static page generator, as stripping away the extra attributes can save some bytes.
 
-The HTML output by this stream is exactly equal to what [`ReactDOMServer.renderToStaticMarkup`](#rendertostaticmarkup) would return.
+[`renderToNodeStream`](#rendertonodestream)-тай адилхан. Гэхдээ `data-reactroot` гэх мэт React дотооддоо ашигладаг нэмэлт DOM атрибут үүсгэдэггүй. Илүү атрибут байхгүй болохоор хэдэн бит ч гэсэн хэмнэгдэх тул энгийн статик хуудас үүсгэгч ашиглахыг хүсэж байгаа бол энэ танд хэрэг болно. 
+ 
+Уг stream-ын HTML үр дүн нь [`ReactDOMServer.renderToStaticMarkup`](#rendertostaticmarkup)-ынхтай яг ижил байна.
 
-If you plan to use React on the client to make the markup interactive, do not use this method. Instead, use [`renderToNodeStream`](#rendertonodestream) on the server and [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate) on the client.
+Хэрэв та тэмдэглэгээг илүү интерактив болгох зорилгоор үйлчлүүлэгч тал дээр React ашиглахыг хүсвэл энэ аргыг бүү ашиглаарай. Оронд нь сервер дээрээ [`renderToNodeStream`](#rendertonodestream) ашиглаад, үйлчлүүлэгч тал дээрээ  [`ReactDOM.hydrate()`](/docs/react-dom.html#hydrate)  ашиглаарай.
 
-> Note:
+
+> Тэмдэглэл:
 >
-> Server-only. This API is not available in the browser.
+> Зөвхөн сервер дээр. Уг API нь хөтөч дээр ажиллахгүй.
 >
-> The stream returned from this method will return a byte stream encoded in utf-8. If you need a stream in another encoding, take a look at a project like [iconv-lite](https://www.npmjs.com/package/iconv-lite), which provides transform streams for transcoding text.
+> Уг методоос буцсан stream  нь  utf-8-аар шифрлэгдсэн byte stream буцаана. Хэрэв та stream-ыг өөрөөр шифрлэснийг харахыг хүсвэл текстийг хөрвүүлэн шилжүүлэх  [iconv-lite](https://www.npmjs.com/package/iconv-lite) төслийг хараарай.
