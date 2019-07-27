@@ -77,11 +77,7 @@ React-н олон гайхалтай хэсгүүдийн нэг нь веб п�
 
 ### Бяцхан завсарлага: Шинж чанар эсвэл Төлөв {#a-brief-interlude-props-vs-state}
 
-<<<<<<< HEAD
 React-д хоёр төрлийн өгөгдлийн загвар байдаг: props болон state. Энэ хоёрын ялгааг ойлгох нь чухал; Хэрэв та ялгааг нь сайн мэддэгтээ итгэлгүй бол [React албан ёсны баримтжуулалт](/docs/interactivity-and-dynamic-uis.html)-ыг гүйлгэн харна уу.
-=======
-There are two types of "model" data in React: props and state. It's important to understand the distinction between the two; skim [the official React docs](/docs/state-and-lifecycle.html) if you aren't sure what the difference is. See also [FAQ: What is the difference between state and props?](/docs/faq-state.html#what-is-the-difference-between-state-and-props)
->>>>>>> eef56ffdcfa995e3478f85cd9d02f4be01f65b79
 
 ## Алхам 3: Дэлгэцийн загварын төлвийг минимал(гэхдээ бүрэн) мэдэх нь {#step-3-identify-the-minimal-but-complete-representation-of-ui-state}
 
