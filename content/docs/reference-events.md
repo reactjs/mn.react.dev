@@ -6,13 +6,14 @@ layout: docs
 category: Reference
 ---
 
-This reference guide documents the `SyntheticEvent` wrapper that forms part of React's Event System. See the [Handling Events](/docs/handling-events.html) guide to learn more.
+React Эвентийн Системийн нэг хэсэг болох `SyntheticEvent`-ын тухай энд тайлбарласан болно. 
+[Эвент зохицуулалт](/docs/handling-events.html) гэсэн заавраас дэлгэрэнгүйг харна уу. 
 
-## Overview {#overview}
+## Тойм {#overview}
 
-Your event handlers will be passed instances of `SyntheticEvent`, a cross-browser wrapper around the browser's native event. It has the same interface as the browser's native event, including `stopPropagation()` and `preventDefault()`, except the events work identically across all browsers.
+Эвентийг зохицуулагчид `SyntheticEvent` гэсэн instance-ыг дамжуулна. Энэ нь хөтчийн натив эвентэд ойр байх cross-browser wrapper юм. Бүх хөтөч дээр адилхан ажилладаг эвентээс бусад `stopPropagation()`, `preventDefault()` хөтчийн натив эвенттэй адил интерфэйстэй.
 
-If you find that you need the underlying browser event for some reason, simply use the `nativeEvent` attribute to get it. Every `SyntheticEvent` object has the following attributes:
+Танд аливаа нэг шалтгаанаар суурь хөтөч олох хэрэгтэй бол `nativeEvent` атрибут ашиглан олж болно. `SyntheticEvent` объект бүрт доорх атрибут байна:
 
 ```javascript
 boolean bubbles
@@ -31,15 +32,15 @@ number timeStamp
 string type
 ```
 
-> Note:
+> Тэмдэглэл:
 >
-> As of v0.14, returning `false` from an event handler will no longer stop event propagation. Instead, `e.stopPropagation()` or `e.preventDefault()` should be triggered manually, as appropriate.
+> v0.14 хувилбар дээр бол эвент зохицуулагчаас  `false`  гэсэн утга буцвал эвент цааш тарж ажиллахыг зогсоохоо больсон байгаа. Оронд нь хэрэгтэй үед `e.stopPropagation()` эсвэл `e.preventDefault()`-ыг зориуд өөрөө ажиллуулдаг болсон.
 
-### Event Pooling {#event-pooling}
 
-The `SyntheticEvent` is pooled. This means that the `SyntheticEvent` object will be reused and all properties will be nullified after the event callback has been invoked.
-This is for performance reasons.
-As such, you cannot access the event in an asynchronous way.
+### Эвен пүүл хийх {#event-pooling}
+
+`SyntheticEvent` нь пүүл хийсэн эвент юм. Энэ нь юу гэсэн үг вэ гэхээр `SyntheticEvent` объект нь дахин ашиглагдах ба callback хийгдсэний дараа бүх properties нь хоосон болно. Ингэдэг нь ажиллагаатай холбоотой. Тэгэхээр тан эвент рүү асинхрон хэлбэрээр хандаж чадахгүй гэсэн үг. 
+
 
 ```javascript
 function onClick(event) {
@@ -60,15 +61,16 @@ function onClick(event) {
 }
 ```
 
-> Note:
+> Тэмдэглэл:
 >
-> If you want to access the event properties in an asynchronous way, you should call `event.persist()` on the event, which will remove the synthetic event from the pool and allow references to the event to be retained by user code.
+> Хэрэв та event properties-т асинхрон хэлбэрээр хандахыг хүсвэл тухайн эвент дээрээ `event.persist()`-ыг дуудах хэрэгтэй. Ингэвэл пүүлээс таны  synthetic event устгагдаж, хэрэглэгчийн кодоор тухайн эвент рүү reference хийх боломж олгодог. 
 
-## Supported Events {#supported-events}
+## Дэмждэг эвентүүд {#supported-events}
 
-React normalizes events so that they have consistent properties across different browsers.
+React эвентүүдийг нэг стандартад оруулдаг ба өөр өөр хөтөч дээр properties нь тогтмол байж чаддаг. 
 
-The event handlers below are triggered by an event in the bubbling phase. To register an event handler for the capture phase, append `Capture` to the event name; for example, instead of using `onClick`, you would use `onClickCapture` to handle the click event in the capture phase.
+Эвент үүсэн дээш тархах (bubbling phase) доорх эвент зохицуулагчид ажиллаж эхэлнэ. Доош хумигдах шатанд (capture phase)-д эвент зохицуулагчийг хамруулахыг хүсвэл эвентийн нэрэн дээр `Capture` гэж нэмнэ. Жишээ нь `onClick` ашиглахын оронд capture phase-д дарах үйлдлийг зохицуулахын тулд `onClickCapture` ашиглана гэсэн үг юм. 
+
 
 - [Clipboard Events](#clipboard-events)
 - [Composition Events](#composition-events)
@@ -91,9 +93,9 @@ The event handlers below are triggered by an event in the bubbling phase. To reg
 
 ## Reference {#reference}
 
-### Clipboard Events {#clipboard-events}
+### Clipboard events {#clipboard-events}
 
-Event names:
+Эвентийн нэр:
 
 ```
 onCopy onCut onPaste
@@ -109,7 +111,7 @@ DOMDataTransfer clipboardData
 
 ### Composition Events {#composition-events}
 
-Event names:
+Эвентийн нэр:
 
 ```
 onCompositionEnd onCompositionStart onCompositionUpdate
@@ -126,7 +128,7 @@ string data
 
 ### Keyboard Events {#keyboard-events}
 
-Event names:
+Эвентийн нэр:
 
 ```
 onKeyDown onKeyPress onKeyUp
@@ -149,19 +151,19 @@ boolean shiftKey
 number which
 ```
 
-The `key` property can take any of the values documented in the [DOM Level 3 Events spec](https://www.w3.org/TR/uievents-key/#named-key-attribute-values).
+[DOM Level 3 Events spec](https://www.w3.org/TR/uievents-key/#named-key-attribute-values) дээрх бүх утгыг `key` property авч чадна. 
 
 * * *
 
 ### Focus Events {#focus-events}
 
-Event names:
+Эвент нэр:
 
 ```
 onFocus onBlur
 ```
 
-These focus events work on all elements in the React DOM, not just form elements.
+Эдгээр фокус эвентүүд нь зөвхөн элемент үүсгэхэд биш React DOM дээрх бүх элемент дээр ажилладаг. 
 
 Properties:
 
@@ -173,19 +175,18 @@ DOMEventTarget relatedTarget
 
 ### Form Events {#form-events}
 
-Event names:
+Эвент нэр:
 
 ```
 onChange onInput onInvalid onSubmit
 ```
-
-For more information about the onChange event, see [Forms](/docs/forms.html).
+onChange эвентийн талаар дэлгэрэнгүйг [Forms](/docs/forms.html) гэснээс харна уу. 
 
 * * *
 
 ### Mouse Events {#mouse-events}
 
-Event names:
+Эвент нэр:
 
 ```
 onClick onContextMenu onDoubleClick onDrag onDragEnd onDragEnter onDragExit
@@ -193,7 +194,8 @@ onDragLeave onDragOver onDragStart onDrop onMouseDown onMouseEnter onMouseLeave
 onMouseMove onMouseOut onMouseOver onMouseUp
 ```
 
-The `onMouseEnter` and `onMouseLeave` events propagate from the element being left to the one being entered instead of ordinary bubbling and do not have a capture phase.
+`onMouseEnter` болон `onMouseLeave` эвентүүд нь энгийн тархах эвентүүдийн оронд үлдсэн эвентээс тардаг ба capture phase гэж байхгүй.  
+
 
 Properties:
 
@@ -218,18 +220,17 @@ boolean shiftKey
 
 ### Pointer Events {#pointer-events}
 
-Event names:
+Эвент нэр:
 
 ```
 onPointerDown onPointerMove onPointerUp onPointerCancel onGotPointerCapture
 onLostPointerCapture onPointerEnter onPointerLeave onPointerOver onPointerOut
 ```
-
-The `onPointerEnter` and `onPointerLeave` events propagate from the element being left to the one being entered instead of ordinary bubbling and do not have a capture phase.
+`onPointerEnter` болон  `onPointerLeave`  эвентүүд нь энгийн тархах эвентүүдийн оронд үлдсэн эвентээс тардаг ба capture phase гэж байхгүй.  
 
 Properties:
 
-As defined in the [W3 spec](https://www.w3.org/TR/pointerevents/), pointer events extend [Mouse Events](#mouse-events) with the following properties:
+[W3 spec](https://www.w3.org/TR/pointerevents/) тодорхойлсноор pointer events нь [Mouse Events](#mouse-events) руу тархахдаа дараах properties-ыг агуулсан байдаг: 
 
 ```javascript
 number pointerId
@@ -244,17 +245,17 @@ string pointerType
 boolean isPrimary
 ```
 
-A note on cross-browser support:
+Хөтөч хоорондын ажиллагаа дээр нэмж хэлэхэд:
 
-Pointer events are not yet supported in every browser (at the time of writing this article, supported browsers include: Chrome, Firefox, Edge, and Internet Explorer). React deliberately does not polyfill support for other browsers because a standard-conform polyfill would significantly increase the bundle size of `react-dom`.
+Pointer events-ыг бүх хөтөч дэмждэггүй (Энэхүү тайлбарыг бичих үед бол Chrome, Firefox, Edge, болон Internet Explorer хөтөч дэмжиж байна).  React  зориуд бусад хөтчийг дэмждэггүй байхаар хийсэн учир нь `react-dom`-ын хэмжээг огцом нэмэгдүүлэх магадлалтай учраас тэр юм.
 
-If your application requires pointer events, we recommend adding a third party pointer event polyfill.
+Хэрэв таны аппликейшнд pointer events хэрэгтэй бол гуравдагч талын pointer event нэм гэж зөвлөх байна. 
 
 * * *
 
 ### Selection Events {#selection-events}
 
-Event names:
+Эвент нэр:
 
 ```
 onSelect
@@ -264,7 +265,7 @@ onSelect
 
 ### Touch Events {#touch-events}
 
-Event names:
+Эвент нэр:
 
 ```
 onTouchCancel onTouchEnd onTouchMove onTouchStart
@@ -287,7 +288,7 @@ DOMTouchList touches
 
 ### UI Events {#ui-events}
 
-Event names:
+Эвент нэр:
 
 ```
 onScroll
@@ -304,7 +305,7 @@ DOMAbstractView view
 
 ### Wheel Events {#wheel-events}
 
-Event names:
+Эвент нэр:
 
 ```
 onWheel
@@ -323,7 +324,7 @@ number deltaZ
 
 ### Media Events {#media-events}
 
-Event names:
+Эвент нэр:
 
 ```
 onAbort onCanPlay onCanPlayThrough onDurationChange onEmptied onEncrypted
@@ -336,7 +337,7 @@ onTimeUpdate onVolumeChange onWaiting
 
 ### Image Events {#image-events}
 
-Event names:
+Эвент нэр:
 
 ```
 onLoad onError
@@ -346,7 +347,7 @@ onLoad onError
 
 ### Animation Events {#animation-events}
 
-Event names:
+Эвент нэр:
 
 ```
 onAnimationStart onAnimationEnd onAnimationIteration
@@ -364,7 +365,7 @@ float elapsedTime
 
 ### Transition Events {#transition-events}
 
-Event names:
+Эвент нэр:
 
 ```
 onTransitionEnd
@@ -382,7 +383,7 @@ float elapsedTime
 
 ### Other Events {#other-events}
 
-Event names:
+Эвентийн нэр:
 
 ```
 onToggle
