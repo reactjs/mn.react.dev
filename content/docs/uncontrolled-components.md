@@ -4,11 +4,11 @@ title: Uncontrolled Components
 permalink: docs/uncontrolled-components.html
 ---
 
-In most cases, we recommend using [controlled components](/docs/forms.html) to implement forms. In a controlled component, form data is handled by a React component. The alternative is uncontrolled components, where form data is handled by the DOM itself.
+Ихэнх тохиолдолд бид форм хэрэгжүүлэхэд [удирдагдсан компонентууд](/docs/forms.html) хэрэглэхийг зөвлөдөг. Удирдагдсан компонентод формын өгөгдөл нь React компонентоор зохицуулагддаг. Өөр нэг арга нь удирдагдаагүй компонент ашиглах бөгөөд формын өгөгдөл нь DOM-р зохиуцуулагддаг.
 
-To write an uncontrolled component, instead of writing an event handler for every state update, you can [use a ref](/docs/refs-and-the-dom.html) to get form values from the DOM.
+Удирдагдаагүй компонент бичихдээ төлөв болгоны шинэчлэлт дээр эвентийн удирдлага бичихийн оронд формын утгийг DOM-с авахийн тулд [ref ашигладаг](/docs/refs-and-the-dom.html).
 
-For example, this code accepts a single name in an uncontrolled component:
+Жишээлбэл, энэ код нь нэг нэрийг удирдагдаагүй компонент дээр хүлээн авж байна
 
 ```javascript{5,9,18}
 class NameForm extends React.Component {
@@ -37,15 +37,15 @@ class NameForm extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/WooRWa?editors=0010)
+[**CodePen дээр турших**](https://codepen.io/gaearon/pen/WooRWa?editors=0010)
 
-Since an uncontrolled component keeps the source of truth in the DOM, it is sometimes easier to integrate React and non-React code when using uncontrolled components. It can also be slightly less code if you want to be quick and dirty. Otherwise, you should usually use controlled components.
+Удирдагдаагүй компонент үнэний эх сурвалжийг DOM дээр үлдээж байгаа учир удирдагдаагүй компонент ашиглаж байгаа үед React болон React бус веб програмуудыг хооронд нэгтгэхэд амархан байдаг. Та хурдан хийхийг хүссэн үед энэ арга нь бага бичиглэлтэй байж болно. Бусад тохиолдолд та ихэвчлэн удирдагдсан компонентууд ашиглах нь зүйтэй.
 
-If it's still not clear which type of component you should use for a particular situation, you might find [this article on controlled versus uncontrolled inputs](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/) to be helpful.
+Танд ямар тохиолдолд аль төрлийн компонентийг ашиглах зүйтэй нь эргэлзээтэй байвал [удирдагдсан болон удирдагдаагүй оролтыг харьцуулсан энэ нийтлэл](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/) тус болж мэднэ.
 
-### Default Values {#default-values}
+### Анхын утгууд {#default-values}
 
-In the React rendering lifecycle, the `value` attribute on form elements will override the value in the DOM. With an uncontrolled component, you often want React to specify the initial value, but leave subsequent updates uncontrolled. To handle this case, you can specify a `defaultValue` attribute instead of `value`.
+React-н дүрслэх амьдралын мөчлөг дээр формын элементүүдийн `value` аттрибут нь DOM дээрх утгыг дардаг. Удирдагдаагүй компонент дээр та анхны өгөх утгыг нь тодорхойлох хэрэгтэй бөгөөд дараах шинэчлэлтүүд нь удирдагдаагүй хэвээр үлдэнэ. Иймэрхүү тохиолдлыг хэрэгжүүлэхдээ `defaultValue` аттрибутыг `value`-н оронд тодорхойлох нь зүйтэй.
 
 ```javascript{7}
 render() {
@@ -64,19 +64,19 @@ render() {
 }
 ```
 
-Likewise, `<input type="checkbox">` and `<input type="radio">` support `defaultChecked`, and `<select>` and `<textarea>` supports `defaultValue`.
+Үүнтэй адилаар `<input type="checkbox">` болон `<input type="radio">` `defaultChecked` аттрибут дэмждэг, мөн `<select>` болон `<textarea>` `defaultValue` аттрибут дэмждэг.
 
-## The file input Tag {#the-file-input-tag}
+## Файлын оролтын таг {#the-file-input-tag}
 
-In HTML, an `<input type="file">` lets the user choose one or more files from their device storage to be uploaded to a server or manipulated by JavaScript via the [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications).
+HTML дээр `<input type="file">` таг нь хэрэглэгчийг нэг эсвэл олон файлууд өөрийн төхөөрөмжөөс сонгон сервер лүү илгээх эсвэл Жаваскрипт-н [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications) дамжин өөрчлөгдөх боломжтой.
 
 ```html
 <input type="file" />
 ```
 
-In React, an `<input type="file" />` is always an uncontrolled component because its value can only be set by a user, and not programmatically.
+React дээр `<input type="file" />` нь үргэлж удирдагдагдаагүй компонент байдаг бөгөөд програмаар биш хэрэглэгчийн зааж өгсөн утга авдаг учир юм.
 
-You should use the File API to interact with the files. The following example shows how to create a [ref to the DOM node](/docs/refs-and-the-dom.html) to access file(s) in a submit handler:
+Та файлуудтай харилцахийн тулд File API ашиглах хэрэгтэй. Дараах жишээнд хэрхэн [DOM зангилаа дээр ref үүсгэж](/docs/refs-and-the-dom.html) файл руу хандах талаар үзүүлсэн байна:
 
 `embed:uncontrolled-components/input-type-file.js`
 
