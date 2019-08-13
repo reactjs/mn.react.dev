@@ -124,21 +124,16 @@
       - id: hooks-reference
         title: Дэгээ API лавлах
       - id: hooks-faq
-<<<<<<< HEAD
         title: Дэгээний түгээмэл асуултууд
-- title: Оролцох
-=======
-        title: Hooks FAQ
 - title: Testing
   items:
-    - id: testing 
-      title: Testing Overview
+    - id: testing
+      title: Тестлех тойм
     - id: testing-recipes
-      title: Testing Recipes
+      title: Тестийн жорууд Recipes
     - id: testing-environments
-      title: Testing Environments
-- title: Contributing
->>>>>>> ddbd064d41d719f9ec0c2f6a4227f797a5828310
+      title: Тестийн орчнууд
+- title: Оролцох
   items:
   - id: how-to-contribute
     title: Яаж оролцох вэ
