@@ -59,6 +59,8 @@
       title: Гүйцэтгэлийг сайжруулах
     - id: portals
       title: Портал
+    - id: profiler
+      title: Профайлер
     - id: react-without-es6
       title: ES6-гүй React
     - id: react-without-jsx
@@ -123,6 +125,14 @@
         title: Дэгээ API лавлах
       - id: hooks-faq
         title: Дэгээний түгээмэл асуултууд
+- title: Testing
+  items:
+    - id: testing
+      title: Тестлех тойм
+    - id: testing-recipes
+      title: Тестийн жорууд Recipes
+    - id: testing-environments
+      title: Тестийн орчнууд
 - title: Оролцох
   items:
   - id: how-to-contribute

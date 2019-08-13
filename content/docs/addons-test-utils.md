@@ -125,7 +125,9 @@ it('can render and update a counter', () => {
 });
 ```
 
-DOM контэйнер нь `document`-д нэмэгдсэн тохиолдолд л DOM эвентийг илгээх боломжтой гэдгийг бүү мартаарай. Та [`react-testing-library`](https://github.com/kentcdodds/react-testing-library) гэх мэтийг ашиглан олон дахин гарч ирээд байдаг кодуудыг багасгаж болно. 
+- DOM контэйнер нь `document`-д нэмэгдсэн тохиолдолд л DOM эвентийг илгээх боломжтой гэдгийг бүү мартаарай. Та [`react-testing-library`](https://github.com/kentcdodds/react-testing-library) гэх мэтийг ашиглан олон дахин гарч ирээд байдаг кодуудыг багасгаж болно.
+
+- [`recipes`](/docs/recipes.html) документ нь илүү `act()` хэрхэн ажиллах талаар илүү дэлгэрэнгүй мэдээлэл жишээнүүд болон хэрэглээтэй хамт агуулдаг.
 
 * * *
 
@@ -143,7 +145,7 @@ mockComponent(
 
 > Тэмдэглэл:
 >
-> `mockComponent()` нь удамшсан API. [shallow rendering](/docs/shallow-renderer.html) эсвэл [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) оронд нь ашиглахыг зөвлөе. 
+> `mockComponent()` is a legacy API. We recommend using [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) instead.
 
 * * *
 
