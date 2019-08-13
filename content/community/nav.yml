@@ -33,13 +33,9 @@
     - id: model-management
       title: Төлөвийн удирдлага
     - id: data-fetching
-<<<<<<< HEAD
       title: Дата дуудах
     - id: testing
       title: Тестлэх
-=======
-      title: Data Fetching
->>>>>>> ddbd064d41d719f9ec0c2f6a4227f797a5828310
     - id: ui-components
       title: Дэлгэцийн загвар компонентууд
     - id: misc

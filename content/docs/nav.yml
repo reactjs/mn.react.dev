@@ -58,13 +58,9 @@
     - id: optimizing-performance
       title: Гүйцэтгэлийг сайжруулах
     - id: portals
-<<<<<<< HEAD
       title: Портал
-=======
-      title: Portals
     - id: profiler
-      title: Profiler
->>>>>>> ddbd064d41d719f9ec0c2f6a4227f797a5828310
+      title: Профайлер
     - id: react-without-es6
       title: ES6-гүй React
     - id: react-without-jsx
