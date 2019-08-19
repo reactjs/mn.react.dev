@@ -127,7 +127,11 @@ it('can render and update a counter', () => {
 
 - DOM контэйнер нь `document`-д нэмэгдсэн тохиолдолд л DOM эвентийг илгээх боломжтой гэдгийг бүү мартаарай. Та [`react-testing-library`](https://github.com/kentcdodds/react-testing-library) гэх мэтийг ашиглан олон дахин гарч ирээд байдаг кодуудыг багасгаж болно.
 
+<<<<<<< HEAD
 - [`recipes`](/docs/recipes.html) документ нь илүү `act()` хэрхэн ажиллах талаар илүү дэлгэрэнгүй мэдээлэл жишээнүүд болон хэрэглээтэй хамт агуулдаг.
+=======
+- The [`recipes`](/docs/testing-recipes.html) document contains more details on how `act()` behaves, with examples and usage.
+>>>>>>> de497e250340ff597ce4964279369f16315b8b4b
 
 * * *
 
