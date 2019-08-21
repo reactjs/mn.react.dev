@@ -105,8 +105,7 @@ expect(testInstance.findByProps({className: "sub"}).children).toEqual(['Sub']);
 TestRenderer.create(element, options);
 ```
 
-React-ын дамжуулсан элементийг агуулсан `TestRenderer` instance үүсгэнэ. Жинхэнэ DOM ашиглахгүй хэрнээ компонентын салбар модыг санах ойд бүрэн рендэр хийдэг. Тэгэхээр нь та баталгаажуулах боломжтой. Буцаасан instance-т дараах метод, проперти байна. 
-
+React-ын дамжуулсан элементийг агуулсан `TestRenderer` instance үүсгэнэ. Жинхэнэ DOM ашиглахгүй хэрнээ компонентын салбар модыг санах ойд бүрэн рендэр хийдэг. Тэгэхээр нь та баталгаажуулах боломжтой. [TestRenderer instance](#testrenderer-instance) буцаана.
 
 ### `TestRenderer.act()` {#testrendereract}
 
