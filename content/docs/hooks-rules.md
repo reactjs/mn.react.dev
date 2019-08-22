@@ -6,26 +6,26 @@ next: hooks-custom.html
 prev: hooks-effect.html
 ---
 
-*Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class.
+*Hooks* нь React 16.8 хувилбарын шинэ нэмэлт. They let you use state and other React features without writing a class.
 
-Hooks are JavaScript functions, but you need to follow two rules when using them. We provide a [linter plugin](https://www.npmjs.com/package/eslint-plugin-react-hooks) to enforce these rules automatically:
+Hooks нь Жаваскрипт функцууд боловч тэдгээрийг хэрэглэхэд дагах хоёр дүрэм бий. Бид тэдгээр дүрмүүдийг автоматаар мөрдүүлэх [linter plugin](https://www.npmjs.com/package/eslint-plugin-react-hooks) санал болгож байна.
 
-### Only Call Hooks at the Top Level {#only-call-hooks-at-the-top-level}
+### Hooks-г зөвхөн дээд түвшинд дуудах {#only-call-hooks-at-the-top-level}
 
-**Don't call Hooks inside loops, conditions, or nested functions.** Instead, always use Hooks at the top level of your React function. By following this rule, you ensure that Hooks are called in the same order each time a component renders. That's what allows React to correctly preserve the state of Hooks between multiple `useState` and `useEffect` calls. (If you're curious, we'll explain this in depth [below](#explanation).)
+**Hooks-г давталт, нөхцөл болон nested функц дотор битгий дуудаарай.** Оронд нь Hooks-ээ React функцийнхээ дээд түвшинд ашиглана уу. Энэ дүрмийг мөрдснөөр Hooks нь дүрслэгдэж байгаа компонент дээр үргэлж ижил дарааллаар дуудагдахийг баталгаажуулна. Энэ нь React-д Hooks-н төлвийг `useState` болон `useEffect`-н давтан дуудалтуудын үед төлвийг хадгалахад тус болдог. (Хэрэв та сонирхож байвал бид илүү дэлгэрэнгүй [доор](#explanation) тайлбарлах болно.)
 
-### Only Call Hooks from React Functions {#only-call-hooks-from-react-functions}
+### Hooks-г зөвхөн React функцуудээс дууд {#only-call-hooks-from-react-functions}
 
-**Don't call Hooks from regular JavaScript functions.** Instead, you can:
+**Hooks-г энгийн Жаваскрипт функцээс битгий дуудаарай.** Оронд нь та:
 
-* ✅ Call Hooks from React function components.
-* ✅ Call Hooks from custom Hooks (we'll learn about them [on the next page](/docs/hooks-custom.html)).
+* ✅ React функц компонентоос Hooks дуудах.
+* ✅ Custom Hooks-с Hooks дуудах (бид энэ талаар [дараагийн хуудас дээр](/docs/hooks-custom.html) сурах болно).
 
-By following this rule, you ensure that all stateful logic in a component is clearly visible from its source code.
+Энэ дүрмийг мөрдснөөр та бүх төлөвт логик эх код дээр цэвэрхэн харагдах баталгааг олгоно.
 
 ## ESLint Plugin {#eslint-plugin}
 
-We released an ESLint plugin called [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) that enforces these two rules. You can add this plugin to your project if you'd like to try it:
+Бид [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) нэртэй ESLint plugin гаргасан бөгөөд эдгээр хоёр дүрмүүдийг мөрдүүлдэг. Та энэ плагинийг хүсвэл өөрийн төсөлдөө нэмж болно:
 
 ```bash
 npm install eslint-plugin-react-hooks --save-dev
@@ -40,34 +40,34 @@ npm install eslint-plugin-react-hooks --save-dev
   ],
   "rules": {
     // ...
-    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/rules-of-hooks": "error", // Hooks дүрмүүдийг шалгах
     "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
   }
 }
 ```
 
-In the future, we intend to include this plugin by default into Create React App and similar toolkits.
+Цаашдаа бид энэ плагинийг Create React App болон ижил төстэй хэрэслүүд дээр анхнаас байлгахаар төлөвлөж байна.
 
-**You can skip to the next page explaining how to write [your own Hooks](/docs/hooks-custom.html) now.** On this page, we'll continue by explaining the reasoning behind these rules.
+**Та хэрхэн [өөрийн Hooks](/docs/hooks-custom.html) бичих талаар тайлбарласан хуудсийг одоохондоо алгасаж болно.** Энэ хуудсанд бид эдгээр дүрмүүдийн цаадах шалтгаанийг тайлбарлах болно.
 
-## Explanation {#explanation}
+## Тайлбар {#explanation}
 
-As we [learned earlier](/docs/hooks-state.html#tip-using-multiple-state-variables), we can use multiple State or Effect Hooks in a single component:
+Бидний [өмнө сурснаар](/docs/hooks-state.html#tip-using-multiple-state-variables), бид олон төлөв болон еффект Hooks-г нэг компонент дээр хэрэглэж болно:
 
 ```js
 function Form() {
-  // 1. Use the name state variable
+  // 1. name төлөв хувьсагч хэрэглэх
   const [name, setName] = useState('Mary');
 
-  // 2. Use an effect for persisting the form
+  // 2. Формыг хадгалах эффект хэрэглэх
   useEffect(function persistForm() {
     localStorage.setItem('formData', name);
   });
 
-  // 3. Use the surname state variable
+  // 3. surname төлөв хувьсагч хэрэглэх
   const [surname, setSurname] = useState('Poppins');
 
-  // 4. Use an effect for updating the title
+  // 4. Гарчиг шинэчлэх эффект хэрэглэх
   useEffect(function updateTitle() {
     document.title = name + ' ' + surname;
   });
@@ -76,32 +76,32 @@ function Form() {
 }
 ```
 
-So how does React know which state corresponds to which `useState` call? The answer is that **React relies on the order in which Hooks are called**. Our example works because the order of the Hook calls is the same on every render:
+React хэрхэн ямар `useState` дуудалт нь ямар төлөвт харгалзахаа мэдэх вэ? Хариулт бол **React Hooks дуудагдсан дараалал дээр тулгуурладаг**. Бид жишээ дүрслэл болгон дээр ижил дарааллаар дуудагдаж байгаа учир ажиллана:
 
 ```js
 // ------------
 // First render
 // ------------
-useState('Mary')           // 1. Initialize the name state variable with 'Mary'
-useEffect(persistForm)     // 2. Add an effect for persisting the form
+useState('Mary')           // 1. name төлөв хувьсагчийг 'Mary' утгаар эхлүүлэх
+useEffect(persistForm)     // 2. Формыг хадгалах эффект нэмэх
 useState('Poppins')        // 3. Initialize the surname state variable with 'Poppins'
-useEffect(updateTitle)     // 4. Add an effect for updating the title
+useEffect(updateTitle)     // 4. Гарчиг шинэчлэх эффект нэмэх
 
 // -------------
 // Second render
 // -------------
-useState('Mary')           // 1. Read the name state variable (argument is ignored)
-useEffect(persistForm)     // 2. Replace the effect for persisting the form
-useState('Poppins')        // 3. Read the surname state variable (argument is ignored)
-useEffect(updateTitle)     // 4. Replace the effect for updating the title
+useState('Mary')           // 1. name төлөв хувьсагчийг унших (аргументийг ашиглагдахгүй)
+useEffect(persistForm)     // 2. Формыг хадгалах эффектийг солих
+useState('Poppins')        // 3. surname төлөв хувьсагчийг унших (аргументийг ашиглахгүй)
+useEffect(updateTitle)     // 4. Гарчиг шинэчлэх эффектийг солих
 
 // ...
 ```
 
-As long as the order of the Hook calls is the same between renders, React can associate some local state with each of them. But what happens if we put a Hook call (for example, the `persistForm` effect) inside a condition?
+Дүрслэл болгоны Hooks дуудалтуудын дараалал өөрчлөгдөөгүй үед React дотоод төлвүүдтэй нэг бүртэй нь харьцаж чадна. Хэрэв бид нөхцөл дунд Hooks дуудалт(жишээлбэл, `persistForm` эффект) нэмбэл юу болох вэ?
 
 ```js
-  // 🔴 We're breaking the first rule by using a Hook in a condition
+  // 🔴 Hooks-г нөхцөл дотор бичин эхний дүрмийг зөрчиж байна
   if (name !== '') {
     useEffect(function persistForm() {
       localStorage.setItem('formData', name);
@@ -109,30 +109,30 @@ As long as the order of the Hook calls is the same between renders, React can as
   }
 ```
 
-The `name !== ''` condition is `true` on the first render, so we run this Hook. However, on the next render the user might clear the form, making the condition `false`. Now that we skip this Hook during rendering, the order of the Hook calls becomes different:
+`name !== ''` нөхцөл эхний дүрслэл дээр `үнэн` байх ба бид энэ Hook-г ажиллуулна. Харамсалтай нь дараагийн дүрслэл дээр хэрэглэгч формыг цэвэрлэхийг хүсэж болох ба ингэснээр энэ нөхцлийг `худал` болох нөхцөл үүснэ. Ингэснээр бид энэ Hook-г дүрслэл дунд алгасах ба Hook-уудын дуудалтын дараалал өөр болно:
 
 ```js
-useState('Mary')           // 1. Read the name state variable (argument is ignored)
-// useEffect(persistForm)  // 🔴 This Hook was skipped!
-useState('Poppins')        // 🔴 2 (but was 3). Fail to read the surname state variable
-useEffect(updateTitle)     // 🔴 3 (but was 4). Fail to replace the effect
+useState('Mary')           // 1. name төлөв хувьсагчийг унших(аргумент ашиглагдахгүй)
+// useEffect(persistForm)  // 🔴  Энэ Hook-г алгасна!
+useState('Poppins')        // 🔴 2 (3 байсан). surname төлөв хувьсагчийг уншиж чадахгүй
+useEffect(updateTitle)     // 🔴 3 (4 байсан). Эффектийг өөрчилж чадахгүй
 ```
 
-React wouldn't know what to return for the second `useState` Hook call. React expected that the second Hook call in this component corresponds to the `persistForm` effect, just like during the previous render, but it doesn't anymore. From that point, every next Hook call after the one we skipped would also shift by one, leading to bugs.
+React хоёрдах `useState` Hook дуудалт дээр юу буцаахаа мэдэхгүй болно. React хоёрдах Hooks дуудалтийг `persistForm` эффектэд харгалж Hooks гэж хүлээж авах бөгөөд учир нь өмнөх дуудалт дээр тийм байсан. Гэвч одоо тийм байхаа больсон. Эндээс эхлэн дараагийн Hook дуудалт бүр нэгээр шилжин алдаа руу чиглүүлнэ.
 
-**This is why Hooks must be called on the top level of our components.** If we want to run an effect conditionally, we can put that condition *inside* our Hook:
+**Ийм учраас компонентийн дээд түвшнээс Hooks дуудагдах ёстой байдаг.** Бид эффектийг нөхцөлтэй ажиллуулах шаардлагатай бол нөхцлөө Hook *дотор* бичиж болно:
 
 ```js
   useEffect(function persistForm() {
-    // 👍 We're not breaking the first rule anymore
+    // 👍 Бид эхний дүрмийг зөрчихгүй боллоо
     if (name !== '') {
       localStorage.setItem('formData', name);
     }
   });
 ```
 
-**Note that you don't need to worry about this problem if you use the [provided lint rule](https://www.npmjs.com/package/eslint-plugin-react-hooks).** But now you also know *why* Hooks work this way, and which issues the rule is preventing.
+**Та бидний бэлдэж өгсөн [lint дүрмийг](https://www.npmjs.com/package/eslint-plugin-react-hooks) ашиглавал та энэ асуудалд санаа зовохгүй байж болно.** Гэвч та *яагаад* Hooks work ингэж ажилладаг талаар, ямар асуудлаас сэргийлж байгаа талаар мэдэх нь чухал.
 
 ## Next Steps {#next-steps}
 
-Finally, we're ready to learn about [writing your own Hooks](/docs/hooks-custom.html)! Custom Hooks let you combine Hooks provided by React into your own abstractions, and reuse common stateful logic between different components.
+Эцэст нь бид [өөрсдийн Hooks хэрхэн бичих талаар](/docs/hooks-custom.html) сурахад бэлэн боллоо! Custom Hooks нь React-д байгаа Hooks-тэй нийлүүлэн нийтлэг ашиглагддаг төлөвт логик өөр өөр компонентууд дээр дахин ашиглах боломжийг олгодог.
