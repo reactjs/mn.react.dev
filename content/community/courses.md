@@ -8,7 +8,10 @@ permalink: community/courses.html
 
 ## Үнэгүй хичээлүүд {#free-courses}
 
-- [Codecademy: React 101](https://www.codecademy.com/learn/react-101) - Codecademy-ийн React-д зориулсан анхан шатны хичээл.
+<<<<<<< HEAD
+- [Glitch: React Starter Kit](https://glitch.com/culture/react-starter-kit/) - Үнэгүй 5 хэсэгтэй видео хичээл бөгөөд интерактив кодын жишээнээс суралцах боломжтой.
+
+- [Codecademy: React 101](https://www.codecademy.com/learn/react-101) - Codecademy's introductory course for React.
 
 - [Egghead.io: Start Learning React](https://egghead.io/courses/start-learning-react) - Энэхүү цуврал хичээлүүд нь React-ийг эхлэхэд тань үндсэн мэдлэгийг өгнө. 
 
