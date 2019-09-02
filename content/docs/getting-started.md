@@ -122,7 +122,11 @@ React-н бүх хувилбар блог пост болон орох шаар�
 
 ## Хувилбарт докюментжуулалт {#versioned-documentation}
 
+<<<<<<< HEAD
 Энэ докюментжуулалт нь ямагт React-н хамгийн сүүлийн тогтвортой хувилбарт тусгагдсан байна. React 16-с эхлэн, та хуучин докюментжуулалтын хувилбаруудыг [тусдаа хуудаснаас](/versions) олох боломжтой. Өмнөх хувилбарын докюментжуулалтууд нь release гарахад snapshot хийгдсэн байдаг ба дахин шинэчлэгддэггүй болохыг анхаарна уу.
+=======
+This documentation always reflects the latest stable version of React. Since React 16, you can find older versions of the documentation on a [separate page](/versions). Note that documentation for past versions is snapshotted at the time of the release, and isn't being continuously updated.
+>>>>>>> 941f54180ef5e652221f54ef6d1f6f2e9e063597
 
 ## Дутуу зүйл байна уу? {#something-missing}
 
