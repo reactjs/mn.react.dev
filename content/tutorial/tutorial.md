@@ -335,7 +335,11 @@ Square-ийн `render` метод дотор `onClick` handler -с `this.setStat
 
 React DevTools-ээр мөн React компонентын props болон state-г харж болно.
 
+<<<<<<< HEAD
 React DevTools суулгасны дараа хуудасны дурын элемент дээр right-click хийн "Inspect" дээр даран хөгжүүлэгчийн хэрэгслийг нээх бөгөөд React тааб хамгийн баруун талд гарч ирсэн байх болно.
+=======
+After installing React DevTools, you can right-click on any element on the page, click "Inspect" to open the developer tools, and the React tabs ("⚛️ Components" and "⚛️ Profiler") will appear as the last tabs to the right. Use "⚛️ Components" to inspect the component tree.
+>>>>>>> 8b30ae43439818009213da86eca872a3d869c5eb
 
 **Гэхдээ CodePen дээр үүнийг ажиллуулахын тулд нэмж хэдэн зүйл хийх хэрэгтэй:**
 
