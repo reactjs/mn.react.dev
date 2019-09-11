@@ -151,11 +151,6 @@ testRenderer.toTree()
 ```
 Рендэр хийсэн салбар модны объектыг буцаана. `toJSON()`-ын үүсгэсэн нэгэнтэй харьцуулахад илүү нарийвчилсан харагдах ба хэрэглэгчийн бичсэн компонент байдаг. Test renderer-ээс гадна та өөрийн сан үүсгэн бичээгүй л бол уг метод танд төдийлөн хэрэг болохгүй болов уу. 
 
-<<<<<<< HEAD
-=======
-Return an object representing the rendered tree. The representation is more detailed than the one provided by `toJSON()`, and includes the user-written components. You probably don't need this method unless you're writing your own assertion library on top of the test renderer.
->>>>>>> 8b30ae43439818009213da86eca872a3d869c5eb
-
 ### `testRenderer.update()` {#testrendererupdate}
 
 ```javascript
