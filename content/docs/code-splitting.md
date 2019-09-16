@@ -117,37 +117,29 @@ Webpack энэ бичиглэлтэй болох үед энэ нь таны п�
 
 ```js
 import OtherComponent from './OtherComponent';
-
-function MyComponent() {
-  return (
-    <div>
-      <OtherComponent />
-    </div>
-  );
-}
 ```
 
 **Дараа:**
 
 ```js
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
-
-function MyComponent() {
-  return (
-    <div>
-      <OtherComponent />
-    </div>
-  );
-}
 ```
 
+<<<<<<< HEAD
 Энэ нь `OtherComponent` агуулсан багцийг компонент дүрслэгдэх үед динамикаар импортлодог.
+=======
+This will automatically load the bundle containing the `OtherComponent` when this component is first rendered.
+>>>>>>> 6dcb963479953586f462ce31fddf35158c0598a0
 
 `React.lazy` нь функц авдаг ба тэр нь динамик `import()`-г дуудах ёстой. Энэ нь `Promise` буцаах ёстой ба React компонент агуулсан модулийг хайж олдог.
 
+<<<<<<< HEAD
 ### Suspense {#suspense}
 
 `MyComponent` дүрслэгдэх мөчид `OtherComponent`-г агуулсан модуль ачаалагдаагүй бол бид ямар нэг уншиж байгаа мэдээлэл гэх мэт ачаалагдаж байгааг нь илэрхийлэх агуулга харуулах хэрэгтэй. Үүнийг `Suspense` компонентоор хийдэг.
+=======
+The lazy component should then be rendered inside a `Suspense` component, which allows us to show some fallback content (such as a loading indicator) while we're waiting for the lazy component to load.
+>>>>>>> 6dcb963479953586f462ce31fddf35158c0598a0
 
 ```js
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
