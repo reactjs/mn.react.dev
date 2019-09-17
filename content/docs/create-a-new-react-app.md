@@ -8,38 +8,38 @@ prev: add-react-to-a-website.html
 next: cdn-links.html
 ---
 
-Use an integrated toolchain for the best user and developer experience.
+Цогц хэрэгслүүрүүдийг хэрэглэгч болон хөгжүүлэгчдийн хялбар хэрэглээнд зориулж ашиглана.
 
-This page describes a few popular React toolchains which help with tasks like:
+Энэ хуудас доорх ажлуулдад тус болох цөөн хэдэн түгээмэл React цогц хэрэглүүрүүдийг тайлбарласан:
 
-* Scaling to many files and components.
-* Using third-party libraries from npm.
-* Detecting common mistakes early.
-* Live-editing CSS and JS in development.
-* Optimizing the output for production.
+* Олон файлууд болон компонентууд болгон томрох.
+* Гуравдагч талын сангуудыг npm-с ашиглах.
+* Нийтлэг алдааг эрт илрүүлэх.
+* Хөгжүүлэлтийн явцад CSS, JS файлуудыг шууд тусгаж засах.
+* Гаралтыг production орчинд тохируулах.
 
-The toolchains recommended on this page **don't require configuration to get started**.
+Энэ хуудсанд санал болгогдож буй хэрэгслүүрүүд нь **хэрэглэж эхлэхэд ямар нэг тохиргоо шаардахгүй**.
 
-## You Might Not Need a Toolchain {#you-might-not-need-a-toolchain}
+## Чамд цогц хэрэглүүрүүд хэрэггүй байж мэдэх юм {#you-might-not-need-a-toolchain}
 
-If you don't experience the problems described above or don't feel comfortable using JavaScript tools yet, consider [adding React as a plain `<script>` tag on an HTML page](/docs/add-react-to-a-website.html), optionally [with JSX](/docs/add-react-to-a-website.html#optional-try-react-with-jsx).
+Хэрвээ дээр тайлбарласан асуудлуудтай тулгарч байгаагүй болон JavaScript-н хэрэглүүрүүдтэй хараахан дадаагүй байвал, [React-г цул `<script>` тагаар HTML хуудсанд оруулах](/docs/add-react-to-a-website.html) талаар сонирхоорой, нэмэлтээр [JSX-тэй хамт](/docs/add-react-to-a-website.html#optional-try-react-with-jsx).
 
-This is also **the easiest way to integrate React into an existing website.** You can always add a larger toolchain if you find it helpful!
+Энэ нь мөн **одоо байгаа веб сайтдаа React-г оруулах хамгийн энгийн арга юм.** Хэрвээ хэрэгцээтэй гэвэл, хэзээ ч томоохон цогц хэрэглүүр нэмж болно!
 
-## Recommended Toolchains {#recommended-toolchains}
+## Санал болгож буй цогц хэрэглүүрүүд {#recommended-toolchains}
 
-The React team primarily recommends these solutions:
+React баг үндсэндээ эдгээр шийдлүүдийг санал болгодог:
 
-- If you're **learning React** or **creating a new [single-page](/docs/glossary.html#single-page-application) app,** use [Create React App](#create-react-app).
-- If you're building a **server-rendered website with Node.js,** try [Next.js](#nextjs).
-- If you're building a **static content-oriented website,** try [Gatsby](#gatsby).
-- If you're building a **component library** or **integrating with an existing codebase**, try [More Flexible Toolchains](#more-flexible-toolchains).
+- Хэрвээ **react сурч байвал** эсвэл **шинэ [single-page](/docs/glossary.html#single-page-application) апп үүсгэх бол,** [React апп үүсгэх](#create-react-app)-г ашиглаарай.
+- Хэрвээ **Node.js-тэй сервер талын рендертэй вев сайт** хийж байвал, [Next.js](#nextjs)-г туршаарай.
+- Хэрвээ **статик контентэд тулгуурласан веб сайт** хийж байвал, [Gatsby](#gatsby)-г туршаад үзээрэй.
+- Хэрвээ **компонент сан бүтээх** эсвэл **өмнөх кодтойгоо нэгтгэх** гэж байгаа бол, [Илүү уян цогц хэрэглүүрүүд](#more-flexible-toolchains) туршаарай.
 
-### Create React App {#create-react-app}
+### React апп бүтээх {#create-react-app}
 
-[Create React App](https://github.com/facebookincubator/create-react-app) is a comfortable environment for **learning React**, and is the best way to start building **a new [single-page](/docs/glossary.html#single-page-application) application** in React.
+[React апп бүтээх](https://github.com/facebookincubator/create-react-app) бол **React сурхад** тохиромжтой орчин ба React-р **шинэ [single-page](/docs/glossary.html#single-page-application) апп** бүтээж эхэлхэд хамгийн шилдэг арга юм.
 
-It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, and optimizes your app for production. You’ll need to have Node >= 8.10 and npm >= 5.6 on your machine. To create a project, run:
+Үүгээр хөгжүүлэлтийн орчинг бэлдэх бөгөөд сүүлийн үеийн Javascript-н боломжуудыг ашиглах боломжтой болно (хөгжүүлэгчдийн хялбар ажиллахад зориулж), мөн апп-г тань production орчинд ажиллахад бэлдэх юм. Танд Node >= 8.10, npm >= 5.6-г компьютертээ бэлдэх хэрэгтэй. Прожект үүсгэхэд:
 
 ```bash
 npx create-react-app my-app
@@ -47,48 +47,48 @@ cd my-app
 npm start
 ```
 
->Note
+>Тэмдэлгэл
 >
->`npx` on the first line is not a typo -- it's a [package runner tool that comes with npm 5.2+](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
+>Эхний мөрөнд байгаа `npx` нь алдаатай бичиглэл биш -- энэ нь [npm 5.2+ дээр нэмэгдсэн package ажлуулах багаж юм](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
 
-Create React App doesn't handle backend logic or databases; it just creates a frontend build pipeline, so you can use it with any backend you want. Under the hood, it uses [Babel](https://babeljs.io/) and [webpack](https://webpack.js.org/), but you don't need to know anything about them.
+React апп үүсгэх нь backend-н логик эсвэл дата баазыг хариуцдаггүй. Энэ нь зөвхөн frontend бүтээх орчинг бэлдэж өгдөг, тиймээс үүнийг хүссэн backend-тэйгээ ашиглах боломжтой юм. [Babel](https://babeljs.io/) болон [webpack](https://webpack.js.org/)-г ашиглаж ажилладаг бөгөөд эдгээрийн талаар заавал мэдээд байх шаардлага байхгүй.
 
-When you're ready to deploy to production, running `npm run build` will create an optimized build of your app in the `build` folder. You can learn more about Create React App [from its README](https://github.com/facebookincubator/create-react-app#create-react-app--) and the [User Guide](https://facebook.github.io/create-react-app/).
+Production-уу оруулахдаа бэлэн болход, `npm run build`-г ашигласнаар апп-н тань бэлдсэн хувилбар `build` гэсэн фолдерт үүсгэнэ. React апп үүсгэх талаар илүү ихийг [түүний README](https://github.com/facebookincubator/create-react-app#create-react-app--) болон [хэрэглэгчийн заавараас](https://facebook.github.io/create-react-app/) мэдэж болно.
 
 ### Next.js {#nextjs}
 
-[Next.js](https://nextjs.org/) is a popular and lightweight framework for **static and server‑rendered applications** built with React. It includes **styling and routing solutions** out of the box, and assumes that you're using [Node.js](https://nodejs.org/) as the server environment.
+[Next.js](https://nextjs.org/) бол **статик болон сервер талын рендертэй апп** React-р бүтээхэд зориулсан түгээмэл, хөнгөн фраймворк юм. Энэ нь **загвар оруулах болон холбоосын шийдлийг** агуулсан бөгөөд [Node.js](https://nodejs.org/)-г сервер талдаа ашиглаж байгаа гэж үзнэ.
 
-Learn Next.js from [its official guide](https://nextjs.org/learn/).
+Next.js-г [түүний албан ёсны заавараас](https://nextjs.org/learn/) мэдэж болно.
 
 ### Gatsby {#gatsby}
 
-[Gatsby](https://www.gatsbyjs.org/) is the best way to create **static websites** with React. It lets you use React components, but outputs pre-rendered HTML and CSS to guarantee the fastest load time.
+[Gatsby](https://www.gatsbyjs.org/) бол React-р **статик веб сайт бүтээхэд** хамгийн тохиромжтой. React компонентууд ашиглах ч уридчилан рендерлэсэн HTML, CSS файлууд үүсдэг нь баталгаатай хамгийн бага унших хугацаатай нь.
 
-Learn Gatsby from [its official guide](https://www.gatsbyjs.org/docs/) and a [gallery of starter kits](https://www.gatsbyjs.org/docs/gatsby-starters/).
+Gatsby-н талаар [түүний албан ёсны заавараас](https://www.gatsbyjs.org/docs/) болон [эхлэх багцуудын үзээлэнгээс](https://www.gatsbyjs.org/docs/gatsby-starters/) мэдэх боломжтой.
 
-### More Flexible Toolchains {#more-flexible-toolchains}
+### Илүү уян цогц хэрэгслүүрүүд {#more-flexible-toolchains}
 
-The following toolchains offer more flexibility and choice. We recommend them to more experienced users:
+Дараах цогц хэрэглүүрүүд нь илүү уян өбөгөд олон сонголттой юм. Бид эдгээрийг илүү туршлагажсан хөгжүүлэгчидэд санал болгож байна:
 
-- **[Neutrino](https://neutrinojs.org/)** combines the power of [webpack](https://webpack.js.org/) with the simplicity of presets, and includes a preset for [React apps](https://neutrinojs.org/packages/react/) and [React components](https://neutrinojs.org/packages/react-components/).
+- **[Neutrino](https://neutrinojs.org/)** нь [webpack](https://webpack.js.org/)-н хүчийг хялбарчилсан бэлдэцүүдтэй холбодог ба [React апп-ууд](https://neutrinojs.org/packages/react/) болон [React компонентууд](https://neutrinojs.org/packages/react-components/) гэсэн бэлдэцүүд багтана.
 
-- **[nwb](https://github.com/insin/nwb)** is particularly great for [publishing React components for npm](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb). It [can be used](https://github.com/insin/nwb/blob/master/docs/guides/ReactApps.md#developing-react-apps-with-nwb) for creating React apps, too. 
+- **[nwb](https://github.com/insin/nwb)** бол [React компонентуудыг npm-р оруулхад](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb) голчилон зориулсагдсан. Үүнийг мөн React app хийхэд [хэрэглэж болно](https://github.com/insin/nwb/blob/master/docs/guides/ReactApps.md#developing-react-apps-with-nwb).
 
-- **[Parcel](https://parceljs.org/)** is a fast, zero configuration web application bundler that [works with React](https://parceljs.org/recipes.html#react).
+- **[Parcel](https://parceljs.org/)** [React-тай ажилладаг](https://parceljs.org/recipes.html#react) хурдан, тохиргоогүй ажиллах веб апп багцлагч юм.
 
-- **[Razzle](https://github.com/jaredpalmer/razzle)** is a server-rendering framework that doesn't require any configuration, but offers more flexibility than Next.js.
+- **[Razzle](https://github.com/jaredpalmer/razzle)** ямар ч тохиргоо шаардлагагүй сервер талын рендер хийх фраймворк бөгөөд Next.js-с илүү уян байдлыг санал болгодог.
 
-## Creating a Toolchain from Scratch {#creating-a-toolchain-from-scratch}
+## Цогц хэрэгслүүрүүдийг эхнээс нь хийх {#creating-a-toolchain-from-scratch}
 
-A JavaScript build toolchain typically consists of:
+Javascript үүсгэх цогц багаж үндсэндээ эдгээрээс бүрддэг:
 
-* A **package manager**, such as [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/). It lets you take advantage of a vast ecosystem of third-party packages, and easily install or update them.
+* **package manager** [Yarn](https://yarnpkg.com/) эсвэл [npm](https://www.npmjs.com/) шиг. Энэ нь маш том гуравдагч package-уудын экосистем-н давуу талыг авч, тэдгээрийг хялбар суулгаж, шинэчилхэд тусална.
 
-* A **bundler**, such as [webpack](https://webpack.js.org/) or [Parcel](https://parceljs.org/). It lets you write modular code and bundle it together into small packages to optimize load time.
+* **bundler**, [webpack](https://webpack.js.org/) эсвэл [Parcel](https://parceljs.org/) шиг. Модулар код бичхэд туслах ба тэдгээрийг жижиг package болгон нэгтгэж унших хугацааг багасгахад хэрэглэгдэнэ.
 
-* A **compiler** such as [Babel](https://babeljs.io/). It lets you write modern JavaScript code that still works in older browsers.
+* **compiler** жишээ нь [Babel](https://babeljs.io/). Энэ javascript-н шинэ боломжуудыг ашиглаж код бичихийн зэрэгцээ хуучин броузер дээр ажилах боломж олгодог.
 
-If you prefer to set up your own JavaScript toolchain from scratch, [check out this guide](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658) that re-creates some of the Create React App functionality.
+Хэрвээ өөрийн Javascript цогц багжыг эхнээс нь үүсгэхийг илүүд үзэж байвал, React апп үүсгэх-н зарим функцуудыг дахин хийсэн [энэ зааврыг тушаарай](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658).
 
-Don't forget to ensure your custom toolchain [is correctly set up for production](/docs/optimizing-performance.html#use-the-production-build).
+Өөрийн цогц багажаа [production орчинд зөв суурилагдсан гэдгээ](/docs/optimizing-performance.html#use-the-production-build) шалгаж үзхээ битгий мартаарай
