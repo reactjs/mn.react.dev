@@ -117,28 +117,12 @@ Webpack энэ бичиглэлтэй болох үед энэ нь таны п�
 
 ```js
 import OtherComponent from './OtherComponent';
-
-function MyComponent() {
-  return (
-    <div>
-      <OtherComponent />
-    </div>
-  );
-}
 ```
 
 **Дараа:**
 
 ```js
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
-
-function MyComponent() {
-  return (
-    <div>
-      <OtherComponent />
-    </div>
-  );
-}
 ```
 
 Энэ нь `OtherComponent` агуулсан багцийг компонент дүрслэгдэх үед динамикаар импортлодог.
