@@ -8,7 +8,6 @@ permalink: community/examples.html
 
 React хамтралаас үүсгэсэн олон прожектууд энд бий. Та өөрийн прожектоо ч бас чөлөөтэй нэмж болно. Хэрвээ та өөрийн прожектыг нэмэх гэж буй бол React-ийн сүүлийн хувилбараар commit хийхийг хүсье.
 
-
 * **[Calculator](https://github.com/ahfarmer/calculator)** Implementation of the iOS calculator built in React
 * **[Emoji Search](https://github.com/ahfarmer/emoji-search)** Simple React app for searching emoji
 * **[Github Battle App](https://tm.dev/react-course-project/)** Battle two Github users and see the most popular Github projects for any language.

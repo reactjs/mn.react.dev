@@ -26,7 +26,7 @@ Stack Overflow нь код бичих үед болон тулгараад бу�
 
 * [DEV дээрх хамтрал](https://dev.to/t/react)
 * [Hashnode-ийн React хөгжүүлэгчид](https://hashnode.com/n/reactjs)
-* [Reactiflux интернэт чат](https://discord.gg/0ZcbPKXt5bZjGY5n)
+* [Reactiflux интернэт чат](https://discord.gg/reactiflux)
 * [Reddit дээрх React хөгжүүлэгчид](https://www.reddit.com/r/reactjs/)
 * [Spectrum дээрх React хөгжүүлэгчид](https://spectrum.chat/react)
 

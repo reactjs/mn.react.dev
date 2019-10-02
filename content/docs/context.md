@@ -15,6 +15,7 @@ permalink: docs/context.html
   - [Context.Provider](#contextprovider)
   - [Class.contextType](#classcontexttype)
   - [Context.Consumer](#contextconsumer)
+  - [Context.displayName](#contextdisplayname)
 - [Жишээ](#examples)
   - [Динамик контекст](#dynamic-context)
   - [Nested компонентоос контекстыг өөрчлөх](#updating-context-from-a-nested-component)
@@ -197,6 +198,20 @@ React компонент нь контекстын өөрлчлөлтийг дэ
 > Тэмдэглэл
 > 
 > Функцыг хүү компонентоор ашиглах загварыг (pattern) эндээс харах [render props](/docs/render-props.html).
+
+### `Context.displayName` {#contextdisplayname}
+
+Контекст нь `displayName` гэх стринг тѳрѳлтэй утга авах нэгжтэй. React DevTools нь энэ стрингийг ашиглан дэлгэцэнд юу харуулахаа шийддэг. 
+
+Жишээ нь, доорхи компонент нь MyDisplayName гэж DevTools дээр харагдана:
+
+```js{2}
+const MyContext = React.createContext(/* some value */);
+MyContext.displayName = 'MyDisplayName';
+
+<MyContext.Provider> // "MyDisplayName.Provider" in DevTools
+<MyContext.Consumer> // "MyDisplayName.Consumer" in DevTools
+```
 
 ## Жишээнүүд {#examples}
 
