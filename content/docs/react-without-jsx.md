@@ -1,6 +1,6 @@
 ---
 id: react-without-jsx
-title: React Without JSX
+title: JSX үгүй React
 permalink: docs/react-without-jsx.html
 ---
 

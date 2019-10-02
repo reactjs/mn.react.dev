@@ -1,6 +1,6 @@
 ---
 id: reconciliation
-title: Reconciliation
+title: Дахин нэгтгэх
 permalink: docs/reconciliation.html
 ---
 

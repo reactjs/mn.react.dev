@@ -1,6 +1,6 @@
 ---
 id: glossary
-title: Glossary of React Terms
+title: React дээрх үгсийн тайлбар
 layout: docs
 category: Reference
 permalink: docs/glossary.html

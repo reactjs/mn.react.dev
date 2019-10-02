@@ -1,6 +1,6 @@
 ---
 id: handling-events
-title: Handling Events
+title: Эвентүүдийг удирдах
 permalink: docs/handling-events.html
 prev: state-and-lifecycle.html
 next: conditional-rendering.html

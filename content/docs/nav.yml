@@ -5,7 +5,7 @@
     - id: add-react-to-a-website
       title: React-г вебсайтад оруулах
     - id: create-a-new-react-app
-      title: Шинэ React апп үүсгэх
+      title: React апп үүсгэх
     - id: cdn-links
       title: CDN холбоосууд
 - title: Үндсэн ойлголтууд
@@ -20,7 +20,7 @@
     - id: components-and-props
       title: Компонентууд, шинж чанарууд
     - id: state-and-lifecycle
-      title: State and Lifecycle
+      title: Тѳлѳв ба Мѳчлѳг
     - id: handling-events
       title: Эвентүүдийг удирдах
     - id: conditional-rendering
@@ -30,11 +30,11 @@
     - id: forms
       title: Формууд
     - id: lifting-state-up
-      title: State-ийг дээш дамжуулах
+      title: Тѳлѳвийг ахисан түвшинд
     - id: composition-vs-inheritance
-      title: Агуулалт vs Удамшил
+      title: Бүрэлдхүүн vs Удамшил
     - id: thinking-in-react
-      title: React-р сэтгэх
+      title: React сэтгэлгээ
 - title: Ахисан шатны заавар
   items:
     - id: accessibility
@@ -78,7 +78,7 @@
     - id: typechecking-with-proptypes
       title: PropTypes-р төрөл шалгах
     - id: uncontrolled-components
-      title: Удирдлагагүй компонентууд
+      title: Удирдаагүй компонентууд
     - id: web-components
       title: Веб компонентууд
 - title: API лавлах
@@ -97,15 +97,15 @@
     - id: events
       title: SyntheticEvent
     - id: test-utils
-      title: Test Utilities
+      title: Тестийн багажууд
     - id: shallow-renderer
-      title: Shallow Renderer
+      title: Ѳнгѳц рендер
     - id: test-renderer
       title: Test Renderer
     - id: javascript-environment-requirements
-      title: JS Environment Requirements
+      title: JS орчны шаардлага
     - id: glossary
-      title: Glossary
+      title: Үгсийн тайлбар
 - title: Дэгээ (Hooks)
   isOrdered: true
   items:

@@ -1,6 +1,6 @@
 ---
 id: fragments
-title: Fragments
+title: Хэлтэрхий
 permalink: docs/fragments.html
 ---
 
