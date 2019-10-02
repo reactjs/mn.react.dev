@@ -1,6 +1,6 @@
 ---
 id: conditional-rendering
-title: Conditional Rendering
+title: Нѳхцѳлд тулгуурласан дүрслэл
 permalink: docs/conditional-rendering.html
 prev: handling-events.html
 next: lists-and-keys.html

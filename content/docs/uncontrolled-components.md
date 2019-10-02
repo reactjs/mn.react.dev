@@ -1,6 +1,6 @@
 ---
 id: uncontrolled-components
-title: Uncontrolled Components
+title: Удирдагдаагүй компонентууд
 permalink: docs/uncontrolled-components.html
 ---
 

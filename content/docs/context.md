@@ -1,6 +1,6 @@
 ---
 id: context
-title: Context
+title: Контекст
 permalink: docs/context.html
 ---
 
