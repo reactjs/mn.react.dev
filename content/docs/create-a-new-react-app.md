@@ -1,6 +1,6 @@
 ---
 id: create-a-new-react-app
-title: Create a New React App
+title: React апп үүсгэх
 permalink: docs/create-a-new-react-app.html
 redirect_from:
   - "docs/add-react-to-a-new-app.html"
@@ -31,7 +31,7 @@ next: cdn-links.html
 React баг үндсэндээ эдгээр шийдлүүдийг санал болгодог:
 
 - Хэрвээ **react сурч байвал** эсвэл **шинэ [single-page](/docs/glossary.html#single-page-application) апп үүсгэх бол,** [React апп үүсгэх](#create-react-app)-г ашиглаарай.
-- Хэрвээ **Node.js-тэй сервер талын рендертэй вев сайт** хийж байвал, [Next.js](#nextjs)-г туршаарай.
+- Хэрвээ **Node.js-тэй сервер талын рендертэй веб сайт** хийж байвал, [Next.js](#nextjs)-г туршаарай.
 - Хэрвээ **статик контентэд тулгуурласан веб сайт** хийж байвал, [Gatsby](#gatsby)-г туршаад үзээрэй.
 - Хэрвээ **компонент сан бүтээх** эсвэл **өмнөх кодтойгоо нэгтгэх** гэж байгаа бол, [Илүү уян цогц хэрэглүүрүүд](#more-flexible-toolchains) туршаарай.
 

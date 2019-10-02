@@ -1,6 +1,6 @@
 ---
 id: forwarding-refs
-title: Forwarding Refs
+title: Ref дамжуулах
 permalink: docs/forwarding-refs.html
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: code-splitting
-title: Code-Splitting
+title: Код салгах
 permalink: docs/code-splitting.html
 ---
 
