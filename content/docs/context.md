@@ -15,22 +15,13 @@ permalink: docs/context.html
   - [Context.Provider](#contextprovider)
   - [Class.contextType](#classcontexttype)
   - [Context.Consumer](#contextconsumer)
-<<<<<<< HEAD
+  - [Context.displayName](#contextdisplayname)
 - [Жишээ](#examples)
   - [Динамик контекст](#dynamic-context)
   - [Nested компонентоос контекстыг өөрчлөх](#updating-context-from-a-nested-component)
   - [Олон контекст ашиглах](#consuming-multiple-contexts)
 - [Сануулга](#caveats)
 - [Хуучин API](#legacy-api)
-=======
-  - [Context.displayName](#contextdisplayname)
-- [Examples](#examples)
-  - [Dynamic Context](#dynamic-context)
-  - [Updating Context from a Nested Component](#updating-context-from-a-nested-component)
-  - [Consuming Multiple Contexts](#consuming-multiple-contexts)
-- [Caveats](#caveats)
-- [Legacy API](#legacy-api)
->>>>>>> 647b639259919f96e9b667bf41ec16621e1b84dc
 
 ## Хэзээ контекстыг ашиглах {#when-to-use-context}
 
@@ -208,14 +199,11 @@ React компонент нь контекстын өөрлчлөлтийг дэ
 > 
 > Функцыг хүү компонентоор ашиглах загварыг (pattern) эндээс харах [render props](/docs/render-props.html).
 
-<<<<<<< HEAD
-## Жишээнүүд {#examples}
-=======
 ### `Context.displayName` {#contextdisplayname}
 
-Context object accepts a `displayName` string property. React DevTools uses this string to determine what to display for the context.
+Контекст нь `displayName` гэх стринг тѳрѳлтэй утга авах нэгжтэй. React DevTools нь энэ стрингийг ашиглан дэлгэцэнд юу харуулахаа шийддэг. 
 
-For example, the following component will appear as MyDisplayName in the DevTools:
+Жишээ нь, доорхи компонент нь MyDisplayName гэж DevTools дээр харагдана:
 
 ```js{2}
 const MyContext = React.createContext(/* some value */);
@@ -225,8 +213,7 @@ MyContext.displayName = 'MyDisplayName';
 <MyContext.Consumer> // "MyDisplayName.Consumer" in DevTools
 ```
 
-## Examples {#examples}
->>>>>>> 647b639259919f96e9b667bf41ec16621e1b84dc
+## Жишээнүүд {#examples}
 
 ### Динамик контекст {#dynamic-context}
 

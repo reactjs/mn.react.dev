@@ -118,11 +118,7 @@ import './index.css';
 
 ### Туслаарай, Би гацчихлаа! {#help-im-stuck}
 
-<<<<<<< HEAD
-Хэрэв гацчихаад байвал энэхүү [олон нийтийн тусламжийн сувгаар](/community/support.html) орж үзээрэй. Ялангуяа, [Reactiflux Chat](https://discord.gg/0ZcbPKXt5bZjGY5n) бол хурдан хугацаанд тусламж авах гайхалтай арга байх болно. Хэрэв чи хариулт авч чадахгүй, ямар нэгэн байдлаар гацсан хэвээр л байвал issue үүсгээрэй, тэгвэл бид танд тусална.
-=======
-If you get stuck, check out the [community support resources](/community/support.html). In particular, [Reactiflux Chat](https://discord.gg/reactiflux) is a great way to get help quickly. If you don't receive an answer, or if you remain stuck, please file an issue, and we'll help you out.
->>>>>>> 647b639259919f96e9b667bf41ec16621e1b84dc
+Хэрэв гацчихаад байвал энэхүү [олон нийтийн тусламжийн сувгаар](/community/support.html) орж үзээрэй. Ялангуяа, [Reactiflux Chat](https://discord.gg/reactiflux) бол хурдан хугацаанд тусламж авах гайхалтай арга байх болно. Хэрэв чи хариулт авч чадахгүй, ямар нэгэн байдлаар гацсан хэвээр л байвал issue үүсгээрэй, тэгвэл бид танд тусална.
 
 ## Ерөнхий мэдээлэл {#overview}
 
