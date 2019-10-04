@@ -1,24 +1,24 @@
 ---
 id: portals
-title: Portals
+title: Портал
 permalink: docs/portals.html
 ---
 
-Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
+Портал нь хүүхэд компонентуудтыг ДОМ-руу эцэн компонентын ДОМ доторх байрлалаас гадуулр байршуулах сонгомол аргачилал юм.
 
 ```js
 ReactDOM.createPortal(child, container)
 ```
 
-The first argument (`child`) is any [renderable React child](/docs/react-component.html#render), such as an element, string, or fragment. The second argument (`container`) is a DOM element.
+Эхний аргумент (`child`) бол ямар нэг [рендерлэх боломжтой React хүүхэд](/docs/react-component.html#render), элемент, текст, эсвэл хэлтэрхий гэх мэт. Хоёрдах аргумент (`container`) нь ДОМ элемент.
 
-## Usage {#usage}
+## Жэрэглээ {#usage}
 
-Normally, when you return an element from a component's render method, it's mounted into the DOM as a child of the nearest parent node:
+Ихэвчлэн, компонент-н рендер мэтодоос элемнент буцаахад, энэ нь ДОМ байдлаар хамгийн ойрын эцэг node-д хүүхэд болон ордог:
 
 ```js{4,6}
 render() {
-  // React mounts a new div and renders the children into it
+  // React шинэ дэв үүсгээд children-г түүн дотор рендер хийнэ.
   return (
     <div>
       {this.props.children}
@@ -27,12 +27,12 @@ render() {
 }
 ```
 
-However, sometimes it's useful to insert a child into a different location in the DOM:
+Харин зарим тохиолдолд, ДОМ-ын өөр хаа нэгтээ хүүхэд болгон оруулах хэрэгцээ гардаг:
 
 ```js{6}
 render() {
-  // React does *not* create a new div. It renders the children into `domNode`.
-  // `domNode` is any valid DOM node, regardless of its location in the DOM.
+  // React шинэ div *үүсгэхгүй*. `domNode` дотор children-г рендер хийидэг.
+  // `domNode` нь DOM доторх байрлалаас үл хамаарсан ямар нэг бодит DOM node байна.
   return ReactDOM.createPortal(
     this.props.children,
     domNode
@@ -40,21 +40,21 @@ render() {
 }
 ```
 
-A typical use case for portals is when a parent component has an `overflow: hidden` or `z-index` style, but you need the child to visually "break out" of its container. For example, dialogs, hovercards, and tooltips.
+Порталын нийтлэг хэрэглээ бол эцэг компонент нь `overflow: hidden` эсвэл `z-index` загвар ашигласан хэдий ч үүнээс үл хамаараад хүүхэд компонентоо харуулах шаардлагатай үе юм. Жишээ нь: dialogs, hovercards, and tooltips.
 
-> Note:
+> Тэмдэглэл:
 >
-> When working with portals, remember that [managing keyboard focus](/docs/accessibility.html#programmatically-managing-focus) becomes very important.
+> Порталтай ажиллаж байхдаа [гарын фокус зохицууалт](/docs/accessibility.html#programmatically-managing-focus) маш чухал болхыг санаарай.
 >
-> For modal dialogs, ensure that everyone can interact with them by following the [WAI-ARIA Modal Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal).
+> Модал диалогын хувьд бүх хүн [WAI-ARIA Модал Зөвшөөрөгдсөн Практик](https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal)-н дагуу харилцах боломжтой байгааг хянаарай.
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/yzMaBd)
+[**CodePen дээр турших**](https://codepen.io/gaearon/pen/yzMaBd)
 
-## Event Bubbling Through Portals {#event-bubbling-through-portals}
+## Порталын Эвент Бөмбөлөгүүд {#event-bubbling-through-portals}
 
-Even though a portal can be anywhere in the DOM tree, it behaves like a normal React child in every other way. Features like context work exactly the same regardless of whether the child is a portal, as the portal still exists in the *React tree* regardless of position in the *DOM tree*.
+Хэдий портал ДОМ-н модны хаана ч байх боломжтой ч бусад талаараа энгийн React хүүхэдтэй ижил хэвийн ажиллагаатай. Контекст зэрэг боломжууд child нь портал эсэхээс үл хамаараад яг ижилхэн, учир нь портал нь *ДОМ мод*-ы хаана байгаагаас хамааралгүй *React мод*-нд оршиж байгаа юм.
 
-This includes event bubbling. An event fired from inside a portal will propagate to ancestors in the containing *React tree*, even if those elements are not ancestors in the *DOM tree*. Assuming the following HTML structure:
+Энэ нь эвент бөмбөлөгт мөн ижил. Портал дотроос эвент нь дуудагдaхад, тэдгээр элементүүд нь *ДОМ мод* дотор дээд үе биш байсан ч, *React мод* доторх өөрийн дээд үеүүдрүү түүнийг тараадаг. Дараах HTML бүтцийн дагуу:
 
 ```html
 <html>
@@ -65,10 +65,10 @@ This includes event bubbling. An event fired from inside a portal will propagate
 </html>
 ```
 
-A `Parent` component in `#app-root` would be able to catch an uncaught, bubbling event from the sibling node `#modal-root`.
+`#app-root` доторх `эцэг` компонент нь ижил түвшний `#modal-root` node-с ирэх чөлөөтэй, эвент хөөсийг барих боломжтой.
 
 ```js{28-31,42-49,53,61-63,70-71,74}
-// These two containers are siblings in the DOM
+// Эдгээр конэйнерүүд нь ДОМ дотор ижил түвшинд байгаа
 const appRoot = document.getElementById('app-root');
 const modalRoot = document.getElementById('modal-root');
 
@@ -79,14 +79,14 @@ class Modal extends React.Component {
   }
 
   componentDidMount() {
-    // The portal element is inserted in the DOM tree after
-    // the Modal's children are mounted, meaning that children
-    // will be mounted on a detached DOM node. If a child
-    // component requires to be attached to the DOM tree
-    // immediately when mounted, for example to measure a
-    // DOM node, or uses 'autoFocus' in a descendant, add
-    // state to Modal and only render the children when Modal
-    // is inserted in the DOM tree.
+    // Портал элемент нь Модалын хүүхдүүд суурилагдсаны
+    // дараа ДОМ модонд ордог, өөрөөр хэлбэл хүүхдүүд нь
+    // тусдаа ДОМ node-д суурилагдана. Хэрвээ хүүхэд
+    // компонент дөнгөж суурилаад ДОМ модонд залгагдах
+    // шаардлатай бол, жишээ нь ДОМ node-г хэмжих,
+    // `autoFocus`-г удамдаа ашиглах зэрэг шалтгаанаар,
+    // Модал дээр state оруулаад Модал ДОМ модонд орход
+    // зөвхөн хүүхдүүдийг рендер хийх хэрэгтэй.
     modalRoot.appendChild(this.el);
   }
 
@@ -110,9 +110,9 @@ class Parent extends React.Component {
   }
 
   handleClick() {
-    // This will fire when the button in Child is clicked,
-    // updating Parent's state, even though button
-    // is not direct descendant in the DOM.
+    // Хүүхэд доторх товчыг дарагдахад энэ дуудагдана,
+    // ДОМ-н шууд удамд тухайн товч нь байхгүй байсан ч
+    // Эцгийн state-г шинэчилнэ.
     this.setState(state => ({
       clicks: state.clicks + 1
     }));
@@ -137,8 +137,8 @@ class Parent extends React.Component {
 }
 
 function Child() {
-  // The click event on this button will bubble up to parent,
-  // because there is no 'onClick' attribute defined
+  // Энэ товчны дарах эвент нь эцэгрүү дамжих ба учир нь
+  // `onClick` аттрибут тодорхойлогдоогүй юм
   return (
     <div className="modal">
       <button>Click</button>
@@ -149,6 +149,6 @@ function Child() {
 ReactDOM.render(<Parent />, appRoot);
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/jGBWpE)
+[**CodePen дээр турших**](https://codepen.io/gaearon/pen/jGBWpE)
 
-Catching an event bubbling up from a portal in a parent component allows the development of more flexible abstractions that are not inherently reliant on portals. For example, if you render a `<Modal />` component, the parent can capture its events regardless of whether it's implemented using portals.
+Портал-с ирэх эвент-г эцэг компонент дээр барих нь портал-с шууд хамааралгүй илүү уян хатан abstraction хөгжүүлэлт хийх боломж олгодог. Жишээ нь: `<Modal />` компонентыг рендер хийхэд эцэг компонент нь түүний эвентүүдийг портал ашиглаж хийгдсэн үгүйгээс хамаарагүй бариж авах болмжтой юм.
