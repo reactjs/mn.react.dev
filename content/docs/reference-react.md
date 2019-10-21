@@ -334,7 +334,11 @@ const SomeComponent = React.lazy(() => import('./SomeComponent'));
 
 ### `React.Suspense` {#reactsuspense}
 
+<<<<<<< HEAD
 `React.Suspense` таньд уншиж байгаа мэдээдэл модонд байгаа компонент хараахан бэлэн болоогүй үед дүрслэх боломжийг олгоно. Одоогоор `<React.Suspense>` **зөвхөн** залхуу тохиолдолд дэмжигдэнэ:
+=======
+`React.Suspense` lets you specify the loading indicator in case some components in the tree below it are not yet ready to render. Today, lazy loading components is the **only** use case supported by `<React.Suspense>`:
+>>>>>>> d2ade76cce133af47ab198188fa2de03fa51834b
 
 ```js
 // Энэ компонент динамикаар ачаалагдсан
