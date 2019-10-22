@@ -56,8 +56,8 @@ Webpack-н [суулгах](https://webpack.js.org/guides/installation/)  бол
 том сангууд ашиглаж байгаа бол бүр их томроно.  Та програмдаа юуг багтааж байгааг
 анзаарч байхгүй бол ачаалахад хэтэрхий удаан том багцтай болж болзошгүй.
 
-Эцэст нь том багцтай болохоос сэргийлэхийн тулд багцуудаа "салгаж" эхлэх хэрэгтэй. [Код-салгах](https://webpack.js.org/guides/code-splitting/) боломж нь
-Webpack болон [Rollup](https://rollupjs.org/guide/en/#code-splitting), Browserify шиг хэрэгслүүдэд (via
+Эцэст нь том багцтай болохоос сэргийлэхийн тулд багцуудаа "салгаж" эхлэх хэрэгтэй.
+ [Код-салгах](https://webpack.js.org/guides/code-splitting/) боломж нь Webpack болон [Rollup](https://rollupjs.org/guide/en/#code-splitting), Browserify шиг хэрэгслүүдэд (via
 [factor-bundle](https://github.com/browserify/factor-bundle)) дэмжигддэг бөгөөд
 олон салгасан багцууд үүсгэн ажиллагааны үед динамикаар ачаалагддаг.
 
