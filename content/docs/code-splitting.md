@@ -56,20 +56,10 @@ Webpack-н [суулгах](https://webpack.js.org/guides/installation/)  бол
 том сангууд ашиглаж байгаа бол бүр их томроно.  Та програмдаа юуг багтааж байгааг
 анзаарч байхгүй бол ачаалахад хэтэрхий удаан том багцтай болж болзошгүй.
 
-<<<<<<< HEAD
-Эцэст нь том багцтай болохоос сэргийлэхийн тулд багцуудаа "салгаж" эхлэх хэрэгтэй.
- [Код-салгах](https://webpack.js.org/guides/code-splitting/) боломж нь
-Webpack болон Browserify шиг хэрэгслүүдэд (via
+Эцэст нь том багцтай болохоос сэргийлэхийн тулд багцуудаа "салгаж" эхлэх хэрэгтэй. [Код-салгах](https://webpack.js.org/guides/code-splitting/) боломж нь
+Webpack болон [Rollup](https://rollupjs.org/guide/en/#code-splitting), Browserify шиг хэрэгслүүдэд (via
 [factor-bundle](https://github.com/browserify/factor-bundle)) дэмжигддэг бөгөөд
 олон салгасан багцууд үүсгэн ажиллагааны үед динамикаар ачаалагддаг.
-=======
-To avoid winding up with a large bundle, it's good to get ahead of the problem
-and start "splitting" your bundle.
-Code-Splitting is a feature
-supported by bundlers like [Webpack](https://webpack.js.org/guides/code-splitting/), [Rollup](https://rollupjs.org/guide/en/#code-splitting) and Browserify (via
-[factor-bundle](https://github.com/browserify/factor-bundle)) which can create
-multiple bundles that can be dynamically loaded at runtime.
->>>>>>> 5c371e5e3fd8f92e1d06dfdf1f28edc50fb5d83f
 
 Код-салгах нь хэрэглэгчид одоо хэрэгтэй байгаа ч энэ ачаалагдсан зүйл нь хэрэглэгчид
 дахин хэзээ хэрэг болохгүй бол эхлэлийн ачаалалт дээр дуудагдах кодын хэмжээг
