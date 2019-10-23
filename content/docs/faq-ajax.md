@@ -12,11 +12,11 @@ React-тай өөрийн хүссэн AJAX санг ашиглах боломж
 
 ### Компонентын мѳчлѳгийн аль хэсэг дээр AJAX-г дуудах хэрэгтэй вэ? {#where-in-the-component-lifecycle-should-i-make-an-ajax-call}
 
-AJAX дуудалтыг [`componentDidMount`](/docs/react-component.html#mounting) мөчлөгийн метод дотор датагаар дүүргэх хэрэгтэй. Тэгснээр дата нь буцаж ирэхэд `setState`-г ашиглаж компонентоо шинэчлэж чадах юм.
+AJAX-г [`componentDidMount`](/docs/react-component.html#mounting) мөчлөгийн метод дотор дуудаж датаг авах нь зүйтэй. Тэгснээр дата нь буцаж ирэхэд `setState`-г ашиглаж компонентоо шинэчлэх юм.
 
 ### Жишээ: AJAX хариуг ашиглаж дотоод төлөвийг оноох {#example-using-ajax-results-to-set-local-state}
 
-Доорх компонент хэрхэн `componentDidMount` дотор AJAX дуудалт хийж компонентын дотоод төлөвийг шинэчлэхийг харуулж байна.
+Доорх компонент хэрхэн `componentDidMount` дотор AJAX дуудалт хийж компонентын дотоод төлөвийг шинэчлэх тухай харуулж байна.
 
 Жишээ API нь үүнтэй ижил JSON объект буцаадаг:
 
