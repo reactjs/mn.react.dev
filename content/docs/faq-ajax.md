@@ -6,19 +6,19 @@ layout: docs
 category: FAQ
 ---
 
-### Хэрхэн AJAX дуудлага хийх вэ? {#how-can-i-make-an-ajax-call}
+### Хэрхэн AJAX дуудалт хийх вэ? {#how-can-i-make-an-ajax-call}
 
-React-тай өөрийн хүссэн AJAX санг ашиглах боломжтой. Зарим түгээмлийг дурдвал [Axios](https://github.com/axios/axios), [jQuery AJAX](https://api.jquery.com/jQuery.ajax/), болон броузерт байрлах [window.fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+React-тай өөрийн хүссэн AJAX санг ашиглах боломжтой. Зарим түгээмэл хэрэглээг дурдвал [Axios](https://github.com/axios/axios), [jQuery AJAX](https://api.jquery.com/jQuery.ajax/), болон броузерт байрлах [window.fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
 ### Компонентын мѳчлѳгийн аль хэсэг дээр AJAX-г дуудах хэрэгтэй вэ? {#where-in-the-component-lifecycle-should-i-make-an-ajax-call}
 
-AJAX дуудлагийг [`componentDidMount`](/docs/react-component.html#mounting) мөчлөгийн метод дотор датагаар дүүргэх хэрэгтэй. Тэгснээр дата нь буцаж ирхэд `setState`-г ашиглаж компонентээ шинэчлэж чадах юм.
+AJAX дуудалтыг [`componentDidMount`](/docs/react-component.html#mounting) мөчлөгийн метод дотор датагаар дүүргэх хэрэгтэй. Тэгснээр дата нь буцаж ирэхэд `setState`-г ашиглаж компонентоо шинэчлэж чадах юм.
 
-### Жишээ: AJAX хариуг ашиглаж дотоод төлвийг оноох {#example-using-ajax-results-to-set-local-state}
+### Жишээ: AJAX хариуг ашиглаж дотоод төлөвийг оноох {#example-using-ajax-results-to-set-local-state}
 
-Доорх компонент хэрхэн `componentDidMount` дотор AJAX дуудлага хийж компонентын дотоод төлвийг шинэчлэхийг харуулж байна.
+Доорх компонент хэрхэн `componentDidMount` дотор AJAX дуудалт хийж компонентын дотоод төлөвийг шинэчлэхийг харуулж байна.
 
-Жишээ API нь үүнтэй ижил JSON обьект буцаадаг:
+Жишээ API нь үүнтэй ижил JSON объект буцаадаг:
 
 ```
 {
@@ -51,7 +51,7 @@ class MyComponent extends React.Component {
           });
         },
         // Тэмдэглэл: catch() блок ашиглахын оронд энд
-        // алдааг бариж авах нь чухал. Тэгснээр компонент
+        // алдааг барьж авах нь чухал. Тэгснээр компонент
         // доторх өөрийн алдааг уусгахгүй юм.
         (error) => {
           this.setState({
