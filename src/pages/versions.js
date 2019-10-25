@@ -32,22 +32,19 @@ const Versions = ({location}: Props) => (
           />
           <div css={sharedStyles.markdown}>
             <p>
-              A complete release history for React is available{' '}
+              React -ын хувилбаруудын түүхийг бүтнээр нь{' '}
               <a
                 href="https://github.com/facebook/react/releases"
                 target="_blank"
                 rel="noopener">
-                on GitHub
+                GitHub-аас
               </a>
               .<br />
-              Documentation for recent releases can also be found below.
+              Сүүлийн хувилбарын баримтжуулалтыг доорхи жагсаалтаас харж болно.
             </p>
             <p>
-              See our FAQ for information about{' '}
-              <a href="/docs/faq-versioning.html">
-                our versioning policy and commitment to stability
-              </a>
-              .
+              FAQ хэсгээс хувилбар болон дүрмийн талаарх{' '}
+              <a href="/docs/faq-versioning.html">мэдээлэл олох боломжтой.</a>.
             </p>
             {versions.map(version => (
               <div key={version.title}>
@@ -55,13 +52,13 @@ const Versions = ({location}: Props) => (
                 <ul>
                   <li>
                     <a href={version.changelog} target="_blank" rel="noopener">
-                      Changelog
+                      Ѳѳрчлѳлт
                     </a>
                   </li>
                   {version.path && (
                     <li>
                       <a href={version.path} rel="nofollow">
-                        Documentation
+                        Баримтжуулалт
                       </a>
                     </li>
                   )}
