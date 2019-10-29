@@ -26,7 +26,7 @@
 - name: Каталан
   translated_name: Català
   code: ca
-  status: 0
+  status: 1
 - name: Герман
   translated_name: Deutsch
   code: de

@@ -8,6 +8,8 @@
       title: React апп үүсгэх
     - id: cdn-links
       title: CDN холбоосууд
+    - id: release-channels
+      title: Release Channels
 - title: Үндсэн ойлголтууд
   isOrdered: true
   items:
@@ -133,6 +135,19 @@
       title: Тестийн жорууд Recipes
     - id: testing-environments
       title: Тестийн орчнууд
+- title: Concurrent Mode (Experimental)
+  isOrdered: true
+  items:
+    - id: concurrent-mode-intro
+      title: Introducing Concurrent Mode
+    - id: concurrent-mode-suspense
+      title: Suspense for Data Fetching
+    - id: concurrent-mode-patterns
+      title: Concurrent UI Patterns
+    - id: concurrent-mode-adoption
+      title: Adopting Concurrent Mode
+    - id: concurrent-mode-reference
+      title: Concurrent Mode API Reference
 - title: Оролцох
   items:
   - id: how-to-contribute
