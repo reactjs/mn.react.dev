@@ -46,11 +46,7 @@ React нь анхнаасаа алгуур нутагшуулалтад загв
 
 ### Шинээр React апп үүсгэх {#create-a-new-react-app}
 
-<<<<<<< HEAD
 React прожект эхлүүлэх үед, [скрипттэй энгийн HTML хуудас](/docs/add-react-to-a-website.html) нь магадгүй хамгийн зөв сонголт байх. Эхлүүлэхэд ердөө минут л зарцуулагдана.
-=======
-When starting a React project, a [simple HTML page with script tags](/docs/add-react-to-a-website.html) might still be the best option. It only takes a minute to set up!
->>>>>>> d2ade76cce133af47ab198188fa2de03fa51834b
 
 Аппликешн тань томрохын хэрээр, та илүү төвлөрсөн суулгац сонирхож болох юм. [JavaScript багажны хэлхээс бүхий цуглуулга](/docs/create-a-new-react-app.html) байдаг ба бид үүнийг том хэмжээний аппликешнэнд санал болгож байна. Тэдгээр багажуудын тус бүр нь маш бага эсвэл ямар ч тохиргоо шаардалгүй React-н баялаг эко системээс танд давуу тал олгоно.
 
@@ -122,11 +118,7 @@ React докюментжуулалт Javascript-н тодорхой мэдлэг
 
 Мөн та [@reactjs аккоунт](https://twitter.com/reactjs)-г Twitter дээр дагах боломжтой, гэсэн хэдий ч зөвхөн блогийг уншсанаар ямар ч чухал зүйлийг алдахгүй.
 
-<<<<<<< HEAD
-React-н бүх хувилбар блог пост болон орох шаардлагагүй байдаг, гэхдээ бүх хувилбарын дэлгэрэнгүй өөрчлөлтийн бүртгэлийг [React рэпо доторх `CHANGELOG.md` файлаас](https://github.com/facebook/react/blob/master/CHANGELOG.md) мөн [Releases](https://github.com/facebook/react/releases) хуудаснаас олох боломжтой.
-=======
-Not every React release deserves its own blog post, but you can find a detailed changelog for every release in the [`CHANGELOG.md` file in the React repository](https://github.com/facebook/react/blob/master/CHANGELOG.md), as well as on the [Releases](https://github.com/facebook/react/releases) page.
->>>>>>> d2ade76cce133af47ab198188fa2de03fa51834b
+React-н бүх хувилбар блог пост болон орох шаардлагагүй байдаг, гэхдээ бүх хувилбарын дэлгэрэнгүй өөрчлөлтийн бүртгэлийг [React рэпо доторх `CHANGELOG.md` файлаас](https://github.com/facebook/react/blob/master/CHANGELOG.md) мөн [Releases](https://github.com/facebook/react/releases) хуудаснаас олох боломжтой. d2ade76cce133af47ab198188fa2de03fa51834b
 
 ## Хувилбарт докюментжуулалт {#versioned-documentation}
 
