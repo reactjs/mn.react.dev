@@ -17,7 +17,6 @@
     - id: videos
       title: Бичлэгүүд
     - id: external-resources
-<<<<<<< HEAD
       title: Гадаад сан
 - title: Багажууд
   items:
@@ -41,6 +40,3 @@
       title: Дэлгэцийн загвар компонентууд
     - id: misc
       title: Бусад зүйлс
-=======
-      title: External Resources
->>>>>>> bbea52211971834d041e76871df8981066c42a3b
