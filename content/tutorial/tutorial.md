@@ -197,6 +197,7 @@ class Board extends React.Component {
   renderSquare(i) {
     return <Square value={i} />;
   }
+}
 ```
 
 Square-ийн `render`-д тэрхүү утга (value)-г үзүүлэхийн тулд `{/* TODO */}`-г `{this.props.value}`-ээр сольж бичье:
