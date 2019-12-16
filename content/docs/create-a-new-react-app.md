@@ -73,9 +73,13 @@ Gatsby-н талаар [түүний албан ёсны заавараас](htt
 
 - **[Neutrino](https://neutrinojs.org/)** нь [webpack](https://webpack.js.org/)-н хүчийг хялбарчилсан бэлдэцүүдтэй холбодог ба [React апп-ууд](https://neutrinojs.org/packages/react/) болон [React компонентууд](https://neutrinojs.org/packages/react-components/) гэсэн бэлдэцүүд багтана.
 
+<<<<<<< HEAD
 - **[nwb](https://github.com/insin/nwb)** бол [React компонентуудыг npm-р оруулхад](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb) голчилон зориулсагдсан. Үүнийг мөн React app хийхэд [хэрэглэж болно](https://github.com/insin/nwb/blob/master/docs/guides/ReactApps.md#developing-react-apps-with-nwb).
 
 - **[Parcel](https://parceljs.org/)** [React-тай ажилладаг](https://parceljs.org/recipes.html#react) хурдан, тохиргоогүй ажиллах веб апп багцлагч юм.
+=======
+- **[Parcel](https://parceljs.org/)** is a fast, zero configuration web application bundler that [works with React](https://parceljs.org/recipes.html#react).
+>>>>>>> 401b97e9591ac573eaf35c7cf57e5f145276d140
 
 - **[Razzle](https://github.com/jaredpalmer/razzle)** ямар ч тохиргоо шаардлагагүй сервер талын рендер хийх фраймворк бөгөөд Next.js-с илүү уян байдлыг санал болгодог.
 
