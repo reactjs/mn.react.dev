@@ -36,7 +36,13 @@ ReactDOM.render(element, container[, callback])
 ```
 React элементийг DOM руу рендэр хийхдээ, `container` дотор хийж [сонгосон](/docs/more-about-refs.html) элементийг компонентруу буцаана ([тѳлѳвгүй компонент](/docs/components-and-props.html#functional-and-class-components) бол `null` буцаана).
 
+<<<<<<< HEAD
 Хэрэв React элемент өмнө нь `container`-т рендэр хийж байсан бол шинэчлэх ба сүүлийн React элементээс хамааран шаардлагатай үед л DOM-ыг өөрчилнө. 
+=======
+Render a React element into the DOM in the supplied `container` and return a [reference](/docs/more-about-refs.html) to the component (or returns `null` for [stateless components](/docs/components-and-props.html#function-and-class-components)).
+
+If the React element was previously rendered into `container`, this will perform an update on it and only mutate the DOM as necessary to reflect the latest React element.
+>>>>>>> 1dd4e325f070ce198aed69fd9cc5467563679e54
 
 Хэрэв буцаан дуудах сонголт байвал компонент рендэр хийгдэж, шинэчлэгдсэний дараа ажиллах болно. 
 
