@@ -8,6 +8,7 @@ permalink: community/examples.html
 
 React хамтралаас үүсгэсэн олон прожектууд энд бий. Та өөрийн прожектоо ч бас чөлөөтэй нэмж болно. Хэрвээ та өөрийн прожектыг нэмэх гэж буй бол React-ийн сүүлийн хувилбараар commit хийхийг хүсье.
 
+* **[Zeldog](https://yannsainty.github.io/Zeldog/)** A Zelda like game with a dog fighting ducks and more to eat pizza !
 * **[Calculator](https://github.com/ahfarmer/calculator)** Implementation of the iOS calculator built in React
 * **[Emoji Search](https://github.com/ahfarmer/emoji-search)** Simple React app for searching emoji
 * **[GitHub Battle App](https://tm.dev/react-course-project/)** Battle two GitHub users and see the most popular Github projects for any language.
