@@ -106,7 +106,11 @@ function Page(props) {
 
 Энэ загвар (pattern) нь хүү компонентуудыг тэдгээрийг шууд агуулсан эцэг компонентуудаас (immediate parents) салган ашиглах шаардлагатай байгаа бүх тохиолдлуудад ашиглаж болно. Бүр цаашлаад хэрвээ хүү компонент нь рендер хийгдэхээсээ өмнө эцэг компоненттой харилцах шаардлагатай болвол [render props](/docs/render-props.html) той хамт ашиглагдаж болно.  
 
+<<<<<<< HEAD
 Заримдаа нэг ижил өгөгдлүүд рүү компонентын модны өөр өөр түвшинд байгаа компонентуудаас хандах шаардлагатай болдог. Контекст нь эдгээр өгөгдлүүдийг доод түвшний компонентуудад түгээх ("broadcast") эсвэл өөрчлөх боломжийг олгодог. Зарим түгээмэл жишээнүүдэд контекст ашигласан нь "managing the current locale, them, эсвэл a data cache" гэсэн бусад аргуудыг ашигласнаас илүү хялбар болдог. 
+=======
+However, sometimes the same data needs to be accessible by many components in the tree, and at different nesting levels. Context lets you "broadcast" such data, and changes to it, to all components below. Common examples where using context might be simpler than the alternatives include managing the current locale, theme, or a data cache.
+>>>>>>> 99a18287c163e328f87709cb224742ccac3e113a
 
 ## API {#api}
 
@@ -132,6 +136,7 @@ const MyContext = React.createContext(defaultValue);
 
 `value` пропс нь Provider ийн хүү компонентууд (хэрэглэгч компонентууд) руу дамжуулагддаг. Нэг Provider нь олон хэрэглэгч компоненттэй холбогдож болно. Provider ууд нь нэг нэгэндээ агуулагдаж компонентын модонд дамжуулагдаж буй утгуудыг (values) даран тодорхойлж (override) болно. 
 
+<<<<<<< HEAD
 Тухайн Provider ийн бүх хэрэглэгч компонентууд нь тухайн Provider ийн `value` пропс д өөрчлөлт орох бүрд дахин рендэр хийгддэг. Provider аас хэрэглэгч компонентуудыг рендэр хийж байгаа нь `shouldComponentUpdate` функцтай холбоогүй, улмаар эцэг компонент нь өөрчлөлт хийхээ зогсоосон ч хэрэглэгч компонентууд нь өөрчлөгдөх болно. 
 
 Өөрчлөлт нь шинэ болон хуучин утгуудыг ижил алгоримтаар [`Object.is`](//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description) харцуулсанаар тодорхойлогддог.
@@ -139,6 +144,15 @@ const MyContext = React.createContext(defaultValue);
 > Тэмдэглэл
 > 
 > Энэ арга нь `value` пропсыг обьект хэлбэрээр дамжуулах үед зарим нэг асуудал үүсч байгаа. [Анхааруулга](#caveats).
+=======
+All consumers that are descendants of a Provider will re-render whenever the Provider's `value` prop changes. The propagation from Provider to its descendant consumers (including [`.contextType`](#classcontexttype) and [`useContext`](/docs/hooks-reference.html#usecontext)) is not subject to the `shouldComponentUpdate` method, so the consumer is updated even when an ancestor component skips an update.
+
+Changes are determined by comparing the new and old values using the same algorithm as [`Object.is`](//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is#Description).
+
+> Note
+>
+> The way changes are determined can cause some issues when passing objects as `value`: see [Caveats](#caveats).
+>>>>>>> 99a18287c163e328f87709cb224742ccac3e113a
 
 ### `Class.contextType` {#classcontexttype}
 
@@ -195,9 +209,15 @@ React компонент нь контекстын өөрлчлөлтийг дэ
 
 Функцыг хүү компонентоор ашиглах нь [function as a child](/docs/render-props.html#using-props-other-than-render). Функц нь тухайн контекстын утгыг хүлээн аваад React node буцаадаг. Функцэд дамжуулагдаж байгаа `value` аргумент нь компонентын модонд байх тухайн контекстээс дээш хамгийн ойр байрлах Provider ийн `value` пропстой тэнцүү байна. Хэрвээ тухайн контекстээс дээш орших ямар ч Provider олдохгүй бол `value` аргумент нь `createContext()` функцээр дамжуулагдсан `defaultValue` тай тэнцүү байна.   
 
+<<<<<<< HEAD
 > Тэмдэглэл
 > 
 > Функцыг хүү компонентоор ашиглах загварыг (pattern) эндээс харах [render props](/docs/render-props.html).
+=======
+> Note
+>
+> For more information about the 'function as a child' pattern, see [render props](/docs/render-props.html).
+>>>>>>> 99a18287c163e328f87709cb224742ccac3e113a
 
 ### `Context.displayName` {#contextdisplayname}
 
@@ -243,7 +263,11 @@ MyContext.displayName = 'MyDisplayName';
 
 ### Олон контекст хэрэглэх {#consuming-multiple-contexts}
 
+<<<<<<< HEAD
 Контекстыг хурдан дахин рендэр хийдэг байлгахын тулд React нь бүх контекстын хэрэглэгчдийг компонентын модны салангид node нүүд дээр байрлуулсан байх хэрэгтэй.
+=======
+To keep context re-rendering fast, React needs to make each context consumer a separate node in the tree.
+>>>>>>> 99a18287c163e328f87709cb224742ccac3e113a
 
 `embed:context/multiple-contexts.js`
 
@@ -262,7 +286,14 @@ MyContext.displayName = 'MyDisplayName';
 
 ## Хуучин API {#legacy-api}
 
+<<<<<<< HEAD
 > Тэмдэглэл
 > 
 > React шинэ контекст API руу шилжсэн. Хуучин API нь React 16.x хувилбаруудад дэмжигдэж байгаа. Гэхдээ энэ хуучин API ийг ашиглаж байгаа програмууд шинэ хувилбар руу шилжих хэрэгтэй. Хуучин API нь ирээдүйд React ийн хувилбаруудаас хасагдах болно. [Хуучин API ийн талаар унших](/docs/legacy-context.html)
  
+=======
+> Note
+>
+> React previously shipped with an experimental context API. The old API will be supported in all 16.x releases, but applications using it should migrate to the new version. The legacy API will be removed in a future major React version. Read the [legacy context docs here](/docs/legacy-context.html).
+
+>>>>>>> 99a18287c163e328f87709cb224742ccac3e113a

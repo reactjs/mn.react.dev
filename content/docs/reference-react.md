@@ -104,7 +104,11 @@ class Greeting extends React.Component {
 
 ### `React.PureComponent` {#reactpurecomponent}
 
+<<<<<<< HEAD
 `React.PureComponent` нь [`React.Component`](#reactcomponent)-тэй төстэй. Тэдгээрийн ялгаа нь [`React.Component`](#reactcomponent) [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate) аргийг хэрэгжүүлдэггүй бөгөөд харин `React.PureComponent` нь үүнийг өнгөц шинж чанар болон төлвийн харьцуулалтаар хэрэгжүүлдэг.
+=======
+`React.PureComponent` is similar to [`React.Component`](#reactcomponent). The difference between them is that [`React.Component`](#reactcomponent) doesn't implement [`shouldComponentUpdate()`](/docs/react-component.html#shouldcomponentupdate), but `React.PureComponent` implements it with a shallow prop and state comparison.
+>>>>>>> 99a18287c163e328f87709cb224742ccac3e113a
 
 Хэрэв таны React компонентийн `render()` функц нь ижил шинж чанар болон төлөвт ижил үр дүн дүрсэлдэг бол хурдыг нэмэх үүднээс зарим тохиолдолд `React.PureComponent` ашиглаж болно.
 
@@ -128,7 +132,13 @@ const MyComponent = React.memo(function MyComponent(props) {
 
 Хэрэв таны функц компонент нь ижил шинж чанаруудад ижил үр дүн дүрсэлдэг бол `React.memo` дуудалтаар хүрээлүүлэн зарим тохиолдолд хурдны сайжруулалт болж болох юм. Өөрөр хэлбэл React компонентийг дүрслэхгүйгээр сүүлд дүрслэгдсэн үр дүнг дахин ашигладаг.
 
+<<<<<<< HEAD
 Анхны байдлаар энэ нь шинж чанарын цогц объектууд дээр өнгөцхөн харьцуулалт хийдэг. Хэрэв та харьцуулалтыг удирдахийг хүсвэл хоёрдах аргументаар харьцуулагч функц дамжуулан ашиглаж болно.
+=======
+`React.memo` only affects props changes. If your function component wrapped in `React.memo` has a [`useState`](/docs/hooks-state.html) or [`useContext`](/docs/hooks-reference.html#usecontext) Hook in its implementation, it will still rerender when state or context change.
+
+By default it will only shallowly compare complex objects in the props object. If you want control over the comparison, you can also provide a custom comparison function as the second argument.
+>>>>>>> 99a18287c163e328f87709cb224742ccac3e113a
 
 ```javascript
 function MyComponent(props) {
