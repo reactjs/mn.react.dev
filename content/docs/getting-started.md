@@ -48,11 +48,7 @@ React нь анхнаасаа алгуур нутагшуулалтад загв
 
 React прожект эхлүүлэх үед, [скрипттэй энгийн HTML хуудас](/docs/add-react-to-a-website.html) нь магадгүй хамгийн зөв сонголт байх. Эхлүүлэхэд ердөө минут л зарцуулагдана.
 
-<<<<<<< HEAD
 Аппликешн тань томрохын хэрээр, та илүү төвлөрсөн суулгац сонирхож болох юм. [JavaScript багажны хэлхээс бүхий цуглуулга](/docs/create-a-new-react-app.html) байдаг ба бид үүнийг том хэмжээний аппликешнэнд санал болгож байна. Тэдгээр багажуудын тус бүр нь маш бага эсвэл ямар ч тохиргоо шаардалгүй React-н баялаг эко системээс танд давуу тал олгоно.
-=======
-As your application grows, you might want to consider a more integrated setup. There are several JavaScript toolchains we recommend for larger applications. Each of them can work with little to no configuration and lets you take full advantage of the rich React ecosystem. [Learn how.](/docs/create-a-new-react-app.html)
->>>>>>> 071f5b0e1622465fb6fe5cf6c1cbd2aaef7c5ef4
 
 ## React сурах {#learn-react}
 
