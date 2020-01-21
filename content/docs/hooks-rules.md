@@ -45,12 +45,7 @@ npm install eslint-plugin-react-hooks --save-dev
   }
 }
 ```
-
-<<<<<<< HEAD
-Цаашдаа бид энэ плагинийг Create React App болон ижил төстэй хэрэслүүд дээр анхнаас байлгахаар төлөвлөж байна.
-=======
-This plugin is included by default in [Create React App](/docs/create-a-new-react-app.html#create-react-app).
->>>>>>> 99a18287c163e328f87709cb224742ccac3e113a
+Цаашдаа бид энэ плагинийг [Create React App](/docs/create-a-new-react-app.html#create-react-app). болон ижил төстэй хэрэслүүд дээр анхнаас байлгахаар төлөвлөж байна.
 
 **Та хэрхэн [өөрийн Hooks](/docs/hooks-custom.html) бичих талаар тайлбарласан хуудсийг одоохондоо алгасаж болно.** Энэ хуудсанд бид эдгээр дүрмүүдийн цаадах шалтгаанийг тайлбарлах болно.
 
