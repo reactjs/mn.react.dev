@@ -59,11 +59,7 @@ function ActionLink() {
 
 React ашиглаж байхад DOM элемент руу `addEventListener` сонсогчийг дуудах шаардлагагүй байдаг. Үүний оронд сонсогчоо элементийг анх дүрслэхэд олгох хэрэгтэй.
 
-<<<<<<< HEAD
 [ES6 класс](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) ашиглан компонент тодорхойлж байгаа бол эвент удирдагч нь класс дотор байгаа функц байдаг нь нийтлэг хэвшил юм. Жишээлбэл, энэ `Toggle` компонент товч дүрслээд хэрэглэгчийг "ON" ба "OFF" төлөвт шилжих боломжийг олгож байна:
-=======
-When using React, you generally don't need to call `addEventListener` to add listeners to a DOM element after it is created. Instead, just provide a listener when the element is initially rendered.
->>>>>>> 99a18287c163e328f87709cb224742ccac3e113a
 
 
 ```js{6,7,10-14,18}
@@ -148,11 +144,7 @@ class LoggingButton extends React.Component {
 
 ## Эвент удирдагч руу аргумент дамжуулах нь {#passing-arguments-to-event-handlers}
 
-<<<<<<< HEAD
 Давталт дотор эвент удирдагч руу нэмэлт аргумент дамжуулахийг хүсэх нь элбэг. Жишээлбэл, хэрэв `id` нь мөрийн ID бол дараах хоёр хоёулаа ажиллана:
-=======
-Inside a loop, it is common to want to pass an extra parameter to an event handler. For example, if `id` is the row ID, either of the following would work:
->>>>>>> 99a18287c163e328f87709cb224742ccac3e113a
 
 ```js
 <button onClick={(e) => this.deleteRow(id, e)}>Мөр устгах</button>
