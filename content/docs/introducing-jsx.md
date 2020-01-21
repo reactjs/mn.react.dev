@@ -181,9 +181,5 @@ const element = {
 Бид дараагийн бүлэгт React элементүүдийг дүрслэх талаар судлаж болно.
 
 >**Зөвлөмж:**
->
-<<<<<<< HEAD
+
 >Бид ["Babel" хэлний тодорхойлолт](https://babeljs.io/docs/editors)-ийг код засварлагчийн сонголт дээрээ ашиглахийг зөвлөдөг ES6 болон JSX код нь хоёулаа зөв тодордог(highlight). Энэ вебсайт [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/) өнгөний схем хэрэглэдэг зохицолдолгоо сайтай.
-=======
->We recommend using the ["Babel" language definition](https://babeljs.io/docs/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
->>>>>>> 99a18287c163e328f87709cb224742ccac3e113a
