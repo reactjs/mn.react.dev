@@ -37,7 +37,11 @@ redirect_from:
 
 **[Эцсийн бүтээл](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**-с бид юу бүтээх гэж байгааг харж болно. Хэрэв код танд ойлгомжгүй санагдах эсвэл кодын бичлэг нь танил биш харагдвал санаа зовох хэрэггүй. Энэхүү зааварчилгааны зорилго нь танд React болон түүнийг бичиглэлийг ойлгоход туслах билээ.
 
+<<<<<<< HEAD
 Энэхүү зааварчилгааг үргэлжлүүлэхээсээ өмнө танд дээрх tic-tac-toe тоглоом уруу орж үзэхийг зөвлөж байна. Нэг анзаарвал зохих тоглоомын боломж нь тоглоомын хөлгийн баруун талд байгаа дугаарласан жагсаалт юм. Энэхүү жагсаалтаас тоглоомын туршид хийгдсэн бүх нүүдлийн түүхийг харж болох бөгөөд тоглох явцад шинэчлэгдэж байна.
+=======
+We recommend that you check out the tic-tac-toe game before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and it is updated as the game progresses.
+>>>>>>> 4367566bddd06ed9dfbd6b1c3f45f9925e60b2c3
 
 Тоглоомтой танилцсан бол түүнийг хааж болно. Учир нь бид илүү энгийн загвараас эхэлнэ. Бидний дараагийн алхам бол таныг тоглоомыг хийж эхлэхэд бэлдэх юм.
 

@@ -40,7 +40,11 @@ ReactDOM.render(
 
 Хэрвээ JSX хэрхэн JavaScript-руу хөрвүүлэгдсэн талаар илүү жишээ хархаар сонирхож байвал [онлайн Babel compiler](babel://jsx-simple-example)-г туршиж үзэх боломжтой.
 
+<<<<<<< HEAD
 Компонент нь текст, эсвэл `React.Component`-н хүүхэд класс, эсвэл төлөвгүй компонентын энгийн функц гээд аль ч байж болно.
+=======
+The component can either be provided as a string, as a subclass of `React.Component`, or a plain function.
+>>>>>>> 4367566bddd06ed9dfbd6b1c3f45f9925e60b2c3
 
 `React.createElement`-г байнга ашиглах нь хүндрэлтэй байвал, нэг түгээмэл арга бол товчлолт ашиглах:
 
