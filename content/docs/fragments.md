@@ -4,7 +4,7 @@ title: Хэлтэрхий
 permalink: docs/fragments.html
 ---
 
-React компонент нь олон элементийг харуулахдаа заавал грүпп байдлаар буцаах шаардлагатай. Харин Фрагмент нь нэмэлт DOM нүдний шаардлагагүйгээр олон элементийг нэг групп болгон харуулдаг.
+React компонент нь олон элементийг харуулахдаа заавал багц байдлаар буцаах шаардлагатай. Харин Фрагмент нь нэмэлт DOM нүдний шаардлагагүйгээр олон элементийг нэг багц болгон харуулдаг.
 
 ```js
 render() {
@@ -133,7 +133,6 @@ function Glossary(props) {
 }
 ```
 
-`key` is the only attribute that can be passed to `Fragment`. In the future, we may add support for additional attributes, such as event handlers.
 `key` нь `Фрагментэд` авч болох цорын ганц аттрибут юм. Цаашдаа бид бусад аттрибутууд болох event handler мэтийг дэмжих боломжтой болгоно.
 
 ### Live Demo {#live-demo}
