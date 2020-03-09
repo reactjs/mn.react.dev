@@ -133,6 +133,8 @@ const OtherComponent = React.lazy(() => import('./OtherComponent'));
 `MyComponent` дүрслэгдэх мөчид `OtherComponent`-г агуулсан модуль ачаалагдаагүй бол бид ямар нэг уншиж байгаа мэдээлэл гэх мэт ачаалагдаж байгааг нь илэрхийлэх агуулга харуулах хэрэгтэй. Үүнийг `Suspense` компонентоор хийдэг.
 
 ```js
+import React, { Suspense } from 'react';
+
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
 
 function MyComponent() {
@@ -149,6 +151,8 @@ function MyComponent() {
 `fallback` шинж чанар нь ямар ч React элементүүд хүлээж авах ба та компонент ачаалагдах хүртэл юуг ч дүрсэлж болно. Та `Suspense` компонентийг ямар ч залхуу компонентийн дараа байрлуулж болно. Бүр та олон залхуу компонентуудыг хүртэл нэг `Suspense` компонентоор хүрээлүүлэн ашиглаж болно.
 
 ```js
+import React, { Suspense } from 'react';
+
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
 const AnotherComponent = React.lazy(() => import('./AnotherComponent'));
 
@@ -171,7 +175,9 @@ function MyComponent() {
 Хэрэв бусад модуль ачаалагдаж чадахгүй бол(жишээ нь сүлжээны доголдлоос) алдаа гарна. Та эдгээр алдаануудыг удирдан хэрэглэгчид мэдэгдэх болон дахин сэргээх үйлдлийг [алдааны зааг](/docs/error-boundaries.html)-р хийж болно. Алдааны заагаа үүсгэсний дараа та үүнийг залхуу компонентуудынхаа доор хаана ч ашиглан сүлжээний алдаа гарсан үед алдааны төлвөө дүрсэлж болно.
 
 ```js
+import React, { Suspense } from 'react';
 import MyErrorBoundary from './MyErrorBoundary';
+
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
 const AnotherComponent = React.lazy(() => import('./AnotherComponent'));
 
@@ -203,8 +209,8 @@ const MyComponent = () => (
 Энэ нь хэрхэн чиглэл дээр тулгуурласан код салгалт хийх жишээг [React Router](https://reacttraining.com/react-router/) шиг санг `React.lazy`-тэй хамт ашиглан харуулжээ.
 
 ```js
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const Home = lazy(() => import('./routes/Home'));
 const About = lazy(() => import('./routes/About'));

@@ -27,6 +27,7 @@ void preventDefault()
 boolean isDefaultPrevented()
 void stopPropagation()
 boolean isPropagationStopped()
+void persist()
 DOMEventTarget target
 number timeStamp
 string type
@@ -77,6 +78,7 @@ React эвентүүдийг нэг стандартад оруулдаг ба �
 - [Keyboard Events](#keyboard-events)
 - [Focus Events](#focus-events)
 - [Form Events](#form-events)
+- [Generic Events](#generic-events)
 - [Mouse Events](#mouse-events)
 - [Pointer Events](#pointer-events)
 - [Selection Events](#selection-events)
@@ -178,9 +180,19 @@ DOMEventTarget relatedTarget
 Эвент нэр:
 
 ```
-onChange onInput onInvalid onSubmit
+onChange onInput onInvalid onReset onSubmit 
 ```
 onChange эвентийн талаар дэлгэрэнгүйг [Forms](/docs/forms.html) гэснээс харна уу. 
+
+* * *
+
+### Generic Events {#generic-events}
+
+Event names:
+
+```
+onError onLoad
+```
 
 * * *
 

@@ -39,7 +39,11 @@ React баг үндсэндээ эдгээр шийдлүүдийг санал �
 
 [React апп бүтээх](https://github.com/facebookincubator/create-react-app) бол **React сурхад** тохиромжтой орчин ба React-р **шинэ [single-page](/docs/glossary.html#single-page-application) апп** бүтээж эхэлхэд хамгийн шилдэг арга юм.
 
+<<<<<<< HEAD
 Үүгээр хөгжүүлэлтийн орчинг бэлдэх бөгөөд сүүлийн үеийн Javascript-н боломжуудыг ашиглах боломжтой болно (хөгжүүлэгчдийн хялбар ажиллахад зориулж), мөн апп-г тань production орчинд ажиллахад бэлдэх юм. Танд Node >= 8.10, npm >= 5.6-г компьютертээ бэлдэх хэрэгтэй. Прожект үүсгэхэд:
+=======
+It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, and optimizes your app for production. You’ll need to have [Node >= 8.10 and npm >= 5.6](https://nodejs.org/en/) on your machine. To create a project, run:
+>>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
 
 ```bash
 npx create-react-app my-app
