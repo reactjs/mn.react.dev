@@ -128,7 +128,13 @@ const MyComponent = React.memo(function MyComponent(props) {
 
 Хэрэв таны функц компонент нь ижил шинж чанаруудад ижил үр дүн дүрсэлдэг бол `React.memo` дуудалтаар хүрээлүүлэн зарим тохиолдолд хурдны сайжруулалт болж болох юм. Өөрөр хэлбэл React компонентийг дүрслэхгүйгээр сүүлд дүрслэгдсэн үр дүнг дахин ашигладаг.
 
+<<<<<<< HEAD
 Анхны байдлаар энэ нь шинж чанарын цогц объектууд дээр өнгөцхөн харьцуулалт хийдэг. Хэрэв та харьцуулалтыг удирдахийг хүсвэл хоёрдах аргументаар харьцуулагч функц дамжуулан ашиглаж болно.
+=======
+`React.memo` only checks for prop changes. If your function component wrapped in `React.memo` has a [`useState`](/docs/hooks-state.html) or [`useContext`](/docs/hooks-reference.html#usecontext) Hook in its implementation, it will still rerender when state or context change.
+
+By default it will only shallowly compare complex objects in the props object. If you want control over the comparison, you can also provide a custom comparison function as the second argument.
+>>>>>>> 2ef0ee1e4fc4ce620dce1f3e0530471195dc64d1
 
 ```javascript
 function MyComponent(props) {

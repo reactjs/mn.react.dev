@@ -307,6 +307,7 @@ class Calculator extends React.Component {
 
 Оролт дээр утга засварлахад юу болох талаар тоймлоё:
 
+<<<<<<< HEAD
 * React нь DOM `<input>`-н `onChange` дээр тодорхойлогдсон бүх функцуудыг дуудна. Бидний хувьд энэ нь `TemperatureInput` компонентийн `handleChange` функц юм.
 * `TemperateInput` компонентийн `handleChange` функц нь `this.props.onTemperatureChange()`-г шинэ утгаар дуудах болно. `onTemperatureChange`-г багтаасан шинж чанарууд нь эцэг компонент болох `Calculator`-с олгогдоно.
 * `TemperateInput`-н целсиийн утга өмнө нь дүрслэгдсэн бол `Calculator`-н компонентийн `onTemperatureChange` нь `handleCelsiusChange` функцийг дуудах бөгөөд эсрэгээрээ фаренгет дүрслэгдсэн бол `handleFahrenheitChange` функц дуудагдах юм. Эдгээр хоёр `Calculator`-н функцууд нь аль оролтыг засварласнаас хамааран дуудагдана.
@@ -315,6 +316,16 @@ class Calculator extends React.Component {
 * React нь тус `TemperatureInput` компонентуудын тус тусын `render` функцуудийг `Calculator`-с олгогдсон шинж чанараар дуудна. Ингэснээр тэдгээрийн дэлгэцийн загвар яаж харагдахад суралдцдаг.
 * React `BoilingVerdict` компонентийн `render` функцийг целсийн температурыг шинж чанар болгон дамжуулж дуудна.
 * React DOM нь ус буцлах цэгийн харгалзах DOM-г шинэ утгаар шинэчилнэ. Бидний засварласан оролт нь одоогийн утгаа хүлээн авахад нөгөө оролт нь температурын утга хөрвүүлэлт хийсний дараа шинэчлэгдэнэ.
+=======
+* React calls the function specified as `onChange` on the DOM `<input>`. In our case, this is the `handleChange` method in the `TemperatureInput` component.
+* The `handleChange` method in the `TemperatureInput` component calls `this.props.onTemperatureChange()` with the new desired value. Its props, including `onTemperatureChange`, were provided by its parent component, the `Calculator`.
+* When it previously rendered, the `Calculator` had specified that `onTemperatureChange` of the Celsius `TemperatureInput` is the `Calculator`'s `handleCelsiusChange` method, and `onTemperatureChange` of the Fahrenheit `TemperatureInput` is the `Calculator`'s `handleFahrenheitChange` method. So either of these two `Calculator` methods gets called depending on which input we edited.
+* Inside these methods, the `Calculator` component asks React to re-render itself by calling `this.setState()` with the new input value and the current scale of the input we just edited.
+* React calls the `Calculator` component's `render` method to learn what the UI should look like. The values of both inputs are recomputed based on the current temperature and the active scale. The temperature conversion is performed here.
+* React calls the `render` methods of the individual `TemperatureInput` components with their new props specified by the `Calculator`. It learns what their UI should look like.
+* React calls the `render` method of the `BoilingVerdict` component, passing the temperature in Celsius as its props.
+* React DOM updates the DOM with the boiling verdict and to match the desired input values. The input we just edited receives its current value, and the other input is updated to the temperature after conversion.
+>>>>>>> 2ef0ee1e4fc4ce620dce1f3e0530471195dc64d1
 
 Бүх шинэчлэлт нь ижил алхмуудаар хийгдэх бөгөөд оролтууд нь утгуудаа шинэчлэгдсэн байлгана.
 

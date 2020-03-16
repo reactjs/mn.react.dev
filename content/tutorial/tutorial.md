@@ -290,7 +290,11 @@ class Square extends React.Component {
 
 >Анхаарах
 >
+<<<<<<< HEAD
 >[JavaScript класст](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) дэд(хүү) классын байгуулагчийг тодорхойлж байгаа үед заавал `super` функцийг дуудаж байх ёстой. Тиймээс бүх `constructor`-тай React компонентуудын байгуулагч нь `super(props)` гэж эхэлж байх ёстой болно.
+=======
+>In [JavaScript classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes), you need to always call `super` when defining the constructor of a subclass. All React component classes that have a `constructor` should start with a `super(props)` call.
+>>>>>>> 2ef0ee1e4fc4ce620dce1f3e0530471195dc64d1
 
 Одоо click хийх үед state-ийн утгыг харуулахын тулд Square-ийн `render` методыг өөрчилцгөөе:
 
