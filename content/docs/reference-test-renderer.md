@@ -130,7 +130,7 @@ expect(root.toJSON()).toMatchSnapshot();
 
 // update with some different props
 act(() => {
-  root = root.update(<App value={2}/>);
+  root.update(<App value={2}/>);
 })
 
 // make assertions on root 

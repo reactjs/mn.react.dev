@@ -34,7 +34,7 @@ const element = <h1>Hello, world</h1>;
 
 Зөвхөн React дээр хийгдсэн програмууд(applications) ихэвчлэн ганц эх DOM зангилаатай байдаг. Хэрэв хийгдсэн(existing) програм дээр React програм нэмж(integrate) байгаа бол та магадгүй олон эх DOM зангилаатай байж болно.
 
-React элемент эх DOM зангилаа дээр дүрслэхдээ `ReactDOM.render()` эх зангилаа болон элементээ дамжуулах хэрэгтэй:
+React элементийг эх DOM зангилаа дээр дүрслэхдээ хоёуланг нь [`ReactDOM.render()`](/docs/react-dom.html#render)-рүү дамжуулах хэрэгтэй:
 
 `embed:rendering-elements/render-an-element.js`
 
@@ -46,7 +46,7 @@ React элемент эх DOM зангилаа дээр дүрслэхдээ `Re
 
 React элементүүд нь [хувиршгүй(immutable)](https://en.wikipedia.org/wiki/Immutable_object). Элемент үүсгэсний дараа та шинж чанар болон дэд элементийг нь өөрчилж чадахгүй. Элемент бол киноны нэг агшин шиг: тухайн агшинд дэлгэцийн загварыг(UI) төлөөлөнө.
 
-Бидний мэдэж байгаагаар дэлгэцийн загварын өөрчлөх ганц арга зам бол шинэ элемент үүсгэн `ReactDOM.render()` рүү дамжуулах юм.
+Бидний мэдэж байгаагаар дэлгэцийн загварын өөрчлөх ганц арга зам бол шинэ элемент үүсгэн [`ReactDOM.render()`](/docs/react-dom.html#render) рүү дамжуулах юм.
 
 Дараах цаг заагч жишээг авая:
 
@@ -54,11 +54,11 @@ React элементүүд нь [хувиршгүй(immutable)](https://en.wikip
 
 [](codepen://rendering-elements/update-rendered-element)
 
-Энэ нь `ReactDOM.render`-г [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) дуудалт дээр секунд болгон дуудаж байна.
+Энэ нь [`ReactDOM.render()`](/docs/react-dom.html#render)-г [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) -аас секунд тутам дуудаж байна.
 
 >**Анхаар:**
 >
->Амьдрал дээр ихэнх React програмууд `ReactDOM.render()`-г ганцхан удаа дууддаг. Дараагийн бүлэгт бид иймэрхүү код хэрхэн [төлөвт компонентууд](/docs/state-and-lifecycle.html) капсул болдгийг(encapsulation) үзэх болно.
+>Амьдрал дээр ихэнх React програмууд [`ReactDOM.render()`](/docs/react-dom.html#render)-г ганцхан удаа дууддаг. Дараагийн бүлэгт бид иймэрхүү код хэрхэн [төлөвт компонентууд](/docs/state-and-lifecycle.html) дээр хэрэгжиж болдгийг(encapsulation) үзэх болно.
 >
 >Бид дараах сэдвийг алгасахгүй байхийг зөвлөж байгаа шалтгаан нь эдгээр хоёр нь хамтран бичигддэг.
 
