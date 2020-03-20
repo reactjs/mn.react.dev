@@ -45,11 +45,7 @@ class Welcome extends React.Component {
 
 Дээрх хоёр компонент React-н хувьд яг ижил юм.
 
-<<<<<<< HEAD
-Классууд нь зарим нэмэлт боломжууд агуулж болох ба бид үүнийг [дараагийн бүлгүүдэд](/docs/state-and-lifecycle.html) судална. Тэр болтол ойлголттой болохийн тулд функц компонентууд ашиглах болно.
-=======
-Function and Class components both have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html).
->>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
+Функц болон Класс нь зарим нэмэлт боломжууд агуулж болох ба бид үүнийг [дараагийн бүлгүүдэд](/docs/state-and-lifecycle.html) судална.
 
 ## Компонентыг дүрслэх нь {#rendering-a-component}
 
@@ -65,11 +61,7 @@ const element = <div />;
 const element = <Welcome name="Sara" />;
 ```
 
-<<<<<<< HEAD
-React хэрэглэгчийн тодорхойлсон компонентыг төлөөлсөн элементийг хармагцаа үүнлүү JSX атрибут нэг объект болгон дамжуулдаг. Бид энэ объектыг "props" гэдэг.
-=======
-When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object "props".
->>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
+Хэрвээ хэрэглэгчийн бичсэн компонент бол, React, JSX атрибут болон дотор нь гарах компонентыг энэ компонентруу нэг бүхэл объект болгон дамжуулдаг. Үүнийг "props" гэж нэрлэдэг.
 
 Жишээлбэл, энэ код нь "Hello, Sara"-г хуудас дээр дүрсэлнэ:
 
