@@ -173,12 +173,4 @@
     - id: faq-versioning
       title: Хувилбарын удирдамж
     - id: faq-internals
-<<<<<<< HEAD
-<<<<<<< HEAD
       title: Virtual DOM болон дотоод хэсэг
-=======
-      title: Virtual DOM and Internals
->>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
-=======
-      title: Virtual DOM болон дотоод хэсэг
->>>>>>> master
