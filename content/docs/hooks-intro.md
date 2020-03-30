@@ -31,8 +31,13 @@ function Example() {
 
 >Анхаар
 >
+<<<<<<< HEAD
 >React 16.8.0 бол анхны Hooks дэмждэг хувилбар юм. Програмаа шинэчилж байхдаа React DOM-г багтаан бусад сангуудаа шинэчлэн ахиулахаа битгий мартаарай.
 >React Native нь [0.59 хувилбараас](https://facebook.github.io/react-native/blog/2019/03/12/releasing-react-native-059) эхлэн Hooks дэмждэг болсон.
+=======
+>React 16.8.0 is the first release to support Hooks. When upgrading, don't forget to update all packages, including React DOM.
+>React Native supports Hooks since [the 0.59 release of React Native](https://reactnative.dev/blog/2019/03/12/releasing-react-native-059).
+>>>>>>> 9e5a358cb24a665fc48615ae224f26a4f2191b32
 
 ## Видео танилцуулга {#video-introduction}
 

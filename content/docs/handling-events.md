@@ -8,7 +8,11 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
+<<<<<<< HEAD
 React элементүүд дээр эвент удирдах нь DOM элементүүдийхтэй тун адилхан. Эдгээрт бага зэрэг синтаксийн ялгаа л бий:
+=======
+Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+>>>>>>> 9e5a358cb24a665fc48615ae224f26a4f2191b32
 
 * React эвентүүд бүгдийг жижгээр бичихийн оронд үгийн эхний үсэг болгоныг(camelCase) стандартаар бичигддэг.
 * JSX-р тэмдэгтийн оронд эвент удирдах функц дамжуулж болдог.
@@ -131,7 +135,7 @@ class LoggingButton extends React.Component {
   render() {
     // Энэ синтакс нь `this`-г handleClick-тэй холбох болно.
     return (
-      <button onClick={(e) => this.handleClick(e)}>
+      <button onClick={() => this.handleClick()}>
         Click me
       </button>
     );

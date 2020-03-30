@@ -27,6 +27,8 @@ Hooks нь Жаваскрипт функцууд боловч тэдгээрий
 
 Бид [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) нэртэй ESLint plugin гаргасан бөгөөд эдгээр хоёр дүрмүүдийг мөрдүүлдэг. Та энэ плагинийг хүсвэл өөрийн төсөлдөө нэмж болно:
 
+This plugin is included by default in [Create React App](/docs/create-a-new-react-app.html#create-react-app).
+
 ```bash
 npm install eslint-plugin-react-hooks --save-dev
 ```
@@ -47,9 +49,13 @@ npm install eslint-plugin-react-hooks --save-dev
 ```
 Цаашдаа бид энэ плагинийг [Create React App](/docs/create-a-new-react-app.html#create-react-app). болон ижил төстэй хэрэслүүд дээр анхнаас байлгахаар төлөвлөж байна.
 
+<<<<<<< HEAD
 **Та хэрхэн [өөрийн Hooks](/docs/hooks-custom.html) бичих талаар тайлбарласан хуудсийг одоохондоо алгасаж болно.** Энэ хуудсанд бид эдгээр дүрмүүдийн цаадах шалтгаанийг тайлбарлах болно.
 
 ## Тайлбар {#explanation}
+=======
+**You can skip to the next page explaining how to write [your own Hooks](/docs/hooks-custom.html) now.** On this page, we'll continue by explaining the reasoning behind these rules.
+>>>>>>> 9e5a358cb24a665fc48615ae224f26a4f2191b32
 
 Бидний [өмнө сурснаар](/docs/hooks-state.html#tip-using-multiple-state-variables), бид олон төлөв болон еффект Hooks-г нэг компонент дээр хэрэглэж болно:
 
