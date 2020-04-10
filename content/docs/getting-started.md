@@ -36,11 +36,7 @@ React нь анхнаасаа алгуур нутагшуулалтад загв
 
 ### Онлайн турших талбар {#online-playgrounds}
 
-<<<<<<< HEAD
-Хэрвээ React дээр туршилт хийх сонирхолтой байвал, онлайн туршилтын талбар ашиглах боломжтой. Hello World загварыг [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new) эсвэл [Glitch](https://glitch.com/edit/#!/remix/starter-react-template) дээр туршаарай.
-=======
-If you're interested in playing around with React, you can use an online code playground. Try a Hello World template on [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new), [Glitch](https://glitch.com/edit/#!/remix/starter-react-template), or [Stackblitz](https://stackblitz.com/fork/react).
->>>>>>> 2ef0ee1e4fc4ce620dce1f3e0530471195dc64d1
+Хэрвээ React дээр туршилт хийх сонирхолтой байвал, онлайн туршилтын талбар ашиглах боломжтой. Hello World загварыг [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new) эсвэл [Glitch](https://glitch.com/edit/#!/remix/starter-react-template) эсвэл [Stackblitz](https://stackblitz.com/fork/react) зэргээс турших боломжтой.
 
 Хэрвээ өөрийн editor дээр ажилламаар байвал, [Энэ HTML файлыг татаж](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) аваад, засаад, өөрийн файл системээс веб хөтөч дээрээ нээж үзэх мөн боломжтой. Энэ нь код хөрвүүлэлтийн хурдны хувьд удаан тул үүнийг зөвхөн энгийн жишээн дээр хэрэглэхийг зөвлөж байна.
 
@@ -87,15 +83,9 @@ React докюментжуулалт Javascript-н тодорхой мэдлэг
 
 ### Практикал хичээл {#practical-tutorial}
 
-<<<<<<< HEAD
-Хэрвээ та **оролдож сурах** сонирхолтой бол, манай [практик хичээлийг](/tutorial/tutorial.html) сонирхоод үзээрэй. Энэ хүү хичээлд, бид tic-tac-toe-г React дээр бүтээсэн байгаа.
-=======
-If you prefer to **learn by doing,** check out our [practical tutorial](/tutorial/tutorial.html). In this tutorial, we build a tic-tac-toe game in React. You might be tempted to skip it because you're not into building games -- but give it a chance. The techniques you'll learn in the tutorial are fundamental to building *any* React apps, and mastering it will give you a much deeper understanding.
->>>>>>> 2ef0ee1e4fc4ce620dce1f3e0530471195dc64d1
+Хэрвээ та **оролдож сурах** сонирхолтой бол, манай [практик хичээлийг](/tutorial/tutorial.html) сонирхоод үзээрэй. Энэ хүү хичээлд, бид tic-tac-toe-г React дээр бүтээсэн байгаа. Та магадгүй тоглоом хийхгүй гээд үүнийг алгасах гэж яарч байж болох юм гэсэн хэдийч үүнийг оролдоод үзээрэй. Үүнээс та *ямар ч* React апп хийхэд хэрэгтэй үндсэн арга барилуудаас суралцах ба тэдгээрийг бүрэн эзэмшиснээр илүү гүн ойлголтуудыг авах болно.
 
-Та магадгүй тоглоом хийхгүй гээд үүнийг алгасах гэж яарч байж болох юм гэсэн хэдийч үүнийг оролдоод үзээрэй. Үүнээс та *ямар ч* React апп хийхэд хэрэгтэй үндсэн арга барилуудаас суралцах ба тэдгээрийг бүрэн эзэмшиснээр илүү гүн ойлголтуудыг авах болно.
-
-### Алхмаар сураг заавар {#step-by-step-guide}
+### Алхмаар сурах заавар {#step-by-step-guide}
 
 Хэрвээ **алхам алхмаар ойлголтуудыг сурах** сонирхолтой бол, манай [үндсэн ойлголтуудын заавараас](/docs/hello-world.html) эхэлхэд хамгийн зөв газар юм.
 Дараачын шат болгон өмнөх шатнуудад танилцуулагдсан зүйлс дээр хийгдсэн байдаг тул явцын дунд та ямар ч юм орхигдуулахгүй.

@@ -33,12 +33,7 @@ const element = <h1>Hello, world</h1>;
 Бид үүнийг "эх" DOM зангилаа гэдэг бөгөөд React DOM-р зохицуулагдаж байгаа бүх зангилаа үүнд багтана.
 
 Зөвхөн React дээр хийгдсэн програмууд(applications) ихэвчлэн ганц эх DOM зангилаатай байдаг. Хэрэв хийгдсэн(existing) програм дээр React програм нэмж(integrate) байгаа бол та магадгүй олон эх DOM зангилаатай байж болно.
-
-<<<<<<< HEAD
-React элемент эх DOM зангилаа дээр дүрслэхдээ `ReactDOM.render()` эх зангилаа болон элементээ дамжуулах хэрэгтэй:
-=======
-To render a React element into a root DOM node, pass both to [`ReactDOM.render()`](/docs/react-dom.html#render):
->>>>>>> 2ef0ee1e4fc4ce620dce1f3e0530471195dc64d1
+React элементийг эх DOM зангилаа дээр дүрслэхдээ хоёуланг нь [`ReactDOM.render()`](/docs/react-dom.html#render)-рүү дамжуулах хэрэгтэй:
 
 `embed:rendering-elements/render-an-element.js`
 
@@ -50,11 +45,7 @@ To render a React element into a root DOM node, pass both to [`ReactDOM.render()
 
 React элементүүд нь [хувиршгүй(immutable)](https://en.wikipedia.org/wiki/Immutable_object). Элемент үүсгэсний дараа та шинж чанар болон дэд элементийг нь өөрчилж чадахгүй. Элемент бол киноны нэг агшин шиг: тухайн агшинд дэлгэцийн загварыг(UI) төлөөлөнө.
 
-<<<<<<< HEAD
-Бидний мэдэж байгаагаар дэлгэцийн загварын өөрчлөх ганц арга зам бол шинэ элемент үүсгэн `ReactDOM.render()` рүү дамжуулах юм.
-=======
-With our knowledge so far, the only way to update the UI is to create a new element, and pass it to [`ReactDOM.render()`](/docs/react-dom.html#render).
->>>>>>> 2ef0ee1e4fc4ce620dce1f3e0530471195dc64d1
+Бидний мэдэж байгаагаар дэлгэцийн загварын өөрчлөх ганц арга зам бол шинэ элемент үүсгэн [`ReactDOM.render()`](/docs/react-dom.html#render) рүү дамжуулах юм.
 
 Дараах цаг заагч жишээг авая:
 
@@ -62,19 +53,11 @@ With our knowledge so far, the only way to update the UI is to create a new elem
 
 [](codepen://rendering-elements/update-rendered-element)
 
-<<<<<<< HEAD
-Энэ нь `ReactDOM.render`-г [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) дуудалт дээр секунд болгон дуудаж байна.
-=======
-It calls [`ReactDOM.render()`](/docs/react-dom.html#render) every second from a [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) callback.
->>>>>>> 2ef0ee1e4fc4ce620dce1f3e0530471195dc64d1
+Энэ нь [`ReactDOM.render`](/docs/react-dom.html#render)-г [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) дуудалт дээр секунд болгон дуудаж байна.
 
 >**Анхаар:**
 >
-<<<<<<< HEAD
->Амьдрал дээр ихэнх React програмууд `ReactDOM.render()`-г ганцхан удаа дууддаг. Дараагийн бүлэгт бид иймэрхүү код хэрхэн [төлөвт компонентууд](/docs/state-and-lifecycle.html) капсул болдгийг(encapsulation) үзэх болно.
-=======
->In practice, most React apps only call [`ReactDOM.render()`](/docs/react-dom.html#render) once. In the next sections we will learn how such code gets encapsulated into [stateful components](/docs/state-and-lifecycle.html).
->>>>>>> 2ef0ee1e4fc4ce620dce1f3e0530471195dc64d1
+>Амьдрал дээр ихэнх React програмууд [`ReactDOM.render()`](/docs/react-dom.html#render)-г ганцхан удаа дууддаг. Дараагийн бүлэгт бид иймэрхүү код хэрхэн [төлөвт компонентууд](/docs/state-and-lifecycle.html) дээр хэрэгжиж болдгийг(encapsulation) үзэх болно.
 >
 >Бид дараах сэдвийг алгасахгүй байхийг зөвлөж байгаа шалтгаан нь эдгээр хоёр нь хамтран бичигддэг.
 
@@ -88,8 +71,4 @@ React DOM элемент болон дэд элементийг нь өмнөх�
 
 Хэдийгээр бид секунд цохилох болгонд дэлгэцийн загварыг тодорхойлж байгаа модыг тодорхойлох элементийг үүсгэж байгаа ч зөвхөн текст зангилааны агуулга өөрчлөгдөж React DOM-р шинэчлэгдэнэ.
 
-<<<<<<< HEAD
 Бидний туршлагаас тухайн агшинд дэлгэцийн загвар хэрхэн харагдахийг бодохоос илүү хэрхэн алдаа мадаггүй өөрчлөхийг бодох нь үр дүнтэй.
-=======
-In our experience, thinking about how the UI should look at any given moment, rather than how to change it over time, eliminates a whole class of bugs.
->>>>>>> 2ef0ee1e4fc4ce620dce1f3e0530471195dc64d1
