@@ -26,6 +26,7 @@ Hooks нь Жаваскрипт функцууд боловч тэдгээрий
 ## ESLint Plugin {#eslint-plugin}
 
 Бид [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) нэртэй ESLint plugin гаргасан бөгөөд эдгээр хоёр дүрмүүдийг мөрдүүлдэг. Та энэ плагинийг хүсвэл өөрийн төсөлдөө нэмж болно:
+Энэхүү plugin нь [Create React App](/docs/create-a-new-react-app.html#create-react-app) анхнаасаа багтсан байдаг.
 
 ```bash
 npm install eslint-plugin-react-hooks --save-dev
