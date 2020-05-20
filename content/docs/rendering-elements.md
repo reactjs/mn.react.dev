@@ -33,6 +33,7 @@ const element = <h1>Hello, world</h1>;
 Бид үүнийг "эх" DOM зангилаа гэдэг бөгөөд React DOM-р зохицуулагдаж байгаа бүх зангилаа үүнд багтана.
 
 Зөвхөн React дээр хийгдсэн програмууд(applications) ихэвчлэн ганц эх DOM зангилаатай байдаг. Хэрэв хийгдсэн(existing) програм дээр React програм нэмж(integrate) байгаа бол та магадгүй олон эх DOM зангилаатай байж болно.
+
 React элементийг эх DOM зангилаа дээр дүрслэхдээ хоёуланг нь [`ReactDOM.render()`](/docs/react-dom.html#render)-рүү дамжуулах хэрэгтэй:
 
 `embed:rendering-elements/render-an-element.js`
@@ -53,7 +54,7 @@ React элементүүд нь [хувиршгүй(immutable)](https://en.wikip
 
 [](codepen://rendering-elements/update-rendered-element)
 
-Энэ нь [`ReactDOM.render`](/docs/react-dom.html#render)-г [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) дуудалт дээр секунд болгон дуудаж байна.
+Энэ нь [`ReactDOM.render()`](/docs/react-dom.html#render)-г [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) -аас секунд тутам дуудаж байна.
 
 >**Анхаар:**
 >
