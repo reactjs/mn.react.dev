@@ -50,8 +50,6 @@ npm install eslint-plugin-react-hooks --save-dev
 
 **Та хэрхэн [өөрийн Hooks](/docs/hooks-custom.html) бичих талаар тайлбарласан хуудсийг одоохондоо алгасаж болно.** Энэ хуудсанд бид эдгээр дүрмүүдийн цаадах шалтгаанийг тайлбарлах болно.
 
-## Тайлбар {#explanation}
-
 Бидний [өмнө сурснаар](/docs/hooks-state.html#tip-using-multiple-state-variables), бид олон төлөв болон еффект Hooks-г нэг компонент дээр хэрэглэж болно:
 
 ```js
