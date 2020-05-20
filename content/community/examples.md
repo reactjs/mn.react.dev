@@ -6,15 +6,9 @@ sectionid: community
 permalink: community/examples.html
 ---
 
-<<<<<<< HEAD
 React хамтралаас үүсгэсэн олон прожектууд энд бий. Та өөрийн прожектоо ч бас чөлөөтэй нэмж болно. Хэрвээ та өөрийн прожектыг нэмэх гэж буй бол React-ийн сүүлийн хувилбараар commit хийхийг хүсье.
-=======
-There are many example projects created by the React community. We're keeping this page focused on the ones that use React without third-party state management libraries.
-
-If you add a project, please commit to keeping it up to date with the latest versions of React.
 
 ## Small Examples
->>>>>>> b3c7f041586b71b31f556403426fcd7cab342535
 
 * **[Calculator](https://github.com/ahfarmer/calculator)** Implementation of the iOS calculator built in React
 * **[Emoji Search](https://github.com/ahfarmer/emoji-search)** React app for searching emoji

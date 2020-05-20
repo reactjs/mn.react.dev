@@ -75,6 +75,7 @@ handleChange(event) {
   this.setState({value: event.target.value.toUpperCase()});
 }
 ```
+
 ## textarea таг {#the-textarea-tag}
 
 HTML дээр `<textarea>` элемент нь өөрийн текстийг дэд утгаар тодохойлдог:
