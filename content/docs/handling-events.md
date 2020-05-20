@@ -8,11 +8,7 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
-<<<<<<< HEAD
 React элементүүд дээр эвент удирдах нь DOM элементүүдийхтэй тун адилхан. Эдгээрт бага зэрэг синтаксийн ялгаа л бий:
-=======
-Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
->>>>>>> 7e4f503d86bee08b88eed77a6c9d06077863a27c
 
 * React эвентүүд бүгдийг жижгээр бичихийн оронд үгийн эхний үсэг болгоныг(camelCase) стандартаар бичигддэг.
 * JSX-р тэмдэгтийн оронд эвент удирдах функц дамжуулж болдог.
