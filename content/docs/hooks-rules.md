@@ -48,6 +48,7 @@ npm install eslint-plugin-react-hooks --save-dev
 ```
 Цаашдаа бид энэ плагинийг [Create React App](/docs/create-a-new-react-app.html#create-react-app). болон ижил төстэй хэрэслүүд дээр анхнаас байлгахаар төлөвлөж байна.
 
+## Тайлбар {#explanation}
 **Та хэрхэн [өөрийн Hooks](/docs/hooks-custom.html) бичих талаар тайлбарласан хуудсийг одоохондоо алгасаж болно.** Энэ хуудсанд бид эдгээр дүрмүүдийн цаадах шалтгаанийг тайлбарлах болно.
 
 Бидний [өмнө сурснаар](/docs/hooks-state.html#tip-using-multiple-state-variables), бид олон төлөв болон еффект Hooks-г нэг компонент дээр хэрэглэж болно:
