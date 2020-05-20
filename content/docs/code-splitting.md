@@ -86,7 +86,6 @@ import("./math").then(math => {
 });
 ```
 
-<<<<<<< HEAD
 > Анхаар:
 >
 > Динамик `import()` бичиглэл бол ECMAScript (JavaScript)
@@ -98,12 +97,6 @@ Webpack энэ бичиглэлтэй болох үед энэ нь таны п�
 эхэлэнэ. Хэрэв та Create React App ашиглаж байгаа бол энэ нь таньд аль хэдийн
 тохируулагдаж өгсөн байгаа бөгөөд та үүнийг даруйхан [ашиглаж эхлэх](https://facebook.github.io/create-react-app/docs/code-splitting)
 хэрэгтэй. Энэ нь мөн хүрээнээс гаднах [Next.js](https://github.com/zeit/next.js/#dynamic-import) дээр ч дэмжигддэг.
-=======
-When Webpack comes across this syntax, it automatically starts code-splitting
-your app. If you're using Create React App, this is already configured for you
-and you can [start using it](https://facebook.github.io/create-react-app/docs/code-splitting) immediately. It's also supported
-out of the box in [Next.js](https://nextjs.org/docs/advanced-features/dynamic-import).
->>>>>>> bc91fe4101420f98454a59ac34c1cf1d4d4f4476
 
 Хэрэв та Webpack өөртөө тохируулж байгаа бол та түүний
 [код салгах зааврыг](https://webpack.js.org/guides/code-splitting/) унших нь зүйтэй. Таны Webpack тохиргоо [иймэрхүү](https://gist.github.com/gaearon/ca6e803f5c604d37468b0091d9959269) харагдах хэрэгтэй.

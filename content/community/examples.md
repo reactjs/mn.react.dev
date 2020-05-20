@@ -6,15 +6,9 @@ sectionid: community
 permalink: community/examples.html
 ---
 
-<<<<<<< HEAD
 React хамтралаас үүсгэсэн олон прожектууд энд бий. Та өөрийн прожектоо ч бас чөлөөтэй нэмж болно. Хэрвээ та өөрийн прожектыг нэмэх гэж буй бол React-ийн сүүлийн хувилбараар commit хийхийг хүсье.
-=======
-There are many example projects created by the React community. We're keeping this page focused on the ones that use React without third-party state management libraries.
 
-If you add a project, please commit to keeping it up to date with the latest versions of React.
-
-## Small Examples
->>>>>>> bc91fe4101420f98454a59ac34c1cf1d4d4f4476
+## Жижиг жишээнүүд
 
 * **[Calculator](https://github.com/ahfarmer/calculator)** Implementation of the iOS calculator built in React
 * **[Emoji Search](https://github.com/ahfarmer/emoji-search)** React app for searching emoji
@@ -24,7 +18,7 @@ If you add a project, please commit to keeping it up to date with the latest ver
 * **[Counter App](https://github.com/arnab-datta/counter-app)** A small shopping cart example
 * **[Tutorial Solutions](https://github.com/harman052/react-tutorial-solutions)** Solutions to challenges mentioned at the end of React tutorial
 
-## Complete Apps
+## Бүрэн болсон бүтээгдэхүүн
 
 * **[Hacker News Clone React/GraphQL](https://github.com/clintonwoo/hackernews-react-graphql)** Hacker News clone rewritten with universal JavaScript, using React and GraphQL
 * **[Builder Book](https://github.com/builderbook/builderbook)** Open-source web app to write and host documentation or sell books. Built with React, Material-UI, Next, Express, Mongoose, MongoDB

@@ -1045,11 +1045,7 @@ Game-ийн `render` метод дахь`history`-г `map` хийвэл:
 
 **[Яг одоо код ямар байгааг ийшээ орж хараарай](https://codepen.io/gaearon/pen/EmmGEa?editors=0010)**
 
-<<<<<<< HEAD
 tic-tac-toe-ийн өмнө гарсан нүүдэл бүрд `<button>` элемент агуулах жагсаалтын `<li>` элемент үүсгэлээ. Товч бүрт нь `this.jumpTo()` методыг дууддаг `onClick` handler бичиж өгсөн. Одоогоор `jumpTo()` методыг хөгжүүлж өгөөгүй байгаа болно. Одоо тоглоомын туршид болсон бүх нүүдлийн жагсаалт дэлгэц дээр харагдаад харин developer tools console дээр доорх анхааруулга гарсан байх ёстой.
-=======
-For each move in the tic-tac-toe game's history, we create a list item `<li>` which contains a button `<button>`. The button has a `onClick` handler which calls a method called `this.jumpTo()`. We haven't implemented the `jumpTo()` method yet. For now, we should see a list of the moves that have occurred in the game and a warning in the developer tools console that says:
->>>>>>> bc91fe4101420f98454a59ac34c1cf1d4d4f4476
 
 >  Warning:
 >  Each child in an array or iterator should have a unique "key" prop. Check the render method of "Game".
