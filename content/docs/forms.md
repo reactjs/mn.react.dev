@@ -77,7 +77,6 @@ handleChange(event) {
 ```
 
 ## textarea таг {#the-textarea-tag}
-
 HTML дээр `<textarea>` элемент нь өөрийн текстийг дэд утгаар тодохойлдог:
 
 ```html

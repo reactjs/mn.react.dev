@@ -54,7 +54,7 @@ React элементүүд нь [хувиршгүй(immutable)](https://en.wikip
 
 [](codepen://rendering-elements/update-rendered-element)
 
-Энэ нь [`ReactDOM.render()`](/docs/react-dom.html#render)-г [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) -аас секунд тутам дуудаж байна.
+Энэ нь [`ReactDOM.render`](/docs/react-dom.html#render)-г [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) дуудалт дээр секунд болгон дуудаж байна.
 
 >**Анхаар:**
 >
