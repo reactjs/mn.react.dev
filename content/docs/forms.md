@@ -68,7 +68,6 @@ class NameForm extends React.Component {
 
 Бидний форм элемент дээр `value` аттрибут нь оноогдож байгаа учир дүрслэгдсэн утга нь `this.state.value` байх ба React-н төлөвийг нэг эх сурвалжтай үнэн болгоно. `handleChange`товчны даралт бүрт ажиллан React-н төлөвийг шинэчлэх учир дэлгэцэнд дүрслэгдэх утга нь хэрэглэгчийн бичсэнээр байх болно.
 
-<<<<<<< HEAD
 Удирдагдсан компонентийн бүх төлөвийн хувирал нь харгалзах зохицуулагч функцтэй байх болно.Энэ нь хэрэглэгчийн оролтын зөв бурууг шалгах болон засварлахад амар болно. Хэрэв нэрийг дан том үсгээр оруулахийг шаардах бол `handleChange` функцийг дараах байдлаар бичиж болно:
 
 ```javascript{2}
@@ -76,9 +75,6 @@ handleChange(event) {
   this.setState({value: event.target.value.toUpperCase()});
 }
 ```
-=======
-With a controlled component, the input's value is always driven by the React state. While this means you have to type a bit more code, you can now pass the value to other UI elements too, or reset it from other event handlers.
->>>>>>> dea4f329ea3a7bba116e07adf67eb5c8b6c528cd
 
 ## textarea таг {#the-textarea-tag}
 
