@@ -1199,7 +1199,11 @@ class Game extends React.Component {
 * Тоглоом явагдахад түүний түүхийг хадгалдаг,
 * Тоглогч нар тоглоомын түүхийг харж, тоглоомын хөлөгийн өмнөх хувилбаруудыг үзэж болдог.
 
+<<<<<<< HEAD
 Сайн ажил боллоо! Одоо таныг React хэрхэн ажилладаг талаар сайн ойлголттой болсон гэж итгэж байна.
+=======
+Nice work! We hope you now feel like you have a decent grasp of how React works.
+>>>>>>> e548bd7e65086a8206fee46bd9e24b18b68bf045
 
 Эцсийн үр дүнг дараах хуудаснаас үзээрэй: **[Эцсийн үр дүн](https://codepen.io/gaearon/pen/gWWZgR?editors=0010)**.
 
