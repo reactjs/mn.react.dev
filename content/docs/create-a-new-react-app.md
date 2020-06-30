@@ -73,8 +73,6 @@ Gatsby-н талаар [түүний албан ёсны заавараас](htt
 
 - **[Neutrino](https://neutrinojs.org/)** нь [webpack](https://webpack.js.org/)-н хүчийг хялбарчилсан бэлдэцүүдтэй холбодог ба [React апп-ууд](https://neutrinojs.org/packages/react/) болон [React компонентууд](https://neutrinojs.org/packages/react-components/) гэсэн бэлдэцүүд багтана.
 
-- **[nwb](https://github.com/insin/nwb)** бол [React компонентуудыг npm-р оруулхад](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb) голчилон зориулсагдсан. Үүнийг мөн React app хийхэд [хэрэглэж болно](https://github.com/insin/nwb/blob/master/docs/guides/ReactApps.md#developing-react-apps-with-nwb).
-
 - **[Nx](https://nx.dev/react)** is a toolkit for full-stack monorepo development, with built-in support for React, Next.js, [Express](https://expressjs.com/), and more.
 
 - **[Parcel](https://parceljs.org/)** [React-тай ажилладаг](https://parceljs.org/recipes.html#react) хурдан, тохиргоогүй ажиллах веб апп багцлагч юм.
