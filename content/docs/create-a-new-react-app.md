@@ -73,13 +73,9 @@ Gatsby-н талаар [түүний албан ёсны заавараас](htt
 
 - **[Neutrino](https://neutrinojs.org/)** нь [webpack](https://webpack.js.org/)-н хүчийг хялбарчилсан бэлдэцүүдтэй холбодог ба [React апп-ууд](https://neutrinojs.org/packages/react/) болон [React компонентууд](https://neutrinojs.org/packages/react-components/) гэсэн бэлдэцүүд багтана.
 
-<<<<<<< HEAD
 - **[nwb](https://github.com/insin/nwb)** бол [React компонентуудыг npm-р оруулхад](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb) голчилон зориулсагдсан. Үүнийг мөн React app хийхэд [хэрэглэж болно](https://github.com/insin/nwb/blob/master/docs/guides/ReactApps.md#developing-react-apps-with-nwb).
-=======
-- **[Nx](https://nx.dev/react)** is a toolkit for full-stack monorepo development, with built-in support for React, Next.js, [Express](https://expressjs.com/), and more.
 
-- **[Parcel](https://parceljs.org/)** is a fast, zero configuration web application bundler that [works with React](https://parceljs.org/recipes.html#react).
->>>>>>> e548bd7e65086a8206fee46bd9e24b18b68bf045
+- **[Nx](https://nx.dev/react)** нь бүтэн stack нэг агуулахт хөгжүүлэлтэнд зориулсан React, Next.js, [Express](https://expressjs.com/) зэргийн дэмжлэгтэй хэрэгсэл(toolkit) юм.
 
 - **[Parcel](https://parceljs.org/)** [React-тай ажилладаг](https://parceljs.org/recipes.html#react) хурдан, тохиргоогүй ажиллах веб апп багцлагч юм.
 

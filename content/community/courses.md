@@ -18,13 +18,9 @@ permalink: community/courses.html
 
 - [React Armory: Learn React by Itself](https://reactarmory.com/guides/learn-react-by-itself) - React Armory-ийн энэ хичээлээр тa React-ийг энгийн хэллэгээр сурах боломжтой.
 
-<<<<<<< HEAD
 - [The Road to Learn React](https://www.robinwieruch.de/the-road-to-learn-react/) - Ямар нэгэн хэцүү нэмэлт багажгүйгээр цэвэр React ашиглан бодит амьдрал дээрх аппликейшнийг хийж үзэх.
 
 - [Egghead.io: The Beginner's Guide to ReactJS](https://egghead.io/courses/the-beginner-s-guide-to-reactjs) - Анхлан суралцагчид болон React-ийн үндсэн ойлголтыг сурахыг хүсч буй хүмүүст зориулсан үнэгүй хичээл.
-=======
-- [Egghead.io: The Beginner's Guide to ReactJS](https://egghead.io/courses/the-beginner-s-guide-to-reactjs) - Free course for React newbies and those looking to get a better understanding of React fundamentals.
->>>>>>> e548bd7e65086a8206fee46bd9e24b18b68bf045
 
 - [Free React Bootcamp](https://tylermcginnis.com/free-react-bootcamp/) - React-д бэлтгэх 3 хоногийн сургалтын бичлэгүүд.
 
@@ -52,10 +48,6 @@ permalink: community/courses.html
 
 - [Tyler McGinnis](https://tylermcginnis.com/courses) - Tyler McGinnis-ийн хичээлүүдэд сарын хураамжтайгаар хандах боломжтой. Энэхүү хичээл нь "React-ийн үндэс" болон "Юнивэрсал React"-ийг агуулсан болно.
 
-<<<<<<< HEAD
 - [Mastering React](https://codewithmosh.com/p/mastering-react/) - React-аар мэргэжлийн түвшний интерактив апплекейшнууд бүтээ.
-=======
-- [Mastering React](https://codewithmosh.com/p/mastering-react/) - Build professional interactive apps with React.
 
-- [Road to React](https://www.roadtoreact.com/) - Your journey to master React in JavaScript.
->>>>>>> e548bd7e65086a8206fee46bd9e24b18b68bf045
+- [Road to React](https://www.roadtoreact.com/) - Таны React дээр мастер болох аялал.
