@@ -1,3 +1,7 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ */
+
 html {
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont,
@@ -13,7 +17,6 @@ html {
 body {
   overflow-x: hidden;
   position: relative;
-  filter: grayscale(100%);
 }
 
 * {
