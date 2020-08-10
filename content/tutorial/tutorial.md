@@ -560,7 +560,11 @@ var newPlayer = Object.assign({}, player, {score: 2});
 
 #### React хэзээ дахин render хийхийг тодорхойлох {#determining-when-to-re-render-in-react}
 
+<<<<<<< HEAD
 Хувиршгүй байдлын гол давуу тал нь React-д _pure components_ үүсгэхэд тусалдаг. Хувиршгүй өгөгдлийг өөрчлөгдсөн эсэхийг хялбар мэдэж болдог бөгөөд улмаар компонентыг хэзээ дахин зурахыг тодорхойлоход хялбар болгодог.
+=======
+The main benefit of immutability is that it helps you build _pure components_ in React. Immutable data can easily determine if changes have been made, which helps to determine when a component requires re-rendering.
+>>>>>>> 80c16779a751ef997373adf95c47dbc9b1592eb6
 
 [Гүйцэтгэлийг оновчлох нь ](/docs/optimizing-performance.html#examples) хэсгээс `shouldComponentUpdate()`-ийн талаар болон хэрхэн *pure components* хийхийг уншаарай.
 
