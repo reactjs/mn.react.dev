@@ -2,6 +2,8 @@
 id: context
 title: Контекст
 permalink: docs/context.html
+prev: reconciliation.html
+next: fragments.html
 ---
 
 Контекст нь өгөгдлүүдийг пропс ашиглан компонентын бүх түвшингүүдээр доош дамжуулахгүйгээр шууд компонентын мод ашиглан дамжуулах боломжийг олгодог.
