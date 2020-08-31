@@ -2,6 +2,8 @@
 id: portals
 title: Портал
 permalink: docs/portals.html
+prev: fragments.html
+next: error-boundaries.html
 ---
 
 Портал нь хүүхэд компонентуудтыг ДОМ-руу эцэг компонентын ДОМ доторх байрлалаас гадна талд байршуулах сонгомол аргачилал юм.
