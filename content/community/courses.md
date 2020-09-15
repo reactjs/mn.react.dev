@@ -52,4 +52,4 @@ permalink: community/courses.html
 
 - [React Tutorial](https://react-tutorial.app) - Learn React step by step in an interactive environment with flashcards.
 
-- [Road to React](https://www.roadtoreact.com/) - Your journey to master React in JavaScript.
+- [Road to React](https://www.roadtoreact.com/) - Таны React дээр мастер болох аялал.
