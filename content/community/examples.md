@@ -8,7 +8,7 @@ permalink: community/examples.html
 
 React хамтралаас үүсгэсэн олон прожектууд энд бий. Та өөрийн прожектоо ч бас чөлөөтэй нэмж болно. Хэрвээ та өөрийн прожектыг нэмэх гэж буй бол React-ийн сүүлийн хувилбараар commit хийхийг хүсье.
 
-## Жижиг жишээнүүд {#small-examples}
+## Жижиг жишээнүүд
 
 * **[Calculator](https://github.com/ahfarmer/calculator)** Implementation of the iOS calculator built in React
 * **[Emoji Search](https://github.com/ahfarmer/emoji-search)** React app for searching emoji
@@ -18,6 +18,6 @@ React хамтралаас үүсгэсэн олон прожектууд энд
 * **[Counter App](https://github.com/arnab-datta/counter-app)** A small shopping cart example
 * **[Tutorial Solutions](https://github.com/harman052/react-tutorial-solutions)** Solutions to challenges mentioned at the end of React tutorial
 
-## Бүрэн болсон бүтээгдэхүүн {#complete-apps}
+## Бүрэн болсон бүтээгдэхүүн
 
 * **[Builder Book](https://github.com/builderbook/builderbook)** Open-source web app to write and host documentation or sell books. Built with React, Material-UI, Next, Express, Mongoose, MongoDB

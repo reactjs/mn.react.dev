@@ -619,7 +619,7 @@ CustomButton.defaultProps = {
   }
 ```
 
-Хэрэв `props.color` нь `null` байвал `null` хэвээр үлдэнэ:
+Хэрэв `props.color` нь null байвал null хэвээр үлдэнэ:
 
 ```js
   render() {
