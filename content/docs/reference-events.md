@@ -11,15 +11,9 @@ React Эвентийн Системийн нэг хэсэг болох `Syntheti
 
 ## Тойм {#overview}
 
-<<<<<<< HEAD
 Эвентийг зохицуулагчид `SyntheticEvent` гэсэн instance-ыг дамжуулна. Энэ нь хөтчийн натив эвентэд ойр байх cross-browser wrapper юм. Бүх хөтөч дээр адилхан ажилладаг эвентээс бусад `stopPropagation()`, `preventDefault()` хөтчийн натив эвенттэй адил интерфэйстэй.
 
 Танд аливаа нэг шалтгаанаар суурь хөтөч олох хэрэгтэй бол `nativeEvent` атрибут ашиглан олж болно. `SyntheticEvent` объект бүрт доорх атрибут байна:
-=======
-Your event handlers will be passed instances of `SyntheticEvent`, a cross-browser wrapper around the browser's native event. It has the same interface as the browser's native event, including `stopPropagation()` and `preventDefault()`, except the events work identically across all browsers. 
-
-If you find that you need the underlying browser event for some reason, simply use the `nativeEvent` attribute to get it. The synthetic events are different from, and do not map directly to, the browser's native events. For example in `onMouseLeave` `event.nativeEvent` will point to a `mouseout` event. The specific mapping is not part of the public API and may change at any time. Every `SyntheticEvent` object has the following attributes:
->>>>>>> 954a16f1d358009505ae881afaefe463dc6388a5
 
 ```javascript
 boolean bubbles
@@ -43,11 +37,9 @@ string type
 >
 > v0.14 хувилбар дээр бол эвент зохицуулагчаас  `false`  гэсэн утга буцвал эвент цааш тарж ажиллахыг зогсоохоо больсон байгаа. Оронд нь хэрэгтэй үед `e.stopPropagation()` эсвэл `e.preventDefault()`-ыг зориуд өөрөө ажиллуулдаг болсон.
 
-
 ### Эвен пүүл хийх {#event-pooling}
 
 `SyntheticEvent` нь пүүл хийсэн эвент юм. Энэ нь юу гэсэн үг вэ гэхээр `SyntheticEvent` объект нь дахин ашиглагдах ба callback хийгдсэний дараа бүх properties нь хоосон болно. Ингэдэг нь ажиллагаатай холбоотой. Тэгэхээр тан эвент рүү асинхрон хэлбэрээр хандаж чадахгүй гэсэн үг. 
-
 
 ```javascript
 function onClick(event) {

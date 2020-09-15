@@ -8,11 +8,7 @@ permalink: community/courses.html
 
 ## Үнэгүй хичээлүүд {#free-courses}
 
-<<<<<<< HEAD
-- [Glitch: React Starter Kit](https://glitch.com/culture/react-starter-kit/) - Үнэгүй 5 хэсэгтэй видео хичээл бөгөөд интерактив кодын жишээнээс суралцах боломжтой.
-=======
-- [Glitch: React Starter Kit](https://glitch.com/glimmer/post/react-starter-kit) - A free, 5-part video course with interactive code examples that will help you learn React.
->>>>>>> 954a16f1d358009505ae881afaefe463dc6388a5
+- [Glitch: React Starter Kit](https://glitch.com/glimmer/post/react-starter-kit) - Үнэгүй 5 хэсэгтэй видео хичээл бөгөөд интерактив кодын жишээнээс суралцах боломжтой.
 
 - [Codecademy: React 101](https://www.codecademy.com/learn/react-101) - Codecademy's introductory course for React.
 
@@ -21,6 +17,8 @@ permalink: community/courses.html
 - [React Crash Course 2018](https://www.youtube.com/watch?v=Ke90Tje7VS0) - Анхлан суралцагчдад хандсан React-ийн гол сэдвүүд бүхий богино хэмжээний хичээл.
 
 - [React Armory: Learn React by Itself](https://reactarmory.com/guides/learn-react-by-itself) - React Armory-ийн энэ хичээлээр тa React-ийг энгийн хэллэгээр сурах боломжтой.
+
+- [The Road to Learn React](https://www.robinwieruch.de/the-road-to-learn-react/) - Ямар нэгэн хэцүү нэмэлт багажгүйгээр цэвэр React ашиглан бодит амьдрал дээрх аппликейшнийг хийж үзэх.
 
 - [Egghead.io: The Beginner's Guide to ReactJS](https://egghead.io/courses/the-beginner-s-guide-to-reactjs) - Анхлан суралцагчид болон React-ийн үндсэн ойлголтыг сурахыг хүсч буй хүмүүст зориулсан үнэгүй хичээл.
 
@@ -52,10 +50,6 @@ permalink: community/courses.html
 
 - [Mastering React](https://codewithmosh.com/p/mastering-react/) - React-аар мэргэжлийн түвшний интерактив апплекейшнууд бүтээ.
 
-<<<<<<< HEAD
-- [Road to React](https://www.roadtoreact.com/) - Your journey to master React in JavaScript.
-=======
 - [React Tutorial](https://react-tutorial.app) - Learn React step by step in an interactive environment with flashcards.
 
 - [Road to React](https://www.roadtoreact.com/) - Your journey to master React in JavaScript.
->>>>>>> 954a16f1d358009505ae881afaefe463dc6388a5

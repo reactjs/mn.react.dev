@@ -122,11 +122,7 @@ ReactDOM.render(
 
 ### Мөр доторхи If нөхцөл болон логик && оператор {#inline-if-with-logical--operator}
 
-<<<<<<< HEAD
 Та угалзан хаалт ашиглан [ямар ч илэрхийллүүдийг JSX шигтгэж](/docs/introducing-jsx.html#embedding-expressions-in-jsx) болно. Энэ нь мөн Жаваскриптийн `&&` операторыг агуулна. Энэ нь нөхцөлд тулгуурлан элементийг нэмэхэд хэрэг болно.
-=======
-You may [embed expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
->>>>>>> 954a16f1d358009505ae881afaefe463dc6388a5
 
 ```js{6-10}
 function Mailbox(props) {

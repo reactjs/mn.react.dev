@@ -45,12 +45,7 @@ console.log(add(16, 26)); // 42
 >
 > Таны багцууд энэнээс өөр харагдаж болно.
 
-<<<<<<< HEAD
-Хэрэв [Create React App](https://github.com/facebookincubator/create-react-app), [Next.js](https://github.com/zeit/next.js/), [Gatsby](https://www.gatsbyjs.org/) эсвэл төстэй хэрэгсэл ашигласан бол таны програмыг хайрцагнаас гадна багцлах Webpack тохиргоотой болно.
-=======
-If you're using [Create React App](https://create-react-app.dev/), [Next.js](https://nextjs.org/), [Gatsby](https://www.gatsbyjs.org/), or a similar tool, you will have a Webpack setup out of the box to bundle your
-app.
->>>>>>> 954a16f1d358009505ae881afaefe463dc6388a5
+Хэрэв [Create React App](https://create-react-app.dev/), [Next.js](https://github.com/zeit/next.js/), [Gatsby](https://www.gatsbyjs.org/) эсвэл төстэй хэрэгсэл ашигласан бол таны програмыг хайрцагнаас гадна багцлах Webpack тохиргоотой болно.
 
 Хэрэв ийм хэрэгслүүд ашиглаагүй бол та өөрөө багцлах тохиргоог хийх болно. Жишээ болгон
 Webpack-н [суулгах](https://webpack.js.org/guides/installation/)  болон

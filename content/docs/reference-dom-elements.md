@@ -56,12 +56,7 @@ function MyComponent() {
 
 ### selected {#selected}
 
-<<<<<<< HEAD
 `selected` аттрибут бол `<option>` компонентууд дээр дэмжигддэг. Та үүнийг компонент сонгогдсон байдлаар тохируулахад ашиглаж болно. Энэ нь удирдагдсан компонентууд бичихэд хэрэгтэй.
-=======
-If you want to mark an `<option>` as selected, reference the value of that option in the `value` of its `<select>` instead.
-Check out ["The select Tag"](/docs/forms.html#the-select-tag) for detailed instructions.
->>>>>>> 954a16f1d358009505ae881afaefe463dc6388a5
 
 ### style {#style}
 
@@ -125,11 +120,7 @@ React автоматаар "px" дагаварыг тоон загварын ш�
 
 ### value {#value}
 
-<<<<<<< HEAD
 `value` аттрибут нь `<input>` болон `<textarea>` компонентууд дээр дэмжигддэг.  Та үүнийг компонентийн утгыг тохируулахдаа ашиглана. Энэ удирдагдсан компонент бичихэд хэрэг болно. `defaultValue` бол компонент анх үүсэхэд тохируулагдах удирдагдахгүй утга юм.
-=======
-The `value` attribute is supported by `<input>`, `<select>` and `<textarea>` components. You can use it to set the value of the component. This is useful for building controlled components. `defaultValue` is the uncontrolled equivalent, which sets the value of the component when it is first mounted.
->>>>>>> 954a16f1d358009505ae881afaefe463dc6388a5
 
 ## Бүх дэмжигдсэн HTML аттрибутууд {#all-supported-html-attributes}
 
