@@ -8,7 +8,7 @@ permalink: community/courses.html
 
 ## Үнэгүй хичээлүүд {#free-courses}
 
-- [Glitch: React Starter Kit](https://glitch.com/culture/react-starter-kit/) - Үнэгүй 5 хэсэгтэй видео хичээл бөгөөд интерактив кодын жишээнээс суралцах боломжтой.
+- [Glitch: React Starter Kit](https://glitch.com/glimmer/post/react-starter-kit) - Үнэгүй 5 хэсэгтэй видео хичээл бөгөөд интерактив кодын жишээнээс суралцах боломжтой.
 
 - [Codecademy: React 101](https://www.codecademy.com/learn/react-101) - Codecademy's introductory course for React.
 
@@ -49,5 +49,7 @@ permalink: community/courses.html
 - [Tyler McGinnis](https://tylermcginnis.com/courses) - Tyler McGinnis-ийн хичээлүүдэд сарын хураамжтайгаар хандах боломжтой. Энэхүү хичээл нь "React-ийн үндэс" болон "Юнивэрсал React"-ийг агуулсан болно.
 
 - [Mastering React](https://codewithmosh.com/p/mastering-react/) - React-аар мэргэжлийн түвшний интерактив апплекейшнууд бүтээ.
+
+- [React Tutorial](https://react-tutorial.app) - Learn React step by step in an interactive environment with flashcards.
 
 - [Road to React](https://www.roadtoreact.com/) - Таны React дээр мастер болох аялал.

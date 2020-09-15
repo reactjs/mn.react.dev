@@ -75,8 +75,6 @@ Gatsby-н талаар [түүний албан ёсны заавараас](htt
 
 - **[nwb](https://github.com/insin/nwb)** бол [React компонентуудыг npm-р оруулхад](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb) голчилон зориулсагдсан. Үүнийг мөн React app хийхэд [хэрэглэж болно](https://github.com/insin/nwb/blob/master/docs/guides/ReactApps.md#developing-react-apps-with-nwb).
 
-- **[Nx](https://nx.dev/react)** нь бүтэн stack нэг агуулахт хөгжүүлэлтэнд зориулсан React, Next.js, [Express](https://expressjs.com/) зэргийн дэмжлэгтэй хэрэгсэл(toolkit) юм.
-
 - **[Parcel](https://parceljs.org/)** [React-тай ажилладаг](https://parceljs.org/recipes.html#react) хурдан, тохиргоогүй ажиллах веб апп багцлагч юм.
 
 - **[Razzle](https://github.com/jaredpalmer/razzle)** ямар ч тохиргоо шаардлагагүй сервер талын рендер хийх фраймворк бөгөөд Next.js-с илүү уян байдлыг санал болгодог.
