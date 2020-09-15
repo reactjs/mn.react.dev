@@ -170,7 +170,11 @@ JSX нь Javascript-ийн бүх боломжийг ашиглах боломж
 
 Дээрх `ShoppingList` компонент нь зөвхөн `<div />` болон `<li />` гэх анхнаасаа байдаг DOM компонентуудыг render хийж байна. Гэхдээ та хүссэн React компонентоо үүсгэж, render хийх боломжтой. Жишээ нь бид одоо `<ShoppingList />` гэж бичин бүтэн дэлгүүрийн барааны жагсаалт (shopping list)-г оруулж ирэх боломжтой. React компонентууд нь encapsulated бөгөөд бие даан ажилладаг. Энэ нь цогц үйлдэлтэй UI-уудыг энгийн компонентуудаас үүсгэх боломж олгоно.
 
+<<<<<<< HEAD
 ## Суурь кодыг ойлгох нь{#inspecting-the-starter-code}
+=======
+### Inspecting the Starter Code {#inspecting-the-starter-code}
+>>>>>>> 954a16f1d358009505ae881afaefe463dc6388a5
 
 Хэрэв энэхүү зааварчилгааг **хөтөч дээрээ** даган ажиллахаар болсон бол дараах кодыг шинэ тааб дээр нээ: **[Суурь код](https://codepen.io/gaearon/pen/oWWQNa?editors=0010)**. Хэрэв зааварчилгааг өөрийн **дотоод орчинд** даган ажиллах болсон бол төслийн хавтас дахь `src/index.js` -г нээгээрэй. ([бэлдцийн](#setup-option-2-local-development-environment) үед энэ файлыг үүсгэсэн байх ёстой.).
 
@@ -560,7 +564,11 @@ var newPlayer = Object.assign({}, player, {score: 2});
 
 #### React хэзээ дахин render хийхийг тодорхойлох {#determining-when-to-re-render-in-react}
 
+<<<<<<< HEAD
 Хувиршгүй байдлын гол давуу тал нь React-д _pure components_ үүсгэхэд тусалдаг. Хувиршгүй өгөгдлийг өөрчлөгдсөн эсэхийг хялбар мэдэж болдог бөгөөд улмаар компонентыг хэзээ дахин зурахыг тодорхойлоход хялбар болгодог.
+=======
+The main benefit of immutability is that it helps you build _pure components_ in React. Immutable data can easily determine if changes have been made, which helps to determine when a component requires re-rendering.
+>>>>>>> 954a16f1d358009505ae881afaefe463dc6388a5
 
 [Гүйцэтгэлийг оновчлох нь ](/docs/optimizing-performance.html#examples) хэсгээс `shouldComponentUpdate()`-ийн талаар болон хэрхэн *pure components* хийхийг уншаарай.
 
