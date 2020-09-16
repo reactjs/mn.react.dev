@@ -420,6 +420,7 @@ this.setState(function(state, props) {
 Компонент мѳн ѳѳрийн state-ээ доторх компонентруугаа props-оор дамжуулж болно:
 
 ```js
+=======
 <FormattedDate date={this.state.date} />
 ```
 

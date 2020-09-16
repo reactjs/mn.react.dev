@@ -47,6 +47,7 @@ console.log(add(16, 26)); // 42
 
 Хэрэв [Create React App](https://github.com/facebookincubator/create-react-app), [Next.js](https://github.com/zeit/next.js/), [Gatsby](https://www.gatsbyjs.org/) эсвэл төстэй хэрэгсэл багаж ашигладаг бол таны програмыг багцлах Webpack тохиргоог өөртөө агуулж байдаг.
 
+
 Хэрэв ийм хэрэгслүүд ашиглаагүй бол та өөрөө багцлах тохиргоог хийх болно. Жишээ болгон
 Webpack-н [суулгах](https://webpack.js.org/guides/installation/)  болон
 [Эхлэн суралцах](https://webpack.js.org/guides/getting-started/) заавруудын баримтжуулалтыг харна уу.

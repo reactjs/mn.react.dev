@@ -124,7 +124,6 @@ ReactDOM.render(
 
 Та угалзан хаалт ашиглан [ямар ч илэрхийллүүдийг JSX шигтгэж](/docs/introducing-jsx.html#embedding-expressions-in-jsx) болно. Үүнд Жаваскриптийн `&&` оператор ч багтана. Энэ нь нөхцөлд тулгуурлан элементийг нэмэхэд хэрэг болно.
 
-
 ```js{6-10}
 function Mailbox(props) {
   const unreadMessages = props.unreadMessages;
