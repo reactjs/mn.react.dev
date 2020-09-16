@@ -234,11 +234,7 @@ function Comment(props) {
 
 [](codepen://components-and-props/extracting-components-continued)
 
-<<<<<<< HEAD
-Компонентыг энэ мэтчилэн салгах нь эхэндээ их ажил шаардах томоохон програмуудын хувьд эдгээр дахин ашиглагдах компонентууд нь үр дүнгээ сайн өгдөг. Таны дэлгэцийн загварын хэсэг олон удаа ашиглагдах(`Button`, `Panel`, `Avatar`) эсвэл өөрөө хангалттай цогц болсон(`App`, `FeedStory`, `Comment`) бол дахин ашиглагдах боломжтой компонентууд болгон салгах нь хамгийн түрүүнд зөвлөх зөвлөмж юм.
-=======
-Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be extracted to a separate component.
->>>>>>> 80c16779a751ef997373adf95c47dbc9b1592eb6
+Компонентыг энэ мэтчилэн жижиглэн салгах нь эхэндээ илүү ажил мэт боловч томоохон програмуудын хувьд эдгээр дахин ашиглаж болохуйц компонентууд нь үр дүнгээ сайн өгдөг. Таны дэлгэцийн загварын хэсэг олон удаа ашиглагдах(`Button`, `Panel`, `Avatar`) эсвэл өөрөө хангалттай цогц болсон(`App`, `FeedStory`, `Comment`) бол дахин ашиглагдах боломжтой компонентууд болгон салгах нь хамгийн түрүүнд зөвлөх зөвлөмж юм.
 
 ## Шинж чанарууд(Props) бол зөвхөн унших горимтой {#props-are-read-only}
 
