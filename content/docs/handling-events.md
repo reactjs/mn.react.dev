@@ -55,11 +55,7 @@ function ActionLink() {
 }
 ```
 
-<<<<<<< HEAD
 Энд `e` нь синтетик эвент юм. React эдгээр синтетик эвэнтүүдийг [W3C тодорхойлолт](https://www.w3.org/TR/DOM-Level-3-Events/)-н дагуу тодорхойлдог учир та хөтөч хооронд зохицон ажиллах тал дээр санаа зовохгүй байж болно. Илүү дэлгэрэнгүй [`SyntheticEvent`](/docs/events.html)-н талаар илүү мэдмээр байвал баримтжуулалтыг нь үзнэ үү.
-=======
-Here, `e` is a synthetic event. React defines these synthetic events according to the [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), so you don't need to worry about cross-browser compatibility. React events do not work exactly the same as native events. See the [`SyntheticEvent`](/docs/events.html) reference guide to learn more.
->>>>>>> d16f1ee7958b5f80ef790265ba1b8711d4f228d6
 
 React ашиглаж байхад DOM элемент руу `addEventListener` сонсогчийг дуудах шаардлагагүй байдаг. Үүний оронд сонсогчоо элементийг анх дүрслэхэд олгох хэрэгтэй.
 
