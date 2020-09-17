@@ -562,7 +562,6 @@ var newPlayer = Object.assign({}, player, {score: 2});
 
 Хувиршгүй байдлын гол давуу тал нь React-д _pure components_ үүсгэхэд тусалдаг. Хувиршгүй өгөгдлийг өөрчлөгдсөн эсэхийг хялбар мэдэж болдог бөгөөд улмаар компонентыг хэзээ дахин зурахыг тодорхойлоход хялбар болгодог.
 
-
 [Гүйцэтгэлийг оновчлох нь ](/docs/optimizing-performance.html#examples) хэсгээс `shouldComponentUpdate()`-ийн талаар болон хэрхэн *pure components* хийхийг уншаарай.
 
 ### Функцэн компонент {#function-components}

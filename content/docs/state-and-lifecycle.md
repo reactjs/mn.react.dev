@@ -420,7 +420,12 @@ this.setState(function(state, props) {
 Компонент мѳн ѳѳрийн state-ээ доторх компонентруугаа props-оор дамжуулж болно:
 
 ```js
-=======
+<h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+```
+
+Хэрэглэгчийн тодорхойлсон компонентод хүртэл ажиллана:
+
+```js
 <FormattedDate date={this.state.date} />
 ```
 
