@@ -123,20 +123,13 @@ const MyComponent = React.memo(function MyComponent(props) {
   /* render using props */
 });
 ```
+`React.memo` бол [дээд түвшний компонент](/docs/higher-order-components.html).
 
-<<<<<<< HEAD
-`React.memo` зѳвхѳн дамжигдан орж ирсэн зүйлийг шалгана. Хэрвээ таны функц компонент `React.memo` дотор, мѳн [`useState`]*(/docs/hooks-state.html) эсвэл [`useContext`](/docs/hooks-reference.html#usecontext) hook ашигласан бол тѳлѳв болон context ѳѳрчлѳлтѳѳс хамаарч бас дахин рендер хийгдэнэ.
+Хэрвээ таны компонент өгөгдсөн пропсийг рендер хийдэг бол, үр ашигтай ажиллуулахын тулд тухайн компонентийг `React.memo` дотор оруулж болно. Ингэснээр React энэ компонентийг дахин рендер хийж цаг алдалгүй өмнөх рендер хийж байсан үр дүнг шууд харуулна. 
 
-Анхны байдлаар энэ нь шинж чанарын цогц объектууд дээр өнгөцхөн харьцуулалт хийдэг. Хэрэв та харьцуулалтыг удирдахийг хүсвэл хоёрдах аргументаар харьцуулагч функц дамжуулан ашиглаж болно.
-=======
-`React.memo` is a [higher order component](/docs/higher-order-components.html).
+`React.memo` нь зөвхөн проп өөрчлөлтийг шалгадаг. Хэрвээ функц компонент тань дотроо [`useState`](/docs/hooks-state.html) эсвэл [`useContext`](/docs/hooks-reference.html#usecontext) ашигласан байсан ч гэсэн `React.memo` дотор л зөвхөн state эсвэл context өөрчлөгдөх үед л дахин рендер хийгдэнэ.
 
-If your component renders the same result given the same props, you can wrap it in a call to `React.memo` for a performance boost in some cases by memoizing the result. This means that React will skip rendering the component, and reuse the last rendered result.
-
-`React.memo` only checks for prop changes. If your function component wrapped in `React.memo` has a [`useState`](/docs/hooks-state.html) or [`useContext`](/docs/hooks-reference.html#usecontext) Hook in its implementation, it will still rerender when state or context change.
-
-By default it will only shallowly compare complex objects in the props object. If you want control over the comparison, you can also provide a custom comparison function as the second argument.
->>>>>>> 657658aa1f19c65e35055ddca4452c98d569552f
+Нэмэлтээр илүү шалгалт хийх шаардлагатай бол хоёр дахь аргумент оруулан шалгаж болно. Уг хоёр дахь аргумент байхгүй нөхцөлд пропсийг өнгөцхөн харьцуулалт хийдэг. 
 
 ```javascript
 function MyComponent(props) {
