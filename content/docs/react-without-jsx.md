@@ -2,8 +2,6 @@
 id: react-without-jsx
 title: JSX үгүй React
 permalink: docs/react-without-jsx.html
-prev: react-without-es6.html
-next: reconciliation.html
 ---
 
 JSX нь React-д заавал шаардлагатай биш. React-г JSX-гүй ашиглах нь build орчинд компайл байршуулах сонирхолгүй бол онцгойлон тохиримжтой юм.

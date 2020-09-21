@@ -2,8 +2,6 @@
 id: react-without-es6
 title: ES6 үгүй React
 permalink: docs/react-without-es6.html
-prev: optimizing-performance.html
-next: react-without-jsx.html
 ---
 
 Энгийнээр та Жаваскрипт класс ашиглан React компонент тодорхойлж болно:
