@@ -41,7 +41,11 @@ class Welcome extends React.Component {
 
 ### Компонентын амьдралын мөчлөг {#the-component-lifecycle}
 
+<<<<<<< HEAD
 Компонент тус бүр нь явцын дунд тухайн нэг цаг үед кодыг дарж тодорхойлон ажиллуулах боломжтой хэд хэдэн "lifecycle methods"-той байна.  **Илүү хялбар аргаар гэвэл [амьдралын мөчлөгийн энэ диаграмм](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)-ыг ашиглаж болно.** Доорх жагсаалтад түгээмэл ашиглагддаг амьдралын мөчлөгийн методуудыг **тод**-оор тэмдэглэсэн байгаа. Бусад нь ховор ашиглагддаг. 
+=======
+Each component has several "lifecycle methods" that you can override to run code at particular times in the process. **You can use [this lifecycle diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) as a cheat sheet.** In the list below, commonly used lifecycle methods are marked as **bold**. The rest of them exist for relatively rare use cases.
+>>>>>>> 8f7ffa473905148fd5c7ecfd7fed5dabbd261bf0
 
 #### Mount хийх {#mounting}
 
@@ -109,7 +113,13 @@ DOM-оос компонентыг хасах үед энэ методыг дуу
 
 ## Reference {#reference}
 
+<<<<<<< HEAD
 ### Түгээмэл ашиглагддаг Амьдралын мөчлөг методууд {#commonly-used-lifecycle-methods}. **[Амьдралын мөчлөгийн тухай энэхүү диаграммаас](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) харна уу.**
+=======
+### Commonly Used Lifecycle Methods {#commonly-used-lifecycle-methods}
+
+The methods in this section cover the vast majority of use cases you'll encounter creating React components. **For a visual reference, check out [this lifecycle diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/).**
+>>>>>>> 8f7ffa473905148fd5c7ecfd7fed5dabbd261bf0
 
 ### `render()` {#render}
 
@@ -246,7 +256,11 @@ componentWillUnmount()
 
 ### Ховор ашиглагддаг Амьдралын мөчлөгийн Методууд {#rarely-used-lifecycle-methods}
 
+<<<<<<< HEAD
 Энэ хэсэгт ховор ашиглагддаг методуудын тухай өгүүлнэ. Зарим метод хааяа нэг хэрэг болдог ч ихэнхдээ нь хэрэг болохгүй байх нь бий. . **Та эдгээр методуудын ихэнхийг [энэхүү амьдралын мөчлөг диаграм](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)-аас харж болно. Дээд хэсэгт байх "Show less common lifecycles" гэсэн дээр дараад харна**
+=======
+The methods in this section correspond to uncommon use cases. They're handy once in a while, but most of your components probably don't need any of them. **You can see most of the methods below on [this lifecycle diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) if you click the "Show less common lifecycles" checkbox at the top of it.**
+>>>>>>> 8f7ffa473905148fd5c7ecfd7fed5dabbd261bf0
 
 
 ### `shouldComponentUpdate()` {#shouldcomponentupdate}
@@ -279,8 +293,13 @@ static getDerivedStateFromProps(props, state)
 
 Төлөв нь пропст орох өөрчлөлтөөс хамаарах [ховор тохиолдолд ашиглагдах](/blog/2018/06/07/you-probably-dont-need-derived-state.html#when-to-use-derived-state) зориулалттай. Жишээ нь, өмнө болон дараагийн хүүг харьцуулж, алийг нь хөдөлгөөнд оруулж, алийг нь хасах вэ гэдгийг шийдэхэд туслах `<Transition>` компонентыг ажиллуулахад хэрэг болж болно. 
 
+<<<<<<< HEAD
 Төлөвийг удамшуулбал код нуршуу болох ба компонент ажиллахад бэрх болгодог. 
 [Илүү энгийн өөр боломжуудыг хараад үзээрэй:](/blog/2018/06/07/you-probably-dont-need-derived-state.html)
+=======
+Deriving state leads to verbose code and makes your components difficult to think about.
+[Make sure you're familiar with simpler alternatives:](/blog/2018/06/07/you-probably-dont-need-derived-state.html)
+>>>>>>> 8f7ffa473905148fd5c7ecfd7fed5dabbd261bf0
 
 * Хэрэв та пропст орсон өөрчлөлтөөс болж **төлөв өөрчлөх** (өгөгдөл хүлээн авах, анимейшн г.м) хэрэг гарвал [`componentDidUpdate`](#componentdidupdate) lifecycle-ыг ашиглаарай.
 
@@ -326,10 +345,16 @@ getSnapshotBeforeUpdate(prevProps, prevState)
 
 Дэлгэрэнгүйг [*React 16-д алдаа засах нь*](/blog/2017/07/26/error-handling-in-react-16.html) гэснээс харна уу.
 
+<<<<<<< HEAD
 > Тэмдэглэл
 > 
 > Error boundaries нь зөвхөн бүтцийн модонд өөрөөс **доош** байгаа компонентуудад байгаа алдааг олдог. Өөрт байгаа алдааг error boundary олж чадахгүй. 
 
+=======
+> Note
+>
+> Error boundaries only catch errors in the components **below** them in the tree. An error boundary can’t catch an error within itself.
+>>>>>>> 8f7ffa473905148fd5c7ecfd7fed5dabbd261bf0
 
 ### `static getDerivedStateFromError()` {#static-getderivedstatefromerror}
 ```javascript
@@ -356,7 +381,7 @@ class ErrorBoundary extends React.Component {
       return <h1>Something went wrong.</h1>;
     }
 
-    return this.props.children; 
+    return this.props.children;
   }
 }
 ```
@@ -412,17 +437,24 @@ class ErrorBoundary extends React.Component {
       return <h1>Something went wrong.</h1>;
     }
 
-    return this.props.children; 
+    return this.props.children;
   }
 }
 ```
 
+<<<<<<< HEAD
 > Тэмдэглэл
 > 
 > Алдаа гарсан үед та `setState` дуудан `componentDidCatch()` ашиглан fallback UI-ыг рендэр хийж болно. Гэхдээ дараа дараагийн шинэ хувилбарт нь ингэж хийж болохгүй болчихно.
 
 
 > Оронд нь fallback рендэрийн үед `static getDerivedStateFromError()` ашиглаарай.
+=======
+> Note
+>
+> In the event of an error, you can render a fallback UI with `componentDidCatch()` by calling `setState`, but this will be deprecated in a future release.
+> Use `static getDerivedStateFromError()` to handle fallback rendering instead.
+>>>>>>> 8f7ffa473905148fd5c7ecfd7fed5dabbd261bf0
 
 * * *
 
