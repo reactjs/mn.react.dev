@@ -9,18 +9,22 @@ next: release-channels.html
 React болон ReactDOM -ыг CDN ээс ашиглах боломжтой.
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 ```
 
 Дээрх хувилбарууд зѳвхѳн хѳгжүүлэлтэд зориулагдсан, жинхэнэ бүтээгдэхүүнд тохиромжгүй. Багасгасан бэлэн болсон хувилбарууд нь:
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
 ```
 
+<<<<<<< HEAD
 Тодорхой хувилбар ашиглах бол `react` болон `react-dom` дээрх `16` гэснийг ѳѳрийн ашиглах хувилбараар солино.
+=======
+To load a specific version of `react` and `react-dom`, replace `17` with the version number.
+>>>>>>> 30baecf59de28a8cd3c91a2cd878e3822f864061
 
 ### Why the `crossorigin` Attribute? {#why-the-crossorigin-attribute}
 

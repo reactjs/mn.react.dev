@@ -182,4 +182,8 @@ const element = {
 
 >**Зөвлөмж:**
 >
+<<<<<<< HEAD
 >Бид ["Babel" хэлний тодорхойлолт](https://babeljs.io/docs/editors)-ийг код засварлагчийн сонголт дээрээ ашиглахийг зөвлөдөг ES6 болон JSX код нь хоёулаа зөв тодордог(highlight). Энэ вебсайт [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/) өнгөний схем хэрэглэдэг зохицолдолгоо сайтай.
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> 30baecf59de28a8cd3c91a2cd878e3822f864061
