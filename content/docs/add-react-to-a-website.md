@@ -51,17 +51,10 @@ React нь анхнаасаа аажмаар хэрэглээнд оруулах
 
 ```html{5,6,9}
   <!-- ... бусад HTML ... -->
-
   <!-- Load React. -->
-<<<<<<< HEAD
   <!-- Тэмдэглэл: deploy хийхдээ "development.js"-г "production.min.js"-р солих хэрэгтэй. -->
-  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-=======
-  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
   <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
->>>>>>> 6682068641c16df6547b3fcdb7877e71bb0bebf9
 
   <!-- Load our React component. -->
   <script src="like_button.js"></script>
@@ -90,11 +83,7 @@ const domContainer = document.querySelector('#like_button_container');
 ReactDOM.render(e(LikeButton), domContainer);
 ```
 
-<<<<<<< HEAD
 Энэ 2 мөр код нь бидний эхний алхамд HTML дотор нэмсэн `<div>`-г олоод "Like" React компонент товчыг түүн дотор харуулах юм.
-=======
-These two lines of code find the `<div>` we added to our HTML in the first step, and then display our "Like" button React component inside of it.
->>>>>>> 6682068641c16df6547b3fcdb7877e71bb0bebf9
 
 ### Ингээд болоо! {#thats-it}
 

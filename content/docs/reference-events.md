@@ -35,7 +35,6 @@ string type
 
 > Тэмдэглэл:
 >
-<<<<<<< HEAD
 > v0.14 хувилбар дээр бол эвент зохицуулагчаас  `false`  гэсэн утга буцвал эвент цааш тарж ажиллахыг зогсоохоо больсон байгаа. Оронд нь хэрэгтэй үед `e.stopPropagation()` эсвэл `e.preventDefault()`-ыг зориуд өөрөө ажиллуулдаг болсон.
 
 ### Эвент пүүл хийх {#event-pooling}
@@ -60,17 +59,12 @@ function onClick(event) {
   this.setState({eventType: event.type});
 }
 ```
-=======
-> As of v17, `e.persist()` doesn't do anything because the `SyntheticEvent` is no longer [pooled](/docs/legacy-event-pooling.html).
->>>>>>> 6682068641c16df6547b3fcdb7877e71bb0bebf9
+
+> Хувилбар 17-оос эхлээд, `e.persist()` ямар нэгэн нөлөө байхгүй. Учир нь `SyntheticEvent` [пүүлд](/docs/legacy-event-pooling.html) орохгүй болсон .
 
 > Тэмдэглэл:
 >
-<<<<<<< HEAD
 > Хэрэв та event properties-т асинхрон хэлбэрээр хандахыг хүсвэл тухайн эвент дээрээ `event.persist()`-ыг дуудах хэрэгтэй. Ингэвэл пүүлээс таны  synthetic event устгагдаж, хэрэглэгчийн кодоор тухайн эвент рүү reference хийх боломж олгодог. 
-=======
-> As of v0.14, returning `false` from an event handler will no longer stop event propagation. Instead, `e.stopPropagation()` or `e.preventDefault()` should be triggered manually, as appropriate.
->>>>>>> 6682068641c16df6547b3fcdb7877e71bb0bebf9
 
 ## Дэмждэг эвентүүд {#supported-events}
 

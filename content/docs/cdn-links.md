@@ -20,11 +20,7 @@ React болон ReactDOM -ыг CDN ээс ашиглах боломжтой.
 <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
 ```
 
-<<<<<<< HEAD
-Тодорхой хувилбар ашиглах бол `react` болон `react-dom` дээрх `16` гэснийг ѳѳрийн ашиглах хувилбараар солино.
-=======
-To load a specific version of `react` and `react-dom`, replace `17` with the version number.
->>>>>>> 6682068641c16df6547b3fcdb7877e71bb0bebf9
+Тодорхой хувилбар ашиглах бол `react` болон `react-dom` дээрх `17` гэснийг ѳѳрийн ашиглах хувилбараар солино.
 
 ### Why the `crossorigin` Attribute? {#why-the-crossorigin-attribute}
 
