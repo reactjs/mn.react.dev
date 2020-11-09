@@ -51,11 +51,10 @@ React нь анхнаасаа аажмаар хэрэглээнд оруулах
 
 ```html{5,6,9}
   <!-- ... бусад HTML ... -->
-
   <!-- Load React. -->
   <!-- Тэмдэглэл: deploy хийхдээ "development.js"-г "production.min.js"-р солих хэрэгтэй. -->
-  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 
   <!-- Load our React component. -->
   <script src="like_button.js"></script>
@@ -115,8 +114,8 @@ Production-руу веб сайтаа оруулахын өмнө багасга
 Хэрвээ аппликешн скриптүүдээ хэзээний багасгасан мөн React хувилбараа HTML дотроо дуудахдаа `production.min.js`-р дууссаныг ашиглаж байгааг нягталсан бол таны сайт production-д бэлэн гэсэн үг:
 
 ```js
-<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
 Хэрвээ танд скриптүүдээ багасгах алхам байдаггүй бол [энд хийх нэг аргачлал байна](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3).
