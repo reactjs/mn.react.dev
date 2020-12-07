@@ -45,7 +45,11 @@ class NameForm extends React.Component {
 
 ### Анхын утгууд {#default-values}
 
+<<<<<<< HEAD
 React-н дүрслэх амьдралын мөчлөг дээр формын элементүүдийн `value` аттрибут нь DOM дээрх утгыг дардаг. Удирдагдаагүй компонент дээр та анхны өгөх утгыг нь тодорхойлох хэрэгтэй бөгөөд дараах шинэчлэлтүүд нь удирдагдаагүй хэвээр үлдэнэ. Иймэрхүү тохиолдлыг хэрэгжүүлэхдээ `defaultValue` аттрибутыг `value`-н оронд тодорхойлох нь зүйтэй.
+=======
+In the React rendering lifecycle, the `value` attribute on form elements will override the value in the DOM. With an uncontrolled component, you often want React to specify the initial value, but leave subsequent updates uncontrolled. To handle this case, you can specify a `defaultValue` attribute instead of `value`. Changing the value of `defaultValue` attribute after a component has mounted will not cause any update of the value in the DOM.
+>>>>>>> 4fc709d0576d0f0f1f8ea8b6bb341a12944b5510
 
 ```javascript{7}
 render() {
