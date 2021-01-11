@@ -443,6 +443,7 @@ class ErrorBoundary extends React.Component {
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 > Тэмдэглэл
 > 
 > Алдаа гарсан үед та `setState` дуудан `componentDidCatch()` ашиглан fallback UI-ыг рендэр хийж болно. Гэхдээ дараа дараагийн шинэ хувилбарт нь ингэж хийж болохгүй болчихно.
@@ -450,6 +451,14 @@ class ErrorBoundary extends React.Component {
 
 > Оронд нь fallback рендэрийн үед `static getDerivedStateFromError()` ашиглаарай.
 =======
+=======
+Production and development builds of React slightly differ in the way `componentDidCatch()` handles errors.
+
+On development, the errors will bubble up to `window`, this means that any `window.onerror` or `window.addEventListener('error', callback)` will intercept the errors that have been caught by `componentDidCatch()`.
+
+On production, instead, the errors will not bubble up, which means any ancestor error handler will only receive errors not explicitly caught by `componentDidCatch()`.
+
+>>>>>>> 82b8c9f2ab094eb7b0268029ab72fc99ffcadaf6
 > Note
 >
 > In the event of an error, you can render a fallback UI with `componentDidCatch()` by calling `setState`, but this will be deprecated in a future release.
