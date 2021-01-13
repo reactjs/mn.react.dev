@@ -51,11 +51,11 @@ React нь анхнаасаа аажмаар хэрэглээнд оруулах
 
 ```html{5,6,9}
   <!-- ... бусад HTML ... -->
-
   <!-- Load React. -->
   <!-- Тэмдэглэл: deploy хийхдээ "development.js"-г "production.min.js"-р солих хэрэгтэй. -->
-  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
 
   <!-- Load our React component. -->
   <script src="like_button.js"></script>
