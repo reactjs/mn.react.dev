@@ -16,7 +16,11 @@ permalink: community/courses.html
 
 - [React Crash Course 2018](https://www.youtube.com/watch?v=Ke90Tje7VS0) - Анхлан суралцагчдад хандсан React-ийн гол сэдвүүд бүхий богино хэмжээний хичээл.
 
+<<<<<<< HEAD
 - [React Armory: Learn React by Itself](https://reactarmory.com/guides/learn-react-by-itself) - React Armory-ийн энэ хичээлээр тa React-ийг энгийн хэллэгээр сурах боломжтой.
+=======
+- [Frontend Armory: React Fundamentals](https://frontarm.com/courses/react-fundamentals/) - Learn React without the buzzwords.
+>>>>>>> ed88a240d9c97822cc2f02074306965a1a4f4ac4
 
 - [Egghead.io: The Beginner's Guide to ReactJS](https://egghead.io/courses/the-beginner-s-guide-to-reactjs) - Анхлан суралцагчид болон React-ийн үндсэн ойлголтыг сурахыг хүсч буй хүмүүст зориулсан үнэгүй хичээл.
 

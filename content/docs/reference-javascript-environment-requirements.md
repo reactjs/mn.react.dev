@@ -6,10 +6,14 @@ category: Reference
 permalink: docs/javascript-environment-requirements.html
 ---
 
+<<<<<<< HEAD
 React 16 нь олон төрлийн [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) болон 
 [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)-ээс хамааралтай. Хэрэв та хуучин хөтөч ашигладаг, нативаар ажиллуулдаггүй (IE < 11 г.м) эсвэл ажиллагаанд үл тохирох(IE 11 г.м) төхөөрөмж ашигладаг бол [core-js](https://github.com/zloirock/core-js) эсвэл [babel-polyfill](https://babeljs.io/docs/usage/polyfill/) гэх мэт глобал polyfill-ыг багц аппликейшндаа ашиглаад үзээрэй. 
 
 Гол js-ыг хуучин хөтөч дээр ажилладаг болгох React 16-т зориулсан polyfill орчин нэг иймэрхүү харагдана:
+=======
+React 16 depends on the collection types [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) and [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set). If you support older browsers and devices which may not yet provide these natively (e.g. IE < 11) or which have non-compliant implementations (e.g. IE 11), consider including a global polyfill in your bundled application, such as [core-js](https://github.com/zloirock/core-js).
+>>>>>>> ed88a240d9c97822cc2f02074306965a1a4f4ac4
 
 
 ```js
