@@ -41,11 +41,7 @@ class Welcome extends React.Component {
 
 ### Компонентын амьдралын мөчлөг {#the-component-lifecycle}
 
-<<<<<<< HEAD
 Компонент тус бүр нь явцын дунд тухайн нэг цаг үед кодыг дарж тодорхойлон ажиллуулах боломжтой хэд хэдэн "lifecycle methods"-той байна.  **Илүү хялбар аргаар гэвэл [амьдралын мөчлөгийн энэ диаграмм](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)-ыг ашиглаж болно.** Доорх жагсаалтад түгээмэл ашиглагддаг амьдралын мөчлөгийн методуудыг **тод**-оор тэмдэглэсэн байгаа. Бусад нь ховор ашиглагддаг. 
-=======
-Each component has several "lifecycle methods" that you can override to run code at particular times in the process. **You can use [this lifecycle diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) as a cheat sheet.** In the list below, commonly used lifecycle methods are marked as **bold**. The rest of them exist for relatively rare use cases.
->>>>>>> 8f7ffa473905148fd5c7ecfd7fed5dabbd261bf0
 
 #### Mount хийх {#mounting}
 
@@ -458,7 +454,11 @@ On development, the errors will bubble up to `window`, this means that any `wind
 
 On production, instead, the errors will not bubble up, which means any ancestor error handler will only receive errors not explicitly caught by `componentDidCatch()`.
 
+<<<<<<< HEAD
 >>>>>>> 8f9ef00db1b36ee3e5a0e6072eb601257a6f8ccb
+=======
+>>>>>>> 957276e1e92bb48e5bb6b1c17fd0e7a559de0748
+>>>>>>> master
 > Note
 >
 > In the event of an error, you can render a fallback UI with `componentDidCatch()` by calling `setState`, but this will be deprecated in a future release.
