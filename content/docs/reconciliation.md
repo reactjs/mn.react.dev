@@ -43,21 +43,7 @@ React-ын render() функц ажиллах мѳчид React элементү�
 
 Энэ нь хуучин `Counter`-г устган шинийг залгах болно.
 
-<<<<<<< HEAD
 ### Ижил төрлийн DOM элементүүд {#dom-elements-of-the-same-type}
-=======
->Note:
->
->These methods are considered legacy and you should [avoid them](/blog/2018/03/27/update-on-async-rendering.html) in new code:
->
->- `UNSAFE_componentWillMount()`
-
-### DOM Elements Of The Same Type {#dom-elements-of-the-same-type}
-<<<<<<< HEAD
->>>>>>> 3844da103db4c2dea4783f5b3a2a0b53708d04ab
-=======
->>>>>>> 82b8c9f2ab094eb7b0268029ab72fc99ffcadaf6
->>>>>>> master
 
 Ижил төрлийн хоёр React DOM элементүүдийг харьцуулахад react тэдгээрийн аттрибутуудыг харан ижил DOM зангилаанд хадгалдаг ба зөвхөн өөрчлөгдсөн аттрибутуудыг шинэчилдэг. Жишээлбэл:
 
