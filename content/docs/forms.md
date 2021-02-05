@@ -31,7 +31,7 @@ HTML дээр формууд элементүүд болох `<input>`, `<textar
 
 Жишээлбэл өмнөх жишээний хүний нэрийг бичээд илгээхэд лог хийх бол бид удирдагдсан компонент бичиж болно:
 
-```javascript{4,10-12,24}
+```javascript{4,10-12,21,24}
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
