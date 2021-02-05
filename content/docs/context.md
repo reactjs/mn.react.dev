@@ -130,11 +130,7 @@ const MyContext = React.createContext(defaultValue);
 
 Бүх контекстын обьект нь React Provider компоненттой холбогдсон байдаг, ба энэ нь тухайн контекстыг ашиглаж байгаа компонентуудад тухайн контекстэд өөрчлөлт хийх боломжийг олгодог. 
 
-<<<<<<< HEAD
 `value` пропс нь Provider ийн хүү компонентууд (хэрэглэгч компонентууд) руу дамжуулагддаг. Нэг Provider нь олон хэрэглэгч компоненттэй холбогдож болно. Provider ууд нь нэг нэгэндээ агуулагдаж компонентын модонд дамжуулагдаж буй утгуудыг (values) даран тодорхойлж (override) болно. 
-=======
-The Provider component accepts a `value` prop to be passed to consuming components that are descendants of this Provider. One Provider can be connected to many consumers. Providers can be nested to override values deeper within the tree.
->>>>>>> 6349ec18a01a3a880b66b87feb8dfe53f52e7aaf
 
 Тухайн Provider ийн бүх хэрэглэгч компонентууд нь тухайн Provider ийн `value` пропс д өөрчлөлт орох бүрд дахин рендэр хийгддэг. Provider аас хэрэглэгч компонентууд ([`.contextType`](#classcontexttype) болон [`useContext`](/docs/hooks-reference.html#usecontext)-г багтаасан) рендэр хийж байгаа нь `shouldComponentUpdate` функцтай холбоогүй, улмаар эцэг компонент нь өөрчлөлт хийхээ зогсоосон ч хэрэглэгч компонентууд нь өөрчлөгдөх болно.
 
