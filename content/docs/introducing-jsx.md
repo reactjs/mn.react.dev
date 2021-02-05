@@ -93,7 +93,7 @@ function getGreeting(user) {
 Та аттрибут дээр квот ашиглан тэмдэгт төрлөөр өгөх байх:
 
 ```js
-const element = <div tabIndex={0}></div>;
+const element = <div tabIndex="0"></div>;
 ```
 
 Мөн та угалзан хаалтаар Жаваскрипт илэрхийлэл аттрибутад шигтгэж болно:

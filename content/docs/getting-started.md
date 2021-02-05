@@ -37,6 +37,7 @@ React нь анхнаасаа алгуур нутагшуулалтад загв
 ### Онлайн турших талбар {#online-playgrounds}
 
 Хэрвээ React дээр туршилт хийх сонирхолтой байвал, онлайн туршилтын талбар ашиглах боломжтой. Hello World загварыг [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new) эсвэл [Glitch](https://glitch.com/edit/#!/remix/starter-react-template) эсвэл [Stackblitz](https://stackblitz.com/fork/react) зэргээс турших боломжтой.
+
 Хэрвээ өөрийн editor дээр ажилламаар байвал, [Энэ HTML файлыг татаж](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) аваад, засаад, өөрийн файл системээс веб хөтөч дээрээ нээж үзэх мөн боломжтой. Энэ нь код хөрвүүлэлтийн хурдны хувьд удаан тул үүнийг зөвхөн энгийн жишээн дээр хэрэглэхийг зөвлөж байна.
 
 ### React-г веб сайтад оруулах {#add-react-to-a-website}
