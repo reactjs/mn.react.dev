@@ -109,8 +109,9 @@ DOM-оос компонентыг хасах үед энэ методыг дуу
 
 ## Reference {#reference}
 
-### Түгээмэл ашиглагддаг Амьдралын мөчлөг методууд {#commonly-used-lifecycle-methods}. *
-[Амьдралын мөчлөгийн тухай энэхүү диаграммаас](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) харна уу.**
+### Түгээмэл ашиглагддаг Амьдралын мөчлөг методууд {#commonly-used-lifecycle-methods}.
+
+**[Амьдралын мөчлөгийн тухай энэхүү диаграммаас](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) харна уу.**
 
 ### `render()` {#render}
 
@@ -247,7 +248,7 @@ componentWillUnmount()
 
 ### Ховор ашиглагддаг Амьдралын мөчлөгийн Методууд {#rarely-used-lifecycle-methods}
 
-Энэ хэсэгт ховор ашиглагддаг методуудын тухай өгүүлнэ. Зарим метод хааяа нэг хэрэг болдог ч ихэнхдээ нь хэрэг болохгүй байх нь бий. . **Та эдгээр методуудын ихэнхийг [энэхүү амьдралын мөчлөг диаграм](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)-аас харж болно. Дээд хэсэгт байх "Show less common lifecycles" гэсэн дээр дараад харна**
+Энэ хэсэгт ховор ашиглагддаг методуудын тухай өгүүлнэ. Зарим метод хааяа нэг хэрэг болдог ч ихэнхдээ нь хэрэг болохгүй байх нь бий. **Та эдгээр методуудын ихэнхийг [энэхүү амьдралын мөчлөг диаграм](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)-аас харж болно. Дээд хэсэгт байх "Show less common lifecycles" гэсэн дээр дараад харна**
 
 
 ### `shouldComponentUpdate()` {#shouldcomponentupdate}
@@ -330,7 +331,6 @@ getSnapshotBeforeUpdate(prevProps, prevState)
 > Тэмдэглэл
 > 
 > Error boundaries нь зөвхөн бүтцийн модонд өөрөөс **доош** байгаа компонентуудад байгаа алдааг олдог. Өөрт байгаа алдааг error boundary олж чадахгүй. 
-
 
 ### `static getDerivedStateFromError()` {#static-getderivedstatefromerror}
 ```javascript
@@ -417,7 +417,6 @@ class ErrorBoundary extends React.Component {
   }
 }
 ```
-
 
 Production and development builds of React slightly differ in the way `componentDidCatch()` handles errors.
 
