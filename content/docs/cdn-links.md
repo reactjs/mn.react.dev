@@ -22,6 +22,7 @@ React болон ReactDOM -ыг CDN ээс ашиглах боломжтой.
 
 Тодорхой хувилбар ашиглах бол `react` болон `react-dom` дээрх `17` гэснийг ѳѳрийн ашиглах хувилбараар солино.
 
+
 ### Why the `crossorigin` Attribute? {#why-the-crossorigin-attribute}
 
 Хэрвээ React -ыг CDN -ээс ашиглаж байгаа бол, [`crossorigin`](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes) тохируулах хэрэгтэй:
