@@ -60,6 +60,7 @@ function onClick(event) {
 }
 ```
 
+
 > Хувилбар 17-оос эхлээд, `e.persist()` ямар нэгэн нөлөө байхгүй. Учир нь `SyntheticEvent` [пүүлд](/docs/legacy-event-pooling.html) орохгүй болсон .
 
 > Тэмдэглэл:
