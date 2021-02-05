@@ -26,12 +26,6 @@ React-ын render() функц ажиллах мѳчид React элементү�
 
 ### Өөр төрлийн элементүүд {#elements-of-different-types}
 
-<<<<<<< HEAD
-Үндэс дэх элементүүд нь өөр төрлийнх бол React хуучин модыг буулган шинэ модыг эхнээс нь байгуулдаг. `<a>`-с `<img>`-руу, эсвэл `<Article>`-с `<Comment>`-руу, эсвэл `<Button>`-с `<div>`-р гуу гэхчлэн эдгээр нь бүгд шинэ дахин байгуулалт руу хөтөлдөг.
-=======
-When tearing down a tree, old DOM nodes are destroyed. Component instances receive `componentWillUnmount()`. When building up a new tree, new DOM nodes are inserted into the DOM. Component instances receive `UNSAFE_componentWillMount()` and then `componentDidMount()`. Any state associated with the old tree is lost.
->>>>>>> 5e2a231e02bd76061fd2f89814ee1e3f9fad82d3
-
 Модыг буулгаж байхад хуучин DOM зангилаанууд устгагддаг. Компонентийн тохиолдол `componentWillUnmount()`-г хүлээн авна. Шинэ мод байгуулж байхад шинэ DOM зангилаанууд DOM руу нэмэгддэг. Компонентийн тохиолдлууд нь `componentWillMount()` хүлээж авах ба дараа нь `componentDidMount()`-г хүлээн авна. Хуучин модод байсан ямар төлөв энд алдагдана.
 
 Үндсээс дооших ямар компонентууд салгагдах бөгөөд тэдгээрийн төлөв нь устгагдана. Жишээлбэл, дараахийг ялгааг олоход:
@@ -48,9 +42,6 @@ When tearing down a tree, old DOM nodes are destroyed. Component instances recei
 
 Энэ нь хуучин `Counter`-г устган шинийг залгах болно.
 
-<<<<<<< HEAD
-### Ижил төрлийн DOM элементүүд {#dom-elements-of-the-same-type}
-=======
 >Note:
 >
 >These methods are considered legacy and you should [avoid them](/blog/2018/03/27/update-on-async-rendering.html) in new code:
@@ -58,7 +49,6 @@ When tearing down a tree, old DOM nodes are destroyed. Component instances recei
 >- `UNSAFE_componentWillMount()`
 
 ### DOM Elements Of The Same Type {#dom-elements-of-the-same-type}
->>>>>>> 5e2a231e02bd76061fd2f89814ee1e3f9fad82d3
 
 Ижил төрлийн хоёр React DOM элементүүдийг харьцуулахад react тэдгээрийн аттрибутуудыг харан ижил DOM зангилаанд хадгалдаг ба зөвхөн өөрчлөгдсөн аттрибутуудыг шинэчилдэг. Жишээлбэл:
 
@@ -84,17 +74,10 @@ DOM зангилааг харьцуулсний дараа дэд элемент
 
 ### Ижил төрлийн компонент элементүүд {#component-elements-of-the-same-type}
 
-<<<<<<< HEAD
-Компонент шинэчлэгдэхэд тохиолдол(instance) нь хэвээр үлддэг учир төлөв нь дүрслэлүүдийн хооронд хадгалагдан үлддэг. React компонентийн тохиолдлын шинэ элементэд тохирох шинж чанарыг нь шинэчилдэг бөгөөд `componentWillReceiveProps()` болон`componentWillUpdate()`-г өөрчлөгдөж байгаа тохиодол дээр дууддаг.
-=======
 When a component updates, the instance stays the same, so that state is maintained across renders. React updates the props of the underlying component instance to match the new element, and calls `UNSAFE_componentWillReceiveProps()`, `UNSAFE_componentWillUpdate()` and `componentDidUpdate()` on the underlying instance.
->>>>>>> 5e2a231e02bd76061fd2f89814ee1e3f9fad82d3
 
 Дараа нь `render()` функц дуудагддаг бөгөөд ялгаа олох алгоритм өмнөх үр дүн болох шинэ үр дүн дээр рекурс хийдэг.
 
-<<<<<<< HEAD
-### Дэд элемент дээр рекурсив ажиллах {#recursing-on-children}
-=======
 >Note:
 >
 >These methods are considered legacy and you should [avoid them](/blog/2018/03/27/update-on-async-rendering.html) in new code:
@@ -103,7 +86,6 @@ When a component updates, the instance stays the same, so that state is maintain
 >- `UNSAFE_componentWillReceiveProps()`
 
 ### Recursing On Children {#recursing-on-children}
->>>>>>> 5e2a231e02bd76061fd2f89814ee1e3f9fad82d3
 
 Анхнаасаа DOM зангилааны дэд элемент дээр рекурс хийхэд React дэд элементүүдийн жагсаалтаар дамжин явж ялгаа байвал хувирлийг бий болгодог.
 
