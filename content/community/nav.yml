@@ -23,7 +23,7 @@
 - title: Багажууд
   items:
     - id: debugging-tools
-      title: Бааг илрүүлэх багажууд
+      title: Bug илрүүлэх багажууд
     - id: component-workbenches
       title: Компонент-н ажлын багаж
     - id: jsx-integrations
