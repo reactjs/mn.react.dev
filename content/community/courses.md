@@ -28,7 +28,11 @@ permalink: community/courses.html
 
 - [Egghead.io](https://egghead.io/browse/frameworks/react) - React болон бусад сэдвүүд бүхий богино хэмжээний сургалтын видеонууд.
 
+<<<<<<< HEAD
 - [Frontend Masters](https://frontendmasters.com/courses/) - React болон бусад frontend framework-үүдийн талаарх видео хичээлүүд
+=======
+- [Frontend Masters](https://frontendmasters.com/learn/react/) - Video courses on React.
+>>>>>>> 16158f195a86fc2dbb59b3ea5a5c32ce161dccb9
 
 - [Fullstack React](https://www.fullstackreact.com/) - React, түүнтэй хамт ашиглаж болох шинэлэг бөгөөд гүнзгийрүүлсэн бүрэн хичээлүүд.
 
