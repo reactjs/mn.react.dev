@@ -118,7 +118,6 @@ const MyContext = React.createContext(defaultValue);
 
 Контекстын обьектыг үүсгэх. React нь тухайн контекстын обьектыг ашиглахдаа компонентын модны өөрөөс нь дээш хамгийн ойр орших `Provider` оос өгөгдлүүдээ авдаг.
 
-
 `defaultValue` аргумент нь **зөвхөн** компонентын модонд тухайн компонентод өөрөөс нь дээш байрлах `Provider` олдохгүй байх тохиолдолд ашиглагддаг. Мөн энэ аргумент нь тухайн компонентыг өөр компонентод агуулагдалгүй (without wrapping) хязгаарлагдмал байдлаар тест хийхэд илүү тохиромжтой.  
 
 ### `Context.Provider` {#contextprovider}
@@ -162,6 +161,7 @@ class MyClass extends React.Component {
 }
 MyClass.contextType = MyContext;
 ```
+
 Класс дахь `contextType` проперти нь [`React.createContext()`](#reactcreatecontext) аас үүссэн контекстын обьектоор утга олгогдож байна. Энэ нь хамгийн ойр орших тухайн контекстын утгыг `this.context` ийг ашиглаж авч байна. Энэ `this.context` ийг lifecycle функцууд болон рендер функцад мөн ашиглаж болно.
 
 > Тэмдэглэл:
@@ -188,6 +188,7 @@ class MyClass extends React.Component {
   {value => /* render something based on the context value */}
 </MyContext.Consumer>
 ```
+
 React компонент нь контекстын өөрлчлөлтийг дэмждэг. Энэ нь контекстыг [функцианаль компонент (functional component)](/docs/components-and-props.html#function-and-class-components) дотор ашиглах боломжтой болгосон.
 
 Функцыг хүү компонентоор ашиглах нь [function as a child](/docs/render-props.html#using-props-other-than-render). Функц нь тухайн контекстын утгыг хүлээн аваад React node буцаадаг. Функцэд дамжуулагдаж байгаа `value` аргумент нь компонентын модонд байх тухайн контекстээс дээш хамгийн ойр байрлах Provider ийн `value` пропстой тэнцүү байна. Хэрвээ тухайн контекстээс дээш орших ямар ч Provider олдохгүй бол `value` аргумент нь `createContext()` функцээр дамжуулагдсан `defaultValue` тай тэнцүү байна.
