@@ -165,7 +165,6 @@ MyClass.contextType = MyContext;
 
 Класс дахь `contextType` проперти нь [`React.createContext()`](#reactcreatecontext) аас үүссэн контекстын обьектоор утга олгогдож байна. Энэ нь хамгийн ойр орших тухайн контекстын утгыг `this.context` ийг ашиглаж авч байна. Энэ `this.context` ийг lifecycle функцууд болон рендер функцад мөн ашиглаж болно.
 
-
 > Тэмдэглэл:
 >
 > Та энэ API ийг ашигласнаар зөвхөн single контекстыг зөвшөөрөх боломжтой. Дэлгэрэнгүй мэдээлэл эндээс харна уу [Consuming Multiple Contexts](#consuming-multiple-contexts).

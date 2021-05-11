@@ -12,7 +12,11 @@ Hooks нь Жаваскрипт функцууд боловч тэдгээрий
 
 ### Hooks-г зөвхөн дээд түвшинд дуудах {#only-call-hooks-at-the-top-level}
 
+<<<<<<< HEAD
 **Hooks-г давталт, нөхцөл болон nested функц дотор битгий дуудаарай.** Оронд нь Hooks-ээ React функцийнхээ дээд түвшинд ашиглана уу. Энэ дүрмийг мөрдснөөр Hooks нь дүрслэгдэж байгаа компонент дээр үргэлж ижил дарааллаар дуудагдахийг баталгаажуулна. Энэ нь React-д Hooks-н төлвийг `useState` болон `useEffect`-н давтан дуудалтуудын үед төлвийг хадгалахад тус болдог. (Хэрэв та сонирхож байвал бид илүү дэлгэрэнгүй [доор](#explanation) тайлбарлах болно.)
+=======
+**Don't call Hooks inside loops, conditions, or nested functions.** Instead, always use Hooks at the top level of your React function, before any early returns. By following this rule, you ensure that Hooks are called in the same order each time a component renders. That's what allows React to correctly preserve the state of Hooks between multiple `useState` and `useEffect` calls. (If you're curious, we'll explain this in depth [below](#explanation).)
+>>>>>>> 968f09159512b59afd5246a928789ae52592c923
 
 ### Hooks-г зөвхөн React функцуудээс дууд {#only-call-hooks-from-react-functions}
 
