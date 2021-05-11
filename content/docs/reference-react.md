@@ -129,13 +129,7 @@ const MyComponent = React.memo(function MyComponent(props) {
 
 `React.memo` нь зөвхөн проп өөрчлөлтийг шалгадаг. Хэрвээ функц компонент тань дотроо [`useState`](/docs/hooks-state.html) эсвэл [`useContext`](/docs/hooks-reference.html#usecontext) ашигласан байсан ч гэсэн `React.memo` дотор л зөвхөн state эсвэл context өөрчлөгдөх үед л дахин рендер хийгдэнэ.
 
-<<<<<<< HEAD
-Нэмэлтээр илүү шалгалт хийх шаардлагатай бол хоёр дахь аргумент оруулан шалгаж болно. Уг хоёр дахь аргумент байхгүй нөхцөлд пропсийг өнгөцхөн харьцуулалт хийдэг. 
-=======
-`React.memo` only checks for prop changes. If your function component wrapped in `React.memo` has a [`useState`](/docs/hooks-state.html), [`useReducer`](/docs/hooks-reference.html#usereducer) or [`useContext`](/docs/hooks-reference.html#usecontext) Hook in its implementation, it will still rerender when state or context change.
-
-By default it will only shallowly compare complex objects in the props object. If you want control over the comparison, you can also provide a custom comparison function as the second argument.
->>>>>>> 968f09159512b59afd5246a928789ae52592c923
+Нэмэлтээр илүү шалгалт хийх шаардлагатай бол хоёр дахь аргумент оруулан шалгаж болно. Уг хоёр дахь аргумент байхгүй нөхцөлд пропсийг өнгөцхөн харьцуулалт хийдэг.
 
 ```javascript
 function MyComponent(props) {

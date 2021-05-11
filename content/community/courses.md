@@ -18,11 +18,7 @@ permalink: community/courses.html
 
 - [Frontend Armory: React Fundamentals](https://frontarm.com/courses/react-fundamentals/) - Learn React without the buzzwords.
 
-<<<<<<< HEAD
-- [Egghead.io: The Beginner's Guide to ReactJS](https://egghead.io/courses/the-beginner-s-guide-to-reactjs) - Анхлан суралцагчид болон React-ийн үндсэн ойлголтыг сурахыг хүсч буй хүмүүст зориулсан үнэгүй хичээл.
-=======
-- [Egghead.io: The Beginner's Guide to ReactJS](https://egghead.io/courses/the-beginner-s-guide-to-react) - Free course for React newbies and those looking to get a better understanding of React fundamentals.
->>>>>>> 968f09159512b59afd5246a928789ae52592c923
+- [Egghead.io: The Beginner's Guide to ReactJS](https://egghead.io/courses/the-beginner-s-guide-to-react) - Анхлан суралцагчид болон React-ийн үндсэн ойлголтыг сурахыг хүсч буй хүмүүст зориулсан үнэгүй хичээл.
 
 - [Free React Bootcamp](https://tylermcginnis.com/free-react-bootcamp/) - React-д бэлтгэх 3 хоногийн сургалтын бичлэгүүд.
 
@@ -32,7 +28,7 @@ permalink: community/courses.html
 
 - [Egghead.io](https://egghead.io/browse/frameworks/react) - React болон бусад сэдвүүд бүхий богино хэмжээний сургалтын видеонууд.
 
-- [Frontend Masters](https://frontendmasters.com/courses/) - React болон бусад frontend framework-үүдийн талаарх видео хичээлүүд
+- [Frontend Masters](https://frontendmasters.com/learn/react/) - Video courses on React.
 
 - [Fullstack React](https://www.fullstackreact.com/) - React, түүнтэй хамт ашиглаж болох шинэлэг бөгөөд гүнзгийрүүлсэн бүрэн хичээлүүд.
 
