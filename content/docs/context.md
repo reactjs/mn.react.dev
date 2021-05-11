@@ -189,7 +189,6 @@ class MyClass extends React.Component {
   {value => /* render something based on the context value */}
 </MyContext.Consumer>
 ```
-
 React компонент нь контекстын өөрлчлөлтийг дэмждэг. Энэ нь контекстыг [функцианаль компонент (functional component)](/docs/components-and-props.html#function-and-class-components) дотор ашиглах боломжтой болгосон.
 Функцыг хүү компонентоор ашиглах нь [function as a child](/docs/render-props.html#using-props-other-than-render). Функц нь тухайн контекстын утгыг хүлээн аваад React node буцаадаг. Функцэд дамжуулагдаж байгаа `value` аргумент нь компонентын модонд байх тухайн контекстээс дээш хамгийн ойр байрлах Provider ийн `value` пропстой тэнцүү байна. Хэрвээ тухайн контекстээс дээш орших ямар ч Provider олдохгүй бол `value` аргумент нь `createContext()` функцээр дамжуулагдсан `defaultValue` тай тэнцүү байна.
 
