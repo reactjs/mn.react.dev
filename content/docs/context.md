@@ -6,11 +6,7 @@ permalink: docs/context.html
 
 Контекст нь өгөгдлүүдийг пропс ашиглан компонентын бүх түвшингүүдээр доош дамжуулахгүйгээр шууд компонентын мод ашиглан дамжуулах боломжийг олгодог.
 
-<<<<<<< HEAD
 Энгийн React програмд өгөгдлийг дээрээс доош буюу (эцэг компонентоос хүү компонент руу) гэсэн чиглэлтэйгээр пропсуудыг дамжуулдаг. Гэхдээ зарим (locale preference, UI theme) програмд олон компонентуудад дуудагдан ашиглагддаг пропсуудын хувьд энэ арга нь тохиромжгүй юм. Тиймээс контекст ашиглан ийм төрлийн өгөгдлүүдийг шууд компонент модоор компонентууд хооронд дамжуулж болно.
-=======
-In a typical React application, data is passed top-down (parent to child) via props, but such usage can be cumbersome for certain types of props (e.g. locale preference, UI theme) that are required by many components within an application. Context provides a way to share values like these between components without having to explicitly pass a prop through every level of the tree.
->>>>>>> c970f75a0ac3513f50e7a4989757c50cde0b7396
 
 - [Хэзээ контекстыг ашиглах](#when-to-use-context)
 - [Контекстыг ашиглахаас өмнө](#before-you-use-context)
@@ -84,11 +80,7 @@ function Page(props) {
 
 Ингэж өөрчилсөнөөр зөвхөн хамгийн дээд түвшний Page компонент л зөвхөн `Link` болон `Avatar` компонентууд `user` болон `avatarSize` пропсуудыг хэрхэн ашиглаж байгааг мэдэх юм. 
 
-<<<<<<< HEAD
 Энэ *inversion of control* загварыг ашигласнаар таны програмд дамжуулагдах пропсуудын хэмжээ багасч үр дүнд нь код тань илүү цэгцтэй болох болно. Мөн үндсэн (root) компонентуудад илүү эрх мэдлийг өгөх болно. Гэхдээ энэ арга нь эцсийн зөв шийдэл биш бөгөөд бүх тохиолдлуудад зөв ажиллахгүй, дээд түвшин рүү хэт их зүйлсийг төвлөрүүлсэнээр дээд түвшний компонентуудыг илүү түвэгтэй, ойлгоход хэцүү болгоно, улмаар доод түвшний компонентуудыг үүндээ нийцүүлэн илүү уян хатан байхыг шаардана. 
-=======
-This *inversion of control* can make your code cleaner in many cases by reducing the amount of props you need to pass through your application and giving more control to the root components. Such inversion, however, isn't the right choice in every case; moving more complexity higher in the tree makes those higher-level components more complicated and forces the lower-level components to be more flexible than you may want.
->>>>>>> c970f75a0ac3513f50e7a4989757c50cde0b7396
 
 Компонент нь зөвхөн нэг хүү компонентоор хязгаарлагдахгүй. Та олон хүү компонентуудыг дамжуулах боломжтой, мөн цаашлаад олон хүү компонентуудыг дамжуулах боломжтой "slots" уудыг дамжуулж болно. [Эндээс харах](/docs/composition-vs-inheritance.html#containment)
 
@@ -128,11 +120,6 @@ const MyContext = React.createContext(defaultValue);
 
 
 `defaultValue` аргумент нь **зөвхөн** компонентын модонд тухайн компонентод өөрөөс нь дээш байрлах `Provider` олдохгүй байх тохиолдолд ашиглагддаг. Мөн энэ аргумент нь тухайн компонентыг өөр компонентод агуулагдалгүй (without wrapping) хязгаарлагдмал байдлаар тест хийхэд илүү тохиромжтой.  
-
-<<<<<<< HEAD
-=======
-The `defaultValue` argument is **only** used when a component does not have a matching Provider above it in the tree. This default value can be helpful for testing components in isolation without wrapping them. Note: passing `undefined` as a Provider value does not cause consuming components to use `defaultValue`.
->>>>>>> c970f75a0ac3513f50e7a4989757c50cde0b7396
 
 ### `Context.Provider` {#contextprovider}
 
@@ -176,11 +163,7 @@ class MyClass extends React.Component {
 MyClass.contextType = MyContext;
 ```
 
-<<<<<<< HEAD
 Класс дахь `contextType` проперти нь [`React.createContext()`](#reactcreatecontext) аас үүссэн контекстын обьектоор утга олгогдож байна. Энэ нь хамгийн ойр орших тухайн контекстын утгыг `this.context` ийг ашиглаж авч байна. Энэ `this.context` ийг lifecycle функцууд болон рендер функцад мөн ашиглаж болно.
-=======
-The `contextType` property on a class can be assigned a Context object created by [`React.createContext()`](#reactcreatecontext). Using this property lets you consume the nearest current value of that Context type using `this.context`. You can reference this in any of the lifecycle methods including the render function.
->>>>>>> c970f75a0ac3513f50e7a4989757c50cde0b7396
 
 > Тэмдэглэл:
 >
@@ -207,11 +190,7 @@ class MyClass extends React.Component {
 </MyContext.Consumer>
 ```
 
-<<<<<<< HEAD
 React компонент нь контекстын өөрлчлөлтийг дэмждэг. Энэ нь контекстыг [функцианаль компонент (functional component)](/docs/components-and-props.html#function-and-class-components) дотор ашиглах боломжтой болгосон.
-=======
-A React component that subscribes to context changes. Using this component lets you subscribe to a context within a [function component](/docs/components-and-props.html#function-and-class-components).
->>>>>>> c970f75a0ac3513f50e7a4989757c50cde0b7396
 
 Функцыг хүү компонентоор ашиглах нь [function as a child](/docs/render-props.html#using-props-other-than-render). Функц нь тухайн контекстын утгыг хүлээн аваад React node буцаадаг. Функцэд дамжуулагдаж байгаа `value` аргумент нь компонентын модонд байх тухайн контекстээс дээш хамгийн ойр байрлах Provider ийн `value` пропстой тэнцүү байна. Хэрвээ тухайн контекстээс дээш орших ямар ч Provider олдохгүй бол `value` аргумент нь `createContext()` функцээр дамжуулагдсан `defaultValue` тай тэнцүү байна.
 
