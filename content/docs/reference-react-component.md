@@ -303,11 +303,7 @@ v
 getSnapshotBeforeUpdate(prevProps, prevState)
 ```
 
-<<<<<<< HEAD
 Хамгийн сүүлийн рендэр хийсэн үр дүн нь DOM г.м руу орохын яг өмнө `getSnapshotBeforeUpdate()`  дуудагддаг.  Энэ нь таны компонентыг өөрчлөлт орохоос өмнө DOM-оос зарим мэдээлэл (байрлалыг гүйлгэх г.м) авахад тусалдаг. Уг амьдралын мөчлөгийн буцаасан ямар ч утга `componentDidUpdate()` параметр руу дамжих болно. 
-=======
-`getSnapshotBeforeUpdate()` is invoked right before the most recently rendered output is committed to e.g. the DOM. It enables your component to capture some information from the DOM (e.g. scroll position) before it is potentially changed. Any value returned by this lifecycle method will be passed as a parameter to `componentDidUpdate()`.
->>>>>>> c3c93e2a7ff1b1f7b8735a3a87d4b10937eaaf91
 
 Хэдий ховор тохиолдох ч position scroll хийхэд тусгай арга шаарддаг чат thread гэхчлэн хэрэглэгчийн интерфэйст хэрэг болдог. 
 
