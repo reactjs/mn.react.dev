@@ -43,9 +43,9 @@ class NameForm extends React.Component {
 
 Танд ямар тохиолдолд аль төрлийн компонентийг ашиглах зүйтэй нь эргэлзээтэй байвал [удирдагдсан болон удирдагдаагүй оролтыг харьцуулсан энэ нийтлэл](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/) тус болж мэднэ.
 
-### Анхын утгууд {#default-values}
+### Анхны утгууд {#default-values}
 
-In the React rendering lifecycle, the `value` attribute on form elements will override the value in the DOM. With an uncontrolled component, you often want React to specify the initial value, but leave subsequent updates uncontrolled. To handle this case, you can specify a `defaultValue` attribute instead of `value`. Changing the value of `defaultValue` attribute after a component has mounted will not cause any update of the value in the DOM.
+React-ын render-ийн мѳчлѳгѳд form дээрх `value` атрибут нь DOM-ынхаа утгыг дардаг. Удирдагдаагүй компонентын хувьд анхны утгаа зааж өгөөд, дараагийн шинэчлэлтүүдэд дээр тэрийг солихгүй байх шаардлагатай үед та `value`-ын оронд `defaultValue`-ийг ашиглах боломжтой юм. Компонент mount хийсний дараа `defaultValue`-ийг шинэчилбэл DOM дээр ямар ч утга өөрчлөгдөхгүй болно.
 
 ```javascript{7}
 render() {
