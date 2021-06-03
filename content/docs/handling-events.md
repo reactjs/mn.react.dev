@@ -30,11 +30,7 @@ React дээр бага зэрэг өөр:
 </button>
 ```
 
-<<<<<<< HEAD
 Өөр нэг ялгаа бол React дээр үндсэн ажиллагааг нь зогсоохын тулд `худал` буцааж болдоггүй. Та `preventDefault`-г тусгайлан дуудах хэрэгтэй. Жишээлбэл, энгийн HTML дээр линк дээр дарахад шинэ хуудас дууддаг ажиллагаа болиулахдаа дараах байдлаар бичдэг бол:
-=======
-Another difference is that you cannot return `false` to prevent default behavior in React. You must call `preventDefault` explicitly. For example, with plain HTML, to prevent the default form behavior of submitting, you can write:
->>>>>>> ec2d0adcb44d6394f4e6282d8bf52f0e25dbfec3
 
 ```html
 <form onsubmit="console.log('You clicked submit.'); return false">
