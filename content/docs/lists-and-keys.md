@@ -213,7 +213,11 @@ A good rule of thumb is that elements inside the `map()` call need keys.
 
 ###  Түлхүүрүүд зөвхөн харалдаа утгууддаа л дахин давтагдашгүй байх ёстой {#keys-must-only-be-unique-among-siblings}
 
+<<<<<<< HEAD
 Жагсаалтад ашиглагдаж байгаа түлхүүрүүд нь жагсаалт доторх утгуудаасаа л ялгагдахад болно. Тэдгээр нь нэгдсэн хүрээнд дахин давтагдашгүй байх албагүй бөгөөд бид хоёр өөр жагсаалтад адилхан түлхүүрүүд ашиглаж болно:
+=======
+Keys used within arrays should be unique among their siblings. However, they don't need to be globally unique. We can use the same keys when we produce two different arrays:
+>>>>>>> 68e4efcf93b6e589355f6aa3cbc3f3c811c0ad37
 
 ```js{2,5,11,12,19,21}
 function Blog(props) {

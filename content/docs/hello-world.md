@@ -40,7 +40,11 @@ React бол JavaScript сан, тиймээс энэ зааврыг дагаж 
 
 >Тэмдэглэл
 >
+<<<<<<< HEAD
 >Энд зарим заавар JavaScript-ын шинэ синтаксыг ашиглаж жишээ бичсэн байгаа. Хэрвээ JavaScript ашиглаагүй удсан бол [энэ гурван түгээмэл](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) зүйлсийг мэдэхэд илүүдэхгүй.
+=======
+>This guide occasionally uses some newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>>>>>>> 68e4efcf93b6e589355f6aa3cbc3f3c811c0ad37
 
 
 
