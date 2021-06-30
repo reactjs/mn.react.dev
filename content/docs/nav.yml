@@ -125,10 +125,10 @@
         title: Дэгээ API лавлах
       - id: hooks-faq
         title: Дэгээний түгээмэл асуултууд
-- title: Testing
+- title: Тестлэх
   items:
     - id: testing
-      title: Тестлех тойм
+      title: Тестлэх тойм
     - id: testing-recipes
       title: Тестийн жорууд Recipes
     - id: testing-environments
