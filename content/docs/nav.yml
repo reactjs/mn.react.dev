@@ -125,14 +125,13 @@
         title: Дэгээ API лавлах
       - id: hooks-faq
         title: Дэгээний түгээмэл асуултууд
-- title: Testing
+- title: Тестлэх
   items:
     - id: testing
       title: Тестлех тойм
     - id: testing-recipes
       title: Тестийн жорууд Recipes
     - id: testing-environments
-<<<<<<< HEAD
       title: Тестийн орчнууд
 - title: Concurrent Mode (Experimental)
   isOrdered: true
@@ -148,10 +147,6 @@
     - id: concurrent-mode-reference
       title: Concurrent Mode API Reference
 - title: Оролцох
-=======
-      title: Testing Environments
-- title: Contributing
->>>>>>> f3baa6d075c8de475b688abf035d7054bc8a9606
   items:
   - id: how-to-contribute
     title: Яаж оролцох вэ
