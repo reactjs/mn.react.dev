@@ -123,7 +123,11 @@ Production-руу веб сайтаа оруулахын өмнө багасга
 
 ## Заавал биш: React-г JSX-тэй турших {#optional-try-react-with-jsx}
 
+<<<<<<< HEAD
 Дээр дурдсан жишээнүүд зөвхөн броузеруудад шууд дэмжигддэг боломжуудад суурилсан. Энэ нь яагаад бид JavaScript функц дуудаж ашиглан React-г юу харуулах вэ гэдгийг хэлж байгаа шалтгаан юм:
+=======
+In the examples above, we only relied on features that are natively supported by browsers. This is why we used a JavaScript function call to tell React what to display:
+>>>>>>> 95e15d063b205007a92c52efb5311f76ad5a0b6c
 
 ```js
 const e = React.createElement;
@@ -159,7 +163,11 @@ JSX-г өөрийн прожектдоо гялс турших арга бол �
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 ```
 
+<<<<<<< HEAD
 Одоо ямар ч `<script>` таг дотор `type="text/babel"` гэсэн аттрибут өгөөд JSX-г ашиглаж болно. Энэ бол та татаж аваад туршиж үзэх боломжтой [JSX-тэй HTML файл жишээ](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html).
+=======
+Now you can use JSX in any `<script>` tag by adding `type="text/babel"` attribute to it. Here is [an example HTML file with JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/main/static/html/single-file-example.html) that you can download and play with.
+>>>>>>> 95e15d063b205007a92c52efb5311f76ad5a0b6c
 
 Энэ аргачлал нь суралцах болон энгийн жишээ үүсгэхэд зүгээр юм. Гэхдээ энэ нь вебсайтыг удаашруулдаг тул production орчинд тохиромжгүй. Цааш явахад бэлэн болмогцоо энэ хүү `<script>` таг болон нэмсэн `type="text/babel"` аттрибутуудаа устгана. Оронд нь дараа хэсэгт `<script>` тагуудыг автоматаар хувиргадаг JSX урьдчилан боловсруулагчыг оруулна.
 

@@ -38,7 +38,11 @@ React нь анхнаасаа алгуур нутагшуулалтад загв
 
 Хэрвээ React дээр туршилт хийх сонирхолтой байвал, онлайн туршилтын талбар ашиглах боломжтой. Hello World загварыг [CodePen](codepen://hello-world), [CodeSandbox](https://codesandbox.io/s/new) эсвэл [Glitch](https://glitch.com/edit/#!/remix/starter-react-template) эсвэл [Stackblitz](https://stackblitz.com/fork/react) зэргээс турших боломжтой.
 
+<<<<<<< HEAD
 Хэрвээ өөрийн editor дээр ажилламаар байвал, [Энэ HTML файлыг татаж](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html) аваад, засаад, өөрийн файл системээс веб хөтөч дээрээ нээж үзэх мөн боломжтой. Энэ нь код хөрвүүлэлтийн хурдны хувьд удаан тул үүнийг зөвхөн энгийн жишээн дээр хэрэглэхийг зөвлөж байна.
+=======
+If you prefer to use your own text editor, you can also [download this HTML file](https://raw.githubusercontent.com/reactjs/reactjs.org/main/static/html/single-file-example.html), edit it, and open it from the local filesystem in your browser. It does a slow runtime code transformation, so we'd only recommend using this for simple demos.
+>>>>>>> 95e15d063b205007a92c52efb5311f76ad5a0b6c
 
 ### React-г веб сайтад оруулах {#add-react-to-a-website}
 
@@ -116,7 +120,11 @@ React докюментжуулалт Javascript-н тодорхой мэдлэг
 
 Мөн та [@reactjs аккоунт](https://twitter.com/reactjs)-г Twitter дээр дагах боломжтой, гэсэн хэдий ч зөвхөн блогийг уншсанаар ямар ч чухал зүйлийг алдахгүй.
 
+<<<<<<< HEAD
 React-н бүх хувилбар блог пост болон орох шаардлагагүй байдаг, гэхдээ бүх хувилбарын дэлгэрэнгүй өөрчлөлтийн бүртгэлийг [React рэпо доторх `CHANGELOG.md` файлаас](https://github.com/facebook/react/blob/master/CHANGELOG.md) мөн [Releases](https://github.com/facebook/react/releases) хуудаснаас олох боломжтой. d2ade76cce133af47ab198188fa2de03fa51834b
+=======
+Not every React release deserves its own blog post, but you can find a detailed changelog for every release in the [`CHANGELOG.md` file in the React repository](https://github.com/facebook/react/blob/main/CHANGELOG.md), as well as on the [Releases](https://github.com/facebook/react/releases) page.
+>>>>>>> 95e15d063b205007a92c52efb5311f76ad5a0b6c
 
 ## Хувилбарт докюментжуулалт {#versioned-documentation}
 
