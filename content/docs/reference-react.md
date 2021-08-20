@@ -179,11 +179,7 @@ React.cloneElement(
 )
 ```
 
-<<<<<<< HEAD
 React элементийг `element`-г эхлэлийн цэг болгон ашиглаж хувилаад шинээр үүсгэн буцаана. Үр дүнд үүсэх элемент нь эх элементийнхаа шинж чанарыг өнгөцхөн хуулбарлана. Шинэ хүү нь байгаа хүүг сольдог. `key` болон `ref` эх элементээсээ нөөцлөгддөг.
-=======
-Clone and return a new React element using `element` as the starting point. `config` should contain all new props, `key`, or `ref`. The resulting element will have the original element's props with the new props merged in shallowly. New children will replace existing children. `key` and `ref` from the original element will be preserved if no `key` and `ref` present in the `config`.
->>>>>>> 95e15d063b205007a92c52efb5311f76ad5a0b6c
 
 `React.cloneElement()` дараахтай бараг ижил:
 
@@ -191,11 +187,7 @@ Clone and return a new React element using `element` as the starting point. `con
 <element.type {...element.props} {...props}>{children}</element.type>
 ```
 
-<<<<<<< HEAD
 Энэ нь мөн `ref`-г нөөцөлдөг. Өөрөөр хэлбэл хүү элемент `ref` дээр байвал, та түүнийг эцгээс нь булаана. Таны шинэ элементэд ижил `ref` байна.
-=======
-However, it also preserves `ref`s. This means that if you get a child with a `ref` on it, you won't accidentally steal it from your ancestor. You will get the same `ref` attached to your new element. The new `ref` or `key` will replace old ones if present.
->>>>>>> 95e15d063b205007a92c52efb5311f76ad5a0b6c
 
 Энэ API нь хуучирсан `React.addons.cloneWithProps()`-н солигдох хувилбар болон танилцуулагдсан.
 
