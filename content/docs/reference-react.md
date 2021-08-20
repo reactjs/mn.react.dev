@@ -174,7 +174,7 @@ React.createElement(
 ```
 React.cloneElement(
   element,
-  [props],
+  [config],
   [...children]
 )
 ```
