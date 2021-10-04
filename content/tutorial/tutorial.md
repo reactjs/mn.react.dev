@@ -451,11 +451,19 @@ class Square extends React.Component {
 
 Square дээр дарахад Board-с дамжуулж өгч байгаа `onClick` функц дуудагдах бөгөөд хэрхэн энэ үйлдэл явагдахыг доорх байдлаар тайлбарлаж болно:
 
+<<<<<<< HEAD
 1. Анхнаасаа байдаг DOM компонент `<button>`-ийн `onClick` prop нь React-д click event-ийн listener-г бэлдэхийг даалгадаг.
 2. button дарагдах үед React нь Square-ийн `render()` метод дотор тодорхойлогдсон`onClick` event handler-г дуудах болно.
 3. Тэр event handler нь `this.props.onClick()`-г дуудах бөгөөд энэ Square-ийн `onClick` prop-г Board тодорхойлж өгсөн байгаа.
 4. Board нь Square уруу `onClick={() => this.handleClick(i)}` гэж дамжуулсан учраас Square нь дарагдах үедээ `this.handleClick(i)` гэж дуудна.
 5. Бид одоогоор `handleClick()` методыг тодорхойлж өгөөгүй байгаа учраас хэрэв та square дээр дарвал кодонд асуудал үүсэж, "this.handleClick is not a function" (this.handleClick нь функц биш) гэсэн улаан алдааны мэдээлэл гарах болно.
+=======
+1. The `onClick` prop on the built-in DOM `<button>` component tells React to set up a click event listener.
+2. When the button is clicked, React will call the `onClick` event handler that is defined in Square's `render()` method.
+3. This event handler calls `this.props.onClick()`. The Square's `onClick` prop was specified by the Board.
+4. Since the Board passed `onClick={() => this.handleClick(i)}` to Square, the Square calls the Board's `handleClick(i)` when clicked.
+5. We have not defined the `handleClick()` method yet, so our code crashes. If you click a square now, you should see a red error screen saying something like "this.handleClick is not a function".
+>>>>>>> 23d03a854ba21aeea0a03a0bd5185e0def9237d6
 
 >Анхаарах
 >
@@ -524,7 +532,11 @@ Square компонент state-г удирдахаа больсон учраа�
 
 ### Хувиршгүй байдал(Immutability) яагаад чухал болох нь {#why-immutability-is-important}
 
+<<<<<<< HEAD
 Өмнөх жишээнд өөрчлөх ёстой `squares` array-ийн хуулбарыг `.slice()` оператор ашиглан үүсгэхийг билээ. Одоо бид хувиршгүй байдал гэж болох тухай болон яагаад хувиршгүй байдал чухал талаар ярих болно.
+=======
+In the previous code example, we suggested that you create a copy of the `squares` array using the `slice()` method instead of modifying the existing array. We'll now discuss immutability and why immutability is important to learn.
+>>>>>>> 23d03a854ba21aeea0a03a0bd5185e0def9237d6
 
 Ерөнхийдөө өгөгдлийг өөрчлөх хоёр хандлага байдаг. Эхнийх нь өгөгдлийн утгыг шууд өөрчлөх замаар өгөгдлийг *хувиргах*. Нөгөөх нь өгөгдлийг хүсэж байгаа өөрчлөлт хийгдсэн хуулбар өгөгдлөөр солих арга байна.
 

@@ -46,9 +46,17 @@ React элементийг DOM руу рендэр хийхдээ, `container` �
 >
 > `ReactDOM.render()` нь контэйнер node-ыг өөрчилдөггүй (зөвхөн контэйнерийн хүүхдүүдийг нь өөрчилдөг). Одоогийн хүүхдүүдийг нь дарж бичихгүйгээр DOM node-д өөр нэг компонент оруулах боломжтой. 
 >
+<<<<<<< HEAD
 > `ReactDOM.render()`нь одоогоор утгыг эх `ReactComponent` instance руу буцаадаг. Гэхдээ буцаасан утгыг ашиглавал удамшсан болох ба React-ын ирээдүйд гарах хувилбарууд зарим тохиолдолд компонентуудыг синхрон бусаар рендэр хийж магадгүй тул үүнээс зайлсхийх нь зүйтэй. Хэрэв та `ReactComponent` instance руу утга илгээхийг хүсвэл эх элементэд нь [callback ref](/docs/more-about-refs.html#the-ref-callback-attribute) хийсэн нь хавьгүй дээр. 
 
 > Серверийн рендэр хийсэн контэйнерыг `ReactDOM.render()` hydrate хийхийг хүмүүс их шүүмжилсэн тул React 17 дээрээс байхаа болино. Оронд нь [`hydrate()`](#hydrate) ашиглаарай.
+=======
+> `ReactDOM.render()` currently returns a reference to the root `ReactComponent` instance. However, using this return value is legacy
+> and should be avoided because future versions of React may render components asynchronously in some cases. If you need a reference to the root `ReactComponent` instance, the preferred solution is to attach a
+> [callback ref](/docs/refs-and-the-dom.html#callback-refs) to the root element.
+>
+> Using `ReactDOM.render()` to hydrate a server-rendered container is deprecated and will be removed in React 17. Use [`hydrate()`](#hydrate) instead.
+>>>>>>> 23d03a854ba21aeea0a03a0bd5185e0def9237d6
 
 * * *
 
