@@ -24,11 +24,18 @@ Stack Overflow нь код бичих үед болон тулгараад бу�
 
 Энэхүү форумууд нь олон сая React хөгжүүлэгчдээс бүтдэг.
 
+<<<<<<< HEAD
 * [DEV дээрх хамтрал](https://dev.to/t/react)
 * [Hashnode-ийн React хөгжүүлэгчид](https://hashnode.com/n/reactjs)
 * [Reactiflux интернэт чат](https://discord.gg/reactiflux)
 * [Reddit дээрх React хөгжүүлэгчид](https://www.reddit.com/r/reactjs/)
 * [Spectrum дээрх React хөгжүүлэгчид](https://spectrum.chat/react)
+=======
+* [DEV's React community](https://dev.to/t/react)
+* [Hashnode's React community](https://hashnode.com/n/reactjs)
+* [Reactiflux online chat](https://discord.gg/reactiflux)
+* [Reddit's React community](https://www.reddit.com/r/reactjs/)
+>>>>>>> 4133943e718a77f11627888db2f59f6cb7a73403
 
 ## Мэдээ {#news}
 
