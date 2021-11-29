@@ -149,7 +149,11 @@ return (
 
 Эдгээд хоёр код нь хоорондоо ялгаагүй. **JSX нь [заавал шаардлагатай биш]((/docs/react-without-jsx.html))** ч гэсэн олон хүмүүс үүнийг UI код бичихэд ашигтай гэж хардаг, React болон кодын санд аль алинд нь.
 
+<<<<<<< HEAD
 [Энэ онлайн хөрвүүлэгчээр](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3) JSX-г туршиж үзэх боломжтой.
+=======
+You can play with JSX using [this online converter](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.15.7).
+>>>>>>> 0057efa12c1aa2271ef80d7a84d622732bdfa85c
 
 ### JSX-г гялс турших {#quickly-try-jsx}
 
