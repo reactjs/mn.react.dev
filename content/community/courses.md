@@ -24,7 +24,14 @@ permalink: community/courses.html
 
 - [Scrimba: Learn React for free](https://scrimba.com/g/glearnreact) - 48 react апп бүтээх туршлагад үндэслэн видео хичээлүүд.
 
+<<<<<<< HEAD
 ## Төлбөртэй хичээлүүд {#paid-courses}
+=======
+- [University of Helsinki: Full Stack Open MOOC](https://fullstackopen.com/en/) - Learn to build web applications with React. Available in English, Spanish, Chinese and Finnish.
+
+
+## Paid Courses {#paid-courses}
+>>>>>>> b41b1dc35679c01c3252e7d512ce28c5e100d0a4
 
 - [Egghead.io](https://egghead.io/browse/frameworks/react) - React болон бусад сэдвүүд бүхий богино хэмжээний сургалтын видеонууд.
 
