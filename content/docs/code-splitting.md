@@ -202,11 +202,15 @@ const MyComponent = () => (
 бүхэл хуудсийг дахин нэг удаа дүрслэхийг илүүд үздэг бол таны хэрэглэгчид
 хуудас дээр байгаа бусад элементүүдтэй харьцах нь цөөн байдаг.
 
+<<<<<<< HEAD
 Энэ нь хэрхэн чиглэл дээр тулгуурласан код салгалт хийх жишээг [React Router](https://reacttraining.com/react-router/) шиг санг `React.lazy`-тэй хамт ашиглан харуулжээ.
+=======
+Here's an example of how to setup route-based code splitting into your app using libraries like [React Router](https://reactrouter.com/) with `React.lazy`.
+>>>>>>> 71cc6be6182418dec43b72f2a9ef464619cb7025
 
 ```js
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const Home = lazy(() => import('./routes/Home'));
 const About = lazy(() => import('./routes/About'));
@@ -214,10 +218,10 @@ const About = lazy(() => import('./routes/About'));
 const App = () => (
   <Router>
     <Suspense fallback={<div>Loading...</div>}>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/about" component={About}/>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </Suspense>
   </Router>
 );
