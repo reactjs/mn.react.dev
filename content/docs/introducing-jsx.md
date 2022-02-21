@@ -69,7 +69,7 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://introducing-jsx)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/PGEjdG?editors=1010)**
 
 Бид кодыг илүү унших байдлыг нь бодон JSX-ээ олон мөр болгон хуваасан. Энэ зайлшгүй хийх ёстой зүйл биш ч хийж байгаа тохиолдолд [автомат цэг таслал нэмэгдэх](https://stackoverflow.com/q/2846283)-ээс сэргийлж дугуй хаалтаар хүрээлүүлэхийг зөвлөж байна.
 
@@ -93,7 +93,7 @@ function getGreeting(user) {
 Та аттрибут дээр квот ашиглан тэмдэгт төрлөөр өгөх байх:
 
 ```js
-const element = <div tabIndex="0"></div>;
+const element = <a href="https://www.reactjs.org"> link </a>;
 ```
 
 Мөн та угалзан хаалтаар Жаваскрипт илэрхийлэл аттрибутад шигтгэж болно:
