@@ -77,7 +77,7 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://components-and-props/rendering-a-component)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)**
 
 Энэ жишээнд юу болж байгаа тоймлоё:
 
@@ -119,7 +119,7 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://components-and-props/composing-components)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)**
 
 Ерөнхийдөө шинэ React програмууд `App` компонент хамгийн дээд талдаа байлгадаг. Гэхдээ та байгаа програм дээр React залгах(integrate) гэж байгаа бол `Button` гэх мэтчилэн доод талын жижиг хэсгээс дээшээ гэхчлэн явах нь зүйтэй байж болно.
 
@@ -153,7 +153,7 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)**
 
 Энэ `author` (объект), `text` (тэмдэгт), `date` (огноо)-уудыг шинж чанар болгон хүлээн авч сошиал вебсайт дээр сэтгэгдлийг тодорхойлсон байна.
 
@@ -232,7 +232,7 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components-continued)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)**
 
 Компонентыг энэ мэтчилэн салгах нь эхэндээ их ажил шаардах ч томоохон програмуудын хувьд эдгээр дахин ашиглагдах компонентууд нь үр дүнгээ сайн өгдөг. Таны дэлгэцийн загварын хэсэг олон удаа ашиглагдах(`Button`, `Panel`, `Avatar`) эсвэл өөрөө хангалттай цогц болсон(`App`, `FeedStory`, `Comment`) бол дахин ашиглагдах боломжтой компонентууд болгон салгах нь хамгийн түрүүнд зөвлөх зөвлөмж юм.
 

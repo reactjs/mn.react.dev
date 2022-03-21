@@ -38,7 +38,7 @@ React элементийг эх DOM зангилаа дээр дүрслэхдэ
 
 `embed:rendering-elements/render-an-element.js`
 
-[](codepen://rendering-elements/render-an-element)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/ZpvBNJ?editors=1010)**
 
 Энэ код хуудас дээр "Hello, world" текст дүрслэх болно.
 
@@ -52,7 +52,7 @@ React элементүүд нь [хувиршгүй(immutable)](https://en.wikip
 
 `embed:rendering-elements/update-rendered-element.js`
 
-[](codepen://rendering-elements/update-rendered-element)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)**
 
 Энэ нь [`ReactDOM.render`](/docs/react-dom.html#render)-г [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) дуудалт дээр секунд болгон дуудаж байна.
 
@@ -66,7 +66,11 @@ React элементүүд нь [хувиршгүй(immutable)](https://en.wikip
 
 React DOM элемент болон дэд элементийг нь өмнөхтэй нь харьцуулан DOM-г хүссэн төлөвт нь оруулахийн тулд DOM дээр зөвхөн шаардлагатай өөрчлөлтийг л хэрэгжүүлдэг.
 
+<<<<<<< HEAD
 Та [өмнөх жишээг](codepen://rendering-elements/update-rendered-element) хөтчийн хэрэгсэл ашиглан шинжилж мэдэж болно:
+=======
+You can verify by inspecting the [last example](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) with the browser tools:
+>>>>>>> 1e3b023d3192c36a2da7b72389debee2f0e0e8b0
 
 ![DOM inspector showing granular updates](../images/docs/granular-dom-updates.gif)
 
