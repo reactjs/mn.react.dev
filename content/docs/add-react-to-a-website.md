@@ -52,9 +52,15 @@ React нь анхнаасаа аажмаар хэрэглээнд оруулах
 ```html{5,6,9}
   <!-- ... бусад HTML ... -->
   <!-- Load React. -->
+<<<<<<< HEAD
   <!-- Тэмдэглэл: deploy хийхдээ "development.js"-г "production.min.js"-р солих хэрэгтэй. -->
   <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+=======
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+>>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
 
 
   <!-- Load our React component. -->
@@ -77,14 +83,24 @@ React нь анхнаасаа аажмаар хэрэглээнд оруулах
 
 `like_button.js` дотор **[Эхлэх кодын](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** ард 2 мөр нэмнэ:
 
+<<<<<<< HEAD
 ```js{3,4}
 // ... хуулж тавьсан эхлэх код ...
+=======
+```js{3,4,5}
+// ... the starter code you pasted ...
+>>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
 
 const domContainer = document.querySelector('#like_button_container');
-ReactDOM.render(e(LikeButton), domContainer);
+const root = ReactDOM.createRoot(domContainer);
+root.render(e(LikeButton));
 ```
 
+<<<<<<< HEAD
 Энэ 2 мөр код нь бидний эхний алхамд HTML дотор нэмсэн `<div>`-г олоод "Like" React компонент товчыг түүн дотор харуулах юм.
+=======
+These three lines of code find the `<div>` we added to our HTML in the first step, create a React app with it, and then display our "Like" button React component inside of it.
+>>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
 
 ### Ингээд болоо! {#thats-it}
 
@@ -115,8 +131,8 @@ Production-руу веб сайтаа оруулахын өмнө багасга
 Хэрвээ аппликешн скриптүүдээ хэзээний багасгасан мөн React хувилбараа HTML дотроо дуудахдаа `production.min.js`-р дууссаныг ашиглаж байгааг нягталсан бол таны сайт production-д бэлэн гэсэн үг:
 
 ```js
-<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
 Хэрвээ танд скриптүүдээ багасгах алхам байдаггүй бол [энд хийх нэг аргачлал байна](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3).
@@ -149,7 +165,11 @@ return (
 
 Эдгээд хоёр код нь хоорондоо ялгаагүй. **JSX нь [заавал шаардлагатай биш]((/docs/react-without-jsx.html))** ч гэсэн олон хүмүүс үүнийг UI код бичихэд ашигтай гэж хардаг, React болон кодын санд аль алинд нь.
 
+<<<<<<< HEAD
 [Энэ онлайн хөрвүүлэгчээр](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3) JSX-г туршиж үзэх боломжтой.
+=======
+You can play with JSX using [this online converter](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.15.7).
+>>>>>>> 707f22d25f5b343a2e5e063877f1fc97cb1f48a1
 
 ### JSX-г гялс турших {#quickly-try-jsx}
 
