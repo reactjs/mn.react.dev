@@ -8,16 +8,23 @@ next: introducing-jsx.html
 
 Хамгийн энгийн React жишээ иймэрхүү харагдана:
 
+<<<<<<< HEAD
 ```js
 ReactDOM.render(
   <h1>Сайн уу, дэлхий!</h1>,
   document.getElementById('root')
 );
+=======
+```jsx
+ReactDOM
+  .createRoot(document.getElementById('root'))
+  .render(<h1>Hello, world!</h1>);
+>>>>>>> 84ad3308338e2bb819f4f24fa8e9dfeeffaa970b
 ```
 
 Ингэж "Сайн уу, дэлхий!" гэх толгой таг хуудсанд харагдана.
 
-[](codepen://hello-world)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrpgNB?editors=1010)**
 
 Дээрхи холбоос дээр дарж онлайн засварлагчыг нээе. Хүссэнээрээ ѳѳрчлѳѳд үр дүн хэрхэн ѳѳрчлѳгдѳхийг хараарай. Ихэнх жишээнүүд үүнтэй адил заавартай байгаа.
 

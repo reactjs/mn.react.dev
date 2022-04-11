@@ -522,8 +522,12 @@ setState(updater, [callback])
 
 `setState()`  нь компонентод орсон өөрчлөлтийг дараалуулан нэмж, төлөв шинэчлэгдсэн үед компонент болон хүүхдүүд нь дахин рендэр хийх хэрэгтэй гэдгийг React-д мэдэгддэг. Та эвент зохицуулагч, серверийн хариу үйлдлийн улмаас хэрэглэгчийн интерфэйсийг шинэчлэхийг хүсвэл нэн тэргүүнд ашиглах чухал метод юм. 
 
+<<<<<<< HEAD
  `setState()`-ыг компонентыг шинэчлэх шуурхай команд гэхээс илүүтэй *хүсэлт* гэж ойлгон. Ажиллагааг илүү байлгахын тулд React 
 магадгүй хүсэлтийг сааруулж, нэг дамжуулалтаараа хэд хэдэн компонент шинэчлэх боломжтой. Төлөвт орсон өөрчлөлтүүд нь шууд орно гэсэн баталгаа React-д байхгүй. 
+=======
+Think of `setState()` as a *request* rather than an immediate command to update the component. For better perceived performance, React may delay it, and then update several components in a single pass. In the rare case that you need to force the DOM update to be applied synchronously, you may wrap it in [`flushSync`](/docs/react-dom.html#flushsync), but this may hurt performance.
+>>>>>>> 84ad3308338e2bb819f4f24fa8e9dfeeffaa970b
 
 `setState()`  нь дандаа компонентыг шууд шинэчлэхгүй. Update-ыг хойшлуулах, хадгалаад байлгаад байдаг. `setState()` дуудсаны дараа тэр даруй `this.state`-ыг уншуулбал алдаа гарч болзошгүй. Оронд нь `componentDidUpdate` эсвэл `setState`  callback (`setState(updater, callback)`) ашиглаарай. Update орсны дараа баталгаатай ажиллана. Хэрэв та өмнөх төлөв дээр үндэслэн одоогийн төлөвийг тохируулах гэж байгаа бол доорх `updater` аргументын тухай уншаарай.
 
