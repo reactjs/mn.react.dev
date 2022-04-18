@@ -276,15 +276,19 @@ this.setState(partialState);
 
 ## Удирдагдсан оролтын хоосон утга {#controlled-input-null-value}
 
+<<<<<<< HEAD
 [Удирдагдсан компонент](/docs/forms.html#controlled-components) дээр утга шинж чанарт нь тусгайлан утга оноох нь хэрэглэгч хүсээгүй л бол оролтын утгийг өөрчлөгдөхөөс сэргийлдэг. Хэрэв та тусгайлан `value` зааж өгсөн оролт нь засварлах боломжтой байвал та магадгүй санамсаргүйгээр `тодорхойлогдоогүй` эсвэл `хоосон` утга өгсөн байж болно.
+=======
+Specifying the `value` prop on a [controlled component](/docs/forms.html#controlled-components) prevents the user from changing the input unless you desire so. If you've specified a `value` but the input is still editable, you may have accidentally set `value` to `undefined` or `null`.
+>>>>>>> 07dbd86ca421c262157af673a2584a40fd3b2450
 
 Дараах код үүнийг заасан байна. (Оролт нь эхэндээ засварлах боломжгүйгээр цоожлогдсон ба богино хугацааны дараа засварлагдаж боломжтой болж байна.)
 
 ```javascript
-ReactDOM.render(<input value="hi" />, mountNode);
+ReactDOM.createRoot(mountNode).render(<input value="hi" />);
 
 setTimeout(function() {
-  ReactDOM.render(<input value={null} />, mountNode);
+  ReactDOM.createRoot(mountNode).render(<input value={null} />);
 }, 1000);
 
 ```
