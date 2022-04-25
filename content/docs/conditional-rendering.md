@@ -154,7 +154,20 @@ ReactDOM.render(
 
 ### Мөр доторх If-Else нөхцөлт оператортой хамт {#inline-if-else-with-conditional-operator}
 
+<<<<<<< HEAD
 Өөр нэг нөхцөлд тулгуурлан элемент дүрслэх арга нь Жаваскриптийн нөхцөл оператор [`нөхцөл ? үнэн: худал`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) ашиглах юм.
+=======
+```javascript{2,5}
+render() {
+  const count = 0;
+  return (
+    <div>
+      {count && <h1>Messages: {count}</h1>}
+    </div>
+  );
+}
+```
+>>>>>>> 1d21630e126af0f4c04ff392934dcee80fc54892
 
 Доорх жишээнд бид жижиг хэмжээний текстийг нөхцөл дээр тулгуурлан дүрсэлнэ.
 
