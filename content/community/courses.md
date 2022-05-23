@@ -25,12 +25,6 @@ permalink: community/courses.html
 - [Scrimba: Learn React for free](https://scrimba.com/g/glearnreact) - 48 react апп бүтээх туршлагад үндэслэн видео хичээлүүд.
 
 - [University of Helsinki: Full Stack Open MOOC](https://fullstackopen.com/en/) - Learn to build web applications with React. Available in English, Spanish, Chinese and Finnish.
-<<<<<<< HEAD
-=======
-
-
-## Paid Courses {#paid-courses}
->>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
 
 ## Төлбөртэй хичээлүүд {#paid-courses}
 
@@ -50,17 +44,13 @@ permalink: community/courses.html
 
 - [Essential React](https://learnreact.com/lessons/2018-essential-react-1-overview) - Сонирхогчдод зориулсан, хялбараас хүнд түвшний component бүтээх богино хичээл.
 
-<<<<<<< HEAD
 - [React Training: Advanced React.js](https://courses.reacttraining.com/p/advanced-react) - Өөрийн React чадварыг дараагийн шатанд гарга.
-=======
-- [Tyler McGinnis](https://ui.dev/) - Tyler McGinnis provides access to his courses for a monthly fee. Courses include "React Fundamentals" and "Universal React".
->>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
 
 - [Tyler McGinnis](https://tylermcginnis.com/courses) - Tyler McGinnis-ийн хичээлүүдэд сарын хураамжтайгаар хандах боломжтой. Энэхүү хичээл нь "React-ийн үндэс" болон "Юнивэрсал React"-ийг агуулсан болно.
 
 - [Mastering React](https://codewithmosh.com/p/mastering-react/) - React-аар мэргэжлийн түвшний интерактив апплекейшнууд бүтээ.
 
-- [React Tutorial](https://react-tutorial.app) - Learn React step by step in an interactive environment with flashcards.
+- [React Tutorial](https://react-tutorial.app) - Флаш кардтай интерактив орчинд React-г алхам алхмаар сур.
 
 - [Road to React](https://www.roadtoreact.com/) - Your journey to master React in JavaScript.
 

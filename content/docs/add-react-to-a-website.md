@@ -25,11 +25,7 @@ React нь анхнаасаа аажмаар хэрэглээнд оруулах
 
 **Энэ хэсгийг хийж дуусгахад** ямар нэг төвөгтэй багаж эсвэл шаардлагатай суулгац огт хэрэггүй, **зөвхөн интернет холболт болон өөрийн цагаас нэг минут байхад л хангалттай.**
 
-<<<<<<< HEAD
-Заавал биш: [Бүтэн жишээг татаж авах (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)
-=======
-Optional: [Download the full example (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)
->>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
+Заавал биш: [Бүтэн жишээг татаж авах (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)
 
 ### Алхам 1: HTML дотор DOM агуулагч нэмэх {#step-1-add-a-dom-container-to-the-html}
 
@@ -56,15 +52,9 @@ Optional: [Download the full example (2KB zipped)](https://gist.github.com/gaear
 ```html{5,6,9}
   <!-- ... бусад HTML ... -->
   <!-- Load React. -->
-<<<<<<< HEAD
   <!-- Тэмдэглэл: deploy хийхдээ "development.js"-г "production.min.js"-р солих хэрэгтэй. -->
-  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-=======
-  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
->>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
 
 
   <!-- Load our React component. -->
@@ -85,28 +75,17 @@ Optional: [Download the full example (2KB zipped)](https://gist.github.com/gaear
 >
 >Энэ код `LikeButton` гэх React компонент зарлаж байгаа. Хэрвээ ойлгохгүй бол санаа зовох хэрэггүй [практик хичээл](/tutorial/tutorial.html) болон [үндсэн агуулгын заавар](/docs/hello-world.html) дээр React блокуудыг бүтээх талаар харах юм. Одоохондоо зүгээр үүнийг дэлгэцэн дээр харуулцгаая!
 
-<<<<<<< HEAD
-`like_button.js` дотор **[Эхлэх кодын](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** ард 2 мөр нэмнэ:
-
-```js{3,4}
-// ... хуулж тавьсан эхлэх код ...
-=======
-After **[the starter code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, add three lines to the bottom of `like_button.js`:
+`like_button.js` дотор **[Эхлэх кодын](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)** ард 3 мөр нэмнэ:
 
 ```js{3,4,5}
-// ... the starter code you pasted ...
->>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
+// ... чиний хуулж тавьсан эхлэх код ...
 
 const domContainer = document.querySelector('#like_button_container');
 const root = ReactDOM.createRoot(domContainer);
 root.render(e(LikeButton));
 ```
 
-<<<<<<< HEAD
-Энэ 2 мөр код нь бидний эхний алхамд HTML дотор нэмсэн `<div>`-г олоод "Like" React компонент товчыг түүн дотор харуулах юм.
-=======
-These three lines of code find the `<div>` we added to our HTML in the first step, create a React app with it, and then display our "Like" button React component inside of it.
->>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
+Энэ 3 мөр код нь бидний эхний алхамд HTML дотор нэмсэн `<div>`-г олоод "Like" React компонент товчыг түүн дотор харуулах юм.
 
 ### Ингээд болоо! {#thats-it}
 
@@ -116,11 +95,7 @@ These three lines of code find the `<div>` we added to our HTML in the first ste
 
 **[Бүтэн жишээ кодыг харах](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605)**
 
-<<<<<<< HEAD
-**[Бүтэн жишээг татаж авах (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)**
-=======
-**[Download the full example (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)**
->>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
+**[Бүтэн жишээг татаж авах (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)**
 
 ### Зөвлөгөө: Компонентыг дахин ашиглах {#tip-reuse-a-component}
 
@@ -128,11 +103,7 @@ These three lines of code find the `<div>` we added to our HTML in the first ste
 
 [Бүтэн жишээ кодыг харах](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda)
 
-<<<<<<< HEAD
-[Бүтэн жишээг татаж авах (2KB zipped)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/9d0dd0ee941fea05fd1357502e5aa348abb84c12.zip)
-=======
-[Download the full example (2KB zipped)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/279839cb9891bd41802ebebc5365e9dec08eeb9f.zip)
->>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
+[Бүтэн жишээг татаж авах (2KB zipped)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/279839cb9891bd41802ebebc5365e9dec08eeb9f.zip)
 
 >Тэмдэглэл
 >
@@ -179,11 +150,7 @@ return (
 
 Эдгээд хоёр код нь хоорондоо ялгаагүй. **JSX нь [заавал шаардлагатай биш]((/docs/react-without-jsx.html))** ч гэсэн олон хүмүүс үүнийг UI код бичихэд ашигтай гэж хардаг, React болон кодын санд аль алинд нь.
 
-<<<<<<< HEAD
-[Энэ онлайн хөрвүүлэгчээр](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3) JSX-г туршиж үзэх боломжтой.
-=======
-You can play with JSX using [this online converter](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.15.7).
->>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
+[Энэ онлайн хөрвүүлэгчээр](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.15.7) JSX-г туршиж үзэх боломжтой.
 
 ### JSX-г гялс турших {#quickly-try-jsx}
 

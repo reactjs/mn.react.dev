@@ -16,20 +16,8 @@ Do you know of a local React.js conference? Add it here! (Please keep the list c
 ### render(ATL) 2022 🍑 {#render-atlanta-2022} 
 June 1 - 4, 2022. Atlanta, GA, USA
 
-<<<<<<< HEAD
 ### React Brussels 2021 {#react-brussels-2021} 
 October 15, 2021 - remote event
-=======
-[Website](https://renderatl.com) - [Discord](https://www.renderatl.com/discord) - [Twitter](https://twitter.com/renderATL) - [Instagram](https://www.instagram.com/renderatl/) - [Facebook](https://www.facebook.com/renderatl/) - [LinkedIn](https://www.linkedin.com/company/renderatl) - [Podcast](https://www.renderatl.com/culture-and-code#/)
-
-### React Day Bangalore 2022 {#reactday-bangalore-2022}
-June 8 - 9, 2022.  Remote
-
-[Website](https://reactday.in/) - [Twitter](https://twitter.com/ReactDayIn) - [Linkedin](https://www.linkedin.com/company/react-day/) - [YouTube](https://www.youtube.com/reactify_in)
-
-### App.js Conf 2022 {#appjs-conf-2022}
-June 8 - 10, 2022. In-person in Kraków, Poland + remote
->>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
 
 [Website](https://appjs.co) - [Twitter](https://twitter.com/appjsconf)
 
@@ -135,7 +123,6 @@ October 22-23, 2021. In-person in London, UK + remote (hybrid event)
 
 [Website](https://reactadvanced.com) - [Twitter](https://twitter.com/reactadvanced) - [Facebook](https://www.facebook.com/ReactAdvanced) - [Videos](https://youtube.com/c/ReactConferences)
 
-<<<<<<< HEAD
 ### < React Global > by Geekle {#react-global-2021}
 November 3-4, 2021 - remote event
 
@@ -148,10 +135,6 @@ October 20-22, 2021. London, UK & remote
 
 ### React India 2021 {#react-india-2021}
 November 12-14, 2021 - remote event
-=======
-### React Conf Brasil 2021 {#react-conf-brasil-2021}
-October 16, 2021 - remote event
->>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
 
 [Website](http://reactconf.com.br) - [Twitter](https://twitter.com/reactconfbr) - [Slack](https://react.now.sh) - [Facebook](https://facebook.com/reactconf) - [Instagram](https://instagram.com/reactconfbr) - [YouTube](https://www.youtube.com/channel/UCJL5eorStQfC0x1iiWhvqPA/videos)
 
