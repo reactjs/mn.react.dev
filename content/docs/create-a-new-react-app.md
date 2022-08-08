@@ -39,7 +39,11 @@ React баг үндсэндээ эдгээр шийдлүүдийг санал �
 
 [Create React App](https://github.com/facebookincubator/create-react-app) бол **React сурaхад* хамгийн тохиромжтой орчин ба React дээр **шинээр [single-page](/docs/glossary.html#single-page-application) апп** бүтээхэд хамгийн шилдэг арга юм.
 
+<<<<<<< HEAD
 Та [Node >= 14.0.0 болон npm >= 5.6](https://nodejs.org/en/) компьютертээ суулгах шаардлагатай. Create React App нь JavaScript-ын хамгийн сүүлийн үеийн боломжуудыг ашиглах боломжтой хѳгжүүлэлтийн орчин бүрдүүлж ѳгѳхѳѳс гадна, хэрэглэгчид хүрэх үед нэмэлт сайжруулалтуудыг автоматаар хийдэг. Тѳсѳл үүсгэхдээ*:
+=======
+It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, and optimizes your app for production. You’ll need to have [Node >= 14.0.0 and npm >= 5.6](https://nodejs.org/en/) on your machine. To create a project, run:
+>>>>>>> 4808a469fa782cead9802619b0341b27b342e2d3
 
 ```bash
 npx create-react-app my-app
@@ -75,7 +79,11 @@ Gatsby-н талаар [түүний албан ёсны заавараас](htt
 
 - **[nwb](https://github.com/insin/nwb)** бол [React компонентуудыг npm-р оруулхад](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb) голчилон зориулсагдсан. Үүнийг мөн React app хийхэд [хэрэглэж болно](https://github.com/insin/nwb/blob/master/docs/guides/ReactApps.md#developing-react-apps-with-nwb).
 
+<<<<<<< HEAD
 - **[Parcel](https://parceljs.org/)** [React-тай ажилладаг](https://parceljs.org/recipes.html#react) хурдан, тохиргоогүй ажиллах веб апп багцлагч юм.
+=======
+- **[Parcel](https://parceljs.org/)** is a fast, zero configuration web application bundler that [works with React](https://parceljs.org/recipes/react/).
+>>>>>>> 4808a469fa782cead9802619b0341b27b342e2d3
 
 - **[Razzle](https://github.com/jaredpalmer/razzle)** ямар ч тохиргоо шаардлагагүй сервер талын рендер хийх фраймворк бөгөөд Next.js-с илүү уян байдлыг санал болгодог.
 
