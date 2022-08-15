@@ -54,7 +54,11 @@ class Welcome extends React.Component {
 
 >Тэмдэглэл:
 >
+<<<<<<< HEAD
 >Методууд нь эцэг гэж тодорхойлогдох бөгөөд шинэ кодондоо эдгээрээс [зайлсхийх](/blog/2018/03/27/update-on-async-rendering.html) хэрэгтэй:
+=======
+>This method is considered legacy and you should [avoid it](/blog/2018/03/27/update-on-async-rendering.html) in new code:
+>>>>>>> 5fed75dac5f4e208369b102a1337d76944111b33
 >
 >- [`UNSAFE_componentWillMount()`](#unsafe_componentwillmount)
 
@@ -517,13 +521,17 @@ UNSAFE_componentWillUpdate(nextProps, nextState)
 ### `setState()` {#setstate}
 
 ```javascript
-setState(updater, [callback])
+setState(updater[, callback])
 ```
 
 `setState()`  нь компонентод орсон өөрчлөлтийг дараалуулан нэмж, төлөв шинэчлэгдсэн үед компонент болон хүүхдүүд нь дахин рендэр хийх хэрэгтэй гэдгийг React-д мэдэгддэг. Та эвент зохицуулагч, серверийн хариу үйлдлийн улмаас хэрэглэгчийн интерфэйсийг шинэчлэхийг хүсвэл нэн тэргүүнд ашиглах чухал метод юм. 
 
+<<<<<<< HEAD
  `setState()`-ыг компонентыг шинэчлэх шуурхай команд гэхээс илүүтэй *хүсэлт* гэж ойлгон. Ажиллагааг илүү байлгахын тулд React 
 магадгүй хүсэлтийг сааруулж, нэг дамжуулалтаараа хэд хэдэн компонент шинэчлэх боломжтой. Төлөвт орсон өөрчлөлтүүд нь шууд орно гэсэн баталгаа React-д байхгүй. 
+=======
+Think of `setState()` as a *request* rather than an immediate command to update the component. For better perceived performance, React may delay it, and then update several components in a single pass. In the rare case that you need to force the DOM update to be applied synchronously, you may wrap it in [`flushSync`](/docs/react-dom.html#flushsync), but this may hurt performance.
+>>>>>>> 5fed75dac5f4e208369b102a1337d76944111b33
 
 `setState()`  нь дандаа компонентыг шууд шинэчлэхгүй. Update-ыг хойшлуулах, хадгалаад байлгаад байдаг. `setState()` дуудсаны дараа тэр даруй `this.state`-ыг уншуулбал алдаа гарч болзошгүй. Оронд нь `componentDidUpdate` эсвэл `setState`  callback (`setState(updater, callback)`) ашиглаарай. Update орсны дараа баталгаатай ажиллана. Хэрэв та өмнөх төлөв дээр үндэслэн одоогийн төлөвийг тохируулах гэж байгаа бол доорх `updater` аргументын тухай уншаарай.
 
