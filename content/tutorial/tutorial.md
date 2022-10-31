@@ -106,7 +106,7 @@ cd ..
 
 ```js
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 ```
 
@@ -451,11 +451,19 @@ class Square extends React.Component {
 
 Square дээр дарахад Board-с дамжуулж өгч байгаа `onClick` функц дуудагдах бөгөөд хэрхэн энэ үйлдэл явагдахыг доорх байдлаар тайлбарлаж болно:
 
+<<<<<<< HEAD
 1. Анхнаасаа байдаг DOM компонент `<button>`-ийн `onClick` prop нь React-д click event-ийн listener-г бэлдэхийг даалгадаг.
 2. button дарагдах үед React нь Square-ийн `render()` метод дотор тодорхойлогдсон`onClick` event handler-г дуудах болно.
 3. Тэр event handler нь `this.props.onClick()`-г дуудах бөгөөд энэ Square-ийн `onClick` prop-г Board тодорхойлж өгсөн байгаа.
 4. Board нь Square уруу `onClick={() => this.handleClick(i)}` гэж дамжуулсан учраас Square нь дарагдах үедээ `this.handleClick(i)` гэж дуудна.
 5. Бид одоогоор `handleClick()` методыг тодорхойлж өгөөгүй байгаа учраас хэрэв та square дээр дарвал кодонд асуудал үүсэж, "this.handleClick is not a function" (this.handleClick нь функц биш) гэсэн улаан алдааны мэдээлэл гарах болно.
+=======
+1. The `onClick` prop on the built-in DOM `<button>` component tells React to set up a click event listener.
+2. When the button is clicked, React will call the `onClick` event handler that is defined in Square's `render()` method.
+3. This event handler calls `this.props.onClick()`. The Square's `onClick` prop was specified by the Board.
+4. Since the Board passed `onClick={() => this.handleClick(i)}` to Square, the Square calls the Board's `handleClick(i)` when clicked.
+5. We have not defined the `handleClick()` method yet, so our code crashes. If you click a square now, you should see a red error screen saying something like "this.handleClick is not a function".
+>>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 
 >Анхаарах
 >
@@ -524,7 +532,11 @@ Square компонент state-г удирдахаа больсон учраа�
 
 ### Хувиршгүй байдал(Immutability) яагаад чухал болох нь {#why-immutability-is-important}
 
+<<<<<<< HEAD
 Өмнөх жишээнд өөрчлөх ёстой `squares` array-ийн хуулбарыг `.slice()` оператор ашиглан үүсгэхийг билээ. Одоо бид хувиршгүй байдал гэж болох тухай болон яагаад хувиршгүй байдал чухал талаар ярих болно.
+=======
+In the previous code example, we suggested that you create a copy of the `squares` array using the `slice()` method instead of modifying the existing array. We'll now discuss immutability and why immutability is important to learn.
+>>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 
 Ерөнхийдөө өгөгдлийг өөрчлөх хоёр хандлага байдаг. Эхнийх нь өгөгдлийн утгыг шууд өөрчлөх замаар өгөгдлийг *хувиргах*. Нөгөөх нь өгөгдлийг хүсэж байгаа өөрчлөлт хийгдсэн хуулбар өгөгдлөөр солих арга байна.
 
@@ -542,7 +554,11 @@ var player = {score: 1, name: 'Jeff'};
 var newPlayer = Object.assign({}, player, {score: 2});
 // Одоо player нь өөрчлөгдөөгүй боловч newPlayer нь {score: 2, name: 'Jeff'} болно
 
+<<<<<<< HEAD
 // Эсвэл объектыг тархаах бичиглэл ашиглавал доорхоор бичиж болно:
+=======
+// Or if you are using object spread syntax, you can write:
+>>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 // var newPlayer = {...player, score: 2};
 ```
 
@@ -1045,7 +1061,13 @@ Game-ийн `render` метод дахь`history`-г `map` хийвэл:
 
 **[Яг одоо код ямар байгааг ийшээ орж хараарай](https://codepen.io/gaearon/pen/EmmGEa?editors=0010)**
 
+<<<<<<< HEAD
 tic-tac-toe-ийн өмнө гарсан нүүдэл бүрд `<button>` элемент агуулах жагсаалтын `<li>` элемент үүсгэлээ. Товч бүрт нь `this.jumpTo()` методыг дууддаг `onClick` handler бичиж өгсөн. Одоогоор `jumpTo()` методыг хөгжүүлж өгөөгүй байгаа болно. Одоо тоглоомын туршид болсон бүх нүүдлийн жагсаалт дэлгэц дээр харагдаад харин developer tools console дээр доорх анхааруулга гарсан байх ёстой.
+=======
+As we iterate through `history` array, `step` variable refers to the current `history` element value, and `move` refers to the current `history` element index. We are only interested in `move` here, hence `step` is not getting assigned to anything.
+
+For each move in the tic-tac-toe game's history, we create a list item `<li>` which contains a button `<button>`. The button has a `onClick` handler which calls a method called `this.jumpTo()`. We haven't implemented the `jumpTo()` method yet. For now, we should see a list of the moves that have occurred in the game and a warning in the developer tools console that says:
+>>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 
 >  Warning:
 >  Each child in an array or iterator should have a unique "key" prop. Check the render method of "Game".
@@ -1150,11 +1172,21 @@ class Game extends React.Component {
   }
 ```
 
+<<<<<<< HEAD
 Одоо Game-ийн нүднүүд дээр дарахад ажиллах `handleClick` методод зарим өөрчлөлт хийе.
+=======
+Notice in `jumpTo` method, we haven't updated `history` property of the state. That is because state updates are merged or in more simple words React will update only the properties mentioned in `setState` method leaving the remaining state as is. For more info **[see the documentation](/docs/state-and-lifecycle.html#state-updates-are-merged)**.
+
+We will now make a few changes to the Game's `handleClick` method which fires when you click on a square.
+>>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 
 Одоо бидний нэмсэн `stepNumber` state нь хэрэглэгчид үзүүлж байгаа нүүдлийн утгаас хамаарч өөрчлөгдөнө. Бид дараагийн нүүдлийг хийх үед `stepNumber`-ийн утгыг `this.setState`-ийн аргумент болгож `stepNumber: history.length` гэх байдлаар шинэчлэх хэрэгтэй. Энэ нь шинэ нүүдэл хийгдсэний дараа бидэнд ижил нүүдэл харагдуулаад байхгүй гэсэн баталгааг өгч байгаа юм.
 
+<<<<<<< HEAD
 Бид мөн `this.state.history`-г `this.state.history.slice(0, this.state.stepNumber + 1)`-ээр солих болно. Энэ нь хэрэв бид өнгөрсөн нүүдэл уруу очоод тэр цэгээс эхлэн дахин шинээр нүүдэл хийвэл одоо хэрэггүй болсон дараагийн нүүдлүүдийг байхгүй болгох юм.
+=======
+We will also replace reading `this.state.history` with `this.state.history.slice(0, this.state.stepNumber + 1)`. This ensures that if we "go back in time" and then make a new move from that point, we throw away all the "future" history that would now be incorrect.
+>>>>>>> e21b37c8cc8b4e308015ea87659f13aa26bd6356
 
 ```javascript{2,13}
   handleClick(i) {
