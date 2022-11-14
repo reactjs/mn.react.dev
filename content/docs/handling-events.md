@@ -85,11 +85,6 @@ class Toggle extends React.Component {
     );
   }
 }
-
-ReactDOM.render(
-  <Toggle />,
-  document.getElementById('root')
-);
 ```
 
 [**CodePen дээр турших**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
@@ -98,15 +93,23 @@ JSX дуудалт дээр `this`-г ашиглахдаа болгоомжто�
 
 Энэ нь React-д зориулсан ажиллах зарчим биш; [функцууд Жаваскрипт дээр хэрхэн ажилладаг талаарх](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/) нэг хэсэг юм. Ерөнхийдөө та функцийг ардаа `()`-гүй заахад, жишээлбэл `onClick={this.handleClick}`, та энэ функцийг холбох юм.
 
+<<<<<<< HEAD
 `Холбох` дуудалт танд хэцүү санагдаж байвал өөрөөр хийх хоёр арга бий. Хэрэв та туршилтын [public class fields syntax](https://babeljs.io/docs/plugins/transform-class-properties/) ашиглаж байгаа бол, холбох дуудалтыг классын талбар ашиглаж хийж болно:
 
 ```js{2-6}
 class LoggingButton extends React.Component {
   // Энэ синтакс нь `this`-г handleClick-тэй холбох болно.
   // Анхаар: Энэ бол *туршилтын* бичиглэл юм.
+=======
+If calling `bind` annoys you, there are two ways you can get around this. You can use [public class fields syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields#public_instance_fields) to correctly bind callbacks:
+
+```js{2-6}
+class LoggingButton extends React.Component {
+  // This syntax ensures `this` is bound within handleClick.
+>>>>>>> 3bba430b5959c2263c73f0d05d46e2c99c972b1c
   handleClick = () => {
     console.log('this is:', this);
-  }
+  };
 
   render() {
     return (
