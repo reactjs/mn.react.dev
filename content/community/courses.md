@@ -25,8 +25,18 @@ permalink: community/courses.html
 - [Scrimba: Learn React for free](https://scrimba.com/g/glearnreact) - 48 react апп бүтээх туршлагад үндэслэн видео хичээлүүд.
 
 - [University of Helsinki: Full Stack Open MOOC](https://fullstackopen.com/en/) - Learn to build web applications with React. Available in English, Spanish, Chinese and Finnish.
+<<<<<<< HEAD
 
 ## Төлбөртэй хичээлүүд {#paid-courses}
+=======
+
+
+## Paid Courses {#paid-courses}
+
+- [Meta Front-End Developer Professional Certificate](https://www.coursera.org/professional-certificates/meta-front-end-developer) - Launch your career as a front-end developer. Build job-ready skills for an in-demand career and earn a credential from Meta. No degree or prior experience required to get started.
+
+- [Egghead.io](https://egghead.io/browse/frameworks/react) - Short instructional videos on React and many other topics.
+>>>>>>> 4b68508440a985598571f78f60637b6dccdd5a1a
 
 - [Egghead.io](https://egghead.io/browse/frameworks/react) - React болон бусад сэдвүүд бүхий богино хэмжээний сургалтын видеонууд.
 
@@ -44,7 +54,11 @@ permalink: community/courses.html
 
 - [Essential React](https://learnreact.com/lessons/2018-essential-react-1-overview) - Сонирхогчдод зориулсан, хялбараас хүнд түвшний component бүтээх богино хичээл.
 
+<<<<<<< HEAD
 - [React Training: Advanced React.js](https://courses.reacttraining.com/p/advanced-react) - Өөрийн React чадварыг дараагийн шатанд гарга.
+=======
+- [Tyler McGinnis](https://ui.dev/) - Tyler McGinnis provides access to his courses for a monthly fee. Courses include "React Fundamentals" and "Universal React".
+>>>>>>> 4b68508440a985598571f78f60637b6dccdd5a1a
 
 - [Tyler McGinnis](https://tylermcginnis.com/courses) - Tyler McGinnis-ийн хичээлүүдэд сарын хураамжтайгаар хандах боломжтой. Энэхүү хичээл нь "React-ийн үндэс" болон "Юнивэрсал React"-ийг агуулсан болно.
 
