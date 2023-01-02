@@ -46,7 +46,11 @@ render() {
 >
 > Порталтай ажиллаж байхдаа [гарын фокус зохицууалт](/docs/accessibility.html#programmatically-managing-focus) маш чухал болхыг санаарай.
 >
+<<<<<<< HEAD
 > Модал диалогын хувьд бүх хүн [WAI-ARIA Модал Зөвшөөрөгдсөн Практик](https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal)-н дагуу харилцах боломжтой байгааг хянаарай.
+=======
+> For modal dialogs, ensure that everyone can interact with them by following the [WAI-ARIA Modal Authoring Practices](https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/).
+>>>>>>> e77ba1e90338ff18f965c9b94c733b034b3ac18f
 
 [**CodePen дээр турших**](https://codepen.io/gaearon/pen/yzMaBd)
 
@@ -146,7 +150,8 @@ function Child() {
   );
 }
 
-ReactDOM.render(<Parent />, appRoot);
+const root = ReactDOM.createRoot(appRoot);
+root.render(<Parent />);
 ```
 
 [**CodePen дээр турших**](https://codepen.io/gaearon/pen/jGBWpE)
