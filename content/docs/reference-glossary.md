@@ -43,13 +43,9 @@ JSX нь JavaScript-ын синтаксын өргөтгөл юм. Template хэ
 
 React DOM нь HTML атрибутын нэрний оронд camelCase хэлбэрээр нэр бичдэг. Жишээ нь `tabindex` нь JSX дээр `tabIndex` болно гэсэн үг. `class` нь `className` болж бичигдэнэ. Яагаад гэвэл JavaScript дээр `class` гэдэг үг байдаг:
 
-```js
-const name = 'Clementine';
-ReactDOM.render(
-  <h1 className="hello">My name is {name}!</h1>,
-  document.getElementById('root')
-);
-```  
+```jsx
+<h1 className="hello">My name is Clementine!</h1>
+```
 
 ## [Элемент](/docs/rendering-elements.html) {#elements}
 
