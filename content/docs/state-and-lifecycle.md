@@ -8,11 +8,28 @@ prev: components-and-props.html
 next: handling-events.html
 ---
 
+<<<<<<< HEAD
 Энэхүү хуудас нь React компонентийн state болон амьдралын мѳчлѳгийн ойлголтыг ѳгѳх зорилготой. [Илүү дэлгэрэнгүй мэдээллийг эндээс олох боломжтой](/docs/react-component.html)
 
 [Ѳмнѳ нь хийсэн цаг тоолуурыг](/docs/rendering-elements.html#updating-the-rendered-element) жишээ болгоё. [Элемент рендэрлэх](/docs/rendering-elements.html#rendering-an-element-into-the-dom) заавар дээр хэрэглэгчийн интерфэйсыг шинэчлэх нэг арга болох `ReactDOM.render()` ашиглахыг үзсэн билээ.
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [State: A Component's Memory](https://beta.reactjs.org/learn/state-a-components-memory)
+> - [Synchronizing with Effects](https://beta.reactjs.org/learn/synchronizing-with-effects)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
 
-```js{8-11}
+This page introduces the concept of state and lifecycle in a React component. You can find a [detailed component API reference here](/docs/react-component.html).
+
+Consider the ticking clock example from [one of the previous sections](/docs/rendering-elements.html#updating-the-rendered-element). In [Rendering Elements](/docs/rendering-elements.html#rendering-an-element-into-the-dom), we have only learned one way to update the UI. We call `root.render()` to change the rendered output:
+>>>>>>> 5647a9485db3426d62b5a8203f4499c01bcd789b
+
+```js{10}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+  
 function tick() {
   const element = (
     <div>
@@ -20,10 +37,7 @@ function tick() {
       <h2>It is {new Date().toLocaleTimeString()}.</h2>
     </div>
   );
-  ReactDOM.render(
-    element,
-    document.getElementById('root')
-  );
+  root.render(element);
 }
 
 setInterval(tick, 1000);
@@ -35,7 +49,9 @@ setInterval(tick, 1000);
 
 Цаг маань хэрхэн харагдахаас эхэлье
 
-```js{3-6,12}
+```js{5-8,13}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
 function Clock(props) {
   return (
     <div>
@@ -46,10 +62,7 @@ function Clock(props) {
 }
 
 function tick() {
-  ReactDOM.render(
-    <Clock date={new Date()} />,
-    document.getElementById('root')
-  );
+  root.render(<Clock date={new Date()} />);
 }
 
 setInterval(tick, 1000);
@@ -62,10 +75,7 @@ setInterval(tick, 1000);
 Ерѳнхийдѳѳ бид үүнийг ганцхан удаа бичээд `Clock` ѳѳрѳѳ шинэчлэгдэх хэрэгтэй байгаа.
 
 ```js{2}
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+root.render(<Clock />);
 ```
 
 Дээрх шиг болгохын тулд бид "state" -ыг `Clock` компонентод нэмж ѳгѳх хэрэгтэй
@@ -158,10 +168,7 @@ class Clock extends React.Component {
 3) `<Clock />`-ын элементээс `date` prop-ыг устгана:
 
 ```js{2}
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+root.render(<Clock />);
 ```
 
 Бид дараа нь timer -ын кодыг оруулж ирнэ.
@@ -185,10 +192,8 @@ class Clock extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clock />);
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/KgQpJd?editors=0010)
@@ -295,10 +300,8 @@ class Clock extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Clock />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Clock />);
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/amqdNA?editors=0010)
@@ -307,7 +310,11 @@ ReactDOM.render(
 
 Дээр үзсэн зүйлээ дахин нэг базаад хаана нь аль method ашигласан эсэхээ үзье:
 
+<<<<<<< HEAD
 1) `<Clock />`-ыг `ReactDOM.render()`-руу дамжуулах үед, React `Clock` компонентийн конструктор функцийг дуудана. `Clock` маань тухайн үеийн цагыг харуулах хэрэгтэй учир, `this.state` тухайн цагыг авч ажиллана. Дараа нь энэ state -ыг шинэчилнэ.
+=======
+1) When `<Clock />` is passed to `root.render()`, React calls the constructor of the `Clock` component. Since `Clock` needs to display the current time, it initializes `this.state` with an object including the current time. We will later update this state.
+>>>>>>> 5647a9485db3426d62b5a8203f4499c01bcd789b
 
 2) React дараа нь `Clock` компонентийн `render()` дуудана. Ингэж React нь дэлгэц дээр юу харуулахаа мэддэг. Дараа нь render -ын гаралтаас хамаарч DOM -ыг шинэчилнэ.
 
@@ -455,11 +462,6 @@ function App() {
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/vXdGmd?editors=0010)

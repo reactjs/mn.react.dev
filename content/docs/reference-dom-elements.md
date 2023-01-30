@@ -14,7 +14,24 @@ redirect_from:
   - "tips/dangerously-set-inner-html.html"
 ---
 
+<<<<<<< HEAD
 React хөтөч бүр дээр нийцтэй болон хурдан ажиллах үүднээс хөтчөөс хамааралгүй DOM систем хэрэгжүүлсэн. Бид хөтөч дээрх DOM хэрэгжүүлэлтийн талаар ярих боломж олдлоо.
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Common components (e.g. `<div>`)](https://beta.reactjs.org/reference/react-dom/components/common)
+> - [`<input>`](https://beta.reactjs.org/reference/react-dom/components/input)
+> - [`<option>`](https://beta.reactjs.org/reference/react-dom/components/option)
+> - [`<progress>`](https://beta.reactjs.org/reference/react-dom/components/progress)
+> - [`<select>`](https://beta.reactjs.org/reference/react-dom/components/select)
+> - [`<textarea>`](https://beta.reactjs.org/reference/react-dom/components/textarea)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+React implements a browser-independent DOM system for performance and cross-browser compatibility. We took the opportunity to clean up a few rough edges in browser DOM implementations.
+>>>>>>> 5647a9485db3426d62b5a8203f4499c01bcd789b
 
 React дээр бүх DOM шинж чанарууд болон аттрибутууд нь(эвэнтийн удирдлагыг багтаагаад) camelCased байх ёстой. Жишээбэл, HTML аттрибут `tabindex` нь React дээр `tabIndex` аттрибуттай харгалзана. Онцгой тохиолдлууд болох `aria-*` болон `data-*` аттрибутууд нь lowercased байх хэрэгтэй. Жишээбэл, `aria-label`-г хэвээр нь үлдээнэ.
 
@@ -116,7 +133,11 @@ React автоматаар "px" дагаварыг тоон загварын ш�
 
 Хэрэв та сервер талын React дүрслэл ашиглаж байгаа бол энгийнээр сервер болон хэрэглэгч нь ялгаатай зүйл дүрслэхэд анхааруулга өгдөг. Гэсэн хэдий ч маш ховор тохиолдлуудад яг цав таарсан эсэхийг нягтлах нь хэцүү эсвэл боломжгүй байдаг. Жишээлбэл цагын стамп нь сервер болон хэрэглэгч дээр зөрөх ёстой байдаг.
 
+<<<<<<< HEAD
 Хэрэв та `suppressHydrationWarning`-г `true` болгон тохируулбал, React нь таны элементийн аттрибут болон агуулгын ялгаатай байдалд анхааруулахгүй. Энэ нь зөвхөн гүн түвшинд ажилладаг бөгөөд зугтах гарц болон зориулагдсан. Үүнийн хэтрүүлэн хэрэглэх хэрэггүй. Та үүний талаар дэлгэрэнгүйг [`ReactDOM.hydrate()` documentation](/docs/react-dom.html#hydrate)-с уншиж болно.
+=======
+If you set `suppressHydrationWarning` to `true`, React will not warn you about mismatches in the attributes and the content of that element. It only works one level deep, and is intended to be used as an escape hatch. Don't overuse it. You can read more about hydration in the [`ReactDOM.hydrateRoot()` documentation](/docs/react-dom-client.html#hydrateroot).
+>>>>>>> 5647a9485db3426d62b5a8203f4499c01bcd789b
 
 ### value {#value}
 
