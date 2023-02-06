@@ -8,7 +8,20 @@ redirect_from:
   - "tips/false-in-jsx.html"
 ---
 
+<<<<<<< HEAD
 React дээр та өөрийн тусгай үйлдэл агуулсан онцгой компонентийг үүсгэж болно. Үүний дараа програмынхаа төлөвөөс хамааруулан дүрсэлж болно.
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Conditional Rendering](https://beta.reactjs.org/learn/conditional-rendering)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+
+In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.
+>>>>>>> d4e42ab21f0cc7d8b79d1a619654e27c79e10af6
 
 Нөхцөлд тулгуурласан дүрслэл React дээр Жаваскрипт дээр нөхцөл хэрхэн ажилладаг зарчмаар л ажиллана. Жаваскриптийн [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) [conditional operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) ашиглан элэмент үүсгэхдээ одоогийн төлвийг нь тодорхойлж, төлөвт нь тохирсон дэлгэцийн загварыг React-р зуруулж болно.
 
@@ -35,11 +48,9 @@ function Greeting(props) {
   return <GuestGreeting />;
 }
 
-ReactDOM.render(
-  // Try changing to isLoggedIn={true}:
-  <Greeting isLoggedIn={false} />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+// Try changing to isLoggedIn={true}:
+root.render(<Greeting isLoggedIn={false} />);
 ```
 
 [**CodePen дээр туршина уу**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
@@ -110,10 +121,8 @@ class LoginControl extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <LoginControl />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<LoginControl />);
 ```
 
 [**CodePen ашиглан туршина уу**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
@@ -140,10 +149,9 @@ function Mailbox(props) {
 }
 
 const messages = ['React', 'Re: React', 'Re:Re: React'];
-ReactDOM.render(
-  <Mailbox unreadMessages={messages} />,
-  document.getElementById('root')
-);
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<Mailbox unreadMessages={messages} />);
 ```
 
 [**CodePen дээр туршина уу**](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
@@ -154,7 +162,20 @@ ReactDOM.render(
 
 ### Мөр доторх If-Else нөхцөлт оператортой хамт {#inline-if-else-with-conditional-operator}
 
+<<<<<<< HEAD
 Өөр нэг нөхцөлд тулгуурлан элемент дүрслэх арга нь Жаваскриптийн нөхцөл оператор [`нөхцөл ? үнэн: худал`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) ашиглах юм.
+=======
+```javascript{2,5}
+render() {
+  const count = 0;
+  return (
+    <div>
+      {count && <h1>Messages: {count}</h1>}
+    </div>
+  );
+}
+```
+>>>>>>> d4e42ab21f0cc7d8b79d1a619654e27c79e10af6
 
 Доорх жишээнд бид жижиг хэмжээний текстийг нөхцөл дээр тулгуурлан дүрсэлнэ.
 
@@ -231,10 +252,8 @@ class Page extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Page />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<Page />);
 ```
 
 [**CodePen дээр туршина уу**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)

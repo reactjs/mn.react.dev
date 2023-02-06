@@ -134,7 +134,11 @@ var SayHello = createReactClass({
 
 Энэ нь ES6 классууд нь бага зэрэг илүү урьдчилан бэлдсэн(boilerplate) код эвент удирдлагууд дээр ирдэг нь том програмуудын хурданд бага зэрэг сайн нөлөөтэй.
 
+<<<<<<< HEAD
  Хэрэв таньд урьдчилан бэлдсэн код нь таалагдахгүй бол та Babel дээр санал болгосон **туршилтын** [классын шинж чанарууд](https://babeljs.io/docs/plugins/transform-class-properties/)-н бичиглэлийг идэвхжүүлж болох юм:
+=======
+If the boilerplate code is too unattractive to you, you may use [ES2022 Class Properties](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields#public_instance_fields) syntax:
+>>>>>>> d4e42ab21f0cc7d8b79d1a619654e27c79e10af6
 
 
 ```javascript
@@ -143,11 +147,11 @@ class SayHello extends React.Component {
     super(props);
     this.state = {message: 'Hello!'};
   }
-  // WARNING: this syntax is experimental!
+  
   // Using an arrow here binds the method:
   handleClick = () => {
     alert(this.state.message);
-  }
+  };
 
   render() {
     return (
@@ -159,9 +163,13 @@ class SayHello extends React.Component {
 }
 ```
 
+<<<<<<< HEAD
 Гэхдээ дээрх бичиглэл нь **туршилтынх** учир бичиглэл нь өөрчлөгдөж магадгүй бүр эсвэл санал болгосон бичиглэл нь хэлэнд орохгүй байж магадгүй.
 
 Найдвартай бичихийн тулд тань хэдэн сонголтууд байна:
+=======
+You also have a few other options:
+>>>>>>> d4e42ab21f0cc7d8b79d1a619654e27c79e10af6
 
 * Функцуудийг байгуулагч дотор холбох.
 * Суман функцууд ашиглах, жишээ. `onClick={(e) => this.handleClick(e)}`.
@@ -216,10 +224,8 @@ var TickTock = createReactClass({
   }
 });
 
-ReactDOM.render(
-  <TickTock />,
-  document.getElementById('example')
-);
+const root = ReactDOM.createRoot(document.getElementById('example'));
+root.render(<TickTock />);
 ```
 
 Хэрэв компонент олон холимогууд ашиглах болон олон холимогоор ижилхэн амьдралын мөчлөгийн функц тодорхойлж байгаа бол(жишээ нь нэлээн хэдэн холимогууд компонент устахад цэвэрлэгээ хийхийг хүсвэл), бүх амьдралын мөчлөгийн функцууд дуудагдах нь баталгаатай. Холимог дээр тодорхойлогдсон функцууд холимогууд жагсаагдны дагуу эрэмблэгддэг тэр эрэмбийн дагуу дагана.

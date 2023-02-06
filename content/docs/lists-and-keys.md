@@ -6,7 +6,20 @@ prev: conditional-rendering.html
 next: forms.html
 ---
 
+<<<<<<< HEAD
 Эхлээд Жаваскриптэд хэрхэн жагсаалтыг хувиргадаг талаар эргэн саная.
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Rendering Lists](https://beta.reactjs.org/learn/rendering-lists)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+
+First, let's review how you transform lists in JavaScript.
+>>>>>>> d4e42ab21f0cc7d8b79d1a619654e27c79e10af6
 
 Доорх өгөгдсөн кодод бид [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) функц ашиглах `тоон` жагсаалтын утгыг хоёр дахин нэмэгдүүлж байна.
 Бид шинэ жагсаалтад `map()` функцээс буцсан `хоёр дахин нэмэгдүүлсэн` оноон мөн лог бичилт хийлээ:
@@ -37,13 +50,14 @@ const listItems = numbers.map((number) =>
 );
 ```
 
+<<<<<<< HEAD
 Бид `listItems`-аа `<ul>` элэмент дотор багтаан [DOM руу дүрсэлсэн](/docs/rendering-elements.html#rendering-an-element-into-the-dom):
+=======
+Then, we can include the entire `listItems` array inside a `<ul>` element:
+>>>>>>> d4e42ab21f0cc7d8b79d1a619654e27c79e10af6
 
 ```javascript{2}
-ReactDOM.render(
-  <ul>{listItems}</ul>,
-  document.getElementById('root')
-);
+<ul>{listItems}</ul>
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
@@ -69,10 +83,8 @@ function NumberList(props) {
 }
 
 const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<NumberList numbers={numbers} />);
 ```
 
 Чи энэ кодыг ажиллуулах үед түлхүүр жагсаалтын хэсэгт олгохийг зөвлөсөн анхааруулга харна. "Түлхүүр" бол тусгай тэмдэгт төрөлтэй шинж чанар бөгөөд чи үүнийг элэментүүдийн жагсаалт үүсгэж үедээ ашиглах хэрэгтэй. Энэ нь яагаад чухал болох талаар дараагийн хэсэгт ярилцах болно.
@@ -91,12 +103,6 @@ function NumberList(props) {
     <ul>{listItems}</ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
@@ -135,7 +141,11 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
+<<<<<<< HEAD
 Хэрэв жагсаалтын эрэмбэ өөрчлөгдөх бол бид индексийг түлхүүр болгон ашиглахийг зөвлөдөггүй. Энэ нь ажиллагааны хурд сөргөөр нөлөөлөх болон компонентийн төлөвт асуудал үүсгэж болзошгүй. [Индексийг түлхүүр болгон ашиглахийн сөрөг нөлөөг илүү тайлбарласан](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) Robin Pokorny-н нийтлэлийг уншиж болно. Хэрэв та жагсаалтын утгууддаа тусгайлан түлхүүр зааж өгөхгүй бол React индексийг анхны төлөв(default)-р түлхүүр болгон ашиглана.
+=======
+We don't recommend using indexes for keys if the order of items may change. This can negatively impact performance and may cause issues with component state. Check out Robin Pokorny's article for an [in-depth explanation on the negative impacts of using an index as a key](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/). If you choose not to assign an explicit key to list items then React will default to using indexes as keys.
+>>>>>>> d4e42ab21f0cc7d8b79d1a619654e27c79e10af6
 
 Хэрэв та илүү нарын сонирхвол [түлхүүр яагаад чухал талаар илүү гүнзгий тайлбар](/docs/reconciliation.html#recursing-on-children) нийтлэлийг уншина уу.
 
@@ -170,12 +180,6 @@ function NumberList(props) {
     </ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 **Жишээ: Түлхүүрийн зөв ашиглалт**
@@ -198,12 +202,6 @@ function NumberList(props) {
     </ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
@@ -245,10 +243,9 @@ const posts = [
   {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
   {id: 2, title: 'Installation', content: 'You can install React from npm.'}
 ];
-ReactDOM.render(
-  <Blog posts={posts} />,
-  document.getElementById('root')
-);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Blog posts={posts} />);
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)
