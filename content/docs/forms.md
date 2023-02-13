@@ -9,7 +9,21 @@ redirect_from:
   - "docs/forms-zh-CN.html"
 ---
 
+<<<<<<< HEAD
 HTML форм элементүүд React дээр байдаг бусад DOM элементүүдээс бага зэрэг өөр ажилладаг учир нь форм элементүүд зарим дотоод төлөв хадгалах хэрэгтэй байдаг. Жишээлбэл, энэ энгийн HTML форм нэг нэр хүлээж авдаг:
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [`<input>`](https://beta.reactjs.org/reference/react-dom/components/input)
+> - [`<select>`](https://beta.reactjs.org/reference/react-dom/components/select)
+> - [`<textarea>`](https://beta.reactjs.org/reference/react-dom/components/textarea)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+HTML form elements work a bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+>>>>>>> 47adefd30c46f486428d8231a68e639d62f02c9e
 
 ```html
 <form>
@@ -276,15 +290,19 @@ this.setState(partialState);
 
 ## Удирдагдсан оролтын хоосон утга {#controlled-input-null-value}
 
+<<<<<<< HEAD
 [Удирдагдсан компонент](/docs/forms.html#controlled-components) дээр утга шинж чанарт нь тусгайлан утга оноох нь хэрэглэгч хүсээгүй л бол оролтын утгийг өөрчлөгдөхөөс сэргийлдэг. Хэрэв та тусгайлан `value` зааж өгсөн оролт нь засварлах боломжтой байвал та магадгүй санамсаргүйгээр `тодорхойлогдоогүй` эсвэл `хоосон` утга өгсөн байж болно.
+=======
+Specifying the `value` prop on a [controlled component](/docs/forms.html#controlled-components) prevents the user from changing the input unless you desire so. If you've specified a `value` but the input is still editable, you may have accidentally set `value` to `undefined` or `null`.
+>>>>>>> 47adefd30c46f486428d8231a68e639d62f02c9e
 
 Дараах код үүнийг заасан байна. (Оролт нь эхэндээ засварлах боломжгүйгээр цоожлогдсон ба богино хугацааны дараа засварлагдаж боломжтой болж байна.)
 
 ```javascript
-ReactDOM.render(<input value="hi" />, mountNode);
+ReactDOM.createRoot(mountNode).render(<input value="hi" />);
 
 setTimeout(function() {
-  ReactDOM.render(<input value={null} />, mountNode);
+  ReactDOM.createRoot(mountNode).render(<input value={null} />);
 }, 1000);
 
 ```

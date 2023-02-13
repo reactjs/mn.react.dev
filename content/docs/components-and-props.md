@@ -16,7 +16,20 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
+<<<<<<< HEAD
 Компонент нь таньд дэлгэцийн загварыг бие даасан дахин ашиглаж боломжтой хэсгүүд болгодог болгож тусад нь бодож хийхэд амар болгодог. Энэ хуудас нь танд компонентын агуулгыг товч танилцуулна. Та [API reference-г компонентын дэлгэрэнгүйг](/docs/react-components.html) харж болно.
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Your First Component](https://beta.reactjs.org/learn/your-first-component)
+> - [Passing Props to a Component](https://beta.reactjs.org/learn/passing-props-to-a-component)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a [detailed component API reference here](/docs/react-component.html).
+>>>>>>> 47adefd30c46f486428d8231a68e639d62f02c9e
 
 Үндсэндээ компонентууд бол Жаваскриптийн функцууд юм. Тэд оролт("props" гэж дууддаг) хүлээж аван дэлгэц дээр харагдах React элементүүд буцаадаг.
 
@@ -65,26 +78,31 @@ const element = <Welcome name="Sara" />;
 
 Жишээлбэл, энэ код нь "Hello, Sara"-г хуудас дээр дүрсэлнэ:
 
-```js{1,5}
+```js{1,6}
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 const element = <Welcome name="Sara" />;
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
+root.render(element);
 ```
 
-[](codepen://components-and-props/rendering-a-component)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)**
 
 Энэ жишээнд юу болж байгаа тоймлоё:
 
+<<<<<<< HEAD
 1. Бид `ReactDOM.render()` функцийг `<Welcome name="Sara" />` элементээр дуудсан.
 2. React `Welcome` компонентыг `{name: 'Sara'}` шинж чанартайгаар(props) дуудсан.
 3. Бид `Welcome` компонент `<h1>Hello, Sara</h1>` элементийг үр дүн болгон буцаасан.
 4. React DOM маш үр дүнтэйгээр `<h1>Hello, Sara</h1>`-д харгалзах DOM-г шинэчилсэн.
+=======
+1. We call `root.render()` with the `<Welcome name="Sara" />` element.
+2. React calls the `Welcome` component with `{name: 'Sara'}` as the props.
+3. Our `Welcome` component returns a `<h1>Hello, Sara</h1>` element as the result.
+4. React DOM efficiently updates the DOM to match `<h1>Hello, Sara</h1>`.
+>>>>>>> 47adefd30c46f486428d8231a68e639d62f02c9e
 
 >**Анхаар:** Компонентын нэрийг үргэлж том үсгээр эхэлж бай.
 >
@@ -112,14 +130,9 @@ function App() {
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 ```
 
-[](codepen://components-and-props/composing-components)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)**
 
 Ерөнхийдөө шинэ React програмууд `App` компонент хамгийн дээд талдаа байлгадаг. Гэхдээ та байгаа програм дээр React залгах(integrate) гэж байгаа бол `Button` гэх мэтчилэн доод талын жижиг хэсгээс дээшээ гэхчлэн явах нь зүйтэй байж болно.
 
@@ -153,7 +166,7 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)**
 
 Энэ `author` (объект), `text` (тэмдэгт), `date` (огноо)-уудыг шинж чанар болгон хүлээн авч сошиал вебсайт дээр сэтгэгдлийг тодорхойлсон байна.
 
@@ -232,7 +245,7 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components-continued)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)**
 
 Компонентыг энэ мэтчилэн салгах нь эхэндээ их ажил шаардах ч томоохон програмуудын хувьд эдгээр дахин ашиглагдах компонентууд нь үр дүнгээ сайн өгдөг. Таны дэлгэцийн загварын хэсэг олон удаа ашиглагдах(`Button`, `Panel`, `Avatar`) эсвэл өөрөө хангалттай цогц болсон(`App`, `FeedStory`, `Comment`) бол дахин ашиглагдах боломжтой компонентууд болгон салгах нь хамгийн түрүүнд зөвлөх зөвлөмж юм.
 
