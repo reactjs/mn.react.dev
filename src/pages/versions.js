@@ -40,8 +40,19 @@ const Versions = ({location}: Props) => (
                 GitHub-аас
               </a>
               .<br />
+<<<<<<< HEAD
               Сүүлийн хувилбарын баримтжуулалтыг доорхи жагсаалтаас харж болно.
+=======
+              Changelogs for recent releases can also be found below.
+>>>>>>> 63c77695a95902595b6c2cc084a5c3650b15210a
             </p>
+            <blockquote>
+              <p>Note</p>
+              <p>
+                The current docs are for React 18. For React 17, see{' '}
+                <a href="https://17.reactjs.org">https://17.reactjs.org.</a>
+              </p>
+            </blockquote>
             <p>
               FAQ хэсгээс хувилбар болон дүрмийн талаарх{' '}
               <a href="/docs/faq-versioning.html">мэдээлэл олох боломжтой.</a>.

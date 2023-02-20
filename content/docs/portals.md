@@ -4,7 +4,19 @@ title: Портал
 permalink: docs/portals.html
 ---
 
+<<<<<<< HEAD
 Портал нь хүүхэд компонентуудтыг ДОМ-руу эцэг компонентын ДОМ доторх байрлалаас гадна талд байршуулах сонгомол аргачилал юм.
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [`createPortal`](https://beta.reactjs.org/reference/react-dom/createPortal)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
+>>>>>>> 63c77695a95902595b6c2cc084a5c3650b15210a
 
 ```js
 ReactDOM.createPortal(child, container)
@@ -46,7 +58,11 @@ render() {
 >
 > Порталтай ажиллаж байхдаа [гарын фокус зохицууалт](/docs/accessibility.html#programmatically-managing-focus) маш чухал болхыг санаарай.
 >
+<<<<<<< HEAD
 > Модал диалогын хувьд бүх хүн [WAI-ARIA Модал Зөвшөөрөгдсөн Практик](https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal)-н дагуу харилцах боломжтой байгааг хянаарай.
+=======
+> For modal dialogs, ensure that everyone can interact with them by following the [WAI-ARIA Modal Authoring Practices](https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/).
+>>>>>>> 63c77695a95902595b6c2cc084a5c3650b15210a
 
 [**CodePen дээр турших**](https://codepen.io/gaearon/pen/yzMaBd)
 
@@ -146,7 +162,8 @@ function Child() {
   );
 }
 
-ReactDOM.render(<Parent />, appRoot);
+const root = ReactDOM.createRoot(appRoot);
+root.render(<Parent />);
 ```
 
 [**CodePen дээр турших**](https://codepen.io/gaearon/pen/jGBWpE)

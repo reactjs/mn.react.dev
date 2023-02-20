@@ -6,7 +6,20 @@ prev: hello-world.html
 next: rendering-elements.html
 ---
 
+<<<<<<< HEAD
 Дараах хувьсагчийн зарлагаа байя:
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Writing Markup with JSX](https://beta.reactjs.org/learn/writing-markup-with-jsx)
+> - [JavaScript in JSX with Curly Braces](https://beta.reactjs.org/learn/javascript-in-jsx-with-curly-braces)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+Consider this variable declaration:
+>>>>>>> 63c77695a95902595b6c2cc084a5c3650b15210a
 
 ```js
 const element = <h1>Hello, world!</h1>;
@@ -35,11 +48,6 @@ React JSX заавал [ашиглахийг шаарддаггүй](/docs/react
 ```js{1,2}
 const name = 'Josh Perez';
 const element = <h1>Hello, {name}</h1>;
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
 ```
 
 Та ямар ч зөв [Жаваскрипт илэрхийлэл](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) угалзан хаалтаар хүрээлүүлэн JSX дотор ашиглаж болно. Жишээлбэл `2 + 2`, `user.firstName`, эсвэл `formatName(user)` нь бүр зөв Жаваскрипт илэрхийллүүд юм.
@@ -62,14 +70,9 @@ const element = (
     Hello, {formatName(user)}!
   </h1>
 );
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
 ```
 
-[](codepen://introducing-jsx)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/PGEjdG?editors=1010)**
 
 Бид кодыг илүү унших байдлыг нь бодон JSX-ээ олон мөр болгон хуваасан. Энэ зайлшгүй хийх ёстой зүйл биш ч хийж байгаа тохиолдолд [автомат цэг таслал нэмэгдэх](https://stackoverflow.com/q/2846283)-ээс сэргийлж дугуй хаалтаар хүрээлүүлэхийг зөвлөж байна.
 
@@ -93,7 +96,7 @@ function getGreeting(user) {
 Та аттрибут дээр квот ашиглан тэмдэгт төрлөөр өгөх байх:
 
 ```js
-const element = <div tabIndex="0"></div>;
+const element = <a href="https://www.reactjs.org"> link </a>;
 ```
 
 Мөн та угалзан хаалтаар Жаваскрипт илэрхийлэл аттрибутад шигтгэж болно:
