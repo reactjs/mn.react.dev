@@ -9,7 +9,19 @@ redirect_from:
   - "docs/flux-todo-list.html"
 ---
 
+<<<<<<< HEAD
 Ихэвчлэн хэдэн компонентууд ижилхэн өөрчлөгдөж байгаа өгөгдөл дээр ажилладаг. Бид төлѳвөө дээшлүүлэн нийтлэг дээд түвшний компонент руу зөөн хуваалцахийг санал болгодог. Энэ нь хэрхэн ажилладагийг үзэцгээе.
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Sharing State Between Components](https://beta.reactjs.org/learn/sharing-state-between-components)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor. Let's see how this works in action.
+>>>>>>> b0ccb47f33e52315b0ec65edb9a49dc4910dd99c
 
 Энэ хэсэг бид ус өгөгдсөн температурт буцлаж эсэх талаар дулаан тоочогч хийх болно.
 

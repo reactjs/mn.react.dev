@@ -15,7 +15,15 @@ redirect_from:
   - "tips/use-react-with-other-libraries.html"
 ---
 
+<<<<<<< HEAD
 Энэ хуудсанд React компонент классын тодорхойлолтод зориулсан нарийвчилсан API reference-ын тухай мэдээлэл багтсан. Мэдээлэл нь[Компонент ба Пропс](/docs/components-and-props.html), [Төлөв ба Амьдралын мөчлөг](/docs/state-and-lifecycle.html) гэх мэт React-ын үндсэн ойлголттой хүмүүст зориулсан. Эдгээрийг мэдэхгүй бол эхлээд уншиж судлахыг зөвлөе.
+=======
+> Try the new React documentation for [`Component`](https://beta.reactjs.org/reference/react/Component).
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+This page contains a detailed API reference for the React component class definition. It assumes you're familiar with fundamental React concepts, such as [Components and Props](/docs/components-and-props.html), as well as [State and Lifecycle](/docs/state-and-lifecycle.html). If you're not, read them first.
+>>>>>>> b0ccb47f33e52315b0ec65edb9a49dc4910dd99c
 
 
 ## Тойм {#overview}
@@ -54,7 +62,11 @@ class Welcome extends React.Component {
 
 >Тэмдэглэл:
 >
+<<<<<<< HEAD
 >Методууд нь эцэг гэж тодорхойлогдох бөгөөд шинэ кодондоо эдгээрээс [зайлсхийх](/blog/2018/03/27/update-on-async-rendering.html) хэрэгтэй:
+=======
+>This method is considered legacy and you should [avoid it](/blog/2018/03/27/update-on-async-rendering.html) in new code:
+>>>>>>> b0ccb47f33e52315b0ec65edb9a49dc4910dd99c
 >
 >- [`UNSAFE_componentWillMount()`](#unsafe_componentwillmount)
 
@@ -123,7 +135,15 @@ render()
 
 Дуудагдахдаа  `this.props`, `this.state` -ыг шалгаад доорх хоёр төрлийн аль нэгэн рүү нь буцна:
 
+<<<<<<< HEAD
 - **React элементүүд.** Ихэвчлэн [JSX](/docs/introducing-jsx.html) ашиглан үүсдэг. Жишээ нь  `<div />` болон `<MyComponent />` нь React элементүүд бөгөөд  DOM node-ыг эсвэл өөр хэрэглэгчийн тодорхойлсон компонентыг рендэр хийх зааврыг React-д өгөх гэх мэт.
+=======
+- **React elements.** Typically created via [JSX](/docs/introducing-jsx.html). For example, `<div />` and `<MyComponent />` are React elements that instruct React to render a DOM node, or another user-defined component, respectively.
+- **Arrays and fragments.** Let you return multiple elements from render. See the documentation on [fragments](/docs/fragments.html) for more details.
+- **Portals**. Let you render children into a different DOM subtree. See the documentation on [portals](/docs/portals.html) for more details.
+- **String and numbers.** These are rendered as text nodes in the DOM.
+- **Booleans or `null` or `undefined`**. Render nothing. (Mostly exists to support `return test && <Child />` pattern, where `test` is boolean).
+>>>>>>> b0ccb47f33e52315b0ec65edb9a49dc4910dd99c
 
 - **Массив ба фрагментууд.** рендэрээс олон элемент рүү буцаадаг. Дэлгэрэнгүйг [фрагментууд](/docs/fragments.html) гэснээс харна уу. 
 - **Порталууд**. Хүү компонентуудыг өөр DOM салбарт рендэр хийхэд тусална. Дэлгэрэнгүйг [порталууд](/docs/portals.html) гэснээс харна уу.
@@ -517,13 +537,17 @@ UNSAFE_componentWillUpdate(nextProps, nextState)
 ### `setState()` {#setstate}
 
 ```javascript
-setState(updater, [callback])
+setState(updater[, callback])
 ```
 
 `setState()`  нь компонентод орсон өөрчлөлтийг дараалуулан нэмж, төлөв шинэчлэгдсэн үед компонент болон хүүхдүүд нь дахин рендэр хийх хэрэгтэй гэдгийг React-д мэдэгддэг. Та эвент зохицуулагч, серверийн хариу үйлдлийн улмаас хэрэглэгчийн интерфэйсийг шинэчлэхийг хүсвэл нэн тэргүүнд ашиглах чухал метод юм. 
 
+<<<<<<< HEAD
  `setState()`-ыг компонентыг шинэчлэх шуурхай команд гэхээс илүүтэй *хүсэлт* гэж ойлгон. Ажиллагааг илүү байлгахын тулд React 
 магадгүй хүсэлтийг сааруулж, нэг дамжуулалтаараа хэд хэдэн компонент шинэчлэх боломжтой. Төлөвт орсон өөрчлөлтүүд нь шууд орно гэсэн баталгаа React-д байхгүй. 
+=======
+Think of `setState()` as a *request* rather than an immediate command to update the component. For better perceived performance, React may delay it, and then update several components in a single pass. In the rare case that you need to force the DOM update to be applied synchronously, you may wrap it in [`flushSync`](/docs/react-dom.html#flushsync), but this may hurt performance.
+>>>>>>> b0ccb47f33e52315b0ec65edb9a49dc4910dd99c
 
 `setState()`  нь дандаа компонентыг шууд шинэчлэхгүй. Update-ыг хойшлуулах, хадгалаад байлгаад байдаг. `setState()` дуудсаны дараа тэр даруй `this.state`-ыг уншуулбал алдаа гарч болзошгүй. Оронд нь `componentDidUpdate` эсвэл `setState`  callback (`setState(updater, callback)`) ашиглаарай. Update орсны дараа баталгаатай ажиллана. Хэрэв та өмнөх төлөв дээр үндэслэн одоогийн төлөвийг тохируулах гэж байгаа бол доорх `updater` аргументын тухай уншаарай.
 
