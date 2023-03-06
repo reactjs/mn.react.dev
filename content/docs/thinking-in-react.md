@@ -8,7 +8,17 @@ redirect_from:
 prev: composition-vs-inheritance.html
 ---
 
+<<<<<<< HEAD
 Бидний бодлоор React бол том хэмжээний хурдан Веб програмууд Жаваскрипт дээр бичих тэргүүн сонголтын нэг юм. Facebook болон Instagram дээр scale сайн хийж байна.
+=======
+> Try the new React documentation.
+> 
+> The updated [Thinking in React](https://beta.reactjs.org/learn/thinking-in-react) guide teaches modern React and includes live examples.
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+React is, in our opinion, the premier way to build big, fast Web apps with JavaScript. It has scaled very well for us at Facebook and Instagram.
+>>>>>>> ba290ad4e432f47a2a2f88d067dacaaa161b5200
 
 React-н олон гайхалтай хэсгүүдийн нэг нь веб програмаа бичихдээ хэрхэн бодох нь чухал. Энэ баримтжуулалтад React ашиглан бараа хайх боломжтой апп бичих процесийг тайлбарласан бодлоо хүргэе.
 
@@ -41,7 +51,11 @@ React-н олон гайхалтай хэсгүүдийн нэг нь веб п�
 
 ![Diagram showing nesting of components](../images/blog/thinking-in-react-components.png)
 
+<<<<<<< HEAD
 Бидний энгийн програмд таван компонентууд байгааг харж болно. Бид компонент бүрийг төлөөлсөн өгөгдлийг налуу болгосон.
+=======
+You'll see here that we have five components in our app. We've italicized the data each component represents. The numbers in the image correspond to the numbers below.
+>>>>>>> ba290ad4e432f47a2a2f88d067dacaaa161b5200
 
   1. **`FilterableProductTable` (улбар шар):** жишээг бүгдийг багтаасан
   2. **`SearchBar` (цэнхэр):**  бүх *хэрэглэгчийн оролm*-ыг хүлээн авна
@@ -71,9 +85,15 @@ React-н олон гайхалтай хэсгүүдийн нэг нь веб п�
 
 Та доороос дээш эсвэл дээрээс доош арга ашиглан бичиж болно. ЭНэ нь компонентийн шатлалын бүтцийн дээд талын(`FilterProductTable`-с эхлэх) эсвэл доод талаас(`ProductRow`) эхэлж болно гэсэн үг. Ихэвчлэн дээрээс доош арга нь илүү амархан байдаг ба том төсөлд доороос дээш аргийг ашиглахад тест бичихэд амархан болдог.
 
+<<<<<<< HEAD
 Энэ алхмын төгсгөлд та өгөгдлийн загвараа дүрслэх дахин ашиглагдахуйц компонентийн сантай болно. Статик хувилбард Компонентууд нь зөвхөн `render()` аргийг(method) хэрэгжүүлсэн байна. Шатлалын дээд талын компонент(`FilterableProductTable`) өгөгдлийн загварын шинж чанараар авна. Хэрэв та өгөгдөлдөө өөрчлөлт хийсэн бол `ReactDOM.render()` дахин дуудагдаж дэлгэцийн загвар шинэчлэгдэх болно. Энэ нь өөрчлөлт хийхэд таны дэлгэцийн загвар хэрхэн шинэчлэгдэж байгааг харахад амар болгоно. React-н **нэг чиглэлт өгөгдлийн урсгал** (мөн *нэг чиглэлт холболт(one-way binding)* гэж нэрлэдэг) нь бүхнийг модулар байдлаар үлдээн хурдан болгодог.
 
 Энэ алхмийг ажиллуулахад тусламж хэрэгтэй бол [React баримтжуулалт](/docs/) руу орно уу.
+=======
+At the end of this step, you'll have a library of reusable components that render your data model. The components will only have `render()` methods since this is a static version of your app. The component at the top of the hierarchy (`FilterableProductTable`) will take your data model as a prop. If you make a change to your underlying data model and call `root.render()` again, the UI will be updated. You can see how your UI is updated and where to make changes. React's **one-way data flow** (also called *one-way binding*) keeps everything modular and fast.
+
+Refer to the [React docs](/docs/getting-started.html) if you need help executing this step.
+>>>>>>> ba290ad4e432f47a2a2f88d067dacaaa161b5200
 
 ### Бяцхан завсарлага: Шинж чанар эсвэл Төлөв {#a-brief-interlude-props-vs-state}
 
@@ -139,8 +159,18 @@ React нь компонентийн шатлалын доошоо нэг урс�
 
 React энэ өгөгдлийн урсгалын тусгайлан хийдэг бөгөөд энэ нь таны програм хэрхэн ажилдгийг ойлгоход амар болгодог уламжлалт хоёр чиглэлтэй өгөгдлийн холболтоос бага зэрэг их бичиглэл шаардана.
 
+<<<<<<< HEAD
 Бага зэрэг ярвигтай санагдаж болох ч энэ хэдхэн мөр код юм. Мөн энэ нь таны програмын дотор өгөгдөл хэрхэн урсахийг тодорхой заасан болно.
+=======
+If you try to type or check the box in the previous version of the example (step 4), you'll see that React ignores your input. This is intentional, as we've set the `value` prop of the `input` to always be equal to the `state` passed in from `FilterableProductTable`.
+>>>>>>> ba290ad4e432f47a2a2f88d067dacaaa161b5200
 
 ## За боллоо {#and-thats-it}
 
+<<<<<<< HEAD
 Энэхүү бичвэр танд компонент болон програм React дээр бичихдээ хэрхэн сэтгэх талаар ойлголт өгсөн гэж найдая. Энэ нь бага зэрэг илүү бичиглэл шаардаж байгаа энэхүү модулар бүтэтэй тодорхой код нь уншиж ойлгоход дэндүү амархан болгож байна. Компонентийн том сан бичих үед энэхүү ойлгомжтой байдал, модулар бүтэц, кодын дахин ашиглагдах байдалд танд тус болохоос гадна бичиглэлийн тоо ч багасч эхэлнэ.
+=======
+## And That's It {#and-thats-it}
+
+Hopefully, this gives you an idea of how to think about building components and applications with React. While it may be a little more typing than you're used to, remember that code is read far more often than it's written, and it's less difficult to read this modular, explicit code. As you start to build large libraries of components, you'll appreciate this explicitness and modularity, and with code reuse, your lines of code will start to shrink. :)
+>>>>>>> ba290ad4e432f47a2a2f88d067dacaaa161b5200

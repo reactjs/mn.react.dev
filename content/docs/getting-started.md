@@ -18,7 +18,17 @@ redirect_from:
   - "docs/environments.html"
 ---
 
+<<<<<<< HEAD
 Энэ хуудас React-н докюмент болон бусад холбоотой материалуудын хураангуй юм.
+=======
+> Try the new React documentation.
+> 
+> The new [Quick Start](https://beta.reactjs.org/learn) teaches modern React and includes live examples.
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+This page is an overview of the React documentation and related resources.
+>>>>>>> ba290ad4e432f47a2a2f88d067dacaaa161b5200
 
 **React** нь хэрэглэгчийн интерфэйс бүтээх JavaScript сан. React гэж яг юу болох талаар [нүүр хуудас](/) эсвэл [хичээл](/tutorial/tutorial.html) хэсгээс мэдэж болно.
 

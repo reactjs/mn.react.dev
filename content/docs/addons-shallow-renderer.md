@@ -59,8 +59,12 @@ Refs дэмждэггүй гэхчлэн зарим нэг сул тал өнг�
 
 shallowRenderer-ыг та тест хийж буй компонентоо рендэр хийх "газар" гээд ойлгочиход болно. Түүнээсээ компонентын үр дүнг харах юм.
 
+<<<<<<< HEAD
 
 `shallowRenderer.render()` нь [`ReactDOM.render()`](/docs/react-dom.html#render)-тай төстэй. Гэхдээ DOM шаардахгүй, нэг түвшин доогуур рендэр хийдэг гэдгээрэЭ ялгаатай. Энэ нь юу гэсэн үг вэ гэхээр та хүү компонентуудын ажиллагаанаас ангид компонентуудыг тест хийж болно гэсэн үг юм. 
+=======
+`shallowRenderer.render()` is similar to [`root.render()`](/docs/react-dom-client.html#createroot) but it doesn't require DOM and only renders a single level deep. This means you can test components isolated from how their children are implemented.
+>>>>>>> ba290ad4e432f47a2a2f88d067dacaaa161b5200
 
 ### `shallowRenderer.getRenderOutput()` {#shallowrenderergetrenderoutput}
 
