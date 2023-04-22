@@ -8,6 +8,12 @@ prev: lifting-state-up.html
 next: thinking-in-react.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+
+</div>
+
 React нь хүчирхэг бүрэлдэхүүн загвартай бөгөөд компонентуудын хооронд кодыг дахин ашиглахдаа удамшил ашиглaхын оронд олон зүйлсийг хольж найруулж хэрэглэхийг зөвлөдөг.
 
 Энэ хэсэг React сурч байгаа шинэ хөгжүүлэгчдийн удамшлаар шийддэг асуудлуудыг бүрэлдэхүүн болгон хэрхэн шийдэхийг үзэх болно.

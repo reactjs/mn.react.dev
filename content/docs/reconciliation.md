@@ -4,6 +4,16 @@ title: Дахин нэгтгэх
 permalink: docs/reconciliation.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Preserving and Resetting State](https://react.dev/learn/preserving-and-resetting-state)
+
+</div>
+
 React зарлагдах API олгодог бөгөөд та шинэчлэлт болгон юу орсон талаар санаа зовох хэрэггүй. Энэ програм бичих илүү амар болгодог ч React дээр хэрхэн хэрэгжүүлэгдсэн нь тодорхой биш байж болно. Энэ нийтлэл нь өндөр хурд шаардах програмууд дээр компонент шинэчлэл хийхэд React "ялгааг" нь мэдрэх алгоримтын сонголтуудыг тайлбарласан юм.
 
 ## Учир шалтгаан(motivation) {#motivation}
@@ -44,7 +54,7 @@ React-ын render() функц ажиллах мѳчид React элементү�
 
 >Note:
 >
->These methods are considered legacy and you should [avoid them](/blog/2018/03/27/update-on-async-rendering.html) in new code:
+>This method is considered legacy and you should [avoid it](/blog/2018/03/27/update-on-async-rendering.html) in new code:
 >
 >- `UNSAFE_componentWillMount()`
 

@@ -9,6 +9,16 @@ redirect_from:
   - "docs/flux-todo-list.html"
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Sharing State Between Components](https://react.dev/learn/sharing-state-between-components)
+
+</div>
+
 Ихэвчлэн хэдэн компонентууд ижилхэн өөрчлөгдөж байгаа өгөгдөл дээр ажилладаг. Бид төлѳвөө дээшлүүлэн нийтлэг дээд түвшний компонент руу зөөн хуваалцахийг санал болгодог. Энэ нь хэрхэн ажилладагийг үзэцгээе.
 
 Энэ хэсэг бид ус өгөгдсөн температурт буцлаж эсэх талаар дулаан тоочогч хийх болно.

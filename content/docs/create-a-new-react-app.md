@@ -8,6 +8,15 @@ prev: add-react-to-a-website.html
 next: cdn-links.html
 ---
 
+<div class="scary">
+
+>
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> See [Start a New React Project](https://react.dev/learn/start-a-new-react-project) for the recommended ways to create an app.
+
+</div>
+
 Цогц хэрэгслүүрүүдийг хэрэглэгч болон хөгжүүлэгчдийн хялбар хэрэглээнд зориулж ашиглана.
 
 Энэ хуудас доорх ажлуулдад тус болох цөөн хэдэн түгээмэл React цогц хэрэглүүрүүдийг тайлбарласан:
@@ -75,7 +84,7 @@ Gatsby-н талаар [түүний албан ёсны заавараас](htt
 
 - **[nwb](https://github.com/insin/nwb)** бол [React компонентуудыг npm-р оруулхад](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md#developing-react-components-and-libraries-with-nwb) голчилон зориулсагдсан. Үүнийг мөн React app хийхэд [хэрэглэж болно](https://github.com/insin/nwb/blob/master/docs/guides/ReactApps.md#developing-react-apps-with-nwb).
 
-- **[Parcel](https://parceljs.org/)** [React-тай ажилладаг](https://parceljs.org/recipes.html#react) хурдан, тохиргоогүй ажиллах веб апп багцлагч юм.
+- **[Parcel](https://parceljs.org/)** [React-тай ажилладаг](https://parceljs.org/recipes/react/) хурдан, тохиргоогүй ажиллах веб апп багцлагч юм.
 
 - **[Razzle](https://github.com/jaredpalmer/razzle)** ямар ч тохиргоо шаардлагагүй сервер талын рендер хийх фраймворк бөгөөд Next.js-с илүү уян байдлыг санал болгодог.
 

@@ -4,6 +4,16 @@ title: Портал
 permalink: docs/portals.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [`createPortal`](https://react.dev/reference/react-dom/createPortal)
+
+</div>
+
 Портал нь хүүхэд компонентуудтыг ДОМ-руу эцэг компонентын ДОМ доторх байрлалаас гадна талд байршуулах сонгомол аргачилал юм.
 
 ```js
@@ -46,7 +56,7 @@ render() {
 >
 > Порталтай ажиллаж байхдаа [гарын фокус зохицууалт](/docs/accessibility.html#programmatically-managing-focus) маш чухал болхыг санаарай.
 >
-> Модал диалогын хувьд бүх хүн [WAI-ARIA Модал Зөвшөөрөгдсөн Практик](https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal)-н дагуу харилцах боломжтой байгааг хянаарай.
+> Модал диалогын хувьд бүх хүн [WAI-ARIA Модал Зөвшөөрөгдсөн Практик](https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/)-н дагуу харилцах боломжтой байгааг хянаарай.
 
 [**CodePen дээр турших**](https://codepen.io/gaearon/pen/yzMaBd)
 
@@ -146,7 +156,8 @@ function Child() {
   );
 }
 
-ReactDOM.render(<Parent />, appRoot);
+const root = ReactDOM.createRoot(appRoot);
+root.render(<Parent />);
 ```
 
 [**CodePen дээр турших**](https://codepen.io/gaearon/pen/jGBWpE)

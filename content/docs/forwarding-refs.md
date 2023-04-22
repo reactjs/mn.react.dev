@@ -4,6 +4,17 @@ title: Ref дамжуулах
 permalink: docs/forwarding-refs.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Manipulating the DOM with Refs](https://react.dev/learn/manipulating-the-dom-with-refs)
+> - [`forwardRef`](https://react.dev/reference/react/forwardRef)
+
+</div>
+
 Ref дамжуулах гэдэг нь [ref](/docs/refs-and-the-dom.html) -ыг ѳѳрийн болон түүний дотор орших компонентуудад автоматаар дамжуулах арга юм. Аппликейшний ихэнх компонентод шаардлагагүй боловч зарим тохиолдолд хэрэгтэй байдаг, тухайлбал дахин ашиглагдах компонент сан үүсгэх үед ч юм уу. Ѳргѳн хэрэглээг доор дурьдав.
 
 ## Ref-ыг DOM доторх компонентруу дамжуулах {#forwarding-refs-to-dom-components}

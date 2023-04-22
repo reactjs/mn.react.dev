@@ -12,6 +12,14 @@ redirect_from:
   - "docs/tutorial-zh-CN.html"
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> The updated [Tutorial](https://react.dev/learn/tutorial-tic-tac-toe) teaches modern React and includes live examples.
+
+</div>
+
 Энэхүү зааварчилгаа нь таныг өмнө нь React-ийн мэдлэггүй гэж тооцсон болно.
 
 ## Зааварчилгааг эхлүүлэхийн өмнө {#before-we-start-the-tutorial}
@@ -106,7 +114,7 @@ cd ..
 
 ```js
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 ```
 

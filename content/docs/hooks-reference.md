@@ -6,6 +6,16 @@ prev: hooks-custom.html
 next: hooks-faq.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+>
+> These new documentation pages teach modern React:
+>
+> - [`react`: Hooks](https://react.dev/reference/react)
+
+</div>
+
 *Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class.
 
 This page describes the APIs for the built-in Hooks in React.
@@ -24,10 +34,24 @@ If you're new to Hooks, you might want to check out [the overview](/docs/hooks-o
   - [`useImperativeHandle`](#useimperativehandle)
   - [`useLayoutEffect`](#uselayouteffect)
   - [`useDebugValue`](#usedebugvalue)
+  - [`useDeferredValue`](#usedeferredvalue)
+  - [`useTransition`](#usetransition)
+  - [`useId`](#useid)
+- [Library Hooks](#library-hooks)
+  - [`useSyncExternalStore`](#usesyncexternalstore)
+  - [`useInsertionEffect`](#useinsertioneffect)
 
 ## Basic Hooks {#basic-hooks}
 
 ### `useState` {#usestate}
+
+<div class="scary">
+
+> This content is out of date.
+>
+> Read the new React documentation for [`useState`](https://react.dev/reference/react/useState).
+
+</div>
 
 ```js
 const [state, setState] = useState(initialState);
@@ -102,7 +126,23 @@ If you update a State Hook to the same value as the current state, React will ba
 
 Note that React may still need to render that specific component again before bailing out. That shouldn't be a concern because React won't unnecessarily go "deeper" into the tree. If you're doing expensive calculations while rendering, you can optimize them with `useMemo`.
 
+#### Batching of state updates {#batching-of-state-updates}
+
+React may group several state updates into a single re-render to improve performance. Normally, this improves performance and shouldn't affect your application's behavior.
+
+Before React 18, only updates inside React event handlers were batched. Starting with React 18, [batching is enabled for all updates by default](/blog/2022/03/08/react-18-upgrade-guide.html#automatic-batching). Note that React makes sure that updates from several *different* user-initiated events -- for example, clicking a button twice -- are always processed separately and do not get batched. This prevents logical mistakes.
+
+In the rare case that you need to force the DOM update to be applied synchronously, you may wrap it in [`flushSync`](/docs/react-dom.html#flushsync). However, this can hurt performance so do this only where needed.
+
 ### `useEffect` {#useeffect}
+
+<div class="scary">
+
+> This content is out of date.
+>
+> Read the new React documentation for [`useEffect`](https://react.dev/reference/react/useEffect).
+
+</div>
 
 ```js
 useEffect(didUpdate);
@@ -138,7 +178,13 @@ Unlike `componentDidMount` and `componentDidUpdate`, the function passed to `use
 
 However, not all effects can be deferred. For example, a DOM mutation that is visible to the user must fire synchronously before the next paint so that the user does not perceive a visual inconsistency. (The distinction is conceptually similar to passive versus active event listeners.) For these types of effects, React provides one additional Hook called [`useLayoutEffect`](#uselayouteffect). It has the same signature as `useEffect`, and only differs in when it is fired.
 
-Although `useEffect` is deferred until after the browser has painted, it's guaranteed to fire before any new renders. React will always flush a previous render's effects before starting a new update.
+Additionally, starting in React 18, the function passed to `useEffect` will fire synchronously **before** layout and paint when it's the result of a discrete user input such as a click, or when it's the result of an update wrapped in [`flushSync`](/docs/react-dom.html#flushsync). This behavior allows the result of the effect to be observed by the event system, or by the caller of [`flushSync`](/docs/react-dom.html#flushsync).
+
+> Note
+> 
+> This only affects the timing of when the function passed to `useEffect` is called - updates scheduled inside these effects are still deferred. This is different than [`useLayoutEffect`](#uselayouteffect), which fires the function and processes the updates inside of it immediately.
+
+Even in cases where `useEffect` is deferred until after the browser has painted, it's guaranteed to fire before any new renders. React will always flush a previous render's effects before starting a new update.
 
 #### Conditionally firing an effect {#conditionally-firing-an-effect}
 
@@ -176,6 +222,15 @@ Now the subscription will only be recreated when `props.source` changes.
 The array of dependencies is not passed as arguments to the effect function. Conceptually, though, that's what they represent: every value referenced inside the effect function should also appear in the dependencies array. In the future, a sufficiently advanced compiler could create this array automatically.
 
 ### `useContext` {#usecontext}
+
+<div class="scary">
+
+> This content is out of date.
+>
+> Read the new React documentation for [`useContext`](https://react.dev/reference/react/useContext).
+
+</div>
+
 
 ```js
 const value = useContext(MyContext);
@@ -248,6 +303,15 @@ This example is modified for hooks from a previous example in the [Context Advan
 The following Hooks are either variants of the basic ones from the previous section, or only needed for specific edge cases. Don't stress about learning them up front.
 
 ### `useReducer` {#usereducer}
+
+<div class="scary">
+
+> This content is out of date.
+>
+> Read the new React documentation for [`useReducer`](https://react.dev/reference/react/useReducer).
+
+</div>
+
 
 ```js
 const [state, dispatch] = useReducer(reducer, initialArg, init);
@@ -352,6 +416,14 @@ Note that React may still need to render that specific component again before ba
 
 ### `useCallback` {#usecallback}
 
+<div class="scary">
+
+> This content is out of date.
+>
+> Read the new React documentation for [`useCallback`](https://react.dev/reference/react/useCallback).
+
+</div>
+
 ```js
 const memoizedCallback = useCallback(
   () => {
@@ -375,6 +447,15 @@ Pass an inline callback and an array of dependencies. `useCallback` will return 
 
 ### `useMemo` {#usememo}
 
+<div class="scary">
+
+> This content is out of date.
+>
+> Read the new React documentation for [`useMemo`](https://react.dev/reference/react/useMemo).
+
+</div>
+
+
 ```js
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 ```
@@ -396,6 +477,15 @@ If no array is provided, a new value will be computed on every render.
 > We recommend using the [`exhaustive-deps`](https://github.com/facebook/react/issues/14920) rule as part of our [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) package. It warns when dependencies are specified incorrectly and suggests a fix.
 
 ### `useRef` {#useref}
+
+<div class="scary">
+
+> This content is out of date.
+>
+> Read the new React documentation for [`useRef`](https://react.dev/reference/react/useRef).
+
+</div>
+
 
 ```js
 const refContainer = useRef(initialValue);
@@ -434,6 +524,15 @@ Keep in mind that `useRef` *doesn't* notify you when its content changes. Mutati
 
 ### `useImperativeHandle` {#useimperativehandle}
 
+<div class="scary">
+
+> This content is out of date.
+>
+> Read the new React documentation for [`useImperativeHandle`](https://react.dev/reference/react/useImperativeHandle).
+
+</div>
+
+
 ```js
 useImperativeHandle(ref, createHandle, [deps])
 ```
@@ -457,6 +556,15 @@ In this example, a parent component that renders `<FancyInput ref={inputRef} />`
 
 ### `useLayoutEffect` {#uselayouteffect}
 
+<div class="scary">
+
+> This content is out of date.
+>
+> Read the new React documentation for [`useLayoutEffect`](https://react.dev/reference/react/useLayoutEffect).
+
+</div>
+
+
 The signature is identical to `useEffect`, but it fires synchronously after all DOM mutations. Use this to read layout from the DOM and synchronously re-render. Updates scheduled inside `useLayoutEffect` will be flushed synchronously, before the browser has a chance to paint.
 
 Prefer the standard `useEffect` when possible to avoid blocking visual updates.
@@ -470,6 +578,15 @@ Prefer the standard `useEffect` when possible to avoid blocking visual updates.
 >To exclude a component that needs layout effects from the server-rendered HTML, render it conditionally with `showChild && <Child />` and defer showing it with `useEffect(() => { setShowChild(true); }, [])`. This way, the UI doesn't appear broken before hydration.
 
 ### `useDebugValue` {#usedebugvalue}
+
+<div class="scary">
+
+> This content is out of date.
+>
+> Read the new React documentation for [`useDebugValue`](https://react.dev/reference/react/useDebugValue).
+
+</div>
+
 
 ```js
 useDebugValue(value)
@@ -508,3 +625,243 @@ For example a custom Hook that returned a `Date` value could avoid calling the `
 ```js
 useDebugValue(date, date => date.toDateString());
 ```
+
+### `useDeferredValue` {#usedeferredvalue}
+
+<div class="scary">
+
+> This content is out of date.
+>
+> Read the new React documentation for [`useDeferredValue`](https://react.dev/reference/react/useDeferredValue).
+
+</div>
+
+
+```js
+const deferredValue = useDeferredValue(value);
+```
+
+`useDeferredValue` accepts a value and returns a new copy of the value that will defer to more urgent updates. If the current render is the result of an urgent update, like user input, React will return the previous value and then render the new value after the urgent render has completed.
+
+This hook is similar to user-space hooks which use debouncing or throttling to defer updates. The benefits to using `useDeferredValue` is that React will work on the update as soon as other work finishes (instead of waiting for an arbitrary amount of time), and like [`startTransition`](/docs/react-api.html#starttransition), deferred values can suspend without triggering an unexpected fallback for existing content.
+
+#### Memoizing deferred children {#memoizing-deferred-children}
+`useDeferredValue` only defers the value that you pass to it. If you want to prevent a child component from re-rendering during an urgent update, you must also memoize that component with [`React.memo`](/docs/react-api.html#reactmemo) or [`React.useMemo`](/docs/hooks-reference.html#usememo):
+
+```js
+function Typeahead() {
+  const query = useSearchQuery('');
+  const deferredQuery = useDeferredValue(query);
+
+  // Memoizing tells React to only re-render when deferredQuery changes,
+  // not when query changes.
+  const suggestions = useMemo(() =>
+    <SearchSuggestions query={deferredQuery} />,
+    [deferredQuery]
+  );
+
+  return (
+    <>
+      <SearchInput query={query} />
+      <Suspense fallback="Loading results...">
+        {suggestions}
+      </Suspense>
+    </>
+  );
+}
+```
+
+Memoizing the children tells React that it only needs to re-render them when `deferredQuery` changes and not when `query` changes. This caveat is not unique to `useDeferredValue`, and it's the same pattern you would use with similar hooks that use debouncing or throttling.
+
+### `useTransition` {#usetransition}
+
+<div class="scary">
+
+> This content is out of date.
+>
+> Read the new React documentation for [`useTransition`](https://react.dev/reference/react/useTransition).
+
+</div>
+
+
+```js
+const [isPending, startTransition] = useTransition();
+```
+
+Returns a stateful value for the pending state of the transition, and a function to start it.
+
+`startTransition` lets you mark updates in the provided callback as transitions:
+
+```js
+startTransition(() => {
+  setCount(count + 1);
+});
+```
+
+`isPending` indicates when a transition is active to show a pending state:
+
+```js
+function App() {
+  const [isPending, startTransition] = useTransition();
+  const [count, setCount] = useState(0);
+  
+  function handleClick() {
+    startTransition(() => {
+      setCount(c => c + 1);
+    });
+  }
+
+  return (
+    <div>
+      {isPending && <Spinner />}
+      <button onClick={handleClick}>{count}</button>
+    </div>
+  );
+}
+```
+
+> Note:
+>
+> Updates in a transition yield to more urgent updates such as clicks.
+>
+> Updates in a transition will not show a fallback for re-suspended content. This allows the user to continue interacting with the current content while rendering the update.
+
+### `useId` {#useid}
+
+<div class="scary">
+
+> This content is out of date.
+>
+> Read the new React documentation for [`useId`](https://react.dev/reference/react/useId).
+
+</div>
+
+
+```js
+const id = useId();
+```
+
+`useId` is a hook for generating unique IDs that are stable across the server and client, while avoiding hydration mismatches.
+
+> Note
+>
+> `useId` is **not** for generating [keys in a list](/docs/lists-and-keys.html#keys). Keys should be generated from your data.
+
+For a basic example, pass the `id` directly to the elements that need it:
+
+```js
+function Checkbox() {
+  const id = useId();
+  return (
+    <>
+      <label htmlFor={id}>Do you like React?</label>
+      <input id={id} type="checkbox" name="react"/>
+    </>
+  );
+};
+```
+
+For multiple IDs in the same component, append a suffix using the same `id`:
+
+```js
+function NameFields() {
+  const id = useId();
+  return (
+    <div>
+      <label htmlFor={id + '-firstName'}>First Name</label>
+      <div>
+        <input id={id + '-firstName'} type="text" />
+      </div>
+      <label htmlFor={id + '-lastName'}>Last Name</label>
+      <div>
+        <input id={id + '-lastName'} type="text" />
+      </div>
+    </div>
+  );
+}
+```
+
+> Note:
+> 
+> `useId` generates a string that includes the `:` token. This helps ensure that the token is unique, but is not supported in CSS selectors or APIs like `querySelectorAll`.
+> 
+> `useId` supports an `identifierPrefix` to prevent collisions in multi-root apps. To configure, see the options for [`hydrateRoot`](/docs/react-dom-client.html#hydrateroot) and [`ReactDOMServer`](/docs/react-dom-server.html).
+
+## Library Hooks {#library-hooks}
+
+The following Hooks are provided for library authors to integrate libraries deeply into the React model, and are not typically used in application code.
+
+### `useSyncExternalStore` {#usesyncexternalstore}
+
+<div class="scary">
+
+> This content is out of date.
+>
+> Read the new React documentation for [`useSyncExternalStore`](https://react.dev/reference/react/useSyncExternalStore).
+
+</div>
+
+
+```js
+const state = useSyncExternalStore(subscribe, getSnapshot[, getServerSnapshot]);
+```
+
+`useSyncExternalStore` is a hook recommended for reading and subscribing from external data sources in a way that's compatible with concurrent rendering features like selective hydration and time slicing.
+
+This method returns the value of the store and accepts three arguments:
+- `subscribe`: function to register a callback that is called whenever the store changes.
+- `getSnapshot`: function that returns the current value of the store.
+- `getServerSnapshot`: function that returns the snapshot used during server rendering.
+
+The most basic example simply subscribes to the entire store:
+
+```js
+const state = useSyncExternalStore(store.subscribe, store.getSnapshot);
+```
+
+However, you can also subscribe to a specific field:
+
+```js
+const selectedField = useSyncExternalStore(
+  store.subscribe,
+  () => store.getSnapshot().selectedField,
+);
+```
+
+When server rendering, you must serialize the store value used on the server, and provide it to `useSyncExternalStore`. React will use this snapshot during hydration to prevent server mismatches:
+
+```js
+const selectedField = useSyncExternalStore(
+  store.subscribe,
+  () => store.getSnapshot().selectedField,
+  () => INITIAL_SERVER_SNAPSHOT.selectedField,
+);
+```
+
+> Note:
+>
+> `getSnapshot` must return a cached value. If getSnapshot is called multiple times in a row, it must return the same exact value unless there was a store update in between.
+> 
+> A shim is provided for supporting multiple React versions published as `use-sync-external-store/shim`. This shim will prefer `useSyncExternalStore` when available, and fallback to a user-space implementation when it's not.
+> 
+> As a convenience, we also provide a version of the API with automatic support for memoizing the result of getSnapshot published as `use-sync-external-store/with-selector`.
+
+### `useInsertionEffect` {#useinsertioneffect}
+
+<div class="scary">
+
+> This content is out of date.
+>
+> Read the new React documentation for [`useInsertionEffect`](https://react.dev/reference/react/useInsertionEffect).
+
+</div>
+
+```js
+useInsertionEffect(didUpdate);
+```
+
+The signature is identical to `useEffect`, but it fires synchronously _before_ all DOM mutations. Use this to inject styles into the DOM before reading layout in [`useLayoutEffect`](#uselayouteffect). Since this hook is limited in scope, this hook does not have access to refs and cannot schedule updates.
+
+> Note:
+>
+> `useInsertionEffect` should be limited to css-in-js library authors. Prefer [`useEffect`](#useeffect) or [`useLayoutEffect`](#uselayouteffect) instead.

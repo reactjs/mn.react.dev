@@ -4,6 +4,12 @@ title: ES6 үгүй React
 permalink: docs/react-without-es6.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+
+</div>
+
 Энгийнээр та Жаваскрипт класс ашиглан React компонент тодорхойлж болно:
 
 ```javascript
@@ -143,11 +149,11 @@ class SayHello extends React.Component {
     super(props);
     this.state = {message: 'Hello!'};
   }
-  // WARNING: this syntax is experimental!
+  
   // Using an arrow here binds the method:
   handleClick = () => {
     alert(this.state.message);
-  }
+  };
 
   render() {
     return (
@@ -216,10 +222,8 @@ var TickTock = createReactClass({
   }
 });
 
-ReactDOM.render(
-  <TickTock />,
-  document.getElementById('example')
-);
+const root = ReactDOM.createRoot(document.getElementById('example'));
+root.render(<TickTock />);
 ```
 
 Хэрэв компонент олон холимогууд ашиглах болон олон холимогоор ижилхэн амьдралын мөчлөгийн функц тодорхойлж байгаа бол(жишээ нь нэлээн хэдэн холимогууд компонент устахад цэвэрлэгээ хийхийг хүсвэл), бүх амьдралын мөчлөгийн функцууд дуудагдах нь баталгаатай. Холимог дээр тодорхойлогдсон функцууд холимогууд жагсаагдны дагуу эрэмблэгддэг тэр эрэмбийн дагуу дагана.

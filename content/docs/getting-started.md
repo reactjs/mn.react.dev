@@ -18,6 +18,15 @@ redirect_from:
   - "docs/environments.html"
 ---
 
+<div class="scary">
+
+>
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> The new [Quick Start](https://react.dev/learn) teaches modern React and includes live examples.
+
+</div>
+
 Энэ хуудас React-н докюмент болон бусад холбоотой материалуудын хураангуй юм.
 
 **React** нь хэрэглэгчийн интерфэйс бүтээх JavaScript сан. React гэж яг юу болох талаар [нүүр хуудас](/) эсвэл [хичээл](/tutorial/tutorial.html) хэсгээс мэдэж болно.

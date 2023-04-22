@@ -8,6 +8,16 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+>
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Responding to Events](https://react.dev/learn/responding-to-events)
+
+</div>
+
 React элементүүд дээр эвент удирдах нь DOM элемент дээр удирдахтай тун адилхан. Эдгээрт бага зэрэг синтаксийн ялгаа л бий:
 
 * React эвентүүд бүгдийг жижгээр бичихийн оронд үгийн эхний үсэг болгоныг(camelCase) стандартаар бичигддэг.
@@ -85,11 +95,6 @@ class Toggle extends React.Component {
     );
   }
 }
-
-ReactDOM.render(
-  <Toggle />,
-  document.getElementById('root')
-);
 ```
 
 [**CodePen дээр турших**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
@@ -103,10 +108,9 @@ JSX дуудалт дээр `this`-г ашиглахдаа болгоомжто�
 ```js{2-6}
 class LoggingButton extends React.Component {
   // Энэ синтакс нь `this`-г handleClick-тэй холбох болно.
-  // Анхаар: Энэ бол *туршилтын* бичиглэл юм.
   handleClick = () => {
     console.log('this is:', this);
-  }
+  };
 
   render() {
     return (

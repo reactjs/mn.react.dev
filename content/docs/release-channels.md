@@ -8,6 +8,15 @@ prev: cdn-links.html
 next: hello-world.html
 ---
 
+<div class="scary">
+
+>
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> See [Versioning Policy](https://react.dev/community/versioning-policy) to learn about the React release channels.
+
+</div>
+
 React relies on a thriving open source community to file bug reports, open pull requests, and [submit RFCs](https://github.com/reactjs/rfcs). To encourage feedback we sometimes share special builds of React that include unreleased features.
 
 > This document will be most relevant to developers who work on frameworks, libraries, or developer tooling. Developers who use React primarily to build user-facing applications should not need to worry about our prerelease channels.
@@ -53,13 +62,13 @@ If you're the author of a third party React framework, library, developer tool, 
 - Set up a cron job using your preferred continuous integration platform. Cron jobs are supported by both [CircleCI](https://circleci.com/docs/2.0/triggers/#scheduled-builds) and [Travis CI](https://docs.travis-ci.com/user/cron-jobs/).
 - In the cron job, update your React packages to the most recent React release in the Next channel, using `next` tag on npm. Using the npm cli:
 
-  ```
+  ```console
   npm update react@next react-dom@next
   ```
 
   Or yarn:
 
-  ```
+  ```console
   yarn upgrade react@next react-dom@next
   ```
 - Run your test suite against the updated packages.

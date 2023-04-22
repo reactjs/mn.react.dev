@@ -15,6 +15,16 @@ redirect_from:
   - "tips/use-react-with-other-libraries.html"
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+>
+> These new documentation pages teach modern React:
+>
+> - [`React.Component`](https://react.dev/reference/react/Component)
+
+</div>
+
 Энэ хуудсанд React компонент классын тодорхойлолтод зориулсан нарийвчилсан API reference-ын тухай мэдээлэл багтсан. Мэдээлэл нь[Компонент ба Пропс](/docs/components-and-props.html), [Төлөв ба Амьдралын мөчлөг](/docs/state-and-lifecycle.html) гэх мэт React-ын үндсэн ойлголттой хүмүүст зориулсан. Эдгээрийг мэдэхгүй бол эхлээд уншиж судлахыг зөвлөе.
 
 
@@ -124,7 +134,6 @@ render()
 Дуудагдахдаа  `this.props`, `this.state` -ыг шалгаад доорх хоёр төрлийн аль нэгэн рүү нь буцна:
 
 - **React элементүүд.** Ихэвчлэн [JSX](/docs/introducing-jsx.html) ашиглан үүсдэг. Жишээ нь  `<div />` болон `<MyComponent />` нь React элементүүд бөгөөд  DOM node-ыг эсвэл өөр хэрэглэгчийн тодорхойлсон компонентыг рендэр хийх зааврыг React-д өгөх гэх мэт.
-
 - **Массив ба фрагментууд.** рендэрээс олон элемент рүү буцаадаг. Дэлгэрэнгүйг [фрагментууд](/docs/fragments.html) гэснээс харна уу. 
 - **Порталууд**. Хүү компонентуудыг өөр DOM салбарт рендэр хийхэд тусална. Дэлгэрэнгүйг [порталууд](/docs/portals.html) гэснээс харна уу.
 - **Стринг ба тоонууд.** DOM-д эдгээр нь текст нод шиг рендэр хийдэг. 
@@ -517,7 +526,7 @@ UNSAFE_componentWillUpdate(nextProps, nextState)
 ### `setState()` {#setstate}
 
 ```javascript
-setState(updater, [callback])
+setState(updater[, callback])
 ```
 
 `setState()`  нь компонентод орсон өөрчлөлтийг дараалуулан нэмж, төлөв шинэчлэгдсэн үед компонент болон хүүхдүүд нь дахин рендэр хийх хэрэгтэй гэдгийг React-д мэдэгддэг. Та эвент зохицуулагч, серверийн хариу үйлдлийн улмаас хэрэглэгчийн интерфэйсийг шинэчлэхийг хүсвэл нэн тэргүүнд ашиглах чухал метод юм. 

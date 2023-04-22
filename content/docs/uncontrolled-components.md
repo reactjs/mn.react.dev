@@ -4,6 +4,18 @@ title: Удирдагдаагүй компонентууд
 permalink: docs/uncontrolled-components.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [`<input>`](https://react.dev/reference/react-dom/components/input)
+> - [`<select>`](https://react.dev/reference/react-dom/components/select)
+> - [`<textarea>`](https://react.dev/reference/react-dom/components/textarea)
+
+</div>
+
 Ихэнх тохиолдолд бид форм хэрэгжүүлэхэд [удирдагдсан компонентууд](/docs/forms.html) хэрэглэхийг зөвлөдөг. Удирдагдсан компонентод формын өгөгдөл нь React компонентоор зохицуулагддаг. Өөр нэг арга нь удирдагдаагүй компонент ашиглах бөгөөд формын өгөгдөл нь DOM-р зохиуцуулагддаг.
 
 Удирдагдаагүй компонент бичихдээ төлөв болгоны шинэчлэлт дээр эвентийн удирдлага бичихийн оронд формын утгийг DOM-с авахийн тулд [ref ашигладаг](/docs/refs-and-the-dom.html).
