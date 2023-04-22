@@ -6,6 +6,13 @@ sectionid: community
 permalink: community/courses.html
 ---
 
+<div class="scary">
+
+>
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+
+</div>
+
 ## Үнэгүй хичээлүүд {#free-courses}
 
 - [Glitch: React Starter Kit](https://glitch.com/glimmer/post/react-starter-kit) - A free, 5-part video course with interactive code examples that will help you learn React.
@@ -28,6 +35,10 @@ permalink: community/courses.html
 
 ## Төлбөртэй хичээлүүд {#paid-courses}
 
+- [Meta Front-End Developer Professional Certificate](https://www.coursera.org/professional-certificates/meta-front-end-developer) - Launch your career as a front-end developer. Build job-ready skills for an in-demand career and earn a credential from Meta. No degree or prior experience required to get started.
+
+- [Egghead.io](https://egghead.io/browse/frameworks/react) - Short instructional videos on React and many other topics.
+
 - [Egghead.io](https://egghead.io/browse/frameworks/react) - React болон бусад сэдвүүд бүхий богино хэмжээний сургалтын видеонууд.
 
 - [Frontend Masters](https://frontendmasters.com/learn/courses/) - React болон бусад frontend framework-үүдийн талаарх видео хичээлүүд
@@ -43,6 +54,8 @@ permalink: community/courses.html
 - [React Essentials for Designers](https://learnreact.design) - Үндсэн ойлголт, боломжит болон хязгаарлагдмал зүйлсийг хэрхэн ашиглах энэ нь хэрхэн дизайнтай холбогдох талаар дизайнаруудад зориулсан React-ийн хичээл.
 
 - [Essential React](https://learnreact.com/lessons/2018-essential-react-1-overview) - Сонирхогчдод зориулсан, хялбараас хүнд түвшний component бүтээх богино хичээл.
+
+- [Tyler McGinnis](https://ui.dev/) - Tyler McGinnis provides access to his courses for a monthly fee. Courses include "React Fundamentals" and "Universal React".
 
 - [React Training: Advanced React.js](https://courses.reacttraining.com/p/advanced-react) - Өөрийн React чадварыг дараагийн шатанд гарга.
 

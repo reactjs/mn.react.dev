@@ -4,6 +4,16 @@ title: Хэлтэрхий
 permalink: docs/fragments.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> These new documentation pages teach modern React:
+>
+> - [`<Fragment>`](https://react.dev/reference/react/Fragment)
+
+</div>
+
 React компонент нь олон элементийг харуулахдаа заавал багц байдлаар буцаах шаардлагатай. Харин Фрагмент нь нэмэлт DOM нүдний шаардлагагүйгээр олон элементийг нэг багц болгон харуулдаг.
 
 ```js

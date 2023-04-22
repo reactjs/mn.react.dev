@@ -8,6 +8,15 @@ redirect_from:
   - "support.html"
 ---
 
+<div class="scary">
+
+>
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> See the [Community](https://react.dev/community) resources on the new site.
+
+</div>
+
 React нь олон сая хөгжүүлэгчдийн хамтралтай.
 
 Бид энэ хуудсанд React-тай холбоотой таны оролцож болох зарим хамтралуудыг үзүүллээ. Мөн та энэ хэсгээс нэмэлт интернэт орчинд болон хувьчилсан сургалтын материалуудыг олж авах боломжтой.
@@ -28,7 +37,6 @@ Stack Overflow нь код бичих үед болон тулгараад бу�
 * [Hashnode-ийн React хөгжүүлэгчид](https://hashnode.com/n/reactjs)
 * [Reactiflux интернэт чат](https://discord.gg/reactiflux)
 * [Reddit дээрх React хөгжүүлэгчид](https://www.reddit.com/r/reactjs/)
-* [Spectrum дээрх React хөгжүүлэгчид](https://spectrum.chat/react)
 
 ## Мэдээ {#news}
 

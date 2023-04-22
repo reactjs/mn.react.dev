@@ -6,6 +6,17 @@ prev: conditional-rendering.html
 next: forms.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Rendering Lists](https://react.dev/learn/rendering-lists)
+
+</div>
+
+
 Эхлээд Жаваскриптэд хэрхэн жагсаалтыг хувиргадаг талаар эргэн саная.
 
 Доорх өгөгдсөн кодод бид [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) функц ашиглах `тоон` жагсаалтын утгыг хоёр дахин нэмэгдүүлж байна.
@@ -40,10 +51,7 @@ const listItems = numbers.map((number) =>
 Бид `listItems`-аа `<ul>` элэмент дотор багтаан [DOM руу дүрсэлсэн](/docs/rendering-elements.html#rendering-an-element-into-the-dom):
 
 ```javascript{2}
-ReactDOM.render(
-  <ul>{listItems}</ul>,
-  document.getElementById('root')
-);
+<ul>{listItems}</ul>
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/GjPyQr?editors=0011)
@@ -69,10 +77,8 @@ function NumberList(props) {
 }
 
 const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<NumberList numbers={numbers} />);
 ```
 
 Чи энэ кодыг ажиллуулах үед түлхүүр жагсаалтын хэсэгт олгохийг зөвлөсөн анхааруулга харна. "Түлхүүр" бол тусгай тэмдэгт төрөлтэй шинж чанар бөгөөд чи үүнийг элэментүүдийн жагсаалт үүсгэж үедээ ашиглах хэрэгтэй. Энэ нь яагаад чухал болох талаар дараагийн хэсэгт ярилцах болно.
@@ -91,12 +97,6 @@ function NumberList(props) {
     <ul>{listItems}</ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/jrXYRR?editors=0011)
@@ -135,7 +135,7 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
-Хэрэв жагсаалтын эрэмбэ өөрчлөгдөх бол бид индексийг түлхүүр болгон ашиглахийг зөвлөдөггүй. Энэ нь ажиллагааны хурд сөргөөр нөлөөлөх болон компонентийн төлөвт асуудал үүсгэж болзошгүй. [Индексийг түлхүүр болгон ашиглахийн сөрөг нөлөөг илүү тайлбарласан](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318) Robin Pokorny-н нийтлэлийг уншиж болно. Хэрэв та жагсаалтын утгууддаа тусгайлан түлхүүр зааж өгөхгүй бол React индексийг анхны төлөв(default)-р түлхүүр болгон ашиглана.
+Хэрэв жагсаалтын эрэмбэ өөрчлөгдөх бол бид индексийг түлхүүр болгон ашиглахийг зөвлөдөггүй. Энэ нь ажиллагааны хурд сөргөөр нөлөөлөх болон компонентийн төлөвт асуудал үүсгэж болзошгүй. [Индексийг түлхүүр болгон ашиглахийн сөрөг нөлөөг илүү тайлбарласан](https://robinpokorny.com/blog/index-as-a-key-is-an-anti-pattern/) Robin Pokorny-н нийтлэлийг уншиж болно. Хэрэв та жагсаалтын утгууддаа тусгайлан түлхүүр зааж өгөхгүй бол React индексийг анхны төлөв(default)-р түлхүүр болгон ашиглана.
 
 Хэрэв та илүү нарын сонирхвол [түлхүүр яагаад чухал талаар илүү гүнзгий тайлбар](/docs/reconciliation.html#recursing-on-children) нийтлэлийг уншина уу.
 
@@ -170,12 +170,6 @@ function NumberList(props) {
     </ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 **Жишээ: Түлхүүрийн зөв ашиглалт**
@@ -198,12 +192,6 @@ function NumberList(props) {
     </ul>
   );
 }
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-  <NumberList numbers={numbers} />,
-  document.getElementById('root')
-);
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/ZXeOGM?editors=0010)
@@ -245,10 +233,9 @@ const posts = [
   {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
   {id: 2, title: 'Installation', content: 'You can install React from npm.'}
 ];
-ReactDOM.render(
-  <Blog posts={posts} />,
-  document.getElementById('root')
-);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Blog posts={posts} />);
 ```
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/NRZYGN?editors=0010)

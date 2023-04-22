@@ -4,6 +4,17 @@ title: Контекст
 permalink: docs/context.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Passing Data Deeply with Context](https://react.dev/learn/passing-data-deeply-with-context)
+> - [`useContext`](https://react.dev/reference/react/useContext)
+
+</div>
+
 Контекст нь өгөгдлүүдийг пропс ашиглан компонентын бүх түвшингүүдээр доош дамжуулахгүйгээр шууд компонентын мод ашиглан дамжуулах боломжийг олгодог.
 
 Энгийн React програмд өгөгдлийг дээрээс доош буюу (эцэг компонентоос хүү компонент руу) гэсэн чиглэлтэйгээр пропсуудыг дамжуулдаг. Гэхдээ зарим (locale preference, UI theme) програмд олон компонентуудад дуудагдан ашиглагддаг пропсуудын хувьд энэ арга нь тохиромжгүй юм. Тиймээс контекст ашиглан ийм төрлийн өгөгдлүүдийг шууд компонент модоор компонентууд хооронд дамжуулж болно.

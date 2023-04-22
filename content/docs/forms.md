@@ -9,6 +9,18 @@ redirect_from:
   - "docs/forms-zh-CN.html"
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [`<input>`](https://react.dev/reference/react-dom/components/input)
+> - [`<select>`](https://react.dev/reference/react-dom/components/select)
+> - [`<textarea>`](https://react.dev/reference/react-dom/components/textarea)
+
+</div>
+
 HTML форм элементүүд React дээр байдаг бусад DOM элементүүдээс бага зэрэг өөр ажилладаг учир нь форм элементүүд зарим дотоод төлөв хадгалах хэрэгтэй байдаг. Жишээлбэл, энэ энгийн HTML форм нэг нэр хүлээж авдаг:
 
 ```html
@@ -281,10 +293,10 @@ this.setState(partialState);
 Дараах код үүнийг заасан байна. (Оролт нь эхэндээ засварлах боломжгүйгээр цоожлогдсон ба богино хугацааны дараа засварлагдаж боломжтой болж байна.)
 
 ```javascript
-ReactDOM.render(<input value="hi" />, mountNode);
+ReactDOM.createRoot(mountNode).render(<input value="hi" />);
 
 setTimeout(function() {
-  ReactDOM.render(<input value={null} />, mountNode);
+  ReactDOM.createRoot(mountNode).render(<input value={null} />);
 }, 1000);
 
 ```

@@ -6,6 +6,18 @@ next: hooks-rules.html
 prev: hooks-state.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Synchronizing with Effects](https://react.dev/learn/synchronizing-with-effects)
+> - [You Might Not Need an Effect](https://react.dev/learn/you-might-not-need-an-effect)
+> - [`useEffect`](https://react.dev/reference/react/useEffect)
+
+</div>
+
 *Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class.
 
 The *Effect Hook* lets you perform side effects in function components:

@@ -2,22 +2,29 @@
 id: hello-world
 title: Сайн уу Дэлхий
 permalink: docs/hello-world.html
-prev: cdn-links.html
+prev: release-channels.html
 next: introducing-jsx.html
 ---
 
+<div class="scary">
+
+>
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> See [Quick Start](https://react.dev/learn) for an introduction to React.
+
+</div>
+
 Хамгийн энгийн React жишээ иймэрхүү харагдана:
 
-```js
-ReactDOM.render(
-  <h1>Сайн уу, дэлхий!</h1>,
-  document.getElementById('root')
-);
+```jsx
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<h1>Сайн уу, дэлхий!</h1>);
 ```
 
 Ингэж "Сайн уу, дэлхий!" гэх толгой таг хуудсанд харагдана.
 
-[](codepen://hello-world)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrpgNB?editors=1010)**
 
 Дээрхи холбоос дээр дарж онлайн засварлагчыг нээе. Хүссэнээрээ ѳѳрчлѳѳд үр дүн хэрхэн ѳѳрчлѳгдѳхийг хараарай. Ихэнх жишээнүүд үүнтэй адил заавартай байгаа.
 

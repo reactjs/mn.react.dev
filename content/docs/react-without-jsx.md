@@ -4,6 +4,12 @@ title: JSX үгүй React
 permalink: docs/react-without-jsx.html
 ---
 
+<div class="scary">
+
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+
+</div>
+
 JSX нь React-д заавал шаардлагатай биш. React-г JSX-гүй ашиглах нь build орчинд компайл байршуулах сонирхолгүй бол онцгойлон тохиримжтой юм.
 
 JSX-н бүх элемент бол зүгээр `React.createElement(component, props, ...children)`-г дуудаж хялбарчилсан зүйл юм. Тиймээс JSX-р хийж чадаж байгаа бүх зүйл цэвэр JavaScript-р гүйцэтгэгдэх боломжтой юм.
@@ -17,10 +23,8 @@ class Hello extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Hello toWhat="World" />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Hello toWhat="World" />);
 ```
 
 JSX ашиглаагүй дараах кодтой хөрвүүлэгдэх боломжтой:
@@ -32,10 +36,8 @@ class Hello extends React.Component {
   }
 }
 
-ReactDOM.render(
-  React.createElement(Hello, {toWhat: 'World'}, null),
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(React.createElement(Hello, {toWhat: 'World'}, null));
 ```
 
 Хэрвээ JSX хэрхэн JavaScript-руу хөрвүүлэгдсэн талаар илүү жишээ хархаар сонирхож байвал [онлайн Babel compiler](babel://jsx-simple-example)-г туршиж үзэх боломжтой.
@@ -47,10 +49,8 @@ ReactDOM.render(
 ```js
 const e = React.createElement;
 
-ReactDOM.render(
-  e('div', null, 'Hello World'),
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(e('div', null, 'Hello World'));
 ```
 
 Хэрвээ `React.createElement`-д товчлолт ашиглавал, React-г JSX-гүй ашиглахад маш их хялбар болох юм.

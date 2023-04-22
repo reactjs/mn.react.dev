@@ -8,6 +8,18 @@ prev: introducing-jsx.html
 next: components-and-props.html
 ---
 
+<div class="scary">
+
+>
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+>
+> These new documentation pages teach how to write JSX and show it on an HTML page:
+>
+> - [Writing Markup with JSX](https://react.dev/learn/writing-markup-with-jsx)
+> - [Add React to an Existing Project](https://react.dev/learn/add-react-to-an-existing-project#step-2-render-react-components-anywhere-on-the-page)
+
+</div>
+
 Элементүүд бол React app-н хамгийн жижиг хэсэг юм.
 
 Элемент нь таны дэлгэц дээр юу харахийг хүсэж байгааг тодорхойлно:
@@ -34,11 +46,11 @@ const element = <h1>Hello, world</h1>;
 
 Зөвхөн React дээр хийгдсэн програмууд(applications) ихэвчлэн ганц эх DOM зангилаатай байдаг. Хэрэв хийгдсэн(existing) програм дээр React програм нэмж(integrate) байгаа бол та магадгүй олон эх DOM зангилаатай байж болно.
 
-React элементийг эх DOM зангилаа дээр дүрслэхдээ хоёуланг нь [`ReactDOM.render()`](/docs/react-dom.html#render)-рүү дамжуулах хэрэгтэй:
+React элементийг эх DOM зангилаа дээр дүрслэхдээ хоёуланг нь [`ReactDOM.createRoot()`](/docs/react-dom-client.html#createroot)-рүү дамжуулах хэрэгтэй:
 
 `embed:rendering-elements/render-an-element.js`
 
-[](codepen://rendering-elements/render-an-element)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/ZpvBNJ?editors=1010)**
 
 Энэ код хуудас дээр "Hello, world" текст дүрслэх болно.
 
@@ -52,13 +64,13 @@ React элементүүд нь [хувиршгүй(immutable)](https://en.wikip
 
 `embed:rendering-elements/update-rendered-element.js`
 
-[](codepen://rendering-elements/update-rendered-element)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)**
 
-Энэ нь [`ReactDOM.render`](/docs/react-dom.html#render)-г [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) дуудалт дээр секунд болгон дуудаж байна.
+Энэ нь [`root.render`](/docs/react-dom.html#render)-г [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) дуудалт дээр секунд болгон дуудаж байна.
 
 >**Анхаар:**
 >
->Амьдрал дээр ихэнх React програмууд [`ReactDOM.render()`](/docs/react-dom.html#render)-г ганцхан удаа дууддаг. Дараагийн бүлэгт бид иймэрхүү код хэрхэн [төлөвт компонентууд](/docs/state-and-lifecycle.html) дээр хэрэгжиж болдгийг(encapsulation) үзэх болно.
+>Амьдрал дээр ихэнх React програмууд [`root.render()`](/docs/react-dom.html#render)-г ганцхан удаа дууддаг. Дараагийн бүлэгт бид иймэрхүү код хэрхэн [төлөвт компонентууд](/docs/state-and-lifecycle.html) дээр хэрэгжиж болдгийг(encapsulation) үзэх болно.
 >
 >Бид дараах сэдвийг алгасахгүй байхийг зөвлөж байгаа шалтгаан нь эдгээр хоёр нь хамтран бичигддэг.
 
@@ -66,7 +78,7 @@ React элементүүд нь [хувиршгүй(immutable)](https://en.wikip
 
 React DOM элемент болон дэд элементийг нь өмнөхтэй нь харьцуулан DOM-г хүссэн төлөвт нь оруулахийн тулд DOM дээр зөвхөн шаардлагатай өөрчлөлтийг л хэрэгжүүлдэг.
 
-Та [өмнөх жишээг](codepen://rendering-elements/update-rendered-element) хөтчийн хэрэгсэл ашиглан шинжилж мэдэж болно:
+Та [өмнөх жишээг](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) хөтчийн хэрэгсэл ашиглан шинжилж мэдэж болно:
 
 ![DOM inspector showing granular updates](../images/docs/granular-dom-updates.gif)
 

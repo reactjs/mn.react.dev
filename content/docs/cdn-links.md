@@ -6,22 +6,30 @@ prev: create-a-new-react-app.html
 next: release-channels.html
 ---
 
+<div class="scary">
+
+>
+> These docs are old and won't be updated. Go to [react.dev](https://react.dev/) for the new React docs.
+> 
+> See [Add React to an Existing Project](https://react.dev/learn/add-react-to-an-existing-project) for the recommended ways to add React.
+
+</div>
+
 React болон ReactDOM -ыг CDN ээс ашиглах боломжтой.
 
 ```html
-<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 ```
 
 Дээрх хувилбарууд зѳвхѳн хѳгжүүлэлтэд зориулагдсан, жинхэнэ бүтээгдэхүүнд тохиромжгүй. Багасгасан бэлэн болсон хувилбарууд нь:
 
 ```html
-<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 ```
 
-Тодорхой хувилбар ашиглах бол `react` болон `react-dom` дээрх `17` гэснийг ѳѳрийн ашиглах хувилбараар солино.
-
+Тодорхой хувилбар ашиглах бол `react` болон `react-dom` дээрх `18` гэснийг ѳѳрийн ашиглах хувилбараар солино.
 
 ### Why the `crossorigin` Attribute? {#why-the-crossorigin-attribute}
 
