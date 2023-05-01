@@ -288,7 +288,7 @@ export function Footer() {
           <FooterLink href="/learn" isHeader={true}>
             Learn React
           </FooterLink>
-          <FooterLink href="/learn/">Quick Start</FooterLink>
+          <FooterLink href="/learn/">Хурдан Эхлэх</FooterLink>
           <FooterLink href="/learn/installation">Installation</FooterLink>
           <FooterLink href="/learn/describing-the-ui">
             Describing the UI
