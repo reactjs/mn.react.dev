@@ -286,50 +286,50 @@ export function Footer() {
         </div>
         <div className="flex flex-col">
           <FooterLink href="/learn" isHeader={true}>
-            Learn React
+            React сурах
           </FooterLink>
           <FooterLink href="/learn/">Хурдан Эхлэх</FooterLink>
-          <FooterLink href="/learn/installation">Installation</FooterLink>
+          <FooterLink href="/learn/installation">Суулгах</FooterLink>
           <FooterLink href="/learn/describing-the-ui">
-            Describing the UI
+            UI-г тодорхойлох
           </FooterLink>
           <FooterLink href="/learn/adding-interactivity">
-            Adding Interactivity
+            Интеракц нэмэх
           </FooterLink>
-          <FooterLink href="/learn/managing-state">Managing State</FooterLink>
+          <FooterLink href="/learn/managing-state">Төлөв удирдах</FooterLink>
           <FooterLink href="/learn/escape-hatches">Escape Hatches</FooterLink>
         </div>
         <div className="flex flex-col">
           <FooterLink href="/reference/react" isHeader={true}>
-            API Reference
+            API лавлах
           </FooterLink>
-          <FooterLink href="/reference/react">React APIs</FooterLink>
-          <FooterLink href="/reference/react-dom">React DOM APIs</FooterLink>
+          <FooterLink href="/reference/react">React API</FooterLink>
+          <FooterLink href="/reference/react-dom">React DOM API</FooterLink>
         </div>
         <div className="md:col-start-2 xl:col-start-4 flex flex-col">
           <FooterLink href="/community" isHeader={true}>
             Community
           </FooterLink>
           <FooterLink href="https://github.com/facebook/react/blob/main/CODE_OF_CONDUCT.md">
-            Code of Conduct
+            Ёс зүйн дүрэм
           </FooterLink>
-          <FooterLink href="/community/team">Meet the Team</FooterLink>
+          <FooterLink href="/community/team">Багийн мэдээлэл</FooterLink>
           <FooterLink href="/community/docs-contributors">
             Docs Contributors
           </FooterLink>
           <FooterLink href="/community/acknowledgements">
-            Acknowledgements
+            Талархал
           </FooterLink>
         </div>
         <div className="flex flex-col">
-          <FooterLink isHeader={true}>More</FooterLink>
-          <FooterLink href="/blog">Blog</FooterLink>
+          <FooterLink isHeader={true}>Илүү их</FooterLink>
+          <FooterLink href="/blog">Блог</FooterLink>
           <FooterLink href="https://reactnative.dev/">React Native</FooterLink>
           <FooterLink href="https://opensource.facebook.com/legal/privacy">
-            Privacy
+            Нууцлал
           </FooterLink>
           <FooterLink href="https://opensource.fb.com/legal/terms/">
-            Terms
+            Ашиглах нөхцөл
           </FooterLink>
           <div className="flex flex-row mt-8 gap-x-2">
             <ExternalLink
