@@ -1,18 +1,18 @@
 ---
-title: Thinking in React
+title: React сэтгэлгээ
 ---
 
 <Intro>
 
-React can change how you think about the designs you look at and the apps you build. When you build a user interface with React, you will first break it apart into pieces called *components*. Then, you will describe the different visual states for each of your components. Finally, you will connect your components together so that the data flows through them. In this tutorial, we’ll guide you through the thought process of building a searchable product data table with React.
+React таны програм болон дизайнаа хэрхэн бүтээх талаарх ойлголтыг өөрчлөх болно. React ашиглан UI-аа бүтээхдээ эхлээд *компонент* гэж нэрлэгддэг жижиг хэсгүүдэд хуваах шаардлагтай. Тэрний дараа компонент бүрд тус бүрийн дотоод стэйтүүдийг тодорхойлж өгнө. Эцэст нь компонентүүдийг холбож дундуур нь өгөгдөл дамжуулах хэрэгтэй. Дараах жишээгээр бид танд React ашиглан хэрхэн "хайх боломжтой бүтээгдэхүүний жагсаалт харуулдаг" програм бичих талаар гүнзгий ойлголт өгөх болно.
 
 </Intro>
 
-## Start with the mockup {/*start-with-the-mockup*/}
+## Mock загвартай эхэлцгээе {/*start-with-the-mockup*/}
 
-Imagine that you already have a JSON API and a mockup from a designer.
+Та аль хэдийн JSON API-тай ба мөн mock загвар дизайнераасаа авчихсан гэж төсөөлье.
 
-The JSON API returns some data that looks like this:
+JSON API дараах байдалтай өгөгдөл буцаадаг:
 
 ```json
 [
@@ -25,13 +25,13 @@ The JSON API returns some data that looks like this:
 ]
 ```
 
-The mockup looks like this:
+Mock дараах байдлаар харагдана:
 
 <img src="/images/docs/s_thinking-in-react_ui.png" width="300" style={{margin: '0 auto'}} />
 
-To implement a UI in React, you will usually follow the same five steps.
+React дээр UI-аа бүтээхдээ дараах 5 алхамыг дагах хэрэгтэй
 
-## Step 1: Break the UI into a component hierarchy {/*step-1-break-the-ui-into-a-component-hierarchy*/}
+## Алхам 1: UI-аа компонентын шатлал болгон салгая {/*step-1-break-the-ui-into-a-component-hierarchy*/}
 
 Start by drawing boxes around every component and subcomponent in the mockup and naming them. If you work with a designer, they may have already named these components in their design tool. Ask them!
 
