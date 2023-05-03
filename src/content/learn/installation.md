@@ -1,57 +1,56 @@
 ---
-title: Installation
+title: Суулгах
 ---
 
 <Intro>
 
-React has been designed from the start for gradual adoption. You can use as little or as much React as you need. Whether you want to get a taste of React, add some interactivity to an HTML page, or start a complex React-powered app, this section will help you get started.
+React нь анхнаасаа хэрэглээнд алгуурхнаар нэвтрэх зорилгоор бүтээгдсэн бөгөөд та React-г их, бага хүссэн хэмжээгээрээ хэрэглэх боломжтой. Та React-г дөнгөж сонирхож байгаа эсэх, HTML хуудсаа интерактив болгох эсвэл React-дээр ажилдаг цогц програм хийхийг хүсэж байгаа бол энэхүү хэсэг танд туслах болно.
 
 </Intro>
 
 <YouWillLearn isChapter={true}>
 
-* [How to start a new React project](/learn/start-a-new-react-project)
-* [How to add React to an existing project](/learn/add-react-to-an-existing-project)
-* [How to set up your editor](/learn/editor-setup)
-* [How to install React Developer Tools](/learn/react-developer-tools)
+* [Шинэ React прожект эхлүүлэх](/learn/start-a-new-react-project)
+* [Одоо байгаа прожектдээ React нэмэх](/learn/add-react-to-an-existing-project)
+* [Эдитороо тохируулах](/learn/editor-setup)
+* [React Developer Tools суулгах](/learn/react-developer-tools)
 
 </YouWillLearn>
 
-## Try React {/*try-react*/}
+## Оролдоод үз {/*try-react*/}
 
-You don't need to install anything to play with React. Try editing this sandbox!
+Та React-г туршиж үзэхэд юу ч суулгах шаардлагагүй. Доорх sandbox-ыг өөрчлөөд үз!
 
 <Sandpack>
 
 ```js
 function Greeting({ name }) {
-  return <h1>Hello, {name}</h1>;
+  return <h1>Сайн байна уу, {name}</h1>;
 }
 
 export default function App() {
-  return <Greeting name="world" />
+  return <Greeting name="Ертөнц минь" />
 }
 ```
 
 </Sandpack>
 
-You can edit it directly or open it in a new tab by pressing the "Fork" button in the upper right corner.
+Дээрх кодыг шууд засварлах боломжтой ба баруун дээд булан дахь "Fork" товчлуурыг дарж шинэ тааб-нд нээж болно.
 
-Most pages in the React documentation contain sandboxes like this. Outside of the React documentation, there are many online sandboxes that support React: for example, [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react), or [CodePen.](https://codepen.io/pen?&editors=0010&layout=left&prefill_data_id=3f4569d1-1b11-4bce-bd46-89090eed5ddb)
+Reacт гарын авлагын ихэнх хуудсанд дээрх шиг sandbox байна. React гарын авлагаас гадуур React-г дэмждэг зөндөө онлайн sandbox байдаг: жишээ нь [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react) болон [CodePen.](https://codepen.io/pen?&editors=0010&layout=left&prefill_data_id=3f4569d1-1b11-4bce-bd46-89090eed5ddb)
 
-### Try React locally {/*try-react-locally*/}
+### Дотоод орчиндоо React турших {/*try-react-locally*/}
 
-To try React locally on your computer, [download this HTML page.](https://gist.githubusercontent.com/gaearon/0275b1e1518599bbeafcde4722e79ed1/raw/db72dcbf3384ee1708c4a07d3be79860db04bff0/example.html) Open it in your editor and in your browser!
+React-г дотоод орчиндоо өөрийн компьютер дээрээ туршиж үзэхийг хүсвэл [энэхүү HTML хуудсыг татна уу.](https://gist.githubusercontent.com/gaearon/0275b1e1518599bbeafcde4722e79ed1/raw/db72dcbf3384ee1708c4a07d3be79860db04bff0/example.html) Тэгээд өөрийн эдитор болон веб хөтөчдөө нээгээд үз! 
 
-## Start a new React project {/*start-a-new-react-project*/}
+## Шинэ React прожект эхлүүлэх {/*start-a-new-react-project*/}
 
-If you want to build an app or a website fully with React, [start a new React project.](/learn/start-a-new-react-project)
+Хэрэв та React ашиглан шинэ апп эсвэл вебсайт бүтээхийг хүсвэл [шинэ React прожект эхлүүлээрэй.](/learn/start-a-new-react-project)
 
-## Add React to an existing project {/*add-react-to-an-existing-project*/}
+## Байгаа прожектдээ React нэмэх {/*add-react-to-an-existing-project*/}
 
-If want to try using React in your existing app or a website, [add React to an existing project.](/learn/add-react-to-an-existing-project)
+Та React-г одоо байгаа апп эсвэл вебсайтдаа ашиглахыг хүсвэл [ одоо байгаа прожектдээ React-ийг нэмээрэй.](/learn/add-react-to-an-existing-project)
 
-## Next steps {/*next-steps*/}
+## Дараагийн алхам {/*next-steps*/}
 
-Head to the [Quick Start](/learn) guide for a tour of the most important React concepts you will encounter every day.
-
+[Хурдан Эхлэх](/learn) хэсэгрүү очиж өдөр бүр тааралддаг хамгийн чухал React-ийн ойлголтуудтай танилцаарай.
