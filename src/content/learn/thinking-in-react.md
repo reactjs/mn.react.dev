@@ -4,7 +4,7 @@ title: React сэтгэлгээ
 
 <Intro>
 
-React таны програм болон дизайнаа хэрхэн бүтээх талаарх ойлголтыг өөрчлөх болно. React ашиглан UI-аа бүтээхдээ эхлээд *компонент* гэж нэрлэгддэг жижиг хэсгүүдэд хуваах шаардлагтай. Тэрний дараа компонент бүрд тус бүрийн дотоод стэйтүүдийг тодорхойлж өгнө. Эцэст нь компонентүүдийг холбож дундуур нь өгөгдөл дамжуулах хэрэгтэй. Дараах жишээгээр бид танд React ашиглан хэрхэн "хайх боломжтой бүтээгдэхүүний жагсаалт харуулдаг" програм бичих талаар гүнзгий ойлголт өгөх болно.
+React таны програм болон дизайнаа хэрхэн бүтээх талаарх ойлголтыг өөрчлөх болно. React ашиглан UI-аа бүтээхдээ эхлээд *компонент* гэж нэрлэгддэг жижиг хэсгүүдэд хуваах шаардлагатай. Тэрний дараа компонент бүрд тус бүрийн дотоод стэйтүүдийг тодорхойлж өгнө. Эцэст нь компонентүүдийг холбож дундуур нь өгөгдөл дамжуулах хэрэгтэй. Дараах жишээгээр бид танд React ашиглан хэрхэн "хайлттай бүтээгдэхүүний жагсаалт харуулдаг" програм бичих талаар гүнзгий ойлголт өгөх болно.
 
 </Intro>
 
@@ -29,23 +29,19 @@ Mock дараах байдлаар харагдана:
 
 <img src="/images/docs/s_thinking-in-react_ui.png" width="300" style={{margin: '0 auto'}} />
 
-React дээр UI-аа бүтээхдээ дараах 5 алхамыг дагах хэрэгтэй
+React дээр UI-аа бүтээхдээ дараах 5 алхамыг дагах хэрэгтэй.
 
 ## Алхам 1: UI-аа компонентын шатлал болгон салгая {/*step-1-break-the-ui-into-a-component-hierarchy*/}
 
 Эхлээд бүх компонент болон дэд компонентуудыг mock загварын дагуу зурж тэдгээрийг нэрлэнэ. Хэрвээ та дизайнертайгаа ажиллаж байгаа бол тэд аль хэдийн диэайн зурдаг хэрэгсэл дээрээ нэрлэсэн байж магадгүй. Тэднээс асуугаарай.
 
-Depending on your background, you can think about splitting up a design into components in different ways:
-
 Таны юу хийдгээс хамааран өөр, өөр арга замаар хуваасан байж магадгүй юм.
 
 * **Програмчилалын**--Шинээр функц болон объект үүсгэхдээ нэгэн ижил текник ашиглаарай. Нэг санал болгох текник нь [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle) ба энэ нь компонент бүр нэгээс илүү үйлдэл хийхгүй гэсэн санаа юм. Хэрвээ цаашид томрохоор болвол дэд компонентүүдэд задлах хэрэгэтй. 
-* **CSS**--Класс селектороо юунд ашиглахааа шийдэх.
+* **CSS**--Класс селектор-оо юунд ашиглахааа шийдэх.
 * **Дизайн**--Дизайны давхаргуудаа хэрхэн зохион байгуулахаа шийдэх.
 
-If your JSON is well-structured, you'll often find that it naturally maps to the component structure of your UI. That's because UI and data models often have the same information architecture--that is, the same shape. Separate your UI into components, where each component matches one piece of your data model.
-
-Хэрхээ таны JSON маш сайн бүтэцлэгдсэн бол таны UI-ын компонентуудтай шууд холбогдож ажиллаж чадна. Энэ нь UI болон өгөгдлийн моделууд ижил бүтэцтэй байх хэрэгтэй шалтгаан юм.
+Хэрхээ таны JSON маш сайн бүтэцлэгдсэн бол таны UI компонентуудтай шууд холбогдож ажиллаж чадна. Энэ нь UI болон өгөгдлийн загварууд (data model) ижил бүтэцтэй байх хэрэгтэй шалтгаан юм.
 
 Дараах дэлгэцэнд 5 компонент байна:
 
@@ -65,7 +61,7 @@ If your JSON is well-structured, you'll often find that it naturally maps to the
 
 </FullWidth>
 
-Хэрвээ `ProductTable` (лаванда)-г харах юм бол, та хүснэгтийн толгой ("Name" ба "Price") нь тусдаа компонент биш байгааг анзаарна. Энэ нь гэхдээ сонголтын асуудал юм. Энэ жишээнд энэ нь `ProductTable` -ын нэг хэсэг юм. Гэхдээ хэрвээ толгой хэсэг цаашид нэмэгдэхээр бол (жишээ нь эрэмбэлэгдэх хэсэг), та тусдаа `ProductTableHeader` гэдэг нэртэй компонент шинээр үүсгэж болох юм.
+Хэрвээ `ProductTable` (лаванда)-г харах юм бол, та хүснэгтийн толгой ("Name" ба "Price") нь тусдаа компонент биш байгааг анзаарна. Энэ нь гэхдээ сонголтын асуудал юм. Энэ жишээнд энэ нь `ProductTable` -ын нэг хэсэг юм. Гэхдээ хэрвээ толгой хэсэг цаашид нэмэгдэхээр бол (жишээ нь эрэмбэлэгдэх хэсэг) та тусдаа `ProductTableHeader` гэдэг нэртэй компонент шинээр үүсгэж болох юм.
 
 Одоо mock дизайн дээрх компонентүүдийг шаталсан бүтцээр харуулцгаая.
 
@@ -75,11 +71,11 @@ If your JSON is well-structured, you'll often find that it naturally maps to the
         * `ProductCategoryRow`
         * `ProductRow`
 
-## Step 2: React дээр статик хувилбараар хийцгээе {/*step-2-build-a-static-version-in-react*/}
+## Алхам 2: React дээр статик хувилбараар хийцгээе {/*step-2-build-a-static-version-in-react*/}
 
-Бид компонентын шаталсан бүтцээ гаргаад авсан, одоо апп-аа хийж эхэлцгээе. Хамгийн хялбар арга нь ямар нэгэн интерактив үйлдэлгүйгээр өгөгдлийн моделоосоо UI-аа үүсгэх юм... эхлээд статик хувилбарыг үүсгээд дараа нь интерактив үйлдлийг гүйцэтгэх нь илүү хялбар байдаг. Статик хувилбарыг үүсгэх нь илүү их бичихийг шаарддаг бол интерактив үйлдэл нь бага бичиж их бодохыг шаарддаг.
+Бид компонентын шаталсан бүтцээ гаргаад авсан одоо апп-аа хийж эхэлцгээе. Хамгийн хялбар арга нь ямар нэгэн интерактив үйлдэлгүйгээр өгөгдлийн загвараасаа UI-аа үүсгэх юм... эхлээд статик хувилбарыг үүсгээд дараа нь интерактив үйлдлийг гүйцэтгэх нь илүү хялбар байдаг. Статик хувилбарыг үүсгэх нь илүү их бичихийг шаарддаг бол интерактив үйлдэл нь бага бичиж их бодохыг шаарддаг.
 
-Статик хувилбараа үүсгэхдээ та ахин ашиглагдах боломжтой [компонентүүд](/learn/your-first-component) үүсгэж [проп.](/learn/passing-props-to-a-component) ашиглан өгөгдлөө дамжуулах хэрэгтэй. Проп бол эцэг компонентоос хүү компонент руу өгөгдөл дамжуулах арга юм. (Хэрвээ та [стэйт](/learn/state-a-components-memory)-ийн талаар ойлголттой бол статик хувилбарыг үүсгэхдээ битгий ашиглаарай. Стэйт зөвхөн интерактив үйлдлүүд дээр ашиглагдах ба статик хувилбар хийж байхдаа шаардлагагүй юм.)
+Статик хувилбараа үүсгэхдээ та ахин ашиглагдах боломжтой [компонентүүд](/learn/your-first-component) үүсгэж [пропууд](/learn/passing-props-to-a-component) ашиглан өгөгдлөө дамжуулах хэрэгтэй. Пропууд бол эцэг компонентоос хүү компонент руу өгөгдөл дамжуулах арга юм. (Хэрвээ та [стэйт](/learn/state-a-components-memory)-ийн талаар ойлголттой бол статик хувилбарыг үүсгэхдээ битгий ашиглаарай. Стэйт зөвхөн интерактив үйлдлүүд дээр ашиглагдах ба статик хувилбар хийж байх үед шаардлагагүй юм.)
 
 Та "дээрээс доошоо" буюу `FilterableProductTable` компонентоос эсвэл "доороос дээшээ" буюу `ProductRow`-оос эхлэн хийж болно. Жижгэвтэр жишээн дээр дээрээс доошоо чиглэл илүү тохиромжтой бол том төсөл дээр доороос дээшээ чиглэл илүү тохиромжтой.
 
@@ -201,7 +197,7 @@ td {
 
 (Хэрвээ энэ код ойлгомжгүй бол эхлээд [Хурдан эхлэх](/learn/) хэсэг рүү очно уу!)
 
-Компонентуудаа үүсгэсэний дараа та ахин ашиглагдах компонентуудтай болсон байх болно. Яагаад гэвэл энэ статик хувилбар компонентууд зөвхөн JSX буцаана. Шаталсан бүтцийн дээр байгаа (`FilterableProductTable`) компонент проп-оороо өгөгдлийн модел хүлээн авна. Үүнийг нэг чиглэлт өгөгдлийн урсгал гэж нэрлэдэг ба өгөгдөл зөвхөн дээрээс доошоо дамжина.
+Компонентуудаа үүсгэсэний дараа та ахин ашиглагдах компонентуудтай болсон байх болно. Яагаад гэвэл энэ статик хувилбарын компонентууд зөвхөн JSX буцаана. Шаталсан бүтцийн дээр байгаа (`FilterableProductTable`) компонент пропууд-аараа өгөгдлийн загвар хүлээн авна. Үүнийг нэг чиглэлт өгөгдлийн урсгал гэж нэрлэдэг ба өгөгдөл зөвхөн дээрээс доошоо дамжина.
 
 <Pitfall>
 
@@ -209,75 +205,74 @@ td {
 
 </Pitfall>
 
-## Step 3: Find the minimal but complete representation of UI state {/*step-3-find-the-minimal-but-complete-representation-of-ui-state*/}
+## Алхам 3: UI төлвийг минимал (гэхдээ бүрэн) мэдэх нь {/*step-3-find-the-minimal-but-complete-representation-of-ui-state*/}
 
-To make the UI interactive, you need to let users change your underlying data model. You will use *state* for this.
+Та UI интерактив болгохын тулд хэрэглэгчиддээ өгөгдлийн загварыг өөрчлөх боломжийг олгох хэрэгтэй. Энэ зорилгод та *стэйт* ашиглана.
 
-Think of state as the minimal set of changing data that your app needs to remember. The most important principle for structuring state is to keep it [DRY (Don't Repeat Yourself).](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) Figure out the absolute minimal representation of the state your application needs and compute everything else on-demand. For example, if you're building a shopping list, you can store the items as an array in state. If you want to also display the number of items in the list, don't store the number of items as another state value--instead, read the length of your array.
+Стэйтийг хэрэглэхдээ хамгийн чухал зарчим бол [DRY (Don't Repeat Yourself)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) дагах хэрэгтэй юм. Аль болох бага өгөгдөл стэйт-д хадгалах хэрэгтэй гэсэн үг. Жишээ нь та барааны сагс хөгжүүлж байна гэж үзвэл барааны жагсаалтыг стэйт-д хадгална. Хэрвээ барааны тоог харуулахыг хүсвэл барааны тоог өөр стэйд-д хадгалах хэрэггүй юм. Оронд нь барааны жагсаалтын уртыг харуулахад л хангалттай.
 
-Now think of all of the pieces of data in this example application:
+Одоо энэ жишээн програм-д байгаа бүх өгөгдлийн талаар бодоцгооё:
 
-1. The original list of products
-2. The search text the user has entered
-3. The value of the checkbox
-4. The filtered list of products
+1. Бүтээгдэхүүний оригнал жагсаалт
+2. Хэрэглэгчийн оруулсан хайлтын текст
+3. Checkbox-ын утга
+4. Шүүгдсэн барааны жагсаалт
 
-Which of these are state? Identify the ones that are not:
+Эдгээрийн аль нь стэйт вэ? Аль нь биш вэ гэдгийг тодорхойлцгооё:
 
-* Does it **remain unchanged** over time? If so, it isn't state.
-* Is it **passed in from a parent** via props? If so, it isn't state.
-* **Can you compute it** based on existing state or props in your component? If so, it *definitely* isn't state!
+* Энэ нь **өөрчлөгдөхгүй үлдэх үү**? Хэрэв тийм бол энэ стэйт биш.
+* Аль нь **эцгээс** пропууд-аар дамжин ирэх вэ? Хэрэв тийм бол энэ стэйт биш.
+* Тухайн компонентын стэйт болон пропууд-ын тусламжтайгаар **тооцоолох боломжтой юу**? Хэрэв тийм бол энэ *огтхон ч* стэйт биш!
 
-What's left is probably state.
+Тэгвэл яг аль нь стэйт вэ?
 
-Let's go through them one by one again:
+Тэдгээрээр ахин нэг удаа явцгаая:
 
-1. The original list of products is **passed in as props, so it's not state.** 
-2. The search text seems to be state since it changes over time and can't be computed from anything.
-3. The value of the checkbox seems to be state since it changes over time and can't be computed from anything.
-4. The filtered list of products **isn't state because it can be computed** by taking the original list of products and filtering it according to the search text and value of the checkbox.
+1. Бүтээгдэхүүний оригнал жагсаалт бол **пропууд-аар дамжин ирсэн тиймээс энэ стэйт биш юм.** 
+2. Хайлтын текст стэйт байж болно яагаад гэвэл энэ нь ирээдүйд өөрчлөгдөх боломжтой ба стэйт болон пропууд-аар тооцоологдох боломжгүй.
+3. Checkbox-ийн утга стэйт байж болно яагаад гэвэл энэ нь ирээдүйд өөрчлөгдөх боломжтой ба стэйт болон пропууд-аар тооцоологдох боломжгүй.
+4. Шүүгдсэн бүтээгдэхүүний жагсаалт **стэйт биш яагаад гэвэл** энэ нь оригнал бүтээгдэхүүнийн жагсаалт, хайлтын текст болон checkbox-ийн утгуудаар **тооцоологдох боломжтой**.
 
-This means only the search text and the value of the checkbox are state! Nicely done!
+Иймээс хайлтын текст болон checkbox-ийн утгууд л зөвхөн стэйт юм.
 
 <DeepDive>
 
-#### Props vs State {/*props-vs-state*/}
+#### Пропууд vs Стэйт {/*props-vs-state*/}
 
-There are two types of "model" data in React: props and state. The two are very different:
+React-д загвар өгөгдлийн хоёр төрөл бий: пропууд болон стэйт. Тэд маш их ялгаатай.
 
-* [**Props** are like arguments you pass](/learn/passing-props-to-a-component) to a function. They let a parent component pass data to a child component and customize its appearance. For example, a `Form` can pass a `color` prop to a `Button`.
-* [**State** is like a component’s memory.](/learn/state-a-components-memory) It lets a component keep track of some information and change it in response to interactions. For example, a `Button` might keep track of `isHovered` state.
+* [**Пропууд** нь функц руу дамжих аргумент-тэй төстэй юм](/learn/passing-props-to-a-component). Тэд эцэг компонентоос хүү компонент руу өгөгдөл дамжуулах ба түүний харагдацыг өөрчлөх боломжийг олгодог. Жишээ нь `Form` `color` проп-ыг `Button` руу дамжуулна.
+* [**Стэйт** нь компонентын санах ой шиг.](/learn/state-a-components-memory) Энэ нь зарим мэдээллийг төлвийг хадгалах болон интеракшиан хийх үед боломжийг олгодог. Жишээ нь `Button` компонентын `isHovered` стэйт нь програмын төлвийг хадгалж байдаг.
 
-Props and state are different, but they work together. A parent component will often keep some information in state (so that it can change it), and *pass it down* to child components as their props. It's okay if the difference still feels fuzzy on the first read. It takes a bit of practice for it to really stick!
+Пропс-ууд болон стэйтүүд хоорондоо өөр гэхдээ хамтдаа хоршиж ажилладаг. Эцэг компонент ихэвчлэн стэйтдээ мэдээлэл хадгалдаг (мөн өөрчилж чадна) ба түүнийг хүү компонент руугаа пропууд-аараа дамжуулдаг. Хэрвээ эхлээд уншихад энэ нь тийм ч тодорхой биш байвал зүгээр юм. Энийг ойлгоход бага зэрэг хугацаа хэрэгтэй.
 
 </DeepDive>
 
-## Step 4: Identify where your state should live {/*step-4-identify-where-your-state-should-live*/}
+## Алхам 4: Стэйт хаана байх хэрэгтэйг тодорхойл {/*step-4-identify-where-your-state-should-live*/}
+Мининал стэйтийг тодорхойлсоныхоо дараа аль компонент стэйтийг өөрчлөх хэрэгтэй тодорхойлох хэрэгтэй.
 
-After identifying your app’s minimal state data, you need to identify which component is responsible for changing this state, or *owns* the state. Remember: React uses one-way data flow, passing data down the component hierarchy from parent to child component. It may not be immediately clear which component should own what state. This can be challenging if you’re new to this concept, but you can figure it out by following these steps!
+Аппликэйшн доторх стэйтийн хэсэг тус бүрт:
 
-For each piece of state in your application:
+1. Тухайн стэйт хамаарах компонент *бүрийг* тодорхойл.
+2. Тэдгээрийн хамгийн ойрын нийтлэг эцэг компонентыг ол.
+3. Стэйт хаана байхыг шийд:
+    1. Ихэвчлэн тэдгээрийн нийтлэг эцэг компонент дээр стэйтийг нэмдэг.
+    2. Та тэдгээр эцэг компонентуудын дээгүүрх зарим компонент-д нэмж болно.
+    3. Хэрвээ та стэйтээ хаана тавихаа мэдэхгүй бол стэйтийг удирдах шинэ компонентыг үүсгээд нийтлэг эцэг компонентын дээр хаа нэгтээ нэмнэ. 
 
-1. Identify *every* component that renders something based on that state.
-2. Find their closest common parent component--a component above them all in the hierarchy.
-3. Decide where the state should live:
-    1. Often, you can put the state directly into their common parent.
-    2. You can also put the state into some component above their common parent.
-    3. If you can't find a component where it makes sense to own the state, create a new component solely for holding the state and add it somewhere in the hierarchy above the common parent component.
+Өмнөх алхамд та энэ аппликэйшнд хэрэгтэй хоёр стэйтийг олсон: хайлтын текст болон checkbox-ын утга. Энэ жишээнд тэд үргэлж хамтдаа харагдах болохоор нэг газар байсан нь зөв юм.
 
-In the previous step, you found two pieces of state in this application: the search input text, and the value of the checkbox. In this example, they always appear together, so it makes sense to put them into the same place.
+Одоо стратегиа хэрэгжүүлцгээе:
 
-Now let's run through our strategy for them:
+1. **Стэйтийг хэрэглэх компонентуудаа тодорхойл:**
+    * `ProductTable` бүтээгдэхүүний жагсаалтыг стэйтээр (хайлтын текст болон checkbox утга) шүүх.
+    * `SearchBar` стэйтийг харуулах хэрэгтэй (хайлтын текст болон checkbox утга).
+2. **Тэдгээрийн нийтлэг эцгийг ол:** Эхний нийтлэг эцэг компонент `FilterableProductTable`.
+3. **Стэйт хаана байхыг шийд**: Бид дараах компонент-д `FilterableProductTable` стэйтүүдийг байрлуулна.
 
-1. **Identify components that use state:**
-    * `ProductTable` needs to filter the product list based on that state (search text and checkbox value). 
-    * `SearchBar` needs to display that state (search text and checkbox value).
-1. **Find their common parent:** The first parent component both components share is `FilterableProductTable`.
-2. **Decide where the state lives**: We'll keep the filter text and checked state values in `FilterableProductTable`.
+`FilterableProductTable` компонент-д стэйт байрлана гэсэн үг. 
 
-So the state values will live in `FilterableProductTable`. 
-
-Add state to the component with the [`useState()` Hook.](/reference/react/useState) Hooks are special functions that let you "hook into" React. Add two state variables at the top of `FilterableProductTable` and specify their initial state:
+[`useState()` хүүк](/reference/react/useState)-ээр стэйтийг зарлана. Хүүк бол React-тай холбогдох боломж олгодог онцгой төрлийн функц юм. Хоёр стэйтийг `FilterableProductTable` компонент дээр нэмж өгөх ба тэдгээрт анхдагч утга өгнө:
 
 ```js
 function FilterableProductTable({ products }) {
@@ -285,7 +280,7 @@ function FilterableProductTable({ products }) {
   const [inStockOnly, setInStockOnly] = useState(false);  
 ```
 
-Then, pass `filterText` and `inStockOnly` to `ProductTable` and `SearchBar` as props:
+Тэгээд, `filterText` болон `inStockOnly` пропуудыг `ProductTable` ба `SearchBar` компонентууд руу дамжуулна:
 
 ```js
 <div>
@@ -299,7 +294,7 @@ Then, pass `filterText` and `inStockOnly` to `ProductTable` and `SearchBar` as p
 </div>
 ```
 
-You can start seeing how your application will behave. Edit the `filterText` initial value from `useState('')` to `useState('fruit')` in the sandbox code below. You'll see both the search input text and the table update:
+Та одоо аппликэйшн хэрхэн ажиллахыг харж болно. `filterText`-ийн анхдагч утгыг доорх сэндбокс дотор `useState('')`-аас `useState('fruit')`-руу болгож өөрчил.
 
 <Sandpack>
 
@@ -441,7 +436,7 @@ td {
 
 </Sandpack>
 
-Notice that editing the form doesn't work yet. There is a console error in the sandbox above explaining why:
+Бидний өөрчлөлт одоохондоо хараахан ажиллахгүй. Сэндбокс дотор дараах консол алдаа гарах болно.
 
 <ConsoleBlock level="error">
 
@@ -449,7 +444,7 @@ You provided a \`value\` prop to a form field without an \`onChange\` handler. T
 
 </ConsoleBlock>
 
-In the sandbox above, `ProductTable` and `SearchBar` read the `filterText` and `inStockOnly` props to render the table, the input, and the checkbox. For example, here is how `SearchBar` populates the input value:
+Дээрх сэндбок дотор `ProductTable` ба `SearchBar` компонентууд `filterText` ба `inStockOnly` пропуудыг уншиж байна. Жишээ нь энд `SearchBar` оролтын утгыг хэрхэн хүлээж авч байгааг харж болно:
 
 ```js {1,6}
 function SearchBar({ filterText, inStockOnly }) {
@@ -461,16 +456,17 @@ function SearchBar({ filterText, inStockOnly }) {
         placeholder="Search..."/>
 ```
 
-However, you haven't added any code to respond to the user actions like typing yet. This will be your final step.
+Гэхдээ та бичих гэх мэт хэрэглэгчийн үйлдэлд хариу өгөх кодыг хараахан нэмээгүй байна. Энэ нь эцсийн шат байх болно.
 
+## Алхам 5: Урвуу өгөгдлийн урсгал нэмэх {/*step-5-add-inverse-data-flow*/}
 
-## Step 5: Add inverse data flow {/*step-5-add-inverse-data-flow*/}
+Одоогоор аппликэйшн шаталсан бүтцийн дагуу дээрээс доошоо пропууд болон стэйтийг зөв дамжуулж байгаа. Гэхдээ хэрэглэгчийн оролтын дагуу стэйтийг өөрчлөхийн тулд өөр аргаар өгөгдлийн урсгалыг явуулах хэрэгтэй: шаталсан бүтцийн хамгийн гүнд байгаа компонентууд `FilterableProductTable`-ийн стэйтүүдийг өөрчлөх хэрэгтэй.
 
-Currently your app renders correctly with props and state flowing down the hierarchy. But to change the state according to user input, you will need to support data flowing the other way: the form components deep in the hierarchy need to update the state in `FilterableProductTable`. 
+React өгөгдлийн урсгалын тодорхой болгосон гэхдээ энэ нь хоёр чиглэлтэй өгөгдлийн урсгалаас (two-way data binding) арай илүү их бичиглэлийг шаарддаг. Хэрвээ та доорх жишээнд бичих эсвэл check-лэх гэж оролдох юм бол ажиллахгүй.
 
-React makes this data flow explicit, but it requires a little more typing than two-way data binding. If you try to type or check the box in the example above, you'll see that React ignores your input. This is intentional. By writing `<input value={filterText} />`, you've set the `value` prop of the `input` to always be equal to the `filterText` state passed in from `FilterableProductTable`. Since `filterText` state is never set, the input never changes.
+Энэ нь учиртай. Энэнээс харахад `<input value={filterText} />`, `FilterableProductTable`-ээс ирж буй стэйтийн утга `input`-ийн `filterText`-тэй үргэлж тэнцүү байна. Тийм учраас `filterText` стэйт хэзээ ч өөрчлөгдөхгүй.
 
-You want to make it so whenever the user changes the form inputs, the state updates to reflect those changes. The state is owned by `FilterableProductTable`, so only it can call `setFilterText` and `setInStockOnly`. To let `SearchBar` update the `FilterableProductTable`'s state, you need to pass these functions down to `SearchBar`:
+Та хэрэглэгч өөрчлөлт хийх үед үүнийг шууд харахыг хүсч байгаа. Стэйт эдгээрийг өөрчлөх юм. `FilterableProductTable` стэйтийг эзэмшдэг ба энэ компонент зөвхөн `setFilterText` ба `setInStockOnly` нарыг дуудаж чадна. `SearchBar`-ийг `FilterableProductTable`-ийн стэйтийг өөрчлөх боломж олгохын тулд `SearchBar`-луу эдгээр функцуудыг дамжуулах хэрэгтэй:
 
 ```js {2,3,10,11}
 function FilterableProductTable({ products }) {
@@ -486,7 +482,8 @@ function FilterableProductTable({ products }) {
         onInStockOnlyChange={setInStockOnly} />
 ```
 
-Inside the `SearchBar`, you will add the `onChange` event handlers and set the parent state from them:
+`SearchBar` дотор `onChange`-д эцгээс дамжиж ирсэн функцыг оноож өгнө:
+
 
 ```js {5}
 <input 
@@ -496,7 +493,7 @@ Inside the `SearchBar`, you will add the `onChange` event handlers and set the p
   onChange={(e) => onFilterTextChange(e.target.value)} />
 ```
 
-Now the application fully works!
+Одоо аппликэйшн бүрэн ажиллаж байна!
 
 <Sandpack>
 
@@ -646,8 +643,8 @@ td {
 
 </Sandpack>
 
-You can learn all about handling events and updating state in the [Adding Interactivity](/learn/adding-interactivity) section.
+Та эвентийг хэрхэн барьсан болон стэйтийг хэрхэн өөрчлөх талаар [интерактивийг нэмэх](/learn/adding-interactivity) хэсгээс илүү ихийг мэдэж авч болно.
 
-## Where to go from here {/*where-to-go-from-here*/}
+## Одоо эндээс хаашаа явах вэ {/*where-to-go-from-here*/}
 
-This was a very brief introduction to how to think about building components and applications with React. You can [start a React project](/learn/installation) right now or [dive deeper on all the syntax](/learn/describing-the-ui) used in this tutorial.
+Танд React-аар хэрхэн сэтгэх талаар багахан мэдээлэлийг өглөө. Хүсвэл та одоо [react төсөл эхлүүлэх](/learn/installation) эсвэл энэ жишээн дээр ашигласан [бүх синтаксыг гүнзгий сурч](/learn/describing-the-ui) болно.
