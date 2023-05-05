@@ -1,33 +1,33 @@
 ---
-title: React Developer Tools
+title: React Хөгжүүлэгчийн хэрэгсэл
 ---
 
 <Intro>
 
-Use React Developer Tools to inspect React [components](/learn/your-first-component), edit [props](/learn/passing-props-to-a-component) and [state](/learn/state-a-components-memory), and identify performance problems.
+React Хөгжүүлэгчийн хэрэгслийг ашиглан [component](/learn/your-first-component)-үүдийг хянах, [props](/learn/passing-props-to-a-component) болон [state](/learn/state-a-components-memory)-үүдийг засварлах, гүйцэтгэлийн асуудлуудыг тодорхойлох боломжтой.
 
 </Intro>
 
 <YouWillLearn>
 
-* How to install React Developer Tools
+* React Хөгжүүлэгчийн хэрэгслийг хэрхэн суулгах талаар
 
 </YouWillLearn>
 
-## Browser extension {/*browser-extension*/}
+## Вэб хөтчийн өргөтгөл {/*browser-extension*/}
 
-The easiest way to debug websites built with React is to install the React Developer Tools browser extension. It is available for several popular browsers:
+React ашиглан бүтсэн вэб сайтуудыг дибаг хийх хамгийн хялбар арга бол React Хөгжүүлэгчийн хэрэгсэл өргөтгөлийг суулгах явдал юм. Үүнийг та хэд хэдэн түгээмэл ашиглагддаг вэб хөтчүүд дээр ашиглах боломжтой:
 
-* [Install for **Chrome**](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
-* [Install for **Firefox**](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
-* [Install for **Edge**](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil)
+* [**Chrome**-д суулгах](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+* [**Firefox**-д суулгах](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+* [**Edge**-д суулгах](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil)
 
-Now, if you visit a website **built with React,** you will see the _Components_ and _Profiler_ panels.
+Суулгасны дараагаар, хэрэв та **React ашиглан бүтсэн** вэб сайтад зочилбол _Components_ болон _Profiler_ самбаруудыг харах болно.
 
 ![React Developer Tools extension](/images/docs/react-devtools-extension.png)
 
-### Safari and other browsers {/*safari-and-other-browsers*/}
-For other browsers (for example, Safari), install the [`react-devtools`](https://www.npmjs.com/package/react-devtools) npm package:
+### Safari болон бусад хөтчүүд {/*safari-and-other-browsers*/}
+Бусад хөтчүүдийн хувьд (жишээ нь Safari) [`react-devtools`](https://www.npmjs.com/package/react-devtools) npm package суулгана уу:
 ```bash
 # Yarn
 yarn global add react-devtools
@@ -36,26 +36,26 @@ yarn global add react-devtools
 npm install -g react-devtools
 ```
 
-Next open the developer tools from the terminal:
+Дараа нь терминалаас хөгжүүлэгчийн хэрэгслийг нээнэ үү:
 ```bash
 react-devtools
 ```
 
-Then connect your website by adding the following `<script>` tag to the beginning of your website's `<head>`:
+Дараа нь вэб сайтынхаа `<head>`-ийн эхэнд дараах `<script>` тагийг нэмж вэб сайтаа холбоно уу:
 ```html {3}
 <html>
   <head>
     <script src="http://localhost:8097"></script>
 ```
 
-Reload your website in the browser now to view it in developer tools.
+Одоо харин хөгжүүлэгчийн хэрэгслээр үзэхийн тулд вэб сайтаа хөтөч дээр дахин ачаална уу.
 
 ![React Developer Tools standalone](/images/docs/react-devtools-standalone.png)
 
 ## Mobile (React Native) {/*mobile-react-native*/}
-React Developer Tools can be used to inspect apps built with [React Native](https://reactnative.dev/) as well.
+React Хөгжүүлэгчийн хэрэгсэл нь мөн [React Native](https://reactnative.dev/) ашиглан бүтсэн аппликэйшнийг хянахад хэрэглэгдэх боломжтой.
 
-The easiest way to use React Developer Tools is to install it globally:
+React Хөгжүүлэгчийн хэрэгслийг ашиглах хамгийн хялбар арга бол үүнийг ямар ч төсөл дээр ашиглах боломжтой байхаар суулгах явдал юм:
 ```bash
 # Yarn
 yarn global add react-devtools
@@ -64,13 +64,13 @@ yarn global add react-devtools
 npm install -g react-devtools
 ```
 
-Next open the developer tools from the terminal.
+Дараа нь терминалаас хөгжүүлэгчийн хэрэгслийг нээнэ үү.
 ```bash
 react-devtools
 ```
 
-It should connect to any local React Native app that's running.
+Энэ нь local дээр ажиллаж буй аль ч апп руу холбогдох болно болно.
 
-> Try reloading the app if developer tools doesn't connect after a few seconds.
+> Хэрэв Хөгжүүлэгчийн хэрэгсэл хэдэн секундийн дараа холбогдохгүй бол дахин ачаалж үзнэ үү.
 
-[Learn more about debugging React Native.](https://reactnative.dev/docs/debugging)
+[React Native-г дибаг хийх талаар нэмэлт мэдээлэл авах.](https://reactnative.dev/docs/debugging)
