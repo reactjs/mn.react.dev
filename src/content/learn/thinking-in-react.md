@@ -33,17 +33,21 @@ React дээр UI-аа бүтээхдээ дараах 5 алхамыг дага
 
 ## Алхам 1: UI-аа компонентын шатлал болгон салгая {/*step-1-break-the-ui-into-a-component-hierarchy*/}
 
-Start by drawing boxes around every component and subcomponent in the mockup and naming them. If you work with a designer, they may have already named these components in their design tool. Ask them!
+Эхлээд бүх компонент болон дэд компонентуудыг mock загварын дагуу зурж тэдгээрийг нэрлэнэ. Хэрвээ та дизайнертайгаа ажиллаж байгаа бол тэд аль хэдийн диэайн зурдаг хэрэгсэл дээрээ нэрлэсэн байж магадгүй. Тэднээс асуугаарай.
 
 Depending on your background, you can think about splitting up a design into components in different ways:
 
-* **Programming**--use the same techniques for deciding if you should create a new function or object. One such technique is the [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle), that is, a component should ideally only do one thing. If it ends up growing, it should be decomposed into smaller subcomponents. 
-* **CSS**--consider what you would make class selectors for. (However, components are a bit less granular.)
-* **Design**--consider how you would organize the design's layers.
+Таны юу хийдгээс хамааран өөр, өөр арга замаар хуваасан байж магадгүй юм.
+
+* **Програмчилалын**--Шинээр функц болон объект үүсгэхдээ нэгэн ижил текник ашиглаарай. Нэг санал болгох текник нь [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle) ба энэ нь компонент бүр нэгээс илүү үйлдэл хийхгүй гэсэн санаа юм. Хэрвээ цаашид томрохоор болвол дэд компонентүүдэд задлах хэрэгэтй. 
+* **CSS**--Класс селектороо юунд ашиглахааа шийдэх.
+* **Дизайн**--Дизайны давхаргуудаа хэрхэн зохион байгуулахаа шийдэх.
 
 If your JSON is well-structured, you'll often find that it naturally maps to the component structure of your UI. That's because UI and data models often have the same information architecture--that is, the same shape. Separate your UI into components, where each component matches one piece of your data model.
 
-There are five components on this screen:
+Хэрхээ таны JSON маш сайн бүтэцлэгдсэн бол таны UI-ын компонентуудтай шууд холбогдож ажиллаж чадна. Энэ нь UI болон өгөгдлийн моделууд ижил бүтэцтэй байх хэрэгтэй шалтгаан юм.
+
+Дараах дэлгэцэнд 5 компонент байна:
 
 <FullWidth>
 
@@ -51,19 +55,19 @@ There are five components on this screen:
 
 <img src="/images/docs/s_thinking-in-react_ui_outline.png" width="500" style={{margin: '0 auto'}} />
 
-1. `FilterableProductTable` (grey) contains the entire app.
-2. `SearchBar` (blue) receives the user input.
-3. `ProductTable` (lavender) displays and filters the list according to the user input.
-4. `ProductCategoryRow` (green) displays a heading for each category.
-5. `ProductRow`	(yellow) displays a row for each product.
+1. `FilterableProductTable` (саарал) бүтэн апп-ыг багтаатсан.
+2. `SearchBar` (цэнхэр) хэрэглэгчийн оролтын хүлээж авах.
+3. `ProductTable` (лаванда) хэрэглэгчийн оролтын дагуу жагсаалтыг шүүж харуулах.
+4. `ProductCategoryRow` (ногоон) ангилал бүрийн толгой харуулах.
+5. `ProductRow`	(шар) бүтээгдэхүүний мөрийг харуулах.
 
 </CodeDiagram>
 
 </FullWidth>
 
-If you look at `ProductTable` (lavender), you'll see that the table header (containing the "Name" and "Price" labels) isn't its own component. This is a matter of preference, and you could go either way. For this example, it is a part of `ProductTable` because it appears inside the `ProductTable`'s list. However, if this header grows to be complex (e.g., if you add sorting), you can move it into its own `ProductTableHeader` component.
+Хэрвээ `ProductTable` (лаванда)-г харах юм бол, та хүснэгтийн толгой ("Name" ба "Price") нь тусдаа компонент биш байгааг анзаарна. Энэ нь гэхдээ сонголтын асуудал юм. Энэ жишээнд энэ нь `ProductTable` -ын нэг хэсэг юм. Гэхдээ хэрвээ толгой хэсэг цаашид нэмэгдэхээр бол (жишээ нь эрэмбэлэгдэх хэсэг), та тусдаа `ProductTableHeader` гэдэг нэртэй компонент шинээр үүсгэж болох юм.
 
-Now that you've identified the components in the mockup, arrange them into a hierarchy. Components that appear within another component in the mockup should appear as a child in the hierarchy:
+Одоо mock дизайн дээрх компонентүүдийг шаталсан бүтцээр харуулцгаая.
 
 * `FilterableProductTable`
     * `SearchBar`
@@ -71,13 +75,13 @@ Now that you've identified the components in the mockup, arrange them into a hie
         * `ProductCategoryRow`
         * `ProductRow`
 
-## Step 2: Build a static version in React {/*step-2-build-a-static-version-in-react*/}
+## Step 2: React дээр статик хувилбараар хийцгээе {/*step-2-build-a-static-version-in-react*/}
 
-Now that you have your component hierarchy, it's time to implement your app. The most straightforward approach is to build a version that renders the UI from your data model without adding any interactivity... yet! It's often easier to build the static version first and add interactivity later. Building a static version requires a lot of typing and no thinking, but adding interactivity requires a lot of thinking and not a lot of typing.
+Бид компонентын шаталсан бүтцээ гаргаад авсан, одоо апп-аа хийж эхэлцгээе. Хамгийн хялбар арга нь ямар нэгэн интерактив үйлдэлгүйгээр өгөгдлийн моделоосоо UI-аа үүсгэх юм... эхлээд статик хувилбарыг үүсгээд дараа нь интерактив үйлдлийг гүйцэтгэх нь илүү хялбар байдаг. Статик хувилбарыг үүсгэх нь илүү их бичихийг шаарддаг бол интерактив үйлдэл нь бага бичиж их бодохыг шаарддаг.
 
-To build a static version of your app that renders your data model, you'll want to build [components](/learn/your-first-component) that reuse other components and pass data using [props.](/learn/passing-props-to-a-component) Props are a way of passing data from parent to child. (If you're familiar with the concept of [state](/learn/state-a-components-memory), don't use state at all to build this static version. State is reserved only for interactivity, that is, data that changes over time. Since this is a static version of the app, you don't need it.)
+Статик хувилбараа үүсгэхдээ та ахин ашиглагдах боломжтой [компонентүүд](/learn/your-first-component) үүсгэж [проп.](/learn/passing-props-to-a-component) ашиглан өгөгдлөө дамжуулах хэрэгтэй. Проп бол эцэг компонентоос хүү компонент руу өгөгдөл дамжуулах арга юм. (Хэрвээ та [стэйт](/learn/state-a-components-memory)-ийн талаар ойлголттой бол статик хувилбарыг үүсгэхдээ битгий ашиглаарай. Стэйт зөвхөн интерактив үйлдлүүд дээр ашиглагдах ба статик хувилбар хийж байхдаа шаардлагагүй юм.)
 
-You can either build "top down" by starting with building the components higher up in the hierarchy (like `FilterableProductTable`) or "bottom up" by working from components lower down (like `ProductRow`). In simpler examples, it’s usually easier to go top-down, and on larger projects, it’s easier to go bottom-up.
+Та "дээрээс доошоо" буюу `FilterableProductTable` компонентоос эсвэл "доороос дээшээ" буюу `ProductRow`-оос эхлэн хийж болно. Жижгэвтэр жишээн дээр дээрээс доошоо чиглэл илүү тохиромжтой бол том төсөл дээр доороос дээшээ чиглэл илүү тохиромжтой.
 
 <Sandpack>
 
@@ -195,13 +199,13 @@ td {
 
 </Sandpack>
 
-(If this code looks intimidating, go through the [Quick Start](/learn/) first!)
+(Хэрвээ энэ код ойлгомжгүй бол эхлээд [Хурдан эхлэх](/learn/) хэсэг рүү очно уу!)
 
-After building your components, you'll have a library of reusable components that render your data model. Because this is a static app, the components will only return JSX. The component at the top of the hierarchy (`FilterableProductTable`) will take your data model as a prop. This is called _one-way data flow_ because the data flows down from the top-level component to the ones at the bottom of the tree.
+Компонентуудаа үүсгэсэний дараа та ахин ашиглагдах компонентуудтай болсон байх болно. Яагаад гэвэл энэ статик хувилбар компонентууд зөвхөн JSX буцаана. Шаталсан бүтцийн дээр байгаа (`FilterableProductTable`) компонент проп-оороо өгөгдлийн модел хүлээн авна. Үүнийг нэг чиглэлт өгөгдлийн урсгал гэж нэрлэдэг ба өгөгдөл зөвхөн дээрээс доошоо дамжина.
 
 <Pitfall>
 
-At this point, you should not be using any state values. That’s for the next step!
+Та энэ удаад стэйт ашиглах хэрэггүй юм.
 
 </Pitfall>
 
