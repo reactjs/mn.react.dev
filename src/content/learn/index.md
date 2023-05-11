@@ -23,7 +23,7 @@ React documentation-д тавтай морил! Энэ хуудсанд таны
 
 React аппууд нь *компонент*-уудаас буюу бүтэц хэсгүүдээс бүтдэг. Компонент гэдэг нь өөрийн гэсэн логик, харагдах байдалтай UI (user interface) хэсэг юм. Компонент нь жижигхэн товч эсвэл бүтэн хуудас ч байж болдог.
 
-React component нь markup буцаадаг Javascript функц юм:
+React component нь markup буцаадаг JavaScript функц юм:
 
 ```js
 function MyButton() {
@@ -73,7 +73,7 @@ export default function MyApp() {
 
 </Sandpack>
 
-`export default` нь файлын үндсэн компонентийг зааж өгдөг. Хэрэв Javascript syntax талаар ойлголтгүй бол, [MDN](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) , [javascript.info](https://javascript.info/import-export) сайтаар зочилж мэдээлэл аваарай.
+`export default` нь файлын үндсэн компонентийг зааж өгдөг. Хэрэв JavaScript syntax талаар ойлголтгүй бол, [MDN](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) , [javascript.info](https://javascript.info/import-export) сайтаар зочилж мэдээлэл аваарай.
 
 ## JSX ашиглан markup бичих нь {/*writing-markup-with-jsx*/}
 
