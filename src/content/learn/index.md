@@ -213,7 +213,7 @@ return (
 </div>
 ```
 
-Танд `else` сонголт хэрэггүй бол та цомхон [logical `&&` syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/); ашиглаж болно:
+Танд `else` сонголт хэрэггүй бол та цомхон [logical `&&` syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/) ашиглаж болно:
 
 ```js
 <div>
@@ -341,7 +341,7 @@ function MyButton() {
 }
 ```
 
-React таны компонентийн функцийг дахин дуудна. Товчин дээр дарах үед тоо нь "1" болно, дараа нь '2' болно гэх мэт.
+React таны компонентийн функцийг дахин дуудна. Товчин дээр дарах үед тоо нь `1` болно, дараа нь `2` болно гэх мэт.
 
 Хэрэв компонентоо 2 удаа дуудвал тус тус өөрийн төлөвтэй байх болно. Аль аль товчыг нь дараад үзээрэй
 
