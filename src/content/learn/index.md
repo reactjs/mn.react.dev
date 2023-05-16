@@ -19,21 +19,21 @@ React documentation-д тавтай морил! Энэ хуудсанд таны
 
 </YouWillLearn>
 
-## Хэрхэн компонент бүтээж нэгтгэх {/*components*/}
+## Creating and nesting components {/*components*/}
 
-React аппууд нь *component*-уудаас буюу бүтэц хэсгүүдээс бүтдэг. Компонент гэдэг нь өөрийн гэсэн логик, харагдах байдалтай UI (user interface) хэсэг юм. Компонент нь жижигхэн товч эсвэл бүтэн хуудас ч байж болдог.
+React apps are made out of *components*. A component is a piece of the UI (user interface) that has its own logic and appearance. A component can be as small as a button, or as large as an entire page.
 
-React component нь markup буцаадаг Javascript функц юм:
+React components are JavaScript functions that return markup:
 
 ```js
 function MyButton() {
   return (
-    <button>Товчлуур</button>
+    <button>I'm a button</button>
   );
 }
 ```
 
-Ингэснээр та өөрийн товчлуур болох `MyButton`-ыг зарлачихлаа, Одоо үүнийг өөр нэг компонентд нэгтгэж үзье:
+Now that you've declared `MyButton`, you can nest it into another component:
 
 ```js {5}
 export default function MyApp() {
@@ -56,7 +56,7 @@ export default function MyApp() {
 function MyButton() {
   return (
     <button>
-      Товчлуур
+      I'm a button
     </button>
   );
 }
@@ -73,9 +73,9 @@ export default function MyApp() {
 
 </Sandpack>
 
-`export default` нь файлын үндсэн компонентийг зааж өгдөг. Хэрэв Javascript syntax талаар ойлголтгүй бол, [MDN](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) , [javascript.info](https://javascript.info/import-export) сайтаар зочилж мэдээлэл аваарай.
+The `export default` keywords specify the main component in the file. If you're not familiar with some piece of JavaScript syntax, [MDN](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) and [javascript.info](https://javascript.info/import-export) have great references.
 
-## JSX ашиглан markup бичих нь{/*writing-markup-with-jsx*/}
+## Writing markup with JSX {/*writing-markup-with-jsx*/}
 
 Markup syntax нь таны харж байгаачлан *JSX* гэж нэрлэгддэг. Ашиглах эсэх нь таны дур боловч ихэнх React төслүүд тохиромжтой байх үүднээс JSX ашигладаг. Мөн бүх [local хөгжүүлэлтэнд санал болгох хэрэгслүүд](/learn/installation) нь JSX-г дэмждэг юм.
 
@@ -115,7 +115,7 @@ React нь CSS файлуудыг хэрхэн нэмэхийг заадаггү
 
 ## Өгөгдөл дүрслэх нь {/*displaying-data*/}
 
-JSX нь JavaScript дээр markup хийх боломжийг танд олгодог. Гоё хаалт(curly braces) таныг Javascript-тэйгээ найзлахад чинь туслах ба ингэснээр та өөрийн кодоос зарим нэг хувьсагчийг оруулж, хэрэглэгчдэд харуулах боломжтой. Жишээлвэл доорхи код нь `user.name` -ийг дүрслэнэ:
+JSX lets you put markup into JavaScript. Curly braces let you "escape back" into JavaScript so that you can embed some variable from your code and display it to the user. For example, this will display `user.name`:
 
 ```js {3}
 return (
@@ -125,7 +125,7 @@ return (
 );
 ```
 
-Та мөн JSX аттрибутаас "JavaScript руу зугтаж" болно, гэхдээ та хашилтын оронд гоё хаалт(curly braces) ашиглах хэрэгтэй. Жишээлбэл, `className="avatar"` нь `"avatar"` мөрийг CSS class болгон дамжуулдаг боловч `src={user.imageUrl}` нь JavaScript `user.imageUrl` хувьсагчийн утгыг уншиж, дараа нь энэ утгыг `src` атрибут байдлаар дамжуулдаг:
+You can also "escape into JavaScript" from JSX attributes, but you have to use curly braces *instead of* quotes. For example, `className="avatar"` passes the `"avatar"` string as the CSS class, but `src={user.imageUrl}` reads the JavaScript `user.imageUrl` variable value, and then passes that value as the `src` attribute:
 
 ```js {3,4}
 return (
@@ -136,7 +136,7 @@ return (
 );
 ```
 
-Та JSX гоё хаалтанд(curly brace) үүнээс ч илүү төвөгтэй томъёо оруулж болно, жишээлбэл [string concatenation](https://javascript.info/operators#string-concatenation-with-binary):
+You can put more complex expressions inside the JSX curly braces too, for example, [string concatenation](https://javascript.info/operators#string-concatenation-with-binary):
 
 
 <Sandpack>
@@ -183,7 +183,7 @@ export default function Profile() {
 
 ## Нөхцөлт дүрслэл {/*conditional-rendering*/}
 
-React дээр нөхцөл бичих тусгай синтакс байдаггүй. Үүний оронд та ердийн JavaScript код бичихдээ ашигладаг арга барилаа ашиглах болно. Жишээлбэл, та JSX-г нөхцөлтэйгээр оруулахын тулд [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) statement-ийг ашиглаж болно:
+## Conditional rendering {/*conditional-rendering*/}
 
 
 ```js
@@ -213,7 +213,7 @@ return (
 </div>
 ```
 
-Танд `else` сонголт хэрэггүй бол та цомхон [logical `&&` syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/) ашиглаж болно:
+When you don't need the `else` branch, you can also use a shorter [logical `&&` syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND#short-circuit_evaluation):
 
 ```js
 <div>
@@ -301,11 +301,11 @@ function MyButton() {
 }
 ```
 
-`onClick={handleClick}`-ийн төгсгөлд хаалт байхгүй байгааг анзаараарай! Event зохицуулагч функцийг дуудах шаардлагагүй: та зүгээр л *үүнийг дамжуулахад* болно. Хэрэглэгч товчлуур дээр дарахад React өөрөө Event зохицуулагчийг дуудна.
+Notice how `onClick={handleClick}` has no parentheses at the end! Do not _call_ the event handler function: you only need to *pass it down*. React will call your event handler when the user clicks the button.
 
 ## Дэлгэц шинэчлэх нь {/*updating-the-screen*/}
 
-Зарим тохиолдолд та өөрийн зарим мэдээллийг "санаж", харуулах компонент үүсгэхийг хүсэж магадгүй. Жишээлбэл, та товчлуурыг хэдэн удаа дарж байгааг тоолмоор байж болно. Үүнийг хийхийн тулд өөрийн компонентэд *state* нэмнэ.
+Often, you'll want your component to "remember" some information and display it. For example, maybe you want to count the number of times a button is clicked. To do this, add *state* to your component.
 
 Эхлээд React-аас [`useState`](/reference/react/useState) импортлох хэрэгтэй:
 
@@ -323,7 +323,7 @@ function MyButton() {
 
 Та `useState`-ээс хоёр зүйлийг авах болно: одоогийн төлөв (`count`) болон үүнийг шинэчлэх боломжийг олгодог функц (`setCount`). Та тэдэнд ямар ч нэр өгч болно, гэхдээ дүрэм нь `[yamarnegzvil, setYamarnegzvil]` гэж бичих юм.
 
-Товчлуур анх үзэгдэх үед `count` нь `0` байх болно, учир нь та `useState()` руу `0`-г дамжуулсан. Төлөвийг өөрчлөхийг хүсвэл `setCount()'-ыг дуудаж түүнд шинэ утгыг дамжуулаарай. Товчийг дарснаар тоолуур нэмэгдэнэ:
+The first time the button is displayed, `count` will be `0` because you passed `0` to `useState()`. When you want to change state, call `setCount()` and pass the new value to it. Clicking this button will increment the counter:
 
 ```js {5}
 function MyButton() {
@@ -341,7 +341,7 @@ function MyButton() {
 }
 ```
 
-React таны компонентийн функцийг дахин дуудна. Товчин дээр дарах үед тоо нь `1` болно, дараа нь `2` болно гэх мэт.
+React will call your component function again. This time, `count` will be `1`. Then it will be `2`. And so on.
 
 Хэрэв компонентоо 2 удаа дуудвал тус тус өөрийн төлөвтэй байх болно. Аль аль товчыг нь дараад үзээрэй
 
@@ -384,8 +384,7 @@ button {
 
 </Sandpack>
 
-
-Товчлуур тус бүр өөрийн `тоолох` төлөвийг хэрхэн "санаж", нөгөө тоолуурдаа нөлөөлөхгүй байгааг анзаараарай.
+Notice how each button "remembers" its own `count` state and doesn't affect other buttons.
 
 ## Hooks ашиглах нь {/*using-hooks*/}
 
@@ -395,7 +394,7 @@ Hooks нь бусад функцуудээ бодвол арай хязгаар�
 
 ## Компонентууд дунд өгөгдөл хуваалцах нь {/*sharing-data-between-components*/}
 
-Өмнөх жишээн дээр `MyButton` тус бүр өөрийн гэсэн бие даасан `count`-тай байсан бөгөөд товчлуур дарахад зөвхөн дарсан товчлуурын `count` буюу тоолуур нь өөрчлөгдөж байсан:
+In the previous example, each `MyButton` had its own independent `count`, and when each button was clicked, only the `count` for the button clicked changed:
 
 <DiagramGroup>
 
@@ -437,7 +436,7 @@ To make both `MyButton` components display the same `count` and update together,
 
 </DiagramGroup>
 
-Одоо та аль нэг товчлуур дээр дарахад `MyApp` доторх `count` төлөв өөрчлөгдөх бөгөөд энэ нь `MyButton`-ий тоонуудыг хоёуланг нь өөрчлөх болно. Үүнийг кодоор хэрхэн илэрхийлж болохыг доорхи жишээнээс үзнэ үү.
+Now when you click either button, the `count` in `MyApp` will change, which will change both of the counts in `MyButton`. Here's how you can express this in code.
 
 Эхлээд, *State ээ*  `MyButton` дотроос авж `MyApp`-руу нүүлгье:
 
@@ -464,8 +463,7 @@ function MyButton() {
 
 ```
 
-Дараа нь, `MyApp`-аас `MyButton`-руу ижил төлөв болон click handler дамжуулна. Та `<img>` гэх мэт built-in tag ашигладаг шигээ JSX гоё хаалт ашиглан `MyButton` руу мэдээлэл дамжуулах боломжтой:
-
+Then, *pass the state down* from `MyApp` to each `MyButton`, together with the shared click handler. You can pass information to `MyButton` using the JSX curly braces, just like you previously did with built-in tags like `<img>`:
 
 ```js {11-12}
 export default function MyApp() {
@@ -485,9 +483,7 @@ export default function MyApp() {
 }
 ```
 
-Ингэж дамжуулж буй мэдээллийг _props_ гэж нэрлэдэг. Одоо `MyApp` компонент нь `count` төлөв болон `handleClick` event handler-ийг агуулж байгаа бөгөөд *хоёуланг нь props болгон* товчлуур тус бүрт дамжуулж байна.
-
-Эцэст нь, `MyButton`-г үндсэн компонентээс нь дамжуулах props-ийг *унших* болгож өөрчилье:
+The information you pass down like this is called _props_. Now the `MyApp` component contains the `count` state and the `handleClick` event handler, and *passes both of them down as props* to each of the buttons.
 
 
 ```js {1,3}
@@ -502,8 +498,6 @@ function MyButton({ count, onClick }) {
 
 When you click the button, the `onClick` handler fires. Each button's `onClick` prop was set to the `handleClick` function inside `MyApp`, so the code inside of it runs. That code calls `setCount(count + 1)`, incrementing the `count` state variable. The new `count` value is passed as a prop to each button, so they all show the new value. This is called "lifting state up". By moving state up, you've shared it between components.
 
-
-Таныг товчин дээр дарах үед, `onClick` handler асах болно. Товч тус бүрийн`onClick` prop-ийг `MyApp` доторхи `handleClick` функцээр тохируулсан тул доторх код нь ажиллах юм. Энэ код нь `setCount(count + 1)`-ийг дуудах ба `count` төлөвийн хувьсагчийг нэмэгдүүлнэ. Шинэ `count` утгыг товчлуур бүрт prop болгон дамжуулдаг тул бүгд шинэ утгыг харуулдаг. Үүнийг "төлөв өргөх(lifting state up)" гэж нэрлэнэ. Төлөвийг дээшлүүлснээр та үүнийг компонентуудын хооронд мэдээлэл хуваалцах юм.
 <Sandpack>
 
 ```js
