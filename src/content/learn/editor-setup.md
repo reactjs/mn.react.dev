@@ -21,7 +21,7 @@ title: Editor тохируулах
 
 React нэгдлийн хүмүүст түгээмэл ашиглагддаг бусад текст editor-ууд:
 
-* [WebStorm](https://www.jetbrains.com/webstorm/) бол JavaScript зориулсан цогц хөгжүүлэлтийн орчин. 
+* [WebStorm](https://www.jetbrains.com/webstorm/) бол JavaScript-д зориулсан цогц хөгжүүлэлтийн орчин. 
 * [Sublime Text](https://www.sublimetext.com/) нь JSX болон TypeScript хэлийг дэмждэг бөгөөд өөр дээр шууд (төрмөл) байдлаар [кодын бичиглэл тодруулж өгөх (syntax highlighting)](https://stackoverflow.com/a/70960574/458193) болон кодын түлхүүр үг автомат гүйцээлт (autocomplete) хийдэг.
 * [Vim](https://www.vim.org/) бол бүх төрлийн бичвэрийг үр ашигтайгаар засахад зориулж бүтээсэн маш уян хатан тохиргоо хийх боломжтой текст editor. Ихэнх UNIX системүүд болон Apple OS X системд "vi" нэрээр суусан байдаг. 
 
@@ -31,7 +31,7 @@ React нэгдлийн хүмүүст түгээмэл ашиглагддаг б
 
 ### Linting {/*linting*/} 
 
-Код linter-үүд нь таныг код бичих үед асуудлыг олж, эрт засахад тусалдаг. JavaScript-д зориулсан нээлттэй эх бүхий [ESLint](https://eslint.org/) бол хамгийн түгээмэл тархсан code linter юм.
+Код linter-үүд нь таныг код бичиж байх үед асуудлыг олж, эрт засахад тусалдаг. JavaScript-д зориулсан нээлттэй эх бүхий [ESLint](https://eslint.org/) бол хамгийн түгээмэл тархсан code linter юм.
 
 * [React-д зориулсан зохистой тохиргоог ESLint-д суулгах нь](https://www.npmjs.com/package/eslint-config-react-app) ([Node суулгасан](https://nodejs.org/en/download/current/) эсэхээ шалгаарай!)
 * [VSCode-ын албан ёсны extension-ыг ESLint-тэй холбох нь](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
