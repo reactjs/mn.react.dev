@@ -1,31 +1,32 @@
 ---
-title: 'Tutorial: Tic-Tac-Toe'
+title: 'Хичээл: Tic-Tac-Toe'
 ---
 
 <Intro>
 
-You will build a small tic-tac-toe game during this tutorial. This tutorial does not assume any existing React knowledge. The techniques you'll learn in the tutorial are fundamental to building any React app, and fully understanding it will give you a deep understanding of React.
+Та энэ практик хичээлийн турш жижиг tic-tac-toe тоглоом хийх болно. Энэ хүү хичээл нь одоо байгаа react-н мэдлэгийг агуулаагүй. Таны сурах энэ хичээлийн техникүүд таныг react сурахад чинь үндэс суурь болно, мөн бүрэн ойлгох нь танд react-н талаарх гүнзгий ойлголтыг өгөх болно.
 
 </Intro>
 
 <Note>
 
-This tutorial is designed for people who prefer to **learn by doing** and want to quickly try making something tangible. If you prefer learning each concept step by step, start with [Describing the UI.](/learn/describing-the-ui)
+Энэ хичээл нь хийж сурахыг илүүд үздэг болон бодитой зүйлийг хурдан туршиж үзэхийг хүсдэг хүмүүст зориулж хийгдсэн. Хэрвээ та ойлголт бүрийг алхам алхмаар сурахыг илүүд үздэг бол, дараах холбоосноос эхэлнэ үү [Describing the UI.](/learn/describing-the-ui)
 
 </Note>
 
-The tutorial is divided into several sections:
+Энэ хичээл нь хэд хэдэн хэсэгт хуваагдана:
 
-- [Setup for the tutorial](#setup-for-the-tutorial) will give you **a starting point** to follow the tutorial.
-- [Overview](#overview) will teach you **the fundamentals** of React: components, props, and state.
-- [Completing the game](#completing-the-game) will teach you **the most common techniques** in React development.
-- [Adding time travel](#adding-time-travel) will give you **a deeper insight** into the unique strengths of React.
+- [Хичээлийн тохиргоо нь](#setup-for-the-tutorial) нь танд хичээлийг дагаж хийх **эхлэлийг** өгөх болно.
+- [Тойм](#overview) нь танд react-н сууриудыг заах болно: components, props, and state.
+- [Тоглоомыг дуусгах](#completing-the-game) нь react-н хөгжүүлэхэд шаардлагатай **нийтлэг техникүүдийг** заах болно.
+- [Цаг хугацааны аялал нэмэх](#adding-time-travel) нь танд react-н давтагдашгүй давуу талуудын талаар илүү **гүнзгий ойлголт** өгөх болно.
 
-### What are you building? {/*what-are-you-building*/}
+### Та юу барьж байна вэ? {/*what-are-you-building*/}
 
-In this tutorial, you'll build an interactive tic-tac-toe game with React.
+Энэ хичээл дээр, та react ашиглан олон боломжтой tic-tac-toe тоглоом бий
+болгох болно.
 
-You can see what it will look like when you're finished here:
+Та дууссаны дараа эндээс ямар болсныг харах боломжтой:
 
 <Sandpack>
 
