@@ -1,62 +1,63 @@
 ---
-title: Editor Setup
+title: Editor тохируулах
 ---
 
 <Intro>
 
-A properly configured editor can make code clearer to read and faster to write. It can even help you catch bugs as you write them! If this is your first time setting up an editor or you're looking to tune up your current editor, we have a few recommendations.
+Зөв тохиргоо хийсэн editor кодыг уншихад амар, бичихэд хурдан болгоно. Мөн таныг код бичиж байхад үед алдаа илрүүлэхэд тусална! Хэрвээ та анх удаа editor тохируулж байгаа бол, та одоо байгаа editor-ийнхээ тохиргоог зүгшрүүлэх гэж байгаа бол танд доорх зөвлөмжийг хүргэж байна. 
 
 </Intro>
 
 <YouWillLearn>
 
-* What the most popular editors are
-* How to format your code automatically
+* Хамгийн түгээмэл editor-ууд
+* Яаж кодоо автоматаар форматлах вэ?
 
 </YouWillLearn>
 
-## Your editor {/*your-editor*/}
+## Бидний editor {/*your-editor*/}
 
-[VS Code](https://code.visualstudio.com/) is one of the most popular editors in use today. It has a large marketplace of extensions and integrates well with popular services like GitHub. Most of the features listed below can be added to VS Code as extensions as well, making it highly configurable!
+[VS Code](https://code.visualstudio.com/) бол өнөө үед хамгийн түгээмэл ашиглагддаг editor-уудын нэг юм. VS Code нь  Github шиг олон төрлийн extension-уудыг marketplace-с татаж авч нэмэлтаар суулгах боломжтой. Доор дурдсан ихэнх боломжуудыг extension байдлаар суулгах боломжтой байдаг нь VS Code-ыг хамгийн уян хатан хэрэгсэл болгодог. 
 
-Other popular text editors used in the React community include:
+React нэгдлийн хүмүүст түгээмэл ашиглагддаг бусад текст editor-ууд:
 
-* [WebStorm](https://www.jetbrains.com/webstorm/) is an integrated development environment designed specifically for JavaScript.
-* [Sublime Text](https://www.sublimetext.com/) has support for JSX and TypeScript, [syntax highlighting](https://stackoverflow.com/a/70960574/458193) and autocomplete built in.
-* [Vim](https://www.vim.org/) is a highly configurable text editor built to make creating and changing any kind of text very efficient. It is included as "vi" with most UNIX systems and with Apple OS X.
+* [WebStorm](https://www.jetbrains.com/webstorm/) бол JavaScript-д зориулсан цогц хөгжүүлэлтийн орчин. 
+* [Sublime Text](https://www.sublimetext.com/) нь JSX болон TypeScript хэлийг дэмждэг бөгөөд өөр дээр шууд (төрмөл) байдлаар [кодын бичиглэл тодруулж өгөх (syntax highlighting)](https://stackoverflow.com/a/70960574/458193) болон кодын түлхүүр үг автомат гүйцээлт (autocomplete) хийдэг.
+* [Vim](https://www.vim.org/) бол бүх төрлийн бичвэрийг үр ашигтайгаар засахад зориулж бүтээсэн маш уян хатан тохиргоо хийх боломжтой текст editor. Ихэнх UNIX системүүд болон Apple OS X системд "vi" нэрээр суусан байдаг. 
 
-## Recommended text editor features {/*recommended-text-editor-features*/}
+## Санал болгож буй тескт editor-ын онцлогууд {/*recommended-text-editor-features*/}
 
-Some editors come with these features built in, but others might require adding an extension. Check to see what support your editor of choice provides to be sure!
+Зарим editor-уудад төрмөлөөр байдаг онцлогууд нь өөр бусдад нь extension байдлаар нэмж суулгах хэрэгтэй болно. Та өөрийн сонгосон editor алийг нь дэмжиж байгаа шалгаарай!
 
-### Linting {/*linting*/}
+### Linting {/*linting*/} 
 
-Code linters find problems in your code as you write, helping you fix them early. [ESLint](https://eslint.org/) is a popular, open source linter for JavaScript. 
+Код linter-үүд нь таныг код бичиж байх үед асуудлыг олж, эрт засахад тусалдаг. JavaScript-д зориулсан нээлттэй эх бүхий [ESLint](https://eslint.org/) бол хамгийн түгээмэл тархсан code linter юм.
 
-* [Install ESLint with the recommended configuration for React](https://www.npmjs.com/package/eslint-config-react-app) (be sure you have [Node installed!](https://nodejs.org/en/download/current/))
-* [Integrate ESLint in VSCode with the official extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+* [React-д зориулсан зохистой тохиргоог ESLint-д суулгах нь](https://www.npmjs.com/package/eslint-config-react-app) ([Node суулгасан](https://nodejs.org/en/download/current/) эсэхээ шалгаарай!)
+* [VSCode-ын албан ёсны extension-ыг ESLint-тэй холбох нь](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-**Make sure that you've enabled all the [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) rules for your project.** They are essential and catch the most severe bugs early. The recommended [`eslint-config-react-app`](https://www.npmjs.com/package/eslint-config-react-app) preset already includes them.
+**Та өөрийн прожект дотроо [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) дүрмүүдийг бүгдийг нь тааруулсан эсэхийг шалгаарай.** Эдгээр нь заавал барих шаардлагатай ихэнх асуудлуудыг эрт илрүүлж өгөх болно. [`eslint-config-react-app`](https://www.npmjs.com/package/eslint-config-react-app) preset нь уг дүрмүүдийг агуулсан байгаа тул санал болгож байна. 
 
-### Formatting {/*formatting*/}
+### Код хэвжүүлэх (Formatting) {/*formatting*/} 
 
-The last thing you want to do when sharing your code with another contributor is get into an discussion about [tabs vs spaces](https://www.google.com/search?q=tabs+vs+spaces)! Fortunately, [Prettier](https://prettier.io/) will clean up your code by reformatting it to conform to preset, configurable rules. Run Prettier, and all your tabs will be converted to spaces—and your indentation, quotes, etc will also all be changed to conform to the configuration. In the ideal setup, Prettier will run when you save your file, quickly making these edits for you.
+Бусад оролцогчидтой кодоо хуваалцах үед тулгардаг хамгийн түгээмэл асуудал бол [tabs уу эсвэл spaces үү](https://www.google.com/search?q=tabs+vs+spaces) гэсэн хэлэлцүүлэг! Азаар энэ асуудлыг шийдэгч бол [Prettier](https://prettier.io/) бөгөөд урьдчилсан бэлдсэн дүрэм, тохиргоогоор таны кодыг хэвжүүлэх болно. Prettier-ийг ажиллуулахад л таны бүх tab-ууд space рүү хөрвөгдөж, мөн мөрийн доголууд, хаалтууд бүгд тохиргооны дагуу өөрчлөгдөнө. Хамгийн оновчтой тохиргоо бол та файлаа хадгалахад Prettier ажиллаад шаардлагатай засваруудыг хийдэг байх юм.
 
-You can install the [Prettier extension in VSCode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) by following these steps:
+Та [Prettier-д зориулсан нэмэлт суулгацыг VSCode дээр](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) доорх дарааллын дагуу суулгаж болно. 
 
-1. Launch VS Code
-2. Use Quick Open (press Ctrl/Cmd+P)
-3. Paste in `ext install esbenp.prettier-vscode`
-4. Press Enter
+1. VS Code-оо нээх. 
+2. "Quick Open"-г ашиглах (Ctrl/Cmd+P хослолыг дар)
+3. `ext install esbenp.prettier-vscode` хуулж тавих
+4. "Enter" товч дарна
 
-#### Formatting on save {/*formatting-on-save*/}
+#### Хадгалах үед хэвжүүлэх нь {/*formatting-on-save*/} 
 
+VS Code-д хадгалах бүрд таны кодыг хэвжүүлэх тохиргоо бий бөгөөд танд уг тохиргоог ашиглахыг санал болгож байна. 
 Ideally, you should format your code on every save. VS Code has settings for this!
 
-1. In VS Code, press `CTRL/CMD + SHIFT + P`.
-2. Type "settings"
-3. Hit Enter
-4. In the search bar, type "format on save"
-5. Be sure the "format on save" option is ticked!
+1. VS Code дотор `CTRL/CMD + SHIFT + P` хослолыг дарна. 
+2. "settings" гэж бичих
+3. "Enter" товч дар
+4. Хайлтын хэсэг дээр "format on save" гэж бич
+5. "format on save" тохиргоог тэмдэглэгээ идэвхжүүлэх
 
-> If your ESLint preset has formatting rules, they may conflict with Prettier. We recommend disabling all formatting rules in your ESLint preset using [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) so that ESLint is *only* used for catching logical mistakes. If you want to enforce that files are formatted before a pull request is merged, use [`prettier --check`](https://prettier.io/docs/en/cli.html#--check) for your continuous integration.
+> Хэрвээ танд ESLint-ийн хэвжүүлэх тохиргооны бэлдэц байдаг бол Prettier-ынхтэй зөрчилдөж магадгүй. Тиймээс бид танд ESLint-ны хэвжүүлэх бүх дүрмүүдийг [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) ашиглаж идэвхгүй болгохыг санал болгож байна. Ингэснээр ESLint *зөвхөн* логик алдааг илрүүлэх тохиргоотой болно. Та "pull request"-ээ нэгтгэхээсээ өмнө бүх файлуудыг хэвжүүлэхийг хүсвэл [`prettier --check`](https://prettier.io/docs/en/cli.html#--check) командыг continuous integration (CI)-дээ оруулаарай.   
