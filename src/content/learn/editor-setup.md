@@ -42,7 +42,6 @@ React нэгдлийн хүмүүст түгээмэл ашиглагддаг б
 
 Бусад оролцогчидтой кодоо хуваалцах үед тулгардаг хамгийн түгээмэл асуудал бол [tabs уу эсвэл spaces үү](https://www.google.com/search?q=tabs+vs+spaces) гэсэн хэлэлцүүлэг! Азаар энэ асуудлыг шийдэгч бол [Prettier](https://prettier.io/) бөгөөд урьдчилсан бэлдсэн дүрэм, тохиргоогоор таны кодыг хэвжүүлэх болно. Prettier-ийг ажиллуулахад л таны бүх tab-ууд space рүү хөрвөгдөж, мөн мөрийн доголууд, хаалтууд бүгд тохиргооны дагуу өөрчлөгдөнө. Хамгийн оновчтой тохиргоо бол та файлаа хадгалахад Prettier ажиллаад шаардлагатай засваруудыг хийдэг байх юм.
 
-You can install the [Prettier extension in VSCode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) by following these steps:
 Та [Prettier-д зориулсан нэмэлт суулгацыг VSCode дээр](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) доорх дарааллын дагуу суулгаж болно. 
 
 1. VS Code-оо нээх. 
@@ -50,7 +49,7 @@ You can install the [Prettier extension in VSCode](https://marketplace.visualstu
 3. `ext install esbenp.prettier-vscode` хуулж тавих
 4. "Enter" товч дарна
 
-#### Formatting on save {/*formatting-on-save*/} Хадгалах үед хэвжүүлэх нь {/*formatting-on-save*/} 
+#### Хадгалах үед хэвжүүлэх нь {/*formatting-on-save*/} 
 
 VS Code-д хадгалах бүрд таны кодыг хэвжүүлэх тохиргоо бий бөгөөд танд уг тохиргоог ашиглахыг санал болгож байна. 
 Ideally, you should format your code on every save. VS Code has settings for this!
