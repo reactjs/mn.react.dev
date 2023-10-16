@@ -70,13 +70,18 @@ function ExpandableExample({children, excerpt, type}: ExpandableExampleProps) {
           })}>
           {isDeepDive && (
             <>
+<<<<<<< HEAD
               <IconDeepDive className="inline mr-2 dark:text-purple-30 text-purple-40" />
               Гүн шумбах
+=======
+              <IconDeepDive className="inline me-2 dark:text-purple-30 text-purple-40" />
+              Deep Dive
+>>>>>>> e85b71de88a20cda9588f51f01d4a70e5cbe1cb4
             </>
           )}
           {isExample && (
             <>
-              <IconCodeBlock className="inline mr-2 dark:text-yellow-30 text-yellow-50" />
+              <IconCodeBlock className="inline me-2 dark:text-yellow-30 text-yellow-50" />
               Example
             </>
           )}
@@ -98,7 +103,7 @@ function ExpandableExample({children, excerpt, type}: ExpandableExampleProps) {
               isExample,
           })}
           onClick={() => setIsExpanded((current) => !current)}>
-          <span className="mr-1">
+          <span className="me-1">
             <IconChevron displayDirection={isExpanded ? 'up' : 'down'} />
           </span>
           {isExpanded ? 'Хураангуй' : 'Дэлгэрэнгүй'}
