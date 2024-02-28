@@ -62,13 +62,10 @@ function SendFeedback({onSubmit}: {onSubmit: () => void}) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   return (
     <div className="max-w-xs w-80 lg:w-auto py-3 shadow-lg rounded-lg m-4 bg-wash dark:bg-gray-95 px-4 flex">
-<<<<<<< HEAD
       <p className="w-full font-bold text-primary dark:text-primary-dark text-lg mr-4">
-        {isSubmitted ? 'Санал өгсөнд баярлалаа!' : 'Энэ хуудас хэрэг болж байна уу?'}
-=======
-      <p className="w-full font-bold text-primary dark:text-primary-dark text-lg me-4">
-        {isSubmitted ? 'Thank you for your feedback!' : 'Is this page useful?'}
->>>>>>> 3189529259e89240a88c05680849ce4a8c454ed2
+        {isSubmitted
+          ? 'Санал өгсөнд баярлалаа!'
+          : 'Энэ хуудас хэрэг болж байна уу?'}
       </p>
       {!isSubmitted && (
         <button
