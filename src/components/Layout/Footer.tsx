@@ -319,9 +319,7 @@ export function Footer() {
           <FooterLink href="/community/docs-contributors">
             Docs Contributors
           </FooterLink>
-          <FooterLink href="/community/acknowledgements">
-            Талархал
-          </FooterLink>
+          <FooterLink href="/community/acknowledgements">Талархал</FooterLink>
         </div>
         <div className="flex flex-col">
           <FooterLink isHeader={true}>Илүү их</FooterLink>

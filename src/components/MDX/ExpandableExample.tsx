@@ -70,13 +70,8 @@ function ExpandableExample({children, excerpt, type}: ExpandableExampleProps) {
           })}>
           {isDeepDive && (
             <>
-<<<<<<< HEAD
-              <IconDeepDive className="inline mr-2 dark:text-purple-30 text-purple-40" />
-              Гүн шумбах
-=======
               <IconDeepDive className="inline me-2 dark:text-purple-30 text-purple-40" />
-              Deep Dive
->>>>>>> 722b54640ea8ef146ef59558100819a6bb31c252
+              Гүнзгий үзэцгээе
             </>
           )}
           {isExample && (
