@@ -489,7 +489,7 @@ export function HomeContent() {
           <div className="mt-20 px-5 lg:px-0 mb-6 max-w-4xl text-center text-opacity-80">
             <Logo className="text-link dark:text-link-dark w-24 lg:w-28 mb-10 lg:mb-8 mt-12 h-auto mx-auto self-start" />
             <Header>
-              React-ын нэгдэлд <br className="hidden lg:inline" />
+              React-ын нэгдэлд <br className="" />
               тавтай морилно уу
             </Header>
             <ButtonLink
