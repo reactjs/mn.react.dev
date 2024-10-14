@@ -37,7 +37,11 @@ export default function App() {
 
 Дээрх кодыг шууд засварлах боломжтой ба баруун дээд булан дахь "Fork" товчлуурыг дарж шинэ тааб-нд нээж болно.
 
+<<<<<<< HEAD
 Reacт гарын авлагын ихэнх хуудсанд дээрх шиг sandbox байна. React гарын авлагаас гадуур React-г дэмждэг зөндөө онлайн sandbox байдаг: жишээ нь [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react) болон [CodePen.](https://codepen.io/pen?&editors=0010&layout=left&prefill_data_id=3f4569d1-1b11-4bce-bd46-89090eed5ddb)
+=======
+Most pages in the React documentation contain sandboxes like this. Outside of the React documentation, there are many online sandboxes that support React: for example, [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react), or [CodePen.](https://codepen.io/pen?template=QWYVwWN)
+>>>>>>> 2b2d0f2309f49c82cf5bb88ea62fb2e44661c634
 
 ### Дотоод орчиндоо React турших {/*try-react-locally*/}
 
