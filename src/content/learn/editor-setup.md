@@ -40,7 +40,11 @@ React нэгдлийн хүмүүст түгээмэл ашиглагддаг б
 
 ### Код хэвжүүлэх (Formatting) {/*formatting*/} 
 
+<<<<<<< HEAD
 Бусад оролцогчидтой кодоо хуваалцах үед тулгардаг хамгийн түгээмэл асуудал бол [tabs уу эсвэл spaces үү](https://www.google.com/search?q=tabs+vs+spaces) гэсэн хэлэлцүүлэг! Азаар энэ асуудлыг шийдэгч бол [Prettier](https://prettier.io/) бөгөөд урьдчилсан бэлдсэн дүрэм, тохиргоогоор таны кодыг хэвжүүлэх болно. Prettier-ийг ажиллуулахад л таны бүх tab-ууд space рүү хөрвөгдөж, мөн мөрийн доголууд, хаалтууд бүгд тохиргооны дагуу өөрчлөгдөнө. Хамгийн оновчтой тохиргоо бол та файлаа хадгалахад Prettier ажиллаад шаардлагатай засваруудыг хийдэг байх юм.
+=======
+The last thing you want to do when sharing your code with another contributor is get into a discussion about [tabs vs spaces](https://www.google.com/search?q=tabs+vs+spaces)! Fortunately, [Prettier](https://prettier.io/) will clean up your code by reformatting it to conform to preset, configurable rules. Run Prettier, and all your tabs will be converted to spaces—and your indentation, quotes, etc will also all be changed to conform to the configuration. In the ideal setup, Prettier will run when you save your file, quickly making these edits for you.
+>>>>>>> b22cbc3fed310b39c99fdd0f01621ac1903d1e8e
 
 Та [Prettier-д зориулсан нэмэлт суулгацыг VSCode дээр](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) доорх дарааллын дагуу суулгаж болно. 
 
