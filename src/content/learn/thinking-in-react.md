@@ -81,7 +81,7 @@ React дээр UI-аа бүтээхдээ дараах 5 алхамыг дага
 
 <Sandpack>
 
-```jsx App.js
+```jsx src/App.js
 function ProductCategoryRow({ category }) {
   return (
     <tr>
@@ -270,7 +270,15 @@ React-д загвар өгөгдлийн хоёр төрөл бий: пропу�
 2. **Тэдгээрийн нийтлэг эцгийг ол:** Эхний нийтлэг эцэг компонент `FilterableProductTable`.
 3. **Стэйт хаана байхыг шийд**: Бид дараах компонент-д `FilterableProductTable` стэйтүүдийг байрлуулна.
 
+<<<<<<< HEAD
 `FilterableProductTable` компонент-д стэйт байрлана гэсэн үг. 
+=======
+1. **Identify components that use state:**
+    * `ProductTable` needs to filter the product list based on that state (search text and checkbox value). 
+    * `SearchBar` needs to display that state (search text and checkbox value).
+2. **Find their common parent:** The first parent component both components share is `FilterableProductTable`.
+3. **Decide where the state lives**: We'll keep the filter text and checked state values in `FilterableProductTable`.
+>>>>>>> c0c955ed1d1c4fe3bf3e18c06a8d121902a01619
 
 [`useState()` хүүк](/reference/react/useState)-ээр стэйтийг зарлана. Хүүк бол React-тай холбогдох боломж олгодог онцгой төрлийн функц юм. Хоёр стэйтийг `FilterableProductTable` компонент дээр нэмж өгөх ба тэдгээрт анхдагч утга өгнө:
 
@@ -298,7 +306,7 @@ function FilterableProductTable({ products }) {
 
 <Sandpack>
 
-```jsx App.js
+```jsx src/App.js
 import { useState } from 'react';
 
 function FilterableProductTable({ products }) {
@@ -485,19 +493,33 @@ function FilterableProductTable({ products }) {
 `SearchBar` дотор `onChange`-д эцгээс дамжиж ирсэн функцыг оноож өгнө:
 
 
-```js {5}
-<input 
-  type="text" 
-  value={filterText} 
-  placeholder="Search..." 
-  onChange={(e) => onFilterTextChange(e.target.value)} />
+```js {4,5,13,19}
+function SearchBar({
+  filterText,
+  inStockOnly,
+  onFilterTextChange,
+  onInStockOnlyChange
+}) {
+  return (
+    <form>
+      <input
+        type="text"
+        value={filterText}
+        placeholder="Search..."
+        onChange={(e) => onFilterTextChange(e.target.value)}
+      />
+      <label>
+        <input
+          type="checkbox"
+          checked={inStockOnly}
+          onChange={(e) => onInStockOnlyChange(e.target.checked)}
 ```
 
 Одоо аппликэйшн бүрэн ажиллаж байна!
 
 <Sandpack>
 
-```jsx App.js
+```jsx src/App.js
 import { useState } from 'react';
 
 function FilterableProductTable({ products }) {
