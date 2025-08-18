@@ -53,17 +53,21 @@ react-devtools
 ![React Developer Tools standalone](/images/docs/react-devtools-standalone.png)
 
 ## Mobile (React Native) {/*mobile-react-native*/}
+<<<<<<< HEAD
 React Хөгжүүлэгчийн хэрэгсэл нь мөн [React Native](https://reactnative.dev/) ашиглан бүтсэн аппликэйшнийг хянахад хэрэглэгдэх боломжтой.
 
 React Хөгжүүлэгчийн хэрэгслийг ашиглах хамгийн хялбар арга бол үүнийг ямар ч төсөл дээр ашиглах боломжтой байхаар суулгах явдал юм:
 ```bash
 # Yarn
 yarn global add react-devtools
+=======
 
-# Npm
-npm install -g react-devtools
-```
+To inspect apps built with [React Native](https://reactnative.dev/), you can use [React Native DevTools](https://reactnative.dev/docs/react-native-devtools), the built-in debugger that deeply integrates React Developer Tools. All features work identically to the browser extension, including native element highlighting and selection.
+>>>>>>> e9a7cb1b6ca1659b42d81555ecef0cd554b7a983
 
+[Learn more about debugging in React Native.](https://reactnative.dev/docs/debugging)
+
+<<<<<<< HEAD
 Дараа нь терминалаас хөгжүүлэгчийн хэрэгслийг нээнэ үү.
 ```bash
 react-devtools
@@ -74,3 +78,6 @@ react-devtools
 > Хэрэв Хөгжүүлэгчийн хэрэгсэл хэдэн секундийн дараа холбогдохгүй бол дахин ачаалж үзнэ үү.
 
 [React Native-г дибаг хийх талаар нэмэлт мэдээлэл авах.](https://reactnative.dev/docs/debugging)
+=======
+> For versions of React Native earlier than 0.76, please use the standalone build of React DevTools by following the [Safari and other browsers](#safari-and-other-browsers) guide above.
+>>>>>>> e9a7cb1b6ca1659b42d81555ecef0cd554b7a983
