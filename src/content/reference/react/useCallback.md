@@ -12,6 +12,12 @@ const cachedFn = useCallback(fn, dependencies)
 
 </Intro>
 
+<Note>
+
+[React Compiler](/learn/react-compiler) automatically memoizes values and functions, reducing the need for manual `useCallback` calls. You can use the compiler to handle memoization automatically.
+
+</Note>
+
 <InlineToc />
 
 ---
@@ -124,7 +130,7 @@ function ProductPage({ productId, referrer, theme }) {
       orderDetails,
     });
   }
-  
+
   return (
     <div className={theme}>
       {/* ... so ShippingForm's props will never be the same, and it will re-render every time */}
@@ -201,7 +207,7 @@ The difference is in *what* they're letting you cache:
 
 If you're already familiar with [`useMemo`,](/reference/react/useMemo) you might find it helpful to think of `useCallback` as this:
 
-```js
+```js {expectedErrors: {'react-compiler': [3]}}
 // Simplified implementation (inside React)
 function useCallback(fn, dependencies) {
   return useMemo(() => fn, dependencies);
@@ -216,7 +222,7 @@ function useCallback(fn, dependencies) {
 
 #### Should you add useCallback everywhere? {/*should-you-add-usecallback-everywhere*/}
 
-If your app is like this site, and most interactions are coarse (like replacing a page or an entire section), memoization is usually unnecessary. On the other hand, if your app is more like a drawing editor, and most interactions are granular (like moving shapes), then you might find memoization very helpful. 
+If your app is like this site, and most interactions are coarse (like replacing a page or an entire section), memoization is usually unnecessary. On the other hand, if your app is more like a drawing editor, and most interactions are granular (like moving shapes), then you might find memoization very helpful.
 
 Caching a function with `useCallback`  is only valuable in a few cases:
 
@@ -251,7 +257,7 @@ Next, try toggling the theme. **Thanks to `useCallback` together with [`memo`](/
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ProductPage from './ProductPage.js';
 
@@ -278,7 +284,7 @@ export default function App() {
 }
 ```
 
-```js ProductPage.js active
+```js src/ProductPage.js active
 import { useCallback } from 'react';
 import ShippingForm from './ShippingForm.js';
 
@@ -304,7 +310,7 @@ function post(url, data) {
 }
 ```
 
-```js ShippingForm.js
+```js {expectedErrors: {'react-compiler': [7, 8]}} src/ShippingForm.js
 import { memo, useState } from 'react';
 
 const ShippingForm = memo(function ShippingForm({ onSubmit }) {
@@ -391,7 +397,7 @@ Unlike in the previous example, toggling the theme is also slow now! This is bec
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ProductPage from './ProductPage.js';
 
@@ -418,7 +424,7 @@ export default function App() {
 }
 ```
 
-```js ProductPage.js active
+```js src/ProductPage.js active
 import ShippingForm from './ShippingForm.js';
 
 export default function ProductPage({ productId, referrer, theme }) {
@@ -443,7 +449,7 @@ function post(url, data) {
 }
 ```
 
-```js ShippingForm.js
+```js {expectedErrors: {'react-compiler': [7, 8]}} src/ShippingForm.js
 import { memo, useState } from 'react';
 
 const ShippingForm = memo(function ShippingForm({ onSubmit }) {
@@ -525,7 +531,7 @@ However, here is the same code **with the artificial slowdown removed.** Does th
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ProductPage from './ProductPage.js';
 
@@ -552,7 +558,7 @@ export default function App() {
 }
 ```
 
-```js ProductPage.js active
+```js src/ProductPage.js active
 import ShippingForm from './ShippingForm.js';
 
 export default function ProductPage({ productId, referrer, theme }) {
@@ -577,7 +583,7 @@ function post(url, data) {
 }
 ```
 
-```js ShippingForm.js
+```js src/ShippingForm.js
 import { memo, useState } from 'react';
 
 const ShippingForm = memo(function ShippingForm({ onSubmit }) {
@@ -711,7 +717,7 @@ function ChatRoom({ roomId }) {
 
   useEffect(() => {
     const options = createOptions();
-    const connection = createConnection();
+    const connection = createConnection(options);
     connection.connect();
     // ...
 ```
@@ -722,7 +728,7 @@ This creates a problem. [Every reactive value must be declared as a dependency o
 ```js {6}
   useEffect(() => {
     const options = createOptions();
-    const connection = createConnection();
+    const connection = createConnection(options);
     connection.connect();
     return () => connection.disconnect();
   }, [createOptions]); // 🔴 Problem: This dependency changes on every render
@@ -744,7 +750,7 @@ function ChatRoom({ roomId }) {
 
   useEffect(() => {
     const options = createOptions();
-    const connection = createConnection();
+    const connection = createConnection(options);
     connection.connect();
     return () => connection.disconnect();
   }, [createOptions]); // ✅ Only changes when createOptions changes
@@ -766,7 +772,7 @@ function ChatRoom({ roomId }) {
     }
 
     const options = createOptions();
-    const connection = createConnection();
+    const connection = createConnection(options);
     connection.connect();
     return () => connection.disconnect();
   }, [roomId]); // ✅ Only changes when roomId changes
@@ -862,7 +868,7 @@ When you find which dependency is breaking memoization, either find a way to rem
 
 Suppose the `Chart` component is wrapped in [`memo`](/reference/react/memo). You want to skip re-rendering every `Chart` in the list when the `ReportList` component re-renders. However, you can't call `useCallback` in a loop:
 
-```js {5-14}
+```js {expectedErrors: {'react-compiler': [6]}} {5-14}
 function ReportList({ items }) {
   return (
     <article>
