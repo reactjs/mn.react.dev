@@ -184,7 +184,7 @@ export default function App() {
 }
 ```
 
-```js useOnlineStatus.js
+```js src/useOnlineStatus.js
 import { useState, useEffect } from 'react';
 
 export function useOnlineStatus() {
@@ -402,7 +402,7 @@ export default function Form() {
 }
 ```
 
-```js useFormInput.js active
+```js src/useFormInput.js active
 import { useState } from 'react';
 
 export function useFormInput(initialValue) {
@@ -453,7 +453,7 @@ Because custom Hooks re-render together with your component, they always receive
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 
@@ -481,7 +481,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js src/ChatRoom.js active
 import { useState, useEffect } from 'react';
 import { createConnection } from './chat.js';
 import { showNotification } from './notifications.js';
@@ -514,7 +514,7 @@ export default function ChatRoom({ roomId }) {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection({ serverUrl, roomId }) {
   // A real implementation would actually connect to the server
   if (typeof serverUrl !== 'string') {
@@ -557,7 +557,7 @@ export function createConnection({ serverUrl, roomId }) {
 }
 ```
 
-```js notifications.js
+```js src/notifications.js
 import Toastify from 'toastify-js';
 import 'toastify-js/src/toastify.css';
 
@@ -649,7 +649,7 @@ Notice that the logic *still responds* to prop and state changes. Try editing th
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 
@@ -677,7 +677,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js src/ChatRoom.js active
 import { useState } from 'react';
 import { useChatRoom } from './useChatRoom.js';
 
@@ -701,7 +701,7 @@ export default function ChatRoom({ roomId }) {
 }
 ```
 
-```js useChatRoom.js
+```js src/useChatRoom.js
 import { useEffect } from 'react';
 import { createConnection } from './chat.js';
 import { showNotification } from './notifications.js';
@@ -722,7 +722,7 @@ export function useChatRoom({ serverUrl, roomId }) {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection({ serverUrl, roomId }) {
   // A real implementation would actually connect to the server
   if (typeof serverUrl !== 'string') {
@@ -765,7 +765,7 @@ export function createConnection({ serverUrl, roomId }) {
 }
 ```
 
-```js notifications.js
+```js src/notifications.js
 import Toastify from 'toastify-js';
 import 'toastify-js/src/toastify.css';
 
@@ -820,7 +820,7 @@ export default function ChatRoom({ roomId }) {
   // ...
 ```
 
-and pass it as an input to another Hook:
+and passing it as an input to another Hook:
 
 ```js {6}
 export default function ChatRoom({ roomId }) {
@@ -837,11 +837,13 @@ Every time your `ChatRoom` component re-renders, it passes the latest `roomId` a
 
 ### Passing event handlers to custom Hooks {/*passing-event-handlers-to-custom-hooks*/}
 
-<Wip>
+<Canary>
 
-This section describes an **experimental API that has not yet been released** in a stable version of React.
+**The `useEffectEvent` API is currently only available in React’s Canary and Experimental channels.** 
 
-</Wip>
+[Learn more about React’s release channels here.](/community/versioning-policy#all-release-channels)
+
+</Canary>
 
 As you start using `useChatRoom` in more components, you might want to let components customize its behavior. For example, currently, the logic for what to do when a message arrives is hardcoded inside the Hook:
 
@@ -927,7 +929,7 @@ Now the chat won't re-connect every time that the `ChatRoom` component re-render
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 
@@ -955,7 +957,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js src/ChatRoom.js active
 import { useState } from 'react';
 import { useChatRoom } from './useChatRoom.js';
 import { showNotification } from './notifications.js';
@@ -983,9 +985,9 @@ export default function ChatRoom({ roomId }) {
 }
 ```
 
-```js useChatRoom.js
+```js src/useChatRoom.js
 import { useEffect } from 'react';
-import { experimental_useEffectEvent as useEffectEvent } from 'react';
+import { useEffectEvent } from 'react';
 import { createConnection } from './chat.js';
 
 export function useChatRoom({ serverUrl, roomId, onReceiveMessage }) {
@@ -1006,7 +1008,7 @@ export function useChatRoom({ serverUrl, roomId, onReceiveMessage }) {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection({ serverUrl, roomId }) {
   // A real implementation would actually connect to the server
   if (typeof serverUrl !== 'string') {
@@ -1049,7 +1051,7 @@ export function createConnection({ serverUrl, roomId }) {
 }
 ```
 
-```js notifications.js
+```js src/notifications.js
 import Toastify from 'toastify-js';
 import 'toastify-js/src/toastify.css';
 
@@ -1070,8 +1072,8 @@ export function showNotification(message, theme = 'dark') {
 ```json package.json hidden
 {
   "dependencies": {
-    "react": "experimental",
-    "react-dom": "experimental",
+    "react": "canary",
+    "react-dom": "canary",
     "react-scripts": "latest",
     "toastify-js": "1.12.0"
   },
@@ -1306,7 +1308,7 @@ export default function App() {
 }
 ```
 
-```js useOnlineStatus.js active
+```js src/useOnlineStatus.js active
 import { useState, useEffect } from 'react';
 
 export function useOnlineStatus() {
@@ -1333,7 +1335,7 @@ export function useOnlineStatus() {
 
 In the above example, `useOnlineStatus` is implemented with a pair of [`useState`](/reference/react/useState) and [`useEffect`.](/reference/react/useEffect) However, this isn't the best possible solution. There is a number of edge cases it doesn't consider. For example, it assumes that when the component mounts, `isOnline` is already `true`, but this may be wrong if the network already went offline. You can use the browser [`navigator.onLine`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/onLine) API to check for that, but using it directly would not work on the server for generating the initial HTML. In short, this code could be improved.
 
-Luckily, React 18 includes a dedicated API called [`useSyncExternalStore`](/reference/react/useSyncExternalStore) which takes care of all of these problems for you. Here is how your `useOnlineStatus` Hook, rewritten to take advantage of this new API:
+React includes a dedicated API called [`useSyncExternalStore`](/reference/react/useSyncExternalStore) which takes care of all of these problems for you. Here is your `useOnlineStatus` Hook, rewritten to take advantage of this new API:
 
 <Sandpack>
 
@@ -1369,7 +1371,7 @@ export default function App() {
 }
 ```
 
-```js useOnlineStatus.js active
+```js src/useOnlineStatus.js active
 import { useSyncExternalStore } from 'react';
 
 function subscribe(callback) {
@@ -1419,10 +1421,29 @@ Similar to a [design system,](https://uxdesign.cc/everything-you-need-to-know-ab
 
 #### Will React provide any built-in solution for data fetching? {/*will-react-provide-any-built-in-solution-for-data-fetching*/}
 
+Today, with the [`use`](/reference/react/use#streaming-data-from-server-to-client) API, data can be read in render by passing a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) to `use`:
+
+```js {1,4,11}
+import { use, Suspense } from "react";
+
+function Message({ messagePromise }) {
+  const messageContent = use(messagePromise);
+  return <p>Here is the message: {messageContent}</p>;
+}
+
+export function MessageContainer({ messagePromise }) {
+  return (
+    <Suspense fallback={<p>⌛Downloading message...</p>}>
+      <Message messagePromise={messagePromise} />
+    </Suspense>
+  );
+}
+```
+
 We're still working out the details, but we expect that in the future, you'll write data fetching like this:
 
 ```js {1,4,6}
-import { use } from 'react'; // Not available yet!
+import { use } from 'react';
 
 function ShippingForm({ country }) {
   const cities = use(fetch(`/api/cities?country=${country}`));
@@ -1554,7 +1575,7 @@ export default function App() {
 }
 ```
 
-```js useFadeIn.js
+```js src/useFadeIn.js
 import { useEffect } from 'react';
 
 export function useFadeIn(ref, duration) {
@@ -1645,9 +1666,9 @@ export default function App() {
 }
 ```
 
-```js useFadeIn.js active
+```js src/useFadeIn.js active
 import { useState, useEffect } from 'react';
-import { experimental_useEffectEvent as useEffectEvent } from 'react';
+import { useEffectEvent } from 'react';
 
 export function useFadeIn(ref, duration) {
   const [isRunning, setIsRunning] = useState(true);
@@ -1700,8 +1721,8 @@ html, body { min-height: 300px; }
 ```json package.json hidden
 {
   "dependencies": {
-    "react": "experimental",
-    "react-dom": "experimental",
+    "react": "canary",
+    "react-dom": "canary",
     "react-scripts": "latest"
   },
   "scripts": {
@@ -1749,7 +1770,7 @@ export default function App() {
 }
 ```
 
-```js useFadeIn.js active
+```js src/useFadeIn.js active
 import { useState, useEffect } from 'react';
 import { FadeInAnimation } from './animation.js';
 
@@ -1764,7 +1785,7 @@ export function useFadeIn(ref, duration) {
 }
 ```
 
-```js animation.js
+```js src/animation.js
 export class FadeInAnimation {
   constructor(node) {
     this.node = node;
@@ -1845,12 +1866,12 @@ export default function App() {
 }
 ```
 
-```css styles.css
+```css src/styles.css
 label, button { display: block; margin-bottom: 20px; }
 html, body { min-height: 300px; }
 ```
 
-```css welcome.css active
+```css src/welcome.css active
 .welcome {
   color: white;
   padding: 50px;
@@ -1899,7 +1920,7 @@ export default function Counter() {
 }
 ```
 
-You'll need to write your custom Hook in `useCounter.js` and import it into the `Counter.js` file.
+You'll need to write your custom Hook in `useCounter.js` and import it into the `App.js` file.
 
 <Sandpack>
 
@@ -1918,7 +1939,7 @@ export default function Counter() {
 }
 ```
 
-```js useCounter.js
+```js src/useCounter.js
 // Write your custom Hook in this file!
 ```
 
@@ -1939,7 +1960,7 @@ export default function Counter() {
 }
 ```
 
-```js useCounter.js
+```js src/useCounter.js
 import { useState, useEffect } from 'react';
 
 export function useCounter() {
@@ -1993,7 +2014,7 @@ export default function Counter() {
 }
 ```
 
-```js useCounter.js
+```js src/useCounter.js
 import { useState, useEffect } from 'react';
 
 export function useCounter() {
@@ -2043,7 +2064,7 @@ export default function Counter() {
 }
 ```
 
-```js useCounter.js
+```js src/useCounter.js
 import { useState, useEffect } from 'react';
 
 export function useCounter(delay) {
@@ -2081,7 +2102,6 @@ Write `useInterval` in the `useInterval.js` file and import it into the `useCoun
 <Sandpack>
 
 ```js
-import { useState } from 'react';
 import { useCounter } from './useCounter.js';
 
 export default function Counter() {
@@ -2090,7 +2110,7 @@ export default function Counter() {
 }
 ```
 
-```js useCounter.js
+```js src/useCounter.js
 import { useState, useEffect } from 'react';
 
 export function useCounter(delay) {
@@ -2105,7 +2125,7 @@ export function useCounter(delay) {
 }
 ```
 
-```js useInterval.js
+```js src/useInterval.js
 // Write your Hook here!
 ```
 
@@ -2126,7 +2146,7 @@ export default function Counter() {
 }
 ```
 
-```js useCounter.js
+```js src/useCounter.js
 import { useState } from 'react';
 import { useInterval } from './useInterval.js';
 
@@ -2139,7 +2159,7 @@ export function useCounter(delay) {
 }
 ```
 
-```js useInterval.js active
+```js src/useInterval.js active
 import { useEffect } from 'react';
 
 export function useInterval(onTick, delay) {
@@ -2190,8 +2210,8 @@ It looks like your `useInterval` Hook accepts an event listener as an argument. 
 ```json package.json hidden
 {
   "dependencies": {
-    "react": "experimental",
-    "react-dom": "experimental",
+    "react": "canary",
+    "react-dom": "canary",
     "react-scripts": "latest"
   },
   "scripts": {
@@ -2219,7 +2239,7 @@ export default function Counter() {
 }
 ```
 
-```js useCounter.js
+```js src/useCounter.js
 import { useState } from 'react';
 import { useInterval } from './useInterval.js';
 
@@ -2232,9 +2252,9 @@ export function useCounter(delay) {
 }
 ```
 
-```js useInterval.js
+```js src/useInterval.js
 import { useEffect } from 'react';
-import { experimental_useEffectEvent as useEffectEvent } from 'react';
+import { useEffectEvent } from 'react';
 
 export function useInterval(onTick, delay) {
   useEffect(() => {
@@ -2261,8 +2281,8 @@ With this change, both intervals work as expected and don't interfere with each 
 ```json package.json hidden
 {
   "dependencies": {
-    "react": "experimental",
-    "react-dom": "experimental",
+    "react": "canary",
+    "react-dom": "canary",
     "react-scripts": "latest"
   },
   "scripts": {
@@ -2291,7 +2311,7 @@ export default function Counter() {
 }
 ```
 
-```js useCounter.js
+```js src/useCounter.js
 import { useState } from 'react';
 import { useInterval } from './useInterval.js';
 
@@ -2304,9 +2324,9 @@ export function useCounter(delay) {
 }
 ```
 
-```js useInterval.js active
+```js src/useInterval.js active
 import { useEffect } from 'react';
-import { experimental_useEffectEvent as useEffectEvent } from 'react';
+import { useEffectEvent } from 'react';
 
 export function useInterval(callback, delay) {
   const onTick = useEffectEvent(callback);
@@ -2384,7 +2404,7 @@ function Dot({ position, opacity }) {
 }
 ```
 
-```js usePointerPosition.js
+```js src/usePointerPosition.js
 import { useState, useEffect } from 'react';
 
 export function usePointerPosition() {
@@ -2463,7 +2483,7 @@ function Dot({ position, opacity }) {
 }
 ```
 
-```js usePointerPosition.js
+```js src/usePointerPosition.js
 import { useState, useEffect } from 'react';
 
 export function usePointerPosition() {

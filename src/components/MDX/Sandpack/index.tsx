@@ -1,9 +1,16 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
 
 import {lazy, memo, Children, Suspense} from 'react';
-import {createFileMap} from './createFileMap';
+import {AppJSPath, createFileMap} from './createFileMap';
 
 const SandpackRoot = lazy(() => import('./SandpackRoot'));
 
@@ -57,7 +64,7 @@ export default memo(function SandpackWrapper(props: any): any {
   );
   let activeCode;
   if (!activeCodeSnippet.length) {
-    activeCode = codeSnippet['/App.js'].code;
+    activeCode = codeSnippet[AppJSPath].code;
   } else {
     activeCode = codeSnippet[activeCodeSnippet[0]].code;
   }
