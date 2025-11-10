@@ -50,7 +50,7 @@ A portal only changes the physical placement of the DOM node. In every other way
 
 * `domNode`: Some DOM node, such as those returned by `document.getElementById()`. The node must already exist. Passing a different DOM node during an update will cause the portal content to be recreated.
 
-* **optional** `key`: A unique string or number to be used as the portal's [key.](/learn/rendering-lists/#keeping-list-items-in-order-with-key)
+* **optional** `key`: A unique string or number to be used as the portal's [key.](/learn/rendering-lists#keeping-list-items-in-order-with-key)
 
 #### Returns {/*returns*/}
 
@@ -137,7 +137,7 @@ In this example, the two containers have styles that disrupt the modal dialog, b
 
 <Sandpack>
 
-```js App.js active
+```js src/App.js active
 import NoPortalExample from './NoPortalExample';
 import PortalExample from './PortalExample';
 
@@ -155,7 +155,7 @@ export default function App() {
 }
 ```
 
-```js NoPortalExample.js
+```js src/NoPortalExample.js
 import { useState } from 'react';
 import ModalContent from './ModalContent.js';
 
@@ -174,7 +174,7 @@ export default function NoPortalExample() {
 }
 ```
 
-```js PortalExample.js active
+```js src/PortalExample.js active
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import ModalContent from './ModalContent.js';
@@ -195,7 +195,7 @@ export default function PortalExample() {
 }
 ```
 
-```js ModalContent.js
+```js src/ModalContent.js
 export default function ModalContent({ onClose }) {
   return (
     <div className="modal">
@@ -207,7 +207,7 @@ export default function ModalContent({ onClose }) {
 ```
 
 
-```css styles.css
+```css src/styles.css
 .clipping-container {
   position: relative;
   border: 1px solid #aaa;
@@ -240,7 +240,7 @@ export default function ModalContent({ onClose }) {
 
 It's important to make sure that your app is accessible when using portals. For instance, you may need to manage keyboard focus so that the user can move the focus in and out of the portal in a natural way.
 
-Follow the [WAI-ARIA Modal Authoring Practices](https://www.w3.org/WAI/ARIA/apg/#dialog_modal) when creating modals. If you use a community package, ensure that it is accessible and follows these guidelines.
+Follow the [WAI-ARIA Modal Authoring Practices](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal) when creating modals. If you use a community package, ensure that it is accessible and follows these guidelines.
 
 </Pitfall>
 
@@ -252,7 +252,7 @@ Portals can be useful if your React root is only part of a static or server-rend
 
 <Sandpack>
 
-```html index.html
+```html public/index.html
 <!DOCTYPE html>
 <html>
   <head><title>My app</title></head>
@@ -269,7 +269,7 @@ Portals can be useful if your React root is only part of a static or server-rend
 </html>
 ```
 
-```js index.js
+```js src/index.js
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.js';
@@ -283,7 +283,7 @@ root.render(
 );
 ```
 
-```js App.js active
+```js src/App.js active
 import { createPortal } from 'react-dom';
 
 const sidebarContentEl = document.getElementById('sidebar-content');
@@ -398,7 +398,7 @@ Here is a complete example you can play with:
 }
 ```
 
-```js App.js
+```js src/App.js
 import { useRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { createMapWidget, addPopupToMapWidget } from './map-widget.js';
@@ -428,7 +428,7 @@ export default function Map() {
 }
 ```
 
-```js map-widget.js
+```js src/map-widget.js
 import 'leaflet/dist/leaflet.css';
 import * as L from 'leaflet';
 
