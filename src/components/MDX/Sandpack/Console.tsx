@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
@@ -5,7 +12,10 @@ import cn from 'classnames';
 import {useState, useRef, useEffect} from 'react';
 import {IconChevron} from 'components/Icon/IconChevron';
 
-import {SandpackCodeViewer, useSandpack} from '@codesandbox/sandpack-react';
+import {
+  SandpackCodeViewer,
+  useSandpack,
+} from '@codesandbox/sandpack-react/unstyled';
 import type {SandpackMessageConsoleMethods} from '@codesandbox/sandpack-client';
 
 const getType = (
