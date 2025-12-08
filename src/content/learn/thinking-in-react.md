@@ -37,9 +37,15 @@ React дээр UI-аа бүтээхдээ дараах 5 алхамыг дага
 
 Таны юу хийдгээс хамааран өөр, өөр арга замаар хуваасан байж магадгүй юм.
 
+<<<<<<< HEAD
 * **Програмчилалын**--Шинээр функц болон объект үүсгэхдээ нэгэн ижил текник ашиглаарай. Нэг санал болгох текник нь [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle) ба энэ нь компонент бүр нэгээс илүү үйлдэл хийхгүй гэсэн санаа юм. Хэрвээ цаашид томрохоор болвол дэд компонентүүдэд задлах хэрэгтэй. 
 * **CSS**--Класс селектор-оо юунд ашиглахааа шийдэх.
 * **Дизайн**--Дизайны давхаргуудаа хэрхэн зохион байгуулахаа шийдэх.
+=======
+* **Programming**--use the same techniques for deciding if you should create a new function or object. One such technique is the [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns), that is, a component should ideally only be concerned with one thing. If it ends up growing, it should be decomposed into smaller subcomponents. 
+* **CSS**--consider what you would make class selectors for. (However, components are a bit less granular.)
+* **Design**--consider how you would organize the design's layers.
+>>>>>>> e22544e68d6fffda33332771efe27034739f35a4
 
 Хэрвээ таны JSON маш сайн бүтэцлэгдсэн бол таны UI компонентуудтай шууд холбогдож ажиллаж чадна. Энэ нь UI болон өгөгдлийн загварууд (data model) ижил бүтэцтэй байх хэрэгтэй шалтгаан юм.
 
@@ -81,7 +87,7 @@ React дээр UI-аа бүтээхдээ дараах 5 алхамыг дага
 
 <Sandpack>
 
-```jsx App.js
+```jsx src/App.js
 function ProductCategoryRow({ category }) {
   return (
     <tr>
@@ -270,7 +276,15 @@ React-д загвар өгөгдлийн хоёр төрөл бий: пропу�
 2. **Тэдгээрийн нийтлэг эцгийг ол:** Эхний нийтлэг эцэг компонент `FilterableProductTable`.
 3. **Стэйт хаана байхыг шийд**: Бид дараах компонент-д `FilterableProductTable` стэйтүүдийг байрлуулна.
 
+<<<<<<< HEAD
 `FilterableProductTable` компонент-д стэйт байрлана гэсэн үг. 
+=======
+1. **Identify components that use state:**
+    * `ProductTable` needs to filter the product list based on that state (search text and checkbox value). 
+    * `SearchBar` needs to display that state (search text and checkbox value).
+2. **Find their common parent:** The first parent component both components share is `FilterableProductTable`.
+3. **Decide where the state lives**: We'll keep the filter text and checked state values in `FilterableProductTable`.
+>>>>>>> e22544e68d6fffda33332771efe27034739f35a4
 
 [`useState()` хүүк](/reference/react/useState)-ээр стэйтийг зарлана. Хүүк бол React-тай холбогдох боломж олгодог онцгой төрлийн функц юм. Хоёр стэйтийг `FilterableProductTable` компонент дээр нэмж өгөх ба тэдгээрт анхдагч утга өгнө:
 
@@ -298,7 +312,7 @@ function FilterableProductTable({ products }) {
 
 <Sandpack>
 
-```jsx App.js
+```jsx src/App.js
 import { useState } from 'react';
 
 function FilterableProductTable({ products }) {
@@ -485,19 +499,33 @@ function FilterableProductTable({ products }) {
 `SearchBar` дотор `onChange`-д эцгээс дамжиж ирсэн функцыг оноож өгнө:
 
 
-```js {5}
-<input 
-  type="text" 
-  value={filterText} 
-  placeholder="Search..." 
-  onChange={(e) => onFilterTextChange(e.target.value)} />
+```js {4,5,13,19}
+function SearchBar({
+  filterText,
+  inStockOnly,
+  onFilterTextChange,
+  onInStockOnlyChange
+}) {
+  return (
+    <form>
+      <input
+        type="text"
+        value={filterText}
+        placeholder="Search..."
+        onChange={(e) => onFilterTextChange(e.target.value)}
+      />
+      <label>
+        <input
+          type="checkbox"
+          checked={inStockOnly}
+          onChange={(e) => onInStockOnlyChange(e.target.checked)}
 ```
 
 Одоо аппликэйшн бүрэн ажиллаж байна!
 
 <Sandpack>
 
-```jsx App.js
+```jsx src/App.js
 import { useState } from 'react';
 
 function FilterableProductTable({ products }) {
