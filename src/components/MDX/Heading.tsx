@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
@@ -85,6 +92,14 @@ export const H4 = ({className, ...props}: HeadingProps) => (
   <Heading
     as="h4"
     className={cn(className, 'text-xl font-display font-bold leading-9 my-4')}
+    {...props}
+  />
+);
+
+export const H5 = ({className, ...props}: HeadingProps) => (
+  <Heading
+    as="h5"
+    className={cn(className, 'text-lg font-display font-bold leading-9 my-2')}
     {...props}
   />
 );
