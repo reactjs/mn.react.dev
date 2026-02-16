@@ -44,6 +44,7 @@ Strict Mode enables the following development-only behaviors:
 
 - Your components will [re-render an extra time](#fixing-bugs-found-by-double-rendering-in-development) to find bugs caused by impure rendering.
 - Your components will [re-run Effects an extra time](#fixing-bugs-found-by-re-running-effects-in-development) to find bugs caused by missing Effect cleanup.
+- Your components will [re-run refs callbacks an extra time](#fixing-bugs-found-by-re-running-ref-callbacks-in-development) to find bugs caused by missing ref cleanup.
 - Your components will [be checked for usage of deprecated APIs.](#fixing-deprecation-warnings-enabled-by-strict-mode)
 
 #### Props {/*props*/}
@@ -87,6 +88,7 @@ Strict Mode enables the following checks in development:
 
 - Your components will [re-render an extra time](#fixing-bugs-found-by-double-rendering-in-development) to find bugs caused by impure rendering.
 - Your components will [re-run Effects an extra time](#fixing-bugs-found-by-re-running-effects-in-development) to find bugs caused by missing Effect cleanup.
+- Your components will [re-run ref callbacks an extra time](#fixing-bugs-found-by-re-running-ref-callbacks-in-development) to find bugs caused by missing ref cleanup.
 - Your components will [be checked for usage of deprecated APIs.](#fixing-deprecation-warnings-enabled-by-strict-mode)
 
 **All of these checks are development-only and do not impact the production build.**
@@ -95,7 +97,7 @@ Strict Mode enables the following checks in development:
 
 ---
 
-### Enabling strict mode for a part of the app {/*enabling-strict-mode-for-a-part-of-the-app*/}
+### Enabling Strict Mode for a part of the app {/*enabling-strict-mode-for-a-part-of-the-app*/}
 
 You can also enable Strict Mode for any part of your application:
 
@@ -120,6 +122,12 @@ function App() {
 
 In this example, Strict Mode checks will not run against the `Header` and `Footer` components. However, they will run on `Sidebar` and `Content`, as well as all of the components inside them, no matter how deep.
 
+<Note>
+
+When `StrictMode` is enabled for a part of the app, React will only enable behaviors that are possible in production. For example, if `<StrictMode>` is not enabled at the root of the app, it will not [re-run Effects an extra time](#fixing-bugs-found-by-re-running-effects-in-development) on initial mount, since this would cause child effects to double fire without the parent effects, which cannot happen in production.
+
+</Note>
+
 ---
 
 ### Fixing bugs found by double rendering in development {/*fixing-bugs-found-by-double-rendering-in-development*/}
@@ -140,7 +148,7 @@ This `StoryTray` component takes an array of `stories` and adds one last "Create
 
 <Sandpack>
 
-```js index.js
+```js src/index.js
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 
@@ -150,7 +158,7 @@ const root = createRoot(document.getElementById("root"));
 root.render(<App />);
 ```
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import StoryTray from './StoryTray.js';
 
@@ -175,7 +183,7 @@ export default function App() {
 }
 ```
 
-```js StoryTray.js active
+```js src/StoryTray.js active
 export default function StoryTray({ stories }) {
   const items = stories;
   items.push({ id: 'create', label: 'Create Story' });
@@ -196,6 +204,9 @@ ul {
   margin: 0;
   list-style-type: none;
   height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
 li {
@@ -203,7 +214,6 @@ li {
   border-radius: 6px;
   float: left;
   margin: 5px;
-  margin-bottom: 20px;
   padding: 5px;
   width: 70px;
   height: 100px;
@@ -214,11 +224,11 @@ li {
 
 There is a mistake in the code above. However, it is easy to miss because the initial output appears correct.
 
-This mistake will become more noticeable if the `StoryTray` component re-renders multiple times. For example, let's make the `StoryTray` re-render with a different background color whenever you hover over it: 
+This mistake will become more noticeable if the `StoryTray` component re-renders multiple times. For example, let's make the `StoryTray` re-render with a different background color whenever you hover over it:
 
 <Sandpack>
 
-```js index.js
+```js src/index.js
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 
@@ -228,7 +238,7 @@ const root = createRoot(document.getElementById('root'));
 root.render(<App />);
 ```
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import StoryTray from './StoryTray.js';
 
@@ -253,7 +263,7 @@ export default function App() {
 }
 ```
 
-```js StoryTray.js active
+```js src/StoryTray.js active
 import { useState } from 'react';
 
 export default function StoryTray({ stories }) {
@@ -283,6 +293,9 @@ ul {
   margin: 0;
   list-style-type: none;
   height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
 li {
@@ -290,7 +303,6 @@ li {
   border-radius: 6px;
   float: left;
   margin: 5px;
-  margin-bottom: 20px;
   padding: 5px;
   width: 70px;
   height: 100px;
@@ -316,7 +328,7 @@ This would [make the `StoryTray` function pure.](/learn/keeping-components-pure)
 
 <Sandpack>
 
-```js index.js
+```js src/index.js
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
@@ -331,7 +343,7 @@ root.render(
 );
 ```
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import StoryTray from './StoryTray.js';
 
@@ -356,7 +368,7 @@ export default function App() {
 }
 ```
 
-```js StoryTray.js active
+```js src/StoryTray.js active
 export default function StoryTray({ stories }) {
   const items = stories;
   items.push({ id: 'create', label: 'Create Story' });
@@ -377,6 +389,9 @@ ul {
   margin: 0;
   list-style-type: none;
   height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
 li {
@@ -384,7 +399,6 @@ li {
   border-radius: 6px;
   float: left;
   margin: 5px;
-  margin-bottom: 20px;
   padding: 5px;
   width: 70px;
   height: 100px;
@@ -397,7 +411,7 @@ li {
 
 <Sandpack>
 
-```js index.js
+```js src/index.js
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
@@ -412,7 +426,7 @@ root.render(
 );
 ```
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import StoryTray from './StoryTray.js';
 
@@ -437,7 +451,7 @@ export default function App() {
 }
 ```
 
-```js StoryTray.js active
+```js src/StoryTray.js active
 import { useState } from 'react';
 
 export default function StoryTray({ stories }) {
@@ -467,6 +481,9 @@ ul {
   margin: 0;
   list-style-type: none;
   height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
 li {
@@ -474,7 +491,6 @@ li {
   border-radius: 6px;
   float: left;
   margin: 5px;
-  margin-bottom: 20px;
   padding: 5px;
   width: 70px;
   height: 100px;
@@ -509,7 +525,7 @@ Consider this example that connects a component to a chat:
 
 <Sandpack>
 
-```js index.js
+```js src/index.js
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 
@@ -535,7 +551,7 @@ export default function ChatRoom() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 let connections = 0;
 
 export function createConnection(serverUrl, roomId) {
@@ -568,7 +584,7 @@ To make the issue more obvious, let's implement a feature. In the example below,
 
 <Sandpack>
 
-```js index.js
+```js src/index.js
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 
@@ -619,7 +635,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 let connections = 0;
 
 export function createConnection(serverUrl, roomId) {
@@ -662,7 +678,7 @@ Now that your Effect "cleans up" after itself and destroys the outdated connecti
 
 <Sandpack>
 
-```js index.js
+```js src/index.js
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
@@ -693,7 +709,7 @@ export default function ChatRoom() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 let connections = 0;
 
 export function createConnection(serverUrl, roomId) {
@@ -726,7 +742,7 @@ Strict Mode lets you notice such mistakes early in the process. When you fix you
 
 <Sandpack>
 
-```js index.js
+```js src/index.js
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
@@ -783,7 +799,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 let connections = 0;
 
 export function createConnection(serverUrl, roomId) {
@@ -817,14 +833,419 @@ Without Strict Mode, it was easy to miss that your Effect needed cleanup. By run
 [Read more about implementing Effect cleanup.](/learn/synchronizing-with-effects#how-to-handle-the-effect-firing-twice-in-development)
 
 ---
+### Fixing bugs found by re-running ref callbacks in development {/*fixing-bugs-found-by-re-running-ref-callbacks-in-development*/}
 
+Strict Mode can also help find bugs in [callbacks refs.](/learn/manipulating-the-dom-with-refs)
+
+Every callback `ref` has some setup code and may have some cleanup code. Normally, React calls setup when the element is *created* (is added to the DOM) and calls cleanup when the element is *removed* (is removed from the DOM).
+
+When Strict Mode is on, React will also run **one extra setup+cleanup cycle in development for every callback `ref`.** This may feel surprising, but it helps reveal subtle bugs that are hard to catch manually.
+
+Consider this example, which allows you to select an animal and then scroll to one of them. Notice when you switch from "Cats" to "Dogs", the console logs show that the number of animals in the list keeps growing, and the "Scroll to" buttons stop working:
+
+<Sandpack>
+
+```js src/index.js
+import { createRoot } from 'react-dom/client';
+import './styles.css';
+
+import App from './App';
+
+const root = createRoot(document.getElementById("root"));
+// ❌ Not using StrictMode.
+root.render(<App />);
+```
+
+```js src/App.js active
+import { useRef, useState } from "react";
+
+export default function CatFriends() {
+  const itemsRef = useRef([]);
+  const [catList, setCatList] = useState(setupCatList);
+  const [cat, setCat] = useState('neo');
+
+  function scrollToCat(index) {
+    const list = itemsRef.current;
+    const {node} = list[index];
+    node.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+  }
+
+  const cats = catList.filter(c => c.type === cat)
+
+  return (
+    <>
+      <nav>
+        <button onClick={() => setCat('neo')}>Neo</button>
+        <button onClick={() => setCat('millie')}>Millie</button>
+      </nav>
+      <hr />
+      <nav>
+        <span>Scroll to:</span>{cats.map((cat, index) => (
+          <button key={cat.src} onClick={() => scrollToCat(index)}>
+            {index}
+          </button>
+        ))}
+      </nav>
+      <div>
+        <ul>
+          {cats.map((cat) => (
+            <li
+              key={cat.src}
+              ref={(node) => {
+                const list = itemsRef.current;
+                const item = {cat: cat, node};
+                list.push(item);
+                console.log(`✅ Adding cat to the map. Total cats: ${list.length}`);
+                if (list.length > 10) {
+                  console.log('❌ Too many cats in the list!');
+                }
+                return () => {
+                  // 🚩 No cleanup, this is a bug!
+                }
+              }}
+            >
+              <img src={cat.src} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+}
+
+function setupCatList() {
+  const catList = [];
+  for (let i = 0; i < 10; i++) {
+    catList.push({type: 'neo', src: "https://placecats.com/neo/320/240?" + i});
+  }
+  for (let i = 0; i < 10; i++) {
+    catList.push({type: 'millie', src: "https://placecats.com/millie/320/240?" + i});
+  }
+
+  return catList;
+}
+
+```
+
+```css
+div {
+  width: 100%;
+  overflow: hidden;
+}
+
+nav {
+  text-align: center;
+}
+
+button {
+  margin: .25rem;
+}
+
+ul,
+li {
+  list-style: none;
+  white-space: nowrap;
+}
+
+li {
+  display: inline;
+  padding: 0.5rem;
+}
+```
+
+</Sandpack>
+
+
+**This is a production bug!** Since the ref callback doesn't remove animals from the list in the cleanup, the list of animals keeps growing. This is a memory leak that can cause performance problems in a real app, and breaks the behavior of the app.
+
+The issue is the ref callback doesn't cleanup after itself:
+
+```js {6-8}
+<li
+  ref={node => {
+    const list = itemsRef.current;
+    const item = {animal, node};
+    list.push(item);
+    return () => {
+      // 🚩 No cleanup, this is a bug!
+    }
+  }}
+</li>
+```
+
+Now let's wrap the original (buggy) code in `<StrictMode>`:
+
+<Sandpack>
+
+```js src/index.js
+import { createRoot } from 'react-dom/client';
+import {StrictMode} from 'react';
+import './styles.css';
+
+import App from './App';
+
+const root = createRoot(document.getElementById("root"));
+// ✅ Using StrictMode.
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+```
+
+```js src/App.js active
+import { useRef, useState } from "react";
+
+export default function CatFriends() {
+  const itemsRef = useRef([]);
+  const [catList, setCatList] = useState(setupCatList);
+  const [cat, setCat] = useState('neo');
+
+  function scrollToCat(index) {
+    const list = itemsRef.current;
+    const {node} = list[index];
+    node.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+  }
+
+  const cats = catList.filter(c => c.type === cat)
+
+  return (
+    <>
+      <nav>
+        <button onClick={() => setCat('neo')}>Neo</button>
+        <button onClick={() => setCat('millie')}>Millie</button>
+      </nav>
+      <hr />
+      <nav>
+        <span>Scroll to:</span>{cats.map((cat, index) => (
+          <button key={cat.src} onClick={() => scrollToCat(index)}>
+            {index}
+          </button>
+        ))}
+      </nav>
+      <div>
+        <ul>
+          {cats.map((cat) => (
+            <li
+              key={cat.src}
+              ref={(node) => {
+                const list = itemsRef.current;
+                const item = {cat: cat, node};
+                list.push(item);
+                console.log(`✅ Adding cat to the map. Total cats: ${list.length}`);
+                if (list.length > 10) {
+                  console.log('❌ Too many cats in the list!');
+                }
+                return () => {
+                  // 🚩 No cleanup, this is a bug!
+                }
+              }}
+            >
+              <img src={cat.src} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+}
+
+function setupCatList() {
+  const catList = [];
+  for (let i = 0; i < 10; i++) {
+    catList.push({type: 'neo', src: "https://placecats.com/neo/320/240?" + i});
+  }
+  for (let i = 0; i < 10; i++) {
+    catList.push({type: 'millie', src: "https://placecats.com/millie/320/240?" + i});
+  }
+
+  return catList;
+}
+
+```
+
+```css
+div {
+  width: 100%;
+  overflow: hidden;
+}
+
+nav {
+  text-align: center;
+}
+
+button {
+  margin: .25rem;
+}
+
+ul,
+li {
+  list-style: none;
+  white-space: nowrap;
+}
+
+li {
+  display: inline;
+  padding: 0.5rem;
+}
+```
+
+</Sandpack>
+
+**With Strict Mode, you immediately see that there is a problem**. Strict Mode runs an extra setup+cleanup cycle for every callback ref. This callback ref has no cleanup logic, so it adds refs but doesn't remove them. This is a hint that you're missing a cleanup function.
+
+Strict Mode lets you eagerly find mistakes in callback refs. When you fix your callback by adding a cleanup function in Strict Mode, you *also* fix many possible future production bugs like the "Scroll to" bug from before:
+
+<Sandpack>
+
+```js src/index.js
+import { createRoot } from 'react-dom/client';
+import {StrictMode} from 'react';
+import './styles.css';
+
+import App from './App';
+
+const root = createRoot(document.getElementById("root"));
+// ✅ Using StrictMode.
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+```
+
+```js src/App.js active
+import { useRef, useState } from "react";
+
+export default function CatFriends() {
+  const itemsRef = useRef([]);
+  const [catList, setCatList] = useState(setupCatList);
+  const [cat, setCat] = useState('neo');
+
+  function scrollToCat(index) {
+    const list = itemsRef.current;
+    const {node} = list[index];
+    node.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+  }
+
+  const cats = catList.filter(c => c.type === cat)
+
+  return (
+    <>
+      <nav>
+        <button onClick={() => setCat('neo')}>Neo</button>
+        <button onClick={() => setCat('millie')}>Millie</button>
+      </nav>
+      <hr />
+      <nav>
+        <span>Scroll to:</span>{cats.map((cat, index) => (
+          <button key={cat.src} onClick={() => scrollToCat(index)}>
+            {index}
+          </button>
+        ))}
+      </nav>
+      <div>
+        <ul>
+          {cats.map((cat) => (
+            <li
+              key={cat.src}
+              ref={(node) => {
+                const list = itemsRef.current;
+                const item = {cat: cat, node};
+                list.push(item);
+                console.log(`✅ Adding cat to the map. Total cats: ${list.length}`);
+                if (list.length > 10) {
+                  console.log('❌ Too many cats in the list!');
+                }
+                return () => {
+                  list.splice(list.indexOf(item), 1);
+                  console.log(`❌ Removing cat from the map. Total cats: ${itemsRef.current.length}`);
+                }
+              }}
+            >
+              <img src={cat.src} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+}
+
+function setupCatList() {
+  const catList = [];
+  for (let i = 0; i < 10; i++) {
+    catList.push({type: 'neo', src: "https://placecats.com/neo/320/240?" + i});
+  }
+  for (let i = 0; i < 10; i++) {
+    catList.push({type: 'millie', src: "https://placecats.com/millie/320/240?" + i});
+  }
+
+  return catList;
+}
+
+```
+
+```css
+div {
+  width: 100%;
+  overflow: hidden;
+}
+
+nav {
+  text-align: center;
+}
+
+button {
+  margin: .25rem;
+}
+
+ul,
+li {
+  list-style: none;
+  white-space: nowrap;
+}
+
+li {
+  display: inline;
+  padding: 0.5rem;
+}
+```
+
+</Sandpack>
+
+Now on inital mount in StrictMode, the ref callbacks are all setup, cleaned up, and setup again:
+
+```
+...
+✅ Adding animal to the map. Total animals: 10
+...
+❌ Removing animal from the map. Total animals: 0
+...
+✅ Adding animal to the map. Total animals: 10
+```
+
+**This is expected.** Strict Mode confirms that the ref callbacks are cleaned up correctly, so the size never grows above the expected amount. After the fix, there are no memory leaks, and all the features work as expected.
+
+Without Strict Mode, it was easy to miss the bug until you clicked around to app to notice broken features. Strict Mode made the bugs appear right away, before you push them to production.
+
+---
 ### Fixing deprecation warnings enabled by Strict Mode {/*fixing-deprecation-warnings-enabled-by-strict-mode*/}
 
 React warns if some component anywhere inside a `<StrictMode>` tree uses one of these deprecated APIs:
 
-* [`findDOMNode`](/reference/react-dom/findDOMNode). [See alternatives.](https://reactjs.org/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage)
-* `UNSAFE_` class lifecycle methods like [`UNSAFE_componentWillMount`](/reference/react/Component#unsafe_componentwillmount). [See alternatives.](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#migrating-from-legacy-lifecycles) 
-* Legacy context ([`childContextTypes`](/reference/react/Component#static-childcontexttypes), [`contextTypes`](/reference/react/Component#static-contexttypes), and [`getChildContext`](/reference/react/Component#getchildcontext)). [See alternatives.](/reference/react/createContext)
-* Legacy string refs ([`this.refs`](/reference/react/Component#refs)). [See alternatives.](https://reactjs.org/docs/strict-mode.html#warning-about-legacy-string-ref-api-usage)
+* `UNSAFE_` class lifecycle methods like [`UNSAFE_componentWillMount`](/reference/react/Component#unsafe_componentwillmount). [See alternatives.](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#migrating-from-legacy-lifecycles)
 
 These APIs are primarily used in older [class components](/reference/react/Component) so they rarely appear in modern apps.
