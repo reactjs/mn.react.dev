@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
@@ -5,7 +12,6 @@
 import {useEffect} from 'react';
 import {AppProps} from 'next/app';
 import {useRouter} from 'next/router';
-import {ga} from '../utils/analytics';
 
 import '@docsearch/css';
 import '../styles/algolia.css';
@@ -13,13 +19,13 @@ import '../styles/index.css';
 import '../styles/sandpack.css';
 
 if (typeof window !== 'undefined') {
-  if (process.env.NODE_ENV === 'production') {
-    ga('create', process.env.NEXT_PUBLIC_GA_TRACKING_ID, 'auto');
-    ga('send', 'pageview');
-  }
   const terminationEvent = 'onpagehide' in window ? 'pagehide' : 'unload';
   window.addEventListener(terminationEvent, function () {
-    ga('send', 'timing', 'JS Dependencies', 'unload');
+    // @ts-ignore
+    gtag('event', 'timing', {
+      event_label: 'JS Dependencies',
+      event: 'unload',
+    });
   });
 }
 
@@ -44,8 +50,10 @@ export default function MyApp({Component, pageProps}: AppProps) {
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       const cleanedUrl = url.split(/[\?\#]/)[0];
-      ga('set', 'page', cleanedUrl);
-      ga('send', 'pageview');
+      // @ts-ignore
+      gtag('event', 'pageview', {
+        event_label: cleanedUrl,
+      });
     };
     router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
