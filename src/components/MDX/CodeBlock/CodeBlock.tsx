@@ -1,13 +1,23 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
 
 import cn from 'classnames';
-import {highlightTree, HighlightStyle, tags} from '@codemirror/highlight';
+import {HighlightStyle} from '@codemirror/language';
+import {highlightTree} from '@lezer/highlight';
 import {javascript} from '@codemirror/lang-javascript';
 import {html} from '@codemirror/lang-html';
 import {css} from '@codemirror/lang-css';
 import rangeParser from 'parse-numeric-range';
+import {tags} from '@lezer/highlight';
+
 import {CustomTheme} from '../Sandpack/Themes';
 
 interface InlineHighlight {
@@ -52,7 +62,7 @@ const CodeBlock = function CodeBlock({
   let tokenStarts = new Map();
   let tokenEnds = new Map();
   const highlightTheme = getSyntaxHighlight(CustomTheme);
-  highlightTree(tree, highlightTheme.match, (from, to, className) => {
+  highlightTree(tree, highlightTheme, (from, to, className) => {
     tokenStarts.set(from, className);
     tokenEnds.set(to, className);
   });
@@ -286,7 +296,7 @@ function getSyntaxHighlight(theme: any): HighlightStyle {
 
 function getLineDecorators(
   code: string,
-  meta: string
+  meta?: string
 ): Array<{
   line: number;
   className: string;
@@ -306,7 +316,7 @@ function getLineDecorators(
 
 function getInlineDecorators(
   code: string,
-  meta: string
+  meta?: string
 ): Array<{
   step: number;
   line: number;
@@ -333,6 +343,7 @@ function getInlineDecorators(
             line.step === 3,
           'bg-green-40 border-green-40 text-green-60 dark:text-green-30':
             line.step === 4,
+          // TODO: Some codeblocks use up to 6 steps.
         }
       ),
     })

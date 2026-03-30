@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
@@ -7,9 +14,8 @@ import {
   useSandpack,
   useActiveCode,
   SandpackCodeEditor,
-  // SandpackReactDevTools,
   SandpackLayout,
-} from '@codesandbox/sandpack-react';
+} from '@codesandbox/sandpack-react/unstyled';
 import cn from 'classnames';
 
 import {IconChevron} from 'components/Icon/IconChevron';
@@ -19,15 +25,11 @@ import {Preview} from './Preview';
 import {useSandpackLint} from './useSandpackLint';
 
 export const CustomPreset = memo(function CustomPreset({
-  showDevTools,
-  onDevToolsLoad,
-  devToolsLoaded,
   providedFiles,
+  showOpenInCodeSandbox = true,
 }: {
-  showDevTools: boolean;
-  devToolsLoaded: boolean;
-  onDevToolsLoad: () => void;
   providedFiles: Array<string>;
+  showOpenInCodeSandbox?: boolean;
 }) {
   const {lintErrors, lintExtensions} = useSandpackLint();
   const {sandpack} = useSandpack();
@@ -35,38 +37,34 @@ export const CustomPreset = memo(function CustomPreset({
   const {activeFile} = sandpack;
   const lineCountRef = useRef<{[key: string]: number}>({});
   if (!lineCountRef.current[activeFile]) {
+    // eslint-disable-next-line react-compiler/react-compiler
     lineCountRef.current[activeFile] = code.split('\n').length;
   }
   const lineCount = lineCountRef.current[activeFile];
   const isExpandable = lineCount > 16;
   return (
     <SandboxShell
-      showDevTools={showDevTools}
-      onDevToolsLoad={onDevToolsLoad}
-      devToolsLoaded={devToolsLoaded}
       providedFiles={providedFiles}
       lintErrors={lintErrors}
       lintExtensions={lintExtensions}
       isExpandable={isExpandable}
+      showOpenInCodeSandbox={showOpenInCodeSandbox}
     />
   );
 });
 
 const SandboxShell = memo(function SandboxShell({
-  showDevTools,
-  devToolsLoaded,
   providedFiles,
   lintErrors,
   lintExtensions,
   isExpandable,
+  showOpenInCodeSandbox,
 }: {
-  showDevTools: boolean;
-  devToolsLoaded: boolean;
-  onDevToolsLoad: () => void;
   providedFiles: Array<string>;
   lintErrors: Array<any>;
   lintExtensions: Array<any>;
   isExpandable: boolean;
+  showOpenInCodeSandbox: boolean;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -78,10 +76,12 @@ const SandboxShell = memo(function SandboxShell({
         style={{
           contain: 'content',
         }}>
-        <NavigationBar providedFiles={providedFiles} />
+        <NavigationBar
+          providedFiles={providedFiles}
+          showOpenInCodeSandbox={showOpenInCodeSandbox}
+        />
         <SandpackLayout
           className={cn(
-            showDevTools && devToolsLoaded && 'sp-layout-devtools',
             !(isExpandable || isExpanded) && 'rounded-b-lg overflow-hidden',
             isExpanded && 'sp-layout-expanded'
           )}>
@@ -123,11 +123,6 @@ const SandboxShell = memo(function SandboxShell({
             </button>
           )}
         </SandpackLayout>
-
-        {/* {showDevTools && (
-          // @ts-ignore TODO(@danilowoz): support devtools
-          <SandpackReactDevTools onLoadModule={onDevToolsLoad} />
-        )} */}
       </div>
     </>
   );
