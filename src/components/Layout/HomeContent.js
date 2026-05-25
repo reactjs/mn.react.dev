@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
@@ -26,6 +33,8 @@ import Link from 'components/MDX/Link';
 import CodeBlock from 'components/MDX/CodeBlock';
 import {ExternalLink} from 'components/ExternalLink';
 import sidebarBlog from '../../sidebarBlog.json';
+import * as React from 'react';
+import Image from 'next/image';
 
 function Section({children, background = null}) {
   return (
@@ -115,12 +124,22 @@ export function HomeContent() {
     <>
       <div className="ps-0">
         <div className="mx-5 mt-12 lg:mt-24 mb-20 lg:mb-32 flex flex-col justify-center">
+          <div className="uwu-visible flex justify-center">
+            <Image
+              alt="logo by @sawaratsuki1004"
+              title="logo by @sawaratsuki1004"
+              loading="eager"
+              width={313}
+              height={160}
+              src="/images/uwu.png"
+            />
+          </div>
           <Logo
             className={cn(
-              'mt-4 mb-3 text-link dark:text-link-dark w-24 lg:w-28 self-center text-sm me-0 flex origin-center transition-all ease-in-out'
+              'uwu-hidden mt-4 mb-3 text-brand dark:text-brand-dark w-24 lg:w-28 self-center text-sm me-0 flex origin-center transition-all ease-in-out'
             )}
           />
-          <h1 className="text-5xl font-display lg:text-6xl self-center flex font-semibold leading-snug text-primary dark:text-primary-dark">
+          <h1 className="uwu-hidden text-5xl font-display lg:text-6xl self-center flex font-semibold leading-snug text-primary dark:text-primary-dark">
             React
           </h1>
           <p className="text-4xl font-display max-w-lg md:max-w-full py-1 text-center text-secondary dark:text-primary-dark leading-snug self-center">
@@ -227,12 +246,20 @@ export function HomeContent() {
               ашиглаарай
             </Header>
             <Para>
+<<<<<<< HEAD
               React бол сан. Компонентуудыг хооронд нь хольж найруулах боломж
               олгох боловч, өгөгдөл татах, замчлал хэрхэн хийх зэрэг бүхэлдээ
               React апп бүтээх бол бид таньд дараах full-stack React
               фреймворкуудыг санал болгож байна{' '}
               <Link href="https://nextjs.org">Next.js</Link> эсвэл{' '}
               <Link href="https://remix.run">Remix</Link>.
+=======
+              React is a library. It lets you put components together, but it
+              doesn’t prescribe how to do routing and data fetching. To build an
+              entire app with React, we recommend a full-stack React framework
+              like <Link href="https://nextjs.org">Next.js</Link> or{' '}
+              <Link href="https://reactrouter.com">React Router</Link>.
+>>>>>>> 47e64bf7ad81aab8bacfa791a37816ee869135eb
             </Para>
           </Center>
           <FullBleed>
@@ -250,8 +277,13 @@ export function HomeContent() {
               <CTA
                 color="gray"
                 icon="framework"
+<<<<<<< HEAD
                 href="/learn/start-a-new-react-project">
                 Фреймворкын талаар
+=======
+                href="/learn/creating-a-react-app">
+                Get started with a framework
+>>>>>>> 47e64bf7ad81aab8bacfa791a37816ee869135eb
               </CTA>
             </div>
           </Center>
@@ -487,7 +519,15 @@ export function HomeContent() {
           </div>
 
           <div className="mt-20 px-5 lg:px-0 mb-6 max-w-4xl text-center text-opacity-80">
-            <Logo className="text-link dark:text-link-dark w-24 lg:w-28 mb-10 lg:mb-8 mt-12 h-auto mx-auto self-start" />
+            <div className="uwu-visible flex justify-center">
+              <img
+                alt="logo by @sawaratsuki1004"
+                title="logo by @sawaratsuki1004"
+                className="uwu-visible mb-10 lg:mb-8 h-24 lg:h-32"
+                src="/images/uwu.png"
+              />
+            </div>
+            <Logo className="uwu-hidden text-brand dark:text-brand-dark w-24 lg:w-28 mb-10 lg:mb-8 mt-12 h-auto mx-auto self-start" />
             <Header>
               React-ын нэгдэлд <br className="hidden lg:inline" />
               тавтай морилно уу
@@ -733,9 +773,7 @@ function CommunityGallery() {
   }, []);
 
   return (
-    <div
-      ref={ref}
-      className="relative flex overflow-x-hidden overflow-y-visible w-auto">
+    <div ref={ref} className="relative flex overflow-x-clip w-auto">
       <div
         className="w-full py-12 lg:py-20 whitespace-nowrap flex flex-row animate-marquee lg:animate-large-marquee"
         style={{
@@ -762,21 +800,26 @@ const CommunityImages = memo(function CommunityImages({isLazy}) {
         <div
           key={i}
           className={cn(
-            `group flex justify-center px-5 min-w-[50%] lg:min-w-[25%] rounded-2xl relative`
+            `group flex justify-center px-5 min-w-[50%] lg:min-w-[25%] rounded-2xl`
           )}>
           <div
             className={cn(
-              'h-auto relative rounded-2xl overflow-hidden before:-skew-x-12 before:absolute before:inset-0 before:-translate-x-full group-hover:before:animate-[shimmer_1s_forwards] before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent transition-all ease-in-out duration-300',
+              'h-auto rounded-2xl before:rounded-2xl before:absolute before:pointer-events-none before:inset-0 before:transition-opacity before:-z-1 before:shadow-lg lg:before:shadow-2xl before:opacity-0 before:group-hover:opacity-100  transition-transform ease-in-out duration-300',
               i % 2 === 0
-                ? 'rotate-2 group-hover:rotate-[-1deg] group-hover:scale-110 group-hover:shadow-lg lg:group-hover:shadow-2xl'
-                : 'group-hover:rotate-1 group-hover:scale-110 group-hover:shadow-lg lg:group-hover:shadow-2xl rotate-[-2deg]'
+                ? 'rotate-2 group-hover:rotate-[-1deg] group-hover:scale-110'
+                : 'group-hover:rotate-1 group-hover:scale-110 rotate-[-2deg]'
             )}>
-            <img
-              loading={isLazy ? 'lazy' : 'eager'}
-              src={src}
-              alt={alt}
-              className="aspect-[4/3] h-full w-full flex object-cover rounded-2xl bg-gray-10 dark:bg-gray-80"
-            />
+            <div
+              className={cn(
+                'overflow-clip relative before:absolute before:inset-0 before:pointer-events-none before:-translate-x-full group-hover:before:animate-[shimmer_1s_forwards] before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent transition-transform ease-in-out duration-300'
+              )}>
+              <img
+                loading={isLazy ? 'lazy' : 'eager'}
+                src={src}
+                alt={alt}
+                className="aspect-[4/3] h-full w-full flex object-cover rounded-2xl bg-gray-10 dark:bg-gray-80"
+              />
+            </div>
           </div>
         </div>
       ))}
@@ -837,7 +880,8 @@ function ExampleLayout({
           </div>
           <div
             ref={contentRef}
-            className="relative mt-0 lg:-my-20 w-full p-2.5 xs:p-5 lg:p-10 flex grow justify-center">
+            className="relative mt-0 lg:-my-20 w-full p-2.5 xs:p-5 lg:p-10 flex grow justify-center"
+            dir="ltr">
             {right}
             <div
               className={cn(
@@ -1149,7 +1193,7 @@ async function Talks({ confId }) {
         </CodeBlock>
       }
       right={
-        <NavContext.Provider value={{slug, navigate}}>
+        <NavContext value={{slug, navigate}}>
           <BrowserChrome
             domain="example.com"
             path={'confs/' + slug}
@@ -1169,7 +1213,7 @@ async function Talks({ confId }) {
               </Suspense>
             </ExamplePanel>
           </BrowserChrome>
-        </NavContext.Provider>
+        </NavContext>
       }
     />
   );
@@ -1497,7 +1541,7 @@ function ConferenceLayout({conf, children}) {
               navigate(e.target.value);
             });
           }}
-          className="appearance-none pe-8 bg-transparent text-primary-dark text-2xl font-bold mb-0.5"
+          className="appearance-none pe-8 ps-2 bg-transparent text-primary-dark text-2xl font-bold mb-0.5"
           style={{
             backgroundSize: '4px 4px, 4px 4px',
             backgroundRepeat: 'no-repeat',
@@ -1506,8 +1550,16 @@ function ConferenceLayout({conf, children}) {
             backgroundImage:
               'linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%)',
           }}>
-          <option value="react-conf-2021">React Conf 2021</option>
-          <option value="react-conf-2019">React Conf 2019</option>
+          <option
+            className="bg-wash dark:bg-wash-dark text-primary dark:text-primary-dark"
+            value="react-conf-2021">
+            React Conf 2021
+          </option>
+          <option
+            className="bg-wash dark:bg-wash-dark text-primary dark:text-primary-dark"
+            value="react-conf-2019">
+            React Conf 2019
+          </option>
         </select>
       </Cover>
       <div className="px-4 pb-4" key={conf.id}>
@@ -1610,7 +1662,7 @@ function Thumbnail({video}) {
           </div>
           <div className="mt-1">
             <span className="inline-flex text-xs font-normal items-center text-primary-dark py-1 whitespace-nowrap outline-link px-1.5 rounded-lg">
-              <Logo className="text-xs me-1 w-4 h-4 text-link-dark" />
+              <Logo className="text-xs me-1 w-4 h-4 text-brand text-brand-dark" />
               React Conf
             </span>
           </div>
@@ -1652,8 +1704,8 @@ function LikeButton({video}) {
     <button
       data-hover="LikeButton"
       className={cn(
-        'outline-none focus:bg-red-50/5 focus:text-red-50 relative flex items-center justify-center w-10 h-10 cursor-pointer rounded-full text-tertiary hover:bg-card active:scale-95 active:bg-red-50/5 active:text-red-50',
-        isLiked && 'text-red-50'
+        'outline-none focus:bg-red-50/5 focus:text-red-50 relative flex items-center justify-center w-10 h-10 cursor-pointer rounded-full hover:bg-card active:scale-95 active:bg-red-50/5 active:text-red-50',
+        isLiked ? 'text-red-50' : 'text-tertiary'
       )}
       aria-label={isLiked ? 'Unsave' : 'Save'}
       onClick={() => {
