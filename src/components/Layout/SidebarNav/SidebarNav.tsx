@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
@@ -5,7 +12,6 @@
 import {Suspense} from 'react';
 import * as React from 'react';
 import cn from 'classnames';
-import {Feedback} from '../Feedback';
 import {SidebarRouteTree} from '../Sidebar/SidebarRouteTree';
 import type {RouteItem} from '../getRouteMeta';
 
@@ -40,12 +46,12 @@ export default function SidebarNav({
         }}>
         <aside
           className={cn(
-            `lg:grow flex-col w-full pb-8 lg:pb-0 lg:max-w-xs z-10 hidden lg:block`
+            `lg:grow flex-col w-full pb-8 lg:pb-0 lg:max-w-custom-xs z-10 hidden lg:block`
           )}>
           <nav
             role="navigation"
             style={{'--bg-opacity': '.2'} as React.CSSProperties} // Need to cast here because CSS vars aren't considered valid in TS types (cuz they could be anything)
-            className="w-full lg:h-auto grow pe-0 lg:pe-5 pt-6 lg:pb-16 md:pt-4 lg:pt-4 scrolling-touch scrolling-gpu">
+            className="w-full pt-6 scrolling-touch lg:h-auto grow pe-0 lg:pe-5 lg:pb-16 md:pt-4 lg:pt-4 scrolling-gpu">
             {/* No fallback UI so need to be careful not to suspend directly inside. */}
             <Suspense fallback={null}>
               <SidebarRouteTree
@@ -56,9 +62,6 @@ export default function SidebarNav({
             </Suspense>
             <div className="h-20" />
           </nav>
-          <div className="fixed bottom-0 hidden lg:block">
-            <Feedback />
-          </div>
         </aside>
       </div>
     </div>

@@ -40,7 +40,7 @@ const clonedElement = cloneElement(
   'Goodbye'
 );
 
-console.log(clonedElement); // <Row title="Cabbage">Goodbye</Row>
+console.log(clonedElement); // <Row title="Cabbage" isHighlighted={true}>Goodbye</Row>
 ```
 
 [See more examples below.](#usage)
@@ -103,7 +103,7 @@ export default function List({ children }) {
     <div className="List">
       {Children.map(children, (child, index) =>
         cloneElement(child, {
-          isHighlighted: index === selectedIndex 
+          isHighlighted: index === selectedIndex
         })
       )}
 ```
@@ -124,15 +124,15 @@ By cloning its children, the `List` can pass extra information to every `Row` in
 <List>
   <Row
     title="Cabbage"
-    isHighlighted={true} 
+    isHighlighted={true}
   />
   <Row
     title="Garlic"
-    isHighlighted={false} 
+    isHighlighted={false}
   />
   <Row
     title="Apple"
-    isHighlighted={false} 
+    isHighlighted={false}
   />
 </List>
 ```
@@ -152,7 +152,7 @@ export default function App() {
       {products.map(product =>
         <Row
           key={product.id}
-          title={product.title} 
+          title={product.title}
         />
       )}
     </List>
@@ -160,7 +160,7 @@ export default function App() {
 }
 ```
 
-```js List.js active
+```js src/List.js active
 import { Children, cloneElement, useState } from 'react';
 
 export default function List({ children }) {
@@ -169,7 +169,7 @@ export default function List({ children }) {
     <div className="List">
       {Children.map(children, (child, index) =>
         cloneElement(child, {
-          isHighlighted: index === selectedIndex 
+          isHighlighted: index === selectedIndex
         })
       )}
       <hr />
@@ -185,7 +185,7 @@ export default function List({ children }) {
 }
 ```
 
-```js Row.js
+```js src/Row.js
 export default function Row({ title, isHighlighted }) {
   return (
     <div className={[
@@ -198,7 +198,7 @@ export default function Row({ title, isHighlighted }) {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const products = [
   { title: 'Cabbage', id: 1 },
   { title: 'Garlic', id: 2 },
@@ -246,7 +246,7 @@ Cloning children makes it hard to tell how the data flows through your app. Try 
 
 ### Passing data with a render prop {/*passing-data-with-a-render-prop*/}
 
-Instead of using `cloneElement`, consider accepting a *render prop* like `renderItem`. Here, `List` receives `renderItem` as a prop. `List` calls `renderItem` for every item and passes `isHighlighted` as an argument: 
+Instead of using `cloneElement`, consider accepting a *render prop* like `renderItem`. Here, `List` receives `renderItem` as a prop. `List` calls `renderItem` for every item and passes `isHighlighted` as an argument:
 
 ```js {1,7}
 export default function List({ items, renderItem }) {
@@ -280,15 +280,15 @@ The end result is the same as with `cloneElement`:
 <List>
   <Row
     title="Cabbage"
-    isHighlighted={true} 
+    isHighlighted={true}
   />
   <Row
     title="Garlic"
-    isHighlighted={false} 
+    isHighlighted={false}
   />
   <Row
     title="Apple"
-    isHighlighted={false} 
+    isHighlighted={false}
   />
 </List>
 ```
@@ -318,7 +318,7 @@ export default function App() {
 }
 ```
 
-```js List.js active
+```js src/List.js active
 import { useState } from 'react';
 
 export default function List({ items, renderItem }) {
@@ -342,7 +342,7 @@ export default function List({ items, renderItem }) {
 }
 ```
 
-```js Row.js
+```js src/Row.js
 export default function Row({ title, isHighlighted }) {
   return (
     <div className={[
@@ -355,7 +355,7 @@ export default function Row({ title, isHighlighted }) {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const products = [
   { title: 'Cabbage', id: 1 },
   { title: 'Garlic', id: 2 },
@@ -414,16 +414,16 @@ export default function List({ items, renderItem }) {
       {items.map((item, index) => {
         const isHighlighted = index === selectedIndex;
         return (
-          <HighlightContext.Provider key={item.id} value={isHighlighted}>
+          <HighlightContext key={item.id} value={isHighlighted}>
             {renderItem(item)}
-          </HighlightContext.Provider>
+          </HighlightContext>
         );
       })}
 ```
 
 With this approach, `Row` does not need to receive an `isHighlighted` prop at all. Instead, it reads the context:
 
-```js Row.js {2}
+```js src/Row.js {2}
 export default function Row({ title }) {
   const isHighlighted = useContext(HighlightContext);
   // ...
@@ -461,7 +461,7 @@ export default function App() {
 }
 ```
 
-```js List.js active
+```js src/List.js active
 import { useState } from 'react';
 import { HighlightContext } from './HighlightContext.js';
 
@@ -472,12 +472,12 @@ export default function List({ items, renderItem }) {
       {items.map((item, index) => {
         const isHighlighted = index === selectedIndex;
         return (
-          <HighlightContext.Provider
+          <HighlightContext
             key={item.id}
             value={isHighlighted}
           >
             {renderItem(item)}
-          </HighlightContext.Provider>
+          </HighlightContext>
         );
       })}
       <hr />
@@ -493,7 +493,7 @@ export default function List({ items, renderItem }) {
 }
 ```
 
-```js Row.js
+```js src/Row.js
 import { useContext } from 'react';
 import { HighlightContext } from './HighlightContext.js';
 
@@ -510,13 +510,13 @@ export default function Row({ title }) {
 }
 ```
 
-```js HighlightContext.js
+```js src/HighlightContext.js
 import { createContext } from 'react';
 
 export const HighlightContext = createContext(false);
 ```
 
-```js data.js
+```js src/data.js
 export const products = [
   { title: 'Cabbage', id: 1 },
   { title: 'Garlic', id: 2 },
@@ -627,7 +627,7 @@ export default function App() {
 }
 ```
 
-```js useList.js
+```js src/useList.js
 import { useState } from 'react';
 
 export default function useList(items) {
@@ -644,7 +644,7 @@ export default function useList(items) {
 }
 ```
 
-```js Row.js
+```js src/Row.js
 export default function Row({ title, isHighlighted }) {
   return (
     <div className={[
@@ -657,7 +657,7 @@ export default function Row({ title, isHighlighted }) {
 }
 ```
 
-```js data.js
+```js src/data.js
 export const products = [
   { title: 'Cabbage', id: 1 },
   { title: 'Garlic', id: 2 },

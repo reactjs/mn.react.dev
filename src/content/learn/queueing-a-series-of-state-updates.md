@@ -177,7 +177,7 @@ During the next render, React goes through the state queue:
 | "replace with `5`" | `0` (unused) | `5` |
 | `n => n + 1` | `5` | `5 + 1 = 6` |
 
-React stores `6` as the final result and returns it from `useState`. 
+React stores `6` as the final result and returns it from `useState`.
 
 <Note>
 
@@ -305,7 +305,7 @@ export default function RequestTracker() {
         Completed: {completed}
       </h3>
       <button onClick={handleClick}>
-        Buy     
+        Buy
       </button>
     </>
   );
@@ -349,7 +349,7 @@ export default function RequestTracker() {
         Completed: {completed}
       </h3>
       <button onClick={handleClick}>
-        Buy     
+        Buy
       </button>
     </>
   );
@@ -404,7 +404,7 @@ Fill out the missing lines!
 
 <Sandpack>
 
-```js processQueue.js active
+```js src/processQueue.js active
 export function getFinalState(baseState, queue) {
   let finalState = baseState;
 
@@ -414,7 +414,7 @@ export function getFinalState(baseState, queue) {
 }
 ```
 
-```js App.js
+```js src/App.js
 import { getFinalState } from './processQueue.js';
 
 function increment(n) {
@@ -499,7 +499,7 @@ This is the exact algorithm described on this page that React uses to calculate 
 
 <Sandpack>
 
-```js processQueue.js active
+```js src/processQueue.js active
 export function getFinalState(baseState, queue) {
   let finalState = baseState;
 
@@ -517,7 +517,7 @@ export function getFinalState(baseState, queue) {
 }
 ```
 
-```js App.js
+```js src/App.js
 import { getFinalState } from './processQueue.js';
 
 function increment(n) {
