@@ -42,7 +42,7 @@ When your app starts, you need to trigger the initial render. Frameworks and san
 
 <Sandpack>
 
-```js index.js active
+```js src/index.js active
 import Image from './Image.js';
 import { createRoot } from 'react-dom/client';
 
@@ -50,11 +50,11 @@ const root = createRoot(document.getElementById('root'))
 root.render(<Image />);
 ```
 
-```js Image.js
+```js src/Image.js
 export default function Image() {
   return (
     <img
-      src="https://i.imgur.com/ZF6s192.jpg"
+      src="https://react.dev/images/docs/scientists/ZF6s192.jpg"
       alt="'Floralis Genérica' by Eduardo Catalano: a gigantic metallic flower sculpture with reflective petals"
     />
   );
@@ -70,7 +70,7 @@ Try commenting out the `root.render()` call and see the component disappear!
 Once the component has been initially rendered, you can trigger further renders by updating its state with the [`set` function.](/reference/react/useState#setstate) Updating your component's state automatically queues a render. (You can imagine these as a restaurant guest ordering tea, dessert, and all sorts of things after putting in their first order, depending on the state of their thirst or hunger.)
 
 <IllustrationBlock sequential>
-  <Illustration caption="State update..." alt="React as a server in a restaurant, serving a Card UI to the user, represented as a patron with a cursor for their head. They patron expresses they want a pink card, not a black one!" src="/images/docs/illustrations/i_rerender1.png" />
+  <Illustration caption="State update..." alt="React as a server in a restaurant, serving a Card UI to the user, represented as a patron with a cursor for their head. The patron expresses they want a pink card, not a black one!" src="/images/docs/illustrations/i_rerender1.png" />
   <Illustration caption="...triggers..." alt="React returns to the Component Kitchen and tells the Card Chef they need a pink Card." src="/images/docs/illustrations/i_rerender2.png" />
   <Illustration caption="...render!" alt="The Card Chef gives React the pink Card." src="/images/docs/illustrations/i_rerender3.png" />
 </IllustrationBlock>
@@ -84,11 +84,11 @@ After you trigger a render, React calls your components to figure out what to di
 
 This process is recursive: if the updated component returns some other component, React will render _that_ component next, and if that component also returns something, it will render _that_ component next, and so on. The process will continue until there are no more nested components and React knows exactly what should be displayed on screen.
 
-In the following example, React will call `Gallery()` and  `Image()` several times:
+In the following example, React will call `Gallery()` and `Image()` several times:
 
 <Sandpack>
 
-```js Gallery.js active
+```js src/Gallery.js active
 export default function Gallery() {
   return (
     <section>
@@ -103,14 +103,14 @@ export default function Gallery() {
 function Image() {
   return (
     <img
-      src="https://i.imgur.com/ZF6s192.jpg"
+      src="https://react.dev/images/docs/scientists/ZF6s192.jpg"
       alt="'Floralis Genérica' by Eduardo Catalano: a gigantic metallic flower sculpture with reflective petals"
     />
   );
 }
 ```
 
-```js index.js
+```js src/index.js
 import Gallery from './Gallery.js';
 import { createRoot } from 'react-dom/client';
 
@@ -124,7 +124,7 @@ img { margin: 0 10px 10px 0; }
 
 </Sandpack>
 
-* **During the initial render,** React will [create the DOM nodes](https://developer.mozilla.org/docs/Web/API/Document/createElement) for `<section>`, `<h1>`, and three `<img>` tags. 
+* **During the initial render,** React will [create the DOM nodes](https://developer.mozilla.org/docs/Web/API/Document/createElement) for `<section>`, `<h1>`, and three `<img>` tags.
 * **During a re-render,** React will calculate which of their properties, if any, have changed since the previous render. It won't do anything with that information until the next step, the commit phase.
 
 <Pitfall>
@@ -148,16 +148,16 @@ The default behavior of rendering all components nested within the updated compo
 
 ## Step 3: React commits changes to the DOM {/*step-3-react-commits-changes-to-the-dom*/}
 
-After rendering (calling) your components, React will modify the DOM. 
+After rendering (calling) your components, React will modify the DOM.
 
-* **For the initial render,** React will use the [`appendChild()`](https://developer.mozilla.org/docs/Web/API/Node/appendChild) DOM API to put all the DOM nodes it has created on screen. 
+* **For the initial render,** React will use the [`appendChild()`](https://developer.mozilla.org/docs/Web/API/Node/appendChild) DOM API to put all the DOM nodes it has created on screen.
 * **For re-renders,** React will apply the minimal necessary operations (calculated while rendering!) to make the DOM match the latest rendering output.
 
 **React only changes the DOM nodes if there's a difference between renders.** For example, here is a component that re-renders with different props passed from its parent every second. Notice how you can add some text into the `<input>`, updating its `value`, but the text doesn't disappear when the component re-renders:
 
 <Sandpack>
 
-```js Clock.js active
+```js src/Clock.js active
 export default function Clock({ time }) {
   return (
     <>
@@ -168,7 +168,7 @@ export default function Clock({ time }) {
 }
 ```
 
-```js App.js hidden
+```js src/App.js hidden
 import { useState, useEffect } from 'react';
 import Clock from './Clock.js';
 
