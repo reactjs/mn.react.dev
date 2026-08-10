@@ -31,7 +31,11 @@ React нэгдлийн хүмүүст түгээмэл ашиглагддаг б
 
 ### Linting {/*linting*/} 
 
+<<<<<<< HEAD
 Код linter-үүд нь таныг код бичиж байх үед асуудлыг олж, эрт засахад тусалдаг. JavaScript-д зориулсан нээлттэй эх бүхий [ESLint](https://eslint.org/) бол хамгийн түгээмэл тархсан code linter юм.
+=======
+Code linters find problems in your code as you write, helping you fix them early. [ESLint](https://eslint.org/) is a popular, open source linter for JavaScript.
+>>>>>>> c7d6b700038c63d1aaf2c649af1aefe01ebbacac
 
 * [React-д зориулсан зохистой тохиргоог ESLint-д суулгах нь](https://www.npmjs.com/package/eslint-config-react-app) ([Node суулгасан](https://nodejs.org/en/download/current/) эсэхээ шалгаарай!)
 * [VSCode-ын албан ёсны extension-ыг ESLint-тэй холбох нь](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
@@ -40,7 +44,11 @@ React нэгдлийн хүмүүст түгээмэл ашиглагддаг б
 
 ### Код хэвжүүлэх (Formatting) {/*formatting*/} 
 
+<<<<<<< HEAD
 Бусад оролцогчидтой кодоо хуваалцах үед тулгардаг хамгийн түгээмэл асуудал бол [tabs уу эсвэл spaces үү](https://www.google.com/search?q=tabs+vs+spaces) гэсэн хэлэлцүүлэг! Азаар энэ асуудлыг шийдэгч бол [Prettier](https://prettier.io/) бөгөөд урьдчилсан бэлдсэн дүрэм, тохиргоогоор таны кодыг хэвжүүлэх болно. Prettier-ийг ажиллуулахад л таны бүх tab-ууд space рүү хөрвөгдөж, мөн мөрийн доголууд, хаалтууд бүгд тохиргооны дагуу өөрчлөгдөнө. Хамгийн оновчтой тохиргоо бол та файлаа хадгалахад Prettier ажиллаад шаардлагатай засваруудыг хийдэг байх юм.
+=======
+The last thing you want to do when sharing your code with another contributor is get into a discussion about [tabs vs spaces](https://www.google.com/search?q=tabs+vs+spaces)! Fortunately, [Prettier](https://prettier.io/) will clean up your code by reformatting it to conform to preset, configurable rules. Run Prettier, and all your tabs will be converted to spaces—and your indentation, quotes, etc will also all be changed to conform to the configuration. In the ideal setup, Prettier will run when you save your file, quickly making these edits for you.
+>>>>>>> c7d6b700038c63d1aaf2c649af1aefe01ebbacac
 
 Та [Prettier-д зориулсан нэмэлт суулгацыг VSCode дээр](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) доорх дарааллын дагуу суулгаж болно. 
 
