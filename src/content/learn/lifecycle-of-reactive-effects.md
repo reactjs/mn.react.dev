@@ -251,7 +251,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -293,7 +293,7 @@ You might be wondering how React knew that your Effect needed to re-synchronize 
 ```js {1,3,8}
 function ChatRoom({ roomId }) { // The roomId prop may change over time
   useEffect(() => {
-    const connection = createConnection(serverUrl, roomId); // This Effect reads roomId 
+    const connection = createConnection(serverUrl, roomId); // This Effect reads roomId
     connection.connect();
     return () => {
       connection.disconnect();
@@ -447,7 +447,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -527,7 +527,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -646,7 +646,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -837,7 +837,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -912,7 +912,7 @@ export default function App() {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createConnection(serverUrl, roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -969,7 +969,7 @@ export default function App() {
       <label>
         <input type="checkbox"
           checked={canMove}
-          onChange={e => setCanMove(e.target.checked)} 
+          onChange={e => setCanMove(e.target.checked)}
         />
         The dot is allowed to move
       </label>
@@ -1027,7 +1027,7 @@ export default function App() {
       <label>
         <input type="checkbox"
           checked={canMove}
-          onChange={e => setCanMove(e.target.checked)} 
+          onChange={e => setCanMove(e.target.checked)}
         />
         The dot is allowed to move
       </label>
@@ -1083,7 +1083,7 @@ export default function App() {
       <label>
         <input type="checkbox"
           checked={canMove}
-          onChange={e => setCanMove(e.target.checked)} 
+          onChange={e => setCanMove(e.target.checked)}
         />
         The dot is allowed to move
       </label>
@@ -1131,7 +1131,7 @@ If you see a linter rule being suppressed, remove the suppression! That's where 
 
 <Sandpack>
 
-```js
+```js {expectedErrors: {'react-compiler': [16]}}
 import { useState, useEffect } from 'react';
 
 export default function App() {
@@ -1155,7 +1155,7 @@ export default function App() {
       <label>
         <input type="checkbox"
           checked={canMove}
-          onChange={e => setCanMove(e.target.checked)} 
+          onChange={e => setCanMove(e.target.checked)}
         />
         The dot is allowed to move
       </label>
@@ -1220,7 +1220,7 @@ export default function App() {
       <label>
         <input type="checkbox"
           checked={canMove}
-          onChange={e => setCanMove(e.target.checked)} 
+          onChange={e => setCanMove(e.target.checked)}
         />
         The dot is allowed to move
       </label>
@@ -1279,7 +1279,7 @@ export default function App() {
       <label>
         <input type="checkbox"
           checked={canMove}
-          onChange={e => setCanMove(e.target.checked)} 
+          onChange={e => setCanMove(e.target.checked)}
         />
         The dot is allowed to move
       </label>
@@ -1329,7 +1329,7 @@ Suppressing the linter is always suspicious. Could this be a bug?
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 import {
@@ -1374,7 +1374,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js {expectedErrors: {'react-compiler': [8]}} src/ChatRoom.js active
 import { useState, useEffect } from 'react';
 
 export default function ChatRoom({ roomId, createConnection }) {
@@ -1389,7 +1389,7 @@ export default function ChatRoom({ roomId, createConnection }) {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createEncryptedConnection(roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -1427,7 +1427,7 @@ If you remove the linter suppression, you will see a lint error. The problem is 
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 import {
@@ -1472,7 +1472,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js src/ChatRoom.js active
 import { useState, useEffect } from 'react';
 
 export default function ChatRoom({ roomId, createConnection }) {
@@ -1486,7 +1486,7 @@ export default function ChatRoom({ roomId, createConnection }) {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createEncryptedConnection(roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -1522,7 +1522,7 @@ It is correct that `createConnection` is a dependency. However, this code is a b
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ChatRoom from './ChatRoom.js';
 
@@ -1560,7 +1560,7 @@ export default function App() {
 }
 ```
 
-```js ChatRoom.js active
+```js src/ChatRoom.js active
 import { useState, useEffect } from 'react';
 import {
   createEncryptedConnection,
@@ -1581,7 +1581,7 @@ export default function ChatRoom({ roomId, isEncrypted }) {
 }
 ```
 
-```js chat.js
+```js src/chat.js
 export function createEncryptedConnection(roomId) {
   // A real implementation would actually connect to the server
   return {
@@ -1633,7 +1633,7 @@ If you have two independent synchronization processes, you need to write two sep
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState, useEffect } from 'react';
 import { fetchData } from './api.js';
 
@@ -1687,7 +1687,7 @@ export default function Page() {
 }
 ```
 
-```js api.js hidden
+```js src/api.js hidden
 export function fetchData(url) {
   if (url === '/planets') {
     return fetchPlanets();
@@ -1711,7 +1711,7 @@ async function fetchPlanets() {
         name: 'Venus'
       }, {
         id: 'mars',
-        name: 'Mars'        
+        name: 'Mars'
       }]);
     }, 1000);
   });
@@ -1735,7 +1735,7 @@ async function fetchPlaces(planetId) {
           name: 'Spain'
         }, {
           id: 'vietnam',
-          name: 'Vietnam'        
+          name: 'Vietnam'
         }]);
       } else if (planetId === 'venus') {
         resolve([{
@@ -1746,7 +1746,7 @@ async function fetchPlaces(planetId) {
           name: 'Diana Chasma'
         }, {
           id: 'kumsong-vallis',
-          name: 'Kŭmsŏng Vallis'        
+          name: 'Kŭmsŏng Vallis'
         }]);
       } else if (planetId === 'mars') {
         resolve([{
@@ -1782,7 +1782,7 @@ This is why it makes sense to describe them as two separate Effects. Here's an e
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState, useEffect } from 'react';
 import { fetchData } from './api.js';
 
@@ -1855,7 +1855,7 @@ export default function Page() {
 }
 ```
 
-```js api.js hidden
+```js src/api.js hidden
 export function fetchData(url) {
   if (url === '/planets') {
     return fetchPlanets();
@@ -1879,7 +1879,7 @@ async function fetchPlanets() {
         name: 'Venus'
       }, {
         id: 'mars',
-        name: 'Mars'        
+        name: 'Mars'
       }]);
     }, 1000);
   });
@@ -1903,7 +1903,7 @@ async function fetchPlaces(planetId) {
           name: 'Spain'
         }, {
           id: 'vietnam',
-          name: 'Vietnam'        
+          name: 'Vietnam'
         }]);
       } else if (planetId === 'venus') {
         resolve([{
@@ -1914,7 +1914,7 @@ async function fetchPlaces(planetId) {
           name: 'Diana Chasma'
         }, {
           id: 'kumsong-vallis',
-          name: 'Kŭmsŏng Vallis'        
+          name: 'Kŭmsŏng Vallis'
         }]);
       } else if (planetId === 'mars') {
         resolve([{
@@ -1945,7 +1945,7 @@ Instead, to reduce repetition, you can extract some logic into a custom Hook lik
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import { useSelectOptions } from './useSelectOptions.js';
 
@@ -1991,7 +1991,7 @@ export default function Page() {
 }
 ```
 
-```js useSelectOptions.js
+```js src/useSelectOptions.js
 import { useState, useEffect } from 'react';
 import { fetchData } from './api.js';
 
@@ -2018,7 +2018,7 @@ export function useSelectOptions(url) {
 }
 ```
 
-```js api.js hidden
+```js src/api.js hidden
 export function fetchData(url) {
   if (url === '/planets') {
     return fetchPlanets();
@@ -2042,7 +2042,7 @@ async function fetchPlanets() {
         name: 'Venus'
       }, {
         id: 'mars',
-        name: 'Mars'        
+        name: 'Mars'
       }]);
     }, 1000);
   });
@@ -2066,7 +2066,7 @@ async function fetchPlaces(planetId) {
           name: 'Spain'
         }, {
           id: 'vietnam',
-          name: 'Vietnam'        
+          name: 'Vietnam'
         }]);
       } else if (planetId === 'venus') {
         resolve([{
@@ -2077,7 +2077,7 @@ async function fetchPlaces(planetId) {
           name: 'Diana Chasma'
         }, {
           id: 'kumsong-vallis',
-          name: 'Kŭmsŏng Vallis'        
+          name: 'Kŭmsŏng Vallis'
         }]);
       } else if (planetId === 'mars') {
         resolve([{
