@@ -53,31 +53,9 @@ react-devtools
 ![React Developer Tools standalone](/images/docs/react-devtools-standalone.png)
 
 ## Mobile (React Native) {/*mobile-react-native*/}
-<<<<<<< HEAD
-React Хөгжүүлэгчийн хэрэгсэл нь мөн [React Native](https://reactnative.dev/) ашиглан бүтсэн аппликэйшнийг хянахад хэрэглэгдэх боломжтой.
 
-React Хөгжүүлэгчийн хэрэгслийг ашиглах хамгийн хялбар арга бол үүнийг ямар ч төсөл дээр ашиглах боломжтой байхаар суулгах явдал юм:
-```bash
-# Yarn
-yarn global add react-devtools
-=======
+[React Native](https://reactnative.dev/) ашиглан бүтээсэн аппуудыг шалгахын тулд React Developer Tools-тэй гүнзгий уялдсан суурилагдсан debugger болох [React Native DevTools](https://reactnative.dev/docs/react-native-devtools)-ийг ашиглаж болно. Native элементийг тодруулах болон сонгох зэрэг бүх боломж нь browser extension-тэй ижил ажиллана.
 
-To inspect apps built with [React Native](https://reactnative.dev/), you can use [React Native DevTools](https://reactnative.dev/docs/react-native-devtools), the built-in debugger that deeply integrates React Developer Tools. All features work identically to the browser extension, including native element highlighting and selection.
->>>>>>> 12d692da47e77cdc558b928fcfbaf4e71c6d0cec
+[React Native дээр debugging хийх талаар дэлгэрэнгүй уншина уу.](https://reactnative.dev/docs/debugging)
 
-[Learn more about debugging in React Native.](https://reactnative.dev/docs/debugging)
-
-<<<<<<< HEAD
-Дараа нь терминалаас хөгжүүлэгчийн хэрэгслийг нээнэ үү.
-```bash
-react-devtools
-```
-
-Энэ нь local дээр ажиллаж буй аль ч апп руу холбогдох болно болно.
-
-> Хэрэв Хөгжүүлэгчийн хэрэгсэл хэдэн секундийн дараа холбогдохгүй бол дахин ачаалж үзнэ үү.
-
-[React Native-г дибаг хийх талаар нэмэлт мэдээлэл авах.](https://reactnative.dev/docs/debugging)
-=======
-> For versions of React Native earlier than 0.76, please use the standalone build of React DevTools by following the [Safari and other browsers](#safari-and-other-browsers) guide above.
->>>>>>> 12d692da47e77cdc558b928fcfbaf4e71c6d0cec
+> React Native-ийн 0.76-аас өмнөх хувилбаруудад дээрх [Safari болон бусад browser](#safari-and-other-browsers) зааврыг дагаж React DevTools-ийн standalone хувилбарыг ашиглана уу.

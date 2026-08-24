@@ -19,18 +19,12 @@
     "ci-check": "npm-run-all prettier:diff --parallel lint tsc lint-heading-ids rss deadlinks",
     "tsc": "tsc --noEmit",
     "start": "next start",
-<<<<<<< HEAD
-    "postinstall": "patch-package && (is-ci || husky install .husky)",
-    "check-all": "npm-run-all prettier lint:fix tsc",
-    "prepare": "husky install"
-=======
     "postinstall": "yarn --cwd eslint-local-rules install && is-ci || husky install .husky",
     "check-all": "npm-run-all prettier lint:fix tsc rss",
     "rss": "node scripts/generateRss.js",
     "deadlinks": "node scripts/deadLinkChecker.js",
     "copyright": "node scripts/copyright.js",
     "test:eslint-local-rules": "yarn --cwd eslint-local-rules test"
->>>>>>> 12d692da47e77cdc558b928fcfbaf4e71c6d0cec
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "2.13.5",

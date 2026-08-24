@@ -37,15 +37,9 @@ React дээр UI-аа бүтээхдээ дараах 5 алхамыг дага
 
 Таны юу хийдгээс хамааран өөр, өөр арга замаар хуваасан байж магадгүй юм.
 
-<<<<<<< HEAD
-* **Програмчилалын**--Шинээр функц болон объект үүсгэхдээ нэгэн ижил текник ашиглаарай. Нэг санал болгох текник нь [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle) ба энэ нь компонент бүр нэгээс илүү үйлдэл хийхгүй гэсэн санаа юм. Хэрвээ цаашид томрохоор болвол дэд компонентүүдэд задлах хэрэгтэй. 
+* **Програмчлал**--Шинэ функц эсвэл объект үүсгэх эсэхээ шийдэхдээ ашигладаг ижил аргуудаа хэрэглээрэй. Тэдгээрийн нэг нь [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) буюу компонент бүр зөвхөн нэг зүйлд төвлөрөх зарчим юм. Хэрэв компонент томорвол жижиг дэд компонентуудад хуваах хэрэгтэй.
 * **CSS**--Класс селектор-оо юунд ашиглахааа шийдэх.
 * **Дизайн**--Дизайны давхаргуудаа хэрхэн зохион байгуулахаа шийдэх.
-=======
-* **Programming**--use the same techniques for deciding if you should create a new function or object. One such technique is the [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns), that is, a component should ideally only be concerned with one thing. If it ends up growing, it should be decomposed into smaller subcomponents.
-* **CSS**--consider what you would make class selectors for. (However, components are a bit less granular.)
-* **Design**--consider how you would organize the design's layers.
->>>>>>> 12d692da47e77cdc558b928fcfbaf4e71c6d0cec
 
 Хэрвээ таны JSON маш сайн бүтэцлэгдсэн бол таны UI компонентуудтай шууд холбогдож ажиллаж чадна. Энэ нь UI болон өгөгдлийн загварууд (data model) ижил бүтэцтэй байх хэрэгтэй шалтгаан юм.
 
@@ -234,17 +228,10 @@ td {
 
 Тэдгээрээр ахин нэг удаа явцгаая:
 
-<<<<<<< HEAD
-1. Бүтээгдэхүүний оригнал жагсаалт бол **пропууд-аар дамжин ирсэн тиймээс энэ стэйт биш юм.** 
+1. Бүтээгдэхүүний оригнал жагсаалт бол **пропууд-аар дамжин ирсэн тиймээс энэ стэйт биш юм.**
 2. Хайлтын текст стэйт байж болно яагаад гэвэл энэ нь ирээдүйд өөрчлөгдөх боломжтой ба стэйт болон пропууд-аар тооцоологдох боломжгүй.
 3. Checkbox-ийн утга стэйт байж болно яагаад гэвэл энэ нь ирээдүйд өөрчлөгдөх боломжтой ба стэйт болон пропууд-аар тооцоологдох боломжгүй.
 4. Шүүгдсэн бүтээгдэхүүний жагсаалт **стэйт биш яагаад гэвэл** энэ нь оригнал бүтээгдэхүүнийн жагсаалт, хайлтын текст болон checkbox-ийн утгуудаар **тооцоологдох боломжтой**.
-=======
-1. The original list of products is **passed in as props, so it's not state.**
-2. The search text seems to be state since it changes over time and can't be computed from anything.
-3. The value of the checkbox seems to be state since it changes over time and can't be computed from anything.
-4. The filtered list of products **isn't state because it can be computed** by taking the original list of products and filtering it according to the search text and value of the checkbox.
->>>>>>> 12d692da47e77cdc558b928fcfbaf4e71c6d0cec
 
 Иймээс хайлтын текст болон checkbox-ийн утгууд л зөвхөн стэйт юм.
 
@@ -271,7 +258,7 @@ React-д загвар өгөгдлийн хоёр төрөл бий: пропу�
 3. Стэйт хаана байхыг шийд:
     1. Ихэвчлэн тэдгээрийн нийтлэг эцэг компонент дээр стэйтийг нэмдэг.
     2. Та тэдгээр эцэг компонентуудын дээгүүрх зарим компонент-д нэмж болно.
-    3. Хэрвээ та стэйтээ хаана тавихаа мэдэхгүй бол стэйтийг удирдах шинэ компонентыг үүсгээд нийтлэг эцэг компонентын дээр хаа нэгтээ нэмнэ. 
+    3. Хэрвээ та стэйтээ хаана тавихаа мэдэхгүй бол стэйтийг удирдах шинэ компонентыг үүсгээд нийтлэг эцэг компонентын дээр хаа нэгтээ нэмнэ.
 
 Өмнөх алхамд та энэ аппликэйшнд хэрэгтэй хоёр стэйтийг олсон: хайлтын текст болон checkbox-ын утга. Энэ жишээнд тэд үргэлж хамтдаа харагдах болохоор нэг газар байсан нь зөв юм.
 
@@ -283,21 +270,9 @@ React-д загвар өгөгдлийн хоёр төрөл бий: пропу�
 2. **Тэдгээрийн нийтлэг эцгийг ол:** Эхний нийтлэг эцэг компонент `FilterableProductTable`.
 3. **Стэйт хаана байхыг шийд**: Бид дараах компонент-д `FilterableProductTable` стэйтүүдийг байрлуулна.
 
-<<<<<<< HEAD
-`FilterableProductTable` компонент-д стэйт байрлана гэсэн үг. 
+`FilterableProductTable` компонент-д стэйт байрлана гэсэн үг.
 
 [`useState()` хүүк](/reference/react/useState)-ээр стэйтийг зарлана. Хүүк бол React-тай холбогдох боломж олгодог онцгой төрлийн функц юм. Хоёр стэйтийг `FilterableProductTable` компонент дээр нэмж өгөх ба тэдгээрт анхдагч утга өгнө:
-=======
-1. **Identify components that use state:**
-    * `ProductTable` needs to filter the product list based on that state (search text and checkbox value).
-    * `SearchBar` needs to display that state (search text and checkbox value).
-2. **Find their common parent:** The first parent component both components share is `FilterableProductTable`.
-3. **Decide where the state lives**: We'll keep the filter text and checked state values in `FilterableProductTable`.
-
-So the state values will live in `FilterableProductTable`.
-
-Add state to the component with the [`useState()` Hook.](/reference/react/useState) Hooks are special functions that let you "hook into" React. Add two state variables at the top of `FilterableProductTable` and specify their initial state:
->>>>>>> 12d692da47e77cdc558b928fcfbaf4e71c6d0cec
 
 ```js
 function FilterableProductTable({ products }) {
@@ -487,11 +462,7 @@ function SearchBar({ filterText, inStockOnly }) {
 
 Одоогоор аппликэйшн шаталсан бүтцийн дагуу дээрээс доошоо пропууд болон стэйтийг зөв дамжуулж байгаа. Гэхдээ хэрэглэгчийн оролтын дагуу стэйтийг өөрчлөхийн тулд өөр аргаар өгөгдлийн урсгалыг явуулах хэрэгтэй: шаталсан бүтцийн хамгийн гүнд байгаа компонентууд `FilterableProductTable`-ийн стэйтүүдийг өөрчлөх хэрэгтэй.
 
-<<<<<<< HEAD
 React өгөгдлийн урсгалын тодорхой болгосон гэхдээ энэ нь хоёр чиглэлтэй өгөгдлийн урсгалаас (two-way data binding) арай илүү их бичиглэлийг шаарддаг. Хэрвээ та доорх жишээнд бичих эсвэл check-лэх гэж оролдох юм бол ажиллахгүй.
-=======
-Currently your app renders correctly with props and state flowing down the hierarchy. But to change the state according to user input, you will need to support data flowing the other way: the form components deep in the hierarchy need to update the state in `FilterableProductTable`.
->>>>>>> 12d692da47e77cdc558b928fcfbaf4e71c6d0cec
 
 Энэ нь учиртай. Энэнээс харахад `<input value={filterText} />`, `FilterableProductTable`-ээс ирж буй стэйтийн утга `input`-ийн `filterText`-тэй үргэлж тэнцүү байна. Тийм учраас `filterText` стэйт хэзээ ч өөрчлөгдөхгүй.
 
