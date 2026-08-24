@@ -1,17 +1,25 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
 
 import {useSyncExternalStore} from 'react';
-import {useSandpack} from '@codesandbox/sandpack-react';
+import {useSandpack} from '@codesandbox/sandpack-react/unstyled';
 import {IconDownload} from '../../Icon/IconDownload';
+import {AppJSPath, StylesCSSPath, SUPPORTED_FILES} from './createFileMap';
 export interface DownloadButtonProps {}
 
 let supportsImportMap = false;
 
 function subscribe(cb: () => void) {
   // This shouldn't actually need to update, but this works around
-  // https://github.com/facebook/react/issues/26095
+  // https://github.com/react/react/issues/26095
   let timeout = setTimeout(() => {
     supportsImportMap =
       (HTMLScriptElement as any).supports &&
@@ -32,8 +40,6 @@ function useSupportsImportMap() {
   return useSyncExternalStore(subscribe, getCurrentValue, getServerSnapshot);
 }
 
-const SUPPORTED_FILES = ['/App.js', '/styles.css'];
-
 export function DownloadButton({
   providedFiles,
 }: {
@@ -49,8 +55,8 @@ export function DownloadButton({
   }
 
   const downloadHTML = () => {
-    const css = sandpack.files['/styles.css']?.code ?? '';
-    const code = sandpack.files['/App.js']?.code ?? '';
+    const css = sandpack.files[StylesCSSPath]?.code ?? '';
+    const code = sandpack.files[AppJSPath]?.code ?? '';
     const blob = new Blob([
       `<!DOCTYPE html>
 <html>

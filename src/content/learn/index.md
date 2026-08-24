@@ -15,7 +15,7 @@ React documentation-д тавтай морил! Энэ хуудсанд таны
 - Хэрхэн өгөгдөл харуулах
 - Хэрхэн нөхцөл болон жагсаалт нэмэх
 - Үйл явдалд хэрхэн хариу үйлдэл үзүүлж дэлгэцийг шинэчлэх
-- Хэрхэн компонент хооронд өгөгдөл хуваалцах 
+- Хэрхэн компонент хооронд өгөгдөл хуваалцах
 
 </YouWillLearn>
 
@@ -144,7 +144,7 @@ return (
 ```js
 const user = {
   name: 'Hedy Lamarr',
-  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+  imageUrl: 'https://react.dev/images/docs/scientists/yXOvdOSs.jpg',
   imageSize: 90,
 };
 

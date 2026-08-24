@@ -37,7 +37,7 @@ React дээр UI-аа бүтээхдээ дараах 5 алхамыг дага
 
 Таны юу хийдгээс хамааран өөр, өөр арга замаар хуваасан байж магадгүй юм.
 
-* **Програмчилалын**--Шинээр функц болон объект үүсгэхдээ нэгэн ижил текник ашиглаарай. Нэг санал болгох текник нь [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle) ба энэ нь компонент бүр нэгээс илүү үйлдэл хийхгүй гэсэн санаа юм. Хэрвээ цаашид томрохоор болвол дэд компонентүүдэд задлах хэрэгтэй. 
+* **Програмчлал**--Шинэ функц эсвэл объект үүсгэх эсэхээ шийдэхдээ ашигладаг ижил аргуудаа хэрэглээрэй. Тэдгээрийн нэг нь [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) буюу компонент бүр зөвхөн нэг зүйлд төвлөрөх зарчим юм. Хэрэв компонент томорвол жижиг дэд компонентуудад хуваах хэрэгтэй.
 * **CSS**--Класс селектор-оо юунд ашиглахааа шийдэх.
 * **Дизайн**--Дизайны давхаргуудаа хэрхэн зохион байгуулахаа шийдэх.
 
@@ -81,7 +81,7 @@ React дээр UI-аа бүтээхдээ дараах 5 алхамыг дага
 
 <Sandpack>
 
-```jsx App.js
+```jsx src/App.js
 function ProductCategoryRow({ category }) {
   return (
     <tr>
@@ -228,7 +228,7 @@ td {
 
 Тэдгээрээр ахин нэг удаа явцгаая:
 
-1. Бүтээгдэхүүний оригнал жагсаалт бол **пропууд-аар дамжин ирсэн тиймээс энэ стэйт биш юм.** 
+1. Бүтээгдэхүүний оригнал жагсаалт бол **пропууд-аар дамжин ирсэн тиймээс энэ стэйт биш юм.**
 2. Хайлтын текст стэйт байж болно яагаад гэвэл энэ нь ирээдүйд өөрчлөгдөх боломжтой ба стэйт болон пропууд-аар тооцоологдох боломжгүй.
 3. Checkbox-ийн утга стэйт байж болно яагаад гэвэл энэ нь ирээдүйд өөрчлөгдөх боломжтой ба стэйт болон пропууд-аар тооцоологдох боломжгүй.
 4. Шүүгдсэн бүтээгдэхүүний жагсаалт **стэйт биш яагаад гэвэл** энэ нь оригнал бүтээгдэхүүнийн жагсаалт, хайлтын текст болон checkbox-ийн утгуудаар **тооцоологдох боломжтой**.
@@ -258,7 +258,7 @@ React-д загвар өгөгдлийн хоёр төрөл бий: пропу�
 3. Стэйт хаана байхыг шийд:
     1. Ихэвчлэн тэдгээрийн нийтлэг эцэг компонент дээр стэйтийг нэмдэг.
     2. Та тэдгээр эцэг компонентуудын дээгүүрх зарим компонент-д нэмж болно.
-    3. Хэрвээ та стэйтээ хаана тавихаа мэдэхгүй бол стэйтийг удирдах шинэ компонентыг үүсгээд нийтлэг эцэг компонентын дээр хаа нэгтээ нэмнэ. 
+    3. Хэрвээ та стэйтээ хаана тавихаа мэдэхгүй бол стэйтийг удирдах шинэ компонентыг үүсгээд нийтлэг эцэг компонентын дээр хаа нэгтээ нэмнэ.
 
 Өмнөх алхамд та энэ аппликэйшнд хэрэгтэй хоёр стэйтийг олсон: хайлтын текст болон checkbox-ын утга. Энэ жишээнд тэд үргэлж хамтдаа харагдах болохоор нэг газар байсан нь зөв юм.
 
@@ -270,24 +270,24 @@ React-д загвар өгөгдлийн хоёр төрөл бий: пропу�
 2. **Тэдгээрийн нийтлэг эцгийг ол:** Эхний нийтлэг эцэг компонент `FilterableProductTable`.
 3. **Стэйт хаана байхыг шийд**: Бид дараах компонент-д `FilterableProductTable` стэйтүүдийг байрлуулна.
 
-`FilterableProductTable` компонент-д стэйт байрлана гэсэн үг. 
+`FilterableProductTable` компонент-д стэйт байрлана гэсэн үг.
 
 [`useState()` хүүк](/reference/react/useState)-ээр стэйтийг зарлана. Хүүк бол React-тай холбогдох боломж олгодог онцгой төрлийн функц юм. Хоёр стэйтийг `FilterableProductTable` компонент дээр нэмж өгөх ба тэдгээрт анхдагч утга өгнө:
 
 ```js
 function FilterableProductTable({ products }) {
   const [filterText, setFilterText] = useState('');
-  const [inStockOnly, setInStockOnly] = useState(false);  
+  const [inStockOnly, setInStockOnly] = useState(false);
 ```
 
 Тэгээд, `filterText` болон `inStockOnly` пропуудыг `ProductTable` ба `SearchBar` компонентууд руу дамжуулна:
 
 ```js
 <div>
-  <SearchBar 
-    filterText={filterText} 
+  <SearchBar
+    filterText={filterText}
     inStockOnly={inStockOnly} />
-  <ProductTable 
+  <ProductTable
     products={products}
     filterText={filterText}
     inStockOnly={inStockOnly} />
@@ -298,7 +298,7 @@ function FilterableProductTable({ products }) {
 
 <Sandpack>
 
-```jsx App.js
+```jsx src/App.js
 import { useState } from 'react';
 
 function FilterableProductTable({ products }) {
@@ -307,10 +307,10 @@ function FilterableProductTable({ products }) {
 
   return (
     <div>
-      <SearchBar 
-        filterText={filterText} 
+      <SearchBar
+        filterText={filterText}
         inStockOnly={inStockOnly} />
-      <ProductTable 
+      <ProductTable
         products={products}
         filterText={filterText}
         inStockOnly={inStockOnly} />
@@ -388,13 +388,13 @@ function ProductTable({ products, filterText, inStockOnly }) {
 function SearchBar({ filterText, inStockOnly }) {
   return (
     <form>
-      <input 
-        type="text" 
-        value={filterText} 
+      <input
+        type="text"
+        value={filterText}
         placeholder="Search..."/>
       <label>
-        <input 
-          type="checkbox" 
+        <input
+          type="checkbox"
           checked={inStockOnly} />
         {' '}
         Only show products in stock
@@ -450,9 +450,9 @@ You provided a \`value\` prop to a form field without an \`onChange\` handler. T
 function SearchBar({ filterText, inStockOnly }) {
   return (
     <form>
-      <input 
-        type="text" 
-        value={filterText} 
+      <input
+        type="text"
+        value={filterText}
         placeholder="Search..."/>
 ```
 
@@ -475,8 +475,8 @@ function FilterableProductTable({ products }) {
 
   return (
     <div>
-      <SearchBar 
-        filterText={filterText} 
+      <SearchBar
+        filterText={filterText}
         inStockOnly={inStockOnly}
         onFilterTextChange={setFilterText}
         onInStockOnlyChange={setInStockOnly} />
@@ -485,19 +485,33 @@ function FilterableProductTable({ products }) {
 `SearchBar` дотор `onChange`-д эцгээс дамжиж ирсэн функцыг оноож өгнө:
 
 
-```js {5}
-<input 
-  type="text" 
-  value={filterText} 
-  placeholder="Search..." 
-  onChange={(e) => onFilterTextChange(e.target.value)} />
+```js {4,5,13,19}
+function SearchBar({
+  filterText,
+  inStockOnly,
+  onFilterTextChange,
+  onInStockOnlyChange
+}) {
+  return (
+    <form>
+      <input
+        type="text"
+        value={filterText}
+        placeholder="Search..."
+        onChange={(e) => onFilterTextChange(e.target.value)}
+      />
+      <label>
+        <input
+          type="checkbox"
+          checked={inStockOnly}
+          onChange={(e) => onInStockOnlyChange(e.target.checked)}
 ```
 
 Одоо аппликэйшн бүрэн ажиллаж байна!
 
 <Sandpack>
 
-```jsx App.js
+```jsx src/App.js
 import { useState } from 'react';
 
 function FilterableProductTable({ products }) {
@@ -506,13 +520,13 @@ function FilterableProductTable({ products }) {
 
   return (
     <div>
-      <SearchBar 
-        filterText={filterText} 
-        inStockOnly={inStockOnly} 
-        onFilterTextChange={setFilterText} 
+      <SearchBar
+        filterText={filterText}
+        inStockOnly={inStockOnly}
+        onFilterTextChange={setFilterText}
         onInStockOnlyChange={setInStockOnly} />
-      <ProductTable 
-        products={products} 
+      <ProductTable
+        products={products}
         filterText={filterText}
         inStockOnly={inStockOnly} />
     </div>
@@ -594,14 +608,14 @@ function SearchBar({
 }) {
   return (
     <form>
-      <input 
-        type="text" 
-        value={filterText} placeholder="Search..." 
+      <input
+        type="text"
+        value={filterText} placeholder="Search..."
         onChange={(e) => onFilterTextChange(e.target.value)} />
       <label>
-        <input 
-          type="checkbox" 
-          checked={inStockOnly} 
+        <input
+          type="checkbox"
+          checked={inStockOnly}
           onChange={(e) => onInStockOnlyChange(e.target.checked)} />
         {' '}
         Only show products in stock
