@@ -4,7 +4,11 @@ title: Хурдан Эхлэх
 
 <Intro>
 
+<<<<<<< HEAD
 React documentation-д тавтай морил! Энэ хуудсанд таны өдөр тутам хэрэглэх React-ийн 80%-ийн ойлголтуудыг танилцуулах болно.
+=======
+Welcome to the React documentation! This page will give you an introduction to 80% of the React concepts that you will use on a daily basis.
+>>>>>>> 12d692da47e77cdc558b928fcfbaf4e71c6d0cec
 
 </Intro>
 
@@ -144,7 +148,7 @@ return (
 ```js
 const user = {
   name: 'Hedy Lamarr',
-  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+  imageUrl: 'https://react.dev/images/docs/scientists/yXOvdOSs.jpg',
   imageSize: 90,
 };
 

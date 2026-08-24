@@ -10,33 +10,17 @@ State is isolated between components. React keeps track of which state belongs t
 
 <YouWillLearn>
 
-* How React "sees" component structures
 * When React chooses to preserve or reset the state
 * How to force React to reset component's state
 * How keys and types affect whether the state is preserved
 
 </YouWillLearn>
 
-## The UI tree {/*the-ui-tree*/}
+## State is tied to a position in the render tree {/*state-is-tied-to-a-position-in-the-tree*/}
 
-Browsers use many tree structures to model UI. The [DOM](https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Introduction) represents HTML elements, the [CSSOM](https://developer.mozilla.org/docs/Web/API/CSS_Object_Model) does the same for CSS. There's even an [Accessibility tree](https://developer.mozilla.org/docs/Glossary/Accessibility_tree)!
+React builds [render trees](learn/understanding-your-ui-as-a-tree#the-render-tree) for the component structure in your UI.
 
-React also uses tree structures to manage and model the UI you make. React makes **UI trees** from your JSX. Then React DOM updates the browser DOM elements to match that UI tree. (React Native translates these trees into elements specific to mobile platforms.)
-
-<DiagramGroup>
-
-<Diagram name="preserving_state_dom_tree" height={193} width={864} alt="Diagram with three sections arranged horizontally. In the first section, there are three rectangles stacked vertically, with labels 'Component A', 'Component B', and 'Component C'. Transitioning to the next pane is an arrow with the React logo on top labeled 'React'. The middle section contains a tree of components, with the root labeled 'A' and two children labeled 'B' and 'C'. The next section is again transitioned using an arrow with the React logo on top labeled 'React'. The third and final section is a wireframe of a browser, containing a tree of 8 nodes, which has only a subset highlighted (indicating the subtree from the middle section).">
-
-From components, React creates a UI tree which React DOM uses to render the DOM
-
-</Diagram>
-
-</DiagramGroup>
-
-## State is tied to a position in the tree {/*state-is-tied-to-a-position-in-the-tree*/}
-
-When you give a component state, you might think the state "lives" inside the component. But the state is actually held inside React. React associates each piece of state it's holding with the correct component by where that component sits in the UI tree.
-
+When you give a component state, you might think the state "lives" inside the component. But the state is actually held inside React. React associates each piece of state it's holding with the correct component by where that component sits in the render tree.
 
 Here, there is only one `<Counter />` JSX tag, but it's rendered at two different positions:
 
@@ -102,7 +86,7 @@ label {
 
 </Sandpack>
 
-Here's how these look as a tree:    
+Here's how these look as a tree:
 
 <DiagramGroup>
 
@@ -190,7 +174,7 @@ Updating state
 </DiagramGroup>
 
 
-React will keep the state around for as long as you render the same component at the same position. To see this, increment both counters, then remove the second component by unchecking "Render the second counter" checkbox, and then add it back by ticking it again:
+React will keep the state around for as long as you render the same component at the same position in the tree. To see this, increment both counters, then remove the second component by unchecking "Render the second counter" checkbox, and then add it back by ticking it again:
 
 <Sandpack>
 
@@ -202,7 +186,7 @@ export default function App() {
   return (
     <div>
       <Counter />
-      {showB && <Counter />} 
+      {showB && <Counter />}
       <label>
         <input
           type="checkbox"
@@ -304,9 +288,9 @@ export default function App() {
   return (
     <div>
       {isFancy ? (
-        <Counter isFancy={true} /> 
+        <Counter isFancy={true} />
       ) : (
-        <Counter isFancy={false} /> 
+        <Counter isFancy={false} />
       )}
       <label>
         <input
@@ -512,9 +496,9 @@ export default function App() {
   return (
     <div>
       {isPaused ? (
-        <p>See you later!</p> 
+        <p>See you later!</p>
       ) : (
-        <Counter /> 
+        <Counter />
       )}
       <label>
         <input
@@ -612,7 +596,7 @@ export default function App() {
     <div>
       {isFancy ? (
         <div>
-          <Counter isFancy={true} /> 
+          <Counter isFancy={true} />
         </div>
       ) : (
         <section>
@@ -688,7 +672,7 @@ label {
 
 </Sandpack>
 
-The counter state gets reset when you click the checkbox. Although you render a `Counter`, the first child of the `div` changes from a `div` to a `section`. When the child `div` was removed from the DOM, the whole tree below it (including the `Counter` and its state) was destroyed as well.
+The counter state gets reset when you click the checkbox. Although you render a `Counter`, the first child of the `div` changes from a `section` to a `div`. When the child `section` was removed from the DOM, the whole tree below it (including the `Counter` and its state) was destroyed as well.
 
 <DiagramGroup>
 
@@ -720,7 +704,7 @@ Here, the `MyTextField` component function is defined *inside* `MyComponent`:
 
 <Sandpack>
 
-```js
+```js {expectedErrors: {'react-compiler': [7]}}
 import { useState } from 'react';
 
 export default function MyComponent() {
@@ -935,7 +919,7 @@ Clicking "next" again
 
 </DiagramGroup>
 
-Each `Counter`'s state gets destroyed each time its removed from the DOM. This is why they reset every time you click the button.
+Each `Counter`'s state gets destroyed each time it's removed from the DOM. This is why they reset every time you click the button.
 
 This solution is convenient when you only have a few independent components rendered in the same place. In this example, you only have two, so it's not a hassle to render both separately in the JSX.
 
@@ -1041,7 +1025,7 @@ In this chat app, the `<Chat>` component contains the text input state:
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import Chat from './Chat.js';
 import ContactList from './ContactList.js';
@@ -1067,7 +1051,7 @@ const contacts = [
 ];
 ```
 
-```js ContactList.js
+```js src/ContactList.js
 export default function ContactList({
   selectedContact,
   contacts,
@@ -1091,7 +1075,7 @@ export default function ContactList({
 }
 ```
 
-```js Chat.js
+```js src/Chat.js
 import { useState } from 'react';
 
 export default function Chat({ contact }) {
@@ -1146,7 +1130,7 @@ Now switching the recipient always clears the text field:
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import Chat from './Chat.js';
 import ContactList from './ContactList.js';
@@ -1172,7 +1156,7 @@ const contacts = [
 ];
 ```
 
-```js ContactList.js
+```js src/ContactList.js
 export default function ContactList({
   selectedContact,
   contacts,
@@ -1196,7 +1180,7 @@ export default function ContactList({
 }
 ```
 
-```js Chat.js
+```js src/Chat.js
 import { useState } from 'react';
 
 export default function Chat({ contact }) {
@@ -1270,7 +1254,7 @@ This example shows a message when you press the button. However, pressing the bu
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 export default function App() {
@@ -1321,7 +1305,7 @@ The easiest solution is to unify the branches so that `Form` always renders in t
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 export default function App() {
@@ -1367,7 +1351,7 @@ Technically, you could also add `null` before `<Form />` in the `else` branch to
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 export default function App() {
@@ -1429,7 +1413,7 @@ It seems like for these fields, their position within the parent is not enough. 
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 export default function App() {
@@ -1447,7 +1431,7 @@ export default function App() {
   if (reverse) {
     return (
       <>
-        <Field label="Last name" /> 
+        <Field label="Last name" />
         <Field label="First name" />
         {checkbox}
       </>
@@ -1455,11 +1439,11 @@ export default function App() {
   } else {
     return (
       <>
-        <Field label="First name" /> 
+        <Field label="First name" />
         <Field label="Last name" />
         {checkbox}
       </>
-    );    
+    );
   }
 }
 
@@ -1491,7 +1475,7 @@ Give a `key` to both `<Field>` components in both `if` and `else` branches. This
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 
 export default function App() {
@@ -1509,7 +1493,7 @@ export default function App() {
   if (reverse) {
     return (
       <>
-        <Field key="lastName" label="Last name" /> 
+        <Field key="lastName" label="Last name" />
         <Field key="firstName" label="First name" />
         {checkbox}
       </>
@@ -1517,11 +1501,11 @@ export default function App() {
   } else {
     return (
       <>
-        <Field key="firstName" label="First name" /> 
+        <Field key="firstName" label="First name" />
         <Field key="lastName" label="Last name" />
         {checkbox}
       </>
-    );    
+    );
   }
 }
 
@@ -1557,7 +1541,7 @@ When you select a different contact (for example, Alice), the state updates but 
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ContactList from './ContactList.js';
 import EditContact from './EditContact.js';
@@ -1609,7 +1593,7 @@ const initialContacts = [
 ];
 ```
 
-```js ContactList.js
+```js src/ContactList.js
 export default function ContactList({
   contacts,
   selectedId,
@@ -1636,7 +1620,7 @@ export default function ContactList({
 }
 ```
 
-```js EditContact.js
+```js src/EditContact.js
 import { useState } from 'react';
 
 export default function EditContact({ initialData, onSave }) {
@@ -1709,7 +1693,7 @@ Give `key={selectedId}` to the `EditContact` component. This way, switching betw
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import ContactList from './ContactList.js';
 import EditContact from './EditContact.js';
@@ -1762,7 +1746,7 @@ const initialContacts = [
 ];
 ```
 
-```js ContactList.js
+```js src/ContactList.js
 export default function ContactList({
   contacts,
   selectedId,
@@ -1789,7 +1773,7 @@ export default function ContactList({
 }
 ```
 
-```js EditContact.js
+```js src/EditContact.js
 import { useState } from 'react';
 
 export default function EditContact({ initialData, onSave }) {
@@ -1904,25 +1888,25 @@ export default function Gallery() {
 
 let images = [{
   place: 'Penang, Malaysia',
-  src: 'https://i.imgur.com/FJeJR8M.jpg'
+  src: 'https://react.dev/images/docs/scientists/FJeJR8M.jpg'
 }, {
   place: 'Lisbon, Portugal',
-  src: 'https://i.imgur.com/dB2LRbj.jpg'
+  src: 'https://react.dev/images/docs/scientists/dB2LRbj.jpg'
 }, {
   place: 'Bilbao, Spain',
-  src: 'https://i.imgur.com/z08o2TS.jpg'
+  src: 'https://react.dev/images/docs/scientists/z08o2TS.jpg'
 }, {
   place: 'Valparaíso, Chile',
-  src: 'https://i.imgur.com/Y3utgTi.jpg'
+  src: 'https://react.dev/images/docs/scientists/Y3utgTi.jpg'
 }, {
   place: 'Schwyz, Switzerland',
-  src: 'https://i.imgur.com/JBbMpWY.jpg'
+  src: 'https://react.dev/images/docs/scientists/JBbMpWY.jpg'
 }, {
   place: 'Prague, Czechia',
-  src: 'https://i.imgur.com/QwUKKmF.jpg'
+  src: 'https://react.dev/images/docs/scientists/QwUKKmF.jpg'
 }, {
   place: 'Ljubljana, Slovenia',
-  src: 'https://i.imgur.com/3aIiwfm.jpg'
+  src: 'https://react.dev/images/docs/scientists/3aIiwfm.jpg'
 }];
 ```
 
@@ -1972,25 +1956,25 @@ export default function Gallery() {
 
 let images = [{
   place: 'Penang, Malaysia',
-  src: 'https://i.imgur.com/FJeJR8M.jpg'
+  src: 'https://react.dev/images/docs/scientists/FJeJR8M.jpg'
 }, {
   place: 'Lisbon, Portugal',
-  src: 'https://i.imgur.com/dB2LRbj.jpg'
+  src: 'https://react.dev/images/docs/scientists/dB2LRbj.jpg'
 }, {
   place: 'Bilbao, Spain',
-  src: 'https://i.imgur.com/z08o2TS.jpg'
+  src: 'https://react.dev/images/docs/scientists/z08o2TS.jpg'
 }, {
   place: 'Valparaíso, Chile',
-  src: 'https://i.imgur.com/Y3utgTi.jpg'
+  src: 'https://react.dev/images/docs/scientists/Y3utgTi.jpg'
 }, {
   place: 'Schwyz, Switzerland',
-  src: 'https://i.imgur.com/JBbMpWY.jpg'
+  src: 'https://react.dev/images/docs/scientists/JBbMpWY.jpg'
 }, {
   place: 'Prague, Czechia',
-  src: 'https://i.imgur.com/QwUKKmF.jpg'
+  src: 'https://react.dev/images/docs/scientists/QwUKKmF.jpg'
 }, {
   place: 'Ljubljana, Slovenia',
-  src: 'https://i.imgur.com/3aIiwfm.jpg'
+  src: 'https://react.dev/images/docs/scientists/3aIiwfm.jpg'
 }];
 ```
 
@@ -2010,7 +1994,7 @@ Fix it so that the expanded state is associated with each contact, regardless of
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import Contact from './Contact.js';
 
@@ -2027,7 +2011,7 @@ export default function ContactList() {
       <label>
         <input
           type="checkbox"
-          value={reverse}
+          checked={reverse}
           onChange={e => {
             setReverse(e.target.checked)
           }}
@@ -2052,7 +2036,7 @@ const contacts = [
 ];
 ```
 
-```js Contact.js
+```js src/Contact.js
 import { useState } from 'react';
 
 export default function Contact({ contact }) {
@@ -2109,7 +2093,7 @@ Using the contact ID as a `key` instead fixes the issue:
 
 <Sandpack>
 
-```js App.js
+```js src/App.js
 import { useState } from 'react';
 import Contact from './Contact.js';
 
@@ -2126,7 +2110,7 @@ export default function ContactList() {
       <label>
         <input
           type="checkbox"
-          value={reverse}
+          checked={reverse}
           onChange={e => {
             setReverse(e.target.checked)
           }}
@@ -2151,7 +2135,7 @@ const contacts = [
 ];
 ```
 
-```js Contact.js
+```js src/Contact.js
 import { useState } from 'react';
 
 export default function Contact({ contact }) {
