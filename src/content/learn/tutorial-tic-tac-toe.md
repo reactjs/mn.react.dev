@@ -194,16 +194,15 @@ body {
 
 </Sandpack>
 
-If the code doesn't make sense to you yet, or if you are unfamiliar with the code's syntax, don't worry! The goal of this tutorial is to help you understand React and its syntax.
+Хэрвээ кодыг одоогоор ойлгож чадахгүй байвал эсвэл кодын синтакст танил бус байвал санаа зовох хэрэггүй! Энэ хичээлийн зорилго нь React болон түүний синтаксыг ойлгоход туслах юм.
 
-We recommend that you check out the tic-tac-toe game above before continuing with the tutorial. One of the features that you'll notice is that there is a numbered list to the right of the game's board. This list gives you a history of all of the moves that have occurred in the game, and it is updated as the game progresses.
+Хичээлийг үргэлжлүүлэхээсээ өмнө дээрх tic-tac-toe тоглоомыг үзэхийг зөвлөж байна. Тоглоомд анзаарах нэг онцлог нь тоглоомын самбарын баруун талд дугаарлагдсан жагсаалт байх явдал юм. Энэ жагсаалт нь тоглоомд болсон бүх хөдөлгөөний түүхийг харуулж, тоглоом урагшилж байх тусам шинэчлэгддэг.
 
-Once you've played around with the finished tic-tac-toe game, keep scrolling. You'll start with a simpler template in this tutorial. Our next step is to set you up so that you can start building the game.
+Төгсгөлд нь тоглоомыг туршиж үзсэний дараа хуудас доош гүйлгэж үргэлжлүүлээрэй. Энэ хичээлд чи энгийн загвараас эхлэн тоглоом бүтээх болно. Дараагийн алхам нь тоглоомыг бүтээж эхлэхэд зориулсан орчныг бэлтгэх юм.
 
-## Setup for the tutorial {/*setup-for-the-tutorial*/}
+## Хичээлийн орчныг бэлтгэх {/*setup-for-the-tutorial*/}
 
-In the live code editor below, click **Fork** in the top-right corner to open the editor in a new tab using the website CodeSandbox. CodeSandbox lets you write code in your browser and preview how your users will see the app you've created. The new tab should display an empty square and the starter code for this tutorial.
-
+Доорх код editor дээр баруун дээд буланд байгаа Fork товчийг дарж CodeSandbox вэбсайтаар шинэ таб дээр editor -ийг нээ. CodeSandbox нь браузерээсээ код бичиж, хэрэглэгчид хэрхэн харагдахыг урьдчилан харах боломжийг олгодог. Шинэ таб дээр хоосон дөрвөлжин болон энэ хичээлийн эхний код харагдах болно.
 <Sandpack>
 
 ```js src/App.js
@@ -261,33 +260,33 @@ body {
 
 <Note>
 
-You can also follow this tutorial using your local development environment. To do this, you need to:
+Мөн чи энэ хичээлийг өгөгдсөн компьютертээ хөгжүүлэлтийн орчинд дагаж хийж болно. Үүний тулд:
 
-1. Install [Node.js](https://nodejs.org/en/)
-1. In the CodeSandbox tab you opened earlier, press the top-left corner button to open the menu, and then choose **Download Sandbox** in that menu to download an archive of the files locally
-1. Unzip the archive, then open a terminal and `cd` to the directory you unzipped
-1. Install the dependencies with `npm install`
-1. Run `npm start` to start a local server and follow the prompts to view the code running in a browser
+1. [Node.js](https://nodejs.org/en/) суулгана.
+1. Өмнө нээсэн CodeSandbox табын зүүн дээд булангийн товчийг дарж цэсийг нээгээд **Download Sandbox**-ыг сонгон файлуудын архивыг компьютертээ татна.
+1. Архивыг задалж, терминал нээгээд `cd` командаар задалсан хавтас руу орно.
+1. `npm install` командаар хамаарлуудыг суулгана.
+1. `npm start` командаар локал серверийг асааж, кодыг браузерт ажиллуулах зааврыг дагана.
 
-If you get stuck, don't let this stop you! Follow along online instead and try a local setup again later.
+Хэрвээ асуудал гарвал санаа зовох хэрэггүй! Эхлээд онлайн хувилбараар дагаж, дараа нь локал орчинд дахин оролдож болно.
 
 </Note>
 
-## Overview {/*overview*/}
+## Тойм {/*overview*/}
 
-Now that you're set up, let's get an overview of React!
+Одоо орчныг бэлдсэн тул, React-ийн тоймыг үзье!
 
-### Inspecting the starter code {/*inspecting-the-starter-code*/}
+### Эхний кодыг шалгах {/*inspecting-the-starter-code*/}
 
-In CodeSandbox you'll see three main sections:
+CodeSandbox дээр чи гурван үндсэн хэсгийг харах болно:
 
-![CodeSandbox with starter code](../images/tutorial/react-starter-code-codesandbox.png)
+![CodeSandbox дахь эхний код](../images/tutorial/react-starter-code-codesandbox.png)
 
-1. The _Files_ section with a list of files like `App.js`, `index.js`, `styles.css` in `src` folder and a folder called `public`
-1. The _code editor_ where you'll see the source code of your selected file
-1. The _browser_ section where you'll see how the code you've written will be displayed
+1. `src` хавтас дахь `App.js`, `index.js`, `styles.css` зэрэг файлууд болон `public` хавтсыг харуулах _Files_ хэсэг
+1. Сонгосон файлын эх кодыг харуулах _code editor_ хэсэг
+1. Бичсэн код хэрхэн харагдахыг үзүүлэх _browser_ хэсэг
 
-The `App.js` file should be selected in the _Files_ section. The contents of that file in the _code editor_ should be:
+Файлууд хэсэгт App.js файл сонгогдсон байх ёстой. Код редактор дээр тус файлын агуулга дараах байдалтай байна:
 
 ```jsx
 export default function Square() {
@@ -295,15 +294,15 @@ export default function Square() {
 }
 ```
 
-The _browser_ section should be displaying a square with an X in it like this:
+Браузер хэсэгт дараах байдлаар X тэмдэгттэй дөрвөлжин харагдаж байх ёстой:
 
-![x-filled square](../images/tutorial/x-filled-square.png)
+![X-ээр дүүрсэн дөрвөлжин](../images/tutorial/x-filled-square.png)
 
-Now let's have a look at the files in the starter code.
+Одоо эхний кодын файлуудыг харцгаая.
 
 #### `App.js` {/*appjs*/}
 
-The code in `App.js` creates a _component_. In React, a component is a piece of reusable code that represents a part of a user interface. Components are used to render, manage, and update the UI elements in your application. Let's look at the component line by line to see what's going on:
+App.js дахь код нь компонент үүсгэдэг. React-д компонент гэдэг нь дагалдах кодын хэсэг бөгөөд хэрэглэгчийн интерфэйсийн нэг хэсгийг төлөөлдөг. Компонентуудыг аппликейшнд UI элементийг дүрслэх, удирдах, шинэчлэх зорилгоор ашигладаг.
 
 ```js {1}
 export default function Square() {
@@ -311,7 +310,7 @@ export default function Square() {
 }
 ```
 
-The first line defines a function called `Square`. The `export` JavaScript keyword makes this function accessible outside of this file. The `default` keyword tells other files using your code that it's the main function in your file.
+Эхний мөрөнд Square нэртэй функц тодорхойлсон байна. export JavaScript түлхүүр үг нь энэ функцийг энэ файлын гаднаас ашиглах боломжтой болгодог. default түлхүүр үг нь бусад файлуудад энэ файлын гол функц нь энэ гэдгийг зааж өгдөг.
 
 ```js {2}
 export default function Square() {
@@ -319,15 +318,14 @@ export default function Square() {
 }
 ```
 
-The second line returns a button. The `return` JavaScript keyword means whatever comes after is returned as a value to the caller of the function. `<button>` is a *JSX element*. A JSX element is a combination of JavaScript code and HTML tags that describes what you'd like to display. `className="square"` is a button property or *prop* that tells CSS how to style the button. `X` is the text displayed inside of the button and `</button>` closes the JSX element to indicate that any following content shouldn't be placed inside the button.
+Хоёр дахь мөр товч буцаана. JavaScript-ийн `return` түлхүүр үг нь араас нь бичсэн зүйлийг функц дуудсан талд утга болгон буцаахыг илэрхийлдэг. `<button>` бол JSX элемент юм. JSX элемент нь JavaScript код болон HTML tag-ийг хослуулан юу харуулахыг тодорхойлдог. `className="square"` нь товчны шинж чанар буюу prop бөгөөд товчийг CSS-ээр хэрхэн загварлахыг заана. `X` бол товч дотор харагдах текст, харин `</button>` нь JSX элементийг хааж, дараагийн агуулгыг товч дотор оруулахгүйг илэрхийлнэ.
 
 #### `styles.css` {/*stylescss*/}
 
-Click on the file labeled `styles.css` in the _Files_ section of CodeSandbox. This file defines the styles for your React app. The first two _CSS selectors_ (`*` and `body`) define the style of large parts of your app while the `.square` selector defines the style of any component where the `className` property is set to `square`. In your code, that would match the button from your Square component in the `App.js` file.
-
+CodeSandbox-ийн Файлууд хэсгээс styles.css файлыг дар. Энэ файл нь React аппликейшнийхээ загварыг тодорхойлдог.Эхний хоёр CSS сонгогч (* болон body) нь аппликейшний томоохон хэсгүүдийн загварыг тодорхойлдог бол .square сонгогч нь className нь square гэж тогтоосон компонент бүрийн загварыг тодорхойлдог. Чиний кодонд энэ нь App.js дахь Square компонентын товчийг зааж байна.
 #### `index.js` {/*indexjs*/}
 
-Click on the file labeled `index.js` in the _Files_ section of CodeSandbox. You won't be editing this file during the tutorial but it is the bridge between the component you created in the `App.js` file and the web browser.
+CodeSandbox-ийн Файлууд хэсгээс index.js файлыг дар. Энэ файлыг хичээлийн явцад засварлах шаардлагагүй, гэхдээ энэ файл нь App.js дахь чиний бүтээсэн компонентыг веб браузерт холбох гүүр юм.
 
 ```jsx
 import { StrictMode } from 'react';
@@ -337,20 +335,20 @@ import './styles.css';
 import App from './App';
 ```
 
-Lines 1-5 bring all the necessary pieces together:
+1–5-р мөрүүд нь бүх шаардлагатай хэсгүүдийг нэгтгэдэг:
 
-* React
-* React's library to talk to web browsers (React DOM)
-* the styles for your components
-* the component you created in `App.js`.
+- React
+- React-ийг веб браузерт холбоход ашигладаг сан (React DOM)
+- Компонентуудын загварууд
+- `App.js` файлд таны бүтээсэн компонент
 
-The remainder of the file brings all the pieces together and injects the final product into `index.html` in the `public` folder.
+Файлын үлдсэн хэсэг нь бүх хэсгүүдийг нэгтгэж, эцсийн бүтээгдэхүүнийг public хавтсанд байгаа index.html руу шиддэг.
 
-### Building the board {/*building-the-board*/}
+### Самбарыг бүтээх {/*building-the-board*/}
 
-Let's get back to `App.js`. This is where you'll spend the rest of the tutorial.
+Одоо App.js руу буцъя. Чи хичээлийн үлдсэн хугацааг ихэнхдээ энд өнгөрүүлэх болно.
 
-Currently the board is only a single square, but you need nine! If you just try and copy paste your square to make two squares like this:
+Одоогоор самбар нь зөвхөн нэг дөрвөлжин байна, гэхдээ чи есөн дөрвөлжин хэрэгтэй! Хэрвээ зөвхөн нэгийг нь хуулж наах замаар хоёр дөрвөлжин хийх гэж оролдвол:
 
 ```js {2}
 export default function Square() {
@@ -358,7 +356,7 @@ export default function Square() {
 }
 ```
 
-You'll get this error:
+Чи дараах алдааг авна:
 
 <ConsoleBlock level="error">
 
@@ -366,7 +364,7 @@ You'll get this error:
 
 </ConsoleBlock>
 
-React components need to return a single JSX element and not multiple adjacent JSX elements like two buttons. To fix this you can use *Fragments* (`<>` and `</>`) to wrap multiple adjacent JSX elements like this:
+React компонент нь нэг JSX элемент буцаах ёстой бөгөөд хоёр товч шиг зэрэгцээ олон JSX элементийг шууд буцааж болохгүй. Үүнийг засахын тулд *Fragment* (`<>` болон `</>`) ашиглан зэрэгцээ JSX элементүүдийг дараах байдлаар багцалж болно:
 
 ```js {3-6}
 export default function Square() {
@@ -379,17 +377,17 @@ export default function Square() {
 }
 ```
 
-Now you should see:
+Одоо чи дараах зүйлийг харах ёстой:
 
-![two x-filled squares](../images/tutorial/two-x-filled-squares.png)
+![Хоёр X-ээр дүүрсэн дөрвөлжин](../images/tutorial/two-x-filled-squares.png)
 
-Great! Now you just need to copy-paste a few times to add nine squares and...
+Сайхан байна! Одоо чи хуулж хэд хэдэн удаа наах замаар есөн дөрвөлжин нэмэхэд л болно, мөн...
 
-![nine x-filled squares in a line](../images/tutorial/nine-x-filled-squares.png)
+![Есөн X-ээр дүүрсэн дөрвөлжин](../images/tutorial/nine-x-filled-squares.png)
 
-Oh no! The squares are all in a single line, not in a grid like you need for our board. To fix this you'll need to group your squares into rows with `div`s and add some CSS classes. While you're at it, you'll give each square a number to make sure you know where each square is displayed.
+Өө, үгүй! Дөрвөлжин бүгд нэг мөрөнд гарч байна, самбарын сүлжээ шиг биш байна. Үүнийг засахын тулд дөрвөлжин бүрийг div дотор мөр болгон бүлэглэж, зарим CSS класс нэмэх хэрэгтэй. Мөн энэ үеэр дөрвөлжин бүрт дугаар өгч, хаана харуулж байгааг нь тодорхой болгоно.
 
-In the `App.js` file, update the `Square` component to look like this:
+App.js файлын Square компонент-ыг дараах байдлаар шинэчилнэ үү:
 
 ```js {3-19}
 export default function Square() {
@@ -415,11 +413,11 @@ export default function Square() {
 }
 ```
 
-The CSS defined in `styles.css` styles the divs with the `className` of `board-row`. Now that you've grouped your components into rows with the styled `div`s you have your tic-tac-toe board:
+styles.css файлд тодорхойлсон CSS нь board-row className-тэй div-үүдийг загварладаг. Одоо компонентуудыг стильтэй div-д бүлэглэснээр, чиний Tic-Tac-Toe самбар бэлэн болсон:
 
-![tic-tac-toe board filled with numbers 1 through 9](../images/tutorial/number-filled-board.png)
+![1–9 хүртэл дугаарласан Tic-Tac-Toe самбар](../images/tutorial/number-filled-board.png)
 
-But you now have a problem. Your component named `Square`, really isn't a square anymore. Let's fix that by changing the name to `Board`:
+Гэхдээ одоо нэг асуудал гарч байна. Square нэртэй компонент чинь оролцоогоор квадрат биш болсон байна. Үүнийг засахын тулд нэрийг Board гэж өөрчилнө:
 
 ```js {1}
 export default function Board() {
@@ -427,7 +425,7 @@ export default function Board() {
 }
 ```
 
-At this point your code should look something like this:
+Энэ үеэр чиний код дараах байдлаар харагдах ёстой:
 
 <Sandpack>
 
@@ -504,15 +502,15 @@ body {
 
 <Note>
 
-Psssst... That's a lot to type! It's okay to copy and paste code from this page. However, if you're up for a little challenge, we recommend only copying code that you've manually typed at least once yourself.
+Пссст… Энэ их код бичих шаардлагатай шүү! Санаа зоволтгүй, энэ хуудаснаас хуулж нааж болно. Гэхдээ бага зэрэг сорилт хүсэж байвал, заавал өөрөө нэг удаа гараар бичсэн кодыг л хуулж авахыг зөвлөж байна.
 
 </Note>
 
-### Passing data through props {/*passing-data-through-props*/}
+### Props ашиглан өгөгдөл дамжуулах {/*passing-data-through-props*/}
 
-Next, you'll want to change the value of a square from empty to "X" when the user clicks on the square. With how you've built the board so far you would need to copy-paste the code that updates the square nine times (once for each square you have)! Instead of copy-pasting, React's component architecture allows you to create a reusable component to avoid messy, duplicated code.
+Дараагийн алхамд, хэрэглэгч дөрвөлжин дээр дарсан үед дөрвөлжний утгыг хоосноос "X" болгож өөрчлөх хэрэгтэй. Одоогоор самбарыг ингэж бүтээсэн бол дөрвөлжин бүрийг шинэчлэх кодыг 9 удаа хуулж наах шаардлагатай болно (есөн дөрвөлжин тутамд нэг удаа)! Харин хуулж наахын оронд, React-ийн компонентын архитектур нь дагаж ашиглах боломжтой компонент үүсгэж, дахин давтагдах, замбараагүй кодоос зайлсхийх боломжийг олгодог.
 
-First, you are going to copy the line defining your first square (`<button className="square">1</button>`) from your `Board` component into a new `Square` component:
+Юуны өмнө `Board` компонент дахь анхны дөрвөлжинг тодорхойлсон мөрийг (`<button className="square">1</button>`) шинэ `Square` компонент руу хуулна:
 
 ```js {1-3}
 function Square() {
@@ -524,7 +522,7 @@ export default function Board() {
 }
 ```
 
-Then you'll update the Board component to render that `Square` component using JSX syntax:
+Дараа нь Board компонентыг JSX синтакс ашиглан шинэ Square компонентыг дүрслэх байдлаар шинэчилнэ:
 
 ```js {5-19}
 // ...
@@ -551,15 +549,14 @@ export default function Board() {
 }
 ```
 
-Note how unlike the browser `div`s, your own components `Board` and `Square` must start with a capital letter.
+Браузерын `div`-ээс ялгаатай нь таны үүсгэсэн `Board`, `Square` компонентууд том үсгээр эхлэх ёстойг анхаарна уу.
 
-Let's take a look:
+Одоо харцгаая:
 
-![one-filled board](../images/tutorial/board-filled-with-ones.png)
+![Нэг X-ээр дүүрсэн самбар](../images/tutorial/board-filled-with-ones.png)
 
-Oh no! You lost the numbered squares you had before. Now each square says "1". To fix this, you will use *props* to pass the value each square should have from the parent component (`Board`) to its child (`Square`).
-
-Update the `Square` component to read the `value` prop that you'll pass from the `Board`:
+Өө, үгүй! Өмнөх дугаарлагдсан дөрвөлжингуудыг алджээ. Одоо дөрвөлжин бүр "1" гэж гарч байна. Үүнийг засахын тулд props ашиглаж, эх компонент (Board)–аас хүүхэд компонент (Square) руу дөрвөлжин бүрийн утгыг дамжуулна.
+Square компонентыг Board-аас дамжуулж буй value prop-ыг уншдаг байдлаар шинэчилнэ:
 
 ```js {1}
 function Square({ value }) {
@@ -567,9 +564,9 @@ function Square({ value }) {
 }
 ```
 
-`function Square({ value })` indicates the Square component can be passed a prop called `value`.
+`function Square({ value })` Энэ нь Square компонент руу value нэртэй prop дамжуулж болно гэдгийг зааж өгч байна.
 
-Now you want to display that `value` instead of `1` inside every square. Try doing it like this:
+Одоо дөрвөлжин бүрийн дотор "1" биш, дамжуулсан value-г харуулахыг хүсэж байна. Ингэж хийж болно:
 
 ```js {2}
 function Square({ value }) {
@@ -577,11 +574,11 @@ function Square({ value }) {
 }
 ```
 
-Oops, this is not what you wanted:
+Өө, энэ бол хүссэн үр дүн биш байна:
 
-![value-filled board](../images/tutorial/board-filled-with-value.png)
+![Дамжуулсан value-гаар дүүрсэн самбар](../images/tutorial/board-filled-with-value.png)
 
-You wanted to render the JavaScript variable called `value` from your component, not the word "value". To "escape into JavaScript" from JSX, you need curly braces. Add curly braces around `value` in JSX like so:
+Та `value` нэртэй JavaScript хувьсагчийг дүрслэхийг хүсэж байгаа болохоос "value" гэсэн текстийг биш. JSX дотор JavaScript руу шилжихийн тулд угалзан хаалт (`{}`) ашиглана. `value`-г JSX-д ингэж оруулна:
 
 ```js {2}
 function Square({ value }) {
@@ -589,11 +586,11 @@ function Square({ value }) {
 }
 ```
 
-For now, you should see an empty board:
+Одоогоор чи хоосон самбар харах ёстой:
 
-![empty board](../images/tutorial/empty-board.png)
+![Хоосон самбар](../images/tutorial/empty-board.png)
 
-This is because the `Board` component hasn't passed the `value` prop to each `Square` component it renders yet. To fix it you'll add the `value` prop to each `Square` component rendered by the `Board` component:
+Энэ нь Board компонент өөрийн дүрсэлж буй Square бүрт value prop-ыг дамжуулээгүйтэй холбоотой. Үүнийг засахын тулд Board компонентын dүрслэж буй Square бүрт value prop нэмнэ:
 
 ```js {5-7,10-12,15-17}
 export default function Board() {
@@ -619,11 +616,11 @@ export default function Board() {
 }
 ```
 
-Now you should see a grid of numbers again:
+Одоо чи дахин дугаарласан сүлжээтэй самбар харах ёстой:
 
-![tic-tac-toe board filled with numbers 1 through 9](../images/tutorial/number-filled-board.png)
+![1–9 хүртэл дугаарласан Tic-Tac-Toe самбар](../images/tutorial/number-filled-board.png)
 
-Your updated code should look like this:
+Чиний шинэчилсэн код дараах байдлаар харагдах ёстой:
 
 <Sandpack>
 
@@ -702,9 +699,9 @@ body {
 
 </Sandpack>
 
-### Making an interactive component {/*making-an-interactive-component*/}
+### Интерактив компонент үүсгэх {/*making-an-interactive-component*/}
 
-Let's fill the `Square` component with an `X` when you click it. Declare a function called `handleClick` inside of the `Square`. Then, add `onClick` to the props of the button JSX element returned from the `Square`:
+Square компонент дээр дарвал X гаргахыг хийцгээе. Square дотор handleClick нэртэй функц зарлаж, дараа нь Square-ээс буцааж буй button JSX элементэд onClick шинж чанарыг нэмнэ:
 
 ```js {2-4,9}
 function Square({ value }) {
@@ -723,19 +720,21 @@ function Square({ value }) {
 }
 ```
 
-If you click on a square now, you should see a log saying `"clicked!"` in the _Console_ tab at the bottom of the _Browser_ section in CodeSandbox. Clicking the square more than once will log `"clicked!"` again. Repeated console logs with the same message will not create more lines in the console. Instead, you will see an incrementing counter next to your first `"clicked!"` log.
+Одоо дөрвөлжин дээр дарвал CodeSandbox-ийн Browser хэсгийн доор байгаа Console таб-д "clicked!" гэж бичигдэж харагдах ёстой. Дөрвөлжин дээр хэд дахин дарсан ч "clicked!" дахин бичигдэх ба шинэ мөр нэмэгдэхгүй. Харин анхны "clicked!" бичлэгийн хажууд тоо нэмэгдэх байдлаар харагдана.
 
 <Note>
 
-If you are following this tutorial using your local development environment, you need to open your browser's Console. For example, if you use the Chrome browser, you can view the Console with the keyboard shortcut **Shift + Ctrl + J** (on Windows/Linux) or **Option + ⌘ + J** (on macOS).
+Хэрвээ чи хичээлийг локал хөгжүүлэлтийн орчинд дагаж байгаа бол браузерийн Console-ийг нээх хэрэгтэй. Жишээ нь, Chrome браузер ашиглаж байвал Console-ийг дараах товчлолоор нээж болно:
+Windows/Linux: Shift + Ctrl + J
+macOS: Option + ⌘ + J
 
 </Note>
 
-As a next step, you want the Square component to "remember" that it got clicked, and fill it with an "X" mark. To "remember" things, components use *state*.
+Дараагийн алхамд, Square компонент дарсан гэдгээ "санаж", "X" тэмдэгтэй болгохыг хүсэж байна. Юу санах гэж байгааг компонентууд state ашиглаж хийдэг.
 
-React provides a special function called `useState` that you can call from your component to let it "remember" things. Let's store the current value of the `Square` in state, and change it when the `Square` is clicked.
+React нь useState нэртэй тусгай функц өгдөг бөгөөд үүнийг компонент дотроос дуудахдаа юмс "санах" боломжтой болдог. Одоо Square-ийн одоо байгаа утгыг state-д хадгалж, дөрвөлжин дээр дарвал утгыг өөрчилөх байдлаар ашиглана.
 
-Import `useState` at the top of the file. Remove the `value` prop from the `Square` component. Instead, add a new line at the start of the `Square` that calls `useState`. Have it return a state variable called `value`:
+Файлын эхэнд useState-г импорт хийнэ. Square компонентын value prop-ыг устгаад**, оронд нь Square-ийн эхэнд **useState-г дуудах шинэ мөр нэмнэ**. Энэ нь **value` нэртэй state хувьсагчийг буцаах болно:
 
 ```js {1,3,4}
 import { useState } from 'react';
@@ -747,9 +746,9 @@ function Square() {
     //...
 ```
 
-`value` stores the value and `setValue` is a function that can be used to change the value. The `null` passed to `useState` is used as the initial value for this state variable, so `value` here starts off equal to `null`.
+'value' нь утгыг хадгалдаг бол 'setValue' нь тухайн утгыг өөрчлөхөд ашиглах функц юм.useState руу дамжуулсан 'null' нь state хувьсагчийн эхний утгыг заадаг тул энд 'value' эхэндээ 'null' утгатай байна.
 
-Since the `Square` component no longer accepts props anymore, you'll remove the `value` prop from all nine of the Square components created by the Board component:
+Одоо 'Square' компонент props авчрахгүй болсон тул, Board компонентын дүрсэлсэн есөн Square бүрээс 'value' prop-ыг устгана:
 
 ```js {6-8,11-13,16-18}
 // ...
@@ -776,7 +775,7 @@ export default function Board() {
 }
 ```
 
-Now you'll change `Square` to display an "X" when clicked. Replace the `console.log("clicked!");` event handler with `setValue('X');`. Now your `Square` component looks like this:
+Одоо 'Square' дээр дарвал "X" гарч ирэхээр өөрчилнө. 'console.log("clicked!");' -г орлуулж 'setValue('X');' -г ашиглана. Ингэснээр Square компонент дараах байдлаар харагдана:
 
 ```js {5}
 function Square() {
@@ -797,13 +796,13 @@ function Square() {
 }
 ```
 
-By calling this `set` function from an `onClick` handler, you're telling React to re-render that `Square` whenever its `<button>` is clicked. After the update, the `Square`'s `value` will be `'X'`, so you'll see the "X" on the game board. Click on any Square, and "X" should show up:
+'onClick' обработчикт энэ 'set' функц-ийг дуудаж байгаа нь React-д тэр 'Square'-ийг дахин render хийхийг зааж байгаа хэрэг юм. Шинэчлэгдсэний дараа 'Square'-ийн value 'X' болно, тэгээд тоглоомын самбар дээр "X" харагдана. Дөрвөлжин дээр дар, "X" гарч ирнэ:
 
-![adding xes to board](../images/tutorial/tictac-adding-x-s.gif)
+![Самбарт X тэмдэгүүдийг нэмэх](../images/tutorial/tictac-adding-x-s.gif)
 
-Each Square has its own state: the `value` stored in each Square is completely independent of the others. When you call a `set` function in a component, React automatically updates the child components inside too.
+Дөрвөлжин бүр өөрийн state-тэй: тус бүрийн 'value' нь бусад дөрвөлжингоос бүрэн хараат бус. Компонентын 'set' функцийг дуудахад React нь автомат хүүхэд компонентуудыг ч шинэчилж өгдөг.
 
-After you've made the above changes, your code will look like this:
+Дээрх өөрчлөлтүүдийг хийсний дараа чиний код дараах байдлаар харагдана:
 
 <Sandpack>
 
@@ -899,36 +898,34 @@ body {
 
 ### React Developer Tools {/*react-developer-tools*/}
 
-React Developer Tools let you check the props and the state of your React components. It is available as a [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/), and [Edge](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil) browser extension.
+React Developer Tools нь React компонентуудын prop болон төлөвийг шалгах боломж олгодог. Үүнийг [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/), [Edge](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil) браузерын өргөтгөл хэлбэрээр ашиглаж болно.
 
-After you install it, a new *Components* tab will appear in your browser Developer Tools for sites using React. If you're following along in CodeSandbox, you'd need to first open your sandbox preview in a new tab:
+Суулгасны дараа React ашигладаг сайтын браузерын Developer Tools дотор шинэ *Components* таб гарч ирнэ. Хэрэв CodeSandbox дээр хичээлээ дагаж байгаа бол эхлээд sandbox preview-г шинэ табад нээнэ:
 
 ![opening in new tab](../images/tutorial/sandbox-new-tab.png)
 
-Then, on the preview page, open your browser's DevTools and find the *Components* tab:
+Дараа нь preview хуудасны DevTools-ийг нээж *Components* табыг олно:
 
 ![components tab](../images/tutorial/components-tab.png)
 
-To inspect a particular component on the screen, use the button in the top left corner of the Components tab:
+Дэлгэц дээрх тодорхой компонентыг шалгахын тулд Components табын зүүн дээд булангийн товчийг ашиглана:
 
 ![inspecting with devtools](../images/tutorial/devtools-inspect.gif)
 
 
-## Completing the game {/*completing-the-game*/}
+## Тоглоомыг дуусгах {/*completing-the-game*/}
+Энэ хүртэл танд tic-tac-toe тоглоомыг бүтээх үндсэн бүх хэсгүүд бэлэн боллоо. Тоглоомыг бүрэн дуусгахын тулд одоо хөлөг дээр "X" болон "O"-г ээлжлэн байрлуулж, ялагчийг тодруулах арга хэрэгтэй.
 
-By this point, you have all the basic building blocks for your tic-tac-toe game. To have a complete game, you now need to alternate placing "X"s and "O"s on the board, and you need a way to determine a winner.
+### Төлөвийг дээшлүүлэх (Lifting state up) {/*lifting-state-up*/}
+Одоогийн байдлаар 'Square' компонент бүр тоглоомын төлөвийн (state) тодорхой хэсгийг хадгалж байна. Tic-tac-toe тоглоомонд ялагчийг шалгахын тулд 'Board' компонент нь 9 өөр 'Square' компонентын төлөвийг ямар нэг байдлаар мэдэх шаардлагатай болно.
 
-### Lifting state up {/*lifting-state-up*/}
+Та үүнийг хэрхэн шийдэх вэ? Эхлээд та 'Board' компонент нь 'Square' бүрээс өөрийнх нь төлөвийг "асуух" хэрэгтэй гэж бодож магадгүй. Хэдийгээр React дээр ийм байдлаар ажиллах боломжтой ч код нь ойлгоход хэцүү, алдаа гарах магадлал өндөр, мөн бүтцийг нь өөрчлөхөд (refactor) төвөгтэй болдог тул бид үүнийг зөвлөдөггүй. Үүний оронд хамгийн зөв арга бол тоглоомын төлөвийг 'Square' бүр дээр биш, харин эцэг компонент болох 'Board' дээр хадгалах юм. 'Board' компонент нь 'Square' бүрт юу харуулахыг нь "prop"-оор дамжуулж хэлж өгнө (яг л өмнө нь тоо дамжуулсантай адил).
 
-Currently, each `Square` component maintains a part of the game's state. To check for a winner in a tic-tac-toe game, the `Board` would need to somehow know the state of each of the 9 `Square` components.
+**Олон хүүхэд компонентоос өгөгдөл цуглуулах эсвэл хоёр хүүхэд компонентыг хооронд нь харилцуулахын тулд дундын төлөвийг (state) тэдгээрийн эцэг компонент дээр зарлаж өгөөрэй. Эцэг компонент нь тухайн төлөвийг буцаагаад хүүхдүүд рүүгээ "props"-оор дамжуулж болно. Энэ нь хүүхэд компонентуудыг хоорондоо болон эцэг компоненттойгоо ижил мэдээлэлтэй (sync) байлгахад тусалдаг.**
 
-How would you approach that? At first, you might guess that the `Board` needs to "ask" each `Square` for that `Square`'s state. Although this approach is technically possible in React, we discourage it because the code becomes difficult to understand, susceptible to bugs, and hard to refactor. Instead, the best approach is to store the game's state in the parent `Board` component instead of in each `Square`. The `Board` component can tell each `Square` what to display by passing a prop, like you did when you passed a number to each Square.
+React компонентын бүтцийг сайжруулах (refactor) үед төлөвийг эцэг компонент руу дээшлүүлэх нь түгээмэл байдаг.
 
-**To collect data from multiple children, or to have two child components communicate with each other, declare the shared state in their parent component instead. The parent component can pass that state back down to the children via props. This keeps the child components in sync with each other and with their parent.**
-
-Lifting state into a parent component is common when React components are refactored.
-
-Let's take this opportunity to try it out. Edit the `Board` component so that it declares a state variable named `squares` that defaults to an array of 9 nulls corresponding to the 9 squares:
+Одоо үүнийг туршиж үзье. Board компонентыг засаж, 9 нүдэнд харгалзах 9 ширхэг "null" утга бүхий squares нэртэй state хувьсагчийг зарлаарай:
 
 ```js {3}
 // ...
@@ -940,13 +937,13 @@ export default function Board() {
 }
 ```
 
-`Array(9).fill(null)` creates an array with nine elements and sets each of them to `null`. The `useState()` call around it declares a `squares` state variable that's initially set to that array. Each entry in the array corresponds to the value of a square. When you fill the board in later, the `squares` array will look like this:
+'Array(9).fill(null)' нь есөн элементтэй массив үүсгэж, элемент бүрийг 'null' утгаар дүүргэнэ. Үүнийг 'useState()'-ээр ороож өгснөөр тухайн массиваар анхны утга нь тохируулагдсан squares нэртэй state хувьсагч зарлагдаж байгаа юм. Массивын индекс бүр нь хөлөг дээрх нэг нүдний утгатай харгалзана. Дараа нь та хөлгийг дүүргэх үед squares массив иймэрхүү харагдах болно:
 
 ```jsx
 ['O', null, 'X', 'X', 'X', 'O', 'O', null, null]
 ```
 
-Now your `Board` component needs to pass the `value` prop down to each `Square` that it renders:
+Одоо таны 'Board' компонент өөрийн рендерлэж буй 'Square' бүрт 'value' нэртэй 'prop'-ыг дамжуулах шаардлагатай:
 
 ```js {6-8,11-13,16-18}
 export default function Board() {
@@ -973,7 +970,7 @@ export default function Board() {
 }
 ```
 
-Next, you'll edit the `Square` component to receive the `value` prop from the Board component. This will require removing the Square component's own stateful tracking of `value` and the button's `onClick` prop:
+Дараа нь, та 'Board' компонентоос 'value' нэртэй 'prop'-ыг хүлээн авахын тулд 'Square' компонентыг засах болно. Үүний тулд 'Square' компонент өөрийн 'value' утгыг 'state'-ээр хянаж байсныг болон товчлуурын 'onClick' 'prop'-ыг устгах шаардлагатай:
 
 ```js {1,2}
 function Square({value}) {
@@ -981,11 +978,11 @@ function Square({value}) {
 }
 ```
 
-At this point you should see an empty tic-tac-toe board:
+Энэ үед танд хоосон 'tic-tac-toe' хөлөг харагдах ёстой:
 
-![empty board](../images/tutorial/empty-board.png)
+![Хоосон самбар](../images/tutorial/empty-board.png)
 
-And your code should look like this:
+Тэгээд таны код иймэрхүү харагдах ёстой:
 
 <Sandpack>
 
@@ -1067,11 +1064,11 @@ body {
 
 </Sandpack>
 
-Each Square will now receive a `value` prop that will either be `'X'`, `'O'`, or `null` for empty squares.
+'Square' бүр одоо хоосон нүдэнд зориулсан 'null', эсвэл 'X', 'O' утгуудын аль нэгийг 'value' 'prop'-оор хүлээн авах болно.
 
-Next, you need to change what happens when a `Square` is clicked. The `Board` component now maintains which squares are filled. You'll need to create a way for the `Square` to update the `Board`'s state. Since state is private to a component that defines it, you cannot update the `Board`'s state directly from `Square`.
+Дараа нь, та 'Square' дээр дарахад юу болохыг өөрчлөх шаардлагатай. Одоо 'Board' компонент аль нүднүүд дүүрсэн байгааг хянаж байгаа. Тиймээс 'Square' нь 'Board'-ын 'state'-ийг шинэчлэх арга замыг үүсгэх хэрэгтэй. 'State' нь зөвхөн түүнийг тодорхойлсон компонентдоо хувийн (private) байдаг тул та 'Square' дотроос 'Board'-ын 'state'-ийг шууд шинэчлэх боломжгүй.
 
-Instead, you'll pass down a function from the `Board` component to the `Square` component, and you'll have `Square` call that function when a square is clicked. You'll start with the function that the `Square` component will call when it is clicked. You'll call that function `onSquareClick`:
+Үүний оронд, та 'Board' компонентоос 'Square' компонент руу нэг функц дамжуулж, нүдэн дээр дарах үед 'Square' тухайн функцийг дууддаг байхаар тохируулна. Та 'Square' компонент дээр дарахад дуудагдах функцээс эхлэх бөгөөд тэрхүү функцээ 'onSquareClick' гэж нэрлэх болно:
 
 ```js {3}
 function Square({ value }) {
@@ -1083,7 +1080,7 @@ function Square({ value }) {
 }
 ```
 
-Next, you'll add the `onSquareClick` function to the `Square` component's props:
+Дараа нь, та 'onSquareClick' функцийг 'Square' компонентын 'props' руу нэмэх болно:
 
 ```js {1}
 function Square({ value, onSquareClick }) {
@@ -1095,7 +1092,7 @@ function Square({ value, onSquareClick }) {
 }
 ```
 
-Now you'll connect the `onSquareClick` prop to a function in the `Board` component that you'll name `handleClick`. To connect `onSquareClick` to `handleClick` you'll pass a function to the `onSquareClick` prop of the first `Square` component:
+Одоо `onSquareClick` prop-ыг `Board` компонент доторх `handleClick` гэж нэрлэх функцтэй холбоно. Үүний тулд эхний `Square` компонентийн `onSquareClick` prop-д функц дамжуулна:
 
 ```js {7}
 export default function Board() {
@@ -1110,7 +1107,7 @@ export default function Board() {
 }
 ```
 
-Lastly, you will define the `handleClick` function inside the Board component to update the `squares` array holding your board's state:
+Эцэст нь, та хөлгийн 'state'-ийг хадгалж буй 'squares' массивыг шинэчлэхийн тулд 'Board' компонент дотор 'handleClick' функцийг тодорхойлно:
 
 ```js {4-8}
 export default function Board() {
@@ -1128,17 +1125,17 @@ export default function Board() {
 }
 ```
 
-The `handleClick` function creates a copy of the `squares` array (`nextSquares`) with the JavaScript `slice()` Array method. Then, `handleClick` updates the `nextSquares` array to add `X` to the first (`[0]` index) square.
+'handleClick' функц нь JavaScript-ийн 'slice()' массивын аргыг ашиглан 'squares' массивын хуулбарыг ('nextSquares') үүсгэнэ. Дараа нь 'handleClick' нь 'nextSquares' массивын эхний ('[0]' индекс) нүдэнд 'X' утгыг нэмж шинэчилнэ.
 
-Calling the `setSquares` function lets React know the state of the component has changed. This will trigger a re-render of the components that use the `squares` state (`Board`) as well as its child components (the `Square` components that make up the board).
+'setSquares' функцийг дуудсанаар React-д компонентын төлөв (state) өөрчлөгдсөнийг мэдэгдэнэ. Энэ нь 'squares' төлөвийг ашиглаж буй компонент ('Board') болон түүний хүүхэд компонентуудыг (хөлгийг бүрдүүлж буй 'Square' компонентууд) дахин рендерлэх (re-render) үйлдлийг эхлүүлнэ.
 
 <Note>
 
-JavaScript supports [closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) which means an inner function (e.g. `handleClick`) has access to variables and functions defined in an outer function (e.g. `Board`). The `handleClick` function can read the `squares` state and call the `setSquares` method because they are both defined inside of the `Board` function.
+JavaScript нь [closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)-ийг дэмждэг. Өөрөөр хэлбэл, дотоод функц (`handleClick` гэх мэт) нь гадаад функцэд (`Board` гэх мэт) тодорхойлсон хувьсагч болон функцүүдэд хандаж чадна. `squares`, `setSquares` хоёрыг `Board` функц дотор тодорхойлсон учраас `handleClick` функц `squares` төлөвийг уншиж, `setSquares` аргыг дуудаж чадна.
 
 </Note>
 
-Now you can add X's to the board...  but only to the upper left square. Your `handleClick` function is hardcoded to update the index for the upper left square (`0`). Let's update `handleClick` to be able to update any square. Add an argument `i` to the `handleClick` function that takes the index of the square to update:
+Одоо та хөлөг дээр 'X' нэмэх боломжтой боллоо... гэхдээ зөвхөн зүүн дээд талын нүдэнд л нэмэгдэж байна. Учир нь таны 'handleClick' функц зүүн дээд талын нүдний индекс болох ('0') утгыг шинэчлэхээр хатуу кодлогдсон (hardcoded) байна. Одоо 'handleClick' функцийг дурын нүдийг шинэчлэх боломжтой болгож өөрчилье. 'handleClick' функцэд шинэчлэх нүдний индексийг хүлээн авах 'i' гэсэн аргумент нэмж өгөөрэй:
 
 ```js {4,6}
 export default function Board() {
@@ -1156,13 +1153,13 @@ export default function Board() {
 }
 ```
 
-Next, you will need to pass that `i` to `handleClick`. You could try to set the `onSquareClick` prop of square to be `handleClick(0)` directly in the JSX like this, but it won't work:
+Дараа нь `i` аргументыг `handleClick` рүү дамжуулах шаардлагатай. Та JSX дотор шууд `onSquareClick={handleClick(0)}` гэж тохируулахыг оролдож болох ч энэ нь ажиллахгүй:
 
 ```jsx
 <Square value={squares[0]} onSquareClick={handleClick(0)} />
 ```
 
-Here is why this doesn't work. The `handleClick(0)` call will be a part of rendering the board component. Because `handleClick(0)` alters the state of the board component by calling `setSquares`, your entire board component will be re-rendered again. But this runs `handleClick(0)` again, leading to an infinite loop:
+Энэ нь яагаад ажиллахгүй байгаагийн шалтгаан нь энэ юм. 'handleClick(0)' дуудлага нь 'board' компонентыг рендерлэх (rendering) процессын нэг хэсэг болно. 'handleClick(0)' нь 'setSquares' функцийг дуудсанаар 'board' компонентын төлөвийг (state) өөрчлөх тул таны 'board' компонент бүхэлдээ дахин рендерлэгдэх болно. Гэвч энэ үед 'handleClick(0)' дахин ажиллах бөгөөд энэ нь төгсгөлгүй давталтад (infinite loop) хүргэнэ:
 
 <ConsoleBlock level="error">
 
@@ -1170,13 +1167,13 @@ Too many re-renders. React limits the number of renders to prevent an infinite l
 
 </ConsoleBlock>
 
-Why didn't this problem happen earlier?
+Яагаад энэ асуудал өмнө нь гараагүй вэ?
 
-When you were passing `onSquareClick={handleClick}`, you were passing the `handleClick` function down as a prop. You were not calling it! But now you are *calling* that function right away--notice the parentheses in `handleClick(0)`--and that's why it runs too early. You don't *want* to call `handleClick` until the user clicks!
+Та өмнө нь `onSquareClick={handleClick}` гэж дамжуулахдаа `handleClick` функцийг өөрийг нь prop болгон дамжуулсан. Та түүнийг дуудаагүй! Харин одоо функцийг шууд дуудаж байна—`handleClick(0)` доторх хаалтыг анзаараарай. Тиймээс энэ нь хэтэрхий эрт ажиллаж байна. Хэрэглэгч дарах хүртэл `handleClick`-ийг дуудах хэрэггүй.
 
-You could fix this by creating a function like `handleFirstSquareClick` that calls `handleClick(0)`, a function like `handleSecondSquareClick` that calls `handleClick(1)`, and so on. You would pass (rather than call) these functions down as props like `onSquareClick={handleFirstSquareClick}`. This would solve the infinite loop.
+Үүнийг `handleClick(0)`-ийг дууддаг `handleFirstSquareClick`, `handleClick(1)`-ийг дууддаг `handleSecondSquareClick` зэрэг функц үүсгэх замаар засаж болно. Дараа нь эдгээр функцийг `onSquareClick={handleFirstSquareClick}` гэх мэтээр prop болгон дамжуулна (дуудахгүй). Ингэснээр төгсгөлгүй давталтын асуудал шийдэгдэнэ.
 
-However, defining nine different functions and giving each of them a name is too verbose. Instead, let's do this:
+Гэвч есөн өөр функц тодорхойлж, тус бүрт нь нэр өгөх нь хэтэрхий нуршуу (verbose) хэрэг болно. Үүний оронд дараах байдлаар хийцгээе:
 
 ```js {6}
 export default function Board() {
@@ -1190,9 +1187,9 @@ export default function Board() {
 }
 ```
 
-Notice the new `() =>` syntax. Here, `() => handleClick(0)` is an *arrow function,* which is a shorter way to define functions. When the square is clicked, the code after the `=>` "arrow" will run, calling `handleClick(0)`.
+Шинэ () => бичиглэлийг анзаараарай. Энд () => handleClick(0) нь arrow function (сумт функц) бөгөөд энэ нь функц тодорхойлох илүү товч арга юм. Нүдэн дээр дарах үед => "сумны" ард байгаа код ажиллаж, handleClick(0)-ийг дуудах болно.
 
-Now you need to update the other eight squares to call `handleClick` from the arrow functions you pass. Make sure that the argument for each call of the `handleClick` corresponds to the index of the correct square:
+Одоо та бусад найман нүдийг өөрийнх нь индекс бүхий 'arrow function'-оос handleClick-ийг дууддаг байхаар шинэчлэх хэрэгтэй. handleClick дуудлага бүрийн аргумент нь харгалзах нүдний индекстэй тохирч байгаа эсэхийг шалгаарай:
 
 ```js {6-8,11-13,16-18}
 export default function Board() {
@@ -1219,13 +1216,13 @@ export default function Board() {
 };
 ```
 
-Now you can again add X's to any square on the board by clicking on them:
+Одоо та хөлгийн аль ч нүдэн дээр дарж 'X' тэмдэглэгээг дахин нэмэх боломжтой боллоо:
 
-![filling the board with X](../images/tutorial/tictac-adding-x-s.gif)
+![Гэхдээ одоогоор нүдэн дээр дарах бүрт зөвхөн 'X' л гарч ирж байгаа.](../images/tutorial/tictac-adding-x-s.gif)
 
-But this time all the state management is handled by the `Board` component!
+Гэхдээ энэ удаад төлөвийн бүх удирдлагыг (state management) 'Board' компонент хариуцаж байгаа юм!
 
-This is what your code should look like:
+Таны код иймэрхүү харагдах ёстой:
 
 <Sandpack>
 
@@ -1318,27 +1315,27 @@ body {
 
 </Sandpack>
 
-Now that your state handling is in the `Board` component, the parent `Board` component passes props to the child `Square` components so that they can be displayed correctly. When clicking on a `Square`, the child `Square` component now asks the parent `Board` component to update the state of the board. When the `Board`'s state changes, both the `Board` component and every child `Square` re-renders automatically. Keeping the state of all squares in the `Board` component will allow it to determine the winner in the future.
+Одоо таны төлөвийн удирдлага 'Board' компонент дотор байгаа тул эцэг 'Board' компонент нь хүүхэд 'Square' компонентууд руу 'props'-ыг дамжуулж, тэдгээрийг зөв харуулах боломжийг олгож байна. 'Square' дээр дарах үед хүүхэд 'Square' компонент нь эцэг 'Board' компонентоосоо хөлгийн төлөвийг (state) шинэчлэхийг хүсдэг. 'Board'-ын төлөв өөрчлөгдөхөд 'Board' компонент болон түүний бүх хүүхэд 'Square' компонентууд автоматаар дахин рендерлэгддэг. Бүх нүдний төлөвийг 'Board' компонент дотор хадгалах нь ирээдүйд ялагчийг тодорхойлох боломжийг олгоно.
 
-Let's recap what happens when a user clicks the top left square on your board to add an `X` to it:
+Хэрэглэгч 'X' тэмдэг нэмэхийн тулд хөлгийн зүүн дээд талын нүдэн дээр дарах үед юу болдгийг товчхон дүгнэе:
 
-1. Clicking on the upper left square runs the function that the `button` received as its `onClick` prop from the `Square`. The `Square` component received that function as its `onSquareClick` prop from the `Board`. The `Board` component defined that function directly in the JSX. It calls `handleClick` with an argument of `0`.
-1. `handleClick` uses the argument (`0`) to update the first element of the `squares` array from `null` to `X`.
-1. The `squares` state of the `Board` component was updated, so the `Board` and all of its children re-render. This causes the `value` prop of the `Square` component with index `0` to change from `null` to `X`.
+1. Зүүн дээд нүдийг дарахад тухайн товчны `Square`-ээс `onClick` prop-оор хүлээн авсан функц ажиллана. `Square` компонент уг функцийг `Board`-оос `onSquareClick` prop-оор дамжуулан авсан. `Board` компонент уг функцийг JSX дотор тодорхойлсон бөгөөд энэ нь `handleClick` функцийг `0` аргументтай дуудна.
+1. `handleClick` функц хүлээн авсан `0` аргументыг ашиглан `squares` массивын эхний элементийг `null`-ээс `X` болгон шинэчилнэ.
+1. `Board` компонентийн `squares` төлөв шинэчлэгдсэн тул `Board` болон түүний бүх хүүхэд компонент дахин дүрслэгдэнэ. Үүний үр дүнд `0` индекстэй `Square` компонентийн `value` prop `null`-ээс `X` болж өөрчлөгдөнө.
 
-In the end the user sees that the upper left square has changed from empty to having an `X` after clicking it.
+Эцэст нь хэрэглэгч зүүн дээд нүдийг дарахад хоосон нүд `X` тэмдэгтэй болж өөрчлөгдөхийг харна.
 
 <Note>
 
-The DOM `<button>` element's `onClick` attribute has a special meaning to React because it is a built-in component. For custom components like Square, the naming is up to you. You could give any name to the `Square`'s `onSquareClick` prop or `Board`'s `handleClick` function, and the code would work the same. In React, it's conventional to use `onSomething` names for props which represent events and `handleSomething` for the function definitions which handle those events.
+DOM-ийн `<button>` элементийн `onClick` атрибут нь суурилагдсан компонент учраас React-д тусгай утгатай. `Square` шиг өөрийн үүсгэсэн компонентийн нэршлийг та өөрөө сонгоно. `Square`-ийн `onSquareClick` prop эсвэл `Board`-ын `handleClick` функцэд өөр нэр өгсөн ч код адилхан ажиллана. React-д үйл явдлыг илэрхийлэх prop-д `onSomething`, харин үйл явдлыг боловсруулах функцэд `handleSomething` гэсэн нэр ашиглах нь тогтсон хэвшил юм.
 
 </Note>
 
-### Why immutability is important {/*why-immutability-is-important*/}
+### Яагаад хувиршгүй байдал чухал вэ {/*why-immutability-is-important*/}
 
-Note how in `handleClick`, you call `.slice()` to create a copy of the `squares` array instead of modifying the existing array. To explain why, we need to discuss immutability and why immutability is important to learn.
+'handleClick' дотор та 'squares' массивыг шууд өөрчлөхийн оронд '.slice()' ашиглан хуулбар үүсгэж байгааг анзаараарай. Үүний шалтгааныг тайлбарлахын тулд бид 'immutability' буюу хувиршгүй байдал болон яагаад үүнийг сурах нь чухал болох талаар ярилцах хэрэгтэй.
 
-There are generally two approaches to changing data. The first approach is to _mutate_ the data by directly changing the data's values. The second approach is to replace the data with a new copy which has the desired changes. Here is what it would look like if you mutated the `squares` array:
+Өгөгдлийг өөрчлөхөд ерөнхийдөө хоёр арга байдаг. Эхний арга нь өгөгдлийн утгыг шууд өөрчлөх замаар өгөгдлийг 'mutate' хийх юм. Хоёр дахь арга нь өгөгдлийг хүссэн өөрчлөлтүүдийг агуулсан шинэ хуулбараар солих юм. Хэрэв та 'squares' массивыг 'mutate' хийсэн бол иймэрхүү харагдах байсан:
 
 ```jsx
 const squares = [null, null, null, null, null, null, null, null, null];
@@ -1346,7 +1343,7 @@ squares[0] = 'X';
 // Now `squares` is ["X", null, null, null, null, null, null, null, null];
 ```
 
-And here is what it would look like if you changed data without mutating the `squares` array:
+Тэгээд 'squares' массивыг 'mutate' хийхгүйгээр өгөгдлийг өөрчилбөл иймэрхүү харагдах байсан:
 
 ```jsx
 const squares = [null, null, null, null, null, null, null, null, null];
@@ -1354,17 +1351,18 @@ const nextSquares = ['X', null, null, null, null, null, null, null, null];
 // Now `squares` is unchanged, but `nextSquares` first element is 'X' rather than `null`
 ```
 
-The result is the same but by not mutating (changing the underlying data) directly, you gain several benefits.
+Үр дүн нь ижилхэн боловч 'mutating' хийхгүй байснаар (суурь өгөгдлийг шууд өөрчлөхгүй байх) та хэд хэдэн давуу талыг олж авна.
 
-Immutability makes complex features much easier to implement. Later in this tutorial, you will implement a "time travel" feature that lets you review the game's history and "jump back" to past moves. This functionality isn't specific to games--an ability to undo and redo certain actions is a common requirement for apps. Avoiding direct data mutation lets you keep previous versions of the data intact, and reuse them later.
+'Immutability' нь цогц үйлдлүүдийг хэрэгжүүлэхэд илүү хялбар болгодог. Энэхүү хичээлийн дараагийн хэсэгт та тоглоомын түүхийг эргэн харах болон өмнөх нүүдлүүд рүү 'jump back' хийх боломжтой 'time travel' функцийг хэрэгжүүлэх болно. Энэ функц нь зөвхөн тоглоомд зориулагдаагүй бөгөөд тодорхой үйлдлүүдийг буцаах (undo) болон дахин хийх (redo) чадвар нь аппликейшнуудад түгээмэл байдаг шаардлага юм. Өгөгдлийг шууд 'mutation' хийхээс зайлсхийснээр та өгөгдлийн өмнөх хувилбаруудыг бүрэн хэвээр үлдээж, дараа нь тэдгээрийг дахин ашиглах боломжтой болно.
 
-There is also another benefit of immutability. By default, all child components re-render automatically when the state of a parent component changes. This includes even the child components that weren't affected by the change. Although re-rendering is not by itself noticeable to the user (you shouldn't actively try to avoid it!), you might want to skip re-rendering a part of the tree that clearly wasn't affected by it for performance reasons. Immutability makes it very cheap for components to compare whether their data has changed or not. You can learn more about how React chooses when to re-render a component in [the `memo` API reference](/reference/react/memo).
+Мөн 'immutability'-ийн өөр нэг давуу тал бий. Ерөнхийдөө, эцэг компонентын төлөв (state) өөрчлөгдөхөд бүх хүүхэд компонентууд автоматаар дахин рендерлэгддэг. Үүнд тухайн өөрчлөлтөд өртөөгүй хүүхэд компонентууд ч багтана. Хэдийгээр дахин рендерлэх үйл явц нь хэрэглэгчид өөрт нь шууд мэдэгдэхгүй ч (та үүнээс идэвхтэйгээр зайлсхийх гэж оролдох хэрэггүй!), гүйцэтгэлийг сайжруулах зорилгоор өөрчлөлтөд өртөөгүй нь тодорхой байгаа модны зарим хэсгийг дахин рендерлэхгүй алгасахыг хүсэж болох юм. 'Immutability' нь компонентуудад өөрсдийнх нь өгөгдөл өөрчлөгдсөн эсэхийг харьцуулж шалгахад маш хялбар (зардал багатай) болгож өгдөг. 'React' компонентыг хэзээ дахин рендерлэхээ хэрхэн сонгодог талаар та илүү ихийг эндээс сурч болно:
+[the `memo` API reference](/reference/react/memo).
 
-### Taking turns {/*taking-turns*/}
+### Ээлжлэн тоглох {/*taking-turns*/}
 
-It's now time to fix a major defect in this tic-tac-toe game: the "O"s cannot be marked on the board.
+Одоо энэ 'tic-tac-toe' тоглоомын нэг томоохон дутагдлыг засах цаг боллоо: хөлөг дээр 'O' тэмдэглэгээ хийх боломжгүй байна.
 
-You'll set the first move to be "X" by default. Let's keep track of this by adding another piece of state to the Board component:
+Та эхний нүүдлийг анхны утгаар нь 'X' байхаар тохируулна. Үүнийг хянахын тулд 'Board' компонентэд өөр нэг 'state' нэмж оруулцгаая:
 
 ```js {2}
 function Board() {
@@ -1375,7 +1373,7 @@ function Board() {
 }
 ```
 
-Each time a player moves, `xIsNext` (a boolean) will be flipped to determine which player goes next and the game's state will be saved. You'll update the `Board`'s `handleClick` function to flip the value of `xIsNext`:
+Тоглогч нүүдэл хийх бүрд, дараагийн ээлжинд аль тоглогч нүүхийг шийдэхийн тулд 'xIsNext' (boolean утга) солигдож, тоглоомын төлөв хадгалагдах болно. Та 'Board' компонентын 'handleClick' функцийг шинэчилж 'xIsNext' утгыг эсрэгээр нь солих (flip) үйлдлийг оруулна:
 
 ```js {7,8,9,10,11,13}
 export default function Board() {
@@ -1399,15 +1397,15 @@ export default function Board() {
 }
 ```
 
-Now, as you click on different squares, they will alternate between `X` and `O`, as they should!
+Одоо та өөр өөр нүднүүд дээр дарахад тэдгээр нь байх ёстой ёсоороо 'X' болон 'O' болж ээлжлэн солигдох болно!
 
-But wait, there's a problem. Try clicking on the same square multiple times:
+Гэхдээ түр хүлээнээрэй, нэг асуудал байна. Нэг нүдэн дээрээ олон удаа дарж үзээрэй:
 
 ![O overwriting an X](../images/tutorial/o-replaces-x.gif)
 
-The `X` is overwritten by an `O`! While this would add a very interesting twist to the game, we're going to stick to the original rules for now.
+'X' нь 'O'-оор дарагдаж бичигдээд байна! Хэдийгээр энэ нь тоглоомыг сонирхолтой болгож болох ч, одоохондоо бид үндсэн дүрмийг баримтлах болно.
 
-When you mark a square with an `X` or an `O` you aren't first checking to see if the square already has an `X` or `O` value. You can fix this by *returning early*. You'll check to see if the square already has an `X` or an `O`. If the square is already filled, you will `return` in the `handleClick` function early--before it tries to update the board state.
+Та нүдийг `X` эсвэл `O`-оор тэмдэглэхдээ тухайн нүдэнд аль хэдийн утга байгаа эсэхийг эхлээд шалгахгүй байна. Үүнийг *эрт буцаах* замаар засаж болно. Хэрэв нүд аль хэдийн дүүрсэн бол `handleClick` функц хөлгийн төлөвийг шинэчлэхээс өмнө `return` хийж дуусна.
 
 ```js {2,3,4}
 function handleClick(i) {
@@ -1419,7 +1417,7 @@ function handleClick(i) {
 }
 ```
 
-Now you can only add `X`'s or `O`'s to empty squares! Here is what your code should look like at this point:
+Одоо та зөвхөн хоосон нүднүүдэд 'X' эсвэл 'O' нэмэх боломжтой боллоо! Энэ үе шатанд таны код иймэрхүү харагдах ёстой:
 
 <Sandpack>
 
@@ -1521,9 +1519,9 @@ body {
 
 </Sandpack>
 
-### Declaring a winner {/*declaring-a-winner*/}
+### Ялагчийг зарлах {/*declaring-a-winner*/}
 
-Now that the players can take turns, you'll want to show when the game is won and there are no more turns to make. To do this you'll add a helper function called `calculateWinner` that takes an array of 9 squares, checks for a winner and returns `'X'`, `'O'`, or `null` as appropriate. Don't worry too much about the `calculateWinner` function; it's not specific to React:
+Тоглогчид ээлжлэн нүүх боломжтой болсон тул одоо тоглоом дуусаж ялагч тодорсон эсвэл дахин нүүх боломжгүй болсон үеийг харуулах шаардлагатай. Үүний тулд 9 нүд бүхий массивыг хүлээн авч, ялагчийг шалгаад, тохирох 'X', 'O' эсвэл 'null' утгыг буцаадаг 'calculateWinner' гэх туслах функцийг нэмнэ. 'calculateWinner' функцийн талаар хэт их санаа зовох хэрэггүй; энэ нь зөвхөн React-д зориулагдсан зүйл биш юм:
 
 ```js src/App.js
 export default function Board() {
@@ -1553,11 +1551,11 @@ function calculateWinner(squares) {
 
 <Note>
 
-It does not matter whether you define `calculateWinner` before or after the `Board`. Let's put it at the end so that you don't have to scroll past it every time you edit your components.
+'calculateWinner' функцийг 'Board' компонентын өмнө эсвэл ард тодорхойлох нь ялгаагүй. Компонентуудаа засах болгондоо дээш доош гүйлгэх шаардлагагүй байлгах үүднээс үүнийг кодын хамгийн төгсгөлд тавьцгаая.
 
 </Note>
 
-You will call `calculateWinner(squares)` in the `Board` component's `handleClick` function to check if a player has won. You can perform this check at the same time you check if a user has clicked a square that already has an `X` or an `O`. We'd like to return early in both cases:
+Тоглогч ялсан эсэхийг шалгахын тулд `Board` компонентийн `handleClick` функц дотор `calculateWinner(squares)`-ыг дуудна. Үүнийг хэрэглэгч аль хэдийн `X` эсвэл `O` утгатай нүд дарсан эсэхийг шалгахтай зэрэг хийж болно. Аль ч тохиолдолд эрт буцаана:
 
 ```js {2}
 function handleClick(i) {
@@ -1569,7 +1567,7 @@ function handleClick(i) {
 }
 ```
 
-To let the players know when the game is over, you can display text such as "Winner: X" or "Winner: O". To do that you'll add a `status` section to the `Board` component. The status will display the winner if the game is over and if the game is ongoing you'll display which player's turn is next:
+Тоглогчдод тоглоом дууссаныг мэдэгдэхийн тулд "Ялагч: X" эсвэл "Ялагч: O" гэх мэт текстийг харуулж болно. Үүний тулд та 'Board' компонентэд 'status' хэсгийг нэмнэ. Хэрэв тоглоом дууссан бол уг статус нь ялагчийг харуулах бөгөөд хэрэв тоглоом үргэлжилж байвал дараагийн ээлжинд аль тоглогч нүүхийг харуулах болно:
 
 ```js {3-9,13}
 export default function Board() {
@@ -1591,7 +1589,7 @@ export default function Board() {
 }
 ```
 
-Congratulations! You now have a working tic-tac-toe game. And you've just learned the basics of React too. So _you_ are the real winner here. Here is what the code should look like:
+Баяр хүргэе! Та одоо ажилладаг 'tic-tac-toe' тоглоомтой боллоо. Мөн та 'React'-ийн үндсэн ойлголтуудыг ч бас сурч авлаа. Тиймээс жинхэнэ ялагч нь та юм. Энэ үеийн код иймэрхүү харагдах ёстой:
 
 <Sandpack>
 
@@ -1722,17 +1720,17 @@ body {
 
 </Sandpack>
 
-## Adding time travel {/*adding-time-travel*/}
+## Цаг хугацаагаар аялах функцийг нэмэх {/*adding-time-travel*/}
 
-As a final exercise, let's make it possible to "go back in time" to the previous moves in the game.
+Сүүлийн дасгал болгон тоглоомын өмнөх нүүдлүүд рүү "цаг хугацаагаар буцах" боломжийг бүрдүүлцгээе.
 
-### Storing a history of moves {/*storing-a-history-of-moves*/}
+### Нүүдлүүдийн түүхийг хадгалах {/*storing-a-history-of-moves*/}
 
-If you mutated the `squares` array, implementing time travel would be very difficult.
+Хэрэв та squares массивыг өөрчилсөн (mutate) бол цаг хугацаагаар аялах (time travel) функцийг хэрэгжүүлэхэд маш хэцүү байх байсан.
 
-However, you used `slice()` to create a new copy of the `squares` array after every move, and treated it as immutable. This will allow you to store every past version of the `squares` array, and navigate between the turns that have already happened.
+Гэвч та нүүдэл бүрийн дараа slice() ашиглан squares массивын шинэ хуулбарыг үүсгэж, түүнийг өөрчлөгдөшгүй (immutable) мэтээр ашигласан. Энэ нь танд squares массивын өмнөх бүх хувилбаруудыг хадгалах, мөн хэдийн хийгдсэн нүүдлүүдийн хооронд шилжих боломжийг олгоно.
 
-You'll store the past `squares` arrays in another array called `history`, which you'll store as a new state variable. The `history` array represents all board states, from the first to the last move, and has a shape like this:
+Та өмнөх squares массивуудыг history хэмээх өөр нэг массивт шинэ state хувьсагч болгон хадгалах болно. history массив нь эхний нүүдлээс сүүлчийнх хүртэлх хөлөгийн бүх төлөвийг төлөөлөх бөгөөд иймэрхүү бүтэцтэй байна:
 
 ```jsx
 [
@@ -1746,13 +1744,13 @@ You'll store the past `squares` arrays in another array called `history`, which 
 ]
 ```
 
-### Lifting state up, again {/*lifting-state-up-again*/}
+### Төлөвийг (state) дахин дээшлүүлэх {/*lifting-state-up-again*/}
 
-You will now write a new top-level component called `Game` to display a list of past moves. That's where you will place the `history` state that contains the entire game history.
+Одоо та өмнөх нүүдлүүдийн жагсаалтыг харуулахын тулд 'Game' нэртэй шинэ дээд түвшний компонент бичих болно. Тоглоомын түүхийг бүхэлд нь агуулсан 'history' төлөвийг та яг тэнд байрлуулна.
 
-Placing the `history` state into the `Game` component will let you remove the `squares` state from its child `Board` component. Just like you "lifted state up" from the `Square` component into the `Board` component, you will now lift it up from the `Board` into the top-level `Game` component. This gives the `Game` component full control over the `Board`'s data and lets it instruct the `Board` to render previous turns from the `history`.
+'history' төлөвийг 'Game' компонент руу шилжүүлснээр та түүний доод түвшний 'Board' компонентоос 'squares' төлөвийг хасах боломжтой болно. Та 'Square' компонентоос 'Board' компонент руу төлөвийг "дээшлүүлсэнтэй" яг адил одоо 'Board'-оос дээд түвшний 'Game' компонент руу дээшлүүлэх болно. Ингэснээр 'Game' компонент нь 'Board'-ын өгөгдлийг бүрэн хянах бөгөөд 'history'-оос өмнөх нүүдлүүдийг дүрслэхийг 'Board'-д зааварлах боломжтой болно.
 
-First, add a `Game` component with `export default`. Have it render the `Board` component and some markup:
+Эхлээд, 'export default' бүхий 'Game' компонентыг нэмнэ үү. Үүнд 'Board' компонент болон зарим тэмдэглэгээг (markup) дүрслэхээр оруулна:
 
 ```js {1,5-16}
 function Board() {
@@ -1773,9 +1771,9 @@ export default function Game() {
 }
 ```
 
-Note that you are removing the `export default` keywords before the `function Board() {` declaration and adding them before the `function Game() {` declaration. This tells your `index.js` file to use the `Game` component as the top-level component instead of your `Board` component. The additional `div`s returned by the `Game` component are making room for the game information you'll add to the board later.
+`function Board() {` тодорхойлолтын өмнөх `export default` түлхүүр үгсийг хасаж, `function Game() {` тодорхойлолтын өмнө нэмснийг анхаарна уу. Ингэснээр `index.js` файл `Board`-ын оронд `Game` компонентыг дээд түвшний компонент болгон ашиглана. `Game` компонентоос буцааж буй нэмэлт `div`-үүд нь дараа нь хөлөгт нэмэх тоглоомын мэдээллийн зайг гаргана.
 
-Add some state to the `Game` component to track which player is next and the history of moves:
+Аль тоглогч дараагийнх болох болон нүүдлийн түүхийг хянахын тулд 'Game' компонентдоо зарим төлөвийг нэмнэ үү:
 
 ```js {2-3}
 export default function Game() {
@@ -1784,9 +1782,9 @@ export default function Game() {
   // ...
 ```
 
-Notice how `[Array(9).fill(null)]` is an array with a single item, which itself is an array of 9 `null`s.
+'[Array(9).fill(null)]' нь дотроо 9 ширхэг 'null' агуулсан массив бүхий ганцхан элементтэй массив байгааг анхаарна уу.
 
-To render the squares for the current move, you'll want to read the last squares array from the `history`. You don't need `useState` for this--you already have enough information to calculate it during rendering:
+Одоогийн нүүдлийн нүднүүдийг (squares) дүрслэхийн тулд та 'history' массиваас хамгийн сүүлчийн нүднүүдийн массивыг унших хэрэгтэй болно. Үүнд 'useState' ашиглах шаардлагагүй бөгөөд танд үүнийг дүрслэх (rendering) явцад тооцоолоход хангалттай мэдээлэл хэдийн байгаа:
 
 ```js {4}
 export default function Game() {
@@ -1796,7 +1794,7 @@ export default function Game() {
   // ...
 ```
 
-Next, create a `handlePlay` function inside the `Game` component that will be called by the `Board` component to update the game. Pass `xIsNext`, `currentSquares` and `handlePlay` as props to the `Board` component:
+Дараа нь 'Game' компонент дотор тоглоомыг шинэчлэхэд 'Board' компонентоос дуудагдах 'handlePlay' функцийг үүсгэнэ үү. 'xIsNext', 'currentSquares' болон 'handlePlay'-г 'Board' компонент руу 'props' болгон дамжуулна уу:
 
 ```js {6-8,13}
 export default function Game() {
@@ -1817,7 +1815,7 @@ export default function Game() {
 }
 ```
 
-Let's make the `Board` component fully controlled by the props it receives. Change the `Board` component to take three props: `xIsNext`, `squares`, and a new `onPlay` function that `Board` can call with the updated squares array when a player makes a move. Next, remove the first two lines of the `Board` function that call `useState`:
+'Board' компонентыг хүлээн авч буй 'props'-оороо бүрэн хянагддаг болгоцгооё. 'Board' компонентыг 'xIsNext', 'squares' болон тоглогч нүүдэл хийх үед 'Board'-оос шинэчлэгдсэн нүднүүдийн массивтай дуудаж болох шинэ 'onPlay' функц гэсэн гурван 'props' хүлээн авдаг болгож өөрчилнө үү. Дараа нь 'Board' функц доторх 'useState' дууддаг эхний хоёр мөрийг хас:
 
 ```js {1}
 function Board({ xIsNext, squares, onPlay }) {
@@ -1828,7 +1826,7 @@ function Board({ xIsNext, squares, onPlay }) {
 }
 ```
 
-Now replace the `setSquares` and `setXIsNext` calls in `handleClick` in the `Board` component with a single call to your new `onPlay` function so the `Game` component can update the `Board` when the user clicks a square:
+Одоо 'Board' компонент доторх 'handleClick' функцэд байгаа 'setSquares' болон 'setXIsNext' дуудлагуудыг өөрийн шинэ 'onPlay' функцийг дуудах ганц дуудлагаар сольж өөрчилнө үү. Ингэснээр хэрэглэгч нүдэн дээр дарахад 'Game' компонент 'Board'-ыг шинэчлэх боломжтой болно:
 
 ```js {12}
 function Board({ xIsNext, squares, onPlay }) {
@@ -1848,11 +1846,11 @@ function Board({ xIsNext, squares, onPlay }) {
 }
 ```
 
-The `Board` component is fully controlled by the props passed to it by the `Game` component. You need to implement the `handlePlay` function in the `Game` component to get the game working again.
+'Board' компонент нь 'Game' компонентоос дамжуулсан 'props'-оор бүрэн хянагддаг болсон. Тоглоомыг дахин ажиллагаатай болгохын тулд та 'Game' компонент дотор 'handlePlay' функцийг хэрэгжүүлэх шаардлагатай.
 
-What should `handlePlay` do when called? Remember that Board used to call `setSquares` with an updated array; now it passes the updated `squares` array to `onPlay`.
+'handlePlay' дуудагдах үед юу хийх ёстой вэ? 'Board' өмнө нь шинэчлэгдсэн массивыг 'setSquares'-ээр дамжуулдаг байсныг санаарай; харин одоо шинэчлэгдсэн 'squares' массивыг 'onPlay' руу дамжуулж байгаа.
 
-The `handlePlay` function needs to update `Game`'s state to trigger a re-render, but you don't have a `setSquares` function that you can call any more--you're now using the `history` state variable to store this information. You'll want to update `history` by appending the updated `squares` array as a new history entry. You also want to toggle `xIsNext`, just as Board used to do:
+'handlePlay' функц нь дахин дүрслэлийг (re-render) идэвхжүүлэхийн тулд 'Game'-ийн төлөвийг шинэчлэх шаардлагатай боловч танд дуудаж болох 'setSquares' функц байхгүй болсон—та одоо энэ мэдээллийг хадгалахын тулд 'history' төлөвийн хувьсагчийг ашиглаж байгаа. Та шинэчлэгдсэн 'squares' массивыг түүхийн шинэ бүртгэл болгон нэмэх замаар 'history'-г шинэчлэх хэрэгтэй. Мөн 'Board' өмнө нь хийдэг байсан шиг 'xIsNext'-ийг сэлгэх (toggle) шаардлагатай:
 
 ```js {4-5}
 export default function Game() {
@@ -1865,11 +1863,11 @@ export default function Game() {
 }
 ```
 
-Here, `[...history, nextSquares]` creates a new array that contains all the items in `history`, followed by `nextSquares`. (You can read the `...history` [*spread syntax*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) as "enumerate all the items in `history`".)
+Энд, '[...history, nextSquares]' нь 'history' доторх бүх элементүүдийг агуулсан, түүний араас 'nextSquares' залгагдсан шинэ массив үүсгэж байна. (Та '...history' хэсгийг... [*spread syntax*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) " 'history' доторх бүх элементүүдийг нэг бүрчлэн тоочих" гэж ойлгож болно.)
 
-For example, if `history` is `[[null,null,null], ["X",null,null]]` and `nextSquares` is `["X",null,"O"]`, then the new `[...history, nextSquares]` array will be `[[null,null,null], ["X",null,null], ["X",null,"O"]]`.
+Жишээлбэл, хэрэв 'history' нь '[[null,null,null], ["X",null,null]]' бөгөөд 'nextSquares' нь '["X",null,"O"]' бол шинэ '[...history, nextSquares]' массив нь '[[null,null,null], ["X",null,null], ["X",null,"O"]]' болох юм.
 
-At this point, you've moved the state to live in the `Game` component, and the UI should be fully working, just as it was before the refactor. Here is what the code should look like at this point:
+Энэ шатанд та төлөвийг 'Game' компонент руу шилжүүлсэн бөгөөд хэрэглэгчийн интерфэйс (UI) бүтцийн өөрчлөлт (refactor) хийхээс өмнөх шигээ бүрэн ажиллагаатай байх ёстой. Энэ үеийн код дараах байдалтай харагдах болно:
 
 <Sandpack>
 
@@ -2018,19 +2016,19 @@ body {
 
 </Sandpack>
 
-### Showing the past moves {/*showing-the-past-moves*/}
+### Өмнөх нүүдлүүдийг харуулах {/*showing-the-past-moves*/}
 
-Since you are recording the tic-tac-toe game's history, you can now display a list of past moves to the player.
+Та тоглоомын түүхийг бүртгэж байгаа тул одоо тоглогчид өмнөх нүүдлүүдийн жагсаалтыг харуулах боломжтой.
 
-React elements like `<button>` are regular JavaScript objects; you can pass them around in your application. To render multiple items in React, you can use an array of React elements.
+React-ийн элементүүд (`<button>` гэх мэт) нь жирийн JavaScript объект тул апп дотроо дамжуулан ашиглаж болно. React-д олон элемент дүрслэхийн тулд React элементүүдээс бүрдсэн массив ашиглаж болно.
 
-You already have an array of `history` moves in state, so now you need to transform it to an array of React elements. In JavaScript, to transform one array into another, you can use the [array `map` method:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+Танд 'history' нүүдлүүдийн массив 'state'-д хэдийн байгаа тул одоо үүнийг React элементүүдийн массив болгон хувиргах хэрэгтэй. JavaScript-д нэг массивыг нөгөө массив руу хөрвүүлэхийн тулд та... [array `map` method:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
 ```jsx
 [1, 2, 3].map((x) => x * 2) // [2, 4, 6]
 ```
 
-You'll use `map` to transform your `history` of moves into React elements representing buttons on the screen, and display a list of buttons to "jump" to past moves. Let's `map` over the `history` in the Game component:
+Та 'history' нүүдлүүдийн түүхийг дэлгэц дээрх товчлуурууд болгон хувиргаж, өмнөх нүүдлүүд рүү "үсрэх" (jump) товчлууруудын жагсаалтыг харуулахын тулд 'map' ашиглах болно. 'Game' компонент доторх 'history' массив дээр 'map' ашиглацгаая:
 
 ```js {11-13,15-27,35}
 export default function Game() {
@@ -2074,13 +2072,13 @@ export default function Game() {
 }
 ```
 
-You can see what your code should look like below. Note that you should see an error in the developer tools console that says:
+Таны код доорх байдлаар харагдана. Developer Tools-ийн консолд дараах анхааруулга харагдах ёстойг анхаарна уу:
 
 <ConsoleBlock level="warning">
 Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of &#96;Game&#96;.
 </ConsoleBlock>
 
-You'll fix this error in the next section.
+Энэ алдааг дараагийн хэсэгт засна.
 
 <Sandpack>
 
@@ -2248,17 +2246,16 @@ body {
 
 </Sandpack>
 
-As you iterate through the `history` array inside the function you passed to `map`, the `squares` argument goes through each element of `history`, and the `move` argument goes through each array index: `0`, `1`, `2`, …. (In most cases, you'd need the actual array elements, but to render a list of moves you will only need indexes.)
+`map`-д дамжуулсан функц `history` массиваар давтах үед `squares` аргумент `history`-ийн элемент бүрээр, харин `move` аргумент массивын индекс бүрээр (`0`, `1`, `2`, …) дамжина. Ихэнх тохиолдолд массивын бодит элементүүд хэрэгтэй байдаг ч нүүдлийн жагсаалтыг дүрслэхэд зөвхөн индексүүд хэрэгтэй.
 
-For each move in the tic-tac-toe game's history, you create a list item `<li>` which contains a button `<button>`. The button has an `onClick` handler which calls a function called `jumpTo` (that you haven't implemented yet).
+Тоглоомын түүхэн дэх нүүдэл бүрд `<button>` агуулсан `<li>` жагсаалтын элемент үүсгэнэ. Товч нь хараахан хэрэгжүүлээгүй байгаа `jumpTo` функцийг дууддаг `onClick` handler-тай байна.
 
-For now, you should see a list of the moves that occurred in the game and an error in the developer tools console. Let's discuss what the "key" error means.
+Одоохондоо танд тоглоомонд хийгдсэн нүүдлүүдийн жагсаалт болон хөгжүүлэгчийн хэрэгслийн консол дээр алдаа харагдах ёстой. 'key' алдаа нь юу гэсэн үг болохыг хэлэлцэцгээе.
 
-### Picking a key {/*picking-a-key*/}
+### Түлхүүр сонгох {/*picking-a-key*/}
+Та жагсаалтыг дүрслэх үед React дүрслэгдсэн жагсаалтын элемент бүрийн талаарх зарим мэдээллийг хадгалдаг. Та жагсаалтыг шинэчлэх үед юу өөрчлөгдсөнийг React тодорхойлох шаардлагатай болдог. Та жагсаалтын элементүүдийг нэмсэн, хассан, дахин эрэмбэлсэн эсвэл шинэчилсэн байж болно.
 
-When you render a list, React stores some information about each rendered list item. When you update a list, React needs to determine what has changed. You could have added, removed, re-arranged, or updated the list's items.
-
-Imagine transitioning from
+Дараах байдалд шилжиж байна гэж төсөөлөөд үз дээ:
 
 ```html
 <li>Alexa: 7 tasks left</li>
@@ -2273,7 +2270,7 @@ to
 <li>Alexa: 5 tasks left</li>
 ```
 
-In addition to the updated counts, a human reading this would probably say that you swapped Alexa and Ben's ordering and inserted Claudia between Alexa and Ben. However, React is a computer program and does not know what you intended, so you need to specify a _key_ property for each list item to differentiate each list item from its siblings. If your data was from a database, Alexa, Ben, and Claudia's database IDs could be used as keys.
+Шинэчлэгдсэн тоонуудаас гадна үүнийг уншиж буй хүн Alexa, Ben хоёрын дарааллыг сольж, Claudia-г тэдний дунд оруулсан гэж хэлэх байх. Гэвч React бол компьютерын программ учраас таны зорилгыг өөрөө мэдэхгүй. Тиймээс жагсаалтын элемент бүрийг ижил түвшний бусад элементээс ялгахын тулд _key_ шинж чанар зааж өгөх шаардлагатай. Хэрэв өгөгдөл мэдээллийн сангаас ирсэн бол Alexa, Ben, Claudia нарын мэдээллийн сангийн ID-г key болгон ашиглаж болно.
 
 ```js {1}
 <li key={user.id}>
@@ -2281,23 +2278,23 @@ In addition to the updated counts, a human reading this would probably say that 
 </li>
 ```
 
-When a list is re-rendered, React takes each list item's key and searches the previous list's items for a matching key. If the current list has a key that didn't exist before, React creates a component. If the current list is missing a key that existed in the previous list, React destroys the previous component. If two keys match, the corresponding component is moved.
+Жагсаалт дахин дүрслэгдэх (re-render) үед React жагсаалтын элемент бүрийн түлхүүрийг авч, өмнөх жагсаалтын элементүүдээс тохирох түлхүүрийг хайдаг. Хэрэв одоогийн жагсаалтад өмнө нь байгаагүй түлхүүр гарч ирвэл React шинэ компонент үүсгэнэ. Хэрэв өмнөх жагсаалтад байсан түлхүүр одоогийн жагсаалтад байхгүй бол React өмнөх компонентыг устгана. Хэрэв хоёр түлхүүр таарч байвал харгалзах компонент нь шилжинэ.
 
-Keys tell React about the identity of each component, which allows React to maintain state between re-renders. If a component's key changes, the component will be destroyed and re-created with a new state.
+Түлхүүрүүд (keys) нь React-д компонент бүрийн ижилсэл (identity)-ийг хэлж өгдөг бөгөөд энэ нь React-д дахин дүрслэлүүдийн хооронд төлөвийг (state) хадгалах боломжийг олгодог. Хэрэв компонентын түлхүүр өөрчлөгдвөл тухайн компонент устгагдаж, шинэ төлөвтэйгөөр дахин үүсгэгдэх болно.
 
-`key` is a special and reserved property in React. When an element is created, React extracts the `key` property and stores the key directly on the returned element. Even though `key` may look like it is passed as props, React automatically uses `key` to decide which components to update. There's no way for a component to ask what `key` its parent specified.
+'key' бол React-ийн тусгай бөгөөд нөөцлөгдсөн шинж чанар юм. Элемент үүсэх үед React 'key' шинж чанарыг ялган авч, түлхүүрийг буцаагдсан элемент дээр шууд хадгалдаг. Хэдийгээр 'key' нь 'props' байдлаар дамжуулагдаж байгаа мэт харагдавч, React аль компонентыг шинэчлэхээ шийдэхийн тулд 'key'-г автоматаар ашигладаг. Компонент өөрийнх нь эцэг компонент ямар 'key' зааж өгснийг мэдэх боломжгүй байдаг.
 
-**It's strongly recommended that you assign proper keys whenever you build dynamic lists.** If you don't have an appropriate key, you may want to consider restructuring your data so that you do.
+Динамик жагсаалт үүсгэх бүртээ тохирох түлхүүрүүдийг оноохыг хатуу зөвлөж байна. Хэрэв танд тохиромжтой түлхүүр байхгүй бол өгөгдлийн бүтцээ өөрчлөх талаар бодож үзээрэй.
 
-If no key is specified, React will report an error and use the array index as a key by default. Using the array index as a key is problematic when trying to re-order a list's items or inserting/removing list items. Explicitly passing `key={i}` silences the error but has the same problems as array indices and is not recommended in most cases.
+Хэрэв түлхүүр заагаагүй бол React алдаа мэдээлж, массивын индексийг анхдагч түлхүүр болгон ашиглана. Жагсаалтын элементүүдийг дахин эрэмбэлэх, нэмэх эсвэл хасах үед массивын индексийг түлхүүр болгох нь асуудал үүсгэдэг. `key={i}` гэж ил тод дамжуулах нь алдааг арилгах боловч массивын индекстэй ижил асуудалтай тул ихэнх тохиолдолд зөвлөдөггүй.
 
-Keys do not need to be globally unique; they only need to be unique between components and their siblings.
+Түлхүүрүүд нь дэлхий даяар (globally) цор ганц байх албагүй; тэд зөвхөн тухайн компонент болон түүний ижил түвшний элементүүдийн (siblings) дунд цор ганц байхад хангалттай.
 
-### Implementing time travel {/*implementing-time-travel*/}
+### Цаг хугацаагаар аялахыг хэрэгжүүлэх {/*implementing-time-travel*/}
 
-In the tic-tac-toe game's history, each past move has a unique ID associated with it: it's the sequential number of the move. Moves will never be re-ordered, deleted, or inserted in the middle, so it's safe to use the move index as a key.
+'Tic-tac-toe' тоглоомын түүхэнд өнгөрсөн нүүдэл бүр өөртэйгөө холбогдсон дахин давтагдашгүй ID-тай байдаг: энэ нь нүүдлийн дарааллын дугаар юм. Нүүдлүүд хэзээ ч дахин эрэмбэлэгдэхгүй, устахгүй, эсвэл дундуур нь нэмэгдэхгүй тул нүүдлийн индексийг түлхүүр ('key') болгон ашиглахад аюулгүй.
 
-In the `Game` function, you can add the key as `<li key={move}>`, and if you reload the rendered game, React's "key" error should disappear:
+`Game` функц дотор түлхүүрийг `<li key={move}>` байдлаар нэмнэ. Дүрслэгдсэн тоглоомыг дахин ачаалахад React-ийн `key` алдаа арилах ёстой:
 
 ```js {4}
 const moves = history.map((squares, move) => {
@@ -2477,7 +2474,7 @@ body {
 
 </Sandpack>
 
-Before you can implement `jumpTo`, you need the `Game` component to keep track of which step the user is currently viewing. To do this, define a new state variable called `currentMove`, defaulting to `0`:
+'jumpTo' функцийг хэрэгжүүлэхийн өмнө 'Game' компонент хэрэглэгч яг аль алхмыг үзэж байгааг хянах шаардлагатай. Үүнийг хийхийн тулд анхны утга нь '0' байх 'currentMove' нэртэй шинэ 'state' хувьсагчийг тодорхойлно уу:
 
 ```js {4}
 export default function Game() {
@@ -2489,7 +2486,7 @@ export default function Game() {
 }
 ```
 
-Next, update the `jumpTo` function inside `Game` to update that `currentMove`. You'll also set `xIsNext` to `true` if the number that you're changing `currentMove` to is even.
+Дараа нь, 'currentMove'-ийг шинэчлэхийн тулд 'Game' доторх 'jumpTo' функцийг шинэчилнэ үү. Мөн та 'currentMove'-ийг өөрчилж буй тоо тань тэгш байвал 'xIsNext'-ийг 'true' болгож тохируулна.
 
 ```js {4-5}
 export default function Game() {
@@ -2502,10 +2499,11 @@ export default function Game() {
 }
 ```
 
-You will now make two changes to the `Game`'s `handlePlay` function which is called when you click on a square.
+Одоо та нүдэн дээр дарахад дуудагддаг 'Game' компонентын 'handlePlay' функцэд хоёр өөрчлөлт оруулна.
 
-- If you "go back in time" and then make a new move from that point, you only want to keep the history up to that point. Instead of adding `nextSquares` after all items (`...` spread syntax) in `history`, you'll add it after all items in `history.slice(0, currentMove + 1)` so that you're only keeping that portion of the old history.
-- Each time a move is made, you need to update `currentMove` to point to the latest history entry.
+- Хэрэв та "цаг хугацаагаар ухарч" очоод тухайн цэгээс шинэ нүүдэл хийвэл зөвхөн тэр цэг хүртэлх түүхийг хадгална. `history`-ийн бүх элементийн араас `nextSquares`-ийг нэмэхийн оронд (`...` spread syntax), үүнийг `history.slice(0, currentMove + 1)`-ийн бүх элементийн араас нэмнэ. Ингэснээр хуучин түүхийн зөвхөн тухайн хэсгийг хадгална.
+
+- Нүүдэл хийх бүрд `currentMove`-ийг түүхийн хамгийн сүүлийн бичлэг рүү заахаар шинэчилнэ.
 
 ```js {2-4}
 function handlePlay(nextSquares) {
@@ -2516,7 +2514,7 @@ function handlePlay(nextSquares) {
 }
 ```
 
-Finally, you will modify the `Game` component to render the currently selected move, instead of always rendering the final move:
+Эцэст нь, та 'Game' компонентыг үргэлж хамгийн сүүлийн нүүдлийг дүрслэхийн оронд, одоо сонгогдсон нүүдлийг дүрсэлдэг (render) болгон өөрчилнө:
 
 ```js {5}
 export default function Game() {
@@ -2529,7 +2527,7 @@ export default function Game() {
 }
 ```
 
-If you click on any step in the game's history, the tic-tac-toe board should immediately update to show what the board looked like after that step occurred.
+Хэрэв та тоглоомын түүхийн аль нэг алхам дээр дарвал, 'tic-tac-toe' хөлөг тухайн алхам хийгдсэний дараа ямар харагдаж байсан болж шууд шинэчлэгдэх ёстой.
 
 <Sandpack>
 
@@ -2700,11 +2698,11 @@ body {
 
 </Sandpack>
 
-### Final cleanup {/*final-cleanup*/}
+### Эцсийн цэвэрлэгээ {/*final-cleanup*/}
 
-If you look at the code very closely, you may notice that `xIsNext === true` when `currentMove` is even and `xIsNext === false` when `currentMove` is odd. In other words, if you know the value of `currentMove`, then you can always figure out what `xIsNext` should be.
+Хэрэв та кодыг маш анхааралтай ажиглавал 'currentMove' тэгш байх үед 'xIsNext === true', харин 'currentMove' сондгой байх үед 'xIsNext === false' байгааг анзаарч магадгүй. Өөрөөр хэлбэл, хэрэв та 'currentMove'-ийн утгыг мэдэж байвал 'xIsNext' ямар байх ёстойг үргэлж тодорхойлж чадна гэсэн үг.
 
-There's no reason for you to store both of these in state. In fact, always try to avoid redundant state. Simplifying what you store in state reduces bugs and makes your code easier to understand. Change `Game` so that it doesn't store `xIsNext` as a separate state variable and instead figures it out based on the `currentMove`:
+Эдгээр хоёр утгыг хоёуланг нь 'state'-д хадгалах шаардлага байхгүй. Үнэндээ, илүүдэл 'state'-ээс үргэлж зайлсхийхийг хичээгээрэй. 'State'-д хадгалах зүйлсээ хялбарчлах нь алдааг (bugs) багасгаж, таны кодыг ойлгоход хялбар болгодог. 'Game' компонентыг 'xIsNext'-ийг тусдаа 'state' хувьсагч болгож хадгалахгүйгээр, харин 'currentMove' дээр үндэслэн тодорхойлдог байхаар өөрчилнө үү:
 
 ```js {4,11,15}
 export default function Game() {
@@ -2726,20 +2724,20 @@ export default function Game() {
 }
 ```
 
-You no longer need the `xIsNext` state declaration or the calls to `setXIsNext`. Now, there's no chance for `xIsNext` to get out of sync with `currentMove`, even if you make a mistake while coding the components.
+Танд 'xIsNext' 'state' зарлалт эсвэл 'setXIsNext' дуудлагууд дахин хэрэггүй болно. Одоо, компонентын кодыг бичих явцдаа алдаа гаргасан ч 'xIsNext' нь 'currentMove'-тэй синхрончлол алдагдах (зөрөх) ямар ч боломжгүй боллоо.
 
-### Wrapping up {/*wrapping-up*/}
+### Дүгнэлт {/*wrapping-up*/}
 
-Congratulations! You've created a tic-tac-toe game that:
+Баяр хүргэе! Та дараах боломжуудтай 'tic-tac-toe' тоглоомыг бүтээлээ:
 
-- Lets you play tic-tac-toe,
-- Indicates when a player has won the game,
-- Stores a game's history as a game progresses,
-- Allows players to review a game's history and see previous versions of a game's board.
+- 'Tic-tac-toe' тоглох боломжтой,
+- Тоглогч хожсон үед үүнийг зааж өгдөг,
+- Тоглоомын явцад тоглоомын түүхийг хадгалдаг,
+- Тоглогчдод тоглоомын түүхийг эргэн харах болон тоглоомын хөлгийн өмнөх хувилбаруудыг үзэх боломжийг олгодог.
 
-Nice work! We hope you now feel like you have a decent grasp of how React works.
+Сайн байна! Одоо танд React хэрхэн ажилладаг талаар боломжийн ойлголттой болсон мэт сэтгэгдэл төрж байгаа байх гэж найдаж байна.
 
-Check out the final result here:
+Эцсийн үр дүнг эндээс шалгаарай:
 
 <Sandpack>
 
@@ -2908,12 +2906,12 @@ body {
 
 </Sandpack>
 
-If you have extra time or want to practice your new React skills, here are some ideas for improvements that you could make to the tic-tac-toe game, listed in order of increasing difficulty:
+Хэрэв танд нэмэлт цаг байгаа эсвэл шинээр сурсан React чадвараа бататгахыг хүсвэл tic-tac-toe тоглоомыг сайжруулах санаануудыг хүндрэлийн зэрэг нэмэгдэх дарааллаар доор жагсаалаа:
 
-1. For the current move only, show "You are at move #..." instead of a button.
-1. Rewrite `Board` to use two loops to make the squares instead of hardcoding them.
-1. Add a toggle button that lets you sort the moves in either ascending or descending order.
-1. When someone wins, highlight the three squares that caused the win (and when no one wins, display a message about the result being a draw).
-1. Display the location for each move in the format (row, col) in the move history list.
+1. Зөвхөн одоогийн нүүдлийн хувьд товчлуурын оронд "Та #... нүүдэл дээр байна" гэсэн бичвэрийг харуулах.
+2. `Board` компонентыг нүднүүдийг нэг бүрчлэн гараар бичихгүйгээр хоёр давталт ашиглан үүсгэдэг болгож дахин бичих.
+3. Нүүдлүүдийг өсөх эсвэл буурах дарааллаар эрэмбэлэх боломжтой сэлгэн залгах (toggle) товчлуур нэмэх.
+4. Тоглогч хожиход ялалт үүсгэсэн гурван нүдийг тодруулж харуулах, харин хэн ч хожоогүй бол тэнцсэн тухай мэдэгдэл харуулах.
+5. Нүүдлийн түүхийн жагсаалтад нүүдэл бүрийн байршлыг (мөр, багана) гэсэн форматаар харуулах.
 
-Throughout this tutorial, you've touched on React concepts including elements, components, props, and state. Now that you've seen how these concepts work when building a game, check out [Thinking in React](/learn/thinking-in-react) to see how the same React concepts work when building an app's UI.
+Энэ хичээлээр та элемент, компонент, prop, төлөв зэрэг React-ийн ойлголтуудтай танилцлаа. Эдгээр ойлголт тоглоом бүтээхэд хэрхэн ажилладгийг үзсэн тул аппын UI бүтээхэд мөн хэрхэн ашигладгийг [React сэтгэлгээ](/learn/thinking-in-react) хэсгээс уншаарай.
