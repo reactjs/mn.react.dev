@@ -1135,7 +1135,11 @@ JavaScript нь [closure](https://developer.mozilla.org/en-US/docs/Web/JavaScrip
 
 </Note>
 
+<<<<<<< HEAD
 Одоо та хөлөг дээр 'X' нэмэх боломжтой боллоо... гэхдээ зөвхөн зүүн дээд талын нүдэнд л нэмэгдэж байна. Учир нь таны 'handleClick' функц зүүн дээд талын нүдний индекс болох ('0') утгыг шинэчлэхээр хатуу кодлогдсон (hardcoded) байна. Одоо 'handleClick' функцийг дурын нүдийг шинэчлэх боломжтой болгож өөрчилье. 'handleClick' функцэд шинэчлэх нүдний индексийг хүлээн авах 'i' гэсэн аргумент нэмж өгөөрэй:
+=======
+Now you can add X's to the board...  but only to the upper left square. Your `handleClick` function is hardcoded to update the index for the upper left square (`0`). Let's update `handleClick` to be able to update any square. Add a parameter `i` to the `handleClick` function that takes the index of the square to update:
+>>>>>>> 46a54e0592729712b7640308b53268e84fdc7c9f
 
 ```js {4,6}
 export default function Board() {
