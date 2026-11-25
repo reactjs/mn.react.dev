@@ -341,7 +341,11 @@ function MyButton() {
 }
 ```
 
+<<<<<<< HEAD
 React таны компонентийн функцийг дахин дуудна. Товчин дээр дарах үед тоо нь `1` болно, дараа нь `2` болно гэх мэт.
+=======
+Calling `setCount` tells React to call your component function again. This is called a *re-render*. This time, `count` will be `1`. Then it will be `2`. And so on.
+>>>>>>> 46a54e0592729712b7640308b53268e84fdc7c9f
 
 Хэрэв компонентоо 2 удаа дуудвал тус тус өөрийн төлөвтэй байх болно. Аль аль товчыг нь дараад үзээрэй.
 
